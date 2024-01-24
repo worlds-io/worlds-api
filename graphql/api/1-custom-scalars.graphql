@@ -1,0 +1,9 @@
+"""
+ISO-8601 formatted date-time-offset
+"""
+scalar DateTimeOffset
+
+"""
+Arbitrary JSON used for metadata fields added by custom processes
+"""
+scalar JSON

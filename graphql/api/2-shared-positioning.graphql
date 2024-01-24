@@ -1,0 +1,74 @@
+
+## POSITIONING TYPES
+#
+# The following types are used for positioning, such as real-world coordinates,
+# points on a camera feed, or virtual 3d coordinates
+
+"""
+Latitude/Longitude coordinates
+"""
+type GeoCoordinate {
+	latitude: Float!
+	longitude: Float!
+	altitude: Float
+}
+
+"""
+Defines a zone in the world. Acts as a cylinder if `center.altitude` is `NULL`.
+"""
+type GeoZone {
+	center: GeoCoordinate!
+	radiusInMeters: Float!
+}
+
+"""
+Two-dimensional coordinates, such as point on a camera
+
+0,0 will always be upper-left, with +y down and +x right. TODO: confirm
+"""
+type TwoDimensionCoordinate {
+	x: Float!
+	y: Float!
+}
+
+"""
+Two-dimensional axis-aligned bounding box
+"""
+type TwoDimensionBoundingBox {
+	"""
+	Upper-left, or the smallest of each of x and y
+	"""
+	min: TwoDimensionCoordinate!
+	"""
+	Lower-right, or the largest of each of x and y
+	"""
+	max: TwoDimensionCoordinate!
+}
+
+"""
+Coordinate in 3d-space, used for the virtual coordinate system
+"""
+type WorldCoordinate {
+	x: Float!
+	y: Float!
+	z: Float!
+}
+
+"""
+Axis-aligned bounding box in 3d-space, used for the virtual coordinate system
+"""
+type WorldAxisAlignedBoundingBox {
+	"""
+	Smallest of each of the 3 axes
+	"""
+	min: WorldCoordinate!
+	"""
+	Largest of each of the 3 axes
+	"""
+	max: WorldCoordinate!
+}
+
+"""
+Any "place" in the world - may need more types for "fuzzy" locations (such as the location of a "glass break" sound detection)
+"""
+union WorldPlace = WorldCoordinate | WorldAxisAlignedBoundingBox

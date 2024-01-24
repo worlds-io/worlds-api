@@ -1,0 +1,23 @@
+
+type ConnectedToExample {
+	 examples(filters: ExampleFilterInput, first: Int, after: String, last: Int, before: String): ExampleConnection!
+}
+
+"""
+Filters Example objects
+"""
+input ExampleFilterInput {
+	id: FilterIDInput
+	# TODO: more filter fields
+	and: [ExampleFilterInput!]
+	or: [ExampleFilterInput!]
+	not: ExampleFilterInput
+}
+"""
+Provides paging info for a set of Examples
+"""
+type ExampleConnection { pageInfo: PageInfo!, edges: [ExampleEdge!]! }
+"""
+Provides a single node for an Example, including the cursor
+"""
+type ExampleEdge { node: Example, cursor: String! }

@@ -1,0 +1,107 @@
+## RUNTIME TYPES
+#
+# The following types will be most often used for inspection and monitoring of the customer's world
+
+"""
+A specific thing that happens in a specific time and place
+"""
+# I know that currently "events" are things that span time in Worlds'
+# definition, but general relativity defines event as a specific place and time.
+type Event {
+	id: ID!
+	time: DateTimeOffset!
+	place: WorldPlace!
+	"""
+	The sensor where the detection occurred
+	"""
+	sensor: Sensor
+	"""
+	Metadata added by the API client
+	"""
+	metadata(key: String): JSON
+}
+input EventFilterInput {
+	id: FilterIDInput
+	time: FilterDateTimeOffsetInput
+	# place: FilterWorldPlaceInput # TODO
+	# TODO: more filter fields
+	# TODO: subtype (like detection) filter fields
+
+	and: [EventFilterInput!]
+	or: [EventFilterInput!]
+	not: EventFilterInput
+}
+type EventConnection { pageInfo: PageInfo!, edges: [EventEdge!]! }
+type EventEdge { node: Event, cursor: String! }
+
+
+type Detection implements Event {
+	id: ID!
+	time: DateTimeOffset!
+	place: WorldPlace!
+	"""
+	The camera where the detection occurred
+	"""
+	sensor: Sensor
+	"""
+	Metadata added by the API client
+	"""
+	metadata(key: String): JSON
+
+	detectionType: String!
+	objectId: ID! # TODO: make this an entity instead
+	camera: Camera!
+	cameraBoundingBox: TwoDimensionBoundingBox!
+}
+
+"""
+A collection of Events that indicates that something happened over a period of time.
+"""
+# I know that currently "events" are the domain models that span time, but here
+# I'm using an "activity" to be a collection of events. The 'activity' of
+# shipping a crate involves many events:
+# - Scan the crate's barcode
+# - Move the crate using a forklift (each "detection" is an event, so will span
+#   many different sensors)
+# - Load the crate onto a truck
+# - Verify the truck's manifest and destination (Shipping system integration
+#   "Sensor")
+# - Truck leaves warehouse lot (each camera "detection" is an event, associated
+#   with this activity after the crate is put on the truck)
+type Activity {
+	id: ID!
+	eventType: String!
+
+	startTime: DateTimeOffset!
+	endTime: DateTimeOffset
+
+	events(filter: EventFilterInput, first: Int, after: String, last: Int, before: String): EventConnection!
+
+	"""
+	Metadata added by the API client
+	"""
+	metadata(key: String): JSON
+}
+"""
+Filters Activity objects
+"""
+input ActivityFilterInput {
+	id: FilterIDInput
+	# eventType: FilterStringInput # TODO
+	startTime: FilterDateTimeOffsetInput
+	endTime: FilterDateTimeOffsetInput
+
+	# TODO: filter using metadata
+
+	and: [ActivityFilterInput!]
+	or: [ActivityFilterInput!]
+	not: ActivityFilterInput
+}
+"""
+Provides paging info for a set of Activitys
+"""
+type ActivityConnection { pageInfo: PageInfo!, edges: [ActivityEdge!]! }
+"""
+Provides a single node for an Activity, including the cursor
+"""
+type ActivityEdge { node: Activity, cursor: String! }

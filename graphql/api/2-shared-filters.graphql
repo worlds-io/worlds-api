@@ -1,0 +1,50 @@
+
+"""
+Standard filtration for ID fields
+"""
+input FilterIDInput {
+  ne: ID # "not equal to"
+  eq: ID # "equal to"
+}
+
+"""
+Standard filtration for integer fields
+"""
+input FilterIntInput {
+  ne: Int # "not equal to"
+  eq: Int # "equal to"
+  le: Int # "less than or equal to"
+  lt: Int # "less than"
+  ge: Int # "greater than or equal to"
+  gt: Int # "greater than"
+  between: [Int!]
+  attributeExists: Boolean
+}
+
+"""
+Standard filtration for float fields
+"""
+input FilterFloatInput {
+  ne: Float # "not equal to"
+  eq: Float # "equal to"
+  le: Float # "less than or equal to"
+  lt: Float # "less than"
+  ge: Float # "greater than or equal to"
+  gt: Float # "greater than"
+  between: [Float!]
+  attributeExists: Boolean
+}
+
+"""
+Standard filtration for DateTimeOffset fields
+"""
+input FilterDateTimeOffsetInput {
+  ne: DateTimeOffset # "not equal to"
+  eq: DateTimeOffset # "equal to"
+  le: DateTimeOffset # "less than or equal to"
+  lt: DateTimeOffset # "less than"
+  ge: DateTimeOffset # "greater than or equal to"
+  gt: DateTimeOffset # "greater than"
+  between: [DateTimeOffset!]
+  attributeExists: Boolean
+}
