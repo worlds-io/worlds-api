@@ -1,0 +1,25 @@
+## ROOT TYPES
+#
+# Contains the root GraphQL types Query, Mutation, and Subscription
+
+type Query {
+	# sensor(id: ID!): Sensor
+	# sensors(filter: SensorFilterInput, first: Int, after: String, last: Int, before: String): SensorConnection!
+	# activity(id: ID!): Activity
+	# activities(filter: ActivityFilterInput, first: Int, after: String, last: Int, before: String): ActivityConnection!
+}
+
+type Mutation {
+	# TODO: add/update/delete sensors
+	# TODO: activity: add metadata
+	# TODO: event: add metadata
+	# TODO: object: add metadata
+}
+
+type Subscription {
+	# eventCreated(filter: EventFilterInput): Event
+	# activityCreated(filter: ActivityFilterInput): Activity
+
+	# # TODO: for updates, probably want a "throttle" so each detection doesn't trigger a new update
+	# activityUpdated(filter: ActivityFilterInput): Activity
+}

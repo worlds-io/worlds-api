@@ -48,25 +48,3 @@ input FilterDateTimeOffsetInput {
   between: [DateTimeOffset!]
   attributeExists: Boolean
 }
-
-"""
-Filtration for two dimensional coordinates
-"""
-input FilterBoundingBoxInput {
-  x1: Float!
-  y1: Float!
-  x2: Float!
-  y2: Float!
-}
-
-"""
-Filtration for three dimensional coordinates
-"""
-input FilterGeofenceInput {
-	latitude1: Float!
-  longitude1: Float!
-  altitude1: Float!
-  latitude2: Float!
-	longitude2: Float!
-	altitude2: Float!
-}

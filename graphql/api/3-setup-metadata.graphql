@@ -1,81 +1,127 @@
-## SETUP TYPES
-#
-# The following types are mostly used during setup or getting introspection data
-# during runtime, such as rendering a full scene
+"""
+Two Dimensional Objects
+"""
+type Detection {
+	id: ID!
+	deviceId: Int!
+	tag: String!
+	timestamp: DateTimeOffset!	
+	box: Box!
+	track: Track
+	metadata: JSON
+}
 
+type Track {
+	id: ID!
+	tag: String!
+	startTime: DateTimeOffset!
+	endTime: DateTimeOffset
+	detections: [Detection!]!
+	metadata: JSON
+}
+
+"""
+Three Dimensional Objects
+"""
+type Waypoint {
+	id: ID
+	tag: String!
+	timestamp: DateTimeOffset!
+	position: GeographicPosition!
+	route: Route
+	metadata: JSON
+}
+
+type Route {
+	id: ID
+	tag: String!
+	startTime: DateTimeOffset!
+	endTime: DateTimeOffset
+	waypoint: [Waypoint!]!
+	metadata: JSON
+}
+
+"""
+Zones
+TODO: Is the zone geometry going to be a postgis geometry or separate x/y/width/height fields?
+"""
+type Zone {
+	id: ID!
+	deviceId: Int!
+	geometry: String! 
+}
+
+type ZoneEvent {
+	id: ID!
+	zone: Zone!
+	track: Track!
+	tag: String!
+	type: String!
+	box: Box!
+	timestamp: DateTimeOffset!
+	metadata: JSON
+}
+
+"""
+Geofences
+"""
+type Geofence {
+	id: ID!
+	name: String!
+	position: GeographicPosition
+	rotation: Vector3
+	dimensions: Vector3
+}
+
+type GeofenceEvent {
+	id: ID!
+	geofence: Geofence!
+	route: Route!
+	tag: String!
+	type: String!
+	position: GeographicPosition!
+	timestamp: DateTimeOffset!
+	metadata: JSON
+}
+
+"""
+Sensors
+"""
 type Sensor {
 	id: ID!
-	"""
-	Metadata added by the API client
-	"""
-	metadata(key: String): JSON
+	deviceId: Int!
+	name: String!
+	geometry: String!
+	configuration: JSON
+}
+
+type SensorEvent {
+	id:ID!
+	sensor: Sensor!
+	data: String!
+	timestamp: DateTimeOffset
+	metadata: JSON
 }
 
 """
-Filters Sensor objects
+Utilities
 """
-input SensorFilterInput {
-	id: FilterIDInput
-	# TODO: more filter fields
-	# TODO: subtype (like positioned, camera) filter fields
-
-	and: [SensorFilterInput!]
-	or: [SensorFilterInput!]
-	not: SensorFilterInput
-}
-"""
-Provides paging info for a set of Sensors
-"""
-type SensorConnection { pageInfo: PageInfo!, edges: [SensorEdge!]! }
-"""
-Provides a single node for an Sensor, including the cursor
-"""
-type SensorEdge { node: Sensor, cursor: String! }
-
-
-type PositionedSensor implements Sensor {
-	id: ID!
-	geoCoordinate: GeoCoordinate
-	position: WorldCoordinate!
-
-	metadata(key: String): JSON
+type TrackConnection {
+	pageInfo: PageInfo!
+	edges: [TrackEdge!]!
 }
 
-type Camera implements Sensor & PositionedSensor {
-	id: ID!
-	geoCoordinate: GeoCoordinate
-	position: WorldCoordinate!
-
-	rtspUrl: String
-
-	metadata(key: String): JSON
-
-	# Lens type? Would want to specify a backend processing type and metadata (for handling fisheye lens, etc.)
-	# Are these part of the lens type or more basic aspects of the camera?
-	# - Aspect Ratio?
-	# - FOV?
+type TrackEdge {
+	node: Track,
+	cursor: String!
 }
 
-enum CustomSensorDataType {
-	FLOAT
-	INTEGER
-	STRING
-	JSON
+type RouteConnection {
+	pageInfo: PageInfo!
+	edges: [RouteEdge!]!
 }
 
-type CustomSensor implements Sensor {
-	id: ID!
-	dataType: CustomSensorDataType!
-
-	metadata(key: String): JSON
-}
-
-type CustomPositionedSensor implements CustomSensor & PositionedSensor {
-	id: ID!
-	geoCoordinate: GeoCoordinate
-	position: WorldCoordinate!
-
-	dataType: CustomSensorDataType!
-
-	metadata(key: String): JSON
+type RouteEdge {
+	node: Route,
+	cursor: String!
 }
