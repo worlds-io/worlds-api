@@ -125,3 +125,33 @@ type RouteEdge {
 	node: Route,
 	cursor: String!
 }
+
+type ZoneEventConnection {
+	pageInfo: PageInfo!
+	edges: [ZoneEventEdge!]!
+}
+
+type ZoneEventEdge {
+	node: ZoneEvent,
+	cursor: String!
+}
+
+type GeofenceEventConnection {
+	pageInfo: PageInfo!
+	edges: [GeofenceEventEdge!]!
+}
+
+type GeofenceEventEdge {
+	node: GeofenceEvent,
+	cursor: String!
+}
+
+type SensorEventConnection {
+	pageInfo: PageInfo!
+	edges: [SensorEventEdge!]!
+}
+
+type SensorEventEdge {
+	node: SensorEvent,
+	cursor: String!
+}

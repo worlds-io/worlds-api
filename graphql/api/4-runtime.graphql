@@ -27,3 +27,21 @@ input FilterRouteInput {
 	devices: [Int!]
 	time: FilterDateTimeOffsetInput
 }
+
+"""
+For Region Queries and Subscriptions
+"""
+input FilterZoneEventInput {
+	zoneIds: [Int!]!
+	time: FilterDateTimeOffsetInput
+}
+
+input FilterGeofenceEventInput {
+	geofenceIds: [Int!]!
+	time: FilterDateTimeOffsetInput
+}
+
+input FilterSensorEventInput {
+	sensorIds: [Int!]!
+	time: FilterDateTimeOffsetInput
+}

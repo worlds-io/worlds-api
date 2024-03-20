@@ -10,6 +10,9 @@ type Query {
 	zone(id: ID!): Zone
 	geofence(id: ID!): Geofence
 	sensor(id: ID!): Sensor
+	zoneEvents(filter: FilterZoneEventInput!): ZoneEventConnection
+	geofenceEvents(filter: FilterGeofenceEventInput!): GeofenceEventConnection
+	sensorEvents(filter: FilterSensorEventInput!): SensorEventConnection
 }
 
 type Mutation {
