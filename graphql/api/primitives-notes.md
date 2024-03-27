@@ -2,79 +2,78 @@
 # Primitives
 
 ## Basic
-### 2D Objects
-- Detection - seeing something in 2D space  
+### Objects
+- Detection - seeing something
   - ID
   - Camera ID
   - pixel positions (bounding box)
+  - polygon
   - tag
   - timestamp
-  - metadata
+  - attributes
+    - color
+    - size
+    - shape
+    - pose
+    - relationships
+  - _metadata_
+  - position (realspace)
   - Track
-- Track - list of detections
+- Track - ordered time sequence of seeing a thing
   - ID
   - start time
   - end time
   - tag
-  - metadata
-
-### 3D Objects
-- Waypoint - seeing something in 3D space
-  - ID
-  - long/lat position info
-  - tag
-  - timestamp
-  - metadata
-  - Route
-- Route - list of waypoints
-  - ID
-  - start time
-  - end time
-  - tag 
-  - metadata
-    - associations with other tracked objects
-    - external IDs
-    - direction
-    - velocity
+  - attributes
+    - vector (pixels)
+    - motion (realspace)
+    - identity
+  - _metadata_
     
 ## Sensors
-- Sensor
+- _Sensor_
   - ID
+  - name
   - description
   - value type
+  - position (realspace)
+  - metadata
 
-- Measurement - value of a sensor or "virtual sensor"
+- _Measurement_ - value of a sensor
   - ID
-  - sensor ID
+  - Sensor
   - timestamp
   - value
 
 ## Regions
-- Zone - 2D collision region of interest
+- _Zone_ - 2D collision region of interest
   - ID
   - Camera ID
-  - pixel position (bounding box)
+  - polygon
   - active flag
 
-- Geofence - 3D collision region of interest
+- _Geofence_ - 3D collision region of interest
   - ID
   - Location (center)
   - Dimensions
   - Rotation
   - active flag
 
-# Events
+## Events
+
+
+# Activities
 
 - zoneActivity
   - Zone
-  - type (ingress, egress, dwell)
+  - type (enter, exit, dwell)
+  - overlap percentage
   - Detection
     
 - geofenceActivity
   - Geofence
-  - type (ingress, egress, dwell)
-  - Waypoint
-  - Active Routes
+  - type (enter, exit, dwell)
+  - Detection
      
 - measurementActivity
   - Sensor
