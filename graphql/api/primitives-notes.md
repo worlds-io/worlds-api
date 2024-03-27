@@ -6,6 +6,7 @@
 - Detection - seeing something in 2D space
   - ID
   - pixel positions (bounding box)
+  - source camera
   - tag
   - timestamp
   - metadata
