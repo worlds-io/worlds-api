@@ -3,10 +3,10 @@
 
 ## Basic
 ### 2D Objects
-- Detection - seeing something in 2D space
+- Detection - seeing something in 2D space  
   - ID
+  - Camera ID
   - pixel positions (bounding box)
-  - source camera
   - tag
   - timestamp
   - metadata
@@ -37,16 +37,31 @@
     - direction
     - velocity
     
-### Detectors
-- "Measurement" - value of a "virtual sensor"
-  - booleans
-  - integers
-  - doubles
-  - strings
+## Sensors
+- Sensor
+  - ID
+  - description
+  - value type
+
+- Measurement - value of a sensor or "virtual sensor"
+  - ID
+  - sensor ID
+  - timestamp
+  - value
 
 ## Regions
-- Zone - 2D collision region with "detections"
-- Geofence - 3D collision region with "waypoints"
+- Zone - 2D collision region of interest
+  - ID
+  - Camera ID
+  - pixel position (bounding box)
+  - active flag
+
+- Geofence - 3D collision region of interest
+  - ID
+  - Location (center)
+  - Dimensions
+  - Rotation
+  - active flag
 
 # Events
 
