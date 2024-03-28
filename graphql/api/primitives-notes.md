@@ -10,7 +10,7 @@
   - polygon
   - tag
   - timestamp
-  - attributes
+  - properties
     - color
     - size
     - shape
@@ -24,7 +24,7 @@
   - start time
   - end time
   - tag
-  - attributes
+  - properties
     - vector (pixels)
     - motion (realspace)
     - identity
