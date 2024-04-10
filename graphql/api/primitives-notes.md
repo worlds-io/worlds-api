@@ -1,12 +1,16 @@
 
 # Primitives
 
-## Basic
-### Objects
+## Detections
 - Detection - seeing something
   - ID
   - Camera ID
   - pixel positions (bounding box)
+  - position (realspace)
+  - zone collisions
+    - collision type (enter, exit, dwell)
+  - geofence collisions
+    - collision type (enter, exit, dwell)
   - polygon
   - tag
   - timestamp
@@ -17,8 +21,8 @@
     - pose
     - relationships
   - _metadata_
-  - position (realspace)
   - Track
+  - TrackID
 - Track - ordered time sequence of seeing a thing
   - ID
   - start time
@@ -60,29 +64,47 @@
   - active flag
 
 ## Events
+- _Agent_  - container / association of events
+  - ID
+  - name
+  - type (internally the provider)
+  - description
+  - timezone
+  - active (for internal agents)
+
+- _Event_ - single instance of an event
+  - ID
+  - Agent / AgentID
+  - type
+  - subtype ?
+  - start time
+  - end time
+  - location
+  - timezone
+  - metadata
 
 
 # Activities
 
-- zoneActivity
-  - Zone
-  - type (enter, exit, dwell)
-  - overlap percentage
-  - Detection
+- detectionActivity
+  - Filters
+    - Zone
+    - Geofence
+    - type (enter, exit, dwell)
+  - Response
+    - Detection
     
-- geofenceActivity
-  - Geofence
-  - type (enter, exit, dwell)
-  - Detection
-     
 - measurementActivity
-  - Sensor
-  - Measurement
+  - Filters
+    - Sensor
+    - Measurement Type
+  - Response
+    - Measurement
 
 ### Sample subscription
 
 ```
-zoneActivity({ zoneId: { in: [1,2] }, entityType: { eq: "personWithoutPPE" }, eventType: { in: ["ingress", "egress", "dwell"] } }) {
+detectionActivity({ zoneId: { in: [1,2] }, entityType: { eq: "personWithoutPPE" }, eventType: { in: ["enter", "exit", "dwell"] } }) {
   position { lat, long }
   startDateTimeOffset
   ocr: metadata("OCR")
