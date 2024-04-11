@@ -4,7 +4,7 @@ type TrackConnection {
 }
 
 type TrackEdge {
-	node: Track,
+	node: Track
 	cursor: String!
 }
 

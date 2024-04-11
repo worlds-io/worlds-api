@@ -4,7 +4,7 @@ type ZoneEventConnection {
 }
 
 type ZoneEventEdge {
-	node: ZoneEvent,
+	node: ZoneEvent
 	cursor: String!
 }
 

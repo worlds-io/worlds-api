@@ -4,6 +4,6 @@ type GeofenceEventConnection {
 }
 
 type GeofenceEventEdge {
-	node: GeofenceEvent,
+	node: GeofenceEvent
 	cursor: String!
 }

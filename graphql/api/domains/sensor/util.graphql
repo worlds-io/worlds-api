@@ -4,6 +4,6 @@ type MeasurementConnection {
 }
 
 type MeasurementEdge {
-	node: Measurement,
+	node: Measurement
 	cursor: String!
 }
