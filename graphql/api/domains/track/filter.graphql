@@ -1,4 +1,8 @@
 input FilterTrackInput {
-	devices: FilterIDInput
+	deviceId: FilterIDInput
 	time: FilterDateTimeOffsetInput
+
+	and: [FilterTrackInput!]
+	or: [FilterTrackInput!]
+	not: FilterTrackInput
 }

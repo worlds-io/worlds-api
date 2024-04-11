@@ -3,4 +3,8 @@ input FilterDetectionActivityInput {
 	geofenceId: FilterIDInput
 	tag: FilterStringInput
 	type: FilterStringInput
+
+	and: [FilterDetectionActivityInput!]
+	or: [FilterDetectionActivityInput!]
+	not: FilterDetectionActivityInput
 }

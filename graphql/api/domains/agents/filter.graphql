@@ -3,4 +3,8 @@ input FilterAgentEventInput {
 	type: FilterStringInput
 	subType: FilterStringInput
 	time: FilterDateTimeOffsetInput
+
+	and: [FilterAgentEventInput!]
+	or: FilterAgentEventInput
+	not: FilterAgentEventInput
 }

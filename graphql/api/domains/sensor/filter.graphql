@@ -1,9 +1,17 @@
 input FilterMeasurementInput {
-	sensorIds: FilterIDInput
+	sensorId: FilterIDInput
 	time: FilterDateTimeOffsetInput
+
+	and: [FilterMeasurementInput!]
+	or: [FilterMeasurementInput!]
+	not: FilterMeasurementInput
 }
 
 input FilterMeasurementActivityInput {
 	sensorId: FilterIDInput
 	type: FilterStringInput
+
+	and: [FilterMeasurementActivityInput!]
+	or: [FilterMeasurementActivityInput!]
+	not: FilterMeasurementActivityInput
 }
