@@ -5,6 +5,6 @@ input FilterAgentEventInput {
 	time: FilterDateTimeOffsetInput
 
 	and: [FilterAgentEventInput!]
-	or: FilterAgentEventInput
+	or: [FilterAgentEventInput!]
 	not: FilterAgentEventInput
 }
