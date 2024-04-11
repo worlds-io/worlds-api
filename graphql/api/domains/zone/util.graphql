@@ -1,0 +1,10 @@
+type ZoneEventConnection {
+	pageInfo: PageInfo!
+	edges: [ZoneEventEdge!]!
+}
+
+type ZoneEventEdge {
+	node: ZoneEvent,
+	cursor: String!
+}
+

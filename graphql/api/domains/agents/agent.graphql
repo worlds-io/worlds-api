@@ -1,0 +1,20 @@
+type Agent {
+	id: ID!
+	name: String!
+	type: String!
+	description: String!
+	timezone: String!
+	active: Boolean!
+}
+
+type AgentEvent {
+	id: ID!
+	agent: Agent!
+	type: String!
+	subType: String
+	startTime: DateTimeOffset!
+	endTime: DateTimeOffset
+	position: String!
+	timezone: String!
+	metadata: JSON
+}

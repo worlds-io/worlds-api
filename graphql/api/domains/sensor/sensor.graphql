@@ -1,0 +1,19 @@
+type Sensor {
+	id: ID!
+	cameraId: Int!
+	name: String!
+	description: String
+	type: String!
+	polygon: String!
+	position: String!
+	configuration: JSON
+	metadata: JSON
+}
+
+type Measurement {
+	id:ID!
+	sensor: Sensor!
+	timestamp: DateTimeOffset
+	value: String!
+	metadata: JSON
+}

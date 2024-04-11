@@ -1,0 +1,4 @@
+input FilterTrackInput {
+	devices: FilterIDInput
+	time: FilterDateTimeOffsetInput
+}

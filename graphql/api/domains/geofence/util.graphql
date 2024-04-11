@@ -1,0 +1,9 @@
+type GeofenceEventConnection {
+	pageInfo: PageInfo!
+	edges: [GeofenceEventEdge!]!
+}
+
+type GeofenceEventEdge {
+	node: GeofenceEvent,
+	cursor: String!
+}

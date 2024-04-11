@@ -1,0 +1,5 @@
+input FilterZoneEventInput {
+	zoneIds: FilterIDInput
+	time: FilterDateTimeOffsetInput
+}
+

@@ -1,0 +1,6 @@
+input FilterAgentEventInput {
+	agentId: FilterIDInput
+	type: FilterStringInput
+	subType: FilterStringInput
+	time: FilterDateTimeOffsetInput
+}

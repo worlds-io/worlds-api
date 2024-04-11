@@ -1,0 +1,9 @@
+input FilterMeasurementInput {
+	sensorIds: FilterIDInput
+	time: FilterDateTimeOffsetInput
+}
+
+input FilterMeasurementActivityInput {
+	sensorId: FilterIDInput
+	type: FilterStringInput
+}

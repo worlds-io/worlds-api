@@ -1,0 +1,4 @@
+type Query {
+	zone(id: ID!): Zone
+	zoneEvents(filter: FilterZoneEventInput!): ZoneEventConnection
+}

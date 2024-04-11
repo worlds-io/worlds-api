@@ -5,6 +5,7 @@ Standard filtration for ID fields
 input FilterIDInput {
   ne: ID # "not equal to"
   eq: ID # "equal to"
+  in: [ID!]
 }
 
 """
@@ -17,6 +18,7 @@ input FilterIntInput {
   lt: Int # "less than"
   ge: Int # "greater than or equal to"
   gt: Int # "greater than"
+  in: [Int!]
   between: [Int!]
   attributeExists: Boolean
 }
@@ -31,7 +33,18 @@ input FilterFloatInput {
   lt: Float # "less than"
   ge: Float # "greater than or equal to"
   gt: Float # "greater than"
+  in: [Int!]
   between: [Float!]
+  attributeExists: Boolean
+}
+
+"""
+Standard filtration for string fields
+"""
+input FilterStringInput {
+  ne: String # "not equal to"
+  eq: String # "equal to"
+  in: [String!]
   attributeExists: Boolean
 }
 

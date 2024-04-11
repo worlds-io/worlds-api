@@ -1,0 +1,18 @@
+
+type Zone {
+	id: ID!
+	cameraId: Int!
+	polygon: String! 
+	active: Boolean!
+}
+
+type ZoneEvent {
+	id: ID!
+	zone: Zone!
+	track: Track!
+	tag: String!
+	type: String!
+	box: Box!
+	timestamp: DateTimeOffset!
+	metadata: JSON
+}
