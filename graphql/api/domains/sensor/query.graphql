@@ -1,0 +1,4 @@
+type Query {
+	sensor(id: ID!): Sensor
+	measurements(filter: FilterMeasurementInput!): MeasurementConnection
+}

@@ -1,0 +1,3 @@
+type Mutation {
+	updateTrackMetadata(id: ID!, metadata: JSON!): Track
+}

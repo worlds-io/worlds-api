@@ -1,0 +1,23 @@
+type Detection {
+	id: ID!
+	cameraId: Int!
+	tag: String!
+	timestamp: DateTimeOffset!
+	box: Box
+	polygon: String
+	position: String
+	track: Track
+	zoneEvents: [ZoneEvent!]!
+	geofenceEvents: [GeofenceEvent!]!
+	properties: DetectionProperties
+	metadata: JSON
+}
+
+type DetectionProperties {
+	color: String
+	size: Float
+	shape: String
+	pose: Float
+	relationships: JSON
+}
+

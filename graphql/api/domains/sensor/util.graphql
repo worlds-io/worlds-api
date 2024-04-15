@@ -1,0 +1,9 @@
+type MeasurementConnection {
+	pageInfo: PageInfo!
+	edges: [MeasurementEdge!]!
+}
+
+type MeasurementEdge {
+	node: Measurement
+	cursor: String!
+}

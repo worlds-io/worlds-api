@@ -1,0 +1,8 @@
+input FilterGeofenceEventInput {
+	geofenceId: FilterIDInput
+	time: FilterDateTimeOffsetInput
+
+	and: [FilterGeofenceEventInput!]
+	or: [FilterGeofenceEventInput!]
+	not: FilterGeofenceEventInput
+}

@@ -1,0 +1,10 @@
+type TrackConnection {
+	pageInfo: PageInfo!
+	edges: [TrackEdge!]!
+}
+
+type TrackEdge {
+	node: Track
+	cursor: String!
+}
+

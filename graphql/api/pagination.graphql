@@ -1,0 +1,10 @@
+
+## PAGINATION TYPES
+#
+# Shared types for pagination. See templates/pagination/readme.md for more information
+
+"""
+Pagination info for any connection
+"""
+type PageInfo { hasNextPage: Boolean!, hasPreviousPage: Boolean!, startCursor: String, endCursor: String }
+

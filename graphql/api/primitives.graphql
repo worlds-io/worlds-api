@@ -1,0 +1,40 @@
+
+## POSITIONING TYPES
+#
+# The following types are used for positioning, such as real-world coordinates,
+# points on a camera feed, or virtual 3d coordinates
+
+"""
+Latitude/Longitude coordinates
+"""
+type GeographicPosition {
+	latitude: Float!
+	longitude: Float!
+	altitude: Float
+}
+
+"""
+Two-dimensional detection bounding box
+
+0,0 will always be upper-left, with +y down and +x right.
+"""
+type Box {
+	x: Float!
+	y: Float!
+	width: Float!
+	height: Float!
+}
+
+"""
+Generic Vectors
+"""
+type Vector2 {
+	x: Float!
+	y: Float!
+}
+
+type Vector3 {
+	x: Float!
+	y: Float!
+	z: Float!
+}
