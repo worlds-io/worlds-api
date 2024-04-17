@@ -33,7 +33,7 @@ input FilterFloatInput {
   lt: Float # "less than"
   ge: Float # "greater than or equal to"
   gt: Float # "greater than"
-  in: [Int!]
+  in: [Float!]
   between: [Float!]
   attributeExists: Boolean
 }
@@ -60,26 +60,4 @@ input FilterDateTimeOffsetInput {
   gt: DateTimeOffset # "greater than"
   between: [DateTimeOffset!]
   attributeExists: Boolean
-}
-
-"""
-Filtration for two dimensional coordinates
-"""
-input FilterBoundingBoxInput {
-  x1: Float!
-  y1: Float!
-  x2: Float!
-  y2: Float!
-}
-
-"""
-Filtration for three dimensional coordinates
-"""
-input FilterGeofenceInput {
-	latitude1: Float!
-  longitude1: Float!
-  altitude1: Float!
-  latitude2: Float!
-	longitude2: Float!
-	altitude2: Float!
 }
