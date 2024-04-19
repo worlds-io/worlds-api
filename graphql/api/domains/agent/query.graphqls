@@ -1,4 +1,4 @@
-type Query {
+extend type Query {
 	agent(id: ID!): Agent
 	agentEvent(id: ID!): AgentEvent
 	agentEvents(filter: FilterAgentEventInput): AgentEventConnection 
