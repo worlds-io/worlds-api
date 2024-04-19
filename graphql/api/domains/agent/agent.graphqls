@@ -18,3 +18,15 @@ type AgentEvent {
 	timezone: String!
 	metadata: JSON
 }
+
+type AgentEventInput {
+	id: ID!
+	agentId: String!
+	type: String!
+	subType: String
+	startTime: DateTimeOffset!
+	endTime: DateTimeOffset
+	position: String!
+	timezone: String!
+	metadata: JSON
+}
