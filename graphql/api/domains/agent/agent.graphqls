@@ -19,7 +19,7 @@ type AgentEvent {
 	metadata: JSON
 }
 
-type AgentEventInput {
+input AgentEventInput {
 	id: ID!
 	agentId: String!
 	type: String!
