@@ -1,4 +1,4 @@
-type Example{
+type Example {
 	example: String
 }
 

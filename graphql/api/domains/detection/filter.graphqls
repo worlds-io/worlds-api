@@ -1,7 +1,7 @@
 input FilterDetectionInput {
-	deviceId: FilterIDInput
-	zoneId: FilterIDInput
-	geofenceId: FilterIDInput 
+	deviceId: FilterIntInput
+	zoneId: FilterIntInput
+	geofenceId: FilterIntInput 
 	tag: FilterStringInput
 	time: FilterDateTimeOffsetInput
 
@@ -11,9 +11,9 @@ input FilterDetectionInput {
 }
 
 input FilterDetectionActivityInput {
-	deviceId: FilterIDInput
-	zoneId: FilterIDInput
-	geofenceId: FilterIDInput
+	deviceId: FilterIntInput
+	zoneId: FilterIntInput
+	geofenceId: FilterIntInput
 	tag: FilterStringInput
 	type: FilterStringInput
 
