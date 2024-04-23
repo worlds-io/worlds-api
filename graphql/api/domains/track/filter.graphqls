@@ -2,7 +2,7 @@ input FilterTrackInput {
 	deviceId: FilterIDInput
 	time: FilterDateTimeOffsetInput
 
-	# and: [FilterTrackInput!]
-	# or: [FilterTrackInput!]
-	# not: FilterTrackInput
+	and: [FilterTrackInput!]
+	or: [FilterTrackInput!]
+	not: FilterTrackInput
 }

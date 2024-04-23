@@ -5,9 +5,9 @@ input FilterDetectionInput {
 	tag: FilterStringInput
 	time: FilterDateTimeOffsetInput
 
-	# and: [FilterDetectionInput!]
-	# or: [FilterDetectionInput!]
-	# not: FilterDetectionInput
+	and: [FilterDetectionInput!]
+	or: [FilterDetectionInput!]
+	not: FilterDetectionInput
 }
 
 input FilterDetectionActivityInput {
@@ -17,7 +17,7 @@ input FilterDetectionActivityInput {
 	tag: FilterStringInput
 	type: FilterStringInput
 
-	# and: [FilterDetectionActivityInput!]
-	# or: [FilterDetectionActivityInput!]
-	# not: FilterDetectionActivityInput
+	and: [FilterDetectionActivityInput!]
+	or: [FilterDetectionActivityInput!]
+	not: FilterDetectionActivityInput
 }
