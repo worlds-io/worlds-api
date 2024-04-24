@@ -1,5 +1,5 @@
 type Detection {
-	id: ID!
+	globalTrackId: ID!
 	cameraId: Int!
 	tag: String!
 	timestamp: DateTimeOffset!
