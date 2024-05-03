@@ -12,6 +12,8 @@ type Detection {
 	geofenceEvents: [GeofenceEvent!]!
 	properties: DetectionProperties
 	metadata: JSON
+	createdAt: DateTimeOffset
+	updatedAt: DateTimeOffset
 }
 
 type DetectionProperties {
