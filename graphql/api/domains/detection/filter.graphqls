@@ -1,0 +1,23 @@
+input FilterDetectionInput {
+	deviceId: FilterIntInput
+	zoneId: FilterIntInput
+	geofenceId: FilterIntInput 
+	tag: FilterStringInput
+	time: FilterDateTimeOffsetInput
+
+	and: [FilterDetectionInput!]
+	or: [FilterDetectionInput!]
+	not: FilterDetectionInput
+}
+
+input FilterDetectionActivityInput {
+	deviceId: FilterIntInput
+	zoneId: FilterIntInput
+	geofenceId: FilterIntInput
+	tag: FilterStringInput
+	type: FilterStringInput
+
+	and: [FilterDetectionActivityInput!]
+	or: [FilterDetectionActivityInput!]
+	not: FilterDetectionActivityInput
+}

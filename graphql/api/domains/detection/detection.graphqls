@@ -1,5 +1,6 @@
 type Detection {
-	id: ID!
+	id: ID
+	globalTrackId: String
 	cameraId: Int!
 	tag: String!
 	timestamp: DateTimeOffset!
@@ -11,6 +12,8 @@ type Detection {
 	geofenceEvents: [GeofenceEvent!]!
 	properties: DetectionProperties
 	metadata: JSON
+	createdAt: DateTimeOffset
+	updatedAt: DateTimeOffset
 }
 
 type DetectionProperties {

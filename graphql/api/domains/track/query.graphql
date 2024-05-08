@@ -1,4 +1,0 @@
-type Query {
-	track(id: ID!, timestamp: DateTimeOffset): Track
-	tracks(filter: FilterTrackInput!): TrackConnection
-}

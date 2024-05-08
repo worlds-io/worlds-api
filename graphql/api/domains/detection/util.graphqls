@@ -1,0 +1,10 @@
+type DetectionConnection {
+	pageInfo: PageInfo!
+	edges: [DetectionEdge]!
+}
+
+type DetectionEdge {
+	node: Detection
+	cursor: String!
+}
+

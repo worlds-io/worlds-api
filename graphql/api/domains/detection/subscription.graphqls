@@ -1,4 +1,4 @@
-type Subscription {
+extend type Subscription {
 	detectionActivity(filter: FilterDetectionActivityInput): Detection 
 }
 

@@ -1,0 +1,3 @@
+extend type Query {
+	detections(filter: FilterDetectionInput, first: Int, after: String, last: Int, before: String): DetectionConnection
+}

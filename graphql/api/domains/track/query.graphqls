@@ -1,0 +1,4 @@
+extend type Query {
+	track(id: ID!, timestamp: DateTimeOffset): Track
+	tracks(filter: FilterTrackInput!, first: Int, after: String, last: Int, before: String): TrackConnection
+}

@@ -1,4 +1,0 @@
-type Query {
-	geofence(id: ID!): Geofence
-	geofenceEvents(filter: FilterGeofenceEventInput!): GeofenceEventConnection
-}
