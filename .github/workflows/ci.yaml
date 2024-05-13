@@ -1,0 +1,25 @@
+name: "CI"
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  release:
+    types: [released]
+  schedule:
+    - cron: "0 0 1 * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@main
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@main
