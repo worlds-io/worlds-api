@@ -1,3 +1,14 @@
-extend type Query {
-	detections(filter: FilterDetectionInput, first: Int, after: String, last: Int, before: String): DetectionConnection
+enum DetectionsSortField {
+	DETECTION_TIME,
+	GLOBAL_TRACK_ID
 }
+
+input DetectionsSort {
+	field: DetectionsSortField,
+	direction: SortDirection
+}
+
+extend type Query {
+	detections(filter: FilterDetectionInput, first: Int, after: String, sort: [DetectionsSort] = [{field: DETECTION_TIME, direction: ASC}, {field: GLOBAL_TRACK_ID, direction: ASC}]): DetectionConnection
+}
+
