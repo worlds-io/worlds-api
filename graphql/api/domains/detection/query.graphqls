@@ -1,5 +1,5 @@
 enum DetectionsSortField {
-	TIMESTAMP,
+	DETECTION_TIME,
 	GLOBAL_TRACK_ID
 }
 
@@ -9,6 +9,6 @@ input DetectionsSort {
 }
 
 extend type Query {
-	detections(filter: FilterDetectionInput, first: Int, after: String, sorts: [DetectionsSort!] = [{field: TIMESTAMP, direction: ASC}, {field: GLOBAL_TRACK_ID, direction: ASC}]): DetectionConnection
+	detections(filter: FilterDetectionInput, first: Int, after: String, sorts: [DetectionsSort!] = [{field: DETECTION_TIME, direction: ASC}, {field: GLOBAL_TRACK_ID, direction: ASC}]): DetectionConnection
 }
 
