@@ -1,4 +1,4 @@
 extend type Query {
 	sensor(id: ID!): Sensor
-	measurements(filter: FilterMeasurementInput!, first: Int, after: String, last: Int, before: String): MeasurementConnection
+	measurements(filter: FilterMeasurementInput!, first: Int, after: String): MeasurementConnection
 }
