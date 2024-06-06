@@ -8,6 +8,8 @@ type Detection {
 	polygon: JSON
 	position: JSON
 	track: Track
+	zoneIds: [Int!]!
+	geofenceIds: [Int!]!
 	zoneEvents: [ZoneEvent!]!
 	geofenceEvents: [GeofenceEvent!]!
 	properties: DetectionProperties
