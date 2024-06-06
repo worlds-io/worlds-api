@@ -1,5 +1,5 @@
 type Geofence {
-	id: ID!
+	id: Int!
 	name: String!
 	position: JSON!
 	rotation: JSON!
