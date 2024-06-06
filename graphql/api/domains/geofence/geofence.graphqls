@@ -1,9 +1,9 @@
 type Geofence {
 	id: ID!
 	name: String!
-	position: GeographicPosition!
-	rotation: Vector3!
-	dimensions: Vector3!
+	position: JSON!
+	rotation: JSON!
+	dimensions: JSON!
 	active: Boolean!
 }
 
@@ -13,7 +13,7 @@ type GeofenceEvent {
 	track: Track!
 	tag: String!
 	type: String!
-	position: GeographicPosition!
+	position: JSON!
 	timestamp: DateTimeOffset!
 	metadata: JSON
 }
