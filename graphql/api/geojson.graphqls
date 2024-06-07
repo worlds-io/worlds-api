@@ -16,11 +16,15 @@ type GeoJSONMultiPolygon {
     crs: GeoJSONCRS
 }
 
-type GeoJSONCRS {
-    properties: GeoJSONCRSProperties
-    type: String
+union GeoJSONGeometry = GeoJSONPoint | GeoJSONPolygon | GeoJSONMultiPolygon
+
+type GeoJSONFeature {
+    type: String!
+    geometry: GeoJSONGeometry
+    properties: JSON
 }
 
-type GeoJSONCRSProperties {
-    name: String
+type GeoJSONCRS {
+    type: String
+    properties: JSON
 }
