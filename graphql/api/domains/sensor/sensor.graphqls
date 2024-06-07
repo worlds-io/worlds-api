@@ -4,8 +4,8 @@ type Sensor {
 	name: String!
 	description: String
 	type: String!
-	polygon: String!
-	position: String!
+	polygon: GeoJSONPolygon!
+	position: GeoJSONPoint!
 	configuration: JSON
 	metadata: JSON
 }
