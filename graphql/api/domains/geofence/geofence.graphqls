@@ -1,7 +1,7 @@
 type Geofence {
 	id: Int!
 	name: String!
-	polygon: GeofenceBounds!
+	bounds: GeofenceBounds!
 	active: Boolean!
 }
 
