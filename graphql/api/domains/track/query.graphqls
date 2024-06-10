@@ -1,4 +1,14 @@
+enum TracksSortField {
+	ID,
+	TRACK_START_TIME
+}
+
+input TracksSort {
+	field: TracksSortField!,
+	direction: SortDirection!
+}
+
 extend type Query {
 	track(id: ID!, timestamp: DateTimeOffset): Track
-	tracks(filter: FilterTrackInput!, first: Int, after: String): TrackConnection
+	tracks(filter: FilterTrackInput!, first: Int, after: String, sort: [TracksSort!] = [{field: TRACK_START_TIME, direction: ASC}, {field: ID, direction: ASC}]): TrackConnection
 }
