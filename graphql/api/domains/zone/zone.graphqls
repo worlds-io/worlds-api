@@ -2,7 +2,8 @@
 type Zone {
 	id: Int!
 	cameraId: Int!
-	polygon: JSON! 
+	name: String!
+	polygon: GeoJSONPolygon! 
 	active: Boolean!
 }
 

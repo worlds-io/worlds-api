@@ -1,0 +1,30 @@
+type GeoJSONPoint {
+    type: String!
+    coordinates: [Float!]!
+    crs: GeoJSONCRS
+}
+
+type GeoJSONPolygon {
+    type: String!
+    coordinates: [[Float!]!]!
+    crs: GeoJSONCRS
+}
+
+type GeoJSONMultiPolygon {
+    type: String!
+    coordinates: [[[Float!]!]!]!
+    crs: GeoJSONCRS
+}
+
+union GeoJSONGeometry = GeoJSONPoint | GeoJSONPolygon | GeoJSONMultiPolygon
+
+type GeoJSONFeature {
+    type: String!
+    geometry: GeoJSONGeometry
+    properties: JSON
+}
+
+type GeoJSONCRS {
+    type: String
+    properties: JSON
+}

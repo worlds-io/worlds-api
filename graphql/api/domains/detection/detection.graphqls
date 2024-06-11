@@ -5,8 +5,8 @@ type Detection {
 	tag: String!
 	timestamp: DateTimeOffset!
 	box: Box
-	polygon: JSON
-	position: JSON
+	polygon: GeoJSONPolygon
+	position: GeoJSONPoint
 	track: Track
 	zoneIds: [Int!]!
 	geofenceIds: [Int!]!

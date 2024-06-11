@@ -1,9 +1,7 @@
 type Geofence {
 	id: Int!
 	name: String!
-	position: JSON!
-	rotation: JSON!
-	dimensions: JSON!
+	bounds: GeofenceBounds!
 	active: Boolean!
 }
 
@@ -13,7 +11,12 @@ type GeofenceEvent {
 	track: Track!
 	tag: String!
 	type: String!
-	position: JSON!
+	position: GeoJSONPoint!
 	timestamp: DateTimeOffset!
 	metadata: JSON
+}
+
+type GeofenceBounds {
+	polygon: GeoJSONPolygon!
+	height: Float
 }
