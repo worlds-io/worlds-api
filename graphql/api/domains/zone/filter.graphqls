@@ -1,5 +1,5 @@
 input FilterZoneEventInput {
-	zoneId: FilterIDInput
+	zoneId: FilterIntInput
 	time: FilterDateTimeOffsetInput
 
 	and: [FilterZoneEventInput!]

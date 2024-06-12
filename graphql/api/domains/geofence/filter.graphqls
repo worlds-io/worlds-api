@@ -1,5 +1,5 @@
 input FilterGeofenceEventInput {
-	geofenceId: FilterIDInput
+	geofenceId: FilterIntInput
 	time: FilterDateTimeOffsetInput
 
 	and: [FilterGeofenceEventInput!]
