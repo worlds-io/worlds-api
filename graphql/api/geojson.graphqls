@@ -6,13 +6,13 @@ type GeoJSONPoint {
 
 type GeoJSONPolygon {
     type: String!
-    coordinates: [[Float!]!]!
+    coordinates: [[[Float!]!]!]!
     crs: GeoJSONCRS
 }
 
 type GeoJSONMultiPolygon {
     type: String!
-    coordinates: [[[Float!]!]!]!
+    coordinates: [[[[Float!]!]!]!]!
     crs: GeoJSONCRS
 }
 
