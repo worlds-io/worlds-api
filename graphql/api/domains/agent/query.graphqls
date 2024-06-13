@@ -1,5 +1,5 @@
 extend type Query {
 	agent(id: ID!): Agent
 	agentEvent(id: ID!): AgentEvent
-	agentEvents(filter: FilterAgentEventInput, first: Int, after: String, last: Int, before: String): AgentEventConnection 
+	agentEvents(filter: FilterAgentEventInput, first: Int, after: String): AgentEventConnection 
 }
