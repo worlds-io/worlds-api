@@ -1,4 +1,4 @@
 extend type Query {
-	geofence(id: ID!): Geofence
+	geofence(id: Int!): Geofence
 	geofenceEvents(filter: FilterGeofenceEventInput!, first: Int, after: String): GeofenceEventConnection
 }

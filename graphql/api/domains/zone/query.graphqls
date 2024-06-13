@@ -1,4 +1,4 @@
 extend type Query {
-	zone(id: ID!): Zone
+	zone(id: Int!): Zone
 	zoneEvents(filter: FilterZoneEventInput!, first: Int, after: String): ZoneEventConnection
 }
