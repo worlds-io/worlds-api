@@ -1,6 +1,6 @@
 type Sensor {
 	id: ID!
-	cameraId: Int!
+	cameraId: ID!
 	name: String!
 	description: String
 	type: String!
