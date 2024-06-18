@@ -1,15 +1,15 @@
 type Detection {
 	id: ID
 	globalTrackId: String
-	cameraId: Int!
+	cameraId: ID!
 	tag: String!
 	timestamp: DateTimeOffset!
 	box: Box
 	polygon: GeoJSONPolygon
 	position: GeoJSONPoint
 	track: Track
-	zoneIds: [Int!]!
-	geofenceIds: [Int!]!
+	zoneIds: [ID!]!
+	geofenceIds: [ID!]!
 	zoneEvents: [ZoneEvent!]!
 	geofenceEvents: [GeofenceEvent!]!
 	properties: DetectionProperties

@@ -1,5 +1,5 @@
 type Geofence {
-	id: Int!
+	id: ID!
 	name: String!
 	bounds: GeofenceBounds!
 	active: Boolean!
