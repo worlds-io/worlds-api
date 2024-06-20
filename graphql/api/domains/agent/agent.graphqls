@@ -1,9 +1,8 @@
 type Agent {
 	id: ID!
 	name: String!
-	type: String!
 	description: String!
-	timezone: String!
+	timezone: String
 	active: Boolean!
 }
 
@@ -14,7 +13,7 @@ type AgentEvent {
 	subType: String
 	startTime: DateTimeOffset!
 	endTime: DateTimeOffset
-	position: String!
+	position: GeoJSONPoint
 	timezone: String!
 	metadata: JSON
 }
@@ -26,7 +25,7 @@ input AgentEventInput {
 	subType: String
 	startTime: DateTimeOffset!
 	endTime: DateTimeOffset
-	position: String!
-	timezone: String!
+	position: GeoJSONPoint
+	timezone: String
 	metadata: JSON
 }
