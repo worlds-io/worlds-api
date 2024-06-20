@@ -17,3 +17,13 @@ input FilterAgentEventInput {
 	or: [FilterAgentEventInput!]
 	not: FilterAgentEventInput
 }
+
+input FilterAgentEventActivityInput {
+	agentId: FilterIDInput
+	type: FilterStringInput
+	subType: FilterStringInput
+
+	and: [FilterAgentEventActivityInput!]
+	or: [FilterAgentEventActivityInput!]
+	not: FilterAgentEventActivityInput
+}
