@@ -1,3 +1,13 @@
+type AgentConnection {
+	pageInfo: PageInfo!
+	edges: [AgentEdge]!
+}
+
+type AgentEdge {
+	node: Agent
+	cursor: String!
+}
+
 type AgentEventConnection {
 	pageInfo: PageInfo!
 	edges: [AgentEventEdge]!

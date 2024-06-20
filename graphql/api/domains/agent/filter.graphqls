@@ -1,3 +1,12 @@
+input FilterAgentInput {
+	id: FilterIDInput
+	name: FilterStringInput
+
+	and: [FilterAgentInput!]
+	or: [FilterAgentInput!]
+	not: FilterAgentInput
+}
+
 input FilterAgentEventInput {
 	agentId: FilterIDInput
 	type: FilterStringInput
