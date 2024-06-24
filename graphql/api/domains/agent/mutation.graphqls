@@ -1,3 +1,4 @@
 extend type Mutation {
+	createAgent(agent: AgentInput): Agent
 	createAgentEvent(agentEvent: AgentEventInput): AgentEvent
 }
