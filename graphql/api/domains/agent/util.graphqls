@@ -1,6 +1,6 @@
 type AgentEventConnection {
 	pageInfo: PageInfo!
-	edges: [AgentEventEdge]!
+	edges: [AgentEventEdge!]!
 }
 
 type AgentEventEdge {

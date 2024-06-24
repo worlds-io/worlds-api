@@ -1,6 +1,6 @@
 type DetectionConnection {
 	pageInfo: PageInfo!
-	edges: [DetectionEdge]!
+	edges: [DetectionEdge!]!
 }
 
 type DetectionEdge {

@@ -1,6 +1,6 @@
 type TrackConnection {
 	pageInfo: PageInfo!
-	edges: [TrackEdge]!
+	edges: [TrackEdge!]!
 }
 
 type TrackEdge {
