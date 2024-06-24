@@ -1,6 +1,6 @@
 type MeasurementConnection {
 	pageInfo: PageInfo!
-	edges: [MeasurementEdge]!
+	edges: [MeasurementEdge!]!
 }
 
 type MeasurementEdge {

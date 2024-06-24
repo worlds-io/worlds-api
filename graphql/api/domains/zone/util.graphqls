@@ -1,6 +1,6 @@
 type ZoneEventConnection {
 	pageInfo: PageInfo!
-	edges: [ZoneEventEdge]!
+	edges: [ZoneEventEdge!]!
 }
 
 type ZoneEventEdge {
