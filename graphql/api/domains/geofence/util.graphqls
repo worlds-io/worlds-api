@@ -1,6 +1,6 @@
 type GeofenceEventConnection {
 	pageInfo: PageInfo!
-	edges: [GeofenceEventEdge!]!
+	edges: [GeofenceEventEdge]!
 }
 
 type GeofenceEventEdge {
