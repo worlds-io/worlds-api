@@ -32,5 +32,10 @@ type GeoJSONCRS {
 input GeoJSONPointInput {
     type: String!
     coordinates: [Float!]!
-    crs: GeoJSONCRS
+    crs: GeoJSONCRSInput
+}
+
+input GeoJSONCRSInput {
+    type: String
+    properties: JSON
 }
