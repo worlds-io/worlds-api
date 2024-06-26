@@ -33,7 +33,7 @@ input AgentEventInput {
 	subType: String
 	startTime: DateTimeOffset!
 	endTime: DateTimeOffset
-	position: GeoJSONPoint
+	position: GeoJSONPointInput
 	timezone: String
 	metadata: JSON
 }
