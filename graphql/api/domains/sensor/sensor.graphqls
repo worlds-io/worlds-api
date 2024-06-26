@@ -1,11 +1,11 @@
 type Sensor {
 	id: ID!
-	cameraId: ID!
+	cameraId: ID
 	name: String!
 	description: String
 	type: String!
-	polygon: GeoJSONPolygon!
-	position: GeoJSONPoint!
+	polygon: GeoJSONPolygon
+	position: GeoJSONPoint
 	configuration: JSON
 	metadata: JSON
 }
