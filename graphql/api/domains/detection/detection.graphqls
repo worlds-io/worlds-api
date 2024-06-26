@@ -1,5 +1,4 @@
 type Detection {
-	id: ID
 	globalTrackId: String
 	cameraId: ID!
 	tag: String!

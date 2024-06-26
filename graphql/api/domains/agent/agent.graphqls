@@ -27,6 +27,7 @@ type AgentEvent {
 }
 
 input AgentEventInput {
+	id: ID
 	agentId: String!
 	type: String!
 	subType: String
