@@ -11,17 +11,7 @@ type Detection {
 	geofenceIds: [ID!]!
 	zoneEvents: [ZoneEvent!]!
 	geofenceEvents: [GeofenceEvent!]!
-	properties: DetectionProperties
 	metadata: JSON
 	createdAt: DateTimeOffset
 	updatedAt: DateTimeOffset
 }
-
-type DetectionProperties {
-	color: String
-	size: Float
-	shape: String
-	pose: Float
-	relationships: JSON
-}
-
