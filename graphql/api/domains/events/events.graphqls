@@ -16,7 +16,7 @@ input EventProducerInput {
 
 type Event {
 	id: ID!
-	EventProducer: EventProducer!
+	eventProducer: EventProducer!
 	type: String!
 	subType: String
 	startTime: DateTimeOffset!
@@ -28,7 +28,7 @@ type Event {
 
 input EventInput {
 	id: ID
-	EventProducer: String!
+	eventProducer: String!
 	type: String!
 	subType: String
 	startTime: DateTimeOffset!
