@@ -1,4 +1,4 @@
-type Agent {
+type EventProducer {
 	id: ID!
 	name: String!
 	description: String
@@ -6,7 +6,7 @@ type Agent {
 	active: Boolean!
 }
 
-input AgentInput {
+input EventProducerInput {
 	id: ID
 	name: String!
 	description: String
@@ -14,9 +14,9 @@ input AgentInput {
 	active: Boolean
 }
 
-type AgentEvent {
+type Event {
 	id: ID!
-	agent: Agent!
+	eventProducer: EventProducer!
 	type: String!
 	subType: String
 	startTime: DateTimeOffset!
@@ -26,9 +26,9 @@ type AgentEvent {
 	metadata: JSON
 }
 
-input AgentEventInput {
+input EventInput {
 	id: ID
-	agentId: String!
+	eventProducerId: String!
 	type: String!
 	subType: String
 	startTime: DateTimeOffset!

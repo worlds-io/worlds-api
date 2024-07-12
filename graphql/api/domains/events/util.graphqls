@@ -1,0 +1,20 @@
+type EventProducerConnection {
+	pageInfo: PageInfo!
+	edges: [EventProducerEdge]!
+}
+
+type EventProducerEdge {
+	node: EventProducer
+	cursor: String!
+}
+
+type EventConnection {
+	pageInfo: PageInfo!
+	edges: [EventEdge]!
+}
+
+type EventEdge {
+	node: Event
+	cursor: String!
+}
+

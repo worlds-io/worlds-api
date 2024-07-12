@@ -1,0 +1,29 @@
+input FilterEventProducerInput {
+	id: FilterIDInput
+	name: FilterStringInput
+
+	and: [FilterEventProducerInput!]
+	or: [FilterEventProducerInput!]
+	not: FilterEventProducerInput
+}
+
+input FilterEventInput {
+	eventProducerId: FilterIDInput
+	type: FilterStringInput
+	subType: FilterStringInput
+	time: FilterDateTimeOffsetInput
+
+	and: [FilterEventInput!]
+	or: [FilterEventInput!]
+	not: FilterEventInput
+}
+
+input FilterEventActivityInput {
+	eventProducerId: FilterIDInput
+	type: FilterStringInput
+	subType: FilterStringInput
+
+	and: [FilterEventActivityInput!]
+	or: [FilterEventActivityInput!]
+	not: FilterEventActivityInput
+}

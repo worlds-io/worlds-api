@@ -1,0 +1,27 @@
+enum EventProducersSortField {
+	ID,
+	EVENT_PRODUCER_NAME
+}
+
+enum EventsSortField {
+	ID,
+	START_TIME
+}
+
+input EventProducersSort {
+	field: EventProducersSortField!
+	direction: SortDirection!
+}
+
+input EventsSort {
+	field: EventsSortField!
+	direction: SortDirection!
+}
+
+
+extend type Query {
+	eventProducer(id: ID!): EventProducer
+	eventProducers(filter: FilterEventProducerInput, first: Int, after: String, sort: [EventProducersSort!] = [{field: EVENT_PRODUCER_NAME, direction: ASC}, {field: ID, direction: ASC}]): EventProducerConnection
+	event(id: ID!): Event
+	events(filter: FilterEventInput, first: Int, after: String, sort: [EventsSort!] = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]): EventConnection 
+}
