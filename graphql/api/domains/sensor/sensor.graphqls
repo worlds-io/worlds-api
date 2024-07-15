@@ -1,19 +1,33 @@
+enum SensorType {
+	NUMBER,
+	BOOLEAN,
+	TEXT
+}
+
 type Sensor {
 	id: ID!
-	cameraId: ID
 	name: String!
 	description: String
-	type: String!
-	polygon: GeoJSONPolygon
-	position: GeoJSONPoint
-	configuration: JSON
+	type: SensorType!
 	metadata: JSON
 }
 
 type Measurement {
 	id:ID!
 	sensor: Sensor!
-	timestamp: DateTimeOffset
+	timestamp: DateTimeOffset!
 	value: String!
+}
+
+input SensorInput {
+	name: String!
+	description: String
+	type: SensorType!
 	metadata: JSON
+}
+
+input MeasurementInput {
+	sensorId: ID!
+	timestamp: DateTimeOffset!
+	value: String!
 }
