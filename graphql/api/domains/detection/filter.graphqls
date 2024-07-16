@@ -1,5 +1,5 @@
 input FilterDetectionInput {
-	cameraId: FilterIDInput
+	deviceId: FilterIDInput
 	zoneId: FilterIDInput
 	geofenceId: FilterIDInput 
 	tag: FilterStringInput
@@ -11,7 +11,7 @@ input FilterDetectionInput {
 }
 
 input FilterDetectionActivityInput {
-	cameraId: FilterIDInput
+	deviceId: FilterIDInput
 	zoneId: FilterIDInput
 	geofenceId: FilterIDInput
 	tag: FilterStringInput
