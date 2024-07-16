@@ -4,12 +4,5 @@ type Track {
 	startTime: DateTimeOffset!
 	endTime: DateTimeOffset
 	detections: [Detection!]!
-	properties: TrackProperties
 	metadata: JSON
-}
-
-type TrackProperties {
-	vector: [[Int!]!]!
-	motion: Float
-	identity: JSON
 }
