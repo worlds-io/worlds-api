@@ -12,7 +12,7 @@ type ZoneEvent {
 	zone: Zone!
 	track: Track!
 	tag: String!
-	type: String!
+	type: ActivityType!
 	box: Box!
 	timestamp: DateTimeOffset!
 	metadata: JSON
