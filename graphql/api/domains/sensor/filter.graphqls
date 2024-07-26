@@ -1,6 +1,6 @@
 input FilterMeasurementInput {
 	sensorId: FilterIDInput
-	time: FilterDateTimeOffsetInput
+	time: FilterDateTimeOffsetInput!
 
 	and: [FilterMeasurementInput!]
 	or: [FilterMeasurementInput!]
@@ -9,7 +9,6 @@ input FilterMeasurementInput {
 
 input FilterMeasurementActivityInput {
 	sensorId: FilterIDInput
-	type: FilterStringInput
 
 	and: [FilterMeasurementActivityInput!]
 	or: [FilterMeasurementActivityInput!]

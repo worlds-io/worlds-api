@@ -1,4 +1,4 @@
 extend type Mutation {
-	createEventProducer(eventProducer: EventProducerInput): EventProducer
-	createEvent(event: EventInput): Event
+	createEventProducer(eventProducer: EventProducerInput!): EventProducer
+	createEvent(event: EventInput!): Event
 }

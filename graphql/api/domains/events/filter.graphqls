@@ -11,7 +11,7 @@ input FilterEventInput {
 	eventProducerId: FilterIDInput
 	type: FilterStringInput
 	subType: FilterStringInput
-	time: FilterDateTimeOffsetInput
+	time: FilterDateTimeOffsetInput!
 
 	and: [FilterEventInput!]
 	or: [FilterEventInput!]

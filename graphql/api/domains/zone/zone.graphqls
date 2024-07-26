@@ -1,7 +1,7 @@
 
 type Zone {
 	id: ID!
-	cameraId: ID!
+	deviceId: ID!
 	name: String!
 	polygon: GeoJSONPolygon! 
 	active: Boolean!
@@ -12,8 +12,7 @@ type ZoneEvent {
 	zone: Zone!
 	track: Track!
 	tag: String!
-	type: String!
-	box: Box!
+	type: ActivityType!
 	timestamp: DateTimeOffset!
 	metadata: JSON
 }

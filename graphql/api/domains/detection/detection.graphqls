@@ -1,9 +1,8 @@
 type Detection {
 	globalTrackId: String
-	cameraId: ID!
+	deviceId: ID
 	tag: String!
 	timestamp: DateTimeOffset!
-	box: Box
 	polygon: GeoJSONPolygon
 	position: GeoJSONPoint
 	track: Track

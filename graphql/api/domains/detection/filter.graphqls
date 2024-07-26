@@ -3,7 +3,7 @@ input FilterDetectionInput {
 	zoneId: FilterIDInput
 	geofenceId: FilterIDInput 
 	tag: FilterStringInput
-	time: FilterDateTimeOffsetInput
+	time: FilterDateTimeOffsetInput!
 
 	and: [FilterDetectionInput!]
 	or: [FilterDetectionInput!]

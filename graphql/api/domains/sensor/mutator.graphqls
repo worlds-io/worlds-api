@@ -1,0 +1,4 @@
+extend type Mutation {
+    createSensor(sensor: SensorInput!): Sensor
+    createMeasurement(measurement: MeasurementInput!): Measurement
+}

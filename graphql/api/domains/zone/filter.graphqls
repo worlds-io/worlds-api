@@ -1,6 +1,6 @@
 input FilterZoneEventInput {
 	zoneId: FilterIDInput
-	time: FilterDateTimeOffsetInput
+	time: FilterDateTimeOffsetInput!
 
 	and: [FilterZoneEventInput!]
 	or: [FilterZoneEventInput!]
