@@ -1,4 +1,15 @@
+enum GeofenceEventsSortField {
+	ID,
+	OCCURRED
+}
+
+input GeofenceEventsSort {
+	field: GeofenceEventsSortField!
+	direction: SortDirection!
+}
+
+
 extend type Query {
 	geofence(id: ID!): Geofence
-	geofenceEvents(filter: FilterGeofenceEventInput!, first: Int! = 20, after: String): GeofenceEventConnection
+	geofenceEvents(filter: FilterGeofenceEventInput!, first: Int! = 20, after: String, sort: [GeofenceEventsSortField!] = [{field: OCCURRED, direction: ASC}, {field: ID, direction: ASC}]): GeofenceEventConnection
 }
