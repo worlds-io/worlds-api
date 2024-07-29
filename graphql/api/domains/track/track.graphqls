@@ -1,8 +1,18 @@
 type Track {
 	id: ID!
+	deviceIds: [ID!]
 	tag: String!
 	startTime: DateTimeOffset!
 	endTime: DateTimeOffset
 	detections: [Detection!]!
+	metadata: JSON
+}
+
+type TrackInput {
+	id: ID
+	deviceIds: [ID!]
+	tag: String!
+	startTime: DateTimeOffset!
+	endTime: DateTimeOffset
 	metadata: JSON
 }
