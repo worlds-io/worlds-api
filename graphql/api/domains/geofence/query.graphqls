@@ -11,5 +11,5 @@ input GeofenceEventsSort {
 
 extend type Query {
 	geofence(id: ID!): Geofence
-	geofenceEvents(filter: FilterGeofenceEventInput!, first: Int! = 20, after: String, sort: [GeofenceEventsSortField!] = [{field: OCCURRED, direction: ASC}, {field: ID, direction: ASC}]): GeofenceEventConnection
+	geofenceEvents(filter: FilterGeofenceEventInput!, first: Int! = 20, after: String, sort: [GeofenceEventsSort!] = [{field: OCCURRED, direction: ASC}, {field: ID, direction: ASC}]): GeofenceEventConnection
 }
