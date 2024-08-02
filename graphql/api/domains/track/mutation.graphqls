@@ -1,3 +1,4 @@
 extend type Mutation {
-	updateTrackMetadata(id: ID!, metadata: JSON): Track
+	createTrack(track: TrackInput!): Track
+	updateTrack(track: TrackInput!): Track
 }
