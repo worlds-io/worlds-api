@@ -1,0 +1,9 @@
+input FilterDeviceInput {
+    id: FilterIDInput
+    uuid: FilterIDInput
+    name: FilterStringInput
+
+	and: [FilterDeviceInput!]
+	or: [FilterDeviceInput!]
+	not: FilterDeviceInput
+}
