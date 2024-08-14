@@ -1,0 +1,10 @@
+type DeviceConnection {
+	pageInfo: PageInfo!
+	edges: [DeviceEdge]!
+}
+
+type DeviceEdge {
+	node: Device
+	cursor: String!
+}
+
