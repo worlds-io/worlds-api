@@ -1,0 +1,8 @@
+type Device {
+    id: ID!
+    uuid: ID!
+    externalId: ID
+    name: String!
+    enabled: Boolean!
+}
+
