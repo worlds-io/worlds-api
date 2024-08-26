@@ -12,6 +12,8 @@ type ZoneEvent {
 	track: Track!
 	tag: String!
 	type: ActivityType!
-	timestamp: DateTimeOffset!
-	metadata: JSON
+	startTime: DateTimeOffset!
+	endTime: DateTimeOffset
+	polygon: GeoJSONMultiPolygon
 }
+ 
