@@ -10,5 +10,5 @@ input DevicesSort {
 
 extend type Query {
     device(id: ID!): Device
-    devices(filter: FilterDeviceInput, first: Int! = 20, after: String, sort: [DevicesSort!] = [{field: NAME, direction: ASC}, {field: ID, direction: ASC}]): DeviceConnection
+    devices(filter: FilterDeviceInput, first: Int! = 20, after: String, sort: [DevicesSort!]! = [{field: NAME, direction: ASC}, {field: ID, direction: ASC}]): DeviceConnection
 }

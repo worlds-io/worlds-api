@@ -10,5 +10,5 @@ input TracksSort {
 
 extend type Query {
 	track(id: ID!, timestamp: DateTimeOffset): Track
-	tracks(filter: FilterTrackInput!, first: Int! = 20, after: String, sort: [TracksSort!] = [{field: TRACK_START_TIME, direction: ASC}, {field: ID, direction: ASC}]): TrackConnection
+	tracks(filter: FilterTrackInput!, first: Int! = 20, after: String, sort: [TracksSort!]! = [{field: TRACK_START_TIME, direction: ASC}, {field: ID, direction: ASC}]): TrackConnection
 }
