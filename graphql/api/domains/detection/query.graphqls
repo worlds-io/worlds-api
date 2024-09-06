@@ -9,6 +9,6 @@ input DetectionsSort {
 }
 
 extend type Query {
-	detections(filter: FilterDetectionInput!, first: Int! = 20, after: String, sort: [DetectionsSort!] = [{field: DETECTION_TIME, direction: ASC}, {field: GLOBAL_TRACK_ID, direction: ASC}]): DetectionConnection
+	detections(filter: FilterDetectionInput!, first: Int! = 20, after: String, sort: [DetectionsSort!]! = [{field: DETECTION_TIME, direction: ASC}, {field: GLOBAL_TRACK_ID, direction: ASC}]): DetectionConnection
 }
 

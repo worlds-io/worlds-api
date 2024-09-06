@@ -52,12 +52,7 @@ input FilterStringInput {
 Standard filtration for DateTimeOffset fields
 """
 input FilterDateTimeOffsetInput {
-  ne: DateTimeOffset # "not equal to"
   eq: DateTimeOffset # "equal to"
-  le: DateTimeOffset # "less than or equal to"
-  lt: DateTimeOffset # "less than"
-  ge: DateTimeOffset # "greater than or equal to"
-  gt: DateTimeOffset # "greater than"
   between: [DateTimeOffset!]
   attributeExists: Boolean
 }

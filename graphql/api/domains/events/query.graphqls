@@ -21,7 +21,7 @@ input EventsSort {
 
 extend type Query {
 	eventProducer(id: ID!): EventProducer
-	eventProducers(filter: FilterEventProducerInput, first: Int = 20, after: String, sort: [EventProducersSort!] = [{field: EVENT_PRODUCER_NAME, direction: ASC}, {field: ID, direction: ASC}]): EventProducerConnection
+	eventProducers(filter: FilterEventProducerInput, first: Int! = 20, after: String, sort: [EventProducersSort!]! = [{field: EVENT_PRODUCER_NAME, direction: ASC}, {field: ID, direction: ASC}]): EventProducerConnection
 	event(id: ID!): Event
-	events(filter: FilterEventInput!, first: Int! = 20, after: String, sort: [EventsSort!] = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]): EventConnection 
+	events(filter: FilterEventInput!, first: Int! = 20, after: String, sort: [EventsSort!]! = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]): EventConnection 
 }
