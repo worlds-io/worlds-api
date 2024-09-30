@@ -40,7 +40,6 @@ input CreateEventInput {
 
 input UpdateEventInput {
 	id: ID!
-	eventProducerId: String!
 	type: String!
 	subType: String
 	startTime: DateTimeOffset!
