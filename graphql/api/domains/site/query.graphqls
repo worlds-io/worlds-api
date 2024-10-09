@@ -1,0 +1,15 @@
+enum SitesSortField {
+    ID,
+    NAME
+}
+
+input SitesSort {
+	field: SitesSortField!
+	direction: SortDirection!
+}
+
+
+extend type Query {
+    site(id: ID!): Site
+    sites(filter: FilterSiteInput, first: Int! = 20, after: String, sort: [SitesSort!]! = [{field: NAME, direction: ASC}, {field: ID, direction: ASC}]): SiteConnection
+}

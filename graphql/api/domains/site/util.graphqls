@@ -1,0 +1,9 @@
+type SiteConnection {
+	pageInfo: PageInfo!
+	edges: [SiteEdge]!
+}
+
+type SiteEdge {
+	node: Site
+	cursor: String!
+}
