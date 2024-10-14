@@ -2,6 +2,6 @@ input FilterSiteInput {
     id: FilterIDInput
     
     and: [FilterSiteInput!]
-    or: [FilterSiteInput]
+    or: [FilterSiteInput!]
     not: FilterSiteInput
 }
