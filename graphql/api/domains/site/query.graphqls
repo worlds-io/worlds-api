@@ -4,8 +4,8 @@ enum SitesSortField {
 }
 
 input SitesSort {
-	field: SitesSortField!
-	direction: SortDirection!
+    field: SitesSortField!
+    direction: SortDirection!
 }
 
 
