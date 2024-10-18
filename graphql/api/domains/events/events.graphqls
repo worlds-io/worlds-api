@@ -24,6 +24,7 @@ type Event {
 	position: GeoJSONPoint
 	timezone: String
 	metadata: JSON
+	images: [Image!]!
 }
 
 input CreateEventInput {
@@ -36,6 +37,7 @@ input CreateEventInput {
 	position: GeoJSONPointInput
 	timezone: String
 	metadata: JSON
+	snapshots: [SnapshotRequest!]
 }
 
 input UpdateEventInput {
@@ -47,4 +49,5 @@ input UpdateEventInput {
 	position: GeoJSONPointInput
 	timezone: String
 	metadata: JSON
+	snapshots: [SnapshotRequest!]
 }

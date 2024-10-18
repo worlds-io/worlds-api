@@ -1,0 +1,12 @@
+input SnapshotRequest {
+    deviceId: ID!
+    timestamp: DateTimeOffset!
+}
+
+input Image {
+    id: ID!
+    datasourceId: ID
+    timestamp: DateTimeOffset
+    url: String!
+    thumbnailUrl: String!
+}
