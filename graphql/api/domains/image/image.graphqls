@@ -3,7 +3,7 @@ input SnapshotRequest {
     timestamp: DateTimeOffset!
 }
 
-input Image {
+type Image {
     id: ID!
     datasourceId: ID
     timestamp: DateTimeOffset
