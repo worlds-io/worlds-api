@@ -1,4 +1,4 @@
-input SnapshotRequest {
+input SnapshotInput {
     datasourceId: ID!
     timestamp: DateTimeOffset!
 }
