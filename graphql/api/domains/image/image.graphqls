@@ -1,0 +1,12 @@
+input CreateSnapshotInput {
+    datasourceId: ID!
+    timestamp: DateTimeOffset!
+}
+
+type Image {
+    id: ID!
+    datasourceId: ID
+    timestamp: DateTimeOffset
+    url: String!
+    thumbnailUrl: String!
+}
