@@ -7,3 +7,12 @@ input FilterZoneEventInput {
 	not: FilterZoneEventInput
 }
 
+input FilterZoneActivityInput {
+	zoneId: FilterIDInput
+
+	and: [FilterZoneActivityInput!]
+	or: [FilterZoneActivityInput!]
+	not: FilterZoneActivityInput
+
+}
+
