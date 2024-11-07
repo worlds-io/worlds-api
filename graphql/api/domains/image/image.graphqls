@@ -3,6 +3,12 @@ input CreateSnapshotInput {
     timestamp: DateTimeOffset!
 }
 
+input UploadImageInput {
+    datasourceId: ID
+    timestamp: DateTimeOffset
+    bytes: [Byte!]!
+}
+
 type Image {
     id: ID!
     datasourceId: ID
