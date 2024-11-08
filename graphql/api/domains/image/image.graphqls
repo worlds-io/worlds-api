@@ -7,7 +7,7 @@ input UploadImageInput {
     datasourceId: ID
     fileName: String
     timestamp: DateTimeOffset
-    data: [Byte!]!
+    data: String
 }
 
 type Image {
