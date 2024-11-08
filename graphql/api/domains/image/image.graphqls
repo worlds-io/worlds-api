@@ -5,6 +5,7 @@ input CreateSnapshotInput {
 
 input UploadImageInput {
     datasourceId: ID
+    fileName: String
     timestamp: DateTimeOffset
     bytes: [Byte!]!
 }
