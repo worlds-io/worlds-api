@@ -56,3 +56,12 @@ input FilterDateTimeOffsetInput {
   between: [DateTimeOffset!]
   attributeExists: Boolean
 }
+
+"""
+Standard filtration for boolean fields
+"""
+input FilterBooleanInput {
+  eq: Boolean
+  ne: Boolean
+  attributeExists: Boolean
+}
