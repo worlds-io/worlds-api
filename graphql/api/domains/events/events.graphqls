@@ -38,6 +38,7 @@ input CreateEventInput {
 	timezone: String
 	metadata: JSON
 	snapshots: [CreateSnapshotInput!]
+	uploads: [UploadImageInput!]
 }
 
 input UpdateEventInput {
@@ -50,4 +51,5 @@ input UpdateEventInput {
 	timezone: String
 	metadata: JSON
 	snapshots: [CreateSnapshotInput!]
+	uploads: [UploadImageInput!]
 }
