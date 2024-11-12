@@ -2,6 +2,9 @@ input FilterDeviceInput {
     id: FilterIDInput
     uuid: FilterIDInput
     name: FilterStringInput
+    externalId: FilterStringInput
+    address: FilterStringInput
+    enabled: FilterBooleanInput
 
 	and: [FilterDeviceInput!]
 	or: [FilterDeviceInput!]
