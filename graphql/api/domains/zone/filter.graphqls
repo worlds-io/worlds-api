@@ -1,5 +1,6 @@
 input FilterZoneEventInput {
 	zoneId: FilterIDInput
+	tag: FilterStringInput
 	time: FilterDateTimeOffsetInput!
 
 	and: [FilterZoneEventInput!]
@@ -9,10 +10,10 @@ input FilterZoneEventInput {
 
 input FilterZoneActivityInput {
 	zoneId: FilterIDInput
+	tag: FilterStringInput
 
 	and: [FilterZoneActivityInput!]
 	or: [FilterZoneActivityInput!]
 	not: FilterZoneActivityInput
-
 }
 
