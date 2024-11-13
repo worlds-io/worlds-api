@@ -4,6 +4,7 @@ type Device {
     externalId: ID
     name: String!
     enabled: Boolean!
+    address: String
     position: GeoJSONPoint
     site: Site
 }
