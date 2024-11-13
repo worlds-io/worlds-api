@@ -1,18 +1,30 @@
 type Track {
 	id: ID!
-	deviceIds: [ID!]
+	dataSource: DataSource
 	tag: String!
 	startTime: DateTimeOffset!
 	endTime: DateTimeOffset
 	detections: [Detection!]!
 	metadata: JSON
+
+	deviceIds: [ID!] @deprecated(reason: "deviceIds is deprecated, use dataSourceId instead")
 }
 
-input TrackInput {
+input CreateTrackInput {
 	id: ID
-	deviceIds: [ID!]
+	dataSourceId: ID!
 	tag: String!
 	startTime: DateTimeOffset!
 	endTime: DateTimeOffset
+	detections: [DetectionInput!]
+	metadata: JSON
+}
+
+input UpdateTrackInput {
+	id: ID!
+	tag: String!
+	startTime: DateTimeOffset!
+	endTime: DateTimeOffset
+	detections: [DetectionInput!]
 	metadata: JSON
 }
