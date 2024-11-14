@@ -18,7 +18,6 @@ type Detection {
 }
 
 type CreateDetectionInput {
-	id: ID
 	trackId: ID!
 	timestamp: DateTimeOffset!
 	position: GeoJSONPointInput
