@@ -1,6 +1,5 @@
 input FilterZoneEventInput {
 	zoneId: FilterIDInput
-	tag: FilterStringInput
 	time: FilterDateTimeOffsetInput!
 
 	and: [FilterZoneEventInput!]
