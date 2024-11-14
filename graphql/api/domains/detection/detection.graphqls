@@ -17,7 +17,8 @@ type Detection {
 	geofenceEvents: [GeofenceEvent!]! @deprecated(reason: "geofenceEvents is deprecated, use track.geofenceEvents instead")
 }
 
-type DetectionInput {
+type CreateDetectionInput {
+	id: ID
 	trackId: ID!
 	timestamp: DateTimeOffset!
 	position: GeoJSONPointInput
