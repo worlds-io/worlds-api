@@ -1,3 +1,8 @@
+type GeoJSONCRS {
+    type: String
+    properties: JSON
+}
+
 type GeoJSONPoint {
     type: String!
     coordinates: [Float!]!
