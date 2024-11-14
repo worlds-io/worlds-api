@@ -21,6 +21,6 @@ input CreateDetectionInput {
 	trackId: ID!
 	timestamp: DateTimeOffset!
 	position: GeoJSONPointInput
-	polygon: GeoJSONMultiPolygonInput
+	polygon: GeoJSONPolygonInput
 	metadata: JSON
 }
