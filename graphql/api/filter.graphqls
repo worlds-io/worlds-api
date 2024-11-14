@@ -44,6 +44,7 @@ Standard filtration for string fields
 input FilterStringInput {
   ne: String # "not equal to"
   eq: String # "equal to"
+  like: String
   in: [String!]
   attributeExists: Boolean
 }
@@ -54,5 +55,14 @@ Standard filtration for DateTimeOffset fields
 input FilterDateTimeOffsetInput {
   eq: DateTimeOffset # "equal to"
   between: [DateTimeOffset!]
+  attributeExists: Boolean
+}
+
+"""
+Standard filtration for boolean fields
+"""
+input FilterBooleanInput {
+  eq: Boolean
+  ne: Boolean
   attributeExists: Boolean
 }
