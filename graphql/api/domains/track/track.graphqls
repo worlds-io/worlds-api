@@ -18,7 +18,7 @@ input CreateTrackInput {
 	tag: String!
 	startTime: DateTimeOffset!
 	endTime: DateTimeOffset
-	detections: [DetectionInput!]
+	detections: [CreateDetectionInput!]
 	metadata: JSON
 }
 
@@ -27,6 +27,6 @@ input UpdateTrackInput {
 	tag: String!
 	startTime: DateTimeOffset!
 	endTime: DateTimeOffset
-	detections: [DetectionInput!]
+	detections: [CreateDetectionInput!]
 	metadata: JSON
 }
