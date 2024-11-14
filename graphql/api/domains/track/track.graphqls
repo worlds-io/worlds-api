@@ -5,8 +5,6 @@ type Track {
 	startTime: DateTimeOffset!
 	endTime: DateTimeOffset
 	detections: [Detection!]!
-	geofenceEvents: [GeofenceEvent!]!
-	zoneEvents: [ZoneEvent!]!
 	metadata: JSON
 
 	deviceIds: [ID!] @deprecated(reason: "deviceIds is deprecated, use dataSourceId instead")
