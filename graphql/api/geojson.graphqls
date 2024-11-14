@@ -1,8 +1,3 @@
-type GeoJSONCRS {
-    type: String
-    properties: JSON
-}
-
 type GeoJSONPoint {
     type: String!
     coordinates: [Float!]!
@@ -28,6 +23,12 @@ type GeoJSONFeature {
     geometry: GeoJSONGeometry
     properties: JSON
 }
+
+type GeoJSONCRS {
+    type: String
+    properties: JSON
+}
+
 
 input GeoJSONPointInput {
     type: String! = "Point"
