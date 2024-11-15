@@ -2,4 +2,5 @@ type DataSource {
     id: ID!
     name: String!
     type: String!
+    device: Device
 }

@@ -7,7 +7,7 @@ type Track {
 	detections: [Detection!]!
 	metadata: JSON
 
-	deviceIds: [ID!] @deprecated(reason: "deviceIds is deprecated, use dataSourceId instead")
+	deviceIds: [ID!] @deprecated(reason: "deviceIds is deprecated, use dataSource.id instead")
 }
 
 input CreateTrackInput {
