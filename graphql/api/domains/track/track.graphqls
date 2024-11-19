@@ -10,13 +10,20 @@ type Track {
 	deviceIds: [ID!] @deprecated(reason: "deviceIds is deprecated, use dataSource.id instead")
 }
 
+input TrackDetectionInput {
+	timestamp: DateTimeOffset!
+	position: GeoJSONPointInput
+	polygon: GeoJSONPolygonInput
+	metadata: JSON
+}
+
 input CreateTrackInput {
 	id: ID
 	dataSourceId: ID!
 	tag: String!
 	startTime: DateTimeOffset!
 	endTime: DateTimeOffset
-	detections: [CreateDetectionInput!]
+	detections: [TrackDetectionInput!]
 	metadata: JSON
 }
 
@@ -25,6 +32,6 @@ input UpdateTrackInput {
 	tag: String!
 	startTime: DateTimeOffset!
 	endTime: DateTimeOffset
-	detections: [CreateDetectionInput!]
+	detections: [TrackDetectionInput!]
 	metadata: JSON
 }
