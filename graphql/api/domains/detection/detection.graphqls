@@ -1,16 +1,26 @@
 type Detection {
-	globalTrackId: String
-	deviceId: ID
-	tag: String!
+	#id: ID! //TODO: Once we switch over to the detections table
+	track: Track!
 	timestamp: DateTimeOffset!
 	polygon: GeoJSONPolygon
 	position: GeoJSONPoint
-	track: Track
 	zoneIds: [ID!]!
 	geofenceIds: [ID!]!
+	metadata: JSON
 	zoneEvents: [ZoneEvent!]!
 	geofenceEvents: [GeofenceEvent!]!
-	metadata: JSON
 	createdAt: DateTimeOffset
 	updatedAt: DateTimeOffset
+
+	globalTrackId: String @deprecated (reason: "globalTrackId is deprecated, use track.id instead")
+	deviceId: ID @deprecated (reason: "deviceId is deprecated, use track.dataSourceId.id instead")
+	tag: String! @deprecated (reason: "tag is deprecated, use track.tag instead")
+}
+
+input CreateDetectionInput {
+	trackId: ID!
+	timestamp: DateTimeOffset!
+	position: GeoJSONPointInput
+	polygon: GeoJSONPolygonInput
+	metadata: JSON
 }
