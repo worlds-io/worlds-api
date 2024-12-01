@@ -1,4 +1,4 @@
 extend type Mutation {
-	createTrack(track: TrackInput!): Track
-	updateTrack(track: TrackInput!): Track
+	createTrack(track: CreateTrackInput!): Track
+	updateTrack(track: UpdateTrackInput!): Track
 }

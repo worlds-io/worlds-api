@@ -1,5 +1,5 @@
 input FilterDetectionInput {
-	deviceId: FilterIDInput
+	dataSourceId: FilterIDInput
 	zoneId: FilterIDInput
 	geofenceId: FilterIDInput 
 	tag: FilterStringInput
@@ -8,10 +8,12 @@ input FilterDetectionInput {
 	and: [FilterDetectionInput!]
 	or: [FilterDetectionInput!]
 	not: FilterDetectionInput
+
+	deviceId: FilterIDInput @deprecated (reason: "deviceId is deprecated use dataSourceId instead")
 }
 
 input FilterDetectionActivityInput {
-	deviceId: FilterIDInput
+	dataSourceId: FilterIDInput
 	zoneId: FilterIDInput
 	geofenceId: FilterIDInput
 	tag: FilterStringInput
@@ -19,4 +21,6 @@ input FilterDetectionActivityInput {
 	and: [FilterDetectionActivityInput!]
 	or: [FilterDetectionActivityInput!]
 	not: FilterDetectionActivityInput
+
+	deviceId: FilterIDInput @deprecated (reason: "deviceId is deprecated, use dataSourceId instead")
 }

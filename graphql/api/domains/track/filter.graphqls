@@ -1,8 +1,10 @@
 input FilterTrackInput {
-	deviceId: FilterIDInput
+	dataSourceId: FilterIDInput
 	time: FilterDateTimeOffsetInput!
 
 	and: [FilterTrackInput!]
 	or: [FilterTrackInput!]
 	not: FilterTrackInput
+
+	deviceId: FilterIDInput @deprecated (reason: "deviceId is deprecated, use dataSourceId instead")
 }

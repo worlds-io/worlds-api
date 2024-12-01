@@ -29,13 +29,26 @@ type GeoJSONCRS {
     properties: JSON
 }
 
+
 input GeoJSONPointInput {
-    type: String!
+    type: String! = "Point"
     coordinates: [Float!]!
     crs: GeoJSONCRSInput
 }
 
+input GeoJSONPolygonInput {
+    type: String! = "Polygon"
+    coordinates: [[[Float!]!]!]!
+    crs: GeoJSONCRSInput
+}
+
+input GeoJSONMultiPolygonInput {
+    type: String! = "MultiPolygon"
+    coordinates: [[[[Float!]!]!]!]!
+    crs: GeoJSONCRSInput
+}
+
 input GeoJSONCRSInput {
-    type: String
+    type: String = "name"
     properties: JSON
 }
