@@ -1,3 +1,4 @@
 extend type Query {
-	imageUrl(deviceId: ID!, timestamp: DateTimeOffset!): String
+	imageUrl(deviceId: ID!, timestamp: DateTimeOffset!): String @deprecated(reason: "imageUrl is deprecated, use snapshot instead")
+	snapshot(input: CreateSnapshotInput!): Image
 }
