@@ -4,7 +4,7 @@ type EventProducer {
 	description: String
 	timezone: String
 	active: Boolean!
-	configDetails: JSON
+	metadata: JSON
 }
 
 input EventProducerInput {
@@ -13,7 +13,7 @@ input EventProducerInput {
 	description: String
 	timezone: String
 	active: Boolean
-	configDetails: JSON
+	metadata: JSON
 }
 
 type Event {
