@@ -9,6 +9,6 @@ input TagsSort {
 }
 
 extend type Query {
-    tag(id: ID!): Tag
+    tag(id: ID, name: String): Tag
     tags(filter: FilterTagInput, first: Int! = 20, after: String, sort: [TagsSort!]! = [{field: NAME, direction: ASC}, {field: ID, direction: ASC}]): TagConnection
 }
