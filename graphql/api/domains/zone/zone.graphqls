@@ -1,9 +1,11 @@
 type Zone {
 	id: ID!
-	deviceId: ID!
+	dataSource: DataSource
 	name: String!
 	polygon: GeoJSONPolygon! 
 	active: Boolean!
+	
+	deviceId: ID! @deprecated (reason: "deviceId is deprecated, use dataSource.id instead")
 }
 
 type ZoneEvent {
