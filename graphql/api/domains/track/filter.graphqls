@@ -1,6 +1,7 @@
 input FilterTrackInput {
 	dataSourceId: FilterIDInput
 	time: FilterDateTimeOffsetInput!
+	tag: FilterStringInput
 
 	and: [FilterTrackInput!]
 	or: [FilterTrackInput!]
