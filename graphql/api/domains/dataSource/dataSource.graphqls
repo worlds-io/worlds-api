@@ -1,7 +1,14 @@
+enum DataSourceType {
+    FOLDER,
+    VIDEO_DEVICE,
+    IMAGE_DEVICE
+    GEOPOSITION
+}
+
 type DataSource {
     id: ID!
     name: String!
-    type: String!
+    type: DataSourceType!
     device: Device
 }
 

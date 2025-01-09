@@ -54,7 +54,7 @@ input UpdateTrackInput {
 	tag: String!
 	startTime: DateTimeOffset!
 	endTime: DateTimeOffset
-	detections: [TrackDetectionInput!]!
+	detections: [TrackDetectionInput!]
 	properties: TrackPropertiesInput
 	metadata: JSON
 }
