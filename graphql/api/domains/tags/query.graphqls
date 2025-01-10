@@ -1,6 +1,6 @@
 enum TagsSortField {
     ID,
-    NAME
+    LABEL_NAME
 }
 
 input TagsSort {
@@ -10,5 +10,5 @@ input TagsSort {
 
 extend type Query {
     tag(id: ID, name: String): Tag
-    tags(filter: FilterTagInput, first: Int! = 20, after: String, sort: [TagsSort!]! = [{field: NAME, direction: ASC}, {field: ID, direction: ASC}]): TagConnection
+    tags(filter: FilterTagInput, first: Int! = 20, after: String, sort: [TagsSort!]! = [{field: LABEL_NAME, direction: ASC}, {field: ID, direction: ASC}]): TagConnection
 }
