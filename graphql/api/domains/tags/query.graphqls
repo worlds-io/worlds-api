@@ -1,6 +1,6 @@
 enum TagsSortField {
     ID,
-    NAME
+    LABEL_NAME
 }
 
 input TagsSort {
