@@ -1,0 +1,8 @@
+input FilterTagInput {
+    id: FilterIDInput
+    name: FilterStringInput
+
+    and: [FilterTagInput!]
+    or: [FilterTagInput!]
+    not: FilterTagInput
+}
