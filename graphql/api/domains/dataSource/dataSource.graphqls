@@ -14,5 +14,5 @@ type DataSource {
 
 input CreateDataSourceInput {
     name: String!
-    type: String!
+    type: DataSourceType!
 }
