@@ -1,0 +1,14 @@
+enum TagsSortField {
+    ID,
+    LABEL_NAME
+}
+
+input TagsSort {
+    field: TagsSortField!
+    direction: SortDirection!
+}
+
+extend type Query {
+    tag(id: ID, name: String): Tag
+    tags(filter: FilterTagInput, first: Int! = 20, after: String, sort: [TagsSort!]! = [{field: LABEL_NAME, direction: ASC}, {field: ID, direction: ASC}]): TagConnection
+}

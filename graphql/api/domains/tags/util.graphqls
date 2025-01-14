@@ -1,0 +1,9 @@
+type TagConnection {
+    pageInfo: PageInfo!
+    edges: [TagEdge]!
+}
+
+type TagEdge {
+    node: Tag
+    cursor: String!
+}
