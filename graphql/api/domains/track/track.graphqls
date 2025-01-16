@@ -5,9 +5,20 @@ type Track {
 	startTime: DateTimeOffset!
 	endTime: DateTimeOffset
 	detections: [Detection!]!
+	properties: TrackProperties
 	metadata: JSON
 
 	deviceIds: [ID!] @deprecated(reason: "deviceIds is deprecated, use dataSource.id instead")
+}
+
+type TrackProperties {
+	identifier: TrackProperty
+	attributes: [TrackProperty!]
+}
+
+type TrackProperty {
+	type: String!
+	value: String!
 }
 
 input TrackDetectionInput {
@@ -17,13 +28,24 @@ input TrackDetectionInput {
 	metadata: JSON
 }
 
+input TrackPropertiesInput {
+	identifier: TrackPropertyInput
+	attributes: [TrackPropertyInput!]
+}
+
+input TrackPropertyInput {
+	type: String!
+	value: String!
+}
+
 input CreateTrackInput {
 	id: ID
 	dataSourceId: ID!
 	tag: String!
 	startTime: DateTimeOffset!
 	endTime: DateTimeOffset
-	detections: [TrackDetectionInput!]
+	detections: [TrackDetectionInput!]!
+	properties: TrackPropertiesInput
 	metadata: JSON
 }
 
@@ -32,6 +54,7 @@ input UpdateTrackInput {
 	tag: String!
 	startTime: DateTimeOffset!
 	endTime: DateTimeOffset
-	detections: [TrackDetectionInput!]
+	detections: [TrackDetectionInput!]!
+	properties: TrackPropertiesInput
 	metadata: JSON
 }
