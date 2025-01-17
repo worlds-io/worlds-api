@@ -1,0 +1,9 @@
+type VideoConnection {
+    pageInfo: PageInfo!
+    edges: [VideoEdge]!
+}
+
+type VideoEdge {
+    node: Video
+    cursor: String!
+}

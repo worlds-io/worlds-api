@@ -1,0 +1,14 @@
+type Video {
+    id: ID!
+    uuid: ID!
+    startTime: DateTimeOffset!
+    endTime: DateTimeOffset!
+    datasourceId: ID!
+    url: String!
+    thumbnailUrl: String!
+    displayName: String!
+    resolutionHeight: String!
+    resolutionWidth: String!
+    createdByEmail: String!
+    createdById: String!
+}

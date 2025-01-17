@@ -1,0 +1,13 @@
+enum VideosSortField {
+    UUID
+}
+
+input VideosSort {
+    field: VideosSortField!
+    direction: SortDirection!
+}
+
+extend type Query {
+    video(uuid: ID): Video
+    videos(filter: FilterVideoInput, first: Int! = 20, after: String, sort: [VideosSort!]! = [{field: UUID, direction: ASC}]): VideoConnection
+}

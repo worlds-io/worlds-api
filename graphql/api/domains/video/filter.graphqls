@@ -1,0 +1,7 @@
+input FilterVideoInput {
+    id: FilterIDInput
+
+    and: [FilterVideoInput!]
+    or: [FilterVideoInput!]
+    not: FilterVideoInput
+}
