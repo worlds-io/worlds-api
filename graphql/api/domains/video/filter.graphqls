@@ -1,7 +1,7 @@
-input FilterVideoInput {
+input FilterVideoActivityInput {
 	dataSourceId: FilterIDInput
 
-	and: [FilterVideoInput!]
-	or: [FilterVideoInput!]
-	not: FilterVideoInput
+	and: [FilterVideoActivityInput!]
+	or: [FilterVideoActivityInput!]
+	not: FilterVideoActivityInput
 }
