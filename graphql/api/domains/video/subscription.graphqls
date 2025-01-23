@@ -1,0 +1,3 @@
+extend type Subscription {
+    videoActivity(filter: FilterVideoActivityInput): Video
+}
