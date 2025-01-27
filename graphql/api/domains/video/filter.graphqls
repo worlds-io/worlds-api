@@ -1,5 +1,8 @@
 input FilterVideoInput {
     id: FilterIDInput
+    dataSourceId: FilterIDInput
+    startTime: FilterDateTimeOffsetInput
+    endTime: FilterDateTimeOffsetInput
 
     and: [FilterVideoInput!]
     or: [FilterVideoInput!]

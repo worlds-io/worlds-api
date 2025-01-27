@@ -1,5 +1,8 @@
 enum VideosSortField {
-    UUID
+    ID,
+    DATASOURCE_ID,
+    START_TIME,
+    END_TIME
 }
 
 input VideosSort {
@@ -8,6 +11,6 @@ input VideosSort {
 }
 
 extend type Query {
-    video(uuid: ID): Video
-    videos(filter: FilterVideoInput, first: Int! = 20, after: String, sort: [VideosSort!]! = [{field: UUID, direction: ASC}]): VideoConnection
+    video(string: ID): Video
+    videos(filter: FilterVideoInput, first: Int! = 20, after: String, sort: [VideosSort!]! = [{field: DATASOURCE_ID, direction: ASC}, {field: ID, direction: ASC}, {field: START_TIME, direction: ASC}, {field: END_TIME, direction: ASC}]): VideoConnection
 }
