@@ -66,3 +66,17 @@ input FilterBooleanInput {
   ne: Boolean
   attributeExists: Boolean
 }
+
+"""
+Filtration for position fields
+"""
+input FilterPointInput {
+  in: GeoJSONPolygonInput
+  near: FilterPointNearInput
+  attributeExists: Boolean
+}
+
+input FilterPointNearInput {
+  point: GeoJSONPointInput!
+  radius: Float! = 500.0
+}
