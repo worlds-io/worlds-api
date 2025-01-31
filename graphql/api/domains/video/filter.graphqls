@@ -5,3 +5,14 @@ input FilterVideoActivityInput {
 	or: [FilterVideoActivityInput!]
 	not: FilterVideoActivityInput
 }
+
+input FilterVideoInput {
+	id: FilterIDInput
+	dataSourceId: FilterIDInput
+	startTime: FilterDateTimeOffsetInput
+	endTime: FilterDateTimeOffsetInput
+
+	and: [FilterVideoInput!]
+	or: [FilterVideoInput!]
+	not: FilterVideoInput
+}

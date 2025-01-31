@@ -3,4 +3,15 @@ type Video {
     dataSource: DataSource!
     startTime: DateTimeOffset!
     endTime: DateTimeOffset
+    url: String!
+    thumbnailUrl: String
+    displayName: String
+    resolutionHeight: String
+    resolutionWidth: String
+    createdBy: User
+}
+
+type User {
+    id: ID!
+    emailAddress: String!
 }
