@@ -78,5 +78,5 @@ input FilterPointInput {
 
 input FilterPointNearInput {
   point: GeoJSONPointInput!
-  radius: Float
+  radius: Float! = 1000
 }
