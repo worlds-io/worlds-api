@@ -1,3 +1,14 @@
+enum DataSourceSortField {
+    ID,
+    NAME
+}
+
+input DataSourceSort {
+    field: DataSourceSortField!
+    direction: SortDirection!
+}
+
 extend type Query {
     dataSource(id: ID!): DataSource
+    dataSources(filter: FilterDataSourceInput!, first: Int! = 20, after: String, sort: [DataSourceSort!]! = [{field: NAME, direction: DESC}]): DataSourceConnection
 }
