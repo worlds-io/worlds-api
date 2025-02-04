@@ -4,6 +4,7 @@ input FilterDetectionInput {
 	geofenceId: FilterIDInput 
 	tag: FilterStringInput
 	time: FilterDateTimeOffsetInput!
+	position: FilterPointInput
 
 	and: [FilterDetectionInput!]
 	or: [FilterDetectionInput!]
