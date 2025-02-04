@@ -18,6 +18,7 @@ input FilterDetectionActivityInput {
 	zoneId: FilterIDInput
 	geofenceId: FilterIDInput
 	tag: FilterStringInput
+	position: FilterPointInput
 
 	and: [FilterDetectionActivityInput!]
 	or: [FilterDetectionActivityInput!]
