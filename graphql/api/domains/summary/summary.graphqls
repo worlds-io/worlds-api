@@ -1,0 +1,16 @@
+type TracksSummary {
+	total: Int!
+	totalsByTag: [TracksCountByTag!]!
+	buckets: [TracksSummaryBucket!]
+}
+
+type TracksCountByTag {
+	tag: String!
+	count: Int!
+}
+
+type TracksSummaryBucket {
+	time: DateTimeOffset!
+	total: Int!
+	counts: [TracksCountByTag!]!
+}
