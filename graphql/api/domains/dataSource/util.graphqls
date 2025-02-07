@@ -1,0 +1,9 @@
+type DataSourceConnection {
+    pageInfo: PageInfo!
+    edges: [DataSourceEdge]!
+}
+
+type DataSourceEdge {
+    node: DataSource
+    cursor: String!
+}

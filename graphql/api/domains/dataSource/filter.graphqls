@@ -1,0 +1,8 @@
+input FilterDataSourceInput {
+    type: FilterStringInput
+    position: FilterPointInput
+
+    and: [FilterDataSourceInput!]
+    or: [FilterDataSourceInput!]
+    not: FilterDataSourceInput
+}
