@@ -4,6 +4,7 @@ input FilterTrackInput {
 	tag: FilterStringInput
 	position: FilterPointInput
 	identifier: FilterStringInput
+	attribute: FilterStringInput
 
 	and: [FilterTrackInput!]
 	or: [FilterTrackInput!]
