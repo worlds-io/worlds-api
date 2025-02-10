@@ -3,6 +3,7 @@ input FilterTrackInput {
 	time: FilterDateTimeOffsetInput!
 	tag: FilterStringInput
 	position: FilterPointInput
+	identifier: FilterStringInput
 
 	and: [FilterTrackInput!]
 	or: [FilterTrackInput!]
