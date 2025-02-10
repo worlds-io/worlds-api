@@ -9,7 +9,7 @@ input FilterVideoActivityInput {
 input FilterVideoInput {
 	id: FilterIDInput
 	dataSourceId: FilterIDInput
-	startTime: FilterDateTimeOffsetInput
+	startTime: FilterDateTimeOffsetInput!
 	endTime: FilterDateTimeOffsetInput
 
 	and: [FilterVideoInput!]
