@@ -1,0 +1,4 @@
+enum SummaryBucketSize {
+    MINUTES,
+    HOURS,
+}
