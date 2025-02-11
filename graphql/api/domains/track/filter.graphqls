@@ -16,8 +16,4 @@ input FilterTrackInput {
 input FilterTrackPropertyInput {
 	type: FilterStringInput
 	value: FilterStringInput
-
-	and: [FilterTrackPropertyInput!]
-	or: [FilterTrackPropertyInput!]
-	not: FilterTrackPropertyInput
 }
