@@ -1,0 +1,3 @@
+extend type Query {
+	tracksSummary(startTime: DateTimeOffset!, endTime: DateTimeOffset!, tags: FilterTagInput, bucket: SummaryBucketSize): TracksSummary
+}
