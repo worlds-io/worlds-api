@@ -3,12 +3,21 @@ input FilterTrackInput {
 	time: FilterDateTimeOffsetInput!
 	tag: FilterStringInput
 	position: FilterPointInput
-	identifier: FilterStringInput
-	attribute: FilterStringInput
+	identifier: FilterTrackPropertyInput
+	attribute: FilterTrackPropertyInput
 
 	and: [FilterTrackInput!]
 	or: [FilterTrackInput!]
 	not: FilterTrackInput
 
 	deviceId: FilterIDInput @deprecated (reason: "deviceId is deprecated, use dataSourceId instead")
+}
+
+input FilterTrackPropertyInput {
+	type: FilterStringInput
+	value: FilterStringInput
+
+	and: [FilterTrackPropertyInput!]
+	or: [FilterTrackPropertyInput!]
+	not: FilterTrackPropertyInput
 }
