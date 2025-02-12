@@ -14,3 +14,13 @@ type TracksSummaryBucket {
 	total: Int!
 	counts: [TracksCountByTag!]!
 }
+
+type EventsSummary {
+	total: Int!
+	buckets: [EventsSummaryBucket!]
+}
+
+type EventsSummaryBucket {
+	time: DateTimeOffset!
+	total: Int!
+}

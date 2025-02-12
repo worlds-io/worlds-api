@@ -1,3 +1,4 @@
 extend type Query {
 	tracksSummary(startTime: DateTimeOffset!, endTime: DateTimeOffset!, tags: FilterTagInput, bucket: SummaryBucketSize): TracksSummary
+	eventsSummary(startTime: DateTimeOffset!, endTime: DateTimeOffset!, bucket: SummaryBucketSize): EventsSummary
 }
