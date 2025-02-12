@@ -2,7 +2,7 @@ input FilterZoneInput {
 	id: FilterIDInput
 	name: FilterStringInput
 	dataSourceId: FilterIDInput
-	enabled: FilterBooleanInput
+	active: FilterBooleanInput
 
 	and: [FilterZoneInput!]
 	or: [FilterZoneInput!]
