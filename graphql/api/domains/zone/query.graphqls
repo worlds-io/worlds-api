@@ -1,3 +1,13 @@
+enum ZonesSortField {
+	ID,
+	NAME
+}
+
+input ZonesSort{
+	field: ZonesSortField!
+	direction: SortDirection!
+}
+
 enum ZoneEventsSortField {
 	ID,
 	START_TIME
@@ -11,5 +21,6 @@ input ZoneEventsSort {
 
 extend type Query {
 	zone(id: ID!): Zone
+	zones(filter: FilterZoneInput, first: Int! = 20, after: String, sort: [ZonesSort!]! = [{field: NAME, direction: ASC}, {field:ID, direction:ASC}] ): ZoneConnection
 	zoneEvents(filter: FilterZoneEventInput!, first: Int! = 20, after: String, sort: [ZoneEventsSort!]! = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]): ZoneEventConnection
 }
