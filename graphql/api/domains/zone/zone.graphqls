@@ -18,4 +18,14 @@ type ZoneEvent {
 	endTime: DateTimeOffset
 	polygon: GeoJSONMultiPolygon
 }
- 
+
+type ZoneCollision {
+	id: ID!
+	zone: Zone!
+	track: Track!
+	tag: String!
+	type: ActivityType!
+	startTime: DateTimeOffset!
+	endTime: DateTimeOffset
+	polygon: GeoJSONMultiPolygon
+}

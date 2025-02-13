@@ -8,6 +8,16 @@ type ZoneEventEdge {
 	cursor: String!
 }
 
+type ZoneCollisionConnection {
+	pageInfo: PageInfo!
+	edges: [ZoneCollisionEdge]!
+}
+
+type ZoneCollisionEdge {
+	node: ZoneCollision
+	cursor: String!
+}
+
 type ZoneConnection {
 	pageInfo: PageInfo!
 	edges: [ZoneEdge]!
