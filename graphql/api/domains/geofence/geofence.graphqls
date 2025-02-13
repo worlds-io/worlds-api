@@ -17,6 +17,17 @@ type GeofenceEvent {
 	metadata: JSON
 }
 
+type GeofenceCollision {
+	id: ID!
+	geofence: Geofence!
+	track: Track!
+	tag: String!
+	type: ActivityType!
+	position: GeoJSONPoint!
+	timestamp: DateTimeOffset!
+	metadata: JSON
+}
+
 type GeofenceBounds {
 	polygon: GeoJSONPolygon!
 	height: Float

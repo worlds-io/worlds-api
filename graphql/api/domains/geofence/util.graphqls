@@ -7,3 +7,13 @@ type GeofenceEventEdge {
 	node: GeofenceEvent
 	cursor: String!
 }
+
+type GeofenceCollisionConnection {
+	pageInfo: PageInfo!
+	edges: [GeofenceCollisionEdge]!
+}
+
+type GeofenceCollisionEdge {
+	node: GeofenceCollision
+	cursor: String!
+}

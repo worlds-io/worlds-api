@@ -6,3 +6,12 @@ input FilterGeofenceEventInput {
 	or: [FilterGeofenceEventInput!]
 	not: FilterGeofenceEventInput
 }
+
+input FilterGeofenceCollisionQueryInput {
+	geofenceId: FilterIDInput
+	time: FilterDateTimeOffsetInput!
+
+	and: [FilterGeofenceCollisionQueryInput!]
+	or: [FilterGeofenceCollisionQueryInput!]
+	not: FilterGeofenceCollisionQueryInput
+}
