@@ -1,3 +1,14 @@
+input FilterZoneInput {
+	id: FilterIDInput
+	name: FilterStringInput
+	dataSourceId: FilterIDInput
+	active: FilterBooleanInput
+
+	and: [FilterZoneInput!]
+	or: [FilterZoneInput!]
+	not: FilterZoneInput
+}
+
 input FilterZoneEventInput {
 	zoneId: FilterIDInput
 	time: FilterDateTimeOffsetInput!
@@ -6,4 +17,3 @@ input FilterZoneEventInput {
 	or: [FilterZoneEventInput!]
 	not: FilterZoneEventInput
 }
-
