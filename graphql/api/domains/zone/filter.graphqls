@@ -17,3 +17,12 @@ input FilterZoneEventInput {
 	or: [FilterZoneEventInput!]
 	not: FilterZoneEventInput
 }
+
+input FilterZoneCollisionInput {
+  dataSourceId: FilterIDInput
+	tag: FilterStringInput
+
+	and: [FilterZoneEventInput!]
+	or: [FilterZoneEventInput!]
+	not: FilterZoneEventInput
+}
