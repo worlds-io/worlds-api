@@ -41,7 +41,7 @@ input CreateEventInput {
 	metadata: JSON
 	snapshots: [CreateSnapshotInput!]
 	uploads: [UploadImageInput!]
-	tradIds: [ID!]
+	trackIds: [ID!]
 }
 
 input UpdateEventInput {
@@ -55,5 +55,5 @@ input UpdateEventInput {
 	metadata: JSON
 	snapshots: [CreateSnapshotInput!]
 	uploads: [UploadImageInput!]
-	tradIds: [ID!]
+	trackIds: [ID!]
 }
