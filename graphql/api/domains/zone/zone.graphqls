@@ -13,10 +13,10 @@ type ZoneEvent {
 	zone: Zone!
 	track: Track!
 	tag: String!
-	type: ActivityType!
+	type: ActivityType! @deprecated (reason: "zoneEvent is deprecated in favor of zoneCollision, which does not use type.")
 	startTime: DateTimeOffset!
 	endTime: DateTimeOffset
-	polygon: GeoJSONMultiPolygon
+	polygon: GeoJSONMultiPolygon @deprecated (reason: "zoneEvent is deprecated in favor of zoneCollision, which does not use polygon.")
 }
 
 type ZoneCollision {
@@ -24,8 +24,6 @@ type ZoneCollision {
 	zone: Zone!
 	track: Track!
 	tag: String!
-	type: ActivityType!
 	startTime: DateTimeOffset!
 	endTime: DateTimeOffset
-	polygon: GeoJSONMultiPolygon
 }
