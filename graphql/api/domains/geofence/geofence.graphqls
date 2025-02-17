@@ -11,10 +11,10 @@ type GeofenceEvent {
 	geofence: Geofence!
 	track: Track!
 	tag: String!
-	type: ActivityType!
-	position: GeoJSONPoint!
-	timestamp: DateTimeOffset!
-	metadata: JSON
+	type: ActivityType! @deprecated (reason: "geofenceEvent is deprecated in favor of geofenceCollision, which does not use type.")
+	position: GeoJSONPoint! @deprecated (reason: "geofenceEvent is deprecated in favor of geofenceCollision, which does not use position.")
+	timestamp: DateTimeOffset! @deprecated (reason: "geofenceEvent is deprecated in favor of geofenceCollision, which does not use type, using startTime and endTime instead.")
+	metadata: JSON @deprecated (reason: "geofenceEvent is deprecated in favor of geofenceCollision, which does not use metadata.")
 }
 
 type GeofenceCollision {
@@ -22,10 +22,8 @@ type GeofenceCollision {
 	geofence: Geofence!
 	track: Track!
 	tag: String!
-	type: ActivityType!
-	position: GeoJSONPoint!
-	timestamp: DateTimeOffset!
-	metadata: JSON
+	startTime: DateTimeOffset!
+	endTime: DateTimeOffset
 }
 
 type GeofenceBounds {
