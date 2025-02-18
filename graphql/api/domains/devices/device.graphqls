@@ -7,5 +7,19 @@ type Device {
     address: String
     position: GeoJSONPoint
     site: Site
+    calibrations: [DeviceCalibration!]!
 }
 
+type DeviceCalibration {
+    id: ID!
+    timestamp: DateTimeOffset!
+    markers: [DeviceCalibrationMarker!]!
+    precomputeAt: DateTimeOffset
+}
+
+type DeviceCalibrationMarker {
+    id: ID!
+    name: String!
+    position: GeoJSONPoint!
+    pixel: GeoJSONPoint!
+}
