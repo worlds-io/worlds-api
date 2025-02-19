@@ -12,7 +12,7 @@ type ZoneEvent {
 	id: ID!
 	zone: Zone!
 	track: Track!
-	tag: String!
+	tag: String! @deprecated (reason: "tag is deprecated and can instead be retrieved from the track.")
 	type: ActivityType! @deprecated (reason: "zoneEvent is deprecated in favor of zoneCollision, which does not use type.")
 	startTime: DateTimeOffset!
 	endTime: DateTimeOffset
@@ -23,7 +23,6 @@ type ZoneCollision {
 	id: ID!
 	zone: Zone!
 	track: Track!
-	tag: String!
 	startTime: DateTimeOffset!
 	endTime: DateTimeOffset
 }
