@@ -26,11 +26,11 @@ input FilterZoneCollisionQueryInput {
 	not: FilterZoneCollisionQueryInput
 }
 
-input FilterZoneCollisionSubscriptionInput {
+input FilterZoneCollisionActivityInput {
 	zoneId: FilterIDInput
 	dataSourceId: FilterIDInput
 
-	and: [FilterZoneCollisionSubscriptionInput!]
-	or: [FilterZoneCollisionSubscriptionInput!]
-	not: FilterZoneCollisionSubscriptionInput
+	and: [FilterZoneCollisionActivityInput!]
+	or: [FilterZoneCollisionActivityInput!]
+	not: FilterZoneCollisionActivityInput
 }
