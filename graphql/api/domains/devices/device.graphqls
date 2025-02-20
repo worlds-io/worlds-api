@@ -8,6 +8,7 @@ type Device {
     position: GeoJSONPoint
     site: Site
     calibrations: [DeviceCalibration!]!
+    pointOfInterest: PointOfInterest
 }
 
 type DeviceCalibration {
