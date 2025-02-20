@@ -1,0 +1,13 @@
+enum PointOfInterestSortField {
+    ID,
+    NAME,
+}
+
+input PointOfInterestSort {
+    field: PointOfInterestSortField!
+    direction: SortDirection!
+}
+
+extend type Query {
+    pointOfInterest(id: ID!): PointOfInterest
+}

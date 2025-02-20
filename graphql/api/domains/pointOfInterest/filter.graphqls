@@ -1,0 +1,8 @@
+input FilterPointOfInterestInput {
+    id: FilterIDInput
+    name: FilterStringInput
+
+    and: [FilterPointOfInterestInput!]
+    or: [FilterPointOfInterestInput!]
+    not: FilterPointOfInterestInput
+}
