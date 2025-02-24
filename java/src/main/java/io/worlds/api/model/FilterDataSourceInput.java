@@ -7,6 +7,8 @@ public class FilterDataSourceInput implements java.io.Serializable {
 
     private org.springframework.graphql.data.ArgumentValue<FilterStringInput> type = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterPointInput> position = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<FilterIDInput> id = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<FilterStringInput> name = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<FilterDataSourceInput> and;
     private java.util.List<FilterDataSourceInput> or;
     private org.springframework.graphql.data.ArgumentValue<FilterDataSourceInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -14,9 +16,11 @@ public class FilterDataSourceInput implements java.io.Serializable {
     public FilterDataSourceInput() {
     }
 
-    public FilterDataSourceInput(org.springframework.graphql.data.ArgumentValue<FilterStringInput> type, org.springframework.graphql.data.ArgumentValue<FilterPointInput> position, java.util.List<FilterDataSourceInput> and, java.util.List<FilterDataSourceInput> or, org.springframework.graphql.data.ArgumentValue<FilterDataSourceInput> not) {
+    public FilterDataSourceInput(org.springframework.graphql.data.ArgumentValue<FilterStringInput> type, org.springframework.graphql.data.ArgumentValue<FilterPointInput> position, org.springframework.graphql.data.ArgumentValue<FilterIDInput> id, org.springframework.graphql.data.ArgumentValue<FilterStringInput> name, java.util.List<FilterDataSourceInput> and, java.util.List<FilterDataSourceInput> or, org.springframework.graphql.data.ArgumentValue<FilterDataSourceInput> not) {
         this.type = type;
         this.position = position;
+        this.id = id;
+        this.name = name;
         this.and = and;
         this.or = or;
         this.not = not;
@@ -34,6 +38,20 @@ public class FilterDataSourceInput implements java.io.Serializable {
     }
     public void setPosition(org.springframework.graphql.data.ArgumentValue<FilterPointInput> position) {
         this.position = position;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<FilterIDInput> getId() {
+        return id;
+    }
+    public void setId(org.springframework.graphql.data.ArgumentValue<FilterIDInput> id) {
+        this.id = id;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<FilterStringInput> getName() {
+        return name;
+    }
+    public void setName(org.springframework.graphql.data.ArgumentValue<FilterStringInput> name) {
+        this.name = name;
     }
 
     public java.util.List<FilterDataSourceInput> getAnd() {
@@ -67,6 +85,8 @@ public class FilterDataSourceInput implements java.io.Serializable {
 
         private org.springframework.graphql.data.ArgumentValue<FilterStringInput> type = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterPointInput> position = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<FilterIDInput> id = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<FilterStringInput> name = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<FilterDataSourceInput> and;
         private java.util.List<FilterDataSourceInput> or;
         private org.springframework.graphql.data.ArgumentValue<FilterDataSourceInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -81,6 +101,16 @@ public class FilterDataSourceInput implements java.io.Serializable {
 
         public Builder setPosition(org.springframework.graphql.data.ArgumentValue<FilterPointInput> position) {
             this.position = position;
+            return this;
+        }
+
+        public Builder setId(org.springframework.graphql.data.ArgumentValue<FilterIDInput> id) {
+            this.id = id;
+            return this;
+        }
+
+        public Builder setName(org.springframework.graphql.data.ArgumentValue<FilterStringInput> name) {
+            this.name = name;
             return this;
         }
 
@@ -101,7 +131,7 @@ public class FilterDataSourceInput implements java.io.Serializable {
 
 
         public FilterDataSourceInput build() {
-            return new FilterDataSourceInput(type, position, and, or, not);
+            return new FilterDataSourceInput(type, position, id, name, and, or, not);
         }
 
     }

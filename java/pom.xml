@@ -27,7 +27,7 @@
               <graphqlSchemas>
                 <rootDir>../graphql</rootDir>
               </graphqlSchemas>
-              <outputDir>sdk</outputDir>
+              <outputDir>src/main/java</outputDir>
               <packageName>io.worlds.api.model</packageName>
               <addGeneratedAnnotation>false</addGeneratedAnnotation>
               <customTypesMapping>
