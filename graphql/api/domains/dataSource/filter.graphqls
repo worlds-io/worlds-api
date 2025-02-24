@@ -1,7 +1,7 @@
 input FilterDataSourceInput {
     type: FilterStringInput
     position: FilterPointInput
-    id: FilterIDInput,
+    id: FilterIDInput
     name: FilterStringInput
 
     and: [FilterDataSourceInput!]
