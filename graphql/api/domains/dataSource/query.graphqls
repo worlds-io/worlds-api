@@ -10,5 +10,5 @@ input DataSourceSort {
 
 extend type Query {
     dataSource(id: ID!): DataSource
-    dataSources(filter: FilterDataSourceInput, first: Int! = 20, after: String, sort: [DataSourceSort!]! = [{field: NAME, direction: DESC}]): DataSourceConnection
+    dataSources(filter: FilterDataSourceInput, first: Int! = 20, after: String, sort: [DataSourceSort!]! = [{field: NAME, direction: ASC }, {field: ID, direction: ASC }]): DataSourceConnection
 }
