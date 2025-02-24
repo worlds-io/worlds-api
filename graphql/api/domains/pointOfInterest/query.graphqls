@@ -1,0 +1,14 @@
+enum PointOfInterestSortField {
+    ID,
+    NAME,
+}
+
+input PointOfInterestSort {
+    field: PointOfInterestSortField!
+    direction: SortDirection!
+}
+
+extend type Query {
+    pointOfInterest(id: ID!): PointOfInterest
+    pointsOfInterest(filter: FilterPointOfInterestInput, first: Int! = 20, after: String, sort: [PointOfInterestSort!]! = [{field: NAME, direction: ASC}, {field: ID, direction: ASC}]): PointOfInterestConnection
+}

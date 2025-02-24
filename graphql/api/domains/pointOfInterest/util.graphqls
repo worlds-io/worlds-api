@@ -1,0 +1,9 @@
+type PointOfInterestConnection {
+    pageInfo: PageInfo!
+    edges: [PointOfInterestEdge]!
+}
+
+type PointOfInterestEdge {
+    node: PointOfInterest
+    cursor: String!
+}
