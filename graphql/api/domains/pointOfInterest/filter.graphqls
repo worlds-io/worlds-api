@@ -1,0 +1,9 @@
+input FilterPointOfInterestInput {
+    id: FilterIDInput
+    siteId: FilterIDInput
+    name: FilterStringInput
+
+    and: [FilterPointOfInterestInput!]
+    or: [FilterPointOfInterestInput!]
+    not: FilterPointOfInterestInput
+}

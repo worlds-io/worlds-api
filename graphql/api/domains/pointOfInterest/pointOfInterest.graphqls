@@ -1,0 +1,7 @@
+type PointOfInterest {
+    id: ID!
+    site: Site!
+    name: String!
+    devices: [Device!]
+    metadata: JSON
+}
