@@ -26,3 +26,8 @@ type ZoneCollision {
 	startTime: DateTimeOffset!
 	endTime: DateTimeOffset
 }
+
+type ZoneCollisionMessage {
+	message: ZoneCollision
+	state: MessageType
+}
