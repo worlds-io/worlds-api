@@ -20,6 +20,8 @@ input FilterZoneEventInput {
 input FilterZoneCollisionQueryInput {
 	zoneId: FilterIDInput
 	time: FilterDateTimeOffsetInput!
+	tag: FilterStringInput
+	dataSourceId: FilterIDInput
 
 	and: [FilterZoneCollisionQueryInput!]
 	or: [FilterZoneCollisionQueryInput!]
