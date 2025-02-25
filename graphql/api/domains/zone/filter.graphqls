@@ -29,6 +29,7 @@ input FilterZoneCollisionQueryInput {
 input FilterZoneCollisionActivityInput {
 	zoneId: FilterIDInput
 	dataSourceId: FilterIDInput
+	state: FilterMessageState
 
 	and: [FilterZoneCollisionActivityInput!]
 	or: [FilterZoneCollisionActivityInput!]

@@ -80,3 +80,13 @@ input FilterPointNearInput {
   point: GeoJSONPointInput!
   radius: Float! = 500.0
 }
+
+"""
+Filtration for Activity subscriber statuses
+"""
+input FilterMessageState {
+  eq: MessageState
+  ne: MessageState
+  in: [MessageState!]
+  attributeExists: Boolean
+}
