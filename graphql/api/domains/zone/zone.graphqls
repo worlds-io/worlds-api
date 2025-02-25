@@ -29,5 +29,5 @@ type ZoneCollision {
 
 type ZoneCollisionMessage {
 	message: ZoneCollision
-	state: MessageType
+	state: MessageState
 }
