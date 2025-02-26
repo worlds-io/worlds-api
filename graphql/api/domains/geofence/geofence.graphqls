@@ -25,6 +25,11 @@ type GeofenceCollision {
 	endTime: DateTimeOffset
 }
 
+type GeofenceCollisionMessage {
+	message: GeofenceCollision
+	state: MessageState
+}
+
 type GeofenceBounds {
 	polygon: GeoJSONPolygon!
 	height: Float

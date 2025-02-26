@@ -15,3 +15,14 @@ input FilterGeofenceCollisionQueryInput {
 	or: [FilterGeofenceCollisionQueryInput!]
 	not: FilterGeofenceCollisionQueryInput
 }
+
+input FilterGeofenceCollisionMessageInput {
+	geofenceId: FilterIDInput
+	tag: FilterStringInput
+	dataSourceId: FilterIDInput
+	state: FilterMessageStateInput
+
+	and: [FilterGeofenceCollisionMessageInput!]
+	or: [FilterGeofenceCollisionMessageInput!]
+	not: FilterGeofenceCollisionMessageInput
+}
