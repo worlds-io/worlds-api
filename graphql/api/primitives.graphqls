@@ -1,3 +1,8 @@
+enum MessageState {
+	START
+	UPDATE
+	END
+}
 
 # Types of collision activities for Geofences and Zones
 enum ActivityType {

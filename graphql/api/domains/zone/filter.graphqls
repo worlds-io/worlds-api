@@ -24,5 +24,14 @@ input FilterZoneCollisionQueryInput {
 	and: [FilterZoneCollisionQueryInput!]
 	or: [FilterZoneCollisionQueryInput!]
 	not: FilterZoneCollisionQueryInput
+}
 
+input FilterZoneCollisionMessageInput {
+	zoneId: FilterIDInput
+	dataSourceId: FilterIDInput
+	state: FilterMessageStateInput
+
+	and: [FilterZoneCollisionMessageInput!]
+	or: [FilterZoneCollisionMessageInput!]
+	not: FilterZoneCollisionMessageInput
 }
