@@ -4,4 +4,6 @@ type Site {
     position: GeoJSONPoint
     polygon: GeoJSONMultiPolygon 
     devices: [Device!]!
+    pointsOfInterest: [PointOfInterest!]!
+    geofences: [Geofence!]!
 }
