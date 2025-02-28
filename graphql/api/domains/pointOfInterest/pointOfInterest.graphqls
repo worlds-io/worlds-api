@@ -2,6 +2,7 @@ type PointOfInterest {
     id: ID!
     site: Site!
     name: String!
+    position: GeoJSONPoint
     devices: [Device!]!
     geofences: [Geofence!]!
     metadata: JSON
