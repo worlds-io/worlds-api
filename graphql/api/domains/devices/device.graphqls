@@ -9,7 +9,6 @@ type Device {
     site: Site
     calibrations: [DeviceCalibration!]!
     pointOfInterest: PointOfInterest
-    zones: [Zone!]!
 }
 
 type DeviceCalibration {
