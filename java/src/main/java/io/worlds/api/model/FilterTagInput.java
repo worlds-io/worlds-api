@@ -1,0 +1,108 @@
+package io.worlds.api.model;
+
+
+public class FilterTagInput implements java.io.Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    private org.springframework.graphql.data.ArgumentValue<FilterIDInput> id = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<FilterStringInput> name = org.springframework.graphql.data.ArgumentValue.omitted();
+    private java.util.List<FilterTagInput> and;
+    private java.util.List<FilterTagInput> or;
+    private org.springframework.graphql.data.ArgumentValue<FilterTagInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
+
+    public FilterTagInput() {
+    }
+
+    public FilterTagInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> id, org.springframework.graphql.data.ArgumentValue<FilterStringInput> name, java.util.List<FilterTagInput> and, java.util.List<FilterTagInput> or, org.springframework.graphql.data.ArgumentValue<FilterTagInput> not) {
+        this.id = id;
+        this.name = name;
+        this.and = and;
+        this.or = or;
+        this.not = not;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<FilterIDInput> getId() {
+        return id;
+    }
+    public void setId(org.springframework.graphql.data.ArgumentValue<FilterIDInput> id) {
+        this.id = id;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<FilterStringInput> getName() {
+        return name;
+    }
+    public void setName(org.springframework.graphql.data.ArgumentValue<FilterStringInput> name) {
+        this.name = name;
+    }
+
+    public java.util.List<FilterTagInput> getAnd() {
+        return and;
+    }
+    public void setAnd(java.util.List<FilterTagInput> and) {
+        this.and = and;
+    }
+
+    public java.util.List<FilterTagInput> getOr() {
+        return or;
+    }
+    public void setOr(java.util.List<FilterTagInput> or) {
+        this.or = or;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<FilterTagInput> getNot() {
+        return not;
+    }
+    public void setNot(org.springframework.graphql.data.ArgumentValue<FilterTagInput> not) {
+        this.not = not;
+    }
+
+
+
+    public static FilterTagInput.Builder builder() {
+        return new FilterTagInput.Builder();
+    }
+
+    public static class Builder {
+
+        private org.springframework.graphql.data.ArgumentValue<FilterIDInput> id = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<FilterStringInput> name = org.springframework.graphql.data.ArgumentValue.omitted();
+        private java.util.List<FilterTagInput> and;
+        private java.util.List<FilterTagInput> or;
+        private org.springframework.graphql.data.ArgumentValue<FilterTagInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
+
+        public Builder() {
+        }
+
+        public Builder setId(org.springframework.graphql.data.ArgumentValue<FilterIDInput> id) {
+            this.id = id;
+            return this;
+        }
+
+        public Builder setName(org.springframework.graphql.data.ArgumentValue<FilterStringInput> name) {
+            this.name = name;
+            return this;
+        }
+
+        public Builder setAnd(java.util.List<FilterTagInput> and) {
+            this.and = and;
+            return this;
+        }
+
+        public Builder setOr(java.util.List<FilterTagInput> or) {
+            this.or = or;
+            return this;
+        }
+
+        public Builder setNot(org.springframework.graphql.data.ArgumentValue<FilterTagInput> not) {
+            this.not = not;
+            return this;
+        }
+
+
+        public FilterTagInput build() {
+            return new FilterTagInput(id, name, and, or, not);
+        }
+
+    }
+}
