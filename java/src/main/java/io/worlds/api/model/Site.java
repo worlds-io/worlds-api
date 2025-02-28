@@ -13,16 +13,22 @@ public class Site implements java.io.Serializable {
     private GeoJSONMultiPolygon polygon;
     @jakarta.validation.constraints.NotNull
     private java.util.List<Device> devices;
+    @jakarta.validation.constraints.NotNull
+    private java.util.List<PointOfInterest> pointsOfInterest;
+    @jakarta.validation.constraints.NotNull
+    private java.util.List<Geofence> geofences;
 
     public Site() {
     }
 
-    public Site(String id, String name, GeoJSONPoint position, GeoJSONMultiPolygon polygon, java.util.List<Device> devices) {
+    public Site(String id, String name, GeoJSONPoint position, GeoJSONMultiPolygon polygon, java.util.List<Device> devices, java.util.List<PointOfInterest> pointsOfInterest, java.util.List<Geofence> geofences) {
         this.id = id;
         this.name = name;
         this.position = position;
         this.polygon = polygon;
         this.devices = devices;
+        this.pointsOfInterest = pointsOfInterest;
+        this.geofences = geofences;
     }
 
     public String getId() {
@@ -60,6 +66,20 @@ public class Site implements java.io.Serializable {
         this.devices = devices;
     }
 
+    public java.util.List<PointOfInterest> getPointsOfInterest() {
+        return pointsOfInterest;
+    }
+    public void setPointsOfInterest(java.util.List<PointOfInterest> pointsOfInterest) {
+        this.pointsOfInterest = pointsOfInterest;
+    }
+
+    public java.util.List<Geofence> getGeofences() {
+        return geofences;
+    }
+    public void setGeofences(java.util.List<Geofence> geofences) {
+        this.geofences = geofences;
+    }
+
 
 
     public static Site.Builder builder() {
@@ -73,6 +93,8 @@ public class Site implements java.io.Serializable {
         private GeoJSONPoint position;
         private GeoJSONMultiPolygon polygon;
         private java.util.List<Device> devices;
+        private java.util.List<PointOfInterest> pointsOfInterest;
+        private java.util.List<Geofence> geofences;
 
         public Builder() {
         }
@@ -102,9 +124,19 @@ public class Site implements java.io.Serializable {
             return this;
         }
 
+        public Builder setPointsOfInterest(java.util.List<PointOfInterest> pointsOfInterest) {
+            this.pointsOfInterest = pointsOfInterest;
+            return this;
+        }
+
+        public Builder setGeofences(java.util.List<Geofence> geofences) {
+            this.geofences = geofences;
+            return this;
+        }
+
 
         public Site build() {
-            return new Site(id, name, position, polygon, devices);
+            return new Site(id, name, position, polygon, devices, pointsOfInterest, geofences);
         }
 
     }
