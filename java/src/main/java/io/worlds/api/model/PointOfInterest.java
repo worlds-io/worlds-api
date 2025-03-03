@@ -11,17 +11,23 @@ public class PointOfInterest implements java.io.Serializable {
     private Site site;
     @jakarta.validation.constraints.NotNull
     private String name;
+    private GeoJSONPoint position;
+    @jakarta.validation.constraints.NotNull
     private java.util.List<Device> devices;
+    @jakarta.validation.constraints.NotNull
+    private java.util.List<Geofence> geofences;
     private java.lang.Object metadata;
 
     public PointOfInterest() {
     }
 
-    public PointOfInterest(String id, Site site, String name, java.util.List<Device> devices, java.lang.Object metadata) {
+    public PointOfInterest(String id, Site site, String name, GeoJSONPoint position, java.util.List<Device> devices, java.util.List<Geofence> geofences, java.lang.Object metadata) {
         this.id = id;
         this.site = site;
         this.name = name;
+        this.position = position;
         this.devices = devices;
+        this.geofences = geofences;
         this.metadata = metadata;
     }
 
@@ -46,11 +52,25 @@ public class PointOfInterest implements java.io.Serializable {
         this.name = name;
     }
 
+    public GeoJSONPoint getPosition() {
+        return position;
+    }
+    public void setPosition(GeoJSONPoint position) {
+        this.position = position;
+    }
+
     public java.util.List<Device> getDevices() {
         return devices;
     }
     public void setDevices(java.util.List<Device> devices) {
         this.devices = devices;
+    }
+
+    public java.util.List<Geofence> getGeofences() {
+        return geofences;
+    }
+    public void setGeofences(java.util.List<Geofence> geofences) {
+        this.geofences = geofences;
     }
 
     public java.lang.Object getMetadata() {
@@ -71,7 +91,9 @@ public class PointOfInterest implements java.io.Serializable {
         private String id;
         private Site site;
         private String name;
+        private GeoJSONPoint position;
         private java.util.List<Device> devices;
+        private java.util.List<Geofence> geofences;
         private java.lang.Object metadata;
 
         public Builder() {
@@ -92,8 +114,18 @@ public class PointOfInterest implements java.io.Serializable {
             return this;
         }
 
+        public Builder setPosition(GeoJSONPoint position) {
+            this.position = position;
+            return this;
+        }
+
         public Builder setDevices(java.util.List<Device> devices) {
             this.devices = devices;
+            return this;
+        }
+
+        public Builder setGeofences(java.util.List<Geofence> geofences) {
+            this.geofences = geofences;
             return this;
         }
 
@@ -104,7 +136,7 @@ public class PointOfInterest implements java.io.Serializable {
 
 
         public PointOfInterest build() {
-            return new PointOfInterest(id, site, name, devices, metadata);
+            return new PointOfInterest(id, site, name, position, devices, geofences, metadata);
         }
 
     }

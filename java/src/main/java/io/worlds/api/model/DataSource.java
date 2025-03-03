@@ -12,15 +12,18 @@ public class DataSource implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private DataSourceType type;
     private Device device;
+    @jakarta.validation.constraints.NotNull
+    private java.util.List<Zone> zones;
 
     public DataSource() {
     }
 
-    public DataSource(String id, String name, DataSourceType type, Device device) {
+    public DataSource(String id, String name, DataSourceType type, Device device, java.util.List<Zone> zones) {
         this.id = id;
         this.name = name;
         this.type = type;
         this.device = device;
+        this.zones = zones;
     }
 
     public String getId() {
@@ -51,6 +54,13 @@ public class DataSource implements java.io.Serializable {
         this.device = device;
     }
 
+    public java.util.List<Zone> getZones() {
+        return zones;
+    }
+    public void setZones(java.util.List<Zone> zones) {
+        this.zones = zones;
+    }
+
 
 
     public static DataSource.Builder builder() {
@@ -63,6 +73,7 @@ public class DataSource implements java.io.Serializable {
         private String name;
         private DataSourceType type;
         private Device device;
+        private java.util.List<Zone> zones;
 
         public Builder() {
         }
@@ -87,9 +98,14 @@ public class DataSource implements java.io.Serializable {
             return this;
         }
 
+        public Builder setZones(java.util.List<Zone> zones) {
+            this.zones = zones;
+            return this;
+        }
+
 
         public DataSource build() {
-            return new DataSource(id, name, type, device);
+            return new DataSource(id, name, type, device, zones);
         }
 
     }
