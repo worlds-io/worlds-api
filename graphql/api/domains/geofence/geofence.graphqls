@@ -26,8 +26,8 @@ type GeofenceCollision {
 }
 
 type GeofenceCollisionMessage {
-	message: GeofenceCollision
-	state: MessageState
+	message: GeofenceCollision!
+	state: MessageState!
 }
 
 type GeofenceBounds {

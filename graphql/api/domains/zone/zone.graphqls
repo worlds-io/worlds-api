@@ -28,6 +28,6 @@ type ZoneCollision {
 }
 
 type ZoneCollisionMessage {
-	message: ZoneCollision
-	state: MessageState
+	message: ZoneCollision!
+	state: MessageState!
 }
