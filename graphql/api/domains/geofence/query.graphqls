@@ -1,3 +1,13 @@
+enum GeofenceSortField {
+	ID,
+	NAME
+}
+
+input GeofenceSort {
+	field: GeofenceSortField!
+	direction: SortDirection!
+}
+
 enum GeofenceEventsSortField {
 	ID,
 	OCCURRED
@@ -20,6 +30,7 @@ input GeofenceCollisionsSort {
 
 extend type Query {
 	geofence(id: ID!): Geofence
+	geofences(filter: FilterGeofenceInput, first: Int! = 20, after: String, sort: [GeofenceSort!]! = [{field: NAME, direction: ASC}, {field: ID, direction: ASC}]): GeofenceConnection
 	geofenceEvents(filter: FilterGeofenceEventInput!, first: Int! = 20, after: String, sort: [GeofenceEventsSort!]! = [{field: OCCURRED, direction: ASC}, {field: ID, direction: ASC}]): GeofenceEventConnection @deprecated (reason: "geofenceEvents is deprecated, use geofenceCollisions instead")
 	geofenceCollisions(filter: FilterGeofenceCollisionQueryInput!, first: Int! = 20, after: String, sort: [GeofenceCollisionsSort!]! = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]): GeofenceCollisionConnection
 }
