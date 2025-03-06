@@ -1,3 +1,3 @@
 extend type Query {
-    frameTextDetection(frameKey: FrameKeyInput, regions: [GeoJSONPolygonInput!], performRecongition: Boolean! = true): TextDetectionResult
+    textDetectionForDataSource(dataSourceId: ID!, timestamp: OffsetDateTime!, options: TextDetectionOptionsInput): TextDetectionResponse
 }

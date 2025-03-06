@@ -1,24 +1,20 @@
-input FrameKeyInput {
-    videoId: ID!
-    timestamp: DateTimeOffset!
-}
-
 ### Text Detection ###
 
-type TextDetectionResult {
-    boxes: [TextDetectionBox!]!
+input TextDetectionOptionsInput {
+    regions: [GeoJSONMultipolygon!]
 }
 
-type TextDetectionBox {
-    box: GeoJSONPolygon!
-    confidence: Float
-    recognitionResult: TextRecognitionResult 
+type TextDetectionResponse {
+    results: [TextDetectionResult!]!
+}
+
+type TextDetectionResult {
+    textDetection: TextDetection!
     regionIndex: Int
 }
 
-### Text Recognition
-
-type TextRecognitionResult {
+type TextDetection {
+    polygon: GeoJSONPolygon!
     text: String!
     confidence: Float
 }
