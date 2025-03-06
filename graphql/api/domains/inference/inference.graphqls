@@ -15,6 +15,7 @@ type TextRecognitionResult {
 
 type TextDetection {
     polygon: GeoJSONPolygon!
+    detectionConfidence: Float
     text: String!
-    confidence: Float
+    textConfidence: Float
 }
