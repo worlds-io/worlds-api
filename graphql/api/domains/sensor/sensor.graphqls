@@ -9,6 +9,8 @@ type Sensor {
 	name: String!
 	description: String
 	type: SensorType!
+	position: GeoJSONPoint
+	address: String
 	metadata: JSON
 }
 
@@ -23,6 +25,8 @@ input SensorInput {
 	name: String!
 	description: String
 	type: SensorType!
+	position: GeoJSONPointInput
+	address: String
 	metadata: JSON
 }
 
