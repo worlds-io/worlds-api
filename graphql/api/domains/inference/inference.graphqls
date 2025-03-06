@@ -1,7 +1,7 @@
 ### Text Recognition ###
 
 input TextRecognitionOptionsInput {
-    regions: [GeoJSONMultiPolygon!]
+    regions: [GeoJSONMultiPolygonInput!]
 }
 
 type TextRecognitionResponse {
