@@ -1,14 +1,14 @@
-### Text Detection ###
+### Text Recognition ###
 
-input TextDetectionOptionsInput {
-    regions: [GeoJSONMultipolygon!]
+input TextRecognitionOptionsInput {
+    regions: [GeoJSONMultiPolygon!]
 }
 
-type TextDetectionResponse {
-    results: [TextDetectionResult!]!
+type TextRecognitionResponse {
+    results: [TextRecognitionResult!]!
 }
 
-type TextDetectionResult {
+type TextRecognitionResult {
     textDetection: TextDetection!
     regionIndex: Int
 }

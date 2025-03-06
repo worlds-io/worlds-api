@@ -1,3 +1,3 @@
 extend type Query {
-    textDetectionForDataSource(dataSourceId: ID!, timestamp: OffsetDateTime!, options: TextDetectionOptionsInput): TextDetectionResponse
+    textRecognitionForDataSource(dataSourceId: ID!, timestamp: OffsetDateTime!, options: TextRecognitionOptionsInput): TextRecognitionResponse
 }
