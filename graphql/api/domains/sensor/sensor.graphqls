@@ -30,6 +30,16 @@ input SensorInput {
 	metadata: JSON
 }
 
+input UpdateSensorInput {
+	id: ID!
+	name: String
+	description: String
+	type: SensorType
+	position: GeoJSONPointInput
+	address: String
+	metadata: JSON
+}
+
 input MeasurementInput {
 	sensorId: ID!
 	timestamp: DateTimeOffset!
