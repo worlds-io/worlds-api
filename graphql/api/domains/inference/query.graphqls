@@ -1,3 +1,4 @@
 extend type Query {
     textRecognitionForDataSource(dataSourceId: ID!, timestamp: DateTimeOffset!, options: TextRecognitionOptionsInput): TextRecognitionResponse
+    textRecognitionForUrl(url: String!, options: TextRecognitionOptionsInput): TextRecognitionResponse
 }
