@@ -1,23 +1,24 @@
 package io.worlds.api.model;
 
 
-public class SensorInput implements java.io.Serializable {
+public class UpdateSensorInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @jakarta.validation.constraints.NotNull
-    private String name;
+    private String id;
+    private org.springframework.graphql.data.ArgumentValue<String> name = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<String> description = org.springframework.graphql.data.ArgumentValue.omitted();
-    @jakarta.validation.constraints.NotNull
-    private SensorType type;
+    private org.springframework.graphql.data.ArgumentValue<SensorType> type = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<String> address = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
 
-    public SensorInput() {
+    public UpdateSensorInput() {
     }
 
-    public SensorInput(String name, org.springframework.graphql.data.ArgumentValue<String> description, SensorType type, org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position, org.springframework.graphql.data.ArgumentValue<String> address, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata) {
+    public UpdateSensorInput(String id, org.springframework.graphql.data.ArgumentValue<String> name, org.springframework.graphql.data.ArgumentValue<String> description, org.springframework.graphql.data.ArgumentValue<SensorType> type, org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position, org.springframework.graphql.data.ArgumentValue<String> address, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.type = type;
@@ -26,10 +27,17 @@ public class SensorInput implements java.io.Serializable {
         this.metadata = metadata;
     }
 
-    public String getName() {
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<String> getName() {
         return name;
     }
-    public void setName(String name) {
+    public void setName(org.springframework.graphql.data.ArgumentValue<String> name) {
         this.name = name;
     }
 
@@ -40,10 +48,10 @@ public class SensorInput implements java.io.Serializable {
         this.description = description;
     }
 
-    public SensorType getType() {
+    public org.springframework.graphql.data.ArgumentValue<SensorType> getType() {
         return type;
     }
-    public void setType(SensorType type) {
+    public void setType(org.springframework.graphql.data.ArgumentValue<SensorType> type) {
         this.type = type;
     }
 
@@ -70,15 +78,16 @@ public class SensorInput implements java.io.Serializable {
 
 
 
-    public static SensorInput.Builder builder() {
-        return new SensorInput.Builder();
+    public static UpdateSensorInput.Builder builder() {
+        return new UpdateSensorInput.Builder();
     }
 
     public static class Builder {
 
-        private String name;
+        private String id;
+        private org.springframework.graphql.data.ArgumentValue<String> name = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<String> description = org.springframework.graphql.data.ArgumentValue.omitted();
-        private SensorType type;
+        private org.springframework.graphql.data.ArgumentValue<SensorType> type = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<String> address = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -86,7 +95,12 @@ public class SensorInput implements java.io.Serializable {
         public Builder() {
         }
 
-        public Builder setName(String name) {
+        public Builder setId(String id) {
+            this.id = id;
+            return this;
+        }
+
+        public Builder setName(org.springframework.graphql.data.ArgumentValue<String> name) {
             this.name = name;
             return this;
         }
@@ -96,7 +110,7 @@ public class SensorInput implements java.io.Serializable {
             return this;
         }
 
-        public Builder setType(SensorType type) {
+        public Builder setType(org.springframework.graphql.data.ArgumentValue<SensorType> type) {
             this.type = type;
             return this;
         }
@@ -117,8 +131,8 @@ public class SensorInput implements java.io.Serializable {
         }
 
 
-        public SensorInput build() {
-            return new SensorInput(name, description, type, position, address, metadata);
+        public UpdateSensorInput build() {
+            return new UpdateSensorInput(id, name, description, type, position, address, metadata);
         }
 
     }
