@@ -10,6 +10,12 @@ input UploadImageInput {
     data: String!
 }
 
+input CreateClipInput {
+    dataSourceId: ID!
+    startTime: DateTimeOffset!
+    endTime: DateTimeOffset!
+}
+
 type Image {
     id: ID!
     dataSourceId: ID
