@@ -19,3 +19,24 @@ type TextDetection {
     text: String!
     textConfidence: Float
 }
+
+
+### Segmentation ### 
+
+input SegmentationOptionsInput {
+    regions: [GeoJSONMultiPolygonInput!]
+}
+
+type SegmentationResponse {
+    results: [SegmentationResult!]
+}
+
+type SegmentationResult {
+    segment: Segment!
+    regionIndex: Int
+}
+
+type Segment {
+    polygon: GeoJSONMultiPolygon!
+    box: GeoJSONPolygon
+}
