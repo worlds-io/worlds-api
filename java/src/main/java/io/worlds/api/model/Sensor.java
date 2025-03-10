@@ -12,16 +12,20 @@ public class Sensor implements java.io.Serializable {
     private String description;
     @jakarta.validation.constraints.NotNull
     private SensorType type;
+    private GeoJSONPoint position;
+    private String address;
     private java.lang.Object metadata;
 
     public Sensor() {
     }
 
-    public Sensor(String id, String name, String description, SensorType type, java.lang.Object metadata) {
+    public Sensor(String id, String name, String description, SensorType type, GeoJSONPoint position, String address, java.lang.Object metadata) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.type = type;
+        this.position = position;
+        this.address = address;
         this.metadata = metadata;
     }
 
@@ -53,6 +57,20 @@ public class Sensor implements java.io.Serializable {
         this.type = type;
     }
 
+    public GeoJSONPoint getPosition() {
+        return position;
+    }
+    public void setPosition(GeoJSONPoint position) {
+        this.position = position;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public java.lang.Object getMetadata() {
         return metadata;
     }
@@ -72,6 +90,8 @@ public class Sensor implements java.io.Serializable {
         private String name;
         private String description;
         private SensorType type;
+        private GeoJSONPoint position;
+        private String address;
         private java.lang.Object metadata;
 
         public Builder() {
@@ -97,6 +117,16 @@ public class Sensor implements java.io.Serializable {
             return this;
         }
 
+        public Builder setPosition(GeoJSONPoint position) {
+            this.position = position;
+            return this;
+        }
+
+        public Builder setAddress(String address) {
+            this.address = address;
+            return this;
+        }
+
         public Builder setMetadata(java.lang.Object metadata) {
             this.metadata = metadata;
             return this;
@@ -104,7 +134,7 @@ public class Sensor implements java.io.Serializable {
 
 
         public Sensor build() {
-            return new Sensor(id, name, description, type, metadata);
+            return new Sensor(id, name, description, type, position, address, metadata);
         }
 
     }
