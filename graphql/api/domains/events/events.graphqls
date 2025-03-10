@@ -16,6 +16,15 @@ input EventProducerInput {
 	metadata: JSON
 }
 
+input UpdateEventProducerInput {
+	id: ID!
+	name: String
+	description: String
+	timezone: String
+	active: Boolean
+	metadata: JSON
+}
+
 type Event {
 	id: ID!
 	eventProducer: EventProducer!
