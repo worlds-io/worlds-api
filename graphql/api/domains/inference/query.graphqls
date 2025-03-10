@@ -4,10 +4,5 @@ extend type Query {
     textRecognitionForFrame(frameId: ID!, options: TextRecognitionOptionsInput): TextRecognitionResponse
     textRecognitionForImage(imageId: ID!, options: TextRecognitionOptionsInput): TextRecognitionResponse
     textRecognitionForUrl(url: String!, options: TextRecognitionOptionsInput): TextRecognitionResponse
-    
-    segmentationForDataSource(dataSourceId: ID!, timestamp: DateTimeOffset!, options: SegmentationOptionsInput): SegmentationResponse
-    segmentationForVideo(videoId: ID!, timestamp: DateTimeOffset!, options: SegmentationOptionsInput): SegmentationResponse
-    segmentationForFrame(frameId: ID!, options: SegmentationOptionsInput): SegmentationResponse
-    segmentationForImage(imageId: ID!, options: SegmentationOptionsInput): SegmentationResponse
-    segmentationForUrl(url: String!, options: SegmentationOptionsInput): SegmentationResponse
+    textRecognitionForTrack(trackId: String!, timestamp: DateTimeOffset!, options: TextRecognitionOptionsInput): TextRecognitionResponse
 }
