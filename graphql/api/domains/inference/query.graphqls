@@ -4,5 +4,5 @@ extend type Query {
     textRecognitionForFrame(frameId: ID!, options: TextRecognitionOptionsInput): TextRecognitionResponse
     textRecognitionForImage(imageId: ID!, options: TextRecognitionOptionsInput): TextRecognitionResponse
     textRecognitionForUrl(url: String!, options: TextRecognitionOptionsInput): TextRecognitionResponse
-    textRecognitionForTrack(trackId: String!, timestamp: DateTimeOffset!, options: TextRecognitionOptionsInput): TextRecognitionResponse
+    textRecognitionForTrack(trackId: ID!, timestamp: DateTimeOffset!, options: TextRecognitionOptionsInput): TextRecognitionResponse
 }
