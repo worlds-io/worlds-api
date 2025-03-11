@@ -84,17 +84,15 @@ jobs:
       - name: Maven (compile)
         run: mvn --batch-mode --no-transfer-progress -Drevision=${{ steps.version.outputs.version }} compile
         working-directory: java
-        env:
-          GITHUB_TOKEN: ${{ steps.gh-app-token.outputs.token }}
+        # env:
+        #   GITHUB_TOKEN: ${{ steps.gh-app-token.outputs.token }}
 
       - name: Maven (deploy)
         if: steps.set-version-vars.outputs.VERSION_IS_RELEASE == 'true' || steps.set-version-vars.outputs.VERSION_IS_PRERELEASE == 'true'
         run: mvn --batch-mode --no-transfer-progress -Drevision=${{ steps.version.outputs.version }} deploy
         working-directory: java
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_PACKAGES }}
-          # This is not compatible with GH App token for some reason...
-          # GITHUB_TOKEN: ${{ steps.gh-app-token.outputs.token }}
+          GITHUB_TOKEN: ${{ steps.gh-app-token.outputs.token }}
 
       # https://github.com/advanced-security/maven-dependency-submission-action
       - name: Dependency Submission
