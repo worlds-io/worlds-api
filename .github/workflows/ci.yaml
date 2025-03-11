@@ -24,13 +24,6 @@ jobs:
       id-token: write
 
     steps:
-      - name: GitHub App Token
-        uses: actions/create-github-app-token@v1
-        id: gh-app-token
-        with:
-          app-id: ${{ vars.WORLDS_BOT_ID }}
-          private-key: ${{ secrets.WORLDS_BOT_KEY }}
-
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -80,19 +73,16 @@ jobs:
           distribution: "temurin"
           cache: maven
 
-      # https://maven.apache.org/maven-ci-friendly.html
       - name: Maven (compile)
         run: mvn --batch-mode --no-transfer-progress -Drevision=${{ steps.version.outputs.version }} compile
         working-directory: java
-        # env:
-        #   GITHUB_TOKEN: ${{ steps.gh-app-token.outputs.token }}
 
       - name: Maven (deploy)
         if: steps.set-version-vars.outputs.VERSION_IS_RELEASE == 'true' || steps.set-version-vars.outputs.VERSION_IS_PRERELEASE == 'true'
         run: mvn --batch-mode --no-transfer-progress -Drevision=${{ steps.version.outputs.version }} deploy
         working-directory: java
         env:
-          GITHUB_TOKEN: ${{ steps.gh-app-token.outputs.token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # https://github.com/advanced-security/maven-dependency-submission-action
       - name: Dependency Submission
