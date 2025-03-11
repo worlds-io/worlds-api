@@ -59,6 +59,29 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+            <artifactId>maven-resources-plugin</artifactId>
+            <executions>
+                <execution>
+                    <id>copy-graphql-files</id>
+                    <phase>process-resources</phase>
+                    <goals>
+                        <goal>copy-resources</goal>
+                    </goals>
+                    <configuration>
+                        <outputDirectory>${project.build.outputDirectory}/graphql</outputDirectory>
+                        <resources>
+                            <resource>
+                                <directory>${project.basedir}/../graphql</directory>
+                                <includes>
+                                    <include>**/*</include>
+                                </includes>
+                            </resource>
+                        </resources>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
     </plugins>
   </build>
 
