@@ -1,0 +1,8 @@
+extend type Query {
+    textRecognitionForDataSource(dataSourceId: ID!, timestamp: DateTimeOffset!, options: TextRecognitionOptionsInput): TextRecognitionResponse
+    textRecognitionForVideo(videoId: ID!, timestamp: DateTimeOffset!, options: TextRecognitionOptionsInput): TextRecognitionResponse
+    textRecognitionForFrame(frameId: ID!, options: TextRecognitionOptionsInput): TextRecognitionResponse
+    textRecognitionForImage(imageId: ID!, options: TextRecognitionOptionsInput): TextRecognitionResponse
+    textRecognitionForUrl(url: String!, options: TextRecognitionOptionsInput): TextRecognitionResponse
+    textRecognitionForTrack(trackId: ID!, timestamp: DateTimeOffset!, options: TextRecognitionOptionsInput): TextRecognitionResponse
+}
