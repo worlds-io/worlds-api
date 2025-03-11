@@ -1,6 +1,6 @@
 # Worlds Public API Schema
 
-This repository defines the schema for the Worlds Public API
+This repository defines the schema for the Worlds API
 
 ## Repository Structure
 
@@ -86,12 +86,6 @@ Example:
 
 Please ensure that the underlying implementation can still support a `null` value by defaulting to an appropriate value if
 one isn't provided. 
-
-## Documentation
-
-Our documentation repository is located at [worlds-io/public-api-portal](https://github.com/worlds-io/public-api-portal). 
-Please be sure to correctly document every element that is introduced into the schema and update elements' 
-documentation when they are modified.
 
 ## SDK
 
