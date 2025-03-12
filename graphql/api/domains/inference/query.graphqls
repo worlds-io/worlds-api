@@ -5,4 +5,11 @@ extend type Query {
     textRecognitionForImage(imageId: ID!, options: TextRecognitionOptionsInput): TextRecognitionResponse
     textRecognitionForUrl(url: String!, options: TextRecognitionOptionsInput): TextRecognitionResponse
     textRecognitionForTrack(trackId: ID!, timestamp: DateTimeOffset!, options: TextRecognitionOptionsInput): TextRecognitionResponse
+    
+    segmentationForDataSource(dataSourceId: ID!, timestamp: DateTimeOffset!, options: SegmentationOptionsInput): SegmentationResponse
+    segmentationForVideo(videoId: ID!, timestamp: DateTimeOffset!, options: SegmentationOptionsInput): SegmentationResponse
+    segmentationForFrame(frameId: ID!, options: SegmentationOptionsInput): SegmentationResponse
+    segmentationForImage(imageId: ID!, options: SegmentationOptionsInput): SegmentationResponse
+    segmentationForUrl(url: String!, options: SegmentationOptionsInput): SegmentationResponse
+    segmentationForTrack(trackId: ID!, timestamp: DateTimeOffset!, options: SegmentationOptionsInput): SegmentationResponse
 }
