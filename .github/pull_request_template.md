@@ -1,3 +1,3 @@
-## Description
+## Description of Changes
 
-## Jira Ticket
+## Link to Related Jira Ticket
