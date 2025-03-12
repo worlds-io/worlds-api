@@ -9,7 +9,7 @@
   <name>worlds-api-java-sdk</name>
   <description>worlds-api-java-sdk</description>
   <properties>
-    <revision>0.0.1-SNAPSHOT</revision>
+    <revision>SNAPSHOT</revision>
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
     <java.version>21</java.version>
