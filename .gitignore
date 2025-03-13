@@ -1,3 +1,5 @@
 graphql.config.js
 .vscode/
 .idea/
+
+target/

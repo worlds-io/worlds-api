@@ -1,0 +1,42 @@
+### Text Recognition ###
+
+input TextRecognitionOptionsInput {
+    regions: [GeoJSONMultiPolygonInput!]
+}
+
+type TextRecognitionResponse {
+    results: [TextRecognitionResult!]!
+}
+
+type TextRecognitionResult {
+    textDetection: TextDetection!
+    regionIndex: Int
+}
+
+type TextDetection {
+    polygon: GeoJSONPolygon!
+    detectionConfidence: Float!
+    text: String!
+    textConfidence: Float!
+}
+
+### Segmentation ###
+
+input SegmentationOptionsInput {
+    points: [GeoJSONPointInput!]
+    regions: [GeoJSONMultiPolygonInput!]
+}
+
+type SegmentationResponse {
+    results: [SegmentationResult!]!
+}
+
+type SegmentationResult {
+    segment: Segment!
+    regionIndex: Int
+}
+
+type Segment {
+    polygon: GeoJSONMultiPolygon!
+    box: GeoJSONPolygon!
+}

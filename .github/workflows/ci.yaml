@@ -16,13 +16,78 @@ on:
 jobs:
   build:
     name: Build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+      packages: write
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@main
-
-      - name: Upload Artifact
-        uses: actions/upload-artifact@main
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          path: .
+          fetch-depth: 0
+
+      - name: Set Version Variables
+        id: set-version-vars
+        run: |
+          echo GITHUB_REF_TYPE=$GITHUB_REF_TYPE
+          echo GITHUB_REF_NAME=$GITHUB_REF_NAME
+          echo GITHUB_EVENT_NAME=$GITHUB_EVENT_NAME
+          GITHUB_EVENT_ACTION=$(jq -r '.action // empty' ${{ github.event_path }})
+          echo "GITHUB_EVENT_ACTION=$GITHUB_EVENT_ACTION"
+          echo
+
+          VERSION_FORMAT='${major}.${minor}.${patch}-${increment}'
+          VERSION_IS_RELEASE=false
+          VERSION_IS_PRERELEASE=false
+          if [[ $GITHUB_EVENT_NAME == release && $GITHUB_EVENT_ACTION == released ]]; then
+              echo "This is a release, using release version format."
+              VERSION_FORMAT='${major}.${minor}.${patch}'
+              VERSION_IS_RELEASE=true
+          elif [[ $GITHUB_REF_TYPE == branch && $GITHUB_REF_NAME == main ]]; then
+              echo "This is a Pre-release."
+              VERSION_IS_PRERELEASE=true
+          fi
+          echo "VERSION_FORMAT=$VERSION_FORMAT"
+          echo "VERSION_FORMAT=$VERSION_FORMAT" >> "$GITHUB_OUTPUT"
+          echo "VERSION_IS_PRERELEASE=$VERSION_IS_PRERELEASE"
+          echo "VERSION_IS_PRERELEASE=$VERSION_IS_PRERELEASE" >> "$GITHUB_OUTPUT"
+          echo "VERSION_IS_RELEASE=$VERSION_IS_RELEASE"
+          echo "VERSION_IS_RELEASE=$VERSION_IS_RELEASE" >> "$GITHUB_OUTPUT"
+          echo
+
+      # https://github.com/PaulHatch/semantic-version
+      - name: Version
+        id: version
+        uses: paulhatch/semantic-version@v5.4.0
+        with:
+          version_format: ${{ steps.set-version-vars.outputs.VERSION_FORMAT }}
+          search_commit_body: true
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: 21
+          distribution: "temurin"
+          cache: maven
+
+      - name: Maven (compile)
+        run: mvn --batch-mode --no-transfer-progress -Drevision=${{ steps.version.outputs.version }} compile
+        working-directory: java
+
+      - name: Maven (deploy)
+        if: steps.set-version-vars.outputs.VERSION_IS_RELEASE == 'true' || steps.set-version-vars.outputs.VERSION_IS_PRERELEASE == 'true'
+        run: mvn --batch-mode --no-transfer-progress -Drevision=${{ steps.version.outputs.version }} deploy
+        working-directory: java
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # https://github.com/advanced-security/maven-dependency-submission-action
+      - name: Dependency Submission
+        if: (github.event_name == 'pull_request' && github.base_ref == github.event.repository.default_branch) || (github.ref_name == github.event.repository.default_branch && github.ref_type == 'branch')
+        uses: advanced-security/maven-dependency-submission-action@v4
+        with:
+          maven-args: --no-transfer-progress -Drevision=${{ steps.version.outputs.version }} 
+          ignore-maven-wrapper: true
+          directory: ${{ github.workspace }}/java
+        continue-on-error: true
