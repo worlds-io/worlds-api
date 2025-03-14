@@ -1,7 +1,7 @@
 package io.worlds.api.model;
 
 
-public class FilterGeofenceIntersectionQueryInput implements java.io.Serializable {
+public class FilterGeofenceIntersectionInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -12,10 +12,10 @@ public class FilterGeofenceIntersectionQueryInput implements java.io.Serializabl
     private java.util.List<FilterGeofenceIntersectionQueryInput> or;
     private org.springframework.graphql.data.ArgumentValue<FilterGeofenceIntersectionQueryInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
 
-    public FilterGeofenceIntersectionQueryInput() {
+    public FilterGeofenceIntersectionInput() {
     }
 
-    public FilterGeofenceIntersectionQueryInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> geofenceId, FilterDateTimeOffsetInput time, java.util.List<FilterGeofenceIntersectionQueryInput> and, java.util.List<FilterGeofenceIntersectionQueryInput> or, org.springframework.graphql.data.ArgumentValue<FilterGeofenceIntersectionQueryInput> not) {
+    public FilterGeofenceIntersectionInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> geofenceId, FilterDateTimeOffsetInput time, java.util.List<FilterGeofenceIntersectionQueryInput> and, java.util.List<FilterGeofenceIntersectionQueryInput> or, org.springframework.graphql.data.ArgumentValue<FilterGeofenceIntersectionQueryInput> not) {
         this.geofenceId = geofenceId;
         this.time = time;
         this.and = and;
@@ -60,8 +60,8 @@ public class FilterGeofenceIntersectionQueryInput implements java.io.Serializabl
 
 
 
-    public static FilterGeofenceIntersectionQueryInput.Builder builder() {
-        return new FilterGeofenceIntersectionQueryInput.Builder();
+    public static FilterGeofenceIntersectionInput.Builder builder() {
+        return new FilterGeofenceIntersectionInput.Builder();
     }
 
     public static class Builder {
@@ -101,8 +101,8 @@ public class FilterGeofenceIntersectionQueryInput implements java.io.Serializabl
         }
 
 
-        public FilterGeofenceIntersectionQueryInput build() {
-            return new FilterGeofenceIntersectionQueryInput(geofenceId, time, and, or, not);
+        public FilterGeofenceIntersectionInput build() {
+            return new FilterGeofenceIntersectionInput(geofenceId, time, and, or, not);
         }
 
     }
