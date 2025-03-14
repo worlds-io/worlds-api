@@ -36,6 +36,7 @@ type Event {
 	timezone: String
 	metadata: JSON
 	images: [Image!]!
+	videos: [Video!]!
 }
 
 input CreateEventInput {
