@@ -13,13 +13,13 @@ type ZoneEvent {
 	zone: Zone!
 	track: Track!
 	tag: String! @deprecated (reason: "tag is deprecated and can instead be retrieved from the track.")
-	type: ActivityType! @deprecated (reason: "zoneEvent is deprecated in favor of zoneCollision, which does not use type.")
+	type: ActivityType! @deprecated (reason: "zoneEvent is deprecated in favor of zoneIntersection, which does not use type.")
 	startTime: DateTimeOffset!
 	endTime: DateTimeOffset
-	polygon: GeoJSONMultiPolygon @deprecated (reason: "zoneEvent is deprecated in favor of zoneCollision, which does not use polygon.")
+	polygon: GeoJSONMultiPolygon @deprecated (reason: "zoneEvent is deprecated in favor of zoneIntersection, which does not use polygon.")
 }
 
-type ZoneCollision {
+type ZoneIntersection {
 	id: ID!
 	zone: Zone!
 	track: Track!
@@ -27,7 +27,7 @@ type ZoneCollision {
 	endTime: DateTimeOffset
 }
 
-type ZoneCollisionMessage {
-	message: ZoneCollision!
+type ZoneIntersectionMessage {
+	message: ZoneIntersection!
 	state: MessageState!
 }

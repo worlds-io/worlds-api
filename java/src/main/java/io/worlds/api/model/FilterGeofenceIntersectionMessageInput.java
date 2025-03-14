@@ -1,7 +1,7 @@
 package io.worlds.api.model;
 
 
-public class FilterGeofenceCollisionMessageInput implements java.io.Serializable {
+public class FilterGeofenceIntersectionMessageInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -9,14 +9,14 @@ public class FilterGeofenceCollisionMessageInput implements java.io.Serializable
     private org.springframework.graphql.data.ArgumentValue<FilterStringInput> tag = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterIDInput> dataSourceId = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterMessageStateInput> state = org.springframework.graphql.data.ArgumentValue.omitted();
-    private java.util.List<FilterGeofenceCollisionMessageInput> and;
-    private java.util.List<FilterGeofenceCollisionMessageInput> or;
-    private org.springframework.graphql.data.ArgumentValue<FilterGeofenceCollisionMessageInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
+    private java.util.List<FilterGeofenceIntersectionMessageInput> and;
+    private java.util.List<FilterGeofenceIntersectionMessageInput> or;
+    private org.springframework.graphql.data.ArgumentValue<FilterGeofenceIntersectionMessageInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
 
-    public FilterGeofenceCollisionMessageInput() {
+    public FilterGeofenceIntersectionMessageInput() {
     }
 
-    public FilterGeofenceCollisionMessageInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> geofenceId, org.springframework.graphql.data.ArgumentValue<FilterStringInput> tag, org.springframework.graphql.data.ArgumentValue<FilterIDInput> dataSourceId, org.springframework.graphql.data.ArgumentValue<FilterMessageStateInput> state, java.util.List<FilterGeofenceCollisionMessageInput> and, java.util.List<FilterGeofenceCollisionMessageInput> or, org.springframework.graphql.data.ArgumentValue<FilterGeofenceCollisionMessageInput> not) {
+    public FilterGeofenceIntersectionMessageInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> geofenceId, org.springframework.graphql.data.ArgumentValue<FilterStringInput> tag, org.springframework.graphql.data.ArgumentValue<FilterIDInput> dataSourceId, org.springframework.graphql.data.ArgumentValue<FilterMessageStateInput> state, java.util.List<FilterGeofenceIntersectionMessageInput> and, java.util.List<FilterGeofenceIntersectionMessageInput> or, org.springframework.graphql.data.ArgumentValue<FilterGeofenceIntersectionMessageInput> not) {
         this.geofenceId = geofenceId;
         this.tag = tag;
         this.dataSourceId = dataSourceId;
@@ -54,31 +54,31 @@ public class FilterGeofenceCollisionMessageInput implements java.io.Serializable
         this.state = state;
     }
 
-    public java.util.List<FilterGeofenceCollisionMessageInput> getAnd() {
+    public java.util.List<FilterGeofenceIntersectionMessageInput> getAnd() {
         return and;
     }
-    public void setAnd(java.util.List<FilterGeofenceCollisionMessageInput> and) {
+    public void setAnd(java.util.List<FilterGeofenceIntersectionMessageInput> and) {
         this.and = and;
     }
 
-    public java.util.List<FilterGeofenceCollisionMessageInput> getOr() {
+    public java.util.List<FilterGeofenceIntersectionMessageInput> getOr() {
         return or;
     }
-    public void setOr(java.util.List<FilterGeofenceCollisionMessageInput> or) {
+    public void setOr(java.util.List<FilterGeofenceIntersectionMessageInput> or) {
         this.or = or;
     }
 
-    public org.springframework.graphql.data.ArgumentValue<FilterGeofenceCollisionMessageInput> getNot() {
+    public org.springframework.graphql.data.ArgumentValue<FilterGeofenceIntersectionMessageInput> getNot() {
         return not;
     }
-    public void setNot(org.springframework.graphql.data.ArgumentValue<FilterGeofenceCollisionMessageInput> not) {
+    public void setNot(org.springframework.graphql.data.ArgumentValue<FilterGeofenceIntersectionMessageInput> not) {
         this.not = not;
     }
 
 
 
-    public static FilterGeofenceCollisionMessageInput.Builder builder() {
-        return new FilterGeofenceCollisionMessageInput.Builder();
+    public static FilterGeofenceIntersectionMessageInput.Builder builder() {
+        return new FilterGeofenceIntersectionMessageInput.Builder();
     }
 
     public static class Builder {
@@ -87,9 +87,9 @@ public class FilterGeofenceCollisionMessageInput implements java.io.Serializable
         private org.springframework.graphql.data.ArgumentValue<FilterStringInput> tag = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterIDInput> dataSourceId = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterMessageStateInput> state = org.springframework.graphql.data.ArgumentValue.omitted();
-        private java.util.List<FilterGeofenceCollisionMessageInput> and;
-        private java.util.List<FilterGeofenceCollisionMessageInput> or;
-        private org.springframework.graphql.data.ArgumentValue<FilterGeofenceCollisionMessageInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
+        private java.util.List<FilterGeofenceIntersectionMessageInput> and;
+        private java.util.List<FilterGeofenceIntersectionMessageInput> or;
+        private org.springframework.graphql.data.ArgumentValue<FilterGeofenceIntersectionMessageInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
 
         public Builder() {
         }
@@ -114,24 +114,24 @@ public class FilterGeofenceCollisionMessageInput implements java.io.Serializable
             return this;
         }
 
-        public Builder setAnd(java.util.List<FilterGeofenceCollisionMessageInput> and) {
+        public Builder setAnd(java.util.List<FilterGeofenceIntersectionMessageInput> and) {
             this.and = and;
             return this;
         }
 
-        public Builder setOr(java.util.List<FilterGeofenceCollisionMessageInput> or) {
+        public Builder setOr(java.util.List<FilterGeofenceIntersectionMessageInput> or) {
             this.or = or;
             return this;
         }
 
-        public Builder setNot(org.springframework.graphql.data.ArgumentValue<FilterGeofenceCollisionMessageInput> not) {
+        public Builder setNot(org.springframework.graphql.data.ArgumentValue<FilterGeofenceIntersectionMessageInput> not) {
             this.not = not;
             return this;
         }
 
 
-        public FilterGeofenceCollisionMessageInput build() {
-            return new FilterGeofenceCollisionMessageInput(geofenceId, tag, dataSourceId, state, and, or, not);
+        public FilterGeofenceIntersectionMessageInput build() {
+            return new FilterGeofenceIntersectionMessageInput(geofenceId, tag, dataSourceId, state, and, or, not);
         }
 
     }

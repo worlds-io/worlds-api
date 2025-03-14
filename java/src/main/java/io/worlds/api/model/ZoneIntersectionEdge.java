@@ -1,26 +1,26 @@
 package io.worlds.api.model;
 
 
-public class ZoneCollisionEdge implements java.io.Serializable {
+public class ZoneIntersectionEdge implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private ZoneCollision node;
+    private ZoneIntersection node;
     @jakarta.validation.constraints.NotNull
     private String cursor;
 
-    public ZoneCollisionEdge() {
+    public ZoneIntersectionEdge() {
     }
 
-    public ZoneCollisionEdge(ZoneCollision node, String cursor) {
+    public ZoneIntersectionEdge(ZoneIntersection node, String cursor) {
         this.node = node;
         this.cursor = cursor;
     }
 
-    public ZoneCollision getNode() {
+    public ZoneIntersection getNode() {
         return node;
     }
-    public void setNode(ZoneCollision node) {
+    public void setNode(ZoneIntersection node) {
         this.node = node;
     }
 
@@ -33,19 +33,19 @@ public class ZoneCollisionEdge implements java.io.Serializable {
 
 
 
-    public static ZoneCollisionEdge.Builder builder() {
-        return new ZoneCollisionEdge.Builder();
+    public static ZoneIntersectionEdge.Builder builder() {
+        return new ZoneIntersectionEdge.Builder();
     }
 
     public static class Builder {
 
-        private ZoneCollision node;
+        private ZoneIntersection node;
         private String cursor;
 
         public Builder() {
         }
 
-        public Builder setNode(ZoneCollision node) {
+        public Builder setNode(ZoneIntersection node) {
             this.node = node;
             return this;
         }
@@ -56,8 +56,8 @@ public class ZoneCollisionEdge implements java.io.Serializable {
         }
 
 
-        public ZoneCollisionEdge build() {
-            return new ZoneCollisionEdge(node, cursor);
+        public ZoneIntersectionEdge build() {
+            return new ZoneIntersectionEdge(node, cursor);
         }
 
     }

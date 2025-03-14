@@ -1,3 +1,3 @@
 extend type Subscription {
-    zoneCollisions(filter: FilterZoneCollisionMessageInput): ZoneCollisionMessage
+    zoneIntersections(filter: FilterZoneIntersectionMessageInput): ZoneIntersectionMessage
 }

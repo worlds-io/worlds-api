@@ -1,27 +1,27 @@
 package io.worlds.api.model;
 
 
-public class ZoneCollisionMessage implements java.io.Serializable {
+public class GeofenceIntersectionMessage implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @jakarta.validation.constraints.NotNull
-    private ZoneCollision message;
+    private GeofenceIntersection message;
     @jakarta.validation.constraints.NotNull
     private MessageState state;
 
-    public ZoneCollisionMessage() {
+    public GeofenceIntersectionMessage() {
     }
 
-    public ZoneCollisionMessage(ZoneCollision message, MessageState state) {
+    public GeofenceIntersectionMessage(GeofenceIntersection message, MessageState state) {
         this.message = message;
         this.state = state;
     }
 
-    public ZoneCollision getMessage() {
+    public GeofenceIntersection getMessage() {
         return message;
     }
-    public void setMessage(ZoneCollision message) {
+    public void setMessage(GeofenceIntersection message) {
         this.message = message;
     }
 
@@ -34,19 +34,19 @@ public class ZoneCollisionMessage implements java.io.Serializable {
 
 
 
-    public static ZoneCollisionMessage.Builder builder() {
-        return new ZoneCollisionMessage.Builder();
+    public static GeofenceIntersectionMessage.Builder builder() {
+        return new GeofenceIntersectionMessage.Builder();
     }
 
     public static class Builder {
 
-        private ZoneCollision message;
+        private GeofenceIntersection message;
         private MessageState state;
 
         public Builder() {
         }
 
-        public Builder setMessage(ZoneCollision message) {
+        public Builder setMessage(GeofenceIntersection message) {
             this.message = message;
             return this;
         }
@@ -57,8 +57,8 @@ public class ZoneCollisionMessage implements java.io.Serializable {
         }
 
 
-        public ZoneCollisionMessage build() {
-            return new ZoneCollisionMessage(message, state);
+        public GeofenceIntersectionMessage build() {
+            return new GeofenceIntersectionMessage(message, state);
         }
 
     }
