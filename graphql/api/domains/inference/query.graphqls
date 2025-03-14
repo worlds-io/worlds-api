@@ -12,4 +12,11 @@ extend type Query {
     segmentationForImage(imageId: ID!, options: SegmentationOptionsInput): SegmentationResponse
     segmentationForUrl(url: String!, options: SegmentationOptionsInput): SegmentationResponse
     segmentationForTrack(trackId: ID!, timestamp: DateTimeOffset!, options: SegmentationOptionsInput): SegmentationResponse
+    
+    embeddingForDataSource(dataSourceId: ID!, timestamp: DateTimeOffset!, options: EmbeddingOptionsInput): EmbeddingResponse
+    embeddingForVideo(videoId: ID!, timestamp: DateTimeOffset!, options: EmbeddingOptionsInput): EmbeddingResponse
+    embeddingForFrame(frameId: ID!, options: EmbeddingOptionsInput): EmbeddingResponse
+    embeddingForImage(imageId: ID!, options: EmbeddingOptionsInput): EmbeddingResponse
+    embeddingForUrl(url: String!, options: EmbeddingOptionsInput): EmbeddingResponse
+    embeddingForTrack(trackId: ID!, timestamp: DateTimeOffset!, options: EmbeddingOptionsInput): EmbeddingResponse
 }
