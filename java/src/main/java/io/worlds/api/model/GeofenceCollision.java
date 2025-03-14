@@ -1,7 +1,7 @@
 package io.worlds.api.model;
 
 
-public class GeofenceCollision implements java.io.Serializable {
+public class GeofenceIntersection implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -15,10 +15,10 @@ public class GeofenceCollision implements java.io.Serializable {
     private java.time.OffsetDateTime startTime;
     private java.time.OffsetDateTime endTime;
 
-    public GeofenceCollision() {
+    public GeofenceIntersection() {
     }
 
-    public GeofenceCollision(String id, Geofence geofence, Track track, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime) {
+    public GeofenceIntersection(String id, Geofence geofence, Track track, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime) {
         this.id = id;
         this.geofence = geofence;
         this.track = track;
@@ -63,8 +63,8 @@ public class GeofenceCollision implements java.io.Serializable {
 
 
 
-    public static GeofenceCollision.Builder builder() {
-        return new GeofenceCollision.Builder();
+    public static GeofenceIntersection.Builder builder() {
+        return new GeofenceIntersection.Builder();
     }
 
     public static class Builder {
@@ -104,8 +104,8 @@ public class GeofenceCollision implements java.io.Serializable {
         }
 
 
-        public GeofenceCollision build() {
-            return new GeofenceCollision(id, geofence, track, startTime, endTime);
+        public GeofenceIntersection build() {
+            return new GeofenceIntersection(id, geofence, track, startTime, endTime);
         }
 
     }

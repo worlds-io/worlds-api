@@ -1,13 +1,13 @@
 package io.worlds.api.model;
 
-public enum GeofenceCollisionsSortField {
+public enum GeofenceIntersectionsSortField {
 
     ID("ID"),
     START_TIME("START_TIME");
 
     private final String graphqlName;
 
-    private GeofenceCollisionsSortField(String graphqlName) {
+    private GeofenceIntersectionsSortField(String graphqlName) {
         this.graphqlName = graphqlName;
     }
 

@@ -1,19 +1,19 @@
 package io.worlds.api.model;
 
 
-public class GeofenceCollisionConnection implements java.io.Serializable {
+public class GeofenceIntersectionConnection implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @jakarta.validation.constraints.NotNull
     private PageInfo pageInfo;
     @jakarta.validation.constraints.NotNull
-    private java.util.List<GeofenceCollisionEdge> edges;
+    private java.util.List<GeofenceIntersectionEdge> edges;
 
-    public GeofenceCollisionConnection() {
+    public GeofenceIntersectionConnection() {
     }
 
-    public GeofenceCollisionConnection(PageInfo pageInfo, java.util.List<GeofenceCollisionEdge> edges) {
+    public GeofenceIntersectionConnection(PageInfo pageInfo, java.util.List<GeofenceIntersectionEdge> edges) {
         this.pageInfo = pageInfo;
         this.edges = edges;
     }
@@ -25,23 +25,23 @@ public class GeofenceCollisionConnection implements java.io.Serializable {
         this.pageInfo = pageInfo;
     }
 
-    public java.util.List<GeofenceCollisionEdge> getEdges() {
+    public java.util.List<GeofenceIntersectionEdge> getEdges() {
         return edges;
     }
-    public void setEdges(java.util.List<GeofenceCollisionEdge> edges) {
+    public void setEdges(java.util.List<GeofenceIntersectionEdge> edges) {
         this.edges = edges;
     }
 
 
 
-    public static GeofenceCollisionConnection.Builder builder() {
-        return new GeofenceCollisionConnection.Builder();
+    public static GeofenceIntersectionConnection.Builder builder() {
+        return new GeofenceIntersectionConnection.Builder();
     }
 
     public static class Builder {
 
         private PageInfo pageInfo;
-        private java.util.List<GeofenceCollisionEdge> edges;
+        private java.util.List<GeofenceIntersectionEdge> edges;
 
         public Builder() {
         }
@@ -51,14 +51,14 @@ public class GeofenceCollisionConnection implements java.io.Serializable {
             return this;
         }
 
-        public Builder setEdges(java.util.List<GeofenceCollisionEdge> edges) {
+        public Builder setEdges(java.util.List<GeofenceIntersectionEdge> edges) {
             this.edges = edges;
             return this;
         }
 
 
-        public GeofenceCollisionConnection build() {
-            return new GeofenceCollisionConnection(pageInfo, edges);
+        public GeofenceIntersectionConnection build() {
+            return new GeofenceIntersectionConnection(pageInfo, edges);
         }
 
     }

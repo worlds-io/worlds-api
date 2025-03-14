@@ -1,27 +1,27 @@
 package io.worlds.api.model;
 
 
-public class ZoneCollisionMessage implements java.io.Serializable {
+public class ZoneIntersectionMessage implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @jakarta.validation.constraints.NotNull
-    private ZoneCollision message;
+    private ZoneIntersection message;
     @jakarta.validation.constraints.NotNull
     private MessageState state;
 
-    public ZoneCollisionMessage() {
+    public ZoneIntersectionMessage() {
     }
 
-    public ZoneCollisionMessage(ZoneCollision message, MessageState state) {
+    public ZoneIntersectionMessage(ZoneIntersection message, MessageState state) {
         this.message = message;
         this.state = state;
     }
 
-    public ZoneCollision getMessage() {
+    public ZoneIntersection getMessage() {
         return message;
     }
-    public void setMessage(ZoneCollision message) {
+    public void setMessage(ZoneIntersection message) {
         this.message = message;
     }
 
@@ -34,19 +34,19 @@ public class ZoneCollisionMessage implements java.io.Serializable {
 
 
 
-    public static ZoneCollisionMessage.Builder builder() {
-        return new ZoneCollisionMessage.Builder();
+    public static ZoneIntersectionMessage.Builder builder() {
+        return new ZoneIntersectionMessage.Builder();
     }
 
     public static class Builder {
 
-        private ZoneCollision message;
+        private ZoneIntersection message;
         private MessageState state;
 
         public Builder() {
         }
 
-        public Builder setMessage(ZoneCollision message) {
+        public Builder setMessage(ZoneIntersection message) {
             this.message = message;
             return this;
         }
@@ -57,8 +57,8 @@ public class ZoneCollisionMessage implements java.io.Serializable {
         }
 
 
-        public ZoneCollisionMessage build() {
-            return new ZoneCollisionMessage(message, state);
+        public ZoneIntersectionMessage build() {
+            return new ZoneIntersectionMessage(message, state);
         }
 
     }

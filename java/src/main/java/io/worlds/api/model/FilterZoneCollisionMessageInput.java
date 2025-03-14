@@ -1,21 +1,21 @@
 package io.worlds.api.model;
 
 
-public class FilterZoneCollisionMessageInput implements java.io.Serializable {
+public class FilterZoneIntersectionMessageInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
     private org.springframework.graphql.data.ArgumentValue<FilterIDInput> zoneId = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterIDInput> dataSourceId = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterMessageStateInput> state = org.springframework.graphql.data.ArgumentValue.omitted();
-    private java.util.List<FilterZoneCollisionMessageInput> and;
-    private java.util.List<FilterZoneCollisionMessageInput> or;
-    private org.springframework.graphql.data.ArgumentValue<FilterZoneCollisionMessageInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
+    private java.util.List<FilterZoneIntersectionMessageInput> and;
+    private java.util.List<FilterZoneIntersectionMessageInput> or;
+    private org.springframework.graphql.data.ArgumentValue<FilterZoneIntersectionMessageInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
 
-    public FilterZoneCollisionMessageInput() {
+    public FilterZoneIntersectionMessageInput() {
     }
 
-    public FilterZoneCollisionMessageInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> zoneId, org.springframework.graphql.data.ArgumentValue<FilterIDInput> dataSourceId, org.springframework.graphql.data.ArgumentValue<FilterMessageStateInput> state, java.util.List<FilterZoneCollisionMessageInput> and, java.util.List<FilterZoneCollisionMessageInput> or, org.springframework.graphql.data.ArgumentValue<FilterZoneCollisionMessageInput> not) {
+    public FilterZoneIntersectionMessageInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> zoneId, org.springframework.graphql.data.ArgumentValue<FilterIDInput> dataSourceId, org.springframework.graphql.data.ArgumentValue<FilterMessageStateInput> state, java.util.List<FilterZoneIntersectionMessageInput> and, java.util.List<FilterZoneIntersectionMessageInput> or, org.springframework.graphql.data.ArgumentValue<FilterZoneIntersectionMessageInput> not) {
         this.zoneId = zoneId;
         this.dataSourceId = dataSourceId;
         this.state = state;
@@ -45,31 +45,31 @@ public class FilterZoneCollisionMessageInput implements java.io.Serializable {
         this.state = state;
     }
 
-    public java.util.List<FilterZoneCollisionMessageInput> getAnd() {
+    public java.util.List<FilterZoneIntersectionMessageInput> getAnd() {
         return and;
     }
-    public void setAnd(java.util.List<FilterZoneCollisionMessageInput> and) {
+    public void setAnd(java.util.List<FilterZoneIntersectionMessageInput> and) {
         this.and = and;
     }
 
-    public java.util.List<FilterZoneCollisionMessageInput> getOr() {
+    public java.util.List<FilterZoneIntersectionMessageInput> getOr() {
         return or;
     }
-    public void setOr(java.util.List<FilterZoneCollisionMessageInput> or) {
+    public void setOr(java.util.List<FilterZoneIntersectionMessageInput> or) {
         this.or = or;
     }
 
-    public org.springframework.graphql.data.ArgumentValue<FilterZoneCollisionMessageInput> getNot() {
+    public org.springframework.graphql.data.ArgumentValue<FilterZoneIntersectionMessageInput> getNot() {
         return not;
     }
-    public void setNot(org.springframework.graphql.data.ArgumentValue<FilterZoneCollisionMessageInput> not) {
+    public void setNot(org.springframework.graphql.data.ArgumentValue<FilterZoneIntersectionMessageInput> not) {
         this.not = not;
     }
 
 
 
-    public static FilterZoneCollisionMessageInput.Builder builder() {
-        return new FilterZoneCollisionMessageInput.Builder();
+    public static FilterZoneIntersectionMessageInput.Builder builder() {
+        return new FilterZoneIntersectionMessageInput.Builder();
     }
 
     public static class Builder {
@@ -77,9 +77,9 @@ public class FilterZoneCollisionMessageInput implements java.io.Serializable {
         private org.springframework.graphql.data.ArgumentValue<FilterIDInput> zoneId = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterIDInput> dataSourceId = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterMessageStateInput> state = org.springframework.graphql.data.ArgumentValue.omitted();
-        private java.util.List<FilterZoneCollisionMessageInput> and;
-        private java.util.List<FilterZoneCollisionMessageInput> or;
-        private org.springframework.graphql.data.ArgumentValue<FilterZoneCollisionMessageInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
+        private java.util.List<FilterZoneIntersectionMessageInput> and;
+        private java.util.List<FilterZoneIntersectionMessageInput> or;
+        private org.springframework.graphql.data.ArgumentValue<FilterZoneIntersectionMessageInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
 
         public Builder() {
         }
@@ -99,24 +99,24 @@ public class FilterZoneCollisionMessageInput implements java.io.Serializable {
             return this;
         }
 
-        public Builder setAnd(java.util.List<FilterZoneCollisionMessageInput> and) {
+        public Builder setAnd(java.util.List<FilterZoneIntersectionMessageInput> and) {
             this.and = and;
             return this;
         }
 
-        public Builder setOr(java.util.List<FilterZoneCollisionMessageInput> or) {
+        public Builder setOr(java.util.List<FilterZoneIntersectionMessageInput> or) {
             this.or = or;
             return this;
         }
 
-        public Builder setNot(org.springframework.graphql.data.ArgumentValue<FilterZoneCollisionMessageInput> not) {
+        public Builder setNot(org.springframework.graphql.data.ArgumentValue<FilterZoneIntersectionMessageInput> not) {
             this.not = not;
             return this;
         }
 
 
-        public FilterZoneCollisionMessageInput build() {
-            return new FilterZoneCollisionMessageInput(zoneId, dataSourceId, state, and, or, not);
+        public FilterZoneIntersectionMessageInput build() {
+            return new FilterZoneIntersectionMessageInput(zoneId, dataSourceId, state, and, or, not);
         }
 
     }

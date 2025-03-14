@@ -1,27 +1,27 @@
 package io.worlds.api.model;
 
 
-public class ZoneCollisionsSort implements java.io.Serializable {
+public class ZoneIntersectionsSort implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @jakarta.validation.constraints.NotNull
-    private ZoneCollisionsSortField field;
+    private ZoneIntersectionsSortField field;
     @jakarta.validation.constraints.NotNull
     private SortDirection direction;
 
-    public ZoneCollisionsSort() {
+    public ZoneIntersectionsSort() {
     }
 
-    public ZoneCollisionsSort(ZoneCollisionsSortField field, SortDirection direction) {
+    public ZoneIntersectionsSort(ZoneIntersectionsSortField field, SortDirection direction) {
         this.field = field;
         this.direction = direction;
     }
 
-    public ZoneCollisionsSortField getField() {
+    public ZoneIntersectionsSortField getField() {
         return field;
     }
-    public void setField(ZoneCollisionsSortField field) {
+    public void setField(ZoneIntersectionsSortField field) {
         this.field = field;
     }
 
@@ -34,19 +34,19 @@ public class ZoneCollisionsSort implements java.io.Serializable {
 
 
 
-    public static ZoneCollisionsSort.Builder builder() {
-        return new ZoneCollisionsSort.Builder();
+    public static ZoneIntersectionsSort.Builder builder() {
+        return new ZoneIntersectionsSort.Builder();
     }
 
     public static class Builder {
 
-        private ZoneCollisionsSortField field;
+        private ZoneIntersectionsSortField field;
         private SortDirection direction;
 
         public Builder() {
         }
 
-        public Builder setField(ZoneCollisionsSortField field) {
+        public Builder setField(ZoneIntersectionsSortField field) {
             this.field = field;
             return this;
         }
@@ -57,8 +57,8 @@ public class ZoneCollisionsSort implements java.io.Serializable {
         }
 
 
-        public ZoneCollisionsSort build() {
-            return new ZoneCollisionsSort(field, direction);
+        public ZoneIntersectionsSort build() {
+            return new ZoneIntersectionsSort(field, direction);
         }
 
     }

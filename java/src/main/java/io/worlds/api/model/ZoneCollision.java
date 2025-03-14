@@ -1,7 +1,7 @@
 package io.worlds.api.model;
 
 
-public class ZoneCollision implements java.io.Serializable {
+public class ZoneIntersection implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -15,10 +15,10 @@ public class ZoneCollision implements java.io.Serializable {
     private java.time.OffsetDateTime startTime;
     private java.time.OffsetDateTime endTime;
 
-    public ZoneCollision() {
+    public ZoneIntersection() {
     }
 
-    public ZoneCollision(String id, Zone zone, Track track, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime) {
+    public ZoneIntersection(String id, Zone zone, Track track, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime) {
         this.id = id;
         this.zone = zone;
         this.track = track;
@@ -63,8 +63,8 @@ public class ZoneCollision implements java.io.Serializable {
 
 
 
-    public static ZoneCollision.Builder builder() {
-        return new ZoneCollision.Builder();
+    public static ZoneIntersection.Builder builder() {
+        return new ZoneIntersection.Builder();
     }
 
     public static class Builder {
@@ -104,8 +104,8 @@ public class ZoneCollision implements java.io.Serializable {
         }
 
 
-        public ZoneCollision build() {
-            return new ZoneCollision(id, zone, track, startTime, endTime);
+        public ZoneIntersection build() {
+            return new ZoneIntersection(id, zone, track, startTime, endTime);
         }
 
     }

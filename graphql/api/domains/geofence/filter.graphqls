@@ -17,22 +17,22 @@ input FilterGeofenceEventInput {
 	not: FilterGeofenceEventInput
 }
 
-input FilterGeofenceCollisionQueryInput {
+input FilterGeofenceIntersectionInput {
 	geofenceId: FilterIDInput
 	time: FilterDateTimeOffsetInput!
 
-	and: [FilterGeofenceCollisionQueryInput!]
-	or: [FilterGeofenceCollisionQueryInput!]
-	not: FilterGeofenceCollisionQueryInput
+	and: [FilterGeofenceIntersectionQueryInput!]
+	or: [FilterGeofenceIntersectionQueryInput!]
+	not: FilterGeofenceIntersectionQueryInput
 }
 
-input FilterGeofenceCollisionMessageInput {
+input FilterGeofenceIntersectionMessageInput {
 	geofenceId: FilterIDInput
 	tag: FilterStringInput
 	dataSourceId: FilterIDInput
 	state: FilterMessageStateInput
 
-	and: [FilterGeofenceCollisionMessageInput!]
-	or: [FilterGeofenceCollisionMessageInput!]
-	not: FilterGeofenceCollisionMessageInput
+	and: [FilterGeofenceIntersectionMessageInput!]
+	or: [FilterGeofenceIntersectionMessageInput!]
+	not: FilterGeofenceIntersectionMessageInput
 }

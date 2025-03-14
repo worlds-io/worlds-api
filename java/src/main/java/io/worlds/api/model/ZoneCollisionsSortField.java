@@ -1,13 +1,13 @@
 package io.worlds.api.model;
 
-public enum ZoneCollisionsSortField {
+public enum ZoneIntersectionsSortField {
 
     ID("ID"),
     START_TIME("START_TIME");
 
     private final String graphqlName;
 
-    private ZoneCollisionsSortField(String graphqlName) {
+    private ZoneIntersectionsSortField(String graphqlName) {
         this.graphqlName = graphqlName;
     }
 

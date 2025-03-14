@@ -1,7 +1,7 @@
 package io.worlds.api.model;
 
 /**
- * Types of collision activities for Geofences and Zones
+ * Types of Intersection activities for Geofences and Zones
  */
 public enum ActivityType {
 

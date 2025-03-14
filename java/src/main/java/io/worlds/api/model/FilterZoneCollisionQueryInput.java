@@ -1,21 +1,21 @@
 package io.worlds.api.model;
 
 
-public class FilterZoneCollisionQueryInput implements java.io.Serializable {
+public class FilterZoneIntersectionQueryInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
     private org.springframework.graphql.data.ArgumentValue<FilterIDInput> zoneId = org.springframework.graphql.data.ArgumentValue.omitted();
     @jakarta.validation.constraints.NotNull
     private FilterDateTimeOffsetInput time;
-    private java.util.List<FilterZoneCollisionQueryInput> and;
-    private java.util.List<FilterZoneCollisionQueryInput> or;
-    private org.springframework.graphql.data.ArgumentValue<FilterZoneCollisionQueryInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
+    private java.util.List<FilterZoneIntersectionQueryInput> and;
+    private java.util.List<FilterZoneIntersectionQueryInput> or;
+    private org.springframework.graphql.data.ArgumentValue<FilterZoneIntersectionQueryInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
 
-    public FilterZoneCollisionQueryInput() {
+    public FilterZoneIntersectionQueryInput() {
     }
 
-    public FilterZoneCollisionQueryInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> zoneId, FilterDateTimeOffsetInput time, java.util.List<FilterZoneCollisionQueryInput> and, java.util.List<FilterZoneCollisionQueryInput> or, org.springframework.graphql.data.ArgumentValue<FilterZoneCollisionQueryInput> not) {
+    public FilterZoneIntersectionQueryInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> zoneId, FilterDateTimeOffsetInput time, java.util.List<FilterZoneIntersectionQueryInput> and, java.util.List<FilterZoneIntersectionQueryInput> or, org.springframework.graphql.data.ArgumentValue<FilterZoneIntersectionQueryInput> not) {
         this.zoneId = zoneId;
         this.time = time;
         this.and = and;
@@ -37,40 +37,40 @@ public class FilterZoneCollisionQueryInput implements java.io.Serializable {
         this.time = time;
     }
 
-    public java.util.List<FilterZoneCollisionQueryInput> getAnd() {
+    public java.util.List<FilterZoneIntersectionQueryInput> getAnd() {
         return and;
     }
-    public void setAnd(java.util.List<FilterZoneCollisionQueryInput> and) {
+    public void setAnd(java.util.List<FilterZoneIntersectionQueryInput> and) {
         this.and = and;
     }
 
-    public java.util.List<FilterZoneCollisionQueryInput> getOr() {
+    public java.util.List<FilterZoneIntersectionQueryInput> getOr() {
         return or;
     }
-    public void setOr(java.util.List<FilterZoneCollisionQueryInput> or) {
+    public void setOr(java.util.List<FilterZoneIntersectionQueryInput> or) {
         this.or = or;
     }
 
-    public org.springframework.graphql.data.ArgumentValue<FilterZoneCollisionQueryInput> getNot() {
+    public org.springframework.graphql.data.ArgumentValue<FilterZoneIntersectionQueryInput> getNot() {
         return not;
     }
-    public void setNot(org.springframework.graphql.data.ArgumentValue<FilterZoneCollisionQueryInput> not) {
+    public void setNot(org.springframework.graphql.data.ArgumentValue<FilterZoneIntersectionQueryInput> not) {
         this.not = not;
     }
 
 
 
-    public static FilterZoneCollisionQueryInput.Builder builder() {
-        return new FilterZoneCollisionQueryInput.Builder();
+    public static FilterZoneIntersectionQueryInput.Builder builder() {
+        return new FilterZoneIntersectionQueryInput.Builder();
     }
 
     public static class Builder {
 
         private org.springframework.graphql.data.ArgumentValue<FilterIDInput> zoneId = org.springframework.graphql.data.ArgumentValue.omitted();
         private FilterDateTimeOffsetInput time;
-        private java.util.List<FilterZoneCollisionQueryInput> and;
-        private java.util.List<FilterZoneCollisionQueryInput> or;
-        private org.springframework.graphql.data.ArgumentValue<FilterZoneCollisionQueryInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
+        private java.util.List<FilterZoneIntersectionQueryInput> and;
+        private java.util.List<FilterZoneIntersectionQueryInput> or;
+        private org.springframework.graphql.data.ArgumentValue<FilterZoneIntersectionQueryInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
 
         public Builder() {
         }
@@ -85,24 +85,24 @@ public class FilterZoneCollisionQueryInput implements java.io.Serializable {
             return this;
         }
 
-        public Builder setAnd(java.util.List<FilterZoneCollisionQueryInput> and) {
+        public Builder setAnd(java.util.List<FilterZoneIntersectionQueryInput> and) {
             this.and = and;
             return this;
         }
 
-        public Builder setOr(java.util.List<FilterZoneCollisionQueryInput> or) {
+        public Builder setOr(java.util.List<FilterZoneIntersectionQueryInput> or) {
             this.or = or;
             return this;
         }
 
-        public Builder setNot(org.springframework.graphql.data.ArgumentValue<FilterZoneCollisionQueryInput> not) {
+        public Builder setNot(org.springframework.graphql.data.ArgumentValue<FilterZoneIntersectionQueryInput> not) {
             this.not = not;
             return this;
         }
 
 
-        public FilterZoneCollisionQueryInput build() {
-            return new FilterZoneCollisionQueryInput(zoneId, time, and, or, not);
+        public FilterZoneIntersectionQueryInput build() {
+            return new FilterZoneIntersectionQueryInput(zoneId, time, and, or, not);
         }
 
     }

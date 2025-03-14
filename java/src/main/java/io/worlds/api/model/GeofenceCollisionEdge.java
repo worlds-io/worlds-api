@@ -1,26 +1,26 @@
 package io.worlds.api.model;
 
 
-public class GeofenceCollisionEdge implements java.io.Serializable {
+public class GeofenceIntersectionEdge implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private GeofenceCollision node;
+    private GeofenceIntersection node;
     @jakarta.validation.constraints.NotNull
     private String cursor;
 
-    public GeofenceCollisionEdge() {
+    public GeofenceIntersectionEdge() {
     }
 
-    public GeofenceCollisionEdge(GeofenceCollision node, String cursor) {
+    public GeofenceIntersectionEdge(GeofenceIntersection node, String cursor) {
         this.node = node;
         this.cursor = cursor;
     }
 
-    public GeofenceCollision getNode() {
+    public GeofenceIntersection getNode() {
         return node;
     }
-    public void setNode(GeofenceCollision node) {
+    public void setNode(GeofenceIntersection node) {
         this.node = node;
     }
 
@@ -33,19 +33,19 @@ public class GeofenceCollisionEdge implements java.io.Serializable {
 
 
 
-    public static GeofenceCollisionEdge.Builder builder() {
-        return new GeofenceCollisionEdge.Builder();
+    public static GeofenceIntersectionEdge.Builder builder() {
+        return new GeofenceIntersectionEdge.Builder();
     }
 
     public static class Builder {
 
-        private GeofenceCollision node;
+        private GeofenceIntersection node;
         private String cursor;
 
         public Builder() {
         }
 
-        public Builder setNode(GeofenceCollision node) {
+        public Builder setNode(GeofenceIntersection node) {
             this.node = node;
             return this;
         }
@@ -56,8 +56,8 @@ public class GeofenceCollisionEdge implements java.io.Serializable {
         }
 
 
-        public GeofenceCollisionEdge build() {
-            return new GeofenceCollisionEdge(node, cursor);
+        public GeofenceIntersectionEdge build() {
+            return new GeofenceIntersectionEdge(node, cursor);
         }
 
     }
