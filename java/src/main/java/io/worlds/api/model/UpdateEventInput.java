@@ -18,12 +18,13 @@ public class UpdateEventInput implements java.io.Serializable {
     private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<CreateSnapshotInput> snapshots;
     private java.util.List<UploadImageInput> uploads;
+    private java.util.List<CreateClipInput> clips;
     private java.util.List<String> trackIds;
 
     public UpdateEventInput() {
     }
 
-    public UpdateEventInput(String id, String type, org.springframework.graphql.data.ArgumentValue<String> subType, java.time.OffsetDateTime startTime, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime, org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, java.util.List<CreateSnapshotInput> snapshots, java.util.List<UploadImageInput> uploads, java.util.List<String> trackIds) {
+    public UpdateEventInput(String id, String type, org.springframework.graphql.data.ArgumentValue<String> subType, java.time.OffsetDateTime startTime, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime, org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, java.util.List<CreateSnapshotInput> snapshots, java.util.List<UploadImageInput> uploads, java.util.List<CreateClipInput> clips, java.util.List<String> trackIds) {
         this.id = id;
         this.type = type;
         this.subType = subType;
@@ -34,6 +35,7 @@ public class UpdateEventInput implements java.io.Serializable {
         this.metadata = metadata;
         this.snapshots = snapshots;
         this.uploads = uploads;
+        this.clips = clips;
         this.trackIds = trackIds;
     }
 
@@ -107,6 +109,13 @@ public class UpdateEventInput implements java.io.Serializable {
         this.uploads = uploads;
     }
 
+    public java.util.List<CreateClipInput> getClips() {
+        return clips;
+    }
+    public void setClips(java.util.List<CreateClipInput> clips) {
+        this.clips = clips;
+    }
+
     public java.util.List<String> getTrackIds() {
         return trackIds;
     }
@@ -132,6 +141,7 @@ public class UpdateEventInput implements java.io.Serializable {
         private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<CreateSnapshotInput> snapshots;
         private java.util.List<UploadImageInput> uploads;
+        private java.util.List<CreateClipInput> clips;
         private java.util.List<String> trackIds;
 
         public Builder() {
@@ -187,6 +197,11 @@ public class UpdateEventInput implements java.io.Serializable {
             return this;
         }
 
+        public Builder setClips(java.util.List<CreateClipInput> clips) {
+            this.clips = clips;
+            return this;
+        }
+
         public Builder setTrackIds(java.util.List<String> trackIds) {
             this.trackIds = trackIds;
             return this;
@@ -194,7 +209,7 @@ public class UpdateEventInput implements java.io.Serializable {
 
 
         public UpdateEventInput build() {
-            return new UpdateEventInput(id, type, subType, startTime, endTime, position, timezone, metadata, snapshots, uploads, trackIds);
+            return new UpdateEventInput(id, type, subType, startTime, endTime, position, timezone, metadata, snapshots, uploads, clips, trackIds);
         }
 
     }
