@@ -40,3 +40,18 @@ type Segment {
     polygon: GeoJSONMultiPolygon!
     box: GeoJSONPolygon!
 }
+
+### Embedding ###
+
+input EmbeddingOptionsInput {
+    regions: [GeoJSONMultiPolygonInput!]
+}
+
+type EmbeddingResponse {
+    results: [EmbeddingResult!]!
+}
+
+type EmbeddingResult {
+    embedding: [Float!]!
+    regionIndex: Int
+}
