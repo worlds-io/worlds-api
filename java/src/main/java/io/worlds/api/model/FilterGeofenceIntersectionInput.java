@@ -8,14 +8,14 @@ public class FilterGeofenceIntersectionInput implements java.io.Serializable {
     private org.springframework.graphql.data.ArgumentValue<FilterIDInput> geofenceId = org.springframework.graphql.data.ArgumentValue.omitted();
     @jakarta.validation.constraints.NotNull
     private FilterDateTimeOffsetInput time;
-    private java.util.List<FilterGeofenceIntersectionQueryInput> and;
-    private java.util.List<FilterGeofenceIntersectionQueryInput> or;
-    private org.springframework.graphql.data.ArgumentValue<FilterGeofenceIntersectionQueryInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
+    private java.util.List<FilterGeofenceIntersectionInput> and;
+    private java.util.List<FilterGeofenceIntersectionInput> or;
+    private org.springframework.graphql.data.ArgumentValue<FilterGeofenceIntersectionInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
 
     public FilterGeofenceIntersectionInput() {
     }
 
-    public FilterGeofenceIntersectionInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> geofenceId, FilterDateTimeOffsetInput time, java.util.List<FilterGeofenceIntersectionQueryInput> and, java.util.List<FilterGeofenceIntersectionQueryInput> or, org.springframework.graphql.data.ArgumentValue<FilterGeofenceIntersectionQueryInput> not) {
+    public FilterGeofenceIntersectionInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> geofenceId, FilterDateTimeOffsetInput time, java.util.List<FilterGeofenceIntersectionInput> and, java.util.List<FilterGeofenceIntersectionInput> or, org.springframework.graphql.data.ArgumentValue<FilterGeofenceIntersectionInput> not) {
         this.geofenceId = geofenceId;
         this.time = time;
         this.and = and;
@@ -37,24 +37,24 @@ public class FilterGeofenceIntersectionInput implements java.io.Serializable {
         this.time = time;
     }
 
-    public java.util.List<FilterGeofenceIntersectionQueryInput> getAnd() {
+    public java.util.List<FilterGeofenceIntersectionInput> getAnd() {
         return and;
     }
-    public void setAnd(java.util.List<FilterGeofenceIntersectionQueryInput> and) {
+    public void setAnd(java.util.List<FilterGeofenceIntersectionInput> and) {
         this.and = and;
     }
 
-    public java.util.List<FilterGeofenceIntersectionQueryInput> getOr() {
+    public java.util.List<FilterGeofenceIntersectionInput> getOr() {
         return or;
     }
-    public void setOr(java.util.List<FilterGeofenceIntersectionQueryInput> or) {
+    public void setOr(java.util.List<FilterGeofenceIntersectionInput> or) {
         this.or = or;
     }
 
-    public org.springframework.graphql.data.ArgumentValue<FilterGeofenceIntersectionQueryInput> getNot() {
+    public org.springframework.graphql.data.ArgumentValue<FilterGeofenceIntersectionInput> getNot() {
         return not;
     }
-    public void setNot(org.springframework.graphql.data.ArgumentValue<FilterGeofenceIntersectionQueryInput> not) {
+    public void setNot(org.springframework.graphql.data.ArgumentValue<FilterGeofenceIntersectionInput> not) {
         this.not = not;
     }
 
@@ -68,9 +68,9 @@ public class FilterGeofenceIntersectionInput implements java.io.Serializable {
 
         private org.springframework.graphql.data.ArgumentValue<FilterIDInput> geofenceId = org.springframework.graphql.data.ArgumentValue.omitted();
         private FilterDateTimeOffsetInput time;
-        private java.util.List<FilterGeofenceIntersectionQueryInput> and;
-        private java.util.List<FilterGeofenceIntersectionQueryInput> or;
-        private org.springframework.graphql.data.ArgumentValue<FilterGeofenceIntersectionQueryInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
+        private java.util.List<FilterGeofenceIntersectionInput> and;
+        private java.util.List<FilterGeofenceIntersectionInput> or;
+        private org.springframework.graphql.data.ArgumentValue<FilterGeofenceIntersectionInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
 
         public Builder() {
         }
@@ -85,17 +85,17 @@ public class FilterGeofenceIntersectionInput implements java.io.Serializable {
             return this;
         }
 
-        public Builder setAnd(java.util.List<FilterGeofenceIntersectionQueryInput> and) {
+        public Builder setAnd(java.util.List<FilterGeofenceIntersectionInput> and) {
             this.and = and;
             return this;
         }
 
-        public Builder setOr(java.util.List<FilterGeofenceIntersectionQueryInput> or) {
+        public Builder setOr(java.util.List<FilterGeofenceIntersectionInput> or) {
             this.or = or;
             return this;
         }
 
-        public Builder setNot(org.springframework.graphql.data.ArgumentValue<FilterGeofenceIntersectionQueryInput> not) {
+        public Builder setNot(org.springframework.graphql.data.ArgumentValue<FilterGeofenceIntersectionInput> not) {
             this.not = not;
             return this;
         }

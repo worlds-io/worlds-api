@@ -21,9 +21,9 @@ input FilterGeofenceIntersectionInput {
 	geofenceId: FilterIDInput
 	time: FilterDateTimeOffsetInput!
 
-	and: [FilterGeofenceIntersectionQueryInput!]
-	or: [FilterGeofenceIntersectionQueryInput!]
-	not: FilterGeofenceIntersectionQueryInput
+	and: [FilterGeofenceIntersectionInput!]
+	or: [FilterGeofenceIntersectionInput!]
+	not: FilterGeofenceIntersectionInput
 }
 
 input FilterGeofenceIntersectionMessageInput {
