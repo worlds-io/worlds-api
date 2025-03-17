@@ -20,11 +20,13 @@ public class Event implements java.io.Serializable {
     private java.lang.Object metadata;
     @jakarta.validation.constraints.NotNull
     private java.util.List<Image> images;
+    @jakarta.validation.constraints.NotNull
+    private java.util.List<Video> videos;
 
     public Event() {
     }
 
-    public Event(String id, EventProducer eventProducer, String type, String subType, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, GeoJSONPoint position, String timezone, java.lang.Object metadata, java.util.List<Image> images) {
+    public Event(String id, EventProducer eventProducer, String type, String subType, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, GeoJSONPoint position, String timezone, java.lang.Object metadata, java.util.List<Image> images, java.util.List<Video> videos) {
         this.id = id;
         this.eventProducer = eventProducer;
         this.type = type;
@@ -35,6 +37,7 @@ public class Event implements java.io.Serializable {
         this.timezone = timezone;
         this.metadata = metadata;
         this.images = images;
+        this.videos = videos;
     }
 
     public String getId() {
@@ -107,6 +110,13 @@ public class Event implements java.io.Serializable {
         this.images = images;
     }
 
+    public java.util.List<Video> getVideos() {
+        return videos;
+    }
+    public void setVideos(java.util.List<Video> videos) {
+        this.videos = videos;
+    }
+
 
 
     public static Event.Builder builder() {
@@ -125,6 +135,7 @@ public class Event implements java.io.Serializable {
         private String timezone;
         private java.lang.Object metadata;
         private java.util.List<Image> images;
+        private java.util.List<Video> videos;
 
         public Builder() {
         }
@@ -179,9 +190,14 @@ public class Event implements java.io.Serializable {
             return this;
         }
 
+        public Builder setVideos(java.util.List<Video> videos) {
+            this.videos = videos;
+            return this;
+        }
+
 
         public Event build() {
-            return new Event(id, eventProducer, type, subType, startTime, endTime, position, timezone, metadata, images);
+            return new Event(id, eventProducer, type, subType, startTime, endTime, position, timezone, metadata, images, videos);
         }
 
     }
