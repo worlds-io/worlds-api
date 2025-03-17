@@ -1,3 +1,3 @@
 extend type Subscription {
-    geofenceCollisions(filter: FilterGeofenceCollisionMessageInput): GeofenceCollisionMessage
+    geofenceIntersections(filter: FilterGeofenceIntersectionMessageInput): GeofenceIntersectionMessage
 }

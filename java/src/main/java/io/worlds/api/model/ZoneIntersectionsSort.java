@@ -1,27 +1,27 @@
 package io.worlds.api.model;
 
 
-public class GeofenceCollisionsSort implements java.io.Serializable {
+public class ZoneIntersectionsSort implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @jakarta.validation.constraints.NotNull
-    private GeofenceCollisionsSortField field;
+    private ZoneIntersectionsSortField field;
     @jakarta.validation.constraints.NotNull
     private SortDirection direction;
 
-    public GeofenceCollisionsSort() {
+    public ZoneIntersectionsSort() {
     }
 
-    public GeofenceCollisionsSort(GeofenceCollisionsSortField field, SortDirection direction) {
+    public ZoneIntersectionsSort(ZoneIntersectionsSortField field, SortDirection direction) {
         this.field = field;
         this.direction = direction;
     }
 
-    public GeofenceCollisionsSortField getField() {
+    public ZoneIntersectionsSortField getField() {
         return field;
     }
-    public void setField(GeofenceCollisionsSortField field) {
+    public void setField(ZoneIntersectionsSortField field) {
         this.field = field;
     }
 
@@ -34,19 +34,19 @@ public class GeofenceCollisionsSort implements java.io.Serializable {
 
 
 
-    public static GeofenceCollisionsSort.Builder builder() {
-        return new GeofenceCollisionsSort.Builder();
+    public static ZoneIntersectionsSort.Builder builder() {
+        return new ZoneIntersectionsSort.Builder();
     }
 
     public static class Builder {
 
-        private GeofenceCollisionsSortField field;
+        private ZoneIntersectionsSortField field;
         private SortDirection direction;
 
         public Builder() {
         }
 
-        public Builder setField(GeofenceCollisionsSortField field) {
+        public Builder setField(ZoneIntersectionsSortField field) {
             this.field = field;
             return this;
         }
@@ -57,8 +57,8 @@ public class GeofenceCollisionsSort implements java.io.Serializable {
         }
 
 
-        public GeofenceCollisionsSort build() {
-            return new GeofenceCollisionsSort(field, direction);
+        public ZoneIntersectionsSort build() {
+            return new ZoneIntersectionsSort(field, direction);
         }
 
     }

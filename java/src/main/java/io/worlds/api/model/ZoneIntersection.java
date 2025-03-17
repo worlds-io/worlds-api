@@ -1,26 +1,26 @@
 package io.worlds.api.model;
 
 
-public class GeofenceCollision implements java.io.Serializable {
+public class ZoneIntersection implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @jakarta.validation.constraints.NotNull
     private String id;
     @jakarta.validation.constraints.NotNull
-    private Geofence geofence;
+    private Zone zone;
     @jakarta.validation.constraints.NotNull
     private Track track;
     @jakarta.validation.constraints.NotNull
     private java.time.OffsetDateTime startTime;
     private java.time.OffsetDateTime endTime;
 
-    public GeofenceCollision() {
+    public ZoneIntersection() {
     }
 
-    public GeofenceCollision(String id, Geofence geofence, Track track, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime) {
+    public ZoneIntersection(String id, Zone zone, Track track, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime) {
         this.id = id;
-        this.geofence = geofence;
+        this.zone = zone;
         this.track = track;
         this.startTime = startTime;
         this.endTime = endTime;
@@ -33,11 +33,11 @@ public class GeofenceCollision implements java.io.Serializable {
         this.id = id;
     }
 
-    public Geofence getGeofence() {
-        return geofence;
+    public Zone getZone() {
+        return zone;
     }
-    public void setGeofence(Geofence geofence) {
-        this.geofence = geofence;
+    public void setZone(Zone zone) {
+        this.zone = zone;
     }
 
     public Track getTrack() {
@@ -63,14 +63,14 @@ public class GeofenceCollision implements java.io.Serializable {
 
 
 
-    public static GeofenceCollision.Builder builder() {
-        return new GeofenceCollision.Builder();
+    public static ZoneIntersection.Builder builder() {
+        return new ZoneIntersection.Builder();
     }
 
     public static class Builder {
 
         private String id;
-        private Geofence geofence;
+        private Zone zone;
         private Track track;
         private java.time.OffsetDateTime startTime;
         private java.time.OffsetDateTime endTime;
@@ -83,8 +83,8 @@ public class GeofenceCollision implements java.io.Serializable {
             return this;
         }
 
-        public Builder setGeofence(Geofence geofence) {
-            this.geofence = geofence;
+        public Builder setZone(Zone zone) {
+            this.zone = zone;
             return this;
         }
 
@@ -104,8 +104,8 @@ public class GeofenceCollision implements java.io.Serializable {
         }
 
 
-        public GeofenceCollision build() {
-            return new GeofenceCollision(id, geofence, track, startTime, endTime);
+        public ZoneIntersection build() {
+            return new ZoneIntersection(id, zone, track, startTime, endTime);
         }
 
     }
