@@ -11,18 +11,23 @@ type GeofenceEvent {
 	geofence: Geofence!
 	track: Track!
 	tag: String! @deprecated (reason: "tag is deprecated and can instead be retrieved from the track.")
-	type: ActivityType! @deprecated (reason: "geofenceEvent is deprecated in favor of geofenceCollision, which does not use type.")
-	position: GeoJSONPoint! @deprecated (reason: "geofenceEvent is deprecated in favor of geofenceCollision, which does not use position.")
-	timestamp: DateTimeOffset! @deprecated (reason: "geofenceEvent is deprecated in favor of geofenceCollision, which does not use type, using startTime and endTime instead.")
-	metadata: JSON @deprecated (reason: "geofenceEvent is deprecated in favor of geofenceCollision, which does not use metadata.")
+	type: ActivityType! @deprecated (reason: "geofenceEvent is deprecated in favor of geofenceIntersection, which does not use type.")
+	position: GeoJSONPoint! @deprecated (reason: "geofenceEvent is deprecated in favor of geofenceIntersection, which does not use position.")
+	timestamp: DateTimeOffset! @deprecated (reason: "geofenceEvent is deprecated in favor of geofenceIntersection, which does not use type, using startTime and endTime instead.")
+	metadata: JSON @deprecated (reason: "geofenceEvent is deprecated in favor of geofenceIntersection, which does not use metadata.")
 }
 
-type GeofenceCollision {
+type GeofenceIntersection {
 	id: ID!
 	geofence: Geofence!
 	track: Track!
 	startTime: DateTimeOffset!
 	endTime: DateTimeOffset
+}
+
+type GeofenceIntersectionMessage {
+	message: GeofenceIntersection!
+	state: MessageState!
 }
 
 type GeofenceBounds {

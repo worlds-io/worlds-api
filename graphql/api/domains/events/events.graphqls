@@ -16,6 +16,15 @@ input EventProducerInput {
 	metadata: JSON
 }
 
+input UpdateEventProducerInput {
+	id: ID!
+	name: String
+	description: String
+	timezone: String
+	active: Boolean
+	metadata: JSON
+}
+
 type Event {
 	id: ID!
 	eventProducer: EventProducer!
@@ -27,6 +36,7 @@ type Event {
 	timezone: String
 	metadata: JSON
 	images: [Image!]!
+	videos: [Video!]!
 }
 
 input CreateEventInput {
@@ -41,6 +51,7 @@ input CreateEventInput {
 	metadata: JSON
 	snapshots: [CreateSnapshotInput!]
 	uploads: [UploadImageInput!]
+	clips: [CreateClipInput!]
 	trackIds: [ID!]
 }
 
@@ -55,5 +66,6 @@ input UpdateEventInput {
 	metadata: JSON
 	snapshots: [CreateSnapshotInput!]
 	uploads: [UploadImageInput!]
+	clips: [CreateClipInput!]
 	trackIds: [ID!]
 }

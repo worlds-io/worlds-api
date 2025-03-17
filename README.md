@@ -1,6 +1,6 @@
 # Worlds Public API Schema
 
-This repository defines the schema for the Worlds Public API
+This repository defines the schema for the Worlds API
 
 ## Repository Structure
 
@@ -25,42 +25,6 @@ Within each `domain` folder, the structure should be:
 
 A few considerations must be taken into account when modifying the schema in order to provide 
 our clients with a painless development experience.
-
-### Committing Changes
-
-The change log in our developer portal is built off of the commit messages in this repository. In order to provide a 
-useful description of all the changes to the schema, please ensure to commit often and appropriately.
-
-When committing, the following format should be used to ensure the change log displays your change correctly:
-
-```
-git commit -m "<type>(!): <description>"
-```
-
-For the time being the `type` tag should be one of two values:
-* `feat`: A new feature or element is introduced to the schema
-* `fix`: An existing feature or element was modified
-
-Optionally, the `!` character can be specified after the type signify a breaking change.
-
-The description clearly describe the change that was made to the schema. Please specify what type of element was 
-updated (`field`, `type`, `input`, `enum`, `query`, `mutation`, etc.)
-
-Examples:
-```
-git commit -m "feat: Add 'User' type"
-git commit -m "feat: Add 'email' field to 'User' type"
-git commit -m "feat: Add 'users' query"
-git commit -m "feat: Add 'email' argument to 'users' query"
-
-git commit -m "fix: Make 'phoneNumber' field in 'User' type nullable
-git commit -m "fix: Deprecate 'emailAddress' field in 'User' type
-git commit -m "fix!: Remove 'emailAddress' field in 'User' type
-git commit -m "fix!: Remove `users` query
-```
-
-If you must commit a change that doesn't fall under one of the above categories, simply commit your message without 
-the `fix:` or `feat:` prefixes. We can provide support for more tags in the future if need be.
 
 ### Breaking Changes
 
@@ -123,10 +87,19 @@ Example:
 Please ensure that the underlying implementation can still support a `null` value by defaulting to an appropriate value if
 one isn't provided. 
 
-## Documentation
+## SDK
 
-Our documentation repository is located at [worlds-io/public-api-portal](https://github.com/worlds-io/public-api-portal). 
-Please be sure to correctly document every element that is introduced into the schema and update elements' 
-documentation when they are modified.
+This repository houses Worlds API SDKs for various languages. Please be sure to maintain these SDKs when making changes to the schema
+
+### Java
+
+We use a [plugin](https://github.com/kobylynskyi/graphql-java-codegen) to generate the Java SDK model files.
+
+Please be sure to run the following commands after making changes to the schema.
+
+```bash
+cd java
+mvn generate-sources
+```
 
 [graphql-bll]: https://graphql.org/learn/thinking-in-graphs/#business-logic-layer

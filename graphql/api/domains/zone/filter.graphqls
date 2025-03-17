@@ -17,14 +17,23 @@ input FilterZoneEventInput {
 	or: [FilterZoneEventInput!]
 	not: FilterZoneEventInput
 }
-input FilterZoneCollisionQueryInput {
+input FilterZoneIntersectionInput {
 	zoneId: FilterIDInput
 	time: FilterDateTimeOffsetInput!
 	tag: FilterStringInput
 	dataSourceId: FilterIDInput
 
-	and: [FilterZoneCollisionQueryInput!]
-	or: [FilterZoneCollisionQueryInput!]
-	not: FilterZoneCollisionQueryInput
+	and: [FilterZoneIntersectionInput!]
+	or: [FilterZoneIntersectionInput!]
+	not: FilterZoneIntersectionInput
+}
 
+input FilterZoneIntersectionMessageInput {
+	zoneId: FilterIDInput
+	dataSourceId: FilterIDInput
+	state: FilterMessageStateInput
+
+	and: [FilterZoneIntersectionMessageInput!]
+	or: [FilterZoneIntersectionMessageInput!]
+	not: FilterZoneIntersectionMessageInput
 }

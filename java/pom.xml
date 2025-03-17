@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>io.worlds</groupId>
+  <artifactId>worlds-api-java-sdk</artifactId>
+  <version>${revision}</version>
+  <name>worlds-api-java-sdk</name>
+  <description>worlds-api-java-sdk</description>
+  <properties>
+    <revision>SNAPSHOT</revision>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+    <java.version>21</java.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.graphql</groupId>
+      <artifactId>spring-graphql</artifactId>
+      <version>1.3.4</version>
+    </dependency>
+    <dependency>
+      <groupId>jakarta.validation</groupId>
+      <artifactId>jakarta.validation-api</artifactId>
+      <version>3.1.1</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>io.github.kobylynskyi</groupId>
+        <artifactId>graphql-codegen-maven-plugin</artifactId>
+        <version>5.10.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <graphqlSchemas>
+                <rootDir>../graphql</rootDir>
+              </graphqlSchemas>
+              <outputDir>src/main/java</outputDir>
+              <packageName>io.worlds.api.model</packageName>
+              <addGeneratedAnnotation>false</addGeneratedAnnotation>
+              <customTypesMapping>
+                <DateTimeOffset>java.time.OffsetDateTime</DateTimeOffset>
+                <JSON>java.lang.Object</JSON>
+              </customTypesMapping>
+              <generateApis>false</generateApis>
+              <modelValidationAnnotation>@jakarta.validation.constraints.NotNull</modelValidationAnnotation>
+              <generateDataFetchingEnvironmentArgumentInApis>true</generateDataFetchingEnvironmentArgumentInApis>
+              <useWrapperForNullableInputTypes>true</useWrapperForNullableInputTypes>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+            <artifactId>maven-resources-plugin</artifactId>
+            <executions>
+                <execution>
+                    <id>copy-graphql-files</id>
+                    <phase>process-resources</phase>
+                    <goals>
+                        <goal>copy-resources</goal>
+                    </goals>
+                    <configuration>
+                        <outputDirectory>${project.build.outputDirectory}/graphql</outputDirectory>
+                        <resources>
+                            <resource>
+                                <directory>${project.basedir}/../graphql</directory>
+                                <includes>
+                                    <include>**/*</include>
+                                </includes>
+                            </resource>
+                        </resources>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+  </build>
+
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub Packages</name>
+      <url>https://maven.pkg.github.com/worlds-io/worlds-api</url>
+    </repository>
+  </distributionManagement>
+
+</project>

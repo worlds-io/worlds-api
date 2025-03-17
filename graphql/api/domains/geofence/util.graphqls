@@ -1,3 +1,13 @@
+type GeofenceConnection {
+	pageInfo: PageInfo!
+	edges: [GeofenceEdge]!
+}
+
+type GeofenceEdge {
+	node: Geofence
+	cursor: String!
+}
+
 type GeofenceEventConnection {
 	pageInfo: PageInfo!
 	edges: [GeofenceEventEdge]!
@@ -8,12 +18,12 @@ type GeofenceEventEdge {
 	cursor: String!
 }
 
-type GeofenceCollisionConnection {
+type GeofenceIntersectionConnection {
 	pageInfo: PageInfo!
-	edges: [GeofenceCollisionEdge]!
+	edges: [GeofenceIntersectionEdge]!
 }
 
-type GeofenceCollisionEdge {
-	node: GeofenceCollision
+type GeofenceIntersectionEdge {
+	node: GeofenceIntersection
 	cursor: String!
 }
