@@ -8,6 +8,7 @@ public class Track implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private String id;
     private DataSource dataSource;
+    private Video video;
     @jakarta.validation.constraints.NotNull
     private String tag;
     @jakarta.validation.constraints.NotNull
@@ -23,9 +24,10 @@ public class Track implements java.io.Serializable {
     public Track() {
     }
 
-    public Track(String id, DataSource dataSource, String tag, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, java.util.List<Detection> detections, TrackProperties properties, java.lang.Object metadata, java.util.List<String> deviceIds) {
+    public Track(String id, DataSource dataSource, Video video, String tag, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, java.util.List<Detection> detections, TrackProperties properties, java.lang.Object metadata, java.util.List<String> deviceIds) {
         this.id = id;
         this.dataSource = dataSource;
+        this.video = video;
         this.tag = tag;
         this.startTime = startTime;
         this.endTime = endTime;
@@ -47,6 +49,13 @@ public class Track implements java.io.Serializable {
     }
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
+    }
+
+    public Video getVideo() {
+        return video;
+    }
+    public void setVideo(Video video) {
+        this.video = video;
     }
 
     public String getTag() {
@@ -110,6 +119,7 @@ public class Track implements java.io.Serializable {
 
         private String id;
         private DataSource dataSource;
+        private Video video;
         private String tag;
         private java.time.OffsetDateTime startTime;
         private java.time.OffsetDateTime endTime;
@@ -128,6 +138,11 @@ public class Track implements java.io.Serializable {
 
         public Builder setDataSource(DataSource dataSource) {
             this.dataSource = dataSource;
+            return this;
+        }
+
+        public Builder setVideo(Video video) {
+            this.video = video;
             return this;
         }
 
@@ -169,7 +184,7 @@ public class Track implements java.io.Serializable {
 
 
         public Track build() {
-            return new Track(id, dataSource, tag, startTime, endTime, detections, properties, metadata, deviceIds);
+            return new Track(id, dataSource, video, tag, startTime, endTime, detections, properties, metadata, deviceIds);
         }
 
     }
