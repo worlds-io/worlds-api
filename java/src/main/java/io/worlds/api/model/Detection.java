@@ -9,6 +9,7 @@ public class Detection implements java.io.Serializable {
     private Track track;
     @jakarta.validation.constraints.NotNull
     private java.time.OffsetDateTime timestamp;
+    private Frame frame;
     private GeoJSONPolygon polygon;
     private GeoJSONPoint position;
     @jakarta.validation.constraints.NotNull
@@ -33,9 +34,10 @@ public class Detection implements java.io.Serializable {
     public Detection() {
     }
 
-    public Detection(Track track, java.time.OffsetDateTime timestamp, GeoJSONPolygon polygon, GeoJSONPoint position, java.util.List<String> zoneIds, java.util.List<String> geofenceIds, java.lang.Object metadata, java.util.List<ZoneEvent> zoneEvents, java.util.List<GeofenceEvent> geofenceEvents, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt, String globalTrackId, String deviceId, String tag) {
+    public Detection(Track track, java.time.OffsetDateTime timestamp, Frame frame, GeoJSONPolygon polygon, GeoJSONPoint position, java.util.List<String> zoneIds, java.util.List<String> geofenceIds, java.lang.Object metadata, java.util.List<ZoneEvent> zoneEvents, java.util.List<GeofenceEvent> geofenceEvents, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt, String globalTrackId, String deviceId, String tag) {
         this.track = track;
         this.timestamp = timestamp;
+        this.frame = frame;
         this.polygon = polygon;
         this.position = position;
         this.zoneIds = zoneIds;
@@ -68,6 +70,13 @@ public class Detection implements java.io.Serializable {
     }
     public void setTimestamp(java.time.OffsetDateTime timestamp) {
         this.timestamp = timestamp;
+    }
+
+    public Frame getFrame() {
+        return frame;
+    }
+    public void setFrame(Frame frame) {
+        this.frame = frame;
     }
 
     public GeoJSONPolygon getPolygon() {
@@ -170,6 +179,7 @@ public class Detection implements java.io.Serializable {
 
         private Track track;
         private java.time.OffsetDateTime timestamp;
+        private Frame frame;
         private GeoJSONPolygon polygon;
         private GeoJSONPoint position;
         private java.util.List<String> zoneIds;
@@ -196,6 +206,11 @@ public class Detection implements java.io.Serializable {
 
         public Builder setTimestamp(java.time.OffsetDateTime timestamp) {
             this.timestamp = timestamp;
+            return this;
+        }
+
+        public Builder setFrame(Frame frame) {
+            this.frame = frame;
             return this;
         }
 
@@ -264,7 +279,7 @@ public class Detection implements java.io.Serializable {
 
 
         public Detection build() {
-            return new Detection(track, timestamp, polygon, position, zoneIds, geofenceIds, metadata, zoneEvents, geofenceEvents, createdAt, updatedAt, globalTrackId, deviceId, tag);
+            return new Detection(track, timestamp, frame, polygon, position, zoneIds, geofenceIds, metadata, zoneEvents, geofenceEvents, createdAt, updatedAt, globalTrackId, deviceId, tag);
         }
 
     }
