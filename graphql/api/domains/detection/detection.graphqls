@@ -2,6 +2,7 @@ type Detection {
 	#id: ID! //TODO: Once we switch over to the detections table
 	track: Track!
 	timestamp: DateTimeOffset!
+	frame: Frame
 	polygon: GeoJSONPolygon
 	position: GeoJSONPoint
 	zoneIds: [ID!]!

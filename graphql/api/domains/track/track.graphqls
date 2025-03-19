@@ -1,6 +1,7 @@
 type Track {
 	id: ID!
 	dataSource: DataSource
+	video: Video
 	tag: String!
 	startTime: DateTimeOffset!
 	endTime: DateTimeOffset
