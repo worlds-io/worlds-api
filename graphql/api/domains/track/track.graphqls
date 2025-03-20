@@ -8,8 +8,8 @@ type Track {
 	detections: [Detection!]!
 	properties: TrackProperties
 	metadata: JSON
-	zoneCollisions: [ZoneCollision!]
-	geofenceCollisions: [GeofenceCollision!]
+	zoneIntersections: [ZoneIntersection!]
+	geofenceIntersections: [GeofenceIntersection!]
 
 	deviceIds: [ID!] @deprecated(reason: "deviceIds is deprecated, use dataSource.id instead")
 }
