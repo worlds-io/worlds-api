@@ -18,16 +18,15 @@ public class Track implements java.io.Serializable {
     private java.util.List<Detection> detections;
     private TrackProperties properties;
     private java.lang.Object metadata;
-    private java.util.List<ZoneIntersection> zoneCollisions;
-    private java.util.List<GeofenceIntersection> geofenceCollisions;
+    private java.util.List<ZoneIntersection> zoneIntersections;
+    private java.util.List<GeofenceIntersection> geofenceIntersections;
     @Deprecated
     private java.util.List<String> deviceIds;
 
     public Track() {
     }
 
-    public Track(String id, DataSource dataSource, Video video, String tag, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, java.util.List<Detection> detections, TrackProperties properties, java.lang.Object metadata, java.util.List<String> deviceIds) {
-
+    public Track(String id, DataSource dataSource, Video video, String tag, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, java.util.List<Detection> detections, TrackProperties properties, java.lang.Object metadata, java.util.List<ZoneIntersection> zoneIntersections, java.util.List<GeofenceIntersection> geofenceIntersections, java.util.List<String> deviceIds) {
         this.id = id;
         this.dataSource = dataSource;
         this.video = video;
@@ -37,8 +36,8 @@ public class Track implements java.io.Serializable {
         this.detections = detections;
         this.properties = properties;
         this.metadata = metadata;
-        this.zoneCollisions = zoneCollisions;
-        this.geofenceCollisions = geofenceCollisions;
+        this.zoneIntersections = zoneIntersections;
+        this.geofenceIntersections = geofenceIntersections;
         this.deviceIds = deviceIds;
     }
 
@@ -105,18 +104,18 @@ public class Track implements java.io.Serializable {
         this.metadata = metadata;
     }
 
-    public java.util.List<ZoneIntersection> getZoneCollisions() {
-        return zoneCollisions;
+    public java.util.List<ZoneIntersection> getZoneIntersections() {
+        return zoneIntersections;
     }
-    public void setZoneCollisions(java.util.List<ZoneIntersection> zoneCollisions) {
-        this.zoneCollisions = zoneCollisions;
+    public void setZoneIntersections(java.util.List<ZoneIntersection> zoneIntersections) {
+        this.zoneIntersections = zoneIntersections;
     }
 
-    public java.util.List<GeofenceIntersection> getGeofenceCollisions() {
-        return geofenceCollisions;
+    public java.util.List<GeofenceIntersection> getGeofenceIntersections() {
+        return geofenceIntersections;
     }
-    public void setGeofenceCollisions(java.util.List<GeofenceIntersection> geofenceCollisions) {
-        this.geofenceCollisions = geofenceCollisions;
+    public void setGeofenceIntersections(java.util.List<GeofenceIntersection> geofenceIntersections) {
+        this.geofenceIntersections = geofenceIntersections;
     }
 
     @Deprecated
@@ -145,8 +144,8 @@ public class Track implements java.io.Serializable {
         private java.util.List<Detection> detections;
         private TrackProperties properties;
         private java.lang.Object metadata;
-        private java.util.List<ZoneIntersection> zoneCollisions;
-        private java.util.List<GeofenceIntersection> geofenceCollisions;
+        private java.util.List<ZoneIntersection> zoneIntersections;
+        private java.util.List<GeofenceIntersection> geofenceIntersections;
         private java.util.List<String> deviceIds;
 
         public Builder() {
@@ -197,13 +196,13 @@ public class Track implements java.io.Serializable {
             return this;
         }
 
-        public Builder setZoneCollisions(java.util.List<ZoneIntersection> zoneCollisions) {
-            this.zoneCollisions = zoneCollisions;
+        public Builder setZoneIntersections(java.util.List<ZoneIntersection> zoneIntersections) {
+            this.zoneIntersections = zoneIntersections;
             return this;
         }
 
-        public Builder setGeofenceCollisions(java.util.List<GeofenceIntersection> geofenceCollisions) {
-            this.geofenceCollisions = geofenceCollisions;
+        public Builder setGeofenceIntersections(java.util.List<GeofenceIntersection> geofenceIntersections) {
+            this.geofenceIntersections = geofenceIntersections;
             return this;
         }
 
@@ -215,8 +214,7 @@ public class Track implements java.io.Serializable {
 
 
         public Track build() {
-            return new Track(id, dataSource, video, tag, startTime, endTime, detections, properties, metadata, deviceIds);
-
+            return new Track(id, dataSource, video, tag, startTime, endTime, detections, properties, metadata, zoneIntersections, geofenceIntersections, deviceIds);
         }
 
     }

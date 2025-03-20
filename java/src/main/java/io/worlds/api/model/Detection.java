@@ -36,8 +36,7 @@ public class Detection implements java.io.Serializable {
     public Detection() {
     }
 
-    public Detection(Track track, java.time.OffsetDateTime timestamp, Frame frame, GeoJSONPolygon polygon, GeoJSONPoint position, java.util.List<String> zoneIds, java.util.List<String> geofenceIds, java.lang.Object metadata, java.util.List<ZoneEvent> zoneEvents, java.util.List<GeofenceEvent> geofenceEvents, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt, String globalTrackId, String deviceId, String tag) {
-
+    public Detection(Track track, java.time.OffsetDateTime timestamp, Frame frame, GeoJSONPolygon polygon, GeoJSONPoint position, java.util.List<String> zoneIds, java.util.List<String> geofenceIds, java.lang.Object metadata, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt, java.util.List<ZoneEvent> zoneEvents, java.util.List<GeofenceEvent> geofenceEvents, String globalTrackId, String deviceId, String tag) {
         this.track = track;
         this.timestamp = timestamp;
         this.frame = frame;
@@ -288,8 +287,7 @@ public class Detection implements java.io.Serializable {
 
 
         public Detection build() {
-            return new Detection(track, timestamp, frame, polygon, position, zoneIds, geofenceIds, metadata, zoneEvents, geofenceEvents, createdAt, updatedAt, globalTrackId, deviceId, tag);
-
+            return new Detection(track, timestamp, frame, polygon, position, zoneIds, geofenceIds, metadata, createdAt, updatedAt, zoneEvents, geofenceEvents, globalTrackId, deviceId, tag);
         }
 
     }
