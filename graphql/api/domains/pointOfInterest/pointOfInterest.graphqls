@@ -2,8 +2,23 @@ type PointOfInterest {
     id: ID!
     site: Site!
     name: String!
-    position: GeoJSONPoint
+    position: GeoJSONPoint!
     devices: [Device!]!
     geofences: [Geofence!]!
+    metadata: JSON
+}
+
+input CreatePointOfInterestInput {
+    siteId: ID!
+    name: String!
+    position: GeoJSONPoint!
+    metadata: JSON
+}
+
+input UpdatePointOfInterestInput {
+    id: ID!
+    siteId: ID
+    name: String
+    position: GeoJSONPoint
     metadata: JSON
 }
