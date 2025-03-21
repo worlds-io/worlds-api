@@ -1,4 +1,4 @@
 extend type Mutation {
-    createPointOfInterest(pointOfInterest: CreatePointOfInterestInput): PointOfInterest
-    updatePointOfInterest(pointOfInterest: UpdatePointOfInterestInput): PointOfInterest
+    createPointOfInterest(pointOfInterest: CreatePointOfInterestInput!): PointOfInterest
+    updatePointOfInterest(pointOfInterest: UpdatePointOfInterestInput!): PointOfInterest
 }
