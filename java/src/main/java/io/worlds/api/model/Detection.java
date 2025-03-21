@@ -17,12 +17,14 @@ public class Detection implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private java.util.List<String> geofenceIds;
     private java.lang.Object metadata;
-    @jakarta.validation.constraints.NotNull
-    private java.util.List<ZoneEvent> zoneEvents;
-    @jakarta.validation.constraints.NotNull
-    private java.util.List<GeofenceEvent> geofenceEvents;
     private java.time.OffsetDateTime createdAt;
     private java.time.OffsetDateTime updatedAt;
+    @Deprecated
+    @jakarta.validation.constraints.NotNull
+    private java.util.List<ZoneEvent> zoneEvents;
+    @Deprecated
+    @jakarta.validation.constraints.NotNull
+    private java.util.List<GeofenceEvent> geofenceEvents;
     @Deprecated
     private String globalTrackId;
     @Deprecated
@@ -34,7 +36,7 @@ public class Detection implements java.io.Serializable {
     public Detection() {
     }
 
-    public Detection(Track track, java.time.OffsetDateTime timestamp, Frame frame, GeoJSONPolygon polygon, GeoJSONPoint position, java.util.List<String> zoneIds, java.util.List<String> geofenceIds, java.lang.Object metadata, java.util.List<ZoneEvent> zoneEvents, java.util.List<GeofenceEvent> geofenceEvents, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt, String globalTrackId, String deviceId, String tag) {
+    public Detection(Track track, java.time.OffsetDateTime timestamp, Frame frame, GeoJSONPolygon polygon, GeoJSONPoint position, java.util.List<String> zoneIds, java.util.List<String> geofenceIds, java.lang.Object metadata, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt, java.util.List<ZoneEvent> zoneEvents, java.util.List<GeofenceEvent> geofenceEvents, String globalTrackId, String deviceId, String tag) {
         this.track = track;
         this.timestamp = timestamp;
         this.frame = frame;
@@ -43,10 +45,10 @@ public class Detection implements java.io.Serializable {
         this.zoneIds = zoneIds;
         this.geofenceIds = geofenceIds;
         this.metadata = metadata;
-        this.zoneEvents = zoneEvents;
-        this.geofenceEvents = geofenceEvents;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
+        this.zoneEvents = zoneEvents;
+        this.geofenceEvents = geofenceEvents;
         this.globalTrackId = globalTrackId;
         this.deviceId = deviceId;
         this.tag = tag;
@@ -114,20 +116,6 @@ public class Detection implements java.io.Serializable {
         this.metadata = metadata;
     }
 
-    public java.util.List<ZoneEvent> getZoneEvents() {
-        return zoneEvents;
-    }
-    public void setZoneEvents(java.util.List<ZoneEvent> zoneEvents) {
-        this.zoneEvents = zoneEvents;
-    }
-
-    public java.util.List<GeofenceEvent> getGeofenceEvents() {
-        return geofenceEvents;
-    }
-    public void setGeofenceEvents(java.util.List<GeofenceEvent> geofenceEvents) {
-        this.geofenceEvents = geofenceEvents;
-    }
-
     public java.time.OffsetDateTime getCreatedAt() {
         return createdAt;
     }
@@ -140,6 +128,24 @@ public class Detection implements java.io.Serializable {
     }
     public void setUpdatedAt(java.time.OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    @Deprecated
+    public java.util.List<ZoneEvent> getZoneEvents() {
+        return zoneEvents;
+    }
+    @Deprecated
+    public void setZoneEvents(java.util.List<ZoneEvent> zoneEvents) {
+        this.zoneEvents = zoneEvents;
+    }
+
+    @Deprecated
+    public java.util.List<GeofenceEvent> getGeofenceEvents() {
+        return geofenceEvents;
+    }
+    @Deprecated
+    public void setGeofenceEvents(java.util.List<GeofenceEvent> geofenceEvents) {
+        this.geofenceEvents = geofenceEvents;
     }
 
     @Deprecated
@@ -185,10 +191,10 @@ public class Detection implements java.io.Serializable {
         private java.util.List<String> zoneIds;
         private java.util.List<String> geofenceIds;
         private java.lang.Object metadata;
-        private java.util.List<ZoneEvent> zoneEvents;
-        private java.util.List<GeofenceEvent> geofenceEvents;
         private java.time.OffsetDateTime createdAt;
         private java.time.OffsetDateTime updatedAt;
+        private java.util.List<ZoneEvent> zoneEvents;
+        private java.util.List<GeofenceEvent> geofenceEvents;
         private String globalTrackId;
         private String deviceId;
         private String tag;
@@ -239,16 +245,6 @@ public class Detection implements java.io.Serializable {
             return this;
         }
 
-        public Builder setZoneEvents(java.util.List<ZoneEvent> zoneEvents) {
-            this.zoneEvents = zoneEvents;
-            return this;
-        }
-
-        public Builder setGeofenceEvents(java.util.List<GeofenceEvent> geofenceEvents) {
-            this.geofenceEvents = geofenceEvents;
-            return this;
-        }
-
         public Builder setCreatedAt(java.time.OffsetDateTime createdAt) {
             this.createdAt = createdAt;
             return this;
@@ -256,6 +252,18 @@ public class Detection implements java.io.Serializable {
 
         public Builder setUpdatedAt(java.time.OffsetDateTime updatedAt) {
             this.updatedAt = updatedAt;
+            return this;
+        }
+
+        @Deprecated
+        public Builder setZoneEvents(java.util.List<ZoneEvent> zoneEvents) {
+            this.zoneEvents = zoneEvents;
+            return this;
+        }
+
+        @Deprecated
+        public Builder setGeofenceEvents(java.util.List<GeofenceEvent> geofenceEvents) {
+            this.geofenceEvents = geofenceEvents;
             return this;
         }
 
@@ -279,7 +287,7 @@ public class Detection implements java.io.Serializable {
 
 
         public Detection build() {
-            return new Detection(track, timestamp, frame, polygon, position, zoneIds, geofenceIds, metadata, zoneEvents, geofenceEvents, createdAt, updatedAt, globalTrackId, deviceId, tag);
+            return new Detection(track, timestamp, frame, polygon, position, zoneIds, geofenceIds, metadata, createdAt, updatedAt, zoneEvents, geofenceEvents, globalTrackId, deviceId, tag);
         }
 
     }

@@ -8,11 +8,11 @@ type Detection {
 	zoneIds: [ID!]!
 	geofenceIds: [ID!]!
 	metadata: JSON
-	zoneEvents: [ZoneEvent!]!
-	geofenceEvents: [GeofenceEvent!]!
 	createdAt: DateTimeOffset
 	updatedAt: DateTimeOffset
 
+	zoneEvents: [ZoneEvent!]! @deprecated (reason: "zoneEvents is deprecated, use track.zoneEvents instead")
+	geofenceEvents: [GeofenceEvent!]! @deprecated (reason: "geofenceEvents is deprecated, use track.geofenceEvents instead")
 	globalTrackId: String @deprecated (reason: "globalTrackId is deprecated, use track.id instead")
 	deviceId: ID @deprecated (reason: "deviceId is deprecated, use track.dataSourceId.id instead")
 	tag: String! @deprecated (reason: "tag is deprecated, use track.tag instead")
