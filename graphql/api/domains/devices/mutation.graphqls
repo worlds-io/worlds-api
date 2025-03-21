@@ -1,0 +1,4 @@
+extend type Mutation {
+    createDevice(device: CreateDeviceInput!): Device
+    updateDevice(device: UpdateDeviceInput!): Device
+}
