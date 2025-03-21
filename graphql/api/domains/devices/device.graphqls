@@ -5,6 +5,7 @@ type Device {
     name: String!
     enabled: Boolean!
     address: String
+    frameRate: Float
     position: GeoJSONPoint
     site: Site
     calibrations: [DeviceCalibration!]!
