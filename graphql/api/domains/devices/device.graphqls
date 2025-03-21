@@ -5,6 +5,7 @@ type Device {
     name: String!
     enabled: Boolean!
     address: String
+    frameRate: Float
     position: GeoJSONPoint
     site: Site
     calibrations: [DeviceCalibration!]!
@@ -23,4 +24,25 @@ type DeviceCalibrationMarker {
     name: String!
     position: GeoJSONPoint!
     pixel: GeoJSONPoint!
+}
+
+input CreateDeviceInput {
+    siteId: ID
+    pointOfInterestId: ID
+    externalId: ID
+    name: String!
+    address: String
+    position: GeoJSONPointInput
+    enabled: Boolean!
+}
+
+input UpdateDeviceInput {
+    id: ID!
+    siteId: ID
+    pointOfInterestId: ID
+    externalId: ID
+    name: String
+    address: String
+    position: GeoJSONPointInput
+    enabled: Boolean
 }

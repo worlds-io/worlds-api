@@ -14,6 +14,7 @@ public class Device implements java.io.Serializable {
     private String name;
     private boolean enabled;
     private String address;
+    private Double frameRate;
     private GeoJSONPoint position;
     private Site site;
     @jakarta.validation.constraints.NotNull
@@ -23,13 +24,14 @@ public class Device implements java.io.Serializable {
     public Device() {
     }
 
-    public Device(String id, String uuid, String externalId, String name, boolean enabled, String address, GeoJSONPoint position, Site site, java.util.List<DeviceCalibration> calibrations, PointOfInterest pointOfInterest) {
+    public Device(String id, String uuid, String externalId, String name, boolean enabled, String address, Double frameRate, GeoJSONPoint position, Site site, java.util.List<DeviceCalibration> calibrations, PointOfInterest pointOfInterest) {
         this.id = id;
         this.uuid = uuid;
         this.externalId = externalId;
         this.name = name;
         this.enabled = enabled;
         this.address = address;
+        this.frameRate = frameRate;
         this.position = position;
         this.site = site;
         this.calibrations = calibrations;
@@ -78,6 +80,13 @@ public class Device implements java.io.Serializable {
         this.address = address;
     }
 
+    public Double getFrameRate() {
+        return frameRate;
+    }
+    public void setFrameRate(Double frameRate) {
+        this.frameRate = frameRate;
+    }
+
     public GeoJSONPoint getPosition() {
         return position;
     }
@@ -120,6 +129,7 @@ public class Device implements java.io.Serializable {
         private String name;
         private boolean enabled;
         private String address;
+        private Double frameRate;
         private GeoJSONPoint position;
         private Site site;
         private java.util.List<DeviceCalibration> calibrations;
@@ -158,6 +168,11 @@ public class Device implements java.io.Serializable {
             return this;
         }
 
+        public Builder setFrameRate(Double frameRate) {
+            this.frameRate = frameRate;
+            return this;
+        }
+
         public Builder setPosition(GeoJSONPoint position) {
             this.position = position;
             return this;
@@ -180,7 +195,7 @@ public class Device implements java.io.Serializable {
 
 
         public Device build() {
-            return new Device(id, uuid, externalId, name, enabled, address, position, site, calibrations, pointOfInterest);
+            return new Device(id, uuid, externalId, name, enabled, address, frameRate, position, site, calibrations, pointOfInterest);
         }
 
     }
