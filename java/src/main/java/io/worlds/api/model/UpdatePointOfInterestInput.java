@@ -9,13 +9,13 @@ public class UpdatePointOfInterestInput implements java.io.Serializable {
     private String id;
     private org.springframework.graphql.data.ArgumentValue<String> siteId = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<String> name = org.springframework.graphql.data.ArgumentValue.omitted();
-    private org.springframework.graphql.data.ArgumentValue<GeoJSONPoint> position = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
 
     public UpdatePointOfInterestInput() {
     }
 
-    public UpdatePointOfInterestInput(String id, org.springframework.graphql.data.ArgumentValue<String> siteId, org.springframework.graphql.data.ArgumentValue<String> name, org.springframework.graphql.data.ArgumentValue<GeoJSONPoint> position, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata) {
+    public UpdatePointOfInterestInput(String id, org.springframework.graphql.data.ArgumentValue<String> siteId, org.springframework.graphql.data.ArgumentValue<String> name, org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata) {
         this.id = id;
         this.siteId = siteId;
         this.name = name;
@@ -44,10 +44,10 @@ public class UpdatePointOfInterestInput implements java.io.Serializable {
         this.name = name;
     }
 
-    public org.springframework.graphql.data.ArgumentValue<GeoJSONPoint> getPosition() {
+    public org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> getPosition() {
         return position;
     }
-    public void setPosition(org.springframework.graphql.data.ArgumentValue<GeoJSONPoint> position) {
+    public void setPosition(org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position) {
         this.position = position;
     }
 
@@ -69,7 +69,7 @@ public class UpdatePointOfInterestInput implements java.io.Serializable {
         private String id;
         private org.springframework.graphql.data.ArgumentValue<String> siteId = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<String> name = org.springframework.graphql.data.ArgumentValue.omitted();
-        private org.springframework.graphql.data.ArgumentValue<GeoJSONPoint> position = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
 
         public Builder() {
@@ -90,7 +90,7 @@ public class UpdatePointOfInterestInput implements java.io.Serializable {
             return this;
         }
 
-        public Builder setPosition(org.springframework.graphql.data.ArgumentValue<GeoJSONPoint> position) {
+        public Builder setPosition(org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position) {
             this.position = position;
             return this;
         }

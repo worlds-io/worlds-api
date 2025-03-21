@@ -11,7 +11,7 @@ type PointOfInterest {
 input CreatePointOfInterestInput {
     siteId: ID!
     name: String!
-    position: GeoJSONPoint!
+    position: GeoJSONPointInput!
     metadata: JSON
 }
 
@@ -19,6 +19,6 @@ input UpdatePointOfInterestInput {
     id: ID!
     siteId: ID
     name: String
-    position: GeoJSONPoint
+    position: GeoJSONPointInput
     metadata: JSON
 }

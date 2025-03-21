@@ -10,13 +10,13 @@ public class CreatePointOfInterestInput implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private String name;
     @jakarta.validation.constraints.NotNull
-    private GeoJSONPoint position;
+    private GeoJSONPointInput position;
     private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
 
     public CreatePointOfInterestInput() {
     }
 
-    public CreatePointOfInterestInput(String siteId, String name, GeoJSONPoint position, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata) {
+    public CreatePointOfInterestInput(String siteId, String name, GeoJSONPointInput position, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata) {
         this.siteId = siteId;
         this.name = name;
         this.position = position;
@@ -37,10 +37,10 @@ public class CreatePointOfInterestInput implements java.io.Serializable {
         this.name = name;
     }
 
-    public GeoJSONPoint getPosition() {
+    public GeoJSONPointInput getPosition() {
         return position;
     }
-    public void setPosition(GeoJSONPoint position) {
+    public void setPosition(GeoJSONPointInput position) {
         this.position = position;
     }
 
@@ -61,7 +61,7 @@ public class CreatePointOfInterestInput implements java.io.Serializable {
 
         private String siteId;
         private String name;
-        private GeoJSONPoint position;
+        private GeoJSONPointInput position;
         private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
 
         public Builder() {
@@ -77,7 +77,7 @@ public class CreatePointOfInterestInput implements java.io.Serializable {
             return this;
         }
 
-        public Builder setPosition(GeoJSONPoint position) {
+        public Builder setPosition(GeoJSONPointInput position) {
             this.position = position;
             return this;
         }
