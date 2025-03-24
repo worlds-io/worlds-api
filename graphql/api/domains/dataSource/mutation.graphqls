@@ -1,3 +1,4 @@
 extend type Mutation {
     createDataSource(dataSource: CreateDataSourceInput!): DataSource
+    updateDataSource(dataSource: UpdateDataSourceInput!): DataSource
 }
