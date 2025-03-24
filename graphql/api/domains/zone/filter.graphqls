@@ -20,6 +20,8 @@ input FilterZoneEventInput {
 input FilterZoneIntersectionInput {
 	zoneId: FilterIDInput
 	time: FilterDateTimeOffsetInput!
+	tag: FilterStringInput
+	dataSourceId: FilterIDInput
 
 	and: [FilterZoneIntersectionInput!]
 	or: [FilterZoneIntersectionInput!]
