@@ -11,6 +11,7 @@ public class PointOfInterest implements java.io.Serializable {
     private Site site;
     @jakarta.validation.constraints.NotNull
     private String name;
+    @jakarta.validation.constraints.NotNull
     private GeoJSONPoint position;
     @jakarta.validation.constraints.NotNull
     private java.util.List<Device> devices;
