@@ -17,3 +17,9 @@ input CreateDataSourceInput {
     name: String!
     type: DataSourceType!
 }
+
+input UpdateDataSourceInput {
+    id: ID!
+    name: String
+    type: DataSourceType
+}
