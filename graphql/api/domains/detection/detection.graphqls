@@ -10,6 +10,7 @@ type Detection {
 	metadata: JSON
 	createdAt: DateTimeOffset
 	updatedAt: DateTimeOffset
+	direction: Float
 
 	zoneEvents: [ZoneEvent!]! @deprecated (reason: "zoneEvents is deprecated, use track.zoneEvents instead")
 	geofenceEvents: [GeofenceEvent!]! @deprecated (reason: "geofenceEvents is deprecated, use track.geofenceEvents instead")
