@@ -62,7 +62,7 @@ input CreateEventInput {
 	clips: [CreateClipInput!]
 	trackIds: [ID!]
 	properties: EventPropertiesInput
-	draft: Boolean
+	draft: Boolean! = false
 }
 
 input UpdateEventInput {
