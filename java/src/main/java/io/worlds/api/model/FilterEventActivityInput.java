@@ -8,6 +8,7 @@ public class FilterEventActivityInput implements java.io.Serializable {
     private org.springframework.graphql.data.ArgumentValue<FilterIDInput> eventProducerId = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterStringInput> type = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterStringInput> subType = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> draft = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<FilterEventActivityInput> and;
     private java.util.List<FilterEventActivityInput> or;
     private org.springframework.graphql.data.ArgumentValue<FilterEventActivityInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -15,10 +16,11 @@ public class FilterEventActivityInput implements java.io.Serializable {
     public FilterEventActivityInput() {
     }
 
-    public FilterEventActivityInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> eventProducerId, org.springframework.graphql.data.ArgumentValue<FilterStringInput> type, org.springframework.graphql.data.ArgumentValue<FilterStringInput> subType, java.util.List<FilterEventActivityInput> and, java.util.List<FilterEventActivityInput> or, org.springframework.graphql.data.ArgumentValue<FilterEventActivityInput> not) {
+    public FilterEventActivityInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> eventProducerId, org.springframework.graphql.data.ArgumentValue<FilterStringInput> type, org.springframework.graphql.data.ArgumentValue<FilterStringInput> subType, org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> draft, java.util.List<FilterEventActivityInput> and, java.util.List<FilterEventActivityInput> or, org.springframework.graphql.data.ArgumentValue<FilterEventActivityInput> not) {
         this.eventProducerId = eventProducerId;
         this.type = type;
         this.subType = subType;
+        this.draft = draft;
         this.and = and;
         this.or = or;
         this.not = not;
@@ -43,6 +45,13 @@ public class FilterEventActivityInput implements java.io.Serializable {
     }
     public void setSubType(org.springframework.graphql.data.ArgumentValue<FilterStringInput> subType) {
         this.subType = subType;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> getDraft() {
+        return draft;
+    }
+    public void setDraft(org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> draft) {
+        this.draft = draft;
     }
 
     public java.util.List<FilterEventActivityInput> getAnd() {
@@ -77,6 +86,7 @@ public class FilterEventActivityInput implements java.io.Serializable {
         private org.springframework.graphql.data.ArgumentValue<FilterIDInput> eventProducerId = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterStringInput> type = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterStringInput> subType = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> draft = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<FilterEventActivityInput> and;
         private java.util.List<FilterEventActivityInput> or;
         private org.springframework.graphql.data.ArgumentValue<FilterEventActivityInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -99,6 +109,11 @@ public class FilterEventActivityInput implements java.io.Serializable {
             return this;
         }
 
+        public Builder setDraft(org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> draft) {
+            this.draft = draft;
+            return this;
+        }
+
         public Builder setAnd(java.util.List<FilterEventActivityInput> and) {
             this.and = and;
             return this;
@@ -116,7 +131,7 @@ public class FilterEventActivityInput implements java.io.Serializable {
 
 
         public FilterEventActivityInput build() {
-            return new FilterEventActivityInput(eventProducerId, type, subType, and, or, not);
+            return new FilterEventActivityInput(eventProducerId, type, subType, draft, and, or, not);
         }
 
     }
