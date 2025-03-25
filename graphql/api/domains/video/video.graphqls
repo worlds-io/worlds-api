@@ -9,6 +9,7 @@ type Video {
     resolutionHeight: String
     resolutionWidth: String
     createdBy: User
+    frameRate: String
 }
 
 
