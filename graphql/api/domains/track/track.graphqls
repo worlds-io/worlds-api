@@ -54,10 +54,10 @@ input CreateTrackInput {
 
 input UpdateTrackInput {
 	id: ID!
-	tag: String!
-	startTime: DateTimeOffset!
+	tag: String
+	startTime: DateTimeOffset
 	endTime: DateTimeOffset
-	detections: [TrackDetectionInput!]!
+	detections: [TrackDetectionInput!]
 	properties: TrackPropertiesInput
 	metadata: JSON
 }

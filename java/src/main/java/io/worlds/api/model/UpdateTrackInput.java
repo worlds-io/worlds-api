@@ -7,12 +7,9 @@ public class UpdateTrackInput implements java.io.Serializable {
 
     @jakarta.validation.constraints.NotNull
     private String id;
-    @jakarta.validation.constraints.NotNull
-    private String tag;
-    @jakarta.validation.constraints.NotNull
-    private java.time.OffsetDateTime startTime;
+    private org.springframework.graphql.data.ArgumentValue<String> tag = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> startTime = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime = org.springframework.graphql.data.ArgumentValue.omitted();
-    @jakarta.validation.constraints.NotNull
     private java.util.List<TrackDetectionInput> detections;
     private org.springframework.graphql.data.ArgumentValue<TrackPropertiesInput> properties = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -20,7 +17,7 @@ public class UpdateTrackInput implements java.io.Serializable {
     public UpdateTrackInput() {
     }
 
-    public UpdateTrackInput(String id, String tag, java.time.OffsetDateTime startTime, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime, java.util.List<TrackDetectionInput> detections, org.springframework.graphql.data.ArgumentValue<TrackPropertiesInput> properties, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata) {
+    public UpdateTrackInput(String id, org.springframework.graphql.data.ArgumentValue<String> tag, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> startTime, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime, java.util.List<TrackDetectionInput> detections, org.springframework.graphql.data.ArgumentValue<TrackPropertiesInput> properties, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata) {
         this.id = id;
         this.tag = tag;
         this.startTime = startTime;
@@ -37,17 +34,17 @@ public class UpdateTrackInput implements java.io.Serializable {
         this.id = id;
     }
 
-    public String getTag() {
+    public org.springframework.graphql.data.ArgumentValue<String> getTag() {
         return tag;
     }
-    public void setTag(String tag) {
+    public void setTag(org.springframework.graphql.data.ArgumentValue<String> tag) {
         this.tag = tag;
     }
 
-    public java.time.OffsetDateTime getStartTime() {
+    public org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> getStartTime() {
         return startTime;
     }
-    public void setStartTime(java.time.OffsetDateTime startTime) {
+    public void setStartTime(org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> startTime) {
         this.startTime = startTime;
     }
 
@@ -88,8 +85,8 @@ public class UpdateTrackInput implements java.io.Serializable {
     public static class Builder {
 
         private String id;
-        private String tag;
-        private java.time.OffsetDateTime startTime;
+        private org.springframework.graphql.data.ArgumentValue<String> tag = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> startTime = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<TrackDetectionInput> detections;
         private org.springframework.graphql.data.ArgumentValue<TrackPropertiesInput> properties = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -103,12 +100,12 @@ public class UpdateTrackInput implements java.io.Serializable {
             return this;
         }
 
-        public Builder setTag(String tag) {
+        public Builder setTag(org.springframework.graphql.data.ArgumentValue<String> tag) {
             this.tag = tag;
             return this;
         }
 
-        public Builder setStartTime(java.time.OffsetDateTime startTime) {
+        public Builder setStartTime(org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> startTime) {
             this.startTime = startTime;
             return this;
         }
