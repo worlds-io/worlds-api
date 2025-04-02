@@ -21,11 +21,13 @@ public class CreateEventInput implements java.io.Serializable {
     private java.util.List<UploadImageInput> uploads;
     private java.util.List<CreateClipInput> clips;
     private java.util.List<String> trackIds;
+    private org.springframework.graphql.data.ArgumentValue<EventPropertiesInput> properties = org.springframework.graphql.data.ArgumentValue.omitted();
+    private boolean draft = false;
 
     public CreateEventInput() {
     }
 
-    public CreateEventInput(org.springframework.graphql.data.ArgumentValue<String> id, String eventProducerId, String type, org.springframework.graphql.data.ArgumentValue<String> subType, java.time.OffsetDateTime startTime, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime, org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, java.util.List<CreateSnapshotInput> snapshots, java.util.List<UploadImageInput> uploads, java.util.List<CreateClipInput> clips, java.util.List<String> trackIds) {
+    public CreateEventInput(org.springframework.graphql.data.ArgumentValue<String> id, String eventProducerId, String type, org.springframework.graphql.data.ArgumentValue<String> subType, java.time.OffsetDateTime startTime, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime, org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, java.util.List<CreateSnapshotInput> snapshots, java.util.List<UploadImageInput> uploads, java.util.List<CreateClipInput> clips, java.util.List<String> trackIds, org.springframework.graphql.data.ArgumentValue<EventPropertiesInput> properties, boolean draft) {
         this.id = id;
         this.eventProducerId = eventProducerId;
         this.type = type;
@@ -39,6 +41,8 @@ public class CreateEventInput implements java.io.Serializable {
         this.uploads = uploads;
         this.clips = clips;
         this.trackIds = trackIds;
+        this.properties = properties;
+        this.draft = draft;
     }
 
     public org.springframework.graphql.data.ArgumentValue<String> getId() {
@@ -132,6 +136,20 @@ public class CreateEventInput implements java.io.Serializable {
         this.trackIds = trackIds;
     }
 
+    public org.springframework.graphql.data.ArgumentValue<EventPropertiesInput> getProperties() {
+        return properties;
+    }
+    public void setProperties(org.springframework.graphql.data.ArgumentValue<EventPropertiesInput> properties) {
+        this.properties = properties;
+    }
+
+    public boolean getDraft() {
+        return draft;
+    }
+    public void setDraft(boolean draft) {
+        this.draft = draft;
+    }
+
 
 
     public static CreateEventInput.Builder builder() {
@@ -153,6 +171,8 @@ public class CreateEventInput implements java.io.Serializable {
         private java.util.List<UploadImageInput> uploads;
         private java.util.List<CreateClipInput> clips;
         private java.util.List<String> trackIds;
+        private org.springframework.graphql.data.ArgumentValue<EventPropertiesInput> properties = org.springframework.graphql.data.ArgumentValue.omitted();
+        private boolean draft = false;
 
         public Builder() {
         }
@@ -222,9 +242,19 @@ public class CreateEventInput implements java.io.Serializable {
             return this;
         }
 
+        public Builder setProperties(org.springframework.graphql.data.ArgumentValue<EventPropertiesInput> properties) {
+            this.properties = properties;
+            return this;
+        }
+
+        public Builder setDraft(boolean draft) {
+            this.draft = draft;
+            return this;
+        }
+
 
         public CreateEventInput build() {
-            return new CreateEventInput(id, eventProducerId, type, subType, startTime, endTime, position, timezone, metadata, snapshots, uploads, clips, trackIds);
+            return new CreateEventInput(id, eventProducerId, type, subType, startTime, endTime, position, timezone, metadata, snapshots, uploads, clips, trackIds, properties, draft);
         }
 
     }

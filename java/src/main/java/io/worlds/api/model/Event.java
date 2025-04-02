@@ -22,11 +22,13 @@ public class Event implements java.io.Serializable {
     private java.util.List<Image> images;
     @jakarta.validation.constraints.NotNull
     private java.util.List<Video> videos;
+    private EventProperties properties;
+    private Boolean draft;
 
     public Event() {
     }
 
-    public Event(String id, EventProducer eventProducer, String type, String subType, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, GeoJSONPoint position, String timezone, java.lang.Object metadata, java.util.List<Image> images, java.util.List<Video> videos) {
+    public Event(String id, EventProducer eventProducer, String type, String subType, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, GeoJSONPoint position, String timezone, java.lang.Object metadata, java.util.List<Image> images, java.util.List<Video> videos, EventProperties properties, Boolean draft) {
         this.id = id;
         this.eventProducer = eventProducer;
         this.type = type;
@@ -38,6 +40,8 @@ public class Event implements java.io.Serializable {
         this.metadata = metadata;
         this.images = images;
         this.videos = videos;
+        this.properties = properties;
+        this.draft = draft;
     }
 
     public String getId() {
@@ -117,6 +121,20 @@ public class Event implements java.io.Serializable {
         this.videos = videos;
     }
 
+    public EventProperties getProperties() {
+        return properties;
+    }
+    public void setProperties(EventProperties properties) {
+        this.properties = properties;
+    }
+
+    public Boolean getDraft() {
+        return draft;
+    }
+    public void setDraft(Boolean draft) {
+        this.draft = draft;
+    }
+
 
 
     public static Event.Builder builder() {
@@ -136,6 +154,8 @@ public class Event implements java.io.Serializable {
         private java.lang.Object metadata;
         private java.util.List<Image> images;
         private java.util.List<Video> videos;
+        private EventProperties properties;
+        private Boolean draft;
 
         public Builder() {
         }
@@ -195,9 +215,19 @@ public class Event implements java.io.Serializable {
             return this;
         }
 
+        public Builder setProperties(EventProperties properties) {
+            this.properties = properties;
+            return this;
+        }
+
+        public Builder setDraft(Boolean draft) {
+            this.draft = draft;
+            return this;
+        }
+
 
         public Event build() {
-            return new Event(id, eventProducer, type, subType, startTime, endTime, position, timezone, metadata, images, videos);
+            return new Event(id, eventProducer, type, subType, startTime, endTime, position, timezone, metadata, images, videos, properties, draft);
         }
 
     }
