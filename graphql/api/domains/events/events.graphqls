@@ -37,6 +37,14 @@ type Event {
 	metadata: JSON
 	images: [Image!]!
 	videos: [Video!]!
+	properties: EventProperties
+	draft: Boolean
+}
+
+type EventProperties {
+	sites: [Site!]
+	dataSources: [DataSource!]
+	tags: [Tag!]
 }
 
 input CreateEventInput {
@@ -53,6 +61,8 @@ input CreateEventInput {
 	uploads: [UploadImageInput!]
 	clips: [CreateClipInput!]
 	trackIds: [ID!]
+	properties: EventPropertiesInput
+	draft: Boolean! = false
 }
 
 input UpdateEventInput {
@@ -68,4 +78,12 @@ input UpdateEventInput {
 	uploads: [UploadImageInput!]
 	clips: [CreateClipInput!]
 	trackIds: [ID!]
+	properties: EventPropertiesInput
+	draft: Boolean
+}
+
+input EventPropertiesInput {
+	siteIds: [ID!]
+	dataSourceIds: [ID!]
+	tags: [String!]
 }

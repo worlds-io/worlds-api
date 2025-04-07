@@ -12,6 +12,7 @@ input FilterEventInput {
 	type: FilterStringInput
 	subType: FilterStringInput
 	time: FilterDateTimeOffsetInput!
+	draft: FilterBooleanInput
 
 	and: [FilterEventInput!]
 	or: [FilterEventInput!]
@@ -22,6 +23,7 @@ input FilterEventActivityInput {
 	eventProducerId: FilterIDInput
 	type: FilterStringInput
 	subType: FilterStringInput
+	draft: FilterBooleanInput
 
 	and: [FilterEventActivityInput!]
 	or: [FilterEventActivityInput!]
