@@ -67,9 +67,9 @@ input CreateEventInput {
 
 input UpdateEventInput {
 	id: ID!
-	type: String!
+	type: String
 	subType: String
-	startTime: DateTimeOffset!
+	startTime: DateTimeOffset
 	endTime: DateTimeOffset
 	position: GeoJSONPointInput
 	timezone: String
