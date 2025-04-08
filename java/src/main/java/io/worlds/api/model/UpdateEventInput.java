@@ -7,11 +7,9 @@ public class UpdateEventInput implements java.io.Serializable {
 
     @jakarta.validation.constraints.NotNull
     private String id;
-    @jakarta.validation.constraints.NotNull
-    private String type;
+    private org.springframework.graphql.data.ArgumentValue<String> type = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<String> subType = org.springframework.graphql.data.ArgumentValue.omitted();
-    @jakarta.validation.constraints.NotNull
-    private java.time.OffsetDateTime startTime;
+    private org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> startTime = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<String> timezone = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -26,7 +24,7 @@ public class UpdateEventInput implements java.io.Serializable {
     public UpdateEventInput() {
     }
 
-    public UpdateEventInput(String id, String type, org.springframework.graphql.data.ArgumentValue<String> subType, java.time.OffsetDateTime startTime, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime, org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, java.util.List<CreateSnapshotInput> snapshots, java.util.List<UploadImageInput> uploads, java.util.List<CreateClipInput> clips, java.util.List<String> trackIds, org.springframework.graphql.data.ArgumentValue<EventPropertiesInput> properties, org.springframework.graphql.data.ArgumentValue<Boolean> draft) {
+    public UpdateEventInput(String id, org.springframework.graphql.data.ArgumentValue<String> type, org.springframework.graphql.data.ArgumentValue<String> subType, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> startTime, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime, org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, java.util.List<CreateSnapshotInput> snapshots, java.util.List<UploadImageInput> uploads, java.util.List<CreateClipInput> clips, java.util.List<String> trackIds, org.springframework.graphql.data.ArgumentValue<EventPropertiesInput> properties, org.springframework.graphql.data.ArgumentValue<Boolean> draft) {
         this.id = id;
         this.type = type;
         this.subType = subType;
@@ -50,10 +48,10 @@ public class UpdateEventInput implements java.io.Serializable {
         this.id = id;
     }
 
-    public String getType() {
+    public org.springframework.graphql.data.ArgumentValue<String> getType() {
         return type;
     }
-    public void setType(String type) {
+    public void setType(org.springframework.graphql.data.ArgumentValue<String> type) {
         this.type = type;
     }
 
@@ -64,10 +62,10 @@ public class UpdateEventInput implements java.io.Serializable {
         this.subType = subType;
     }
 
-    public java.time.OffsetDateTime getStartTime() {
+    public org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> getStartTime() {
         return startTime;
     }
-    public void setStartTime(java.time.OffsetDateTime startTime) {
+    public void setStartTime(org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> startTime) {
         this.startTime = startTime;
     }
 
@@ -150,9 +148,9 @@ public class UpdateEventInput implements java.io.Serializable {
     public static class Builder {
 
         private String id;
-        private String type;
+        private org.springframework.graphql.data.ArgumentValue<String> type = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<String> subType = org.springframework.graphql.data.ArgumentValue.omitted();
-        private java.time.OffsetDateTime startTime;
+        private org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> startTime = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<String> timezone = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -172,7 +170,7 @@ public class UpdateEventInput implements java.io.Serializable {
             return this;
         }
 
-        public Builder setType(String type) {
+        public Builder setType(org.springframework.graphql.data.ArgumentValue<String> type) {
             this.type = type;
             return this;
         }
@@ -182,7 +180,7 @@ public class UpdateEventInput implements java.io.Serializable {
             return this;
         }
 
-        public Builder setStartTime(java.time.OffsetDateTime startTime) {
+        public Builder setStartTime(org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> startTime) {
             this.startTime = startTime;
             return this;
         }
