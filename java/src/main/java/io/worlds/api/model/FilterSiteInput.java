@@ -6,6 +6,7 @@ public class FilterSiteInput implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 
     private org.springframework.graphql.data.ArgumentValue<FilterIDInput> id = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<FilterStringInput> name = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<FilterSiteInput> and;
     private java.util.List<FilterSiteInput> or;
     private org.springframework.graphql.data.ArgumentValue<FilterSiteInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -13,8 +14,9 @@ public class FilterSiteInput implements java.io.Serializable {
     public FilterSiteInput() {
     }
 
-    public FilterSiteInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> id, java.util.List<FilterSiteInput> and, java.util.List<FilterSiteInput> or, org.springframework.graphql.data.ArgumentValue<FilterSiteInput> not) {
+    public FilterSiteInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> id, org.springframework.graphql.data.ArgumentValue<FilterStringInput> name, java.util.List<FilterSiteInput> and, java.util.List<FilterSiteInput> or, org.springframework.graphql.data.ArgumentValue<FilterSiteInput> not) {
         this.id = id;
+        this.name = name;
         this.and = and;
         this.or = or;
         this.not = not;
@@ -25,6 +27,13 @@ public class FilterSiteInput implements java.io.Serializable {
     }
     public void setId(org.springframework.graphql.data.ArgumentValue<FilterIDInput> id) {
         this.id = id;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<FilterStringInput> getName() {
+        return name;
+    }
+    public void setName(org.springframework.graphql.data.ArgumentValue<FilterStringInput> name) {
+        this.name = name;
     }
 
     public java.util.List<FilterSiteInput> getAnd() {
@@ -57,6 +66,7 @@ public class FilterSiteInput implements java.io.Serializable {
     public static class Builder {
 
         private org.springframework.graphql.data.ArgumentValue<FilterIDInput> id = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<FilterStringInput> name = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<FilterSiteInput> and;
         private java.util.List<FilterSiteInput> or;
         private org.springframework.graphql.data.ArgumentValue<FilterSiteInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -66,6 +76,11 @@ public class FilterSiteInput implements java.io.Serializable {
 
         public Builder setId(org.springframework.graphql.data.ArgumentValue<FilterIDInput> id) {
             this.id = id;
+            return this;
+        }
+
+        public Builder setName(org.springframework.graphql.data.ArgumentValue<FilterStringInput> name) {
+            this.name = name;
             return this;
         }
 
@@ -86,7 +101,7 @@ public class FilterSiteInput implements java.io.Serializable {
 
 
         public FilterSiteInput build() {
-            return new FilterSiteInput(id, and, or, not);
+            return new FilterSiteInput(id, name, and, or, not);
         }
 
     }
