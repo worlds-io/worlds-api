@@ -10,5 +10,3 @@ type Video {
     resolutionWidth: String
     createdBy: User
 }
-
-
