@@ -13,13 +13,19 @@ public class Detection implements java.io.Serializable {
     private GeoJSONPolygon polygon;
     private GeoJSONPoint position;
     @jakarta.validation.constraints.NotNull
-    private java.util.List<String> zoneIds;
+    private java.util.List<Zone> zones;
     @jakarta.validation.constraints.NotNull
-    private java.util.List<String> geofenceIds;
+    private java.util.List<Geofence> geofences;
     private java.lang.Object metadata;
     private java.time.OffsetDateTime createdAt;
     private java.time.OffsetDateTime updatedAt;
     private Double direction;
+    @Deprecated
+    @jakarta.validation.constraints.NotNull
+    private java.util.List<String> geofenceIds;
+    @Deprecated
+    @jakarta.validation.constraints.NotNull
+    private java.util.List<String> zoneIds;
     @Deprecated
     @jakarta.validation.constraints.NotNull
     private java.util.List<ZoneEvent> zoneEvents;
@@ -37,18 +43,20 @@ public class Detection implements java.io.Serializable {
     public Detection() {
     }
 
-    public Detection(Track track, java.time.OffsetDateTime timestamp, Frame frame, GeoJSONPolygon polygon, GeoJSONPoint position, java.util.List<String> zoneIds, java.util.List<String> geofenceIds, java.lang.Object metadata, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt, Double direction, java.util.List<ZoneEvent> zoneEvents, java.util.List<GeofenceEvent> geofenceEvents, String globalTrackId, String deviceId, String tag) {
+    public Detection(Track track, java.time.OffsetDateTime timestamp, Frame frame, GeoJSONPolygon polygon, GeoJSONPoint position, java.util.List<Zone> zones, java.util.List<Geofence> geofences, java.lang.Object metadata, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt, Double direction, java.util.List<String> geofenceIds, java.util.List<String> zoneIds, java.util.List<ZoneEvent> zoneEvents, java.util.List<GeofenceEvent> geofenceEvents, String globalTrackId, String deviceId, String tag) {
         this.track = track;
         this.timestamp = timestamp;
         this.frame = frame;
         this.polygon = polygon;
         this.position = position;
-        this.zoneIds = zoneIds;
-        this.geofenceIds = geofenceIds;
+        this.zones = zones;
+        this.geofences = geofences;
         this.metadata = metadata;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.direction = direction;
+        this.geofenceIds = geofenceIds;
+        this.zoneIds = zoneIds;
         this.zoneEvents = zoneEvents;
         this.geofenceEvents = geofenceEvents;
         this.globalTrackId = globalTrackId;
@@ -97,18 +105,18 @@ public class Detection implements java.io.Serializable {
         this.position = position;
     }
 
-    public java.util.List<String> getZoneIds() {
-        return zoneIds;
+    public java.util.List<Zone> getZones() {
+        return zones;
     }
-    public void setZoneIds(java.util.List<String> zoneIds) {
-        this.zoneIds = zoneIds;
+    public void setZones(java.util.List<Zone> zones) {
+        this.zones = zones;
     }
 
-    public java.util.List<String> getGeofenceIds() {
-        return geofenceIds;
+    public java.util.List<Geofence> getGeofences() {
+        return geofences;
     }
-    public void setGeofenceIds(java.util.List<String> geofenceIds) {
-        this.geofenceIds = geofenceIds;
+    public void setGeofences(java.util.List<Geofence> geofences) {
+        this.geofences = geofences;
     }
 
     public java.lang.Object getMetadata() {
@@ -137,6 +145,24 @@ public class Detection implements java.io.Serializable {
     }
     public void setDirection(Double direction) {
         this.direction = direction;
+    }
+
+    @Deprecated
+    public java.util.List<String> getGeofenceIds() {
+        return geofenceIds;
+    }
+    @Deprecated
+    public void setGeofenceIds(java.util.List<String> geofenceIds) {
+        this.geofenceIds = geofenceIds;
+    }
+
+    @Deprecated
+    public java.util.List<String> getZoneIds() {
+        return zoneIds;
+    }
+    @Deprecated
+    public void setZoneIds(java.util.List<String> zoneIds) {
+        this.zoneIds = zoneIds;
     }
 
     @Deprecated
@@ -197,12 +223,14 @@ public class Detection implements java.io.Serializable {
         private Frame frame;
         private GeoJSONPolygon polygon;
         private GeoJSONPoint position;
-        private java.util.List<String> zoneIds;
-        private java.util.List<String> geofenceIds;
+        private java.util.List<Zone> zones;
+        private java.util.List<Geofence> geofences;
         private java.lang.Object metadata;
         private java.time.OffsetDateTime createdAt;
         private java.time.OffsetDateTime updatedAt;
         private Double direction;
+        private java.util.List<String> geofenceIds;
+        private java.util.List<String> zoneIds;
         private java.util.List<ZoneEvent> zoneEvents;
         private java.util.List<GeofenceEvent> geofenceEvents;
         private String globalTrackId;
@@ -240,13 +268,13 @@ public class Detection implements java.io.Serializable {
             return this;
         }
 
-        public Builder setZoneIds(java.util.List<String> zoneIds) {
-            this.zoneIds = zoneIds;
+        public Builder setZones(java.util.List<Zone> zones) {
+            this.zones = zones;
             return this;
         }
 
-        public Builder setGeofenceIds(java.util.List<String> geofenceIds) {
-            this.geofenceIds = geofenceIds;
+        public Builder setGeofences(java.util.List<Geofence> geofences) {
+            this.geofences = geofences;
             return this;
         }
 
@@ -267,6 +295,18 @@ public class Detection implements java.io.Serializable {
 
         public Builder setDirection(Double direction) {
             this.direction = direction;
+            return this;
+        }
+
+        @Deprecated
+        public Builder setGeofenceIds(java.util.List<String> geofenceIds) {
+            this.geofenceIds = geofenceIds;
+            return this;
+        }
+
+        @Deprecated
+        public Builder setZoneIds(java.util.List<String> zoneIds) {
+            this.zoneIds = zoneIds;
             return this;
         }
 
@@ -302,7 +342,7 @@ public class Detection implements java.io.Serializable {
 
 
         public Detection build() {
-            return new Detection(track, timestamp, frame, polygon, position, zoneIds, geofenceIds, metadata, createdAt, updatedAt, direction, zoneEvents, geofenceEvents, globalTrackId, deviceId, tag);
+            return new Detection(track, timestamp, frame, polygon, position, zones, geofences, metadata, createdAt, updatedAt, direction, geofenceIds, zoneIds, zoneEvents, geofenceEvents, globalTrackId, deviceId, tag);
         }
 
     }
