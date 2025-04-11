@@ -19,12 +19,11 @@ public class Video implements java.io.Serializable {
     private String resolutionHeight;
     private String resolutionWidth;
     private User createdBy;
-    private Double frameRate;
 
     public Video() {
     }
 
-    public Video(String id, DataSource dataSource, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, String url, String thumbnailUrl, String displayName, String resolutionHeight, String resolutionWidth, User createdBy, Double frameRate) {
+    public Video(String id, DataSource dataSource, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, String url, String thumbnailUrl, String displayName, String resolutionHeight, String resolutionWidth, User createdBy) {
         this.id = id;
         this.dataSource = dataSource;
         this.startTime = startTime;
@@ -35,7 +34,6 @@ public class Video implements java.io.Serializable {
         this.resolutionHeight = resolutionHeight;
         this.resolutionWidth = resolutionWidth;
         this.createdBy = createdBy;
-        this.frameRate = frameRate;
     }
 
     public String getId() {
@@ -108,13 +106,6 @@ public class Video implements java.io.Serializable {
         this.createdBy = createdBy;
     }
 
-    public Double getFrameRate() {
-        return frameRate;
-    }
-    public void setFrameRate(Double frameRate) {
-        this.frameRate = frameRate;
-    }
-
 
 
     public static Video.Builder builder() {
@@ -133,7 +124,6 @@ public class Video implements java.io.Serializable {
         private String resolutionHeight;
         private String resolutionWidth;
         private User createdBy;
-        private Double frameRate;
 
         public Builder() {
         }
@@ -188,14 +178,9 @@ public class Video implements java.io.Serializable {
             return this;
         }
 
-        public Builder setFrameRate(Double frameRate) {
-            this.frameRate = frameRate;
-            return this;
-        }
-
 
         public Video build() {
-            return new Video(id, dataSource, startTime, endTime, url, thumbnailUrl, displayName, resolutionHeight, resolutionWidth, createdBy, frameRate);
+            return new Video(id, dataSource, startTime, endTime, url, thumbnailUrl, displayName, resolutionHeight, resolutionWidth, createdBy);
         }
 
     }
