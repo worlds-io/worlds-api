@@ -1,3 +1,14 @@
+input FilterSensorInput {
+	id: FilterIDInput
+	name: FilterStringInput!
+	type: FilterStringInput!
+	position: FilterPointInput!
+
+	and: [FilterMeasurementInput!]
+	or: [FilterMeasurementInput!]
+	not: FilterMeasurementInput
+}
+
 input FilterMeasurementInput {
 	sensorId: FilterIDInput
 	time: FilterDateTimeOffsetInput!
