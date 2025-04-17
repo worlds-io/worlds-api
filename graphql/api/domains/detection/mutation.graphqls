@@ -1,3 +1,4 @@
 extend type Mutation {
     createDetection(detection: CreateDetectionInput!): Detection
+    createDetections(detections: [CreateDetectionInput!]!): [Detection]
 }
