@@ -8,12 +8,12 @@ public class SensorConnection implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private PageInfo pageInfo;
     @jakarta.validation.constraints.NotNull
-    private java.util.List<MeasurementEdge> edges;
+    private java.util.List<SensorEdge> edges;
 
     public SensorConnection() {
     }
 
-    public SensorConnection(PageInfo pageInfo, java.util.List<MeasurementEdge> edges) {
+    public SensorConnection(PageInfo pageInfo, java.util.List<SensorEdge> edges) {
         this.pageInfo = pageInfo;
         this.edges = edges;
     }
@@ -25,10 +25,10 @@ public class SensorConnection implements java.io.Serializable {
         this.pageInfo = pageInfo;
     }
 
-    public java.util.List<MeasurementEdge> getEdges() {
+    public java.util.List<SensorEdge> getEdges() {
         return edges;
     }
-    public void setEdges(java.util.List<MeasurementEdge> edges) {
+    public void setEdges(java.util.List<SensorEdge> edges) {
         this.edges = edges;
     }
 
@@ -41,7 +41,7 @@ public class SensorConnection implements java.io.Serializable {
     public static class Builder {
 
         private PageInfo pageInfo;
-        private java.util.List<MeasurementEdge> edges;
+        private java.util.List<SensorEdge> edges;
 
         public Builder() {
         }
@@ -51,7 +51,7 @@ public class SensorConnection implements java.io.Serializable {
             return this;
         }
 
-        public Builder setEdges(java.util.List<MeasurementEdge> edges) {
+        public Builder setEdges(java.util.List<SensorEdge> edges) {
             this.edges = edges;
             return this;
         }

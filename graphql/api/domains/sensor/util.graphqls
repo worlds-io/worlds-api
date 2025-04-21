@@ -1,6 +1,6 @@
 type SensorConnection {
 	pageInfo: PageInfo!
-	edges: [MeasurementEdge]!
+	edges: [SensorEdge]!
 }
 
 type SensorEdge {

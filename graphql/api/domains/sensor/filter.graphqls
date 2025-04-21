@@ -1,8 +1,8 @@
 input FilterSensorInput {
 	id: FilterIDInput
-	name: FilterStringInput!
-	type: FilterStringInput!
-	position: FilterPointInput!
+	name: FilterStringInput
+	type: FilterStringInput
+	position: FilterPointInput
 
 	and: [FilterMeasurementInput!]
 	or: [FilterMeasurementInput!]
