@@ -1,13 +1,13 @@
 package io.worlds.api.model;
 
-public enum SensorSortField {
+public enum SensorsSortField {
 
     ID("ID"),
     NAME("NAME");
 
     private final String graphqlName;
 
-    private SensorSortField(String graphqlName) {
+    private SensorsSortField(String graphqlName) {
         this.graphqlName = graphqlName;
     }
 

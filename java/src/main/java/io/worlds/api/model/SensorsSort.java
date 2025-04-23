@@ -6,22 +6,22 @@ public class SensorsSort implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 
     @jakarta.validation.constraints.NotNull
-    private SensorSortField field;
+    private SensorsSortField field;
     @jakarta.validation.constraints.NotNull
     private SortDirection direction;
 
     public SensorsSort() {
     }
 
-    public SensorsSort(SensorSortField field, SortDirection direction) {
+    public SensorsSort(SensorsSortField field, SortDirection direction) {
         this.field = field;
         this.direction = direction;
     }
 
-    public SensorSortField getField() {
+    public SensorsSortField getField() {
         return field;
     }
-    public void setField(SensorSortField field) {
+    public void setField(SensorsSortField field) {
         this.field = field;
     }
 
@@ -40,13 +40,13 @@ public class SensorsSort implements java.io.Serializable {
 
     public static class Builder {
 
-        private SensorSortField field;
+        private SensorsSortField field;
         private SortDirection direction;
 
         public Builder() {
         }
 
-        public Builder setField(SensorSortField field) {
+        public Builder setField(SensorsSortField field) {
             this.field = field;
             return this;
         }

@@ -1,10 +1,10 @@
-enum SensorSortField {
+enum SensorsSortField {
 	ID,
 	NAME
 }
 
 input SensorsSort {
-	field: SensorSortField!
+	field: SensorsSortField!
 	direction: SortDirection!
 }
 
