@@ -4,9 +4,9 @@ input FilterSensorInput {
 	type: FilterStringInput
 	position: FilterPointInput
 
-	and: [FilterMeasurementInput!]
-	or: [FilterMeasurementInput!]
-	not: FilterMeasurementInput
+	and: [FilterSensorInput!]
+	or: [FilterSensorInput!]
+	not: FilterSensorInput
 }
 
 input FilterMeasurementInput {
