@@ -1,3 +1,13 @@
+type SensorConnection {
+	pageInfo: PageInfo!
+	edges: [SensorEdge]!
+}
+
+type SensorEdge {
+	node: Sensor
+	cursor: String!
+}
+
 type MeasurementConnection {
 	pageInfo: PageInfo!
 	edges: [MeasurementEdge]!
