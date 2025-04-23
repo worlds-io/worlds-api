@@ -9,14 +9,14 @@ public class FilterSensorInput implements java.io.Serializable {
     private org.springframework.graphql.data.ArgumentValue<FilterStringInput> name = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterStringInput> type = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterPointInput> position = org.springframework.graphql.data.ArgumentValue.omitted();
-    private java.util.List<FilterMeasurementInput> and;
-    private java.util.List<FilterMeasurementInput> or;
-    private org.springframework.graphql.data.ArgumentValue<FilterMeasurementInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
+    private java.util.List<FilterSensorInput> and;
+    private java.util.List<FilterSensorInput> or;
+    private org.springframework.graphql.data.ArgumentValue<FilterSensorInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
 
     public FilterSensorInput() {
     }
 
-    public FilterSensorInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> id, org.springframework.graphql.data.ArgumentValue<FilterStringInput> name, org.springframework.graphql.data.ArgumentValue<FilterStringInput> type, org.springframework.graphql.data.ArgumentValue<FilterPointInput> position, java.util.List<FilterMeasurementInput> and, java.util.List<FilterMeasurementInput> or, org.springframework.graphql.data.ArgumentValue<FilterMeasurementInput> not) {
+    public FilterSensorInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> id, org.springframework.graphql.data.ArgumentValue<FilterStringInput> name, org.springframework.graphql.data.ArgumentValue<FilterStringInput> type, org.springframework.graphql.data.ArgumentValue<FilterPointInput> position, java.util.List<FilterSensorInput> and, java.util.List<FilterSensorInput> or, org.springframework.graphql.data.ArgumentValue<FilterSensorInput> not) {
         this.id = id;
         this.name = name;
         this.type = type;
@@ -54,24 +54,24 @@ public class FilterSensorInput implements java.io.Serializable {
         this.position = position;
     }
 
-    public java.util.List<FilterMeasurementInput> getAnd() {
+    public java.util.List<FilterSensorInput> getAnd() {
         return and;
     }
-    public void setAnd(java.util.List<FilterMeasurementInput> and) {
+    public void setAnd(java.util.List<FilterSensorInput> and) {
         this.and = and;
     }
 
-    public java.util.List<FilterMeasurementInput> getOr() {
+    public java.util.List<FilterSensorInput> getOr() {
         return or;
     }
-    public void setOr(java.util.List<FilterMeasurementInput> or) {
+    public void setOr(java.util.List<FilterSensorInput> or) {
         this.or = or;
     }
 
-    public org.springframework.graphql.data.ArgumentValue<FilterMeasurementInput> getNot() {
+    public org.springframework.graphql.data.ArgumentValue<FilterSensorInput> getNot() {
         return not;
     }
-    public void setNot(org.springframework.graphql.data.ArgumentValue<FilterMeasurementInput> not) {
+    public void setNot(org.springframework.graphql.data.ArgumentValue<FilterSensorInput> not) {
         this.not = not;
     }
 
@@ -87,9 +87,9 @@ public class FilterSensorInput implements java.io.Serializable {
         private org.springframework.graphql.data.ArgumentValue<FilterStringInput> name = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterStringInput> type = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterPointInput> position = org.springframework.graphql.data.ArgumentValue.omitted();
-        private java.util.List<FilterMeasurementInput> and;
-        private java.util.List<FilterMeasurementInput> or;
-        private org.springframework.graphql.data.ArgumentValue<FilterMeasurementInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
+        private java.util.List<FilterSensorInput> and;
+        private java.util.List<FilterSensorInput> or;
+        private org.springframework.graphql.data.ArgumentValue<FilterSensorInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
 
         public Builder() {
         }
@@ -114,17 +114,17 @@ public class FilterSensorInput implements java.io.Serializable {
             return this;
         }
 
-        public Builder setAnd(java.util.List<FilterMeasurementInput> and) {
+        public Builder setAnd(java.util.List<FilterSensorInput> and) {
             this.and = and;
             return this;
         }
 
-        public Builder setOr(java.util.List<FilterMeasurementInput> or) {
+        public Builder setOr(java.util.List<FilterSensorInput> or) {
             this.or = or;
             return this;
         }
 
-        public Builder setNot(org.springframework.graphql.data.ArgumentValue<FilterMeasurementInput> not) {
+        public Builder setNot(org.springframework.graphql.data.ArgumentValue<FilterSensorInput> not) {
             this.not = not;
             return this;
         }
