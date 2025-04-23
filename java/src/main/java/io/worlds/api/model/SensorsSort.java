@@ -1,7 +1,7 @@
 package io.worlds.api.model;
 
 
-public class SensorSort implements java.io.Serializable {
+public class SensorsSort implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -10,10 +10,10 @@ public class SensorSort implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private SortDirection direction;
 
-    public SensorSort() {
+    public SensorsSort() {
     }
 
-    public SensorSort(SensorSortField field, SortDirection direction) {
+    public SensorsSort(SensorSortField field, SortDirection direction) {
         this.field = field;
         this.direction = direction;
     }
@@ -34,8 +34,8 @@ public class SensorSort implements java.io.Serializable {
 
 
 
-    public static SensorSort.Builder builder() {
-        return new SensorSort.Builder();
+    public static SensorsSort.Builder builder() {
+        return new SensorsSort.Builder();
     }
 
     public static class Builder {
@@ -57,8 +57,8 @@ public class SensorSort implements java.io.Serializable {
         }
 
 
-        public SensorSort build() {
-            return new SensorSort(field, direction);
+        public SensorsSort build() {
+            return new SensorsSort(field, direction);
         }
 
     }
