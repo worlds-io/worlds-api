@@ -5,6 +5,7 @@ public class EventProperties implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    private java.util.List<Track> tracks;
     private java.util.List<Site> sites;
     private java.util.List<DataSource> dataSources;
     private java.util.List<Tag> tags;
@@ -12,10 +13,18 @@ public class EventProperties implements java.io.Serializable {
     public EventProperties() {
     }
 
-    public EventProperties(java.util.List<Site> sites, java.util.List<DataSource> dataSources, java.util.List<Tag> tags) {
+    public EventProperties(java.util.List<Track> tracks, java.util.List<Site> sites, java.util.List<DataSource> dataSources, java.util.List<Tag> tags) {
+        this.tracks = tracks;
         this.sites = sites;
         this.dataSources = dataSources;
         this.tags = tags;
+    }
+
+    public java.util.List<Track> getTracks() {
+        return tracks;
+    }
+    public void setTracks(java.util.List<Track> tracks) {
+        this.tracks = tracks;
     }
 
     public java.util.List<Site> getSites() {
@@ -47,11 +56,17 @@ public class EventProperties implements java.io.Serializable {
 
     public static class Builder {
 
+        private java.util.List<Track> tracks;
         private java.util.List<Site> sites;
         private java.util.List<DataSource> dataSources;
         private java.util.List<Tag> tags;
 
         public Builder() {
+        }
+
+        public Builder setTracks(java.util.List<Track> tracks) {
+            this.tracks = tracks;
+            return this;
         }
 
         public Builder setSites(java.util.List<Site> sites) {
@@ -71,7 +86,7 @@ public class EventProperties implements java.io.Serializable {
 
 
         public EventProperties build() {
-            return new EventProperties(sites, dataSources, tags);
+            return new EventProperties(tracks, sites, dataSources, tags);
         }
 
     }
