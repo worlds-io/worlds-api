@@ -8,14 +8,16 @@ public class EventProperties implements java.io.Serializable {
     private java.util.List<Site> sites;
     private java.util.List<DataSource> dataSources;
     private java.util.List<Tag> tags;
+    private java.util.List<PointOfInterest> pointsOfInterest;
 
     public EventProperties() {
     }
 
-    public EventProperties(java.util.List<Site> sites, java.util.List<DataSource> dataSources, java.util.List<Tag> tags) {
+    public EventProperties(java.util.List<Site> sites, java.util.List<DataSource> dataSources, java.util.List<Tag> tags, java.util.List<PointOfInterest> pointsOfInterest) {
         this.sites = sites;
         this.dataSources = dataSources;
         this.tags = tags;
+        this.pointsOfInterest = pointsOfInterest;
     }
 
     public java.util.List<Site> getSites() {
@@ -39,6 +41,13 @@ public class EventProperties implements java.io.Serializable {
         this.tags = tags;
     }
 
+    public java.util.List<PointOfInterest> getPointsOfInterest() {
+        return pointsOfInterest;
+    }
+    public void setPointsOfInterest(java.util.List<PointOfInterest> pointsOfInterest) {
+        this.pointsOfInterest = pointsOfInterest;
+    }
+
 
 
     public static EventProperties.Builder builder() {
@@ -50,6 +59,7 @@ public class EventProperties implements java.io.Serializable {
         private java.util.List<Site> sites;
         private java.util.List<DataSource> dataSources;
         private java.util.List<Tag> tags;
+        private java.util.List<PointOfInterest> pointsOfInterest;
 
         public Builder() {
         }
@@ -69,9 +79,14 @@ public class EventProperties implements java.io.Serializable {
             return this;
         }
 
+        public Builder setPointsOfInterest(java.util.List<PointOfInterest> pointsOfInterest) {
+            this.pointsOfInterest = pointsOfInterest;
+            return this;
+        }
+
 
         public EventProperties build() {
-            return new EventProperties(sites, dataSources, tags);
+            return new EventProperties(sites, dataSources, tags, pointsOfInterest);
         }
 
     }
