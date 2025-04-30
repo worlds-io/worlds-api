@@ -8,6 +8,7 @@ type Video {
     displayName: String
     resolutionHeight: String
     resolutionWidth: String
+    frameRate: Float
     createdBy: User
 }
 
