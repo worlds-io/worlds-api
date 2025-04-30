@@ -11,16 +11,18 @@ public class CreateDetectionInput implements java.io.Serializable {
     private java.time.OffsetDateTime timestamp;
     private org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<GeoJSONPolygonInput> polygon = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<Double> direction = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
 
     public CreateDetectionInput() {
     }
 
-    public CreateDetectionInput(String trackId, java.time.OffsetDateTime timestamp, org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position, org.springframework.graphql.data.ArgumentValue<GeoJSONPolygonInput> polygon, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata) {
+    public CreateDetectionInput(String trackId, java.time.OffsetDateTime timestamp, org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position, org.springframework.graphql.data.ArgumentValue<GeoJSONPolygonInput> polygon, org.springframework.graphql.data.ArgumentValue<Double> direction, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata) {
         this.trackId = trackId;
         this.timestamp = timestamp;
         this.position = position;
         this.polygon = polygon;
+        this.direction = direction;
         this.metadata = metadata;
     }
 
@@ -52,6 +54,13 @@ public class CreateDetectionInput implements java.io.Serializable {
         this.polygon = polygon;
     }
 
+    public org.springframework.graphql.data.ArgumentValue<Double> getDirection() {
+        return direction;
+    }
+    public void setDirection(org.springframework.graphql.data.ArgumentValue<Double> direction) {
+        this.direction = direction;
+    }
+
     public org.springframework.graphql.data.ArgumentValue<java.lang.Object> getMetadata() {
         return metadata;
     }
@@ -71,6 +80,7 @@ public class CreateDetectionInput implements java.io.Serializable {
         private java.time.OffsetDateTime timestamp;
         private org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<GeoJSONPolygonInput> polygon = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<Double> direction = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
 
         public Builder() {
@@ -96,6 +106,11 @@ public class CreateDetectionInput implements java.io.Serializable {
             return this;
         }
 
+        public Builder setDirection(org.springframework.graphql.data.ArgumentValue<Double> direction) {
+            this.direction = direction;
+            return this;
+        }
+
         public Builder setMetadata(org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata) {
             this.metadata = metadata;
             return this;
@@ -103,7 +118,7 @@ public class CreateDetectionInput implements java.io.Serializable {
 
 
         public CreateDetectionInput build() {
-            return new CreateDetectionInput(trackId, timestamp, position, polygon, metadata);
+            return new CreateDetectionInput(trackId, timestamp, position, polygon, direction, metadata);
         }
 
     }
