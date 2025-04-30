@@ -1,3 +1,13 @@
+enum SensorsSortField {
+	ID,
+	NAME
+}
+
+input SensorsSort {
+	field: SensorsSortField!
+	direction: SortDirection!
+}
+
 enum MeasurementsSortField {
 	ID,
 	TIMESTAMP
@@ -10,5 +20,6 @@ input MeasurementsSort {
 
 extend type Query {
 	sensor(id: ID!): Sensor
+	sensors(filter: FilterSensorInput, first: Int! = 20, after: String, sort: [SensorsSort!]! = [{field: NAME, direction: ASC }, {field: ID, direction: ASC }]): SensorConnection
 	measurements(filter: FilterMeasurementInput!, first: Int! = 20, after: String, sort: [MeasurementsSort!]! = [{field: TIMESTAMP, direction: ASC}, {field: ID, direction: ASC}]): MeasurementConnection
 }

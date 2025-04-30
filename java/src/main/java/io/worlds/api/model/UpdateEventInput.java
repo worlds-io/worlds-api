@@ -20,11 +20,12 @@ public class UpdateEventInput implements java.io.Serializable {
     private java.util.List<String> trackIds;
     private org.springframework.graphql.data.ArgumentValue<EventPropertiesInput> properties = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<Boolean> draft = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<EventValidationInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
 
     public UpdateEventInput() {
     }
 
-    public UpdateEventInput(String id, org.springframework.graphql.data.ArgumentValue<String> type, org.springframework.graphql.data.ArgumentValue<String> subType, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> startTime, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime, org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, java.util.List<CreateSnapshotInput> snapshots, java.util.List<UploadImageInput> uploads, java.util.List<CreateClipInput> clips, java.util.List<String> trackIds, org.springframework.graphql.data.ArgumentValue<EventPropertiesInput> properties, org.springframework.graphql.data.ArgumentValue<Boolean> draft) {
+    public UpdateEventInput(String id, org.springframework.graphql.data.ArgumentValue<String> type, org.springframework.graphql.data.ArgumentValue<String> subType, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> startTime, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime, org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, java.util.List<CreateSnapshotInput> snapshots, java.util.List<UploadImageInput> uploads, java.util.List<CreateClipInput> clips, java.util.List<String> trackIds, org.springframework.graphql.data.ArgumentValue<EventPropertiesInput> properties, org.springframework.graphql.data.ArgumentValue<Boolean> draft, org.springframework.graphql.data.ArgumentValue<EventValidationInput> validation) {
         this.id = id;
         this.type = type;
         this.subType = subType;
@@ -39,6 +40,7 @@ public class UpdateEventInput implements java.io.Serializable {
         this.trackIds = trackIds;
         this.properties = properties;
         this.draft = draft;
+        this.validation = validation;
     }
 
     public String getId() {
@@ -139,6 +141,13 @@ public class UpdateEventInput implements java.io.Serializable {
         this.draft = draft;
     }
 
+    public org.springframework.graphql.data.ArgumentValue<EventValidationInput> getValidation() {
+        return validation;
+    }
+    public void setValidation(org.springframework.graphql.data.ArgumentValue<EventValidationInput> validation) {
+        this.validation = validation;
+    }
+
 
 
     public static UpdateEventInput.Builder builder() {
@@ -161,6 +170,7 @@ public class UpdateEventInput implements java.io.Serializable {
         private java.util.List<String> trackIds;
         private org.springframework.graphql.data.ArgumentValue<EventPropertiesInput> properties = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<Boolean> draft = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<EventValidationInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
 
         public Builder() {
         }
@@ -235,9 +245,14 @@ public class UpdateEventInput implements java.io.Serializable {
             return this;
         }
 
+        public Builder setValidation(org.springframework.graphql.data.ArgumentValue<EventValidationInput> validation) {
+            this.validation = validation;
+            return this;
+        }
+
 
         public UpdateEventInput build() {
-            return new UpdateEventInput(id, type, subType, startTime, endTime, position, timezone, metadata, snapshots, uploads, clips, trackIds, properties, draft);
+            return new UpdateEventInput(id, type, subType, startTime, endTime, position, timezone, metadata, snapshots, uploads, clips, trackIds, properties, draft, validation);
         }
 
     }
