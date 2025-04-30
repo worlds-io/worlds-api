@@ -46,6 +46,7 @@ type EventProperties {
 	sites: [Site!]
 	dataSources: [DataSource!]
 	tags: [Tag!]
+	pointsOfInterest: [PointOfInterest!]
 }
 
 input CreateEventInput {
@@ -89,6 +90,7 @@ input EventPropertiesInput {
 	siteIds: [ID!]
 	dataSourceIds: [ID!]
 	tags: [String!]
+	pointOfInterestIds: [ID!]
 }
 
 enum EventValidationStatus {
