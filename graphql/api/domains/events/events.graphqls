@@ -39,6 +39,7 @@ type Event {
 	videos: [Video!]!
 	properties: EventProperties
 	draft: Boolean
+	validation: EventValidation
 }
 
 type EventProperties {
@@ -47,6 +48,12 @@ type EventProperties {
 	dataSources: [DataSource!]
 	tags: [Tag!]
 	pointsOfInterest: [PointOfInterest!]
+}
+
+type EventValidation {
+	status: EventValidationStatus!
+	invalidReason: String
+	invalidDescription: String
 }
 
 input CreateEventInput {
