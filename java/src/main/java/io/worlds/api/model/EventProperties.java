@@ -13,7 +13,9 @@ public class EventProperties implements java.io.Serializable {
 
     public EventProperties() {
     }
-    public EventProperties(java.util.List<Site> sites, java.util.List<DataSource> dataSources, java.util.List<Tag> tags, java.util.List<PointOfInterest> pointsOfInterest) {
+
+    public EventProperties(java.util.List<Track> tracks, java.util.List<Site> sites, java.util.List<DataSource> dataSources, java.util.List<Tag> tags, java.util.List<PointOfInterest> pointsOfInterest) {
+        this.tracks = tracks;
         this.sites = sites;
         this.dataSources = dataSources;
         this.tags = tags;
@@ -99,7 +101,7 @@ public class EventProperties implements java.io.Serializable {
 
 
         public EventProperties build() {
-            return new EventProperties(sites, dataSources, tags, pointsOfInterest);
+            return new EventProperties(tracks, sites, dataSources, tags, pointsOfInterest);
         }
 
     }

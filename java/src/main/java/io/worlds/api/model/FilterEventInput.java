@@ -11,6 +11,7 @@ public class FilterEventInput implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private FilterDateTimeOffsetInput time;
     private org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> draft = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<FilterEventValidationStatusInput> valid = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<FilterEventInput> and;
     private java.util.List<FilterEventInput> or;
     private org.springframework.graphql.data.ArgumentValue<FilterEventInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -18,12 +19,13 @@ public class FilterEventInput implements java.io.Serializable {
     public FilterEventInput() {
     }
 
-    public FilterEventInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> eventProducerId, org.springframework.graphql.data.ArgumentValue<FilterStringInput> type, org.springframework.graphql.data.ArgumentValue<FilterStringInput> subType, FilterDateTimeOffsetInput time, org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> draft, java.util.List<FilterEventInput> and, java.util.List<FilterEventInput> or, org.springframework.graphql.data.ArgumentValue<FilterEventInput> not) {
+    public FilterEventInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> eventProducerId, org.springframework.graphql.data.ArgumentValue<FilterStringInput> type, org.springframework.graphql.data.ArgumentValue<FilterStringInput> subType, FilterDateTimeOffsetInput time, org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> draft, org.springframework.graphql.data.ArgumentValue<FilterEventValidationStatusInput> valid, java.util.List<FilterEventInput> and, java.util.List<FilterEventInput> or, org.springframework.graphql.data.ArgumentValue<FilterEventInput> not) {
         this.eventProducerId = eventProducerId;
         this.type = type;
         this.subType = subType;
         this.time = time;
         this.draft = draft;
+        this.valid = valid;
         this.and = and;
         this.or = or;
         this.not = not;
@@ -64,6 +66,13 @@ public class FilterEventInput implements java.io.Serializable {
         this.draft = draft;
     }
 
+    public org.springframework.graphql.data.ArgumentValue<FilterEventValidationStatusInput> getValid() {
+        return valid;
+    }
+    public void setValid(org.springframework.graphql.data.ArgumentValue<FilterEventValidationStatusInput> valid) {
+        this.valid = valid;
+    }
+
     public java.util.List<FilterEventInput> getAnd() {
         return and;
     }
@@ -98,6 +107,7 @@ public class FilterEventInput implements java.io.Serializable {
         private org.springframework.graphql.data.ArgumentValue<FilterStringInput> subType = org.springframework.graphql.data.ArgumentValue.omitted();
         private FilterDateTimeOffsetInput time;
         private org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> draft = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<FilterEventValidationStatusInput> valid = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<FilterEventInput> and;
         private java.util.List<FilterEventInput> or;
         private org.springframework.graphql.data.ArgumentValue<FilterEventInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -130,6 +140,11 @@ public class FilterEventInput implements java.io.Serializable {
             return this;
         }
 
+        public Builder setValid(org.springframework.graphql.data.ArgumentValue<FilterEventValidationStatusInput> valid) {
+            this.valid = valid;
+            return this;
+        }
+
         public Builder setAnd(java.util.List<FilterEventInput> and) {
             this.and = and;
             return this;
@@ -147,7 +162,7 @@ public class FilterEventInput implements java.io.Serializable {
 
 
         public FilterEventInput build() {
-            return new FilterEventInput(eventProducerId, type, subType, time, draft, and, or, not);
+            return new FilterEventInput(eventProducerId, type, subType, time, draft, valid, and, or, not);
         }
 
     }
