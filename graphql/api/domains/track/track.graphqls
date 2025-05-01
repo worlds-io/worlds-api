@@ -28,6 +28,7 @@ input TrackDetectionInput {
 	timestamp: DateTimeOffset!
 	position: GeoJSONPointInput
 	polygon: GeoJSONPolygonInput
+	direction: Float
 	metadata: JSON
 }
 

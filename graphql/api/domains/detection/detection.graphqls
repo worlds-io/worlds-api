@@ -5,13 +5,15 @@ type Detection {
 	frame: Frame
 	polygon: GeoJSONPolygon
 	position: GeoJSONPoint
-	zoneIds: [ID!]!
-	geofenceIds: [ID!]!
+	zones: [Zone!]!
+	geofences: [Geofence!]!
 	metadata: JSON
 	createdAt: DateTimeOffset
 	updatedAt: DateTimeOffset
 	direction: Float
 
+	geofenceIds: [ID!]! @deprecated (reason: "geofenceIds is deprecated, use geofences field instead")
+	zoneIds: [ID!]! @deprecated (reason: "zoneIds is deprecated, use zones field instead")
 	zoneEvents: [ZoneEvent!]! @deprecated (reason: "zoneEvents is deprecated, use track.zoneEvents instead")
 	geofenceEvents: [GeofenceEvent!]! @deprecated (reason: "geofenceEvents is deprecated, use track.geofenceEvents instead")
 	globalTrackId: String @deprecated (reason: "globalTrackId is deprecated, use track.id instead")
@@ -24,5 +26,6 @@ input CreateDetectionInput {
 	timestamp: DateTimeOffset!
 	position: GeoJSONPointInput
 	polygon: GeoJSONPolygonInput
+	direction: Float
 	metadata: JSON
 }

@@ -8,14 +8,16 @@ public class EventPropertiesInput implements java.io.Serializable {
     private java.util.List<String> siteIds;
     private java.util.List<String> dataSourceIds;
     private java.util.List<String> tags;
+    private java.util.List<String> pointOfInterestIds;
 
     public EventPropertiesInput() {
     }
 
-    public EventPropertiesInput(java.util.List<String> siteIds, java.util.List<String> dataSourceIds, java.util.List<String> tags) {
+    public EventPropertiesInput(java.util.List<String> siteIds, java.util.List<String> dataSourceIds, java.util.List<String> tags, java.util.List<String> pointOfInterestIds) {
         this.siteIds = siteIds;
         this.dataSourceIds = dataSourceIds;
         this.tags = tags;
+        this.pointOfInterestIds = pointOfInterestIds;
     }
 
     public java.util.List<String> getSiteIds() {
@@ -39,6 +41,13 @@ public class EventPropertiesInput implements java.io.Serializable {
         this.tags = tags;
     }
 
+    public java.util.List<String> getPointOfInterestIds() {
+        return pointOfInterestIds;
+    }
+    public void setPointOfInterestIds(java.util.List<String> pointOfInterestIds) {
+        this.pointOfInterestIds = pointOfInterestIds;
+    }
+
 
 
     public static EventPropertiesInput.Builder builder() {
@@ -50,6 +59,7 @@ public class EventPropertiesInput implements java.io.Serializable {
         private java.util.List<String> siteIds;
         private java.util.List<String> dataSourceIds;
         private java.util.List<String> tags;
+        private java.util.List<String> pointOfInterestIds;
 
         public Builder() {
         }
@@ -69,9 +79,14 @@ public class EventPropertiesInput implements java.io.Serializable {
             return this;
         }
 
+        public Builder setPointOfInterestIds(java.util.List<String> pointOfInterestIds) {
+            this.pointOfInterestIds = pointOfInterestIds;
+            return this;
+        }
+
 
         public EventPropertiesInput build() {
-            return new EventPropertiesInput(siteIds, dataSourceIds, tags);
+            return new EventPropertiesInput(siteIds, dataSourceIds, tags, pointOfInterestIds);
         }
 
     }

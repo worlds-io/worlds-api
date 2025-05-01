@@ -11,5 +11,3 @@ type Video {
     frameRate: Float
     createdBy: User
 }
-
-

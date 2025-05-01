@@ -42,9 +42,11 @@ type Event {
 }
 
 type EventProperties {
+	tracks: [Track!]
 	sites: [Site!]
 	dataSources: [DataSource!]
 	tags: [Tag!]
+	pointsOfInterest: [PointOfInterest!]
 }
 
 input CreateEventInput {
@@ -63,6 +65,7 @@ input CreateEventInput {
 	trackIds: [ID!]
 	properties: EventPropertiesInput
 	draft: Boolean! = false
+	validation: EventValidationInput
 }
 
 input UpdateEventInput {
@@ -80,10 +83,23 @@ input UpdateEventInput {
 	trackIds: [ID!]
 	properties: EventPropertiesInput
 	draft: Boolean
+	validation: EventValidationInput
 }
 
 input EventPropertiesInput {
 	siteIds: [ID!]
 	dataSourceIds: [ID!]
 	tags: [String!]
+	pointOfInterestIds: [ID!]
+}
+
+enum EventValidationStatus {
+	VALID
+	INVALID
+}
+
+input EventValidationInput {
+	status: EventValidationStatus!
+	invalidReason: String
+	invalidDetails: String
 }
