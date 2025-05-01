@@ -89,3 +89,13 @@ input FilterMessageStateInput {
   ne: MessageState
   in: [MessageState!]
 }
+
+"""
+Filtration for Activity subscriber statuses
+"""
+input FilterEventValidationStatusInput {
+  eq: EventValidationStatus
+  ne: EventValidationStatus
+  in: [EventValidationStatus!]
+  attributeExists: Boolean
+}
