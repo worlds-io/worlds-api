@@ -8,15 +8,15 @@ public class EventValidation implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private EventValidationStatus status;
     private String invalidReason;
-    private String invalidDescription;
+    private String invalidDetails;
 
     public EventValidation() {
     }
 
-    public EventValidation(EventValidationStatus status, String invalidReason, String invalidDescription) {
+    public EventValidation(EventValidationStatus status, String invalidReason, String invalidDetails) {
         this.status = status;
         this.invalidReason = invalidReason;
-        this.invalidDescription = invalidDescription;
+        this.invalidDetails = invalidDetails;
     }
 
     public EventValidationStatus getStatus() {
@@ -33,11 +33,11 @@ public class EventValidation implements java.io.Serializable {
         this.invalidReason = invalidReason;
     }
 
-    public String getInvalidDescription() {
-        return invalidDescription;
+    public String getInvalidDetails() {
+        return invalidDetails;
     }
-    public void setInvalidDescription(String invalidDescription) {
-        this.invalidDescription = invalidDescription;
+    public void setInvalidDetails(String invalidDetails) {
+        this.invalidDetails = invalidDetails;
     }
 
 
@@ -50,7 +50,7 @@ public class EventValidation implements java.io.Serializable {
 
         private EventValidationStatus status;
         private String invalidReason;
-        private String invalidDescription;
+        private String invalidDetails;
 
         public Builder() {
         }
@@ -65,14 +65,14 @@ public class EventValidation implements java.io.Serializable {
             return this;
         }
 
-        public Builder setInvalidDescription(String invalidDescription) {
-            this.invalidDescription = invalidDescription;
+        public Builder setInvalidDetails(String invalidDetails) {
+            this.invalidDetails = invalidDetails;
             return this;
         }
 
 
         public EventValidation build() {
-            return new EventValidation(status, invalidReason, invalidDescription);
+            return new EventValidation(status, invalidReason, invalidDetails);
         }
 
     }

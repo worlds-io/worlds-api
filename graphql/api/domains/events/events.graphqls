@@ -53,7 +53,7 @@ type EventProperties {
 type EventValidation {
 	status: EventValidationStatus!
 	invalidReason: String
-	invalidDescription: String
+	invalidDetails: String
 }
 
 input CreateEventInput {
