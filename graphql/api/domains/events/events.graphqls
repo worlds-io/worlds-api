@@ -39,6 +39,7 @@ type Event {
 	videos: [Video!]!
 	properties: EventProperties
 	draft: Boolean
+	validation: EventValidation
 }
 
 type EventProperties {
@@ -47,6 +48,12 @@ type EventProperties {
 	dataSources: [DataSource!]
 	tags: [Tag!]
 	pointsOfInterest: [PointOfInterest!]
+}
+
+type EventValidation {
+	status: EventValidationStatus!
+	reason: String
+	details: String
 }
 
 input CreateEventInput {
@@ -100,6 +107,6 @@ enum EventValidationStatus {
 
 input EventValidationInput {
 	status: EventValidationStatus!
-	invalidReason: String
-	invalidDetails: String
+	reason: String
+	details: String
 }

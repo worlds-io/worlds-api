@@ -24,11 +24,12 @@ public class Event implements java.io.Serializable {
     private java.util.List<Video> videos;
     private EventProperties properties;
     private Boolean draft;
+    private EventValidation validation;
 
     public Event() {
     }
 
-    public Event(String id, EventProducer eventProducer, String type, String subType, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, GeoJSONPoint position, String timezone, java.lang.Object metadata, java.util.List<Image> images, java.util.List<Video> videos, EventProperties properties, Boolean draft) {
+    public Event(String id, EventProducer eventProducer, String type, String subType, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, GeoJSONPoint position, String timezone, java.lang.Object metadata, java.util.List<Image> images, java.util.List<Video> videos, EventProperties properties, Boolean draft, EventValidation validation) {
         this.id = id;
         this.eventProducer = eventProducer;
         this.type = type;
@@ -42,6 +43,7 @@ public class Event implements java.io.Serializable {
         this.videos = videos;
         this.properties = properties;
         this.draft = draft;
+        this.validation = validation;
     }
 
     public String getId() {
@@ -135,6 +137,13 @@ public class Event implements java.io.Serializable {
         this.draft = draft;
     }
 
+    public EventValidation getValidation() {
+        return validation;
+    }
+    public void setValidation(EventValidation validation) {
+        this.validation = validation;
+    }
+
 
 
     public static Event.Builder builder() {
@@ -156,6 +165,7 @@ public class Event implements java.io.Serializable {
         private java.util.List<Video> videos;
         private EventProperties properties;
         private Boolean draft;
+        private EventValidation validation;
 
         public Builder() {
         }
@@ -225,9 +235,14 @@ public class Event implements java.io.Serializable {
             return this;
         }
 
+        public Builder setValidation(EventValidation validation) {
+            this.validation = validation;
+            return this;
+        }
+
 
         public Event build() {
-            return new Event(id, eventProducer, type, subType, startTime, endTime, position, timezone, metadata, images, videos, properties, draft);
+            return new Event(id, eventProducer, type, subType, startTime, endTime, position, timezone, metadata, images, videos, properties, draft, validation);
         }
 
     }
