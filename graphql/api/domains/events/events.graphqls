@@ -52,8 +52,8 @@ type EventProperties {
 
 type EventValidation {
 	status: EventValidationStatus!
-	invalidReason: String
-	invalidDetails: String
+	reason: String
+	details: String
 }
 
 input CreateEventInput {
@@ -107,6 +107,6 @@ enum EventValidationStatus {
 
 input EventValidationInput {
 	status: EventValidationStatus!
-	invalidReason: String
-	invalidDetails: String
+	reason: String
+	details: String
 }

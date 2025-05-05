@@ -7,16 +7,16 @@ public class EventValidation implements java.io.Serializable {
 
     @jakarta.validation.constraints.NotNull
     private EventValidationStatus status;
-    private String invalidReason;
-    private String invalidDetails;
+    private String reason;
+    private String details;
 
     public EventValidation() {
     }
 
-    public EventValidation(EventValidationStatus status, String invalidReason, String invalidDetails) {
+    public EventValidation(EventValidationStatus status, String reason, String details) {
         this.status = status;
-        this.invalidReason = invalidReason;
-        this.invalidDetails = invalidDetails;
+        this.reason = reason;
+        this.details = details;
     }
 
     public EventValidationStatus getStatus() {
@@ -26,18 +26,18 @@ public class EventValidation implements java.io.Serializable {
         this.status = status;
     }
 
-    public String getInvalidReason() {
-        return invalidReason;
+    public String getReason() {
+        return reason;
     }
-    public void setInvalidReason(String invalidReason) {
-        this.invalidReason = invalidReason;
+    public void setReason(String reason) {
+        this.reason = reason;
     }
 
-    public String getInvalidDetails() {
-        return invalidDetails;
+    public String getDetails() {
+        return details;
     }
-    public void setInvalidDetails(String invalidDetails) {
-        this.invalidDetails = invalidDetails;
+    public void setDetails(String details) {
+        this.details = details;
     }
 
 
@@ -49,8 +49,8 @@ public class EventValidation implements java.io.Serializable {
     public static class Builder {
 
         private EventValidationStatus status;
-        private String invalidReason;
-        private String invalidDetails;
+        private String reason;
+        private String details;
 
         public Builder() {
         }
@@ -60,19 +60,19 @@ public class EventValidation implements java.io.Serializable {
             return this;
         }
 
-        public Builder setInvalidReason(String invalidReason) {
-            this.invalidReason = invalidReason;
+        public Builder setReason(String reason) {
+            this.reason = reason;
             return this;
         }
 
-        public Builder setInvalidDetails(String invalidDetails) {
-            this.invalidDetails = invalidDetails;
+        public Builder setDetails(String details) {
+            this.details = details;
             return this;
         }
 
 
         public EventValidation build() {
-            return new EventValidation(status, invalidReason, invalidDetails);
+            return new EventValidation(status, reason, details);
         }
 
     }

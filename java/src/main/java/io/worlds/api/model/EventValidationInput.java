@@ -7,16 +7,16 @@ public class EventValidationInput implements java.io.Serializable {
 
     @jakarta.validation.constraints.NotNull
     private EventValidationStatus status;
-    private org.springframework.graphql.data.ArgumentValue<String> invalidReason = org.springframework.graphql.data.ArgumentValue.omitted();
-    private org.springframework.graphql.data.ArgumentValue<String> invalidDetails = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<String> reason = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<String> details = org.springframework.graphql.data.ArgumentValue.omitted();
 
     public EventValidationInput() {
     }
 
-    public EventValidationInput(EventValidationStatus status, org.springframework.graphql.data.ArgumentValue<String> invalidReason, org.springframework.graphql.data.ArgumentValue<String> invalidDetails) {
+    public EventValidationInput(EventValidationStatus status, org.springframework.graphql.data.ArgumentValue<String> reason, org.springframework.graphql.data.ArgumentValue<String> details) {
         this.status = status;
-        this.invalidReason = invalidReason;
-        this.invalidDetails = invalidDetails;
+        this.reason = reason;
+        this.details = details;
     }
 
     public EventValidationStatus getStatus() {
@@ -26,18 +26,18 @@ public class EventValidationInput implements java.io.Serializable {
         this.status = status;
     }
 
-    public org.springframework.graphql.data.ArgumentValue<String> getInvalidReason() {
-        return invalidReason;
+    public org.springframework.graphql.data.ArgumentValue<String> getReason() {
+        return reason;
     }
-    public void setInvalidReason(org.springframework.graphql.data.ArgumentValue<String> invalidReason) {
-        this.invalidReason = invalidReason;
+    public void setReason(org.springframework.graphql.data.ArgumentValue<String> reason) {
+        this.reason = reason;
     }
 
-    public org.springframework.graphql.data.ArgumentValue<String> getInvalidDetails() {
-        return invalidDetails;
+    public org.springframework.graphql.data.ArgumentValue<String> getDetails() {
+        return details;
     }
-    public void setInvalidDetails(org.springframework.graphql.data.ArgumentValue<String> invalidDetails) {
-        this.invalidDetails = invalidDetails;
+    public void setDetails(org.springframework.graphql.data.ArgumentValue<String> details) {
+        this.details = details;
     }
 
 
@@ -49,8 +49,8 @@ public class EventValidationInput implements java.io.Serializable {
     public static class Builder {
 
         private EventValidationStatus status;
-        private org.springframework.graphql.data.ArgumentValue<String> invalidReason = org.springframework.graphql.data.ArgumentValue.omitted();
-        private org.springframework.graphql.data.ArgumentValue<String> invalidDetails = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<String> reason = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<String> details = org.springframework.graphql.data.ArgumentValue.omitted();
 
         public Builder() {
         }
@@ -60,19 +60,19 @@ public class EventValidationInput implements java.io.Serializable {
             return this;
         }
 
-        public Builder setInvalidReason(org.springframework.graphql.data.ArgumentValue<String> invalidReason) {
-            this.invalidReason = invalidReason;
+        public Builder setReason(org.springframework.graphql.data.ArgumentValue<String> reason) {
+            this.reason = reason;
             return this;
         }
 
-        public Builder setInvalidDetails(org.springframework.graphql.data.ArgumentValue<String> invalidDetails) {
-            this.invalidDetails = invalidDetails;
+        public Builder setDetails(org.springframework.graphql.data.ArgumentValue<String> details) {
+            this.details = details;
             return this;
         }
 
 
         public EventValidationInput build() {
-            return new EventValidationInput(status, invalidReason, invalidDetails);
+            return new EventValidationInput(status, reason, details);
         }
 
     }
