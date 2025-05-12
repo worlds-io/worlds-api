@@ -6,6 +6,7 @@ public class FilterDetectionInput implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 
     private org.springframework.graphql.data.ArgumentValue<FilterIDInput> dataSourceId = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<FilterIDInput> trackId = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterIDInput> zoneId = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterIDInput> geofenceId = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterStringInput> tag = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -21,8 +22,9 @@ public class FilterDetectionInput implements java.io.Serializable {
     public FilterDetectionInput() {
     }
 
-    public FilterDetectionInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> dataSourceId, org.springframework.graphql.data.ArgumentValue<FilterIDInput> zoneId, org.springframework.graphql.data.ArgumentValue<FilterIDInput> geofenceId, org.springframework.graphql.data.ArgumentValue<FilterStringInput> tag, FilterDateTimeOffsetInput time, org.springframework.graphql.data.ArgumentValue<FilterPointInput> position, java.util.List<FilterDetectionInput> and, java.util.List<FilterDetectionInput> or, org.springframework.graphql.data.ArgumentValue<FilterDetectionInput> not, org.springframework.graphql.data.ArgumentValue<FilterIDInput> deviceId) {
+    public FilterDetectionInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> dataSourceId, org.springframework.graphql.data.ArgumentValue<FilterIDInput> trackId, org.springframework.graphql.data.ArgumentValue<FilterIDInput> zoneId, org.springframework.graphql.data.ArgumentValue<FilterIDInput> geofenceId, org.springframework.graphql.data.ArgumentValue<FilterStringInput> tag, FilterDateTimeOffsetInput time, org.springframework.graphql.data.ArgumentValue<FilterPointInput> position, java.util.List<FilterDetectionInput> and, java.util.List<FilterDetectionInput> or, org.springframework.graphql.data.ArgumentValue<FilterDetectionInput> not, org.springframework.graphql.data.ArgumentValue<FilterIDInput> deviceId) {
         this.dataSourceId = dataSourceId;
+        this.trackId = trackId;
         this.zoneId = zoneId;
         this.geofenceId = geofenceId;
         this.tag = tag;
@@ -39,6 +41,13 @@ public class FilterDetectionInput implements java.io.Serializable {
     }
     public void setDataSourceId(org.springframework.graphql.data.ArgumentValue<FilterIDInput> dataSourceId) {
         this.dataSourceId = dataSourceId;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<FilterIDInput> getTrackId() {
+        return trackId;
+    }
+    public void setTrackId(org.springframework.graphql.data.ArgumentValue<FilterIDInput> trackId) {
+        this.trackId = trackId;
     }
 
     public org.springframework.graphql.data.ArgumentValue<FilterIDInput> getZoneId() {
@@ -115,6 +124,7 @@ public class FilterDetectionInput implements java.io.Serializable {
     public static class Builder {
 
         private org.springframework.graphql.data.ArgumentValue<FilterIDInput> dataSourceId = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<FilterIDInput> trackId = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterIDInput> zoneId = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterIDInput> geofenceId = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterStringInput> tag = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -130,6 +140,11 @@ public class FilterDetectionInput implements java.io.Serializable {
 
         public Builder setDataSourceId(org.springframework.graphql.data.ArgumentValue<FilterIDInput> dataSourceId) {
             this.dataSourceId = dataSourceId;
+            return this;
+        }
+
+        public Builder setTrackId(org.springframework.graphql.data.ArgumentValue<FilterIDInput> trackId) {
+            this.trackId = trackId;
             return this;
         }
 
@@ -181,7 +196,7 @@ public class FilterDetectionInput implements java.io.Serializable {
 
 
         public FilterDetectionInput build() {
-            return new FilterDetectionInput(dataSourceId, zoneId, geofenceId, tag, time, position, and, or, not, deviceId);
+            return new FilterDetectionInput(dataSourceId, trackId, zoneId, geofenceId, tag, time, position, and, or, not, deviceId);
         }
 
     }
