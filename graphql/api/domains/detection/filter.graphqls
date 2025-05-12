@@ -1,5 +1,6 @@
 input FilterDetectionInput {
 	dataSourceId: FilterIDInput
+	trackId: FilterIDInput
 	zoneId: FilterIDInput
 	geofenceId: FilterIDInput 
 	tag: FilterStringInput
