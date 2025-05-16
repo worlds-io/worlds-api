@@ -16,6 +16,7 @@ public class Device implements java.io.Serializable {
     private String address;
     private Double frameRate;
     private GeoJSONPoint position;
+    private DataSource dataSource;
     private Site site;
     @jakarta.validation.constraints.NotNull
     private java.util.List<DeviceCalibration> calibrations;
@@ -24,7 +25,7 @@ public class Device implements java.io.Serializable {
     public Device() {
     }
 
-    public Device(String id, String uuid, String externalId, String name, boolean enabled, String address, Double frameRate, GeoJSONPoint position, Site site, java.util.List<DeviceCalibration> calibrations, PointOfInterest pointOfInterest) {
+    public Device(String id, String uuid, String externalId, String name, boolean enabled, String address, Double frameRate, GeoJSONPoint position, DataSource dataSource, Site site, java.util.List<DeviceCalibration> calibrations, PointOfInterest pointOfInterest) {
         this.id = id;
         this.uuid = uuid;
         this.externalId = externalId;
@@ -33,6 +34,7 @@ public class Device implements java.io.Serializable {
         this.address = address;
         this.frameRate = frameRate;
         this.position = position;
+        this.dataSource = dataSource;
         this.site = site;
         this.calibrations = calibrations;
         this.pointOfInterest = pointOfInterest;
@@ -94,6 +96,13 @@ public class Device implements java.io.Serializable {
         this.position = position;
     }
 
+    public DataSource getDataSource() {
+        return dataSource;
+    }
+    public void setDataSource(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
+
     public Site getSite() {
         return site;
     }
@@ -131,6 +140,7 @@ public class Device implements java.io.Serializable {
         private String address;
         private Double frameRate;
         private GeoJSONPoint position;
+        private DataSource dataSource;
         private Site site;
         private java.util.List<DeviceCalibration> calibrations;
         private PointOfInterest pointOfInterest;
@@ -178,6 +188,11 @@ public class Device implements java.io.Serializable {
             return this;
         }
 
+        public Builder setDataSource(DataSource dataSource) {
+            this.dataSource = dataSource;
+            return this;
+        }
+
         public Builder setSite(Site site) {
             this.site = site;
             return this;
@@ -195,7 +210,7 @@ public class Device implements java.io.Serializable {
 
 
         public Device build() {
-            return new Device(id, uuid, externalId, name, enabled, address, frameRate, position, site, calibrations, pointOfInterest);
+            return new Device(id, uuid, externalId, name, enabled, address, frameRate, position, dataSource, site, calibrations, pointOfInterest);
         }
 
     }
