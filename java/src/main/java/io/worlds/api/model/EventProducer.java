@@ -12,17 +12,20 @@ public class EventProducer implements java.io.Serializable {
     private String description;
     private String timezone;
     private boolean active;
+    @jakarta.validation.constraints.NotNull
+    private java.util.List<String> invalidReasons;
     private java.lang.Object metadata;
 
     public EventProducer() {
     }
 
-    public EventProducer(String id, String name, String description, String timezone, boolean active, java.lang.Object metadata) {
+    public EventProducer(String id, String name, String description, String timezone, boolean active, java.util.List<String> invalidReasons, java.lang.Object metadata) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.timezone = timezone;
         this.active = active;
+        this.invalidReasons = invalidReasons;
         this.metadata = metadata;
     }
 
@@ -61,6 +64,13 @@ public class EventProducer implements java.io.Serializable {
         this.active = active;
     }
 
+    public java.util.List<String> getInvalidReasons() {
+        return invalidReasons;
+    }
+    public void setInvalidReasons(java.util.List<String> invalidReasons) {
+        this.invalidReasons = invalidReasons;
+    }
+
     public java.lang.Object getMetadata() {
         return metadata;
     }
@@ -81,6 +91,7 @@ public class EventProducer implements java.io.Serializable {
         private String description;
         private String timezone;
         private boolean active;
+        private java.util.List<String> invalidReasons;
         private java.lang.Object metadata;
 
         public Builder() {
@@ -111,6 +122,11 @@ public class EventProducer implements java.io.Serializable {
             return this;
         }
 
+        public Builder setInvalidReasons(java.util.List<String> invalidReasons) {
+            this.invalidReasons = invalidReasons;
+            return this;
+        }
+
         public Builder setMetadata(java.lang.Object metadata) {
             this.metadata = metadata;
             return this;
@@ -118,7 +134,7 @@ public class EventProducer implements java.io.Serializable {
 
 
         public EventProducer build() {
-            return new EventProducer(id, name, description, timezone, active, metadata);
+            return new EventProducer(id, name, description, timezone, active, invalidReasons, metadata);
         }
 
     }

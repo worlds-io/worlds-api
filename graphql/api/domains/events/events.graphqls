@@ -4,6 +4,7 @@ type EventProducer {
 	description: String
 	timezone: String
 	active: Boolean!
+	invalidReasons: [String!]!
 	metadata: JSON
 }
 
