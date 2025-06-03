@@ -41,6 +41,7 @@ type Event {
 	properties: EventProperties
 	draft: Boolean
 	validation: EventValidation
+	priority: String
 }
 
 type EventProperties {
@@ -74,6 +75,7 @@ input CreateEventInput {
 	properties: EventPropertiesInput
 	draft: Boolean! = false
 	validation: EventValidationInput
+	priority: String
 }
 
 input UpdateEventInput {
@@ -92,6 +94,7 @@ input UpdateEventInput {
 	properties: EventPropertiesInput
 	draft: Boolean
 	validation: EventValidationInput
+	priority: String
 }
 
 input EventPropertiesInput {

@@ -11,6 +11,7 @@ public class FilterEventInput implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private FilterDateTimeOffsetInput time;
     private org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> draft = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<FilterStringInput> priority = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterEventValidationStatusInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<FilterEventInput> and;
     private java.util.List<FilterEventInput> or;
@@ -19,12 +20,13 @@ public class FilterEventInput implements java.io.Serializable {
     public FilterEventInput() {
     }
 
-    public FilterEventInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> eventProducerId, org.springframework.graphql.data.ArgumentValue<FilterStringInput> type, org.springframework.graphql.data.ArgumentValue<FilterStringInput> subType, FilterDateTimeOffsetInput time, org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> draft, org.springframework.graphql.data.ArgumentValue<FilterEventValidationStatusInput> validation, java.util.List<FilterEventInput> and, java.util.List<FilterEventInput> or, org.springframework.graphql.data.ArgumentValue<FilterEventInput> not) {
+    public FilterEventInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> eventProducerId, org.springframework.graphql.data.ArgumentValue<FilterStringInput> type, org.springframework.graphql.data.ArgumentValue<FilterStringInput> subType, FilterDateTimeOffsetInput time, org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> draft, org.springframework.graphql.data.ArgumentValue<FilterStringInput> priority, org.springframework.graphql.data.ArgumentValue<FilterEventValidationStatusInput> validation, java.util.List<FilterEventInput> and, java.util.List<FilterEventInput> or, org.springframework.graphql.data.ArgumentValue<FilterEventInput> not) {
         this.eventProducerId = eventProducerId;
         this.type = type;
         this.subType = subType;
         this.time = time;
         this.draft = draft;
+        this.priority = priority;
         this.validation = validation;
         this.and = and;
         this.or = or;
@@ -64,6 +66,13 @@ public class FilterEventInput implements java.io.Serializable {
     }
     public void setDraft(org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> draft) {
         this.draft = draft;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<FilterStringInput> getPriority() {
+        return priority;
+    }
+    public void setPriority(org.springframework.graphql.data.ArgumentValue<FilterStringInput> priority) {
+        this.priority = priority;
     }
 
     public org.springframework.graphql.data.ArgumentValue<FilterEventValidationStatusInput> getValidation() {
@@ -107,6 +116,7 @@ public class FilterEventInput implements java.io.Serializable {
         private org.springframework.graphql.data.ArgumentValue<FilterStringInput> subType = org.springframework.graphql.data.ArgumentValue.omitted();
         private FilterDateTimeOffsetInput time;
         private org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> draft = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<FilterStringInput> priority = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterEventValidationStatusInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<FilterEventInput> and;
         private java.util.List<FilterEventInput> or;
@@ -140,6 +150,11 @@ public class FilterEventInput implements java.io.Serializable {
             return this;
         }
 
+        public Builder setPriority(org.springframework.graphql.data.ArgumentValue<FilterStringInput> priority) {
+            this.priority = priority;
+            return this;
+        }
+
         public Builder setValidation(org.springframework.graphql.data.ArgumentValue<FilterEventValidationStatusInput> validation) {
             this.validation = validation;
             return this;
@@ -162,7 +177,7 @@ public class FilterEventInput implements java.io.Serializable {
 
 
         public FilterEventInput build() {
-            return new FilterEventInput(eventProducerId, type, subType, time, draft, validation, and, or, not);
+            return new FilterEventInput(eventProducerId, type, subType, time, draft, priority, validation, and, or, not);
         }
 
     }

@@ -25,11 +25,12 @@ public class Event implements java.io.Serializable {
     private EventProperties properties;
     private Boolean draft;
     private EventValidation validation;
+    private String priority;
 
     public Event() {
     }
 
-    public Event(String id, EventProducer eventProducer, String type, String subType, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, GeoJSONPoint position, String timezone, java.lang.Object metadata, java.util.List<Image> images, java.util.List<Video> videos, EventProperties properties, Boolean draft, EventValidation validation) {
+    public Event(String id, EventProducer eventProducer, String type, String subType, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, GeoJSONPoint position, String timezone, java.lang.Object metadata, java.util.List<Image> images, java.util.List<Video> videos, EventProperties properties, Boolean draft, EventValidation validation, String priority) {
         this.id = id;
         this.eventProducer = eventProducer;
         this.type = type;
@@ -44,6 +45,7 @@ public class Event implements java.io.Serializable {
         this.properties = properties;
         this.draft = draft;
         this.validation = validation;
+        this.priority = priority;
     }
 
     public String getId() {
@@ -144,6 +146,13 @@ public class Event implements java.io.Serializable {
         this.validation = validation;
     }
 
+    public String getPriority() {
+        return priority;
+    }
+    public void setPriority(String priority) {
+        this.priority = priority;
+    }
+
 
 
     public static Event.Builder builder() {
@@ -166,6 +175,7 @@ public class Event implements java.io.Serializable {
         private EventProperties properties;
         private Boolean draft;
         private EventValidation validation;
+        private String priority;
 
         public Builder() {
         }
@@ -240,9 +250,14 @@ public class Event implements java.io.Serializable {
             return this;
         }
 
+        public Builder setPriority(String priority) {
+            this.priority = priority;
+            return this;
+        }
+
 
         public Event build() {
-            return new Event(id, eventProducer, type, subType, startTime, endTime, position, timezone, metadata, images, videos, properties, draft, validation);
+            return new Event(id, eventProducer, type, subType, startTime, endTime, position, timezone, metadata, images, videos, properties, draft, validation, priority);
         }
 
     }
