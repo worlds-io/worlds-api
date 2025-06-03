@@ -26,6 +26,7 @@ input FilterEventActivityInput {
 	type: FilterStringInput
 	subType: FilterStringInput
 	draft: FilterBooleanInput
+	priority: FilterStringInput
 
 	and: [FilterEventActivityInput!]
 	or: [FilterEventActivityInput!]
