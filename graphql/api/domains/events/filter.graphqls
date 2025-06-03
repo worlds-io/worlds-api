@@ -13,6 +13,7 @@ input FilterEventInput {
 	subType: FilterStringInput
 	time: FilterDateTimeOffsetInput!
 	draft: FilterBooleanInput
+	priority: FilterStringInput
 	validation: FilterEventValidationStatusInput
 
 	and: [FilterEventInput!]
