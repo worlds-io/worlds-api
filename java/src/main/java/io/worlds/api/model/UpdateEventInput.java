@@ -21,11 +21,12 @@ public class UpdateEventInput implements java.io.Serializable {
     private org.springframework.graphql.data.ArgumentValue<EventPropertiesInput> properties = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<Boolean> draft = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<EventValidationInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<String> priority = org.springframework.graphql.data.ArgumentValue.omitted();
 
     public UpdateEventInput() {
     }
 
-    public UpdateEventInput(String id, org.springframework.graphql.data.ArgumentValue<String> type, org.springframework.graphql.data.ArgumentValue<String> subType, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> startTime, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime, org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, java.util.List<CreateSnapshotInput> snapshots, java.util.List<UploadImageInput> uploads, java.util.List<CreateClipInput> clips, java.util.List<String> trackIds, org.springframework.graphql.data.ArgumentValue<EventPropertiesInput> properties, org.springframework.graphql.data.ArgumentValue<Boolean> draft, org.springframework.graphql.data.ArgumentValue<EventValidationInput> validation) {
+    public UpdateEventInput(String id, org.springframework.graphql.data.ArgumentValue<String> type, org.springframework.graphql.data.ArgumentValue<String> subType, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> startTime, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime, org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, java.util.List<CreateSnapshotInput> snapshots, java.util.List<UploadImageInput> uploads, java.util.List<CreateClipInput> clips, java.util.List<String> trackIds, org.springframework.graphql.data.ArgumentValue<EventPropertiesInput> properties, org.springframework.graphql.data.ArgumentValue<Boolean> draft, org.springframework.graphql.data.ArgumentValue<EventValidationInput> validation, org.springframework.graphql.data.ArgumentValue<String> priority) {
         this.id = id;
         this.type = type;
         this.subType = subType;
@@ -41,6 +42,7 @@ public class UpdateEventInput implements java.io.Serializable {
         this.properties = properties;
         this.draft = draft;
         this.validation = validation;
+        this.priority = priority;
     }
 
     public String getId() {
@@ -148,6 +150,13 @@ public class UpdateEventInput implements java.io.Serializable {
         this.validation = validation;
     }
 
+    public org.springframework.graphql.data.ArgumentValue<String> getPriority() {
+        return priority;
+    }
+    public void setPriority(org.springframework.graphql.data.ArgumentValue<String> priority) {
+        this.priority = priority;
+    }
+
 
 
     public static UpdateEventInput.Builder builder() {
@@ -171,6 +180,7 @@ public class UpdateEventInput implements java.io.Serializable {
         private org.springframework.graphql.data.ArgumentValue<EventPropertiesInput> properties = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<Boolean> draft = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<EventValidationInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<String> priority = org.springframework.graphql.data.ArgumentValue.omitted();
 
         public Builder() {
         }
@@ -250,9 +260,14 @@ public class UpdateEventInput implements java.io.Serializable {
             return this;
         }
 
+        public Builder setPriority(org.springframework.graphql.data.ArgumentValue<String> priority) {
+            this.priority = priority;
+            return this;
+        }
+
 
         public UpdateEventInput build() {
-            return new UpdateEventInput(id, type, subType, startTime, endTime, position, timezone, metadata, snapshots, uploads, clips, trackIds, properties, draft, validation);
+            return new UpdateEventInput(id, type, subType, startTime, endTime, position, timezone, metadata, snapshots, uploads, clips, trackIds, properties, draft, validation, priority);
         }
 
     }
