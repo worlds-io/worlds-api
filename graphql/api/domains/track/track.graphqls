@@ -62,3 +62,8 @@ input UpdateTrackInput {
 	properties: TrackPropertiesInput
 	metadata: JSON
 }
+
+type TrackMessage {
+	message: Track!
+	state: MessageState!
+}

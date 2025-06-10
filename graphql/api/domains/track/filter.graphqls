@@ -13,6 +13,19 @@ input FilterTrackInput {
 	deviceId: FilterIDInput @deprecated (reason: "deviceId is deprecated, use dataSourceId instead")
 }
 
+input FilterTrackMessageInput {
+	dataSourceId: FilterIDInput
+	tag: FilterStringInput
+	position: FilterPointInput
+	identifier: FilterTrackPropertyInput
+	attribute: FilterTrackPropertyInput
+	state: FilterMessageStateInput
+
+	and: [FilterTrackMessageInput!]
+	or: [FilterTrackMessageInput!]
+	not: FilterTrackMessageInput
+}
+
 input FilterTrackPropertyInput {
 	type: FilterStringInput
 	value: FilterStringInput
