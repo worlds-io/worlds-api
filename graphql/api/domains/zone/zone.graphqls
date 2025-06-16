@@ -31,3 +31,19 @@ type ZoneIntersectionMessage {
 	message: ZoneIntersection!
 	state: MessageState!
 }
+
+input CreateZoneInput {
+	id: ID!
+	dataSourceId: ID!
+	name: String!
+	polygon: GeoJSONPolygonInput!
+	active: Boolean
+}
+
+input UpdateZoneInput {
+	id: ID!
+	dataSourceId: ID
+	name: String
+	polygon: GeoJSONPolygonInput
+	active: Boolean
+}

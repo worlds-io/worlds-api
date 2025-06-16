@@ -1,0 +1,4 @@
+extend type Mutation {
+	createZone(zone: CreateZoneInput!): Zone
+	updateZone(zone: UpdateZoneInput!): Zone
+}
