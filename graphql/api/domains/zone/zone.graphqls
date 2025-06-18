@@ -33,7 +33,6 @@ type ZoneIntersectionMessage {
 }
 
 input CreateZoneInput {
-	id: ID!
 	dataSourceId: ID!
 	name: String!
 	polygon: GeoJSONPolygonInput!
