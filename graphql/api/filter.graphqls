@@ -85,9 +85,9 @@ input FilterPointNearInput {
 Filtration for Activity subscriber statuses
 """
 input FilterMessageStateInput {
-  eq: MessageStateInput
-  ne: MessageStateInput
-  in: [MessageStateInput!]
+  eq: MessageState
+  ne: MessageState
+  in: [MessageState!]
 }
 
 """
