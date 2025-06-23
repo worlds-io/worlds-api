@@ -4,6 +4,8 @@ type Zone {
 	name: String!
 	polygon: GeoJSONPolygon! 
 	active: Boolean!
+	createdAt: DateTimeOffset
+	updatedAt: DateTimeOffset
 	
 	deviceId: ID! @deprecated (reason: "deviceId is deprecated, use dataSource.id instead")
 }
