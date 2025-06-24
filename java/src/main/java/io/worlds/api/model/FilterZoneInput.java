@@ -9,6 +9,8 @@ public class FilterZoneInput implements java.io.Serializable {
     private org.springframework.graphql.data.ArgumentValue<FilterStringInput> name = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterIDInput> dataSourceId = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> active = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<FilterDateTimeOffsetInput> createdAt = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<FilterDateTimeOffsetInput> updatedAt = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<FilterZoneInput> and;
     private java.util.List<FilterZoneInput> or;
     private org.springframework.graphql.data.ArgumentValue<FilterZoneInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -16,11 +18,13 @@ public class FilterZoneInput implements java.io.Serializable {
     public FilterZoneInput() {
     }
 
-    public FilterZoneInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> id, org.springframework.graphql.data.ArgumentValue<FilterStringInput> name, org.springframework.graphql.data.ArgumentValue<FilterIDInput> dataSourceId, org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> active, java.util.List<FilterZoneInput> and, java.util.List<FilterZoneInput> or, org.springframework.graphql.data.ArgumentValue<FilterZoneInput> not) {
+    public FilterZoneInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> id, org.springframework.graphql.data.ArgumentValue<FilterStringInput> name, org.springframework.graphql.data.ArgumentValue<FilterIDInput> dataSourceId, org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> active, org.springframework.graphql.data.ArgumentValue<FilterDateTimeOffsetInput> createdAt, org.springframework.graphql.data.ArgumentValue<FilterDateTimeOffsetInput> updatedAt, java.util.List<FilterZoneInput> and, java.util.List<FilterZoneInput> or, org.springframework.graphql.data.ArgumentValue<FilterZoneInput> not) {
         this.id = id;
         this.name = name;
         this.dataSourceId = dataSourceId;
         this.active = active;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
         this.and = and;
         this.or = or;
         this.not = not;
@@ -52,6 +56,20 @@ public class FilterZoneInput implements java.io.Serializable {
     }
     public void setActive(org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> active) {
         this.active = active;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<FilterDateTimeOffsetInput> getCreatedAt() {
+        return createdAt;
+    }
+    public void setCreatedAt(org.springframework.graphql.data.ArgumentValue<FilterDateTimeOffsetInput> createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<FilterDateTimeOffsetInput> getUpdatedAt() {
+        return updatedAt;
+    }
+    public void setUpdatedAt(org.springframework.graphql.data.ArgumentValue<FilterDateTimeOffsetInput> updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     public java.util.List<FilterZoneInput> getAnd() {
@@ -87,6 +105,8 @@ public class FilterZoneInput implements java.io.Serializable {
         private org.springframework.graphql.data.ArgumentValue<FilterStringInput> name = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterIDInput> dataSourceId = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> active = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<FilterDateTimeOffsetInput> createdAt = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<FilterDateTimeOffsetInput> updatedAt = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<FilterZoneInput> and;
         private java.util.List<FilterZoneInput> or;
         private org.springframework.graphql.data.ArgumentValue<FilterZoneInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -114,6 +134,16 @@ public class FilterZoneInput implements java.io.Serializable {
             return this;
         }
 
+        public Builder setCreatedAt(org.springframework.graphql.data.ArgumentValue<FilterDateTimeOffsetInput> createdAt) {
+            this.createdAt = createdAt;
+            return this;
+        }
+
+        public Builder setUpdatedAt(org.springframework.graphql.data.ArgumentValue<FilterDateTimeOffsetInput> updatedAt) {
+            this.updatedAt = updatedAt;
+            return this;
+        }
+
         public Builder setAnd(java.util.List<FilterZoneInput> and) {
             this.and = and;
             return this;
@@ -131,7 +161,7 @@ public class FilterZoneInput implements java.io.Serializable {
 
 
         public FilterZoneInput build() {
-            return new FilterZoneInput(id, name, dataSourceId, active, and, or, not);
+            return new FilterZoneInput(id, name, dataSourceId, active, createdAt, updatedAt, and, or, not);
         }
 
     }

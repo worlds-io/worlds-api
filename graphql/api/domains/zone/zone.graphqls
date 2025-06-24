@@ -4,6 +4,8 @@ type Zone {
 	name: String!
 	polygon: GeoJSONPolygon! 
 	active: Boolean!
+	createdAt: DateTimeOffset
+	updatedAt: DateTimeOffset
 	
 	deviceId: ID! @deprecated (reason: "deviceId is deprecated, use dataSource.id instead")
 }
@@ -30,4 +32,19 @@ type ZoneIntersection {
 type ZoneIntersectionMessage {
 	message: ZoneIntersection!
 	state: MessageState!
+}
+
+input CreateZoneInput {
+	dataSourceId: ID!
+	name: String!
+	polygon: GeoJSONPolygonInput!
+	active: Boolean
+}
+
+input UpdateZoneInput {
+	id: ID!
+	dataSourceId: ID
+	name: String
+	polygon: GeoJSONPolygonInput
+	active: Boolean
 }

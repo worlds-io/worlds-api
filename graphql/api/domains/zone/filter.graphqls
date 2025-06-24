@@ -3,6 +3,8 @@ input FilterZoneInput {
 	name: FilterStringInput
 	dataSourceId: FilterIDInput
 	active: FilterBooleanInput
+	createdAt: FilterDateTimeOffsetInput
+	updatedAt: FilterDateTimeOffsetInput
 
 	and: [FilterZoneInput!]
 	or: [FilterZoneInput!]

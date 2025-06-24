@@ -13,6 +13,8 @@ public class Zone implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private GeoJSONPolygon polygon;
     private boolean active;
+    private java.time.OffsetDateTime createdAt;
+    private java.time.OffsetDateTime updatedAt;
     @Deprecated
     @jakarta.validation.constraints.NotNull
     private String deviceId;
@@ -20,12 +22,14 @@ public class Zone implements java.io.Serializable {
     public Zone() {
     }
 
-    public Zone(String id, DataSource dataSource, String name, GeoJSONPolygon polygon, boolean active, String deviceId) {
+    public Zone(String id, DataSource dataSource, String name, GeoJSONPolygon polygon, boolean active, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt, String deviceId) {
         this.id = id;
         this.dataSource = dataSource;
         this.name = name;
         this.polygon = polygon;
         this.active = active;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
         this.deviceId = deviceId;
     }
 
@@ -64,6 +68,20 @@ public class Zone implements java.io.Serializable {
         this.active = active;
     }
 
+    public java.time.OffsetDateTime getCreatedAt() {
+        return createdAt;
+    }
+    public void setCreatedAt(java.time.OffsetDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public java.time.OffsetDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+    public void setUpdatedAt(java.time.OffsetDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
     @Deprecated
     public String getDeviceId() {
         return deviceId;
@@ -86,6 +104,8 @@ public class Zone implements java.io.Serializable {
         private String name;
         private GeoJSONPolygon polygon;
         private boolean active;
+        private java.time.OffsetDateTime createdAt;
+        private java.time.OffsetDateTime updatedAt;
         private String deviceId;
 
         public Builder() {
@@ -116,6 +136,16 @@ public class Zone implements java.io.Serializable {
             return this;
         }
 
+        public Builder setCreatedAt(java.time.OffsetDateTime createdAt) {
+            this.createdAt = createdAt;
+            return this;
+        }
+
+        public Builder setUpdatedAt(java.time.OffsetDateTime updatedAt) {
+            this.updatedAt = updatedAt;
+            return this;
+        }
+
         @Deprecated
         public Builder setDeviceId(String deviceId) {
             this.deviceId = deviceId;
@@ -124,7 +154,7 @@ public class Zone implements java.io.Serializable {
 
 
         public Zone build() {
-            return new Zone(id, dataSource, name, polygon, active, deviceId);
+            return new Zone(id, dataSource, name, polygon, active, createdAt, updatedAt, deviceId);
         }
 
     }
