@@ -1,0 +1,28 @@
+input FilterTimelineDocumentInputSubscription {
+  id: FilterIDInput
+  documentType: FilterStringInput
+  name: FilterStringInput
+  description: FilterStringInput
+  startTime: FilterDateTimeOffsetInput
+  endTime: FilterDateTimeOffsetInput
+  timezone: FilterStringInput
+  priority: FilterStringInput
+  status: FilterStringInput
+  timelineDocumentProducerId: FilterIDInput
+  validation: FilterStringInput
+  imageIds: FilterIDListInput
+  videoIds: FilterIDListInput
+  trackIds: FilterIDListInput
+  siteIds: FilterIDListInput
+  dataSourceIds: FilterIDListInput
+  tagIds: FilterIDListInput
+  pointOfInterestIds: FilterIDListInput
+
+  and: [FilterTimelineDocumentInput!]
+  or: [FilterTimelineDocumentInput!]
+  not: FilterTimelineDocumentInput
+}
+
+extend type Subscription {
+  timelineDocumentChanged(filter: FilterTimelineDocumentInputSubscription): TimelineDocument!
+}

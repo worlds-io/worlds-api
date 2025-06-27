@@ -1,0 +1,120 @@
+enum TimelineDocumentType {
+    ACTIVITY
+    EVENT
+    SUMMARY
+}
+
+enum TimelineDocumentValidationStatus {
+    VALID
+    INVALID
+}
+
+type TimelineDocumentProducer {
+    id: ID!
+    name: String!
+    description: String
+    timezone: String
+    active: Boolean!
+    invalidReasons: [String!]!
+    metadata: JSON
+}
+
+type TimelineDocumentValidation {
+    status: TimelineDocumentValidationStatus!
+    reason: String
+    details: String
+}
+
+type TimelineDocument {
+    id: ID!
+    documentType: TimelineDocumentType!
+    name: String!
+    description: String
+    startTime: DateTimeOffset!
+    endTime: DateTimeOffset
+    position: GeoJSONPoint
+    timezone: String
+    metadata: JSON
+    validation: TimelineDocumentValidation
+    priority: String
+    status: String
+    documentProducer: TimelineDocumentProducer!
+    images: [Image!]!
+    videos: [Video!]!
+    tracks: [Track!]
+    sites: [Site!]
+    dataSources: [DataSource!]
+    tags: [Tag!]
+    pointsOfInterest: [PointOfInterest!]
+}
+
+# Input types for TimelineDocumentProducer
+input CreateTimelineDocumentProducerInput {
+    name: String!
+    description: String
+    timezone: String
+    active: Boolean!
+    metadata: JSON
+    invalidReasons: [String!]
+}
+
+input UpdateTimelineDocumentProducerInput {
+    name: String
+    description: String
+    timezone: String
+    active: Boolean
+    metadata: JSON
+    invalidReasons: [String!]
+}
+
+# Input types for TimelineDocument
+input CreateTimelineDocumentInput {
+    documentType: TimelineDocumentType!
+    name: String!
+    description: String
+    startTime: DateTimeOffset!
+    endTime: DateTimeOffset
+    position: GeoJSONPointInput
+    timezone: String
+    metadata: JSON
+    priority: String
+    status: String
+    timelineDocumentProducerId: ID!
+    validation: TimelineDocumentValidationInput
+    imageIds: [ID!]
+    videoIds: [ID!]
+    trackIds: [ID!]
+    siteIds: [ID!]
+    dataSourceIds: [ID!]
+    tagIds: [ID!]
+    pointOfInterestIds: [ID!]
+}
+
+input UpdateTimelineDocumentInput {
+    documentType: TimelineDocumentType
+    name: String
+    description: String
+    startTime: DateTimeOffset
+    endTime: DateTimeOffset
+    position: GeoJSONPointInput
+    timezone: String
+    metadata: JSON
+    priority: String
+    status: String
+    timelineDocumentProducerId: ID
+    validation: TimelineDocumentValidationInput
+    imageIds: [ID!]
+    videoIds: [ID!]
+    trackIds: [ID!]
+    siteIds: [ID!]
+    dataSourceIds: [ID!]
+    tagIds: [ID!]
+    pointOfInterestIds: [ID!]
+}
+
+# Supporting input for validation
+input TimelineDocumentValidationInput {
+    status: TimelineDocumentValidationStatus!
+    reason: String
+    details: String
+}

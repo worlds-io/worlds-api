@@ -1,0 +1,29 @@
+input FilterTimelineDocumentProducerInput {
+  id: FilterIDInput
+  name: FilterStringInput
+  active: FilterBooleanInput
+
+  and: [FilterTimelineDocumentProducerInput!]
+  or: [FilterTimelineDocumentProducerInput!]
+  not: FilterTimelineDocumentProducerInput
+}
+
+input FilterTimelineDocumentInput {
+  id: FilterIDInput
+  documentType: FilterStringInput
+  name: FilterStringInput
+  startTimeFrom: FilterDateTimeOffsetInput
+  startTimeTo: FilterDateTimeOffsetInput
+  endTimeFrom: FilterDateTimeOffsetInput
+  endTimeTo: FilterDateTimeOffsetInput
+  timezone: FilterStringInput
+  priority: FilterStringInput
+  status: FilterStringInput
+  timelineDocumentProducerId: FilterIDInput
+  tagIds: [FilterIDInput!]
+  siteIds: [FilterIDInput!]
+
+  and: [FilterTimelineDocumentInput!]
+  or: [FilterTimelineDocumentInput!]
+  not: FilterTimelineDocumentInput
+}

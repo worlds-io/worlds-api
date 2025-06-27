@@ -8,6 +8,13 @@ input FilterIDInput {
   in: [ID!]
 }
 
+input FilterIDListInput {
+  equals: [ID!]
+  contains: ID
+  in: [ID!]
+  not: FilterIDListInput
+}
+
 """
 Standard filtration for integer fields
 """
