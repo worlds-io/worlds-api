@@ -38,6 +38,7 @@ type TimelineDocument {
     validation: TimelineDocumentValidation
     priority: String
     status: String
+    labels: [String!]
     documentProducer: TimelineDocumentProducer!
     images: [Image!]!
     videos: [Video!]!
@@ -79,6 +80,7 @@ input CreateTimelineDocumentInput {
     metadata: JSON
     priority: String
     status: String
+    labels: [String!]
     timelineDocumentProducerId: ID!
     validation: TimelineDocumentValidationInput
     imageIds: [ID!]
@@ -101,6 +103,7 @@ input UpdateTimelineDocumentInput {
     metadata: JSON
     priority: String
     status: String
+    labels: [String!]
     timelineDocumentProducerId: ID
     validation: TimelineDocumentValidationInput
     imageIds: [ID!]

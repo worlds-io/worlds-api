@@ -10,9 +10,7 @@ input FilterTimelineDocumentInputSubscription {
   status: FilterStringInput
   timelineDocumentProducerId: FilterIDInput
   validation: FilterStringInput
-  imageIds: FilterIDListInput
-  videoIds: FilterIDListInput
-  trackIds: FilterIDListInput
+  labels: FilterStringListInput
   siteIds: FilterIDListInput
   dataSourceIds: FilterIDListInput
   tagIds: FilterIDListInput
