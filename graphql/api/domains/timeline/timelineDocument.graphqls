@@ -47,6 +47,11 @@ type TimelineDocument {
     dataSources: [DataSource!]
     tags: [Tag!]
     pointsOfInterest: [PointOfInterest!]
+    linkedActivities: [TimelineDocument!]
+    linkedEvents: [TimelineDocument!]
+    linkedSummaries: [TimelineDocument!]
+    createdAt: DateTimeOffset!
+    updatedAt: DateTimeOffset!
 }
 
 # Input types for TimelineDocumentProducer
@@ -90,6 +95,9 @@ input CreateTimelineDocumentInput {
     dataSourceIds: [ID!]
     tagIds: [ID!]
     pointOfInterestIds: [ID!]
+    linkedActivities: [ID!]
+    linkedEvents: [ID!]
+    linkedSummaries: [ID!]
 }
 
 input UpdateTimelineDocumentInput {
@@ -113,6 +121,9 @@ input UpdateTimelineDocumentInput {
     dataSourceIds: [ID!]
     tagIds: [ID!]
     pointOfInterestIds: [ID!]
+    linkedActivities: [ID!]
+    linkedEvents: [ID!]
+    linkedSummaries: [ID!]
 }
 
 # Supporting input for validation
