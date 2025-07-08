@@ -5,6 +5,7 @@ input FilterTrackInput {
 	position: FilterPointInput
 	identifier: FilterTrackPropertyInput
 	attribute: FilterTrackPropertyInput
+	pointOfInterestId: FilterIDInput
 
 	and: [FilterTrackInput!]
 	or: [FilterTrackInput!]
@@ -19,6 +20,7 @@ input FilterTrackMessageInput {
 	position: FilterPointInput
 	identifier: FilterTrackPropertyInput
 	attribute: FilterTrackPropertyInput
+	pointOfInterestId: FilterIDInput
 	state: FilterMessageStateInput
 
 	and: [FilterTrackMessageInput!]
