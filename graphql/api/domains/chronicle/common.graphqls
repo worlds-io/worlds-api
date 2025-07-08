@@ -1,0 +1,10 @@
+enum ChronicleDocumentValidationStatus {
+    VALID
+    INVALID
+}
+
+type ChronicleDocumentValidation {
+    status: ChronicleDocumentValidationStatus!
+    reason: String
+    details: String
+}
