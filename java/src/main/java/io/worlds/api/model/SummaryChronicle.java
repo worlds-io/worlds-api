@@ -9,6 +9,8 @@ public class SummaryChronicle implements java.io.Serializable {
     private String id;
     @jakarta.validation.constraints.NotNull
     private String name;
+    @jakarta.validation.constraints.NotNull
+    private ChronicleDocumentProducer documentProducer;
     private String description;
     @jakarta.validation.constraints.NotNull
     private java.time.OffsetDateTime startTime;
@@ -20,8 +22,6 @@ public class SummaryChronicle implements java.io.Serializable {
     private String priority;
     private String status;
     private java.util.List<String> labels;
-    @jakarta.validation.constraints.NotNull
-    private ChronicleDocumentProducer documentProducer;
     @jakarta.validation.constraints.NotNull
     private java.util.List<Image> images;
     @jakarta.validation.constraints.NotNull
@@ -43,9 +43,10 @@ public class SummaryChronicle implements java.io.Serializable {
     public SummaryChronicle() {
     }
 
-    public SummaryChronicle(String id, String name, String description, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, GeoJSONPoint position, String timezone, java.lang.Object metadata, ChronicleDocumentValidation validation, String priority, String status, java.util.List<String> labels, ChronicleDocumentProducer documentProducer, java.util.List<Image> images, java.util.List<Video> videos, java.util.List<Track> tracks, java.util.List<Site> sites, java.util.List<DataSource> dataSources, java.util.List<Tag> tags, java.util.List<PointOfInterest> pointsOfInterest, java.util.List<ActivityChronicle> activityChronicles, java.util.List<EventChronicle> eventChronicles, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt) {
+    public SummaryChronicle(String id, String name, ChronicleDocumentProducer documentProducer, String description, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, GeoJSONPoint position, String timezone, java.lang.Object metadata, ChronicleDocumentValidation validation, String priority, String status, java.util.List<String> labels, java.util.List<Image> images, java.util.List<Video> videos, java.util.List<Track> tracks, java.util.List<Site> sites, java.util.List<DataSource> dataSources, java.util.List<Tag> tags, java.util.List<PointOfInterest> pointsOfInterest, java.util.List<ActivityChronicle> activityChronicles, java.util.List<EventChronicle> eventChronicles, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt) {
         this.id = id;
         this.name = name;
+        this.documentProducer = documentProducer;
         this.description = description;
         this.startTime = startTime;
         this.endTime = endTime;
@@ -56,7 +57,6 @@ public class SummaryChronicle implements java.io.Serializable {
         this.priority = priority;
         this.status = status;
         this.labels = labels;
-        this.documentProducer = documentProducer;
         this.images = images;
         this.videos = videos;
         this.tracks = tracks;
@@ -82,6 +82,13 @@ public class SummaryChronicle implements java.io.Serializable {
     }
     public void setName(String name) {
         this.name = name;
+    }
+
+    public ChronicleDocumentProducer getDocumentProducer() {
+        return documentProducer;
+    }
+    public void setDocumentProducer(ChronicleDocumentProducer documentProducer) {
+        this.documentProducer = documentProducer;
     }
 
     public String getDescription() {
@@ -152,13 +159,6 @@ public class SummaryChronicle implements java.io.Serializable {
     }
     public void setLabels(java.util.List<String> labels) {
         this.labels = labels;
-    }
-
-    public ChronicleDocumentProducer getDocumentProducer() {
-        return documentProducer;
-    }
-    public void setDocumentProducer(ChronicleDocumentProducer documentProducer) {
-        this.documentProducer = documentProducer;
     }
 
     public java.util.List<Image> getImages() {
@@ -248,6 +248,7 @@ public class SummaryChronicle implements java.io.Serializable {
 
         private String id;
         private String name;
+        private ChronicleDocumentProducer documentProducer;
         private String description;
         private java.time.OffsetDateTime startTime;
         private java.time.OffsetDateTime endTime;
@@ -258,7 +259,6 @@ public class SummaryChronicle implements java.io.Serializable {
         private String priority;
         private String status;
         private java.util.List<String> labels;
-        private ChronicleDocumentProducer documentProducer;
         private java.util.List<Image> images;
         private java.util.List<Video> videos;
         private java.util.List<Track> tracks;
@@ -281,6 +281,11 @@ public class SummaryChronicle implements java.io.Serializable {
 
         public Builder setName(String name) {
             this.name = name;
+            return this;
+        }
+
+        public Builder setDocumentProducer(ChronicleDocumentProducer documentProducer) {
+            this.documentProducer = documentProducer;
             return this;
         }
 
@@ -331,11 +336,6 @@ public class SummaryChronicle implements java.io.Serializable {
 
         public Builder setLabels(java.util.List<String> labels) {
             this.labels = labels;
-            return this;
-        }
-
-        public Builder setDocumentProducer(ChronicleDocumentProducer documentProducer) {
-            this.documentProducer = documentProducer;
             return this;
         }
 
@@ -396,7 +396,7 @@ public class SummaryChronicle implements java.io.Serializable {
 
 
         public SummaryChronicle build() {
-            return new SummaryChronicle(id, name, description, startTime, endTime, position, timezone, metadata, validation, priority, status, labels, documentProducer, images, videos, tracks, sites, dataSources, tags, pointsOfInterest, activityChronicles, eventChronicles, createdAt, updatedAt);
+            return new SummaryChronicle(id, name, documentProducer, description, startTime, endTime, position, timezone, metadata, validation, priority, status, labels, images, videos, tracks, sites, dataSources, tags, pointsOfInterest, activityChronicles, eventChronicles, createdAt, updatedAt);
         }
 
     }

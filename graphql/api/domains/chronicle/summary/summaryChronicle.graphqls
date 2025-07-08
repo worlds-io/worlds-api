@@ -1,6 +1,7 @@
 type SummaryChronicle {
     id: ID!
     name: String!
+    documentProducer: ChronicleDocumentProducer!
     description: String
     startTime: DateTimeOffset!
     endTime: DateTimeOffset
@@ -11,7 +12,6 @@ type SummaryChronicle {
     priority: String
     status: String
     labels: [String!]
-    documentProducer: ChronicleDocumentProducer!
     images: [Image!]!
     videos: [Video!]!
     tracks: [Track!]
@@ -28,6 +28,7 @@ type SummaryChronicle {
 # Input types for SummaryChronicle
 input CreateSummaryChronicleInput {
     name: String!
+    chronicleDocumentProducerId: ID!
     description: String
     startTime: DateTimeOffset!
     endTime: DateTimeOffset
@@ -37,7 +38,6 @@ input CreateSummaryChronicleInput {
     priority: String
     status: String
     labels: [String!]
-    chronicleDocumentProducerId: ID!
     validation: ChronicleDocumentValidationInput
     imageIds: [ID!]
     videoIds: [ID!]
@@ -61,7 +61,6 @@ input UpdateSummaryChronicleInput {
     priority: String
     status: String
     labels: [String!]
-    chronicleDocumentProducerId: ID
     validation: ChronicleDocumentValidationInput
     imageIds: [ID!]
     videoIds: [ID!]

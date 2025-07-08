@@ -1,9 +1,9 @@
 type EventChronicle {
     id: ID!
     name: String!
+    documentProducer: ChronicleDocumentProducer!
     description: String
-    startTime: DateTimeOffset!
-    endTime: DateTimeOffset
+    eventTime: DateTimeOffset!
     position: GeoJSONPoint
     timezone: String
     metadata: JSON
@@ -11,7 +11,6 @@ type EventChronicle {
     priority: String
     status: String
     labels: [String!]
-    documentProducer: ChronicleDocumentProducer!
     images: [Image!]!
     videos: [Video!]!
     tracks: [Track!]
@@ -27,6 +26,7 @@ type EventChronicle {
 # Input types for EventChronicle
 input CreateEventChronicleInput {
     name: String!
+    chronicleDocumentProducerId: ID!
     description: String
     startTime: DateTimeOffset!
     endTime: DateTimeOffset
@@ -36,7 +36,6 @@ input CreateEventChronicleInput {
     priority: String
     status: String
     labels: [String!]
-    chronicleDocumentProducerId: ID!
     validation: ChronicleDocumentValidationInput
     imageIds: [ID!]
     videoIds: [ID!]
@@ -59,7 +58,6 @@ input UpdateEventChronicleInput {
     priority: String
     status: String
     labels: [String!]
-    chronicleDocumentProducerId: ID
     validation: ChronicleDocumentValidationInput
     imageIds: [ID!]
     videoIds: [ID!]

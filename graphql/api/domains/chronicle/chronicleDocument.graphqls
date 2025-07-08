@@ -36,14 +36,9 @@ input UpdateChronicleDocumentProducerInput {
     metadata: JSON
     invalidReasons: [String!]
 }
-
-type ChronicleDocumentProducerConnection {
-  edges: [ChronicleDocumentProducerEdge!]!
-  pageInfo: PageInfo!
-  totalCount: Int!
-}
-
-type ChronicleDocumentProducerEdge {
-  node: ChronicleDocumentProducer!
-  cursor: String!
+# Supporting input for validation
+input ChronicleDocumentValidationInput {
+    status: ChronicleDocumentValidationStatus!
+    reason: String
+    details: String
 }

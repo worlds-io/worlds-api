@@ -1,5 +1,6 @@
 type ActivityChronicle {
     id: ID!
+    documentProducer: ChronicleDocumentProducer!
     name: String!
     description: String
     startTime: DateTimeOffset!
@@ -11,7 +12,6 @@ type ActivityChronicle {
     priority: String
     status: String
     labels: [String!]
-    documentProducer: ChronicleDocumentProducer!
     images: [Image!]!
     videos: [Video!]!
     tracks: [Track!]
@@ -26,6 +26,7 @@ type ActivityChronicle {
 # Input types for ActivityChronicle
 input CreateActivityChronicleInput {
     name: String!
+    chronicleDocumentProducerId: ID!
     description: String
     startTime: DateTimeOffset!
     endTime: DateTimeOffset
@@ -35,7 +36,6 @@ input CreateActivityChronicleInput {
     priority: String
     status: String
     labels: [String!]
-    chronicleDocumentProducerId: ID!
     validation: ChronicleDocumentValidationInput
     imageIds: [ID!]
     videoIds: [ID!]
@@ -57,7 +57,6 @@ input UpdateActivityChronicleInput {
     priority: String
     status: String
     labels: [String!]
-    chronicleDocumentProducerId: ID
     validation: ChronicleDocumentValidationInput
     imageIds: [ID!]
     videoIds: [ID!]
@@ -66,11 +65,4 @@ input UpdateActivityChronicleInput {
     dataSourceIds: [ID!]
     tagIds: [ID!]
     pointOfInterestIds: [ID!]
-}
-
-# Supporting input for validation
-input ChronicleDocumentValidationInput {
-    status: ChronicleDocumentValidationStatus!
-    reason: String
-    details: String
 }

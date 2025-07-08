@@ -8,6 +8,8 @@ public class ActivityChronicle implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private String id;
     @jakarta.validation.constraints.NotNull
+    private ChronicleDocumentProducer documentProducer;
+    @jakarta.validation.constraints.NotNull
     private String name;
     private String description;
     @jakarta.validation.constraints.NotNull
@@ -20,8 +22,6 @@ public class ActivityChronicle implements java.io.Serializable {
     private String priority;
     private String status;
     private java.util.List<String> labels;
-    @jakarta.validation.constraints.NotNull
-    private ChronicleDocumentProducer documentProducer;
     @jakarta.validation.constraints.NotNull
     private java.util.List<Image> images;
     @jakarta.validation.constraints.NotNull
@@ -39,8 +39,9 @@ public class ActivityChronicle implements java.io.Serializable {
     public ActivityChronicle() {
     }
 
-    public ActivityChronicle(String id, String name, String description, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, GeoJSONPoint position, String timezone, java.lang.Object metadata, ChronicleDocumentValidation validation, String priority, String status, java.util.List<String> labels, ChronicleDocumentProducer documentProducer, java.util.List<Image> images, java.util.List<Video> videos, java.util.List<Track> tracks, java.util.List<Site> sites, java.util.List<DataSource> dataSources, java.util.List<Tag> tags, java.util.List<PointOfInterest> pointsOfInterest, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt) {
+    public ActivityChronicle(String id, ChronicleDocumentProducer documentProducer, String name, String description, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, GeoJSONPoint position, String timezone, java.lang.Object metadata, ChronicleDocumentValidation validation, String priority, String status, java.util.List<String> labels, java.util.List<Image> images, java.util.List<Video> videos, java.util.List<Track> tracks, java.util.List<Site> sites, java.util.List<DataSource> dataSources, java.util.List<Tag> tags, java.util.List<PointOfInterest> pointsOfInterest, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt) {
         this.id = id;
+        this.documentProducer = documentProducer;
         this.name = name;
         this.description = description;
         this.startTime = startTime;
@@ -52,7 +53,6 @@ public class ActivityChronicle implements java.io.Serializable {
         this.priority = priority;
         this.status = status;
         this.labels = labels;
-        this.documentProducer = documentProducer;
         this.images = images;
         this.videos = videos;
         this.tracks = tracks;
@@ -69,6 +69,13 @@ public class ActivityChronicle implements java.io.Serializable {
     }
     public void setId(String id) {
         this.id = id;
+    }
+
+    public ChronicleDocumentProducer getDocumentProducer() {
+        return documentProducer;
+    }
+    public void setDocumentProducer(ChronicleDocumentProducer documentProducer) {
+        this.documentProducer = documentProducer;
     }
 
     public String getName() {
@@ -148,13 +155,6 @@ public class ActivityChronicle implements java.io.Serializable {
         this.labels = labels;
     }
 
-    public ChronicleDocumentProducer getDocumentProducer() {
-        return documentProducer;
-    }
-    public void setDocumentProducer(ChronicleDocumentProducer documentProducer) {
-        this.documentProducer = documentProducer;
-    }
-
     public java.util.List<Image> getImages() {
         return images;
     }
@@ -227,6 +227,7 @@ public class ActivityChronicle implements java.io.Serializable {
     public static class Builder {
 
         private String id;
+        private ChronicleDocumentProducer documentProducer;
         private String name;
         private String description;
         private java.time.OffsetDateTime startTime;
@@ -238,7 +239,6 @@ public class ActivityChronicle implements java.io.Serializable {
         private String priority;
         private String status;
         private java.util.List<String> labels;
-        private ChronicleDocumentProducer documentProducer;
         private java.util.List<Image> images;
         private java.util.List<Video> videos;
         private java.util.List<Track> tracks;
@@ -254,6 +254,11 @@ public class ActivityChronicle implements java.io.Serializable {
 
         public Builder setId(String id) {
             this.id = id;
+            return this;
+        }
+
+        public Builder setDocumentProducer(ChronicleDocumentProducer documentProducer) {
+            this.documentProducer = documentProducer;
             return this;
         }
 
@@ -312,11 +317,6 @@ public class ActivityChronicle implements java.io.Serializable {
             return this;
         }
 
-        public Builder setDocumentProducer(ChronicleDocumentProducer documentProducer) {
-            this.documentProducer = documentProducer;
-            return this;
-        }
-
         public Builder setImages(java.util.List<Image> images) {
             this.images = images;
             return this;
@@ -364,7 +364,7 @@ public class ActivityChronicle implements java.io.Serializable {
 
 
         public ActivityChronicle build() {
-            return new ActivityChronicle(id, name, description, startTime, endTime, position, timezone, metadata, validation, priority, status, labels, documentProducer, images, videos, tracks, sites, dataSources, tags, pointsOfInterest, createdAt, updatedAt);
+            return new ActivityChronicle(id, documentProducer, name, description, startTime, endTime, position, timezone, metadata, validation, priority, status, labels, images, videos, tracks, sites, dataSources, tags, pointsOfInterest, createdAt, updatedAt);
         }
 
     }
