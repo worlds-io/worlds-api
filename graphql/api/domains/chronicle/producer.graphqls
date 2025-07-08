@@ -1,3 +1,14 @@
+enum ChronicleDocumentValidationStatus {
+    VALID
+    INVALID
+}
+
+type ChronicleDocumentValidation {
+    status: ChronicleDocumentValidationStatus!
+    reason: String
+    details: String
+}
+
 type ChronicleDocumentProducer {
     id: ID!
     name: String!
