@@ -1,15 +1,15 @@
-enum TimelineDocumentType {
+enum ChronicleDocumentType {
     ACTIVITY
     EVENT
     SUMMARY
 }
 
-enum TimelineDocumentValidationStatus {
+enum ChronicleDocumentValidationStatus {
     VALID
     INVALID
 }
 
-type TimelineDocumentProducer {
+type ChronicleDocumentProducer {
     id: ID!
     name: String!
     description: String
@@ -19,15 +19,15 @@ type TimelineDocumentProducer {
     metadata: JSON
 }
 
-type TimelineDocumentValidation {
-    status: TimelineDocumentValidationStatus!
+type ChronicleDocumentValidation {
+    status: ChronicleDocumentValidationStatus!
     reason: String
     details: String
 }
 
-type TimelineDocument {
+type ChronicleDocument {
     id: ID!
-    documentType: TimelineDocumentType!
+    documentType: ChronicleDocumentType!
     name: String!
     description: String
     startTime: DateTimeOffset!
@@ -35,11 +35,11 @@ type TimelineDocument {
     position: GeoJSONPoint
     timezone: String
     metadata: JSON
-    validation: TimelineDocumentValidation
+    validation: ChronicleDocumentValidation
     priority: String
     status: String
     labels: [String!]
-    documentProducer: TimelineDocumentProducer!
+    documentProducer: ChronicleDocumentProducer!
     images: [Image!]!
     videos: [Video!]!
     tracks: [Track!]
@@ -47,15 +47,15 @@ type TimelineDocument {
     dataSources: [DataSource!]
     tags: [Tag!]
     pointsOfInterest: [PointOfInterest!]
-    linkedActivities: [TimelineDocument!]
-    linkedEvents: [TimelineDocument!]
-    linkedSummaries: [TimelineDocument!]
+    linkedActivities: [ChronicleDocument!]
+    linkedEvents: [ChronicleDocument!]
+    linkedSummaries: [ChronicleDocument!]
     createdAt: DateTimeOffset!
     updatedAt: DateTimeOffset!
 }
 
-# Input types for TimelineDocumentProducer
-input CreateTimelineDocumentProducerInput {
+# Input types for ChronicleDocumentProducer
+input CreateChronicleDocumentProducerInput {
     name: String!
     description: String
     timezone: String
@@ -64,7 +64,7 @@ input CreateTimelineDocumentProducerInput {
     invalidReasons: [String!]
 }
 
-input UpdateTimelineDocumentProducerInput {
+input UpdateChronicleDocumentProducerInput {
     name: String
     description: String
     timezone: String
@@ -73,9 +73,9 @@ input UpdateTimelineDocumentProducerInput {
     invalidReasons: [String!]
 }
 
-# Input types for TimelineDocument
-input CreateTimelineDocumentInput {
-    documentType: TimelineDocumentType!
+# Input types for ChronicleDocument
+input CreateChronicleDocumentInput {
+    documentType: ChronicleDocumentType!
     name: String!
     description: String
     startTime: DateTimeOffset!
@@ -86,8 +86,8 @@ input CreateTimelineDocumentInput {
     priority: String
     status: String
     labels: [String!]
-    timelineDocumentProducerId: ID!
-    validation: TimelineDocumentValidationInput
+    chronicleDocumentProducerId: ID!
+    validation: ChronicleDocumentValidationInput
     imageIds: [ID!]
     videoIds: [ID!]
     trackIds: [ID!]
@@ -100,8 +100,8 @@ input CreateTimelineDocumentInput {
     linkedSummaries: [ID!]
 }
 
-input UpdateTimelineDocumentInput {
-    documentType: TimelineDocumentType
+input UpdateChronicleDocumentInput {
+    documentType: ChronicleDocumentType
     name: String
     description: String
     startTime: DateTimeOffset
@@ -112,8 +112,8 @@ input UpdateTimelineDocumentInput {
     priority: String
     status: String
     labels: [String!]
-    timelineDocumentProducerId: ID
-    validation: TimelineDocumentValidationInput
+    chronicleDocumentProducerId: ID
+    validation: ChronicleDocumentValidationInput
     imageIds: [ID!]
     videoIds: [ID!]
     trackIds: [ID!]
@@ -127,8 +127,8 @@ input UpdateTimelineDocumentInput {
 }
 
 # Supporting input for validation
-input TimelineDocumentValidationInput {
-    status: TimelineDocumentValidationStatus!
+input ChronicleDocumentValidationInput {
+    status: ChronicleDocumentValidationStatus!
     reason: String
     details: String
 }

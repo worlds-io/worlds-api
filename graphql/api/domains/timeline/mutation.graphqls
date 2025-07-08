@@ -1,7 +1,0 @@
-extend type Mutation {
-    createTimelineDocumentProducer(input: CreateTimelineDocumentProducerInput!): TimelineDocumentProducer!
-    updateTimelineDocumentProducer(id: ID!, input: UpdateTimelineDocumentProducerInput!): TimelineDocumentProducer!
-
-    createTimelineDocument(input: CreateTimelineDocumentInput!): TimelineDocument!
-    updateTimelineDocument(id: ID!, input: UpdateTimelineDocumentInput!): TimelineDocument!
-}

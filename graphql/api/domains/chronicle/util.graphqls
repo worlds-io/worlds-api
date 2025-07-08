@@ -1,0 +1,21 @@
+type ChronicleDocumentConnection {
+  edges: [ChronicleDocumentEdge!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+type ChronicleDocumentEdge {
+  node: ChronicleDocument!
+  cursor: String!
+}
+
+type ChronicleDocumentProducerConnection {
+  edges: [ChronicleDocumentProducerEdge!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+type ChronicleDocumentProducerEdge {
+  node: ChronicleDocumentProducer!
+  cursor: String!
+}

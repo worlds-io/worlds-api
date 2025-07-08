@@ -1,4 +1,4 @@
-input FilterTimelineDocumentInputSubscription {
+input FilterChronicleDocumentInputSubscription {
   id: FilterIDInput
   documentType: FilterStringInput
   name: FilterStringInput
@@ -8,7 +8,7 @@ input FilterTimelineDocumentInputSubscription {
   timezone: FilterStringInput
   priority: FilterStringInput
   status: FilterStringInput
-  timelineDocumentProducerId: FilterIDInput
+  chronicleDocumentProducerId: FilterIDInput
   validation: FilterStringInput
   labels: FilterStringListInput
   siteIds: FilterIDListInput
@@ -16,11 +16,11 @@ input FilterTimelineDocumentInputSubscription {
   tagIds: FilterIDListInput
   pointOfInterestIds: FilterIDListInput
 
-  and: [FilterTimelineDocumentInput!]
-  or: [FilterTimelineDocumentInput!]
-  not: FilterTimelineDocumentInput
+  and: [FilterChronicleDocumentInput!]
+  or: [FilterChronicleDocumentInput!]
+  not: FilterChronicleDocumentInput
 }
 
 extend type Subscription {
-  timelineDocumentChanged(filter: FilterTimelineDocumentInputSubscription): TimelineDocument!
+  chronicleDocumentChanged(filter: FilterChronicleDocumentInputSubscription): ChronicleDocument!
 }

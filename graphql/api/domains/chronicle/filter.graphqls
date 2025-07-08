@@ -1,14 +1,14 @@
-input FilterTimelineDocumentProducerInput {
+input FilterChronicleDocumentProducerInput {
   id: FilterIDInput
   name: FilterStringInput
   active: FilterBooleanInput
 
-  and: [FilterTimelineDocumentProducerInput!]
-  or: [FilterTimelineDocumentProducerInput!]
-  not: FilterTimelineDocumentProducerInput
+  and: [FilterChronicleDocumentProducerInput!]
+  or: [FilterChronicleDocumentProducerInput!]
+  not: FilterChronicleDocumentProducerInput
 }
 
-input FilterTimelineDocumentInput {
+input FilterChronicleDocumentInput {
   id: FilterIDInput
   documentType: FilterStringInput
   name: FilterStringInput
@@ -21,13 +21,13 @@ input FilterTimelineDocumentInput {
   status: FilterStringInput
   validation: FilterStringInput
   labels: FilterStringListInput
-  timelineDocumentProducerId: FilterIDInput
+  chronicleDocumentProducerId: FilterIDInput
   tagIds: [FilterIDInput!]
   siteIds: [FilterIDInput!]
   dataSourceIds: [FilterIDInput!]
   pointOfInterestIds: [FilterIDInput!]
 
-  and: [FilterTimelineDocumentInput!]
-  or: [FilterTimelineDocumentInput!]
-  not: FilterTimelineDocumentInput
+  and: [FilterChronicleDocumentInput!]
+  or: [FilterChronicleDocumentInput!]
+  not: FilterChronicleDocumentInput
 }
