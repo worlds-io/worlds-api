@@ -1,33 +1,5 @@
-enum ChronicleDocumentType {
-    ACTIVITY
-    EVENT
-    SUMMARY
-}
-
-enum ChronicleDocumentValidationStatus {
-    VALID
-    INVALID
-}
-
-type ChronicleDocumentProducer {
+type ActivityChronicle {
     id: ID!
-    name: String!
-    description: String
-    timezone: String
-    active: Boolean!
-    invalidReasons: [String!]!
-    metadata: JSON
-}
-
-type ChronicleDocumentValidation {
-    status: ChronicleDocumentValidationStatus!
-    reason: String
-    details: String
-}
-
-type ChronicleDocument {
-    id: ID!
-    documentType: ChronicleDocumentType!
     name: String!
     description: String
     startTime: DateTimeOffset!
@@ -47,35 +19,12 @@ type ChronicleDocument {
     dataSources: [DataSource!]
     tags: [Tag!]
     pointsOfInterest: [PointOfInterest!]
-    linkedActivities: [ChronicleDocument!]
-    linkedEvents: [ChronicleDocument!]
-    linkedSummaries: [ChronicleDocument!]
     createdAt: DateTimeOffset!
     updatedAt: DateTimeOffset!
 }
 
-# Input types for ChronicleDocumentProducer
-input CreateChronicleDocumentProducerInput {
-    name: String!
-    description: String
-    timezone: String
-    active: Boolean!
-    metadata: JSON
-    invalidReasons: [String!]
-}
-
-input UpdateChronicleDocumentProducerInput {
-    name: String
-    description: String
-    timezone: String
-    active: Boolean
-    metadata: JSON
-    invalidReasons: [String!]
-}
-
-# Input types for ChronicleDocument
-input CreateChronicleDocumentInput {
-    documentType: ChronicleDocumentType!
+# Input types for ActivityChronicle
+input CreateActivityChronicleInput {
     name: String!
     description: String
     startTime: DateTimeOffset!
@@ -95,13 +44,9 @@ input CreateChronicleDocumentInput {
     dataSourceIds: [ID!]
     tagIds: [ID!]
     pointOfInterestIds: [ID!]
-    linkedActivities: [ID!]
-    linkedEvents: [ID!]
-    linkedSummaries: [ID!]
 }
 
-input UpdateChronicleDocumentInput {
-    documentType: ChronicleDocumentType
+input UpdateActivityChronicleInput {
     name: String
     description: String
     startTime: DateTimeOffset
@@ -121,9 +66,6 @@ input UpdateChronicleDocumentInput {
     dataSourceIds: [ID!]
     tagIds: [ID!]
     pointOfInterestIds: [ID!]
-    linkedActivities: [ID!]
-    linkedEvents: [ID!]
-    linkedSummaries: [ID!]
 }
 
 # Supporting input for validation

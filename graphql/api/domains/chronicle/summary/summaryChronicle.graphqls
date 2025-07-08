@@ -1,0 +1,75 @@
+type SummaryChronicle {
+    id: ID!
+    name: String!
+    description: String
+    startTime: DateTimeOffset!
+    endTime: DateTimeOffset
+    position: GeoJSONPoint
+    timezone: String
+    metadata: JSON
+    validation: ChronicleDocumentValidation
+    priority: String
+    status: String
+    labels: [String!]
+    documentProducer: ChronicleDocumentProducer!
+    images: [Image!]!
+    videos: [Video!]!
+    tracks: [Track!]
+    sites: [Site!]
+    dataSources: [DataSource!]
+    tags: [Tag!]
+    pointsOfInterest: [PointOfInterest!]
+    activityChronicles: [ActivityChronicle!]!
+    eventChronicles: [EventChronicle!]!
+    createdAt: DateTimeOffset!
+    updatedAt: DateTimeOffset!
+}
+
+# Input types for SummaryChronicle
+input CreateSummaryChronicleInput {
+    name: String!
+    description: String
+    startTime: DateTimeOffset!
+    endTime: DateTimeOffset
+    position: GeoJSONPointInput
+    timezone: String
+    metadata: JSON
+    priority: String
+    status: String
+    labels: [String!]
+    chronicleDocumentProducerId: ID!
+    validation: ChronicleDocumentValidationInput
+    imageIds: [ID!]
+    videoIds: [ID!]
+    trackIds: [ID!]
+    siteIds: [ID!]
+    dataSourceIds: [ID!]
+    tagIds: [ID!]
+    pointOfInterestIds: [ID!]
+    activityChronicleIds: [ID!]!
+    eventChronicleIds: [ID!]!
+}
+
+input UpdateSummaryChronicleInput {
+    name: String
+    description: String
+    startTime: DateTimeOffset
+    endTime: DateTimeOffset
+    position: GeoJSONPointInput
+    timezone: String
+    metadata: JSON
+    priority: String
+    status: String
+    labels: [String!]
+    chronicleDocumentProducerId: ID
+    validation: ChronicleDocumentValidationInput
+    imageIds: [ID!]
+    videoIds: [ID!]
+    trackIds: [ID!]
+    siteIds: [ID!]
+    dataSourceIds: [ID!]
+    tagIds: [ID!]
+    pointOfInterestIds: [ID!]
+    activityChronicleIds: [ID!]
+    eventChronicleIds: [ID!]
+}

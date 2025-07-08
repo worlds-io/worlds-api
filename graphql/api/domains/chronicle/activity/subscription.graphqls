@@ -1,0 +1,25 @@
+input FilterActivityChronicleInputSubscription {
+  id: FilterIDInput
+  name: FilterStringInput
+  description: FilterStringInput
+  startTime: FilterDateTimeOffsetInput
+  endTime: FilterDateTimeOffsetInput
+  timezone: FilterStringInput
+  priority: FilterStringInput
+  status: FilterStringInput
+  chronicleDocumentProducerId: FilterIDInput
+  validation: FilterStringInput
+  labels: FilterStringListInput
+  siteIds: FilterIDListInput
+  dataSourceIds: [FilterIDListInput!]
+  tagIds: FilterIDListInput
+  pointOfInterestIds: FilterIDListInput
+
+  and: [FilterActivityChronicleInputSubscription!]
+  or: [FilterActivityChronicleInputSubscription!]
+  not: FilterActivityChronicleInputSubscription
+}
+
+extend type Subscription {
+  activityChronicleChanged(filter: FilterActivityChronicleInputSubscription): ActivityChronicle!
+}

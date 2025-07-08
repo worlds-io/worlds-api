@@ -1,0 +1,38 @@
+type ChronicleDocumentProducer {
+    id: ID!
+    name: String!
+    description: String
+    timezone: String
+    active: Boolean!
+    invalidReasons: [String!]!
+    metadata: JSON
+}
+
+input CreateChronicleDocumentProducerInput {
+    name: String!
+    description: String
+    timezone: String
+    active: Boolean!
+    metadata: JSON
+    invalidReasons: [String!]
+}
+
+input UpdateChronicleDocumentProducerInput {
+    name: String
+    description: String
+    timezone: String
+    active: Boolean
+    metadata: JSON
+    invalidReasons: [String!]
+}
+
+type ChronicleDocumentProducerConnection {
+  edges: [ChronicleDocumentProducerEdge!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+type ChronicleDocumentProducerEdge {
+  node: ChronicleDocumentProducer!
+  cursor: String!
+}

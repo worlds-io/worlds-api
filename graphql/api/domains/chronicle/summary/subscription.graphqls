@@ -1,0 +1,25 @@
+input FilterSummaryChronicleInputSubscription {
+  id: FilterIDInput
+  name: FilterStringInput
+  description: FilterStringInput
+  startTime: FilterDateTimeOffsetInput
+  endTime: FilterDateTimeOffsetInput
+  timezone: FilterStringInput
+  priority: FilterStringInput
+  status: FilterStringInput
+  chronicleDocumentProducerId: FilterIDInput
+  validation: FilterStringInput
+  labels: FilterStringListInput
+  siteIds: FilterIDListInput
+  dataSourceIds: [FilterIDListInput!]
+  tagIds: FilterIDListInput
+  pointOfInterestIds: FilterIDListInput
+
+  and: [FilterSummaryChronicleInputSubscription!]
+  or: [FilterSummaryChronicleInputSubscription!]
+  not: FilterSummaryChronicleInputSubscription
+}
+
+extend type Subscription {
+  summaryChronicleChanged(filter: FilterSummaryChronicleInputSubscription): SummaryChronicle!
+}

@@ -1,0 +1,4 @@
+extend type Mutation {
+    createActivityChronicle(input: CreateActivityChronicleInput!): ActivityChronicle!
+    updateActivityChronicle(id: ID!, input: UpdateActivityChronicleInput!): ActivityChronicle!
+}

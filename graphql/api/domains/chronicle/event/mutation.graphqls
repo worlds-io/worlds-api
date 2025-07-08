@@ -1,0 +1,4 @@
+extend type Mutation {
+    createEventChronicle(input: CreateEventChronicleInput!): EventChronicle!
+    updateEventChronicle(id: ID!, input: UpdateEventChronicleInput!): EventChronicle!
+}

@@ -1,7 +1,4 @@
 extend type Mutation {
     createChronicleDocumentProducer(input: CreateChronicleDocumentProducerInput!): ChronicleDocumentProducer!
     updateChronicleDocumentProducer(id: ID!, input: UpdateChronicleDocumentProducerInput!): ChronicleDocumentProducer!
-
-    createChronicleDocument(input: CreateChronicleDocumentInput!): ChronicleDocument!
-    updateChronicleDocument(id: ID!, input: UpdateChronicleDocumentInput!): ChronicleDocument!
 }

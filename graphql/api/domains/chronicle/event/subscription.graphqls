@@ -1,6 +1,5 @@
-input FilterChronicleDocumentInputSubscription {
+input FilterEventChronicleInputSubscription {
   id: FilterIDInput
-  documentType: FilterStringInput
   name: FilterStringInput
   description: FilterStringInput
   startTime: FilterDateTimeOffsetInput
@@ -12,15 +11,15 @@ input FilterChronicleDocumentInputSubscription {
   validation: FilterStringInput
   labels: FilterStringListInput
   siteIds: FilterIDListInput
-  dataSourceIds: FilterIDListInput
+  dataSourceIds: [FilterIDListInput!]
   tagIds: FilterIDListInput
   pointOfInterestIds: FilterIDListInput
 
-  and: [FilterChronicleDocumentInput!]
-  or: [FilterChronicleDocumentInput!]
-  not: FilterChronicleDocumentInput
+  and: [FilterEventChronicleInputSubscription!]
+  or: [FilterEventChronicleInputSubscription!]
+  not: FilterEventChronicleInputSubscription
 }
 
 extend type Subscription {
-  chronicleDocumentChanged(filter: FilterChronicleDocumentInputSubscription): ChronicleDocument!
+  eventChronicleChanged(filter: FilterEventChronicleInputSubscription): EventChronicle!
 }
