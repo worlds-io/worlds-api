@@ -1,8 +1,7 @@
 input FilterEventChronicleInput {
   id: FilterIDInput
   name: FilterStringInput
-  timestampFrom: FilterDateTimeOffsetInput
-  timestampTo: FilterDateTimeOffsetInput
+  timestamp: FilterDateTimeOffsetInput
   timezone: FilterStringInput
   priority: FilterStringInput
   status: FilterStringInput
