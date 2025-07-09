@@ -1,0 +1,10 @@
+type SummaryChronicleConnection {
+  edges: [SummaryChronicleEdge!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+type SummaryChronicleEdge {
+  node: SummaryChronicle!
+  cursor: String!
+}

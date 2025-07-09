@@ -8,6 +8,20 @@ input FilterIDInput {
   in: [ID!]
 }
 
+input FilterIDListInput {
+  equals: [ID!]
+  contains: ID
+  in: [ID!]
+  not: FilterIDListInput
+}
+
+input FilterStringListInput {
+  equals: [String!]
+  contains: String
+  in: [String!]
+  not: FilterStringListInput
+}
+
 """
 Standard filtration for integer fields
 """

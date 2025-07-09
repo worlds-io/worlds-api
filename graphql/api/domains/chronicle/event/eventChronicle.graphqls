@@ -1,0 +1,48 @@
+type EventChronicle {
+    id: ID!
+    name: String!
+    documentProducer: ChronicleProducer!
+    description: String
+    timestamp: DateTimeOffset!
+    timezone: String
+    metadata: JSON
+    validation: ChronicleValidation
+    priority: String
+    status: String
+    labels: [String!]
+    locations: [String!]
+    activityChronicles: [ActivityChronicle!]!
+    createdAt: DateTimeOffset!
+    updatedAt: DateTimeOffset!
+}
+
+# Input types for EventChronicle
+input CreateEventChronicleInput {
+    name: String!
+    chronicleProducerId: ID!
+    description: String
+    timestamp: DateTimeOffset!
+    timezone: String
+    metadata: JSON
+    priority: String
+    status: String
+    labels: [String!]
+    locations: [String!]
+    validation: ChronicleValidationInput
+    activityChronicleIds: [ID!]!
+}
+
+input UpdateEventChronicleInput {
+    id: ID!
+    name: String
+    description: String
+    timestamp: DateTimeOffset
+    timezone: String
+    metadata: JSON
+    priority: String
+    status: String
+    labels: [String!]
+    locations: [String!]
+    validation: ChronicleValidationInput
+    activityChronicleIds: [ID!]
+}
