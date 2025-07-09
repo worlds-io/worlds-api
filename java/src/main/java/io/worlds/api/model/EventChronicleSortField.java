@@ -3,8 +3,7 @@ package io.worlds.api.model;
 public enum EventChronicleSortField {
 
     ID("ID"),
-    START_TIME("START_TIME"),
-    END_TIME("END_TIME"),
+    TIMESTAMP("TIMESTAMP"),
     NAME("NAME"),
     PRIORITY("PRIORITY"),
     STATUS("STATUS");

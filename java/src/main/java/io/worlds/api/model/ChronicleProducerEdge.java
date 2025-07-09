@@ -1,27 +1,27 @@
 package io.worlds.api.model;
 
 
-public class ChronicleDocumentProducerEdge implements java.io.Serializable {
+public class ChronicleProducerEdge implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @jakarta.validation.constraints.NotNull
-    private ChronicleDocumentProducer node;
+    private ChronicleProducer node;
     @jakarta.validation.constraints.NotNull
     private String cursor;
 
-    public ChronicleDocumentProducerEdge() {
+    public ChronicleProducerEdge() {
     }
 
-    public ChronicleDocumentProducerEdge(ChronicleDocumentProducer node, String cursor) {
+    public ChronicleProducerEdge(ChronicleProducer node, String cursor) {
         this.node = node;
         this.cursor = cursor;
     }
 
-    public ChronicleDocumentProducer getNode() {
+    public ChronicleProducer getNode() {
         return node;
     }
-    public void setNode(ChronicleDocumentProducer node) {
+    public void setNode(ChronicleProducer node) {
         this.node = node;
     }
 
@@ -34,19 +34,19 @@ public class ChronicleDocumentProducerEdge implements java.io.Serializable {
 
 
 
-    public static ChronicleDocumentProducerEdge.Builder builder() {
-        return new ChronicleDocumentProducerEdge.Builder();
+    public static ChronicleProducerEdge.Builder builder() {
+        return new ChronicleProducerEdge.Builder();
     }
 
     public static class Builder {
 
-        private ChronicleDocumentProducer node;
+        private ChronicleProducer node;
         private String cursor;
 
         public Builder() {
         }
 
-        public Builder setNode(ChronicleDocumentProducer node) {
+        public Builder setNode(ChronicleProducer node) {
             this.node = node;
             return this;
         }
@@ -57,8 +57,8 @@ public class ChronicleDocumentProducerEdge implements java.io.Serializable {
         }
 
 
-        public ChronicleDocumentProducerEdge build() {
-            return new ChronicleDocumentProducerEdge(node, cursor);
+        public ChronicleProducerEdge build() {
+            return new ChronicleProducerEdge(node, cursor);
         }
 
     }

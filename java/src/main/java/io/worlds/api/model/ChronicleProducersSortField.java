@@ -1,13 +1,13 @@
 package io.worlds.api.model;
 
-public enum ChronicleDocumentProducersSortField {
+public enum ChronicleProducersSortField {
 
     ID("ID"),
     NAME("NAME");
 
     private final String graphqlName;
 
-    private ChronicleDocumentProducersSortField(String graphqlName) {
+    private ChronicleProducersSortField(String graphqlName) {
         this.graphqlName = graphqlName;
     }
 

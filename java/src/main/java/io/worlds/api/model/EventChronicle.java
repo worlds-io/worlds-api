@@ -10,26 +10,17 @@ public class EventChronicle implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private String name;
     @jakarta.validation.constraints.NotNull
-    private ChronicleDocumentProducer documentProducer;
+    private ChronicleProducer documentProducer;
     private String description;
     @jakarta.validation.constraints.NotNull
-    private java.time.OffsetDateTime eventTime;
-    private GeoJSONPoint position;
+    private java.time.OffsetDateTime timestamp;
     private String timezone;
     private java.lang.Object metadata;
-    private ChronicleDocumentValidation validation;
+    private ChronicleValidation validation;
     private String priority;
     private String status;
     private java.util.List<String> labels;
-    @jakarta.validation.constraints.NotNull
-    private java.util.List<Image> images;
-    @jakarta.validation.constraints.NotNull
-    private java.util.List<Video> videos;
-    private java.util.List<Track> tracks;
-    private java.util.List<Site> sites;
-    private java.util.List<DataSource> dataSources;
-    private java.util.List<Tag> tags;
-    private java.util.List<PointOfInterest> pointsOfInterest;
+    private java.util.List<String> locations;
     @jakarta.validation.constraints.NotNull
     private java.util.List<ActivityChronicle> activityChronicles;
     @jakarta.validation.constraints.NotNull
@@ -40,26 +31,19 @@ public class EventChronicle implements java.io.Serializable {
     public EventChronicle() {
     }
 
-    public EventChronicle(String id, String name, ChronicleDocumentProducer documentProducer, String description, java.time.OffsetDateTime eventTime, GeoJSONPoint position, String timezone, java.lang.Object metadata, ChronicleDocumentValidation validation, String priority, String status, java.util.List<String> labels, java.util.List<Image> images, java.util.List<Video> videos, java.util.List<Track> tracks, java.util.List<Site> sites, java.util.List<DataSource> dataSources, java.util.List<Tag> tags, java.util.List<PointOfInterest> pointsOfInterest, java.util.List<ActivityChronicle> activityChronicles, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt) {
+    public EventChronicle(String id, String name, ChronicleProducer documentProducer, String description, java.time.OffsetDateTime timestamp, String timezone, java.lang.Object metadata, ChronicleValidation validation, String priority, String status, java.util.List<String> labels, java.util.List<String> locations, java.util.List<ActivityChronicle> activityChronicles, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt) {
         this.id = id;
         this.name = name;
         this.documentProducer = documentProducer;
         this.description = description;
-        this.eventTime = eventTime;
-        this.position = position;
+        this.timestamp = timestamp;
         this.timezone = timezone;
         this.metadata = metadata;
         this.validation = validation;
         this.priority = priority;
         this.status = status;
         this.labels = labels;
-        this.images = images;
-        this.videos = videos;
-        this.tracks = tracks;
-        this.sites = sites;
-        this.dataSources = dataSources;
-        this.tags = tags;
-        this.pointsOfInterest = pointsOfInterest;
+        this.locations = locations;
         this.activityChronicles = activityChronicles;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
@@ -79,10 +63,10 @@ public class EventChronicle implements java.io.Serializable {
         this.name = name;
     }
 
-    public ChronicleDocumentProducer getDocumentProducer() {
+    public ChronicleProducer getDocumentProducer() {
         return documentProducer;
     }
-    public void setDocumentProducer(ChronicleDocumentProducer documentProducer) {
+    public void setDocumentProducer(ChronicleProducer documentProducer) {
         this.documentProducer = documentProducer;
     }
 
@@ -93,18 +77,11 @@ public class EventChronicle implements java.io.Serializable {
         this.description = description;
     }
 
-    public java.time.OffsetDateTime getEventTime() {
-        return eventTime;
+    public java.time.OffsetDateTime getTimestamp() {
+        return timestamp;
     }
-    public void setEventTime(java.time.OffsetDateTime eventTime) {
-        this.eventTime = eventTime;
-    }
-
-    public GeoJSONPoint getPosition() {
-        return position;
-    }
-    public void setPosition(GeoJSONPoint position) {
-        this.position = position;
+    public void setTimestamp(java.time.OffsetDateTime timestamp) {
+        this.timestamp = timestamp;
     }
 
     public String getTimezone() {
@@ -121,10 +98,10 @@ public class EventChronicle implements java.io.Serializable {
         this.metadata = metadata;
     }
 
-    public ChronicleDocumentValidation getValidation() {
+    public ChronicleValidation getValidation() {
         return validation;
     }
-    public void setValidation(ChronicleDocumentValidation validation) {
+    public void setValidation(ChronicleValidation validation) {
         this.validation = validation;
     }
 
@@ -149,53 +126,11 @@ public class EventChronicle implements java.io.Serializable {
         this.labels = labels;
     }
 
-    public java.util.List<Image> getImages() {
-        return images;
+    public java.util.List<String> getLocations() {
+        return locations;
     }
-    public void setImages(java.util.List<Image> images) {
-        this.images = images;
-    }
-
-    public java.util.List<Video> getVideos() {
-        return videos;
-    }
-    public void setVideos(java.util.List<Video> videos) {
-        this.videos = videos;
-    }
-
-    public java.util.List<Track> getTracks() {
-        return tracks;
-    }
-    public void setTracks(java.util.List<Track> tracks) {
-        this.tracks = tracks;
-    }
-
-    public java.util.List<Site> getSites() {
-        return sites;
-    }
-    public void setSites(java.util.List<Site> sites) {
-        this.sites = sites;
-    }
-
-    public java.util.List<DataSource> getDataSources() {
-        return dataSources;
-    }
-    public void setDataSources(java.util.List<DataSource> dataSources) {
-        this.dataSources = dataSources;
-    }
-
-    public java.util.List<Tag> getTags() {
-        return tags;
-    }
-    public void setTags(java.util.List<Tag> tags) {
-        this.tags = tags;
-    }
-
-    public java.util.List<PointOfInterest> getPointsOfInterest() {
-        return pointsOfInterest;
-    }
-    public void setPointsOfInterest(java.util.List<PointOfInterest> pointsOfInterest) {
-        this.pointsOfInterest = pointsOfInterest;
+    public void setLocations(java.util.List<String> locations) {
+        this.locations = locations;
     }
 
     public java.util.List<ActivityChronicle> getActivityChronicles() {
@@ -229,23 +164,16 @@ public class EventChronicle implements java.io.Serializable {
 
         private String id;
         private String name;
-        private ChronicleDocumentProducer documentProducer;
+        private ChronicleProducer documentProducer;
         private String description;
-        private java.time.OffsetDateTime eventTime;
-        private GeoJSONPoint position;
+        private java.time.OffsetDateTime timestamp;
         private String timezone;
         private java.lang.Object metadata;
-        private ChronicleDocumentValidation validation;
+        private ChronicleValidation validation;
         private String priority;
         private String status;
         private java.util.List<String> labels;
-        private java.util.List<Image> images;
-        private java.util.List<Video> videos;
-        private java.util.List<Track> tracks;
-        private java.util.List<Site> sites;
-        private java.util.List<DataSource> dataSources;
-        private java.util.List<Tag> tags;
-        private java.util.List<PointOfInterest> pointsOfInterest;
+        private java.util.List<String> locations;
         private java.util.List<ActivityChronicle> activityChronicles;
         private java.time.OffsetDateTime createdAt;
         private java.time.OffsetDateTime updatedAt;
@@ -263,7 +191,7 @@ public class EventChronicle implements java.io.Serializable {
             return this;
         }
 
-        public Builder setDocumentProducer(ChronicleDocumentProducer documentProducer) {
+        public Builder setDocumentProducer(ChronicleProducer documentProducer) {
             this.documentProducer = documentProducer;
             return this;
         }
@@ -273,13 +201,8 @@ public class EventChronicle implements java.io.Serializable {
             return this;
         }
 
-        public Builder setEventTime(java.time.OffsetDateTime eventTime) {
-            this.eventTime = eventTime;
-            return this;
-        }
-
-        public Builder setPosition(GeoJSONPoint position) {
-            this.position = position;
+        public Builder setTimestamp(java.time.OffsetDateTime timestamp) {
+            this.timestamp = timestamp;
             return this;
         }
 
@@ -293,7 +216,7 @@ public class EventChronicle implements java.io.Serializable {
             return this;
         }
 
-        public Builder setValidation(ChronicleDocumentValidation validation) {
+        public Builder setValidation(ChronicleValidation validation) {
             this.validation = validation;
             return this;
         }
@@ -313,38 +236,8 @@ public class EventChronicle implements java.io.Serializable {
             return this;
         }
 
-        public Builder setImages(java.util.List<Image> images) {
-            this.images = images;
-            return this;
-        }
-
-        public Builder setVideos(java.util.List<Video> videos) {
-            this.videos = videos;
-            return this;
-        }
-
-        public Builder setTracks(java.util.List<Track> tracks) {
-            this.tracks = tracks;
-            return this;
-        }
-
-        public Builder setSites(java.util.List<Site> sites) {
-            this.sites = sites;
-            return this;
-        }
-
-        public Builder setDataSources(java.util.List<DataSource> dataSources) {
-            this.dataSources = dataSources;
-            return this;
-        }
-
-        public Builder setTags(java.util.List<Tag> tags) {
-            this.tags = tags;
-            return this;
-        }
-
-        public Builder setPointsOfInterest(java.util.List<PointOfInterest> pointsOfInterest) {
-            this.pointsOfInterest = pointsOfInterest;
+        public Builder setLocations(java.util.List<String> locations) {
+            this.locations = locations;
             return this;
         }
 
@@ -365,7 +258,7 @@ public class EventChronicle implements java.io.Serializable {
 
 
         public EventChronicle build() {
-            return new EventChronicle(id, name, documentProducer, description, eventTime, position, timezone, metadata, validation, priority, status, labels, images, videos, tracks, sites, dataSources, tags, pointsOfInterest, activityChronicles, createdAt, updatedAt);
+            return new EventChronicle(id, name, documentProducer, description, timestamp, timezone, metadata, validation, priority, status, labels, locations, activityChronicles, createdAt, updatedAt);
         }
 
     }

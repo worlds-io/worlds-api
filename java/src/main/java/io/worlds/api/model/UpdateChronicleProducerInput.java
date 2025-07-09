@@ -1,7 +1,7 @@
 package io.worlds.api.model;
 
 
-public class UpdateChronicleDocumentProducerInput implements java.io.Serializable {
+public class UpdateChronicleProducerInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -12,10 +12,10 @@ public class UpdateChronicleDocumentProducerInput implements java.io.Serializabl
     private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<String> invalidReasons;
 
-    public UpdateChronicleDocumentProducerInput() {
+    public UpdateChronicleProducerInput() {
     }
 
-    public UpdateChronicleDocumentProducerInput(org.springframework.graphql.data.ArgumentValue<String> name, org.springframework.graphql.data.ArgumentValue<String> description, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<Boolean> active, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, java.util.List<String> invalidReasons) {
+    public UpdateChronicleProducerInput(org.springframework.graphql.data.ArgumentValue<String> name, org.springframework.graphql.data.ArgumentValue<String> description, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<Boolean> active, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, java.util.List<String> invalidReasons) {
         this.name = name;
         this.description = description;
         this.timezone = timezone;
@@ -68,8 +68,8 @@ public class UpdateChronicleDocumentProducerInput implements java.io.Serializabl
 
 
 
-    public static UpdateChronicleDocumentProducerInput.Builder builder() {
-        return new UpdateChronicleDocumentProducerInput.Builder();
+    public static UpdateChronicleProducerInput.Builder builder() {
+        return new UpdateChronicleProducerInput.Builder();
     }
 
     public static class Builder {
@@ -115,8 +115,8 @@ public class UpdateChronicleDocumentProducerInput implements java.io.Serializabl
         }
 
 
-        public UpdateChronicleDocumentProducerInput build() {
-            return new UpdateChronicleDocumentProducerInput(name, description, timezone, active, metadata, invalidReasons);
+        public UpdateChronicleProducerInput build() {
+            return new UpdateChronicleProducerInput(name, description, timezone, active, metadata, invalidReasons);
         }
 
     }

@@ -4,28 +4,28 @@ package io.worlds.api.model;
 /**
  * Supporting input for validation
  */
-public class ChronicleDocumentValidationInput implements java.io.Serializable {
+public class ChronicleValidationInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @jakarta.validation.constraints.NotNull
-    private ChronicleDocumentValidationStatus status;
+    private ChronicleValidationStatus status;
     private org.springframework.graphql.data.ArgumentValue<String> reason = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<String> details = org.springframework.graphql.data.ArgumentValue.omitted();
 
-    public ChronicleDocumentValidationInput() {
+    public ChronicleValidationInput() {
     }
 
-    public ChronicleDocumentValidationInput(ChronicleDocumentValidationStatus status, org.springframework.graphql.data.ArgumentValue<String> reason, org.springframework.graphql.data.ArgumentValue<String> details) {
+    public ChronicleValidationInput(ChronicleValidationStatus status, org.springframework.graphql.data.ArgumentValue<String> reason, org.springframework.graphql.data.ArgumentValue<String> details) {
         this.status = status;
         this.reason = reason;
         this.details = details;
     }
 
-    public ChronicleDocumentValidationStatus getStatus() {
+    public ChronicleValidationStatus getStatus() {
         return status;
     }
-    public void setStatus(ChronicleDocumentValidationStatus status) {
+    public void setStatus(ChronicleValidationStatus status) {
         this.status = status;
     }
 
@@ -45,20 +45,20 @@ public class ChronicleDocumentValidationInput implements java.io.Serializable {
 
 
 
-    public static ChronicleDocumentValidationInput.Builder builder() {
-        return new ChronicleDocumentValidationInput.Builder();
+    public static ChronicleValidationInput.Builder builder() {
+        return new ChronicleValidationInput.Builder();
     }
 
     public static class Builder {
 
-        private ChronicleDocumentValidationStatus status;
+        private ChronicleValidationStatus status;
         private org.springframework.graphql.data.ArgumentValue<String> reason = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<String> details = org.springframework.graphql.data.ArgumentValue.omitted();
 
         public Builder() {
         }
 
-        public Builder setStatus(ChronicleDocumentValidationStatus status) {
+        public Builder setStatus(ChronicleValidationStatus status) {
             this.status = status;
             return this;
         }
@@ -74,8 +74,8 @@ public class ChronicleDocumentValidationInput implements java.io.Serializable {
         }
 
 
-        public ChronicleDocumentValidationInput build() {
-            return new ChronicleDocumentValidationInput(status, reason, details);
+        public ChronicleValidationInput build() {
+            return new ChronicleValidationInput(status, reason, details);
         }
 
     }

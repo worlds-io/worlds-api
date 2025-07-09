@@ -5,49 +5,43 @@ public class UpdateEventChronicleInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @jakarta.validation.constraints.NotNull
+    private String id;
     private org.springframework.graphql.data.ArgumentValue<String> name = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<String> description = org.springframework.graphql.data.ArgumentValue.omitted();
-    private org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> startTime = org.springframework.graphql.data.ArgumentValue.omitted();
-    private org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime = org.springframework.graphql.data.ArgumentValue.omitted();
-    private org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> timestamp = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<String> timezone = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<String> priority = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<String> status = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<String> labels;
-    private org.springframework.graphql.data.ArgumentValue<ChronicleDocumentValidationInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
-    private java.util.List<String> imageIds;
-    private java.util.List<String> videoIds;
-    private java.util.List<String> trackIds;
-    private java.util.List<String> siteIds;
-    private java.util.List<String> dataSourceIds;
-    private java.util.List<String> tagIds;
-    private java.util.List<String> pointOfInterestIds;
+    private java.util.List<String> locations;
+    private org.springframework.graphql.data.ArgumentValue<ChronicleValidationInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<String> activityChronicleIds;
 
     public UpdateEventChronicleInput() {
     }
 
-    public UpdateEventChronicleInput(org.springframework.graphql.data.ArgumentValue<String> name, org.springframework.graphql.data.ArgumentValue<String> description, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> startTime, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime, org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, org.springframework.graphql.data.ArgumentValue<String> priority, org.springframework.graphql.data.ArgumentValue<String> status, java.util.List<String> labels, org.springframework.graphql.data.ArgumentValue<ChronicleDocumentValidationInput> validation, java.util.List<String> imageIds, java.util.List<String> videoIds, java.util.List<String> trackIds, java.util.List<String> siteIds, java.util.List<String> dataSourceIds, java.util.List<String> tagIds, java.util.List<String> pointOfInterestIds, java.util.List<String> activityChronicleIds) {
+    public UpdateEventChronicleInput(String id, org.springframework.graphql.data.ArgumentValue<String> name, org.springframework.graphql.data.ArgumentValue<String> description, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> timestamp, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, org.springframework.graphql.data.ArgumentValue<String> priority, org.springframework.graphql.data.ArgumentValue<String> status, java.util.List<String> labels, java.util.List<String> locations, org.springframework.graphql.data.ArgumentValue<ChronicleValidationInput> validation, java.util.List<String> activityChronicleIds) {
+        this.id = id;
         this.name = name;
         this.description = description;
-        this.startTime = startTime;
-        this.endTime = endTime;
-        this.position = position;
+        this.timestamp = timestamp;
         this.timezone = timezone;
         this.metadata = metadata;
         this.priority = priority;
         this.status = status;
         this.labels = labels;
+        this.locations = locations;
         this.validation = validation;
-        this.imageIds = imageIds;
-        this.videoIds = videoIds;
-        this.trackIds = trackIds;
-        this.siteIds = siteIds;
-        this.dataSourceIds = dataSourceIds;
-        this.tagIds = tagIds;
-        this.pointOfInterestIds = pointOfInterestIds;
         this.activityChronicleIds = activityChronicleIds;
+    }
+
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
     }
 
     public org.springframework.graphql.data.ArgumentValue<String> getName() {
@@ -64,25 +58,11 @@ public class UpdateEventChronicleInput implements java.io.Serializable {
         this.description = description;
     }
 
-    public org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> getStartTime() {
-        return startTime;
+    public org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> getTimestamp() {
+        return timestamp;
     }
-    public void setStartTime(org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> startTime) {
-        this.startTime = startTime;
-    }
-
-    public org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> getEndTime() {
-        return endTime;
-    }
-    public void setEndTime(org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime) {
-        this.endTime = endTime;
-    }
-
-    public org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> getPosition() {
-        return position;
-    }
-    public void setPosition(org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position) {
-        this.position = position;
+    public void setTimestamp(org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> timestamp) {
+        this.timestamp = timestamp;
     }
 
     public org.springframework.graphql.data.ArgumentValue<String> getTimezone() {
@@ -120,60 +100,18 @@ public class UpdateEventChronicleInput implements java.io.Serializable {
         this.labels = labels;
     }
 
-    public org.springframework.graphql.data.ArgumentValue<ChronicleDocumentValidationInput> getValidation() {
+    public java.util.List<String> getLocations() {
+        return locations;
+    }
+    public void setLocations(java.util.List<String> locations) {
+        this.locations = locations;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<ChronicleValidationInput> getValidation() {
         return validation;
     }
-    public void setValidation(org.springframework.graphql.data.ArgumentValue<ChronicleDocumentValidationInput> validation) {
+    public void setValidation(org.springframework.graphql.data.ArgumentValue<ChronicleValidationInput> validation) {
         this.validation = validation;
-    }
-
-    public java.util.List<String> getImageIds() {
-        return imageIds;
-    }
-    public void setImageIds(java.util.List<String> imageIds) {
-        this.imageIds = imageIds;
-    }
-
-    public java.util.List<String> getVideoIds() {
-        return videoIds;
-    }
-    public void setVideoIds(java.util.List<String> videoIds) {
-        this.videoIds = videoIds;
-    }
-
-    public java.util.List<String> getTrackIds() {
-        return trackIds;
-    }
-    public void setTrackIds(java.util.List<String> trackIds) {
-        this.trackIds = trackIds;
-    }
-
-    public java.util.List<String> getSiteIds() {
-        return siteIds;
-    }
-    public void setSiteIds(java.util.List<String> siteIds) {
-        this.siteIds = siteIds;
-    }
-
-    public java.util.List<String> getDataSourceIds() {
-        return dataSourceIds;
-    }
-    public void setDataSourceIds(java.util.List<String> dataSourceIds) {
-        this.dataSourceIds = dataSourceIds;
-    }
-
-    public java.util.List<String> getTagIds() {
-        return tagIds;
-    }
-    public void setTagIds(java.util.List<String> tagIds) {
-        this.tagIds = tagIds;
-    }
-
-    public java.util.List<String> getPointOfInterestIds() {
-        return pointOfInterestIds;
-    }
-    public void setPointOfInterestIds(java.util.List<String> pointOfInterestIds) {
-        this.pointOfInterestIds = pointOfInterestIds;
     }
 
     public java.util.List<String> getActivityChronicleIds() {
@@ -191,27 +129,25 @@ public class UpdateEventChronicleInput implements java.io.Serializable {
 
     public static class Builder {
 
+        private String id;
         private org.springframework.graphql.data.ArgumentValue<String> name = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<String> description = org.springframework.graphql.data.ArgumentValue.omitted();
-        private org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> startTime = org.springframework.graphql.data.ArgumentValue.omitted();
-        private org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime = org.springframework.graphql.data.ArgumentValue.omitted();
-        private org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> timestamp = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<String> timezone = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<String> priority = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<String> status = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<String> labels;
-        private org.springframework.graphql.data.ArgumentValue<ChronicleDocumentValidationInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
-        private java.util.List<String> imageIds;
-        private java.util.List<String> videoIds;
-        private java.util.List<String> trackIds;
-        private java.util.List<String> siteIds;
-        private java.util.List<String> dataSourceIds;
-        private java.util.List<String> tagIds;
-        private java.util.List<String> pointOfInterestIds;
+        private java.util.List<String> locations;
+        private org.springframework.graphql.data.ArgumentValue<ChronicleValidationInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<String> activityChronicleIds;
 
         public Builder() {
+        }
+
+        public Builder setId(String id) {
+            this.id = id;
+            return this;
         }
 
         public Builder setName(org.springframework.graphql.data.ArgumentValue<String> name) {
@@ -224,18 +160,8 @@ public class UpdateEventChronicleInput implements java.io.Serializable {
             return this;
         }
 
-        public Builder setStartTime(org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> startTime) {
-            this.startTime = startTime;
-            return this;
-        }
-
-        public Builder setEndTime(org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime) {
-            this.endTime = endTime;
-            return this;
-        }
-
-        public Builder setPosition(org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position) {
-            this.position = position;
+        public Builder setTimestamp(org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> timestamp) {
+            this.timestamp = timestamp;
             return this;
         }
 
@@ -264,43 +190,13 @@ public class UpdateEventChronicleInput implements java.io.Serializable {
             return this;
         }
 
-        public Builder setValidation(org.springframework.graphql.data.ArgumentValue<ChronicleDocumentValidationInput> validation) {
+        public Builder setLocations(java.util.List<String> locations) {
+            this.locations = locations;
+            return this;
+        }
+
+        public Builder setValidation(org.springframework.graphql.data.ArgumentValue<ChronicleValidationInput> validation) {
             this.validation = validation;
-            return this;
-        }
-
-        public Builder setImageIds(java.util.List<String> imageIds) {
-            this.imageIds = imageIds;
-            return this;
-        }
-
-        public Builder setVideoIds(java.util.List<String> videoIds) {
-            this.videoIds = videoIds;
-            return this;
-        }
-
-        public Builder setTrackIds(java.util.List<String> trackIds) {
-            this.trackIds = trackIds;
-            return this;
-        }
-
-        public Builder setSiteIds(java.util.List<String> siteIds) {
-            this.siteIds = siteIds;
-            return this;
-        }
-
-        public Builder setDataSourceIds(java.util.List<String> dataSourceIds) {
-            this.dataSourceIds = dataSourceIds;
-            return this;
-        }
-
-        public Builder setTagIds(java.util.List<String> tagIds) {
-            this.tagIds = tagIds;
-            return this;
-        }
-
-        public Builder setPointOfInterestIds(java.util.List<String> pointOfInterestIds) {
-            this.pointOfInterestIds = pointOfInterestIds;
             return this;
         }
 
@@ -311,7 +207,7 @@ public class UpdateEventChronicleInput implements java.io.Serializable {
 
 
         public UpdateEventChronicleInput build() {
-            return new UpdateEventChronicleInput(name, description, startTime, endTime, position, timezone, metadata, priority, status, labels, validation, imageIds, videoIds, trackIds, siteIds, dataSourceIds, tagIds, pointOfInterestIds, activityChronicleIds);
+            return new UpdateEventChronicleInput(id, name, description, timestamp, timezone, metadata, priority, status, labels, locations, validation, activityChronicleIds);
         }
 
     }

@@ -1,7 +1,7 @@
 package io.worlds.api.model;
 
 
-public class ChronicleDocumentProducer implements java.io.Serializable {
+public class ChronicleProducer implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -16,10 +16,10 @@ public class ChronicleDocumentProducer implements java.io.Serializable {
     private java.util.List<String> invalidReasons;
     private java.lang.Object metadata;
 
-    public ChronicleDocumentProducer() {
+    public ChronicleProducer() {
     }
 
-    public ChronicleDocumentProducer(String id, String name, String description, String timezone, boolean active, java.util.List<String> invalidReasons, java.lang.Object metadata) {
+    public ChronicleProducer(String id, String name, String description, String timezone, boolean active, java.util.List<String> invalidReasons, java.lang.Object metadata) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -80,8 +80,8 @@ public class ChronicleDocumentProducer implements java.io.Serializable {
 
 
 
-    public static ChronicleDocumentProducer.Builder builder() {
-        return new ChronicleDocumentProducer.Builder();
+    public static ChronicleProducer.Builder builder() {
+        return new ChronicleProducer.Builder();
     }
 
     public static class Builder {
@@ -133,8 +133,8 @@ public class ChronicleDocumentProducer implements java.io.Serializable {
         }
 
 
-        public ChronicleDocumentProducer build() {
-            return new ChronicleDocumentProducer(id, name, description, timezone, active, invalidReasons, metadata);
+        public ChronicleProducer build() {
+            return new ChronicleProducer(id, name, description, timezone, active, invalidReasons, metadata);
         }
 
     }

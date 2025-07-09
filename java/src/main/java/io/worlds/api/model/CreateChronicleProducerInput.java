@@ -1,7 +1,7 @@
 package io.worlds.api.model;
 
 
-public class CreateChronicleDocumentProducerInput implements java.io.Serializable {
+public class CreateChronicleProducerInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -13,10 +13,10 @@ public class CreateChronicleDocumentProducerInput implements java.io.Serializabl
     private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<String> invalidReasons;
 
-    public CreateChronicleDocumentProducerInput() {
+    public CreateChronicleProducerInput() {
     }
 
-    public CreateChronicleDocumentProducerInput(String name, org.springframework.graphql.data.ArgumentValue<String> description, org.springframework.graphql.data.ArgumentValue<String> timezone, boolean active, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, java.util.List<String> invalidReasons) {
+    public CreateChronicleProducerInput(String name, org.springframework.graphql.data.ArgumentValue<String> description, org.springframework.graphql.data.ArgumentValue<String> timezone, boolean active, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, java.util.List<String> invalidReasons) {
         this.name = name;
         this.description = description;
         this.timezone = timezone;
@@ -69,8 +69,8 @@ public class CreateChronicleDocumentProducerInput implements java.io.Serializabl
 
 
 
-    public static CreateChronicleDocumentProducerInput.Builder builder() {
-        return new CreateChronicleDocumentProducerInput.Builder();
+    public static CreateChronicleProducerInput.Builder builder() {
+        return new CreateChronicleProducerInput.Builder();
     }
 
     public static class Builder {
@@ -116,8 +116,8 @@ public class CreateChronicleDocumentProducerInput implements java.io.Serializabl
         }
 
 
-        public CreateChronicleDocumentProducerInput build() {
-            return new CreateChronicleDocumentProducerInput(name, description, timezone, active, metadata, invalidReasons);
+        public CreateChronicleProducerInput build() {
+            return new CreateChronicleProducerInput(name, description, timezone, active, metadata, invalidReasons);
         }
 
     }

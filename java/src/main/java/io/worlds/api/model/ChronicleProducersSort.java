@@ -1,27 +1,27 @@
 package io.worlds.api.model;
 
 
-public class ChronicleDocumentProducersSort implements java.io.Serializable {
+public class ChronicleProducersSort implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @jakarta.validation.constraints.NotNull
-    private ChronicleDocumentProducersSortField field;
+    private ChronicleProducersSortField field;
     @jakarta.validation.constraints.NotNull
     private SortDirection direction;
 
-    public ChronicleDocumentProducersSort() {
+    public ChronicleProducersSort() {
     }
 
-    public ChronicleDocumentProducersSort(ChronicleDocumentProducersSortField field, SortDirection direction) {
+    public ChronicleProducersSort(ChronicleProducersSortField field, SortDirection direction) {
         this.field = field;
         this.direction = direction;
     }
 
-    public ChronicleDocumentProducersSortField getField() {
+    public ChronicleProducersSortField getField() {
         return field;
     }
-    public void setField(ChronicleDocumentProducersSortField field) {
+    public void setField(ChronicleProducersSortField field) {
         this.field = field;
     }
 
@@ -34,19 +34,19 @@ public class ChronicleDocumentProducersSort implements java.io.Serializable {
 
 
 
-    public static ChronicleDocumentProducersSort.Builder builder() {
-        return new ChronicleDocumentProducersSort.Builder();
+    public static ChronicleProducersSort.Builder builder() {
+        return new ChronicleProducersSort.Builder();
     }
 
     public static class Builder {
 
-        private ChronicleDocumentProducersSortField field;
+        private ChronicleProducersSortField field;
         private SortDirection direction;
 
         public Builder() {
         }
 
-        public Builder setField(ChronicleDocumentProducersSortField field) {
+        public Builder setField(ChronicleProducersSortField field) {
             this.field = field;
             return this;
         }
@@ -57,8 +57,8 @@ public class ChronicleDocumentProducersSort implements java.io.Serializable {
         }
 
 
-        public ChronicleDocumentProducersSort build() {
-            return new ChronicleDocumentProducersSort(field, direction);
+        public ChronicleProducersSort build() {
+            return new ChronicleProducersSort(field, direction);
         }
 
     }

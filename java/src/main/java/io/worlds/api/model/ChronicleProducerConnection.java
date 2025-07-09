@@ -1,29 +1,29 @@
 package io.worlds.api.model;
 
 
-public class ChronicleDocumentProducerConnection implements java.io.Serializable {
+public class ChronicleProducerConnection implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @jakarta.validation.constraints.NotNull
-    private java.util.List<ChronicleDocumentProducerEdge> edges;
+    private java.util.List<ChronicleProducerEdge> edges;
     @jakarta.validation.constraints.NotNull
     private PageInfo pageInfo;
     private int totalCount;
 
-    public ChronicleDocumentProducerConnection() {
+    public ChronicleProducerConnection() {
     }
 
-    public ChronicleDocumentProducerConnection(java.util.List<ChronicleDocumentProducerEdge> edges, PageInfo pageInfo, int totalCount) {
+    public ChronicleProducerConnection(java.util.List<ChronicleProducerEdge> edges, PageInfo pageInfo, int totalCount) {
         this.edges = edges;
         this.pageInfo = pageInfo;
         this.totalCount = totalCount;
     }
 
-    public java.util.List<ChronicleDocumentProducerEdge> getEdges() {
+    public java.util.List<ChronicleProducerEdge> getEdges() {
         return edges;
     }
-    public void setEdges(java.util.List<ChronicleDocumentProducerEdge> edges) {
+    public void setEdges(java.util.List<ChronicleProducerEdge> edges) {
         this.edges = edges;
     }
 
@@ -43,20 +43,20 @@ public class ChronicleDocumentProducerConnection implements java.io.Serializable
 
 
 
-    public static ChronicleDocumentProducerConnection.Builder builder() {
-        return new ChronicleDocumentProducerConnection.Builder();
+    public static ChronicleProducerConnection.Builder builder() {
+        return new ChronicleProducerConnection.Builder();
     }
 
     public static class Builder {
 
-        private java.util.List<ChronicleDocumentProducerEdge> edges;
+        private java.util.List<ChronicleProducerEdge> edges;
         private PageInfo pageInfo;
         private int totalCount;
 
         public Builder() {
         }
 
-        public Builder setEdges(java.util.List<ChronicleDocumentProducerEdge> edges) {
+        public Builder setEdges(java.util.List<ChronicleProducerEdge> edges) {
             this.edges = edges;
             return this;
         }
@@ -72,8 +72,8 @@ public class ChronicleDocumentProducerConnection implements java.io.Serializable
         }
 
 
-        public ChronicleDocumentProducerConnection build() {
-            return new ChronicleDocumentProducerConnection(edges, pageInfo, totalCount);
+        public ChronicleProducerConnection build() {
+            return new ChronicleProducerConnection(edges, pageInfo, totalCount);
         }
 
     }

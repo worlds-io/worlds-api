@@ -8,20 +8,20 @@ public class ActivityChronicle implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private String id;
     @jakarta.validation.constraints.NotNull
-    private ChronicleDocumentProducer documentProducer;
+    private ChronicleProducer chronicleProducer;
     @jakarta.validation.constraints.NotNull
     private String name;
     private String description;
     @jakarta.validation.constraints.NotNull
     private java.time.OffsetDateTime startTime;
     private java.time.OffsetDateTime endTime;
-    private GeoJSONPoint position;
     private String timezone;
     private java.lang.Object metadata;
-    private ChronicleDocumentValidation validation;
+    private ChronicleValidation validation;
     private String priority;
     private String status;
     private java.util.List<String> labels;
+    private java.util.List<String> locations;
     @jakarta.validation.constraints.NotNull
     private java.util.List<Image> images;
     @jakarta.validation.constraints.NotNull
@@ -39,20 +39,20 @@ public class ActivityChronicle implements java.io.Serializable {
     public ActivityChronicle() {
     }
 
-    public ActivityChronicle(String id, ChronicleDocumentProducer documentProducer, String name, String description, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, GeoJSONPoint position, String timezone, java.lang.Object metadata, ChronicleDocumentValidation validation, String priority, String status, java.util.List<String> labels, java.util.List<Image> images, java.util.List<Video> videos, java.util.List<Track> tracks, java.util.List<Site> sites, java.util.List<DataSource> dataSources, java.util.List<Tag> tags, java.util.List<PointOfInterest> pointsOfInterest, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt) {
+    public ActivityChronicle(String id, ChronicleProducer chronicleProducer, String name, String description, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, String timezone, java.lang.Object metadata, ChronicleValidation validation, String priority, String status, java.util.List<String> labels, java.util.List<String> locations, java.util.List<Image> images, java.util.List<Video> videos, java.util.List<Track> tracks, java.util.List<Site> sites, java.util.List<DataSource> dataSources, java.util.List<Tag> tags, java.util.List<PointOfInterest> pointsOfInterest, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt) {
         this.id = id;
-        this.documentProducer = documentProducer;
+        this.chronicleProducer = chronicleProducer;
         this.name = name;
         this.description = description;
         this.startTime = startTime;
         this.endTime = endTime;
-        this.position = position;
         this.timezone = timezone;
         this.metadata = metadata;
         this.validation = validation;
         this.priority = priority;
         this.status = status;
         this.labels = labels;
+        this.locations = locations;
         this.images = images;
         this.videos = videos;
         this.tracks = tracks;
@@ -71,11 +71,11 @@ public class ActivityChronicle implements java.io.Serializable {
         this.id = id;
     }
 
-    public ChronicleDocumentProducer getDocumentProducer() {
-        return documentProducer;
+    public ChronicleProducer getChronicleProducer() {
+        return chronicleProducer;
     }
-    public void setDocumentProducer(ChronicleDocumentProducer documentProducer) {
-        this.documentProducer = documentProducer;
+    public void setChronicleProducer(ChronicleProducer chronicleProducer) {
+        this.chronicleProducer = chronicleProducer;
     }
 
     public String getName() {
@@ -106,13 +106,6 @@ public class ActivityChronicle implements java.io.Serializable {
         this.endTime = endTime;
     }
 
-    public GeoJSONPoint getPosition() {
-        return position;
-    }
-    public void setPosition(GeoJSONPoint position) {
-        this.position = position;
-    }
-
     public String getTimezone() {
         return timezone;
     }
@@ -127,10 +120,10 @@ public class ActivityChronicle implements java.io.Serializable {
         this.metadata = metadata;
     }
 
-    public ChronicleDocumentValidation getValidation() {
+    public ChronicleValidation getValidation() {
         return validation;
     }
-    public void setValidation(ChronicleDocumentValidation validation) {
+    public void setValidation(ChronicleValidation validation) {
         this.validation = validation;
     }
 
@@ -153,6 +146,13 @@ public class ActivityChronicle implements java.io.Serializable {
     }
     public void setLabels(java.util.List<String> labels) {
         this.labels = labels;
+    }
+
+    public java.util.List<String> getLocations() {
+        return locations;
+    }
+    public void setLocations(java.util.List<String> locations) {
+        this.locations = locations;
     }
 
     public java.util.List<Image> getImages() {
@@ -227,18 +227,18 @@ public class ActivityChronicle implements java.io.Serializable {
     public static class Builder {
 
         private String id;
-        private ChronicleDocumentProducer documentProducer;
+        private ChronicleProducer chronicleProducer;
         private String name;
         private String description;
         private java.time.OffsetDateTime startTime;
         private java.time.OffsetDateTime endTime;
-        private GeoJSONPoint position;
         private String timezone;
         private java.lang.Object metadata;
-        private ChronicleDocumentValidation validation;
+        private ChronicleValidation validation;
         private String priority;
         private String status;
         private java.util.List<String> labels;
+        private java.util.List<String> locations;
         private java.util.List<Image> images;
         private java.util.List<Video> videos;
         private java.util.List<Track> tracks;
@@ -257,8 +257,8 @@ public class ActivityChronicle implements java.io.Serializable {
             return this;
         }
 
-        public Builder setDocumentProducer(ChronicleDocumentProducer documentProducer) {
-            this.documentProducer = documentProducer;
+        public Builder setChronicleProducer(ChronicleProducer chronicleProducer) {
+            this.chronicleProducer = chronicleProducer;
             return this;
         }
 
@@ -282,11 +282,6 @@ public class ActivityChronicle implements java.io.Serializable {
             return this;
         }
 
-        public Builder setPosition(GeoJSONPoint position) {
-            this.position = position;
-            return this;
-        }
-
         public Builder setTimezone(String timezone) {
             this.timezone = timezone;
             return this;
@@ -297,7 +292,7 @@ public class ActivityChronicle implements java.io.Serializable {
             return this;
         }
 
-        public Builder setValidation(ChronicleDocumentValidation validation) {
+        public Builder setValidation(ChronicleValidation validation) {
             this.validation = validation;
             return this;
         }
@@ -314,6 +309,11 @@ public class ActivityChronicle implements java.io.Serializable {
 
         public Builder setLabels(java.util.List<String> labels) {
             this.labels = labels;
+            return this;
+        }
+
+        public Builder setLocations(java.util.List<String> locations) {
+            this.locations = locations;
             return this;
         }
 
@@ -364,7 +364,7 @@ public class ActivityChronicle implements java.io.Serializable {
 
 
         public ActivityChronicle build() {
-            return new ActivityChronicle(id, documentProducer, name, description, startTime, endTime, position, timezone, metadata, validation, priority, status, labels, images, videos, tracks, sites, dataSources, tags, pointsOfInterest, createdAt, updatedAt);
+            return new ActivityChronicle(id, chronicleProducer, name, description, startTime, endTime, timezone, metadata, validation, priority, status, labels, locations, images, videos, tracks, sites, dataSources, tags, pointsOfInterest, createdAt, updatedAt);
         }
 
     }

@@ -1,13 +1,13 @@
 package io.worlds.api.model;
 
-public enum ChronicleDocumentValidationStatus {
+public enum ChronicleValidationStatus {
 
     VALID("VALID"),
     INVALID("INVALID");
 
     private final String graphqlName;
 
-    private ChronicleDocumentValidationStatus(String graphqlName) {
+    private ChronicleValidationStatus(String graphqlName) {
         this.graphqlName = graphqlName;
     }
 

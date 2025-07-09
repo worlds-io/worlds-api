@@ -1,28 +1,28 @@
 package io.worlds.api.model;
 
 
-public class ChronicleDocumentValidation implements java.io.Serializable {
+public class ChronicleValidation implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @jakarta.validation.constraints.NotNull
-    private ChronicleDocumentValidationStatus status;
+    private ChronicleValidationStatus status;
     private String reason;
     private String details;
 
-    public ChronicleDocumentValidation() {
+    public ChronicleValidation() {
     }
 
-    public ChronicleDocumentValidation(ChronicleDocumentValidationStatus status, String reason, String details) {
+    public ChronicleValidation(ChronicleValidationStatus status, String reason, String details) {
         this.status = status;
         this.reason = reason;
         this.details = details;
     }
 
-    public ChronicleDocumentValidationStatus getStatus() {
+    public ChronicleValidationStatus getStatus() {
         return status;
     }
-    public void setStatus(ChronicleDocumentValidationStatus status) {
+    public void setStatus(ChronicleValidationStatus status) {
         this.status = status;
     }
 
@@ -42,20 +42,20 @@ public class ChronicleDocumentValidation implements java.io.Serializable {
 
 
 
-    public static ChronicleDocumentValidation.Builder builder() {
-        return new ChronicleDocumentValidation.Builder();
+    public static ChronicleValidation.Builder builder() {
+        return new ChronicleValidation.Builder();
     }
 
     public static class Builder {
 
-        private ChronicleDocumentValidationStatus status;
+        private ChronicleValidationStatus status;
         private String reason;
         private String details;
 
         public Builder() {
         }
 
-        public Builder setStatus(ChronicleDocumentValidationStatus status) {
+        public Builder setStatus(ChronicleValidationStatus status) {
             this.status = status;
             return this;
         }
@@ -71,8 +71,8 @@ public class ChronicleDocumentValidation implements java.io.Serializable {
         }
 
 
-        public ChronicleDocumentValidation build() {
-            return new ChronicleDocumentValidation(status, reason, details);
+        public ChronicleValidation build() {
+            return new ChronicleValidation(status, reason, details);
         }
 
     }

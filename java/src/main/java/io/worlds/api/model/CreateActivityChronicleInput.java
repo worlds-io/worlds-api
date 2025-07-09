@@ -11,18 +11,18 @@ public class CreateActivityChronicleInput implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private String name;
     @jakarta.validation.constraints.NotNull
-    private String chronicleDocumentProducerId;
+    private String chronicleProducerId;
     private org.springframework.graphql.data.ArgumentValue<String> description = org.springframework.graphql.data.ArgumentValue.omitted();
     @jakarta.validation.constraints.NotNull
     private java.time.OffsetDateTime startTime;
     private org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime = org.springframework.graphql.data.ArgumentValue.omitted();
-    private org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<String> timezone = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<String> priority = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<String> status = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<String> labels;
-    private org.springframework.graphql.data.ArgumentValue<ChronicleDocumentValidationInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
+    private java.util.List<String> locations;
+    private org.springframework.graphql.data.ArgumentValue<ChronicleValidationInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<String> imageIds;
     private java.util.List<String> videoIds;
     private java.util.List<String> trackIds;
@@ -34,18 +34,18 @@ public class CreateActivityChronicleInput implements java.io.Serializable {
     public CreateActivityChronicleInput() {
     }
 
-    public CreateActivityChronicleInput(String name, String chronicleDocumentProducerId, org.springframework.graphql.data.ArgumentValue<String> description, java.time.OffsetDateTime startTime, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime, org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, org.springframework.graphql.data.ArgumentValue<String> priority, org.springframework.graphql.data.ArgumentValue<String> status, java.util.List<String> labels, org.springframework.graphql.data.ArgumentValue<ChronicleDocumentValidationInput> validation, java.util.List<String> imageIds, java.util.List<String> videoIds, java.util.List<String> trackIds, java.util.List<String> siteIds, java.util.List<String> dataSourceIds, java.util.List<String> tagIds, java.util.List<String> pointOfInterestIds) {
+    public CreateActivityChronicleInput(String name, String chronicleProducerId, org.springframework.graphql.data.ArgumentValue<String> description, java.time.OffsetDateTime startTime, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, org.springframework.graphql.data.ArgumentValue<String> priority, org.springframework.graphql.data.ArgumentValue<String> status, java.util.List<String> labels, java.util.List<String> locations, org.springframework.graphql.data.ArgumentValue<ChronicleValidationInput> validation, java.util.List<String> imageIds, java.util.List<String> videoIds, java.util.List<String> trackIds, java.util.List<String> siteIds, java.util.List<String> dataSourceIds, java.util.List<String> tagIds, java.util.List<String> pointOfInterestIds) {
         this.name = name;
-        this.chronicleDocumentProducerId = chronicleDocumentProducerId;
+        this.chronicleProducerId = chronicleProducerId;
         this.description = description;
         this.startTime = startTime;
         this.endTime = endTime;
-        this.position = position;
         this.timezone = timezone;
         this.metadata = metadata;
         this.priority = priority;
         this.status = status;
         this.labels = labels;
+        this.locations = locations;
         this.validation = validation;
         this.imageIds = imageIds;
         this.videoIds = videoIds;
@@ -63,11 +63,11 @@ public class CreateActivityChronicleInput implements java.io.Serializable {
         this.name = name;
     }
 
-    public String getChronicleDocumentProducerId() {
-        return chronicleDocumentProducerId;
+    public String getChronicleProducerId() {
+        return chronicleProducerId;
     }
-    public void setChronicleDocumentProducerId(String chronicleDocumentProducerId) {
-        this.chronicleDocumentProducerId = chronicleDocumentProducerId;
+    public void setChronicleProducerId(String chronicleProducerId) {
+        this.chronicleProducerId = chronicleProducerId;
     }
 
     public org.springframework.graphql.data.ArgumentValue<String> getDescription() {
@@ -89,13 +89,6 @@ public class CreateActivityChronicleInput implements java.io.Serializable {
     }
     public void setEndTime(org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime) {
         this.endTime = endTime;
-    }
-
-    public org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> getPosition() {
-        return position;
-    }
-    public void setPosition(org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position) {
-        this.position = position;
     }
 
     public org.springframework.graphql.data.ArgumentValue<String> getTimezone() {
@@ -133,10 +126,17 @@ public class CreateActivityChronicleInput implements java.io.Serializable {
         this.labels = labels;
     }
 
-    public org.springframework.graphql.data.ArgumentValue<ChronicleDocumentValidationInput> getValidation() {
+    public java.util.List<String> getLocations() {
+        return locations;
+    }
+    public void setLocations(java.util.List<String> locations) {
+        this.locations = locations;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<ChronicleValidationInput> getValidation() {
         return validation;
     }
-    public void setValidation(org.springframework.graphql.data.ArgumentValue<ChronicleDocumentValidationInput> validation) {
+    public void setValidation(org.springframework.graphql.data.ArgumentValue<ChronicleValidationInput> validation) {
         this.validation = validation;
     }
 
@@ -198,17 +198,17 @@ public class CreateActivityChronicleInput implements java.io.Serializable {
     public static class Builder {
 
         private String name;
-        private String chronicleDocumentProducerId;
+        private String chronicleProducerId;
         private org.springframework.graphql.data.ArgumentValue<String> description = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.time.OffsetDateTime startTime;
         private org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime = org.springframework.graphql.data.ArgumentValue.omitted();
-        private org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<String> timezone = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<String> priority = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<String> status = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<String> labels;
-        private org.springframework.graphql.data.ArgumentValue<ChronicleDocumentValidationInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
+        private java.util.List<String> locations;
+        private org.springframework.graphql.data.ArgumentValue<ChronicleValidationInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<String> imageIds;
         private java.util.List<String> videoIds;
         private java.util.List<String> trackIds;
@@ -225,8 +225,8 @@ public class CreateActivityChronicleInput implements java.io.Serializable {
             return this;
         }
 
-        public Builder setChronicleDocumentProducerId(String chronicleDocumentProducerId) {
-            this.chronicleDocumentProducerId = chronicleDocumentProducerId;
+        public Builder setChronicleProducerId(String chronicleProducerId) {
+            this.chronicleProducerId = chronicleProducerId;
             return this;
         }
 
@@ -242,11 +242,6 @@ public class CreateActivityChronicleInput implements java.io.Serializable {
 
         public Builder setEndTime(org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime) {
             this.endTime = endTime;
-            return this;
-        }
-
-        public Builder setPosition(org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position) {
-            this.position = position;
             return this;
         }
 
@@ -275,7 +270,12 @@ public class CreateActivityChronicleInput implements java.io.Serializable {
             return this;
         }
 
-        public Builder setValidation(org.springframework.graphql.data.ArgumentValue<ChronicleDocumentValidationInput> validation) {
+        public Builder setLocations(java.util.List<String> locations) {
+            this.locations = locations;
+            return this;
+        }
+
+        public Builder setValidation(org.springframework.graphql.data.ArgumentValue<ChronicleValidationInput> validation) {
             this.validation = validation;
             return this;
         }
@@ -317,7 +317,7 @@ public class CreateActivityChronicleInput implements java.io.Serializable {
 
 
         public CreateActivityChronicleInput build() {
-            return new CreateActivityChronicleInput(name, chronicleDocumentProducerId, description, startTime, endTime, position, timezone, metadata, priority, status, labels, validation, imageIds, videoIds, trackIds, siteIds, dataSourceIds, tagIds, pointOfInterestIds);
+            return new CreateActivityChronicleInput(name, chronicleProducerId, description, startTime, endTime, timezone, metadata, priority, status, labels, locations, validation, imageIds, videoIds, trackIds, siteIds, dataSourceIds, tagIds, pointOfInterestIds);
         }
 
     }
