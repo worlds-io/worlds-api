@@ -1,17 +1,17 @@
 type ActivityChronicle {
     id: ID!
-    documentProducer: ChronicleDocumentProducer!
+    chronicleProducer: ChronicleProducer!
     name: String!
     description: String
     startTime: DateTimeOffset!
     endTime: DateTimeOffset
-    position: GeoJSONPoint
     timezone: String
     metadata: JSON
-    validation: ChronicleDocumentValidation
+    validation: ChronicleValidation
     priority: String
     status: String
     labels: [String!]
+    locations: [String!]
     images: [Image!]!
     videos: [Video!]!
     tracks: [Track!]
@@ -26,17 +26,17 @@ type ActivityChronicle {
 # Input types for ActivityChronicle
 input CreateActivityChronicleInput {
     name: String!
-    chronicleDocumentProducerId: ID!
+    chronicleProducerId: ID!
     description: String
     startTime: DateTimeOffset!
     endTime: DateTimeOffset
-    position: GeoJSONPointInput
     timezone: String
     metadata: JSON
     priority: String
     status: String
     labels: [String!]
-    validation: ChronicleDocumentValidationInput
+    locations: [String!]
+    validation: ChronicleValidationInput
     imageIds: [ID!]
     videoIds: [ID!]
     trackIds: [ID!]
@@ -47,17 +47,18 @@ input CreateActivityChronicleInput {
 }
 
 input UpdateActivityChronicleInput {
+    id: ID!
     name: String
     description: String
     startTime: DateTimeOffset
     endTime: DateTimeOffset
-    position: GeoJSONPointInput
     timezone: String
     metadata: JSON
     priority: String
     status: String
     labels: [String!]
-    validation: ChronicleDocumentValidationInput
+    locations: [String!]
+    validation: ChronicleValidationInput
     imageIds: [ID!]
     videoIds: [ID!]
     trackIds: [ID!]

@@ -1,15 +1,15 @@
-enum ChronicleDocumentValidationStatus {
+enum ChronicleValidationStatus {
     VALID
     INVALID
 }
 
-type ChronicleDocumentValidation {
-    status: ChronicleDocumentValidationStatus!
+type ChronicleValidation {
+    status: ChronicleValidationStatus!
     reason: String
     details: String
 }
 
-type ChronicleDocumentProducer {
+type ChronicleProducer {
     id: ID!
     name: String!
     description: String
@@ -19,7 +19,7 @@ type ChronicleDocumentProducer {
     metadata: JSON
 }
 
-input CreateChronicleDocumentProducerInput {
+input CreateChronicleProducerInput {
     name: String!
     description: String
     timezone: String
@@ -28,7 +28,7 @@ input CreateChronicleDocumentProducerInput {
     invalidReasons: [String!]
 }
 
-input UpdateChronicleDocumentProducerInput {
+input UpdateChronicleProducerInput {
     name: String
     description: String
     timezone: String
@@ -36,9 +36,10 @@ input UpdateChronicleDocumentProducerInput {
     metadata: JSON
     invalidReasons: [String!]
 }
+
 # Supporting input for validation
-input ChronicleDocumentValidationInput {
-    status: ChronicleDocumentValidationStatus!
+input ChronicleValidationInput {
+    status: ChronicleValidationStatus!
     reason: String
     details: String
 }

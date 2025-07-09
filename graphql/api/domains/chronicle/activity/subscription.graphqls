@@ -1,15 +1,15 @@
 input FilterActivityChronicleInputSubscription {
   id: FilterIDInput
   name: FilterStringInput
-  description: FilterStringInput
+  chronicleProducerId: FilterIDInput
   startTime: FilterDateTimeOffsetInput
   endTime: FilterDateTimeOffsetInput
   timezone: FilterStringInput
   priority: FilterStringInput
   status: FilterStringInput
-  chronicleDocumentProducerId: FilterIDInput
   validation: FilterStringInput
   labels: FilterStringListInput
+  locations: FilterStringListInput
   siteIds: FilterIDListInput
   dataSourceIds: [FilterIDListInput!]
   tagIds: FilterIDListInput

@@ -1,9 +1,9 @@
-input FilterChronicleDocumentProducerInput {
+input FilterChronicleProducerInput {
   id: FilterIDInput
   name: FilterStringInput
   active: FilterBooleanInput
 
-  and: [FilterChronicleDocumentProducerInput!]
-  or: [FilterChronicleDocumentProducerInput!]
-  not: FilterChronicleDocumentProducerInput
+  and: [FilterChronicleProducerInput!]
+  or: [FilterChronicleProducerInput!]
+  not: FilterChronicleProducerInput
 }

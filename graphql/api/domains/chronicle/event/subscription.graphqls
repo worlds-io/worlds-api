@@ -1,19 +1,14 @@
 input FilterEventChronicleInputSubscription {
   id: FilterIDInput
   name: FilterStringInput
-  description: FilterStringInput
-  startTime: FilterDateTimeOffsetInput
-  endTime: FilterDateTimeOffsetInput
+  timestamp: FilterDateTimeOffsetInput
   timezone: FilterStringInput
   priority: FilterStringInput
   status: FilterStringInput
-  chronicleDocumentProducerId: FilterIDInput
+  chronicleProducerId: FilterIDInput
   validation: FilterStringInput
   labels: FilterStringListInput
-  siteIds: FilterIDListInput
-  dataSourceIds: [FilterIDListInput!]
-  tagIds: FilterIDListInput
-  pointOfInterestIds: FilterIDListInput
+  locations: FilterStringListInput
 
   and: [FilterEventChronicleInputSubscription!]
   or: [FilterEventChronicleInputSubscription!]

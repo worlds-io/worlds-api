@@ -10,7 +10,9 @@ input FilterActivityChronicleInput {
   status: FilterStringInput
   validation: FilterStringInput
   labels: FilterStringListInput
-  chronicleDocumentProducerId: FilterIDInput
+  locations: FilterStringListInput
+  chronicleProducerId: FilterIDInput
+  videoIds: [FilterIDInput!]
   tagIds: [FilterIDInput!]
   siteIds: [FilterIDInput!]
   dataSourceIds: [FilterIDInput!]

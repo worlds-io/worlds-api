@@ -1,20 +1,15 @@
 input FilterEventChronicleInput {
   id: FilterIDInput
   name: FilterStringInput
-  startTimeFrom: FilterDateTimeOffsetInput
-  startTimeTo: FilterDateTimeOffsetInput
-  endTimeFrom: FilterDateTimeOffsetInput
-  endTimeTo: FilterDateTimeOffsetInput
+  timestampFrom: FilterDateTimeOffsetInput
+  timestampTo: FilterDateTimeOffsetInput
   timezone: FilterStringInput
   priority: FilterStringInput
   status: FilterStringInput
   validation: FilterStringInput
   labels: FilterStringListInput
-  chronicleDocumentProducerId: FilterIDInput
-  tagIds: [FilterIDInput!]
-  siteIds: [FilterIDInput!]
-  dataSourceIds: [FilterIDInput!]
-  pointOfInterestIds: [FilterIDInput!]
+  locations: FilterStringListInput
+  chronicleProducerId: FilterIDInput
   activityChronicleIds: [FilterIDInput!]
 
   and: [FilterEventChronicleInput!]

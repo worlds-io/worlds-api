@@ -1,7 +1,6 @@
 enum EventChronicleSortField {
   ID
-  START_TIME
-  END_TIME
+  TIMESTAMP
   NAME
   PRIORITY
   STATUS
@@ -18,7 +17,7 @@ extend type Query {
     filter: FilterEventChronicleInput
     first: Int! = 20
     after: String
-    sort: [EventChronicleSort!]! = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]
+    sort: [EventChronicleSort!]! = [{field: TIMESTAMP, direction: ASC}, {field: ID, direction: ASC}]
   ): EventChronicleConnection
   eventChronicleCount(filter: FilterEventChronicleInput): Int!
 }

@@ -1,10 +1,10 @@
-type ChronicleDocumentProducerConnection {
-  edges: [ChronicleDocumentProducerEdge!]!
+type ChronicleProducerConnection {
+  edges: [ChronicleProducerEdge!]!
   pageInfo: PageInfo!
   totalCount: Int!
 }
 
-type ChronicleDocumentProducerEdge {
-  node: ChronicleDocumentProducer!
+type ChronicleProducerEdge {
+  node: ChronicleProducer!
   cursor: String!
 }

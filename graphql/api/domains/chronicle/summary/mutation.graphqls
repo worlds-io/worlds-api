@@ -1,4 +1,4 @@
 extend type Mutation {
     createSummaryChronicle(input: CreateSummaryChronicleInput!): SummaryChronicle!
-    updateSummaryChronicle(id: ID!, input: UpdateSummaryChronicleInput!): SummaryChronicle!
+    updateSummaryChronicle(input: UpdateSummaryChronicleInput!): SummaryChronicle!
 }

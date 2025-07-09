@@ -10,10 +10,7 @@ input FilterSummaryChronicleInputSubscription {
   chronicleDocumentProducerId: FilterIDInput
   validation: FilterStringInput
   labels: FilterStringListInput
-  siteIds: FilterIDListInput
-  dataSourceIds: [FilterIDListInput!]
-  tagIds: FilterIDListInput
-  pointOfInterestIds: FilterIDListInput
+  locations: FilterStringListInput
 
   and: [FilterSummaryChronicleInputSubscription!]
   or: [FilterSummaryChronicleInputSubscription!]
