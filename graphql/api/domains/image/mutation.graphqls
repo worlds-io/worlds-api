@@ -1,3 +1,3 @@
 extend type Mutation {
-    createImage(image: UploadImageInput!): Image
+    uploadImage(image: UploadImageInput!): Image
 }
