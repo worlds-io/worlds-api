@@ -16,5 +16,5 @@ input FilterEventChronicleInputSubscription {
 }
 
 extend type Subscription {
-  eventChronicle(filter: FilterEventChronicleInputSubscription): EventChronicle!
+  eventChronicles(filter: FilterEventChronicleInputSubscription): EventChronicle!
 }
