@@ -1,7 +1,6 @@
 type ActivityChronicleConnection {
   edges: [ActivityChronicleEdge!]!
   pageInfo: PageInfo!
-  totalCount: Int!
 }
 
 type ActivityChronicleEdge {

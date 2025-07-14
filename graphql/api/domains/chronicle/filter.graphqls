@@ -7,3 +7,10 @@ input FilterChronicleProducerInput {
   or: [FilterChronicleProducerInput!]
   not: FilterChronicleProducerInput
 }
+
+input FilterChronicleValidationStatusInput {
+  eq: ChronicleValidationStatus
+  ne: ChronicleValidationStatus
+  in: [ChronicleValidationStatus!]
+  attributeExists: Boolean
+}

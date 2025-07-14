@@ -6,7 +6,7 @@ input FilterSummaryChronicleInput {
   timezone: FilterStringInput
   priority: FilterStringInput
   status: FilterStringInput
-  validation: FilterStringInput
+  validation: FilterChronicleValidationStatusInput
   labels: FilterStringListInput
   locations: FilterStringListInput
   chronicleDocumentProducerId: FilterIDInput

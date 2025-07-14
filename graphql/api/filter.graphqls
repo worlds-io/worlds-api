@@ -10,14 +10,13 @@ input FilterIDInput {
 
 input FilterIDListInput {
   equals: [ID!]
-  contains: ID
   in: [ID!]
   not: FilterIDListInput
 }
 
 input FilterStringListInput {
   equals: [String!]
-  contains: String
+  # consider 'like' here
   in: [String!]
   not: FilterStringListInput
 }

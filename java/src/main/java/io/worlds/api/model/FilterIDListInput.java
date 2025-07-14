@@ -6,16 +6,14 @@ public class FilterIDListInput implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 
     private java.util.List<String> equals;
-    private org.springframework.graphql.data.ArgumentValue<String> contains = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<String> in;
     private org.springframework.graphql.data.ArgumentValue<FilterIDListInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
 
     public FilterIDListInput() {
     }
 
-    public FilterIDListInput(java.util.List<String> equals, org.springframework.graphql.data.ArgumentValue<String> contains, java.util.List<String> in, org.springframework.graphql.data.ArgumentValue<FilterIDListInput> not) {
+    public FilterIDListInput(java.util.List<String> equals, java.util.List<String> in, org.springframework.graphql.data.ArgumentValue<FilterIDListInput> not) {
         this.equals = equals;
-        this.contains = contains;
         this.in = in;
         this.not = not;
     }
@@ -25,13 +23,6 @@ public class FilterIDListInput implements java.io.Serializable {
     }
     public void setEquals(java.util.List<String> equals) {
         this.equals = equals;
-    }
-
-    public org.springframework.graphql.data.ArgumentValue<String> getContains() {
-        return contains;
-    }
-    public void setContains(org.springframework.graphql.data.ArgumentValue<String> contains) {
-        this.contains = contains;
     }
 
     public java.util.List<String> getIn() {
@@ -57,7 +48,6 @@ public class FilterIDListInput implements java.io.Serializable {
     public static class Builder {
 
         private java.util.List<String> equals;
-        private org.springframework.graphql.data.ArgumentValue<String> contains = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<String> in;
         private org.springframework.graphql.data.ArgumentValue<FilterIDListInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
 
@@ -66,11 +56,6 @@ public class FilterIDListInput implements java.io.Serializable {
 
         public Builder setEquals(java.util.List<String> equals) {
             this.equals = equals;
-            return this;
-        }
-
-        public Builder setContains(org.springframework.graphql.data.ArgumentValue<String> contains) {
-            this.contains = contains;
             return this;
         }
 
@@ -86,7 +71,7 @@ public class FilterIDListInput implements java.io.Serializable {
 
 
         public FilterIDListInput build() {
-            return new FilterIDListInput(equals, contains, in, not);
+            return new FilterIDListInput(equals, in, not);
         }
 
     }

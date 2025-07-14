@@ -9,15 +9,13 @@ public class SummaryChronicleConnection implements java.io.Serializable {
     private java.util.List<SummaryChronicleEdge> edges;
     @jakarta.validation.constraints.NotNull
     private PageInfo pageInfo;
-    private int totalCount;
 
     public SummaryChronicleConnection() {
     }
 
-    public SummaryChronicleConnection(java.util.List<SummaryChronicleEdge> edges, PageInfo pageInfo, int totalCount) {
+    public SummaryChronicleConnection(java.util.List<SummaryChronicleEdge> edges, PageInfo pageInfo) {
         this.edges = edges;
         this.pageInfo = pageInfo;
-        this.totalCount = totalCount;
     }
 
     public java.util.List<SummaryChronicleEdge> getEdges() {
@@ -34,13 +32,6 @@ public class SummaryChronicleConnection implements java.io.Serializable {
         this.pageInfo = pageInfo;
     }
 
-    public int getTotalCount() {
-        return totalCount;
-    }
-    public void setTotalCount(int totalCount) {
-        this.totalCount = totalCount;
-    }
-
 
 
     public static SummaryChronicleConnection.Builder builder() {
@@ -51,7 +42,6 @@ public class SummaryChronicleConnection implements java.io.Serializable {
 
         private java.util.List<SummaryChronicleEdge> edges;
         private PageInfo pageInfo;
-        private int totalCount;
 
         public Builder() {
         }
@@ -66,14 +56,9 @@ public class SummaryChronicleConnection implements java.io.Serializable {
             return this;
         }
 
-        public Builder setTotalCount(int totalCount) {
-            this.totalCount = totalCount;
-            return this;
-        }
-
 
         public SummaryChronicleConnection build() {
-            return new SummaryChronicleConnection(edges, pageInfo, totalCount);
+            return new SummaryChronicleConnection(edges, pageInfo);
         }
 
     }

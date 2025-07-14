@@ -1,12 +1,12 @@
 input FilterActivityChronicleInput {
   id: FilterIDInput
   name: FilterStringInput
-  startTim: FilterDateTimeOffsetInput
+  startTime: FilterDateTimeOffsetInput
   endTime: FilterDateTimeOffsetInput
   timezone: FilterStringInput
   priority: FilterStringInput
   status: FilterStringInput
-  validation: FilterStringInput
+  validation: FilterChronicleValidationStatusInput
   labels: FilterStringListInput
   locations: FilterStringListInput
   chronicleProducerId: FilterIDInput

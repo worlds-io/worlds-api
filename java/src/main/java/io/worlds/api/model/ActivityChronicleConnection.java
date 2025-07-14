@@ -9,15 +9,13 @@ public class ActivityChronicleConnection implements java.io.Serializable {
     private java.util.List<ActivityChronicleEdge> edges;
     @jakarta.validation.constraints.NotNull
     private PageInfo pageInfo;
-    private int totalCount;
 
     public ActivityChronicleConnection() {
     }
 
-    public ActivityChronicleConnection(java.util.List<ActivityChronicleEdge> edges, PageInfo pageInfo, int totalCount) {
+    public ActivityChronicleConnection(java.util.List<ActivityChronicleEdge> edges, PageInfo pageInfo) {
         this.edges = edges;
         this.pageInfo = pageInfo;
-        this.totalCount = totalCount;
     }
 
     public java.util.List<ActivityChronicleEdge> getEdges() {
@@ -34,13 +32,6 @@ public class ActivityChronicleConnection implements java.io.Serializable {
         this.pageInfo = pageInfo;
     }
 
-    public int getTotalCount() {
-        return totalCount;
-    }
-    public void setTotalCount(int totalCount) {
-        this.totalCount = totalCount;
-    }
-
 
 
     public static ActivityChronicleConnection.Builder builder() {
@@ -51,7 +42,6 @@ public class ActivityChronicleConnection implements java.io.Serializable {
 
         private java.util.List<ActivityChronicleEdge> edges;
         private PageInfo pageInfo;
-        private int totalCount;
 
         public Builder() {
         }
@@ -66,14 +56,9 @@ public class ActivityChronicleConnection implements java.io.Serializable {
             return this;
         }
 
-        public Builder setTotalCount(int totalCount) {
-            this.totalCount = totalCount;
-            return this;
-        }
-
 
         public ActivityChronicleConnection build() {
-            return new ActivityChronicleConnection(edges, pageInfo, totalCount);
+            return new ActivityChronicleConnection(edges, pageInfo);
         }
 
     }

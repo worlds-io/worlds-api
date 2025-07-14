@@ -5,7 +5,7 @@ input FilterEventChronicleInput {
   timezone: FilterStringInput
   priority: FilterStringInput
   status: FilterStringInput
-  validation: FilterStringInput
+  validation: FilterChronicleValidationStatusInput
   labels: FilterStringListInput
   locations: FilterStringListInput
   chronicleProducerId: FilterIDInput
