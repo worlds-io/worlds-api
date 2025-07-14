@@ -1,0 +1,16 @@
+input FilterChronicleProducerInput {
+  id: FilterIDInput
+  name: FilterStringInput
+  active: FilterBooleanInput
+
+  and: [FilterChronicleProducerInput!]
+  or: [FilterChronicleProducerInput!]
+  not: FilterChronicleProducerInput
+}
+
+input FilterChronicleValidationStatusInput {
+  eq: ChronicleValidationStatus
+  ne: ChronicleValidationStatus
+  in: [ChronicleValidationStatus!]
+  attributeExists: Boolean
+}

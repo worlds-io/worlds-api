@@ -1,0 +1,69 @@
+type ActivityChronicle {
+    id: ID!
+    chronicleProducer: ChronicleProducer!
+    name: String!
+    description: String
+    startTime: DateTimeOffset!
+    endTime: DateTimeOffset
+    timezone: String
+    metadata: JSON
+    validation: ChronicleValidation
+    priority: String
+    status: String
+    labels: [String!]
+    locations: [String!]
+    images: [Image!]!
+    videos: [Video!]!
+    tracks: [Track!]
+    sites: [Site!]
+    dataSources: [DataSource!]
+    tags: [Tag!]
+    pointsOfInterest: [PointOfInterest!]
+    createdAt: DateTimeOffset!
+    updatedAt: DateTimeOffset!
+}
+
+# Input types for ActivityChronicle
+input CreateActivityChronicleInput {
+    name: String!
+    chronicleProducerId: ID!
+    description: String
+    startTime: DateTimeOffset!
+    endTime: DateTimeOffset
+    timezone: String
+    metadata: JSON
+    priority: String
+    status: String
+    labels: [String!]
+    locations: [String!]
+    validation: ChronicleValidationInput
+    imageIds: [ID!]
+    videoIds: [ID!]
+    trackIds: [ID!]
+    siteIds: [ID!]
+    dataSourceIds: [ID!]
+    tagIds: [ID!]
+    pointOfInterestIds: [ID!]
+}
+
+input UpdateActivityChronicleInput {
+    id: ID!
+    name: String
+    description: String
+    startTime: DateTimeOffset
+    endTime: DateTimeOffset
+    timezone: String
+    metadata: JSON
+    priority: String
+    status: String
+    labels: [String!]
+    locations: [String!]
+    validation: ChronicleValidationInput
+    imageIds: [ID!]
+    videoIds: [ID!]
+    trackIds: [ID!]
+    siteIds: [ID!]
+    dataSourceIds: [ID!]
+    tagIds: [ID!]
+    pointOfInterestIds: [ID!]
+}

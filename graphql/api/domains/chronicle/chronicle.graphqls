@@ -1,0 +1,46 @@
+enum ChronicleValidationStatus {
+    VALID
+    INVALID
+}
+
+type ChronicleValidation {
+    status: ChronicleValidationStatus!
+    reason: String
+    details: String
+}
+
+type ChronicleProducer {
+    id: ID!
+    name: String!
+    description: String
+    timezone: String
+    active: Boolean!
+    invalidReasons: [String!]!
+    metadata: JSON
+}
+
+input CreateChronicleProducerInput {
+    name: String!
+    description: String
+    timezone: String
+    active: Boolean!
+    metadata: JSON
+    invalidReasons: [String!]
+}
+
+input UpdateChronicleProducerInput {
+    id: ID!
+    name: String
+    description: String
+    timezone: String
+    active: Boolean
+    metadata: JSON
+    invalidReasons: [String!]
+}
+
+# Supporting input for validation
+input ChronicleValidationInput {
+    status: ChronicleValidationStatus!
+    summary: String
+    details: String
+}

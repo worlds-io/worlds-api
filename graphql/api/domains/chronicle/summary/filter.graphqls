@@ -1,0 +1,19 @@
+input FilterSummaryChronicleInput {
+  id: FilterIDInput
+  name: FilterStringInput
+  startTime: FilterDateTimeOffsetInput
+  endTime: FilterDateTimeOffsetInput
+  timezone: FilterStringInput
+  priority: FilterStringInput
+  status: FilterStringInput
+  validation: FilterChronicleValidationStatusInput
+  labels: FilterStringListInput
+  locations: FilterStringListInput
+  chronicleDocumentProducerId: FilterIDInput
+  activityChronicleIds: [FilterIDInput!]
+  eventChronicleIds: [FilterIDInput!]
+
+  and: [FilterSummaryChronicleInput!]
+  or: [FilterSummaryChronicleInput!]
+  not: FilterSummaryChronicleInput
+}

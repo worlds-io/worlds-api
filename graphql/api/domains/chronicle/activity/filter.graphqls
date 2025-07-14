@@ -1,0 +1,22 @@
+input FilterActivityChronicleInput {
+  id: FilterIDInput
+  name: FilterStringInput
+  startTime: FilterDateTimeOffsetInput
+  endTime: FilterDateTimeOffsetInput
+  timezone: FilterStringInput
+  priority: FilterStringInput
+  status: FilterStringInput
+  validation: FilterChronicleValidationStatusInput
+  labels: FilterStringListInput
+  locations: FilterStringListInput
+  chronicleProducerId: FilterIDInput
+  videoIds: [FilterIDInput!]
+  tagIds: [FilterIDInput!]
+  siteIds: [FilterIDInput!]
+  dataSourceIds: [FilterIDInput!]
+  pointOfInterestIds: [FilterIDInput!]
+
+  and: [FilterActivityChronicleInput!]
+  or: [FilterActivityChronicleInput!]
+  not: FilterActivityChronicleInput
+}

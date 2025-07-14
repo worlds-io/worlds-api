@@ -1,0 +1,17 @@
+input FilterEventChronicleInput {
+  id: FilterIDInput
+  name: FilterStringInput
+  timestamp: FilterDateTimeOffsetInput
+  timezone: FilterStringInput
+  priority: FilterStringInput
+  status: FilterStringInput
+  validation: FilterChronicleValidationStatusInput
+  labels: FilterStringListInput
+  locations: FilterStringListInput
+  chronicleProducerId: FilterIDInput
+  activityChronicleIds: [FilterIDInput!]
+
+  and: [FilterEventChronicleInput!]
+  or: [FilterEventChronicleInput!]
+  not: FilterEventChronicleInput
+}

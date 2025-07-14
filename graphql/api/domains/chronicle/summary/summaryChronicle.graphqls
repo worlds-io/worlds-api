@@ -1,0 +1,54 @@
+type SummaryChronicle {
+    id: ID!
+    name: String!
+    documentProducer: ChronicleProducer!
+    description: String
+    startTime: DateTimeOffset!
+    endTime: DateTimeOffset!
+    timezone: String
+    metadata: JSON
+    validation: ChronicleValidation
+    priority: String
+    status: String
+    labels: [String!]
+    locations: [String!]
+    activityChronicles: [ActivityChronicle!]!
+    eventChronicles: [EventChronicle!]!
+    createdAt: DateTimeOffset!
+    updatedAt: DateTimeOffset!
+}
+
+# Input types for SummaryChronicle
+input CreateSummaryChronicleInput {
+    name: String!
+    chronicleProducerId: ID!
+    description: String
+    startTime: DateTimeOffset!
+    endTime: DateTimeOffset!
+    timezone: String
+    metadata: JSON
+    priority: String
+    status: String
+    labels: [String!]
+    locations: [String!]
+    validation: ChronicleValidationInput
+    activityChronicleIds: [ID!]!
+    eventChronicleIds: [ID!]!
+}
+
+input UpdateSummaryChronicleInput {
+    id: ID!
+    name: String
+    description: String
+    startTime: DateTimeOffset
+    endTime: DateTimeOffset
+    timezone: String
+    metadata: JSON
+    priority: String
+    status: String
+    labels: [String!]
+    locations: [String!]
+    validation: ChronicleValidationInput
+    activityChronicleIds: [ID!]
+    eventChronicleIds: [ID!]
+}

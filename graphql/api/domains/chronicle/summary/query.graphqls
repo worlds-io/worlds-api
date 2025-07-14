@@ -1,0 +1,23 @@
+enum SummaryChronicleSortField {
+  ID
+  START_TIME
+  END_TIME
+  NAME
+  PRIORITY
+  STATUS
+}
+
+input SummaryChronicleSort {
+  field: SummaryChronicleSortField!
+  direction: SortDirection!
+}
+
+extend type Query {
+  summaryChronicle(id: ID!): SummaryChronicle
+  summaryChronicles(
+    filter: FilterSummaryChronicleInput
+    first: Int! = 20
+    after: String
+    sort: [SummaryChronicleSort!]! = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]
+  ): SummaryChronicleConnection
+}

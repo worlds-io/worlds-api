@@ -1,0 +1,9 @@
+type ActivityChronicleConnection {
+  edges: [ActivityChronicleEdge!]!
+  pageInfo: PageInfo!
+}
+
+type ActivityChronicleEdge {
+  node: ActivityChronicle!
+  cursor: String!
+}

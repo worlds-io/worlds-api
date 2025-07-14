@@ -1,0 +1,9 @@
+type EventChronicleConnection {
+  edges: [EventChronicleEdge!]!
+  pageInfo: PageInfo!
+}
+
+type EventChronicleEdge {
+  node: EventChronicle!
+  cursor: String!
+}
