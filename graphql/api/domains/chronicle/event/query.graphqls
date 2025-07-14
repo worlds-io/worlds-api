@@ -19,5 +19,4 @@ extend type Query {
     after: String
     sort: [EventChronicleSort!]! = [{field: TIMESTAMP, direction: ASC}, {field: ID, direction: ASC}]
   ): EventChronicleConnection
-  eventChronicleCount(filter: FilterEventChronicleInput): Int!
 }

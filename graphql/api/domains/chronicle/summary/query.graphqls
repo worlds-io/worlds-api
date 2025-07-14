@@ -20,5 +20,4 @@ extend type Query {
     after: String
     sort: [SummaryChronicleSort!]! = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]
   ): SummaryChronicleConnection
-  summaryChronicleCount(filter: FilterSummaryChronicleInput): Int!
 }
