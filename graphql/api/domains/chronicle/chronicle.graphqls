@@ -29,6 +29,7 @@ input CreateChronicleProducerInput {
 }
 
 input UpdateChronicleProducerInput {
+    id: ID!
     name: String
     description: String
     timezone: String
@@ -40,6 +41,6 @@ input UpdateChronicleProducerInput {
 # Supporting input for validation
 input ChronicleValidationInput {
     status: ChronicleValidationStatus!
-    reason: String
+    summary: String
     details: String
 }
