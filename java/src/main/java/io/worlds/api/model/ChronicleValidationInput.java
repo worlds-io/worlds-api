@@ -10,15 +10,15 @@ public class ChronicleValidationInput implements java.io.Serializable {
 
     @jakarta.validation.constraints.NotNull
     private ChronicleValidationStatus status;
-    private org.springframework.graphql.data.ArgumentValue<String> reason = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<String> summary = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<String> details = org.springframework.graphql.data.ArgumentValue.omitted();
 
     public ChronicleValidationInput() {
     }
 
-    public ChronicleValidationInput(ChronicleValidationStatus status, org.springframework.graphql.data.ArgumentValue<String> reason, org.springframework.graphql.data.ArgumentValue<String> details) {
+    public ChronicleValidationInput(ChronicleValidationStatus status, org.springframework.graphql.data.ArgumentValue<String> summary, org.springframework.graphql.data.ArgumentValue<String> details) {
         this.status = status;
-        this.reason = reason;
+        this.summary = summary;
         this.details = details;
     }
 
@@ -29,11 +29,11 @@ public class ChronicleValidationInput implements java.io.Serializable {
         this.status = status;
     }
 
-    public org.springframework.graphql.data.ArgumentValue<String> getReason() {
-        return reason;
+    public org.springframework.graphql.data.ArgumentValue<String> getSummary() {
+        return summary;
     }
-    public void setReason(org.springframework.graphql.data.ArgumentValue<String> reason) {
-        this.reason = reason;
+    public void setSummary(org.springframework.graphql.data.ArgumentValue<String> summary) {
+        this.summary = summary;
     }
 
     public org.springframework.graphql.data.ArgumentValue<String> getDetails() {
@@ -52,7 +52,7 @@ public class ChronicleValidationInput implements java.io.Serializable {
     public static class Builder {
 
         private ChronicleValidationStatus status;
-        private org.springframework.graphql.data.ArgumentValue<String> reason = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<String> summary = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<String> details = org.springframework.graphql.data.ArgumentValue.omitted();
 
         public Builder() {
@@ -63,8 +63,8 @@ public class ChronicleValidationInput implements java.io.Serializable {
             return this;
         }
 
-        public Builder setReason(org.springframework.graphql.data.ArgumentValue<String> reason) {
-            this.reason = reason;
+        public Builder setSummary(org.springframework.graphql.data.ArgumentValue<String> summary) {
+            this.summary = summary;
             return this;
         }
 
@@ -75,7 +75,7 @@ public class ChronicleValidationInput implements java.io.Serializable {
 
 
         public ChronicleValidationInput build() {
-            return new ChronicleValidationInput(status, reason, details);
+            return new ChronicleValidationInput(status, summary, details);
         }
 
     }

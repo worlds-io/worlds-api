@@ -1,5 +1,17 @@
 ### Text Recognition ###
 
+type TextReadingResponse {
+    text: String!
+    textConfidence: Float!
+}
+
+type TextReading {
+    text: String!
+    textConfidence: Float!
+}
+
+### Text Recognition ###
+
 input TextRecognitionOptionsInput {
     regions: [GeoJSONMultiPolygonInput!]
 }
