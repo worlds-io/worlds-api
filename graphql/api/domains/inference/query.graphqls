@@ -1,4 +1,7 @@
 extend type Query {
+    textReadingForImage(imageId: ID!): TextReadingResponse
+    textReadingForUrl(url: String!): TextReadingResponse
+
     textRecognitionForDataSource(dataSourceId: ID!, timestamp: DateTimeOffset!, options: TextRecognitionOptionsInput): TextRecognitionResponse
     textRecognitionForVideo(videoId: ID!, timestamp: DateTimeOffset!, options: TextRecognitionOptionsInput): TextRecognitionResponse
     textRecognitionForFrame(frameId: ID!, options: TextRecognitionOptionsInput): TextRecognitionResponse

@@ -5,6 +5,8 @@ public class UpdateChronicleProducerInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @jakarta.validation.constraints.NotNull
+    private String id;
     private org.springframework.graphql.data.ArgumentValue<String> name = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<String> description = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<String> timezone = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -15,13 +17,21 @@ public class UpdateChronicleProducerInput implements java.io.Serializable {
     public UpdateChronicleProducerInput() {
     }
 
-    public UpdateChronicleProducerInput(org.springframework.graphql.data.ArgumentValue<String> name, org.springframework.graphql.data.ArgumentValue<String> description, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<Boolean> active, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, java.util.List<String> invalidReasons) {
+    public UpdateChronicleProducerInput(String id, org.springframework.graphql.data.ArgumentValue<String> name, org.springframework.graphql.data.ArgumentValue<String> description, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<Boolean> active, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, java.util.List<String> invalidReasons) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.timezone = timezone;
         this.active = active;
         this.metadata = metadata;
         this.invalidReasons = invalidReasons;
+    }
+
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
     }
 
     public org.springframework.graphql.data.ArgumentValue<String> getName() {
@@ -74,6 +84,7 @@ public class UpdateChronicleProducerInput implements java.io.Serializable {
 
     public static class Builder {
 
+        private String id;
         private org.springframework.graphql.data.ArgumentValue<String> name = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<String> description = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<String> timezone = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -82,6 +93,11 @@ public class UpdateChronicleProducerInput implements java.io.Serializable {
         private java.util.List<String> invalidReasons;
 
         public Builder() {
+        }
+
+        public Builder setId(String id) {
+            this.id = id;
+            return this;
         }
 
         public Builder setName(org.springframework.graphql.data.ArgumentValue<String> name) {
@@ -116,7 +132,7 @@ public class UpdateChronicleProducerInput implements java.io.Serializable {
 
 
         public UpdateChronicleProducerInput build() {
-            return new UpdateChronicleProducerInput(name, description, timezone, active, metadata, invalidReasons);
+            return new UpdateChronicleProducerInput(id, name, description, timezone, active, metadata, invalidReasons);
         }
 
     }
