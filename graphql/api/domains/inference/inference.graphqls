@@ -5,11 +5,6 @@ type TextReadingResponse {
     textConfidence: Float!
 }
 
-type TextReading {
-    text: String!
-    textConfidence: Float!
-}
-
 ### Text Recognition ###
 
 input TextRecognitionOptionsInput {
