@@ -1,4 +1,4 @@
-input FilterSummaryChronicleInput {
+input FilterSummaryChronicleInput @experimental {
   id: FilterIDInput
   name: FilterStringInput
   startTime: FilterDateTimeOffsetInput

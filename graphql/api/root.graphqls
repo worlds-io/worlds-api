@@ -1,3 +1,5 @@
 type Query
 type Mutation
 type Subscription
+
+directive @experimental on INPUT_OBJECT | OBJECT | ENUM | FIELD_DEFINITION

@@ -1,4 +1,4 @@
-type EventChronicle {
+type EventChronicle @experimental {
     id: ID!
     name: String!
     documentProducer: ChronicleProducer!
@@ -17,7 +17,7 @@ type EventChronicle {
 }
 
 # Input types for EventChronicle
-input CreateEventChronicleInput {
+input CreateEventChronicleInput @experimental {
     name: String!
     chronicleProducerId: ID!
     description: String
@@ -32,7 +32,7 @@ input CreateEventChronicleInput {
     activityChronicleIds: [ID!]!
 }
 
-input UpdateEventChronicleInput {
+input UpdateEventChronicleInput @experimental {
     id: ID!
     name: String
     description: String

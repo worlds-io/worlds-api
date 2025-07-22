@@ -1,4 +1,4 @@
-type SummaryChronicle {
+type SummaryChronicle @experimental {
     id: ID!
     name: String!
     documentProducer: ChronicleProducer!
@@ -19,7 +19,7 @@ type SummaryChronicle {
 }
 
 # Input types for SummaryChronicle
-input CreateSummaryChronicleInput {
+input CreateSummaryChronicleInput @experimental {
     name: String!
     chronicleProducerId: ID!
     description: String
@@ -36,7 +36,7 @@ input CreateSummaryChronicleInput {
     eventChronicleIds: [ID!]!
 }
 
-input UpdateSummaryChronicleInput {
+input UpdateSummaryChronicleInput @experimental {
     id: ID!
     name: String
     description: String

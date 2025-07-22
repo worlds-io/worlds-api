@@ -1,4 +1,4 @@
-input FilterSummaryChronicleInputSubscription {
+input FilterSummaryChronicleInputSubscription @experimental {
   id: FilterIDInput
   name: FilterStringInput
   description: FilterStringInput
@@ -18,5 +18,5 @@ input FilterSummaryChronicleInputSubscription {
 }
 
 extend type Subscription {
-  summaryChronicles(filter: FilterSummaryChronicleInputSubscription): SummaryChronicle!
+  summaryChronicles(filter: FilterSummaryChronicleInputSubscription): SummaryChronicle! @experimental
 }

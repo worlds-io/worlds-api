@@ -1,4 +1,4 @@
-input FilterChronicleProducerInput {
+input FilterChronicleProducerInput @experimental {
   id: FilterIDInput
   name: FilterStringInput
   active: FilterBooleanInput
@@ -8,7 +8,7 @@ input FilterChronicleProducerInput {
   not: FilterChronicleProducerInput
 }
 
-input FilterChronicleValidationStatusInput {
+input FilterChronicleValidationStatusInput @experimental {
   eq: ChronicleValidationStatus
   ne: ChronicleValidationStatus
   in: [ChronicleValidationStatus!]

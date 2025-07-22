@@ -1,9 +1,9 @@
-type EventChronicleConnection {
+type EventChronicleConnection @experimental {
   edges: [EventChronicleEdge!]!
   pageInfo: PageInfo!
 }
 
-type EventChronicleEdge {
+type EventChronicleEdge @experimental {
   node: EventChronicle!
   cursor: String!
 }

@@ -1,4 +1,4 @@
-input FilterActivityChronicleInput {
+input FilterActivityChronicleInput @experimental {
   id: FilterIDInput
   name: FilterStringInput
   startTime: FilterDateTimeOffsetInput

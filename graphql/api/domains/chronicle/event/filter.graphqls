@@ -1,4 +1,4 @@
-input FilterEventChronicleInput {
+input FilterEventChronicleInput @experimental {
   id: FilterIDInput
   name: FilterStringInput
   timestamp: FilterDateTimeOffsetInput

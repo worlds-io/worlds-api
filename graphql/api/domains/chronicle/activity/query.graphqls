@@ -1,4 +1,4 @@
-enum ActivityChronicleSortField {
+enum ActivityChronicleSortField @experimental {
   ID
   START_TIME
   END_TIME
@@ -7,17 +7,17 @@ enum ActivityChronicleSortField {
   STATUS
 }
 
-input ActivityChronicleSort {
+input ActivityChronicleSort @experimental {
   field: ActivityChronicleSortField!
   direction: SortDirection!
 }
 
 extend type Query {
-  activityChronicle(id: ID!): ActivityChronicle
+  activityChronicle(id: ID!): ActivityChronicle @experimental
   activityChronicles(
     filter: FilterActivityChronicleInput
     first: Int! = 20
     after: String
     sort: [ActivityChronicleSort!]! = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]
-  ): ActivityChronicleConnection
+  ): ActivityChronicleConnection @experimental
 }

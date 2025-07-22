@@ -1,4 +1,4 @@
 extend type Mutation {
-    createChronicleProducer(input: CreateChronicleProducerInput!): ChronicleProducer!
-    updateChronicleProducer(input: UpdateChronicleProducerInput!): ChronicleProducer!
+    createChronicleProducer(input: CreateChronicleProducerInput!): ChronicleProducer! @experimental
+    updateChronicleProducer(input: UpdateChronicleProducerInput!): ChronicleProducer! @experimental
 }
