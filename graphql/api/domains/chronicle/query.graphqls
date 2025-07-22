@@ -15,6 +15,6 @@ extend type Query {
     first: Int! = 20
     after: String
     sort: [ChronicleProducersSort!]! = [{field: NAME, direction: ASC}, {field: ID, direction: ASC}]
-  ): ChronicleProducerConnection
+  ): ChronicleProducerConnection @experimental
   chronicleProducerCount(filter: FilterChronicleProducerInput): Int! @experimental
 }

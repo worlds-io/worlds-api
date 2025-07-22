@@ -1,15 +1,15 @@
-enum ChronicleValidationStatus @experimental @experimental {
+enum ChronicleValidationStatus @experimental {
     VALID
     INVALID
 }
 
-type ChronicleValidation @experimental @experimental {
+type ChronicleValidation @experimental {
     status: ChronicleValidationStatus!
     reason: String
     details: String
 }
 
-type ChronicleProducer @experimental @experimental {
+type ChronicleProducer @experimental {
     id: ID!
     name: String!
     description: String
@@ -19,7 +19,7 @@ type ChronicleProducer @experimental @experimental {
     metadata: JSON
 }
 
-input CreateChronicleProducerInput @experimental @experimental {
+input CreateChronicleProducerInput @experimental {
     name: String!
     description: String
     timezone: String
@@ -28,7 +28,7 @@ input CreateChronicleProducerInput @experimental @experimental {
     invalidReasons: [String!]
 }
 
-input UpdateChronicleProducerInput @experimental @experimental {
+input UpdateChronicleProducerInput @experimental {
     id: ID!
     name: String
     description: String
@@ -39,7 +39,7 @@ input UpdateChronicleProducerInput @experimental @experimental {
 }
 
 # Supporting input for validation
-input ChronicleValidationInput @experimental @experimental {
+input ChronicleValidationInput @experimental {
     status: ChronicleValidationStatus!
     summary: String
     details: String
