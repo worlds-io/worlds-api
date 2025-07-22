@@ -1,4 +1,4 @@
-type ActivityChronicle {
+type ActivityChronicle @experimental {
     id: ID!
     chronicleProducer: ChronicleProducer!
     name: String!
@@ -24,7 +24,7 @@ type ActivityChronicle {
 }
 
 # Input types for ActivityChronicle
-input CreateActivityChronicleInput {
+input CreateActivityChronicleInput @experimental {
     name: String!
     chronicleProducerId: ID!
     description: String
@@ -46,7 +46,7 @@ input CreateActivityChronicleInput {
     pointOfInterestIds: [ID!]
 }
 
-input UpdateActivityChronicleInput {
+input UpdateActivityChronicleInput @experimental {
     id: ID!
     name: String
     description: String

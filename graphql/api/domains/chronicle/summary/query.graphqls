@@ -1,4 +1,4 @@
-enum SummaryChronicleSortField {
+enum SummaryChronicleSortField @experimental {
   ID
   START_TIME
   END_TIME
@@ -7,17 +7,17 @@ enum SummaryChronicleSortField {
   STATUS
 }
 
-input SummaryChronicleSort {
+input SummaryChronicleSort @experimental {
   field: SummaryChronicleSortField!
   direction: SortDirection!
 }
 
 extend type Query {
-  summaryChronicle(id: ID!): SummaryChronicle
+  summaryChronicle(id: ID!): SummaryChronicle @experimental
   summaryChronicles(
     filter: FilterSummaryChronicleInput
     first: Int! = 20
     after: String
     sort: [SummaryChronicleSort!]! = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]
-  ): SummaryChronicleConnection
+  ): SummaryChronicleConnection @experimental
 }

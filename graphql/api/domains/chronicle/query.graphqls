@@ -1,20 +1,20 @@
-enum ChronicleProducersSortField {
+enum ChronicleProducersSortField @experimental {
   ID
   NAME
 }
 
-input ChronicleProducersSort {
+input ChronicleProducersSort @experimental {
   field: ChronicleProducersSortField!
   direction: SortDirection!
 }
 
 extend type Query {
-  chronicleProducer(id: ID!): ChronicleProducer
+  chronicleProducer(id: ID!): ChronicleProducer @experimental
   chronicleProducers(
     filter: FilterChronicleProducerInput
     first: Int! = 20
     after: String
     sort: [ChronicleProducersSort!]! = [{field: NAME, direction: ASC}, {field: ID, direction: ASC}]
   ): ChronicleProducerConnection
-  chronicleProducerCount(filter: FilterChronicleProducerInput): Int!
+  chronicleProducerCount(filter: FilterChronicleProducerInput): Int! @experimental
 }
