@@ -1,0 +1,9 @@
+type DataSourceClip {
+  id: ID!
+  dataSource: DataSource!
+  startTime: DateTimeOffset!
+  endTime: DateTimeOffset!
+  url: String!
+  thumbnailUrl: String
+  displayName: String
+}

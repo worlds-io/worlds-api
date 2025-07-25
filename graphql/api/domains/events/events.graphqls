@@ -37,7 +37,8 @@ type Event {
 	timezone: String
 	metadata: JSON
 	images: [Image!]!
-	videos: [Video!]!
+	videos: [Video!]! @deprecated(reason: "The 'videos' field in the 'Event' type is deprecated. Refer to the 'dataSourceClips' field in the 'Event' type")
+	dataSourceClips: [DataSourceClip!]!
 	properties: EventProperties
 	draft: Boolean
 	validation: EventValidation

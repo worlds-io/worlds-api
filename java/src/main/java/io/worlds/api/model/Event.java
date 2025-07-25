@@ -20,8 +20,11 @@ public class Event implements java.io.Serializable {
     private java.lang.Object metadata;
     @jakarta.validation.constraints.NotNull
     private java.util.List<Image> images;
+    @Deprecated
     @jakarta.validation.constraints.NotNull
     private java.util.List<Video> videos;
+    @jakarta.validation.constraints.NotNull
+    private java.util.List<DataSourceClip> dataSourceClips;
     private EventProperties properties;
     private Boolean draft;
     private EventValidation validation;
@@ -30,7 +33,7 @@ public class Event implements java.io.Serializable {
     public Event() {
     }
 
-    public Event(String id, EventProducer eventProducer, String type, String subType, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, GeoJSONPoint position, String timezone, java.lang.Object metadata, java.util.List<Image> images, java.util.List<Video> videos, EventProperties properties, Boolean draft, EventValidation validation, String priority) {
+    public Event(String id, EventProducer eventProducer, String type, String subType, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, GeoJSONPoint position, String timezone, java.lang.Object metadata, java.util.List<Image> images, java.util.List<Video> videos, java.util.List<DataSourceClip> dataSourceClips, EventProperties properties, Boolean draft, EventValidation validation, String priority) {
         this.id = id;
         this.eventProducer = eventProducer;
         this.type = type;
@@ -42,6 +45,7 @@ public class Event implements java.io.Serializable {
         this.metadata = metadata;
         this.images = images;
         this.videos = videos;
+        this.dataSourceClips = dataSourceClips;
         this.properties = properties;
         this.draft = draft;
         this.validation = validation;
@@ -118,11 +122,20 @@ public class Event implements java.io.Serializable {
         this.images = images;
     }
 
+    @Deprecated
     public java.util.List<Video> getVideos() {
         return videos;
     }
+    @Deprecated
     public void setVideos(java.util.List<Video> videos) {
         this.videos = videos;
+    }
+
+    public java.util.List<DataSourceClip> getDataSourceClips() {
+        return dataSourceClips;
+    }
+    public void setDataSourceClips(java.util.List<DataSourceClip> dataSourceClips) {
+        this.dataSourceClips = dataSourceClips;
     }
 
     public EventProperties getProperties() {
@@ -172,6 +185,7 @@ public class Event implements java.io.Serializable {
         private java.lang.Object metadata;
         private java.util.List<Image> images;
         private java.util.List<Video> videos;
+        private java.util.List<DataSourceClip> dataSourceClips;
         private EventProperties properties;
         private Boolean draft;
         private EventValidation validation;
@@ -230,8 +244,14 @@ public class Event implements java.io.Serializable {
             return this;
         }
 
+        @Deprecated
         public Builder setVideos(java.util.List<Video> videos) {
             this.videos = videos;
+            return this;
+        }
+
+        public Builder setDataSourceClips(java.util.List<DataSourceClip> dataSourceClips) {
+            this.dataSourceClips = dataSourceClips;
             return this;
         }
 
@@ -257,7 +277,7 @@ public class Event implements java.io.Serializable {
 
 
         public Event build() {
-            return new Event(id, eventProducer, type, subType, startTime, endTime, position, timezone, metadata, images, videos, properties, draft, validation, priority);
+            return new Event(id, eventProducer, type, subType, startTime, endTime, position, timezone, metadata, images, videos, dataSourceClips, properties, draft, validation, priority);
         }
 
     }
