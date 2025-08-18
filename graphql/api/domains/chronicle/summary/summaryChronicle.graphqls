@@ -1,7 +1,7 @@
 type SummaryChronicle @experimental {
     id: ID!
     name: String!
-    documentProducer: ChronicleProducer!
+    chronicleProducer: ChronicleProducer!
     description: String
     startTime: DateTimeOffset!
     endTime: DateTimeOffset!

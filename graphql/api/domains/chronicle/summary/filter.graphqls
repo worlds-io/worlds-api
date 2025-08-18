@@ -9,7 +9,7 @@ input FilterSummaryChronicleInput @experimental {
   validation: FilterChronicleValidationStatusInput
   labels: FilterStringListInput
   locations: FilterStringListInput
-  chronicleDocumentProducerId: FilterIDInput
+  chronicleProducerId: FilterIDInput
   activityChronicleIds: FilterIDListInput
   eventChronicleIds: FilterIDListInput
 

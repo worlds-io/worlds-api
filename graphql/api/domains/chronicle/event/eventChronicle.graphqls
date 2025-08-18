@@ -1,7 +1,7 @@
 type EventChronicle @experimental {
     id: ID!
     name: String!
-    documentProducer: ChronicleProducer!
+    chronicleProducer: ChronicleProducer!
     description: String
     timestamp: DateTimeOffset!
     timezone: String
