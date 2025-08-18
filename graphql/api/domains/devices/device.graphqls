@@ -11,6 +11,7 @@ type Device {
     site: Site
     calibrations: [DeviceCalibration!]!
     pointOfInterest: PointOfInterest
+    lastHeartbeat: DateTimeOffset
 }
 
 type DeviceCalibration {

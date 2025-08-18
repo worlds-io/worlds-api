@@ -21,11 +21,12 @@ public class Device implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private java.util.List<DeviceCalibration> calibrations;
     private PointOfInterest pointOfInterest;
+    private java.time.OffsetDateTime lastHeartbeat;
 
     public Device() {
     }
 
-    public Device(String id, String uuid, String externalId, String name, boolean enabled, String address, Double frameRate, GeoJSONPoint position, DataSource dataSource, Site site, java.util.List<DeviceCalibration> calibrations, PointOfInterest pointOfInterest) {
+    public Device(String id, String uuid, String externalId, String name, boolean enabled, String address, Double frameRate, GeoJSONPoint position, DataSource dataSource, Site site, java.util.List<DeviceCalibration> calibrations, PointOfInterest pointOfInterest, java.time.OffsetDateTime lastHeartbeat) {
         this.id = id;
         this.uuid = uuid;
         this.externalId = externalId;
@@ -38,6 +39,7 @@ public class Device implements java.io.Serializable {
         this.site = site;
         this.calibrations = calibrations;
         this.pointOfInterest = pointOfInterest;
+        this.lastHeartbeat = lastHeartbeat;
     }
 
     public String getId() {
@@ -124,6 +126,13 @@ public class Device implements java.io.Serializable {
         this.pointOfInterest = pointOfInterest;
     }
 
+    public java.time.OffsetDateTime getLastHeartbeat() {
+        return lastHeartbeat;
+    }
+    public void setLastHeartbeat(java.time.OffsetDateTime lastHeartbeat) {
+        this.lastHeartbeat = lastHeartbeat;
+    }
+
 
 
     public static Device.Builder builder() {
@@ -144,6 +153,7 @@ public class Device implements java.io.Serializable {
         private Site site;
         private java.util.List<DeviceCalibration> calibrations;
         private PointOfInterest pointOfInterest;
+        private java.time.OffsetDateTime lastHeartbeat;
 
         public Builder() {
         }
@@ -208,9 +218,14 @@ public class Device implements java.io.Serializable {
             return this;
         }
 
+        public Builder setLastHeartbeat(java.time.OffsetDateTime lastHeartbeat) {
+            this.lastHeartbeat = lastHeartbeat;
+            return this;
+        }
+
 
         public Device build() {
-            return new Device(id, uuid, externalId, name, enabled, address, frameRate, position, dataSource, site, calibrations, pointOfInterest);
+            return new Device(id, uuid, externalId, name, enabled, address, frameRate, position, dataSource, site, calibrations, pointOfInterest, lastHeartbeat);
         }
 
     }
