@@ -9,7 +9,7 @@ input FilterEventChronicleInput @experimental {
   labels: FilterStringListInput
   locations: FilterStringListInput
   chronicleProducerId: FilterIDInput
-  activityChronicleIds: [FilterIDInput!]
+  activityChronicleIds: FilterIDListInput
 
   and: [FilterEventChronicleInput!]
   or: [FilterEventChronicleInput!]

@@ -9,9 +9,9 @@ input FilterSummaryChronicleInput @experimental {
   validation: FilterChronicleValidationStatusInput
   labels: FilterStringListInput
   locations: FilterStringListInput
-  chronicleDocumentProducerId: FilterIDInput
-  activityChronicleIds: [FilterIDInput!]
-  eventChronicleIds: [FilterIDInput!]
+  chronicleProducerId: FilterIDInput
+  activityChronicleIds: FilterIDListInput
+  eventChronicleIds: FilterIDListInput
 
   and: [FilterSummaryChronicleInput!]
   or: [FilterSummaryChronicleInput!]

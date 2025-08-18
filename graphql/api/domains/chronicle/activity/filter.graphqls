@@ -10,11 +10,11 @@ input FilterActivityChronicleInput @experimental {
   labels: FilterStringListInput
   locations: FilterStringListInput
   chronicleProducerId: FilterIDInput
-  videoIds: [FilterIDInput!]
-  tagIds: [FilterIDInput!]
-  siteIds: [FilterIDInput!]
-  dataSourceIds: [FilterIDInput!]
-  pointOfInterestIds: [FilterIDInput!]
+  videoIds: FilterIDListInput
+  tagIds: FilterIDListInput
+  siteIds: FilterIDListInput
+  dataSourceIds: FilterIDListInput
+  pointOfInterestIds: FilterIDListInput
 
   and: [FilterActivityChronicleInput!]
   or: [FilterActivityChronicleInput!]

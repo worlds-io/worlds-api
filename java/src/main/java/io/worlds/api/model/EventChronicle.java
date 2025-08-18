@@ -10,7 +10,7 @@ public class EventChronicle implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private String name;
     @jakarta.validation.constraints.NotNull
-    private ChronicleProducer documentProducer;
+    private ChronicleProducer chronicleProducer;
     private String description;
     @jakarta.validation.constraints.NotNull
     private java.time.OffsetDateTime timestamp;
@@ -31,10 +31,10 @@ public class EventChronicle implements java.io.Serializable {
     public EventChronicle() {
     }
 
-    public EventChronicle(String id, String name, ChronicleProducer documentProducer, String description, java.time.OffsetDateTime timestamp, String timezone, java.lang.Object metadata, ChronicleValidation validation, String priority, String status, java.util.List<String> labels, java.util.List<String> locations, java.util.List<ActivityChronicle> activityChronicles, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt) {
+    public EventChronicle(String id, String name, ChronicleProducer chronicleProducer, String description, java.time.OffsetDateTime timestamp, String timezone, java.lang.Object metadata, ChronicleValidation validation, String priority, String status, java.util.List<String> labels, java.util.List<String> locations, java.util.List<ActivityChronicle> activityChronicles, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt) {
         this.id = id;
         this.name = name;
-        this.documentProducer = documentProducer;
+        this.chronicleProducer = chronicleProducer;
         this.description = description;
         this.timestamp = timestamp;
         this.timezone = timezone;
@@ -63,11 +63,11 @@ public class EventChronicle implements java.io.Serializable {
         this.name = name;
     }
 
-    public ChronicleProducer getDocumentProducer() {
-        return documentProducer;
+    public ChronicleProducer getChronicleProducer() {
+        return chronicleProducer;
     }
-    public void setDocumentProducer(ChronicleProducer documentProducer) {
-        this.documentProducer = documentProducer;
+    public void setChronicleProducer(ChronicleProducer chronicleProducer) {
+        this.chronicleProducer = chronicleProducer;
     }
 
     public String getDescription() {
@@ -164,7 +164,7 @@ public class EventChronicle implements java.io.Serializable {
 
         private String id;
         private String name;
-        private ChronicleProducer documentProducer;
+        private ChronicleProducer chronicleProducer;
         private String description;
         private java.time.OffsetDateTime timestamp;
         private String timezone;
@@ -191,8 +191,8 @@ public class EventChronicle implements java.io.Serializable {
             return this;
         }
 
-        public Builder setDocumentProducer(ChronicleProducer documentProducer) {
-            this.documentProducer = documentProducer;
+        public Builder setChronicleProducer(ChronicleProducer chronicleProducer) {
+            this.chronicleProducer = chronicleProducer;
             return this;
         }
 
@@ -258,7 +258,7 @@ public class EventChronicle implements java.io.Serializable {
 
 
         public EventChronicle build() {
-            return new EventChronicle(id, name, documentProducer, description, timestamp, timezone, metadata, validation, priority, status, labels, locations, activityChronicles, createdAt, updatedAt);
+            return new EventChronicle(id, name, chronicleProducer, description, timestamp, timezone, metadata, validation, priority, status, labels, locations, activityChronicles, createdAt, updatedAt);
         }
 
     }

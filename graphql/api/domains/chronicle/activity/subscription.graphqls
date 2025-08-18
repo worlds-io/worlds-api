@@ -11,7 +11,7 @@ input FilterActivityChronicleInputSubscription @experimental {
   labels: FilterStringListInput
   locations: FilterStringListInput
   siteIds: FilterIDListInput
-  dataSourceIds: [FilterIDListInput!]
+  dataSourceIds: FilterIDListInput
   tagIds: FilterIDListInput
   pointOfInterestIds: FilterIDListInput
 
