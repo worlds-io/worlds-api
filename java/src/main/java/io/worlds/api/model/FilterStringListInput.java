@@ -5,24 +5,24 @@ public class FilterStringListInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private java.util.List<String> equals;
+    private java.util.List<String> eq;
     private java.util.List<String> in;
     private org.springframework.graphql.data.ArgumentValue<FilterStringListInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
 
     public FilterStringListInput() {
     }
 
-    public FilterStringListInput(java.util.List<String> equals, java.util.List<String> in, org.springframework.graphql.data.ArgumentValue<FilterStringListInput> not) {
-        this.equals = equals;
+    public FilterStringListInput(java.util.List<String> eq, java.util.List<String> in, org.springframework.graphql.data.ArgumentValue<FilterStringListInput> not) {
+        this.eq = eq;
         this.in = in;
         this.not = not;
     }
 
-    public java.util.List<String> getEquals() {
-        return equals;
+    public java.util.List<String> getEq() {
+        return eq;
     }
-    public void setEquals(java.util.List<String> equals) {
-        this.equals = equals;
+    public void setEq(java.util.List<String> eq) {
+        this.eq = eq;
     }
 
     public java.util.List<String> getIn() {
@@ -47,15 +47,15 @@ public class FilterStringListInput implements java.io.Serializable {
 
     public static class Builder {
 
-        private java.util.List<String> equals;
+        private java.util.List<String> eq;
         private java.util.List<String> in;
         private org.springframework.graphql.data.ArgumentValue<FilterStringListInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
 
         public Builder() {
         }
 
-        public Builder setEquals(java.util.List<String> equals) {
-            this.equals = equals;
+        public Builder setEq(java.util.List<String> eq) {
+            this.eq = eq;
             return this;
         }
 
@@ -71,7 +71,7 @@ public class FilterStringListInput implements java.io.Serializable {
 
 
         public FilterStringListInput build() {
-            return new FilterStringListInput(equals, in, not);
+            return new FilterStringListInput(eq, in, not);
         }
 
     }

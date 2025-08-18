@@ -10,7 +10,7 @@ public class SummaryChronicle implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private String name;
     @jakarta.validation.constraints.NotNull
-    private ChronicleProducer documentProducer;
+    private ChronicleProducer chronicleProducer;
     private String description;
     @jakarta.validation.constraints.NotNull
     private java.time.OffsetDateTime startTime;
@@ -35,10 +35,10 @@ public class SummaryChronicle implements java.io.Serializable {
     public SummaryChronicle() {
     }
 
-    public SummaryChronicle(String id, String name, ChronicleProducer documentProducer, String description, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, String timezone, java.lang.Object metadata, ChronicleValidation validation, String priority, String status, java.util.List<String> labels, java.util.List<String> locations, java.util.List<ActivityChronicle> activityChronicles, java.util.List<EventChronicle> eventChronicles, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt) {
+    public SummaryChronicle(String id, String name, ChronicleProducer chronicleProducer, String description, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, String timezone, java.lang.Object metadata, ChronicleValidation validation, String priority, String status, java.util.List<String> labels, java.util.List<String> locations, java.util.List<ActivityChronicle> activityChronicles, java.util.List<EventChronicle> eventChronicles, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt) {
         this.id = id;
         this.name = name;
-        this.documentProducer = documentProducer;
+        this.chronicleProducer = chronicleProducer;
         this.description = description;
         this.startTime = startTime;
         this.endTime = endTime;
@@ -69,11 +69,11 @@ public class SummaryChronicle implements java.io.Serializable {
         this.name = name;
     }
 
-    public ChronicleProducer getDocumentProducer() {
-        return documentProducer;
+    public ChronicleProducer getChronicleProducer() {
+        return chronicleProducer;
     }
-    public void setDocumentProducer(ChronicleProducer documentProducer) {
-        this.documentProducer = documentProducer;
+    public void setChronicleProducer(ChronicleProducer chronicleProducer) {
+        this.chronicleProducer = chronicleProducer;
     }
 
     public String getDescription() {
@@ -184,7 +184,7 @@ public class SummaryChronicle implements java.io.Serializable {
 
         private String id;
         private String name;
-        private ChronicleProducer documentProducer;
+        private ChronicleProducer chronicleProducer;
         private String description;
         private java.time.OffsetDateTime startTime;
         private java.time.OffsetDateTime endTime;
@@ -213,8 +213,8 @@ public class SummaryChronicle implements java.io.Serializable {
             return this;
         }
 
-        public Builder setDocumentProducer(ChronicleProducer documentProducer) {
-            this.documentProducer = documentProducer;
+        public Builder setChronicleProducer(ChronicleProducer chronicleProducer) {
+            this.chronicleProducer = chronicleProducer;
             return this;
         }
 
@@ -290,7 +290,7 @@ public class SummaryChronicle implements java.io.Serializable {
 
 
         public SummaryChronicle build() {
-            return new SummaryChronicle(id, name, documentProducer, description, startTime, endTime, timezone, metadata, validation, priority, status, labels, locations, activityChronicles, eventChronicles, createdAt, updatedAt);
+            return new SummaryChronicle(id, name, chronicleProducer, description, startTime, endTime, timezone, metadata, validation, priority, status, labels, locations, activityChronicles, eventChronicles, createdAt, updatedAt);
         }
 
     }
