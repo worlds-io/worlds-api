@@ -10,8 +10,8 @@ input FilterSummaryChronicleInput @experimental {
   labels: FilterStringListInput
   locations: FilterStringListInput
   chronicleDocumentProducerId: FilterIDInput
-  activityChronicleIds: [FilterIDInput!]
-  eventChronicleIds: [FilterIDInput!]
+  activityChronicleIds: FilterIDListInput
+  eventChronicleIds: FilterIDListInput
 
   and: [FilterSummaryChronicleInput!]
   or: [FilterSummaryChronicleInput!]
