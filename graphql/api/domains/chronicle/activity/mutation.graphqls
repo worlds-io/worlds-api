@@ -1,4 +1,4 @@
 extend type Mutation {
-    createActivityChronicle(input: CreateActivityChronicleInput!): ActivityChronicle! @experimental
-    updateActivityChronicle(input: UpdateActivityChronicleInput!): ActivityChronicle! @experimental
+    createActivityChronicle(activityChronicle: CreateActivityChronicleInput!): ActivityChronicle! @experimental
+    updateActivityChronicle(activityChronicle: UpdateActivityChronicleInput!): ActivityChronicle! @experimental
 }
