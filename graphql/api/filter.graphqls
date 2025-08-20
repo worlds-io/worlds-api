@@ -11,14 +11,11 @@ input FilterIDInput {
 input FilterIDListInput @experimental {
   eq: [ID!]
   in: [ID!]
-  not: FilterIDListInput
 }
 
 input FilterStringListInput @experimental {
   eq: [String!]
-  # consider 'like' here
   in: [String!]
-  not: FilterStringListInput
 }
 
 """
