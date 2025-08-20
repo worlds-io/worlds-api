@@ -1,6 +1,7 @@
 type EventChronicleConnection @experimental {
   edges: [EventChronicleEdge!]!
   pageInfo: PageInfo!
+  totalCount: Int!
 }
 
 type EventChronicleEdge @experimental {

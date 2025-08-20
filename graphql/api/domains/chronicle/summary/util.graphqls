@@ -1,6 +1,7 @@
 type SummaryChronicleConnection @experimental {
   edges: [SummaryChronicleEdge!]!
   pageInfo: PageInfo!
+  totalCount: Int!
 }
 
 type SummaryChronicleEdge @experimental {
