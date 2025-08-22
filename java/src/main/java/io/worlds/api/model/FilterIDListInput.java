@@ -7,15 +7,13 @@ public class FilterIDListInput implements java.io.Serializable {
 
     private java.util.List<String> eq;
     private java.util.List<String> in;
-    private org.springframework.graphql.data.ArgumentValue<FilterIDListInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
 
     public FilterIDListInput() {
     }
 
-    public FilterIDListInput(java.util.List<String> eq, java.util.List<String> in, org.springframework.graphql.data.ArgumentValue<FilterIDListInput> not) {
+    public FilterIDListInput(java.util.List<String> eq, java.util.List<String> in) {
         this.eq = eq;
         this.in = in;
-        this.not = not;
     }
 
     public java.util.List<String> getEq() {
@@ -32,13 +30,6 @@ public class FilterIDListInput implements java.io.Serializable {
         this.in = in;
     }
 
-    public org.springframework.graphql.data.ArgumentValue<FilterIDListInput> getNot() {
-        return not;
-    }
-    public void setNot(org.springframework.graphql.data.ArgumentValue<FilterIDListInput> not) {
-        this.not = not;
-    }
-
 
 
     public static FilterIDListInput.Builder builder() {
@@ -49,7 +40,6 @@ public class FilterIDListInput implements java.io.Serializable {
 
         private java.util.List<String> eq;
         private java.util.List<String> in;
-        private org.springframework.graphql.data.ArgumentValue<FilterIDListInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
 
         public Builder() {
         }
@@ -64,14 +54,9 @@ public class FilterIDListInput implements java.io.Serializable {
             return this;
         }
 
-        public Builder setNot(org.springframework.graphql.data.ArgumentValue<FilterIDListInput> not) {
-            this.not = not;
-            return this;
-        }
-
 
         public FilterIDListInput build() {
-            return new FilterIDListInput(eq, in, not);
+            return new FilterIDListInput(eq, in);
         }
 
     }

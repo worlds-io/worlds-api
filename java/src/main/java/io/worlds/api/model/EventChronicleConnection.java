@@ -9,13 +9,15 @@ public class EventChronicleConnection implements java.io.Serializable {
     private java.util.List<EventChronicleEdge> edges;
     @jakarta.validation.constraints.NotNull
     private PageInfo pageInfo;
+    private int totalCount;
 
     public EventChronicleConnection() {
     }
 
-    public EventChronicleConnection(java.util.List<EventChronicleEdge> edges, PageInfo pageInfo) {
+    public EventChronicleConnection(java.util.List<EventChronicleEdge> edges, PageInfo pageInfo, int totalCount) {
         this.edges = edges;
         this.pageInfo = pageInfo;
+        this.totalCount = totalCount;
     }
 
     public java.util.List<EventChronicleEdge> getEdges() {
@@ -32,6 +34,13 @@ public class EventChronicleConnection implements java.io.Serializable {
         this.pageInfo = pageInfo;
     }
 
+    public int getTotalCount() {
+        return totalCount;
+    }
+    public void setTotalCount(int totalCount) {
+        this.totalCount = totalCount;
+    }
+
 
 
     public static EventChronicleConnection.Builder builder() {
@@ -42,6 +51,7 @@ public class EventChronicleConnection implements java.io.Serializable {
 
         private java.util.List<EventChronicleEdge> edges;
         private PageInfo pageInfo;
+        private int totalCount;
 
         public Builder() {
         }
@@ -56,9 +66,14 @@ public class EventChronicleConnection implements java.io.Serializable {
             return this;
         }
 
+        public Builder setTotalCount(int totalCount) {
+            this.totalCount = totalCount;
+            return this;
+        }
+
 
         public EventChronicleConnection build() {
-            return new EventChronicleConnection(edges, pageInfo);
+            return new EventChronicleConnection(edges, pageInfo, totalCount);
         }
 
     }
