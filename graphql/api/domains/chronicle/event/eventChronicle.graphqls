@@ -29,7 +29,7 @@ input CreateEventChronicleInput @experimental {
     labels: [String!]
     locations: [String!]
     validation: ChronicleValidationInput
-    activityChronicleIds: [ID!]!
+    activityChronicleIds: [ID!]
 }
 
 input UpdateEventChronicleInput @experimental {

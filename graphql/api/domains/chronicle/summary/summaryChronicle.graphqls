@@ -32,8 +32,8 @@ input CreateSummaryChronicleInput @experimental {
     labels: [String!]
     locations: [String!]
     validation: ChronicleValidationInput
-    activityChronicleIds: [ID!]!
-    eventChronicleIds: [ID!]!
+    activityChronicleIds: [ID!]
+    eventChronicleIds: [ID!]
 }
 
 input UpdateSummaryChronicleInput @experimental {

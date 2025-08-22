@@ -13,19 +13,19 @@ public class ChronicleProducer implements java.io.Serializable {
     private String timezone;
     private boolean active;
     @jakarta.validation.constraints.NotNull
-    private java.util.List<String> invalidReasons;
+    private java.util.List<String> validationReasons;
     private java.lang.Object metadata;
 
     public ChronicleProducer() {
     }
 
-    public ChronicleProducer(String id, String name, String description, String timezone, boolean active, java.util.List<String> invalidReasons, java.lang.Object metadata) {
+    public ChronicleProducer(String id, String name, String description, String timezone, boolean active, java.util.List<String> validationReasons, java.lang.Object metadata) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.timezone = timezone;
         this.active = active;
-        this.invalidReasons = invalidReasons;
+        this.validationReasons = validationReasons;
         this.metadata = metadata;
     }
 
@@ -64,11 +64,11 @@ public class ChronicleProducer implements java.io.Serializable {
         this.active = active;
     }
 
-    public java.util.List<String> getInvalidReasons() {
-        return invalidReasons;
+    public java.util.List<String> getValidationReasons() {
+        return validationReasons;
     }
-    public void setInvalidReasons(java.util.List<String> invalidReasons) {
-        this.invalidReasons = invalidReasons;
+    public void setValidationReasons(java.util.List<String> validationReasons) {
+        this.validationReasons = validationReasons;
     }
 
     public java.lang.Object getMetadata() {
@@ -91,7 +91,7 @@ public class ChronicleProducer implements java.io.Serializable {
         private String description;
         private String timezone;
         private boolean active;
-        private java.util.List<String> invalidReasons;
+        private java.util.List<String> validationReasons;
         private java.lang.Object metadata;
 
         public Builder() {
@@ -122,8 +122,8 @@ public class ChronicleProducer implements java.io.Serializable {
             return this;
         }
 
-        public Builder setInvalidReasons(java.util.List<String> invalidReasons) {
-            this.invalidReasons = invalidReasons;
+        public Builder setValidationReasons(java.util.List<String> validationReasons) {
+            this.validationReasons = validationReasons;
             return this;
         }
 
@@ -134,7 +134,7 @@ public class ChronicleProducer implements java.io.Serializable {
 
 
         public ChronicleProducer build() {
-            return new ChronicleProducer(id, name, description, timezone, active, invalidReasons, metadata);
+            return new ChronicleProducer(id, name, description, timezone, active, validationReasons, metadata);
         }
 
     }
