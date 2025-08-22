@@ -1,7 +1,6 @@
 type ActivityChronicleConnection @experimental {
   edges: [ActivityChronicleEdge!]!
   pageInfo: PageInfo!
-  totalCount: Int!
 }
 
 type ActivityChronicleEdge @experimental {
