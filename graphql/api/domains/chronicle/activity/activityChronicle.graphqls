@@ -13,7 +13,7 @@ type ActivityChronicle @experimental {
     labels: [String!]
     locations: [String!]
     images: [Image!]!
-    videos: [Video!]!
+    dataSourceClips: [DataSourceClip!]!
     tracks: [Track!]
     sites: [Site!]
     dataSources: [DataSource!]
@@ -38,7 +38,7 @@ input CreateActivityChronicleInput @experimental {
     locations: [String!]
     validation: ChronicleValidationInput
     imageIds: [ID!]
-    videoIds: [ID!]
+    clips: [CreateClipInput!]
     trackIds: [ID!]
     siteIds: [ID!]
     dataSourceIds: [ID!]
@@ -60,7 +60,7 @@ input UpdateActivityChronicleInput @experimental {
     locations: [String!]
     validation: ChronicleValidationInput
     imageIds: [ID!]
-    videoIds: [ID!]
+    clips: [CreateClipInput!]
     trackIds: [ID!]
     siteIds: [ID!]
     dataSourceIds: [ID!]
