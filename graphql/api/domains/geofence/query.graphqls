@@ -99,9 +99,6 @@ extend type Query {
     sort: [GeofencesSort!]! = [{field: NAME, direction: ASC}, {field: ID, direction: ASC}]
   ): GeofenceConnection
   """
-  :::caution
-  `geofenceEvents` is deprecated. Use [`geofenceIntersections`](/reference/query/#geofenceintersections) instead.
-  :::
   Find events for a geofence based on a set of filters.
   """
   geofenceEvents(
@@ -113,7 +110,7 @@ extend type Query {
     after: String
     """The field and direction by which to sort the results"""
     sort: [GeofenceEventsSort!]! = [{field: OCCURRED, direction: ASC}, {field: ID, direction: ASC}]
-  ): GeofenceEventConnection @deprecated(reason: "geofenceEvents is deprecated, use geofenceIntersections instead")
+  ): GeofenceEventConnection @deprecated(reason: "`geofenceEvents` is deprecated. Use `geofenceIntersections` instead")
   """Find events for a geofence based on a set of filters."""
   geofenceIntersections(
     """

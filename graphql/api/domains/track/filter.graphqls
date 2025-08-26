@@ -44,12 +44,9 @@ input FilterTrackInput {
   """
   not: FilterTrackInput
   """
-  :::caution
-  `deviceId` is deprecated. Use `dataSourceId` instead
-  :::
   If provided, specifies filters that work against the [unique id](/reference/objects/detection/#cameraid) of the device that initiated the track.
   """
-  deviceId: FilterIDInput @deprecated(reason: "deviceId is deprecated, use dataSourceId instead")
+  deviceId: FilterIDInput @deprecated(reason: "`deviceId` is deprecated. Use `dataSourceId` instead")
 }
 
 """

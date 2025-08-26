@@ -83,9 +83,6 @@ extend type Query {
     sort: [ZonesSort!]! = [{field: NAME, direction: ASC}, {field: ID, direction: ASC}]
   ): ZoneConnection
   """
-  :::caution
-  `zoneEvents` is deprecated. Use [`zoneIntersections`](/reference/query/#zoneintersections) instead.
-  :::
   Find events for a zone based on a set of filters.
   """
   zoneEvents(
@@ -97,7 +94,7 @@ extend type Query {
     after: String
     """The field and direction by which to sort the results"""
     sort: [ZoneEventsSort!]! = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]
-  ): ZoneEventConnection @deprecated(reason: "zoneEvents is deprecated, use zoneIntersections instead")
+  ): ZoneEventConnection @deprecated(reason: "`zoneEvents` is deprecated. Use `zoneIntersections` instead")
   """Find intersections for a zone based on a set of filters."""
   zoneIntersections(
     """Filter zone intersections based on the zone id, time period, etc."""

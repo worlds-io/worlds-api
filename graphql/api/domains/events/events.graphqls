@@ -95,12 +95,9 @@ type Event {
   """The images that are associated with this event."""
   images: [Image!]!
   """
-  :::caution
-  Event videos is deprecated in favor of [`dataSourceClips`](/reference/objects/video/#datasourceclips)
-  :::
   The videos that are associated with this event.
   """
-  videos: [Video!]! @deprecated(reason: "The 'videos' field in the 'Event' type is deprecated. Refer to the 'dataSourceClips' field in the 'Event' type")
+  videos: [Video!]! @deprecated(reason: "`videos` is deprecated. Use `dataSourceClips` instead.")
   """Video clips that are associated with this event."""
   dataSourceClips: [DataSourceClip!]!
   """

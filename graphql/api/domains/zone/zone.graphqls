@@ -14,12 +14,9 @@ type Zone {
   """The timestamp the zone was most recently updated."""
   updatedAt: DateTimeOffset
   """
-  :::caution
-  `deviceId` is deprecated. Use `dataSource` instead
-  :::
   The unique identifier for the camera the zone belongs to.
   """
-  deviceId: ID! @deprecated(reason: "deviceId is deprecated, use dataSource.id instead")
+  deviceId: ID! @deprecated(reason: "`deviceId` is deprecated. Use `dataSource.id` instead")
 }
 
 type ZoneEvent {

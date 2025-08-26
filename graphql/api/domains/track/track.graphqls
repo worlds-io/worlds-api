@@ -26,12 +26,9 @@ type Track {
   """
   geofenceIntersections: [GeofenceIntersection!]
   """
-  :::caution
-  `deviceIds` is deprecated. Use `dataSource.id` instead
-  :::
   The unique identifiers of the devices that captured the Track.
   """
-  deviceIds: [ID!] @deprecated(reason: "deviceIds is deprecated, use dataSource.id instead")
+  deviceIds: [ID!] @deprecated(reason: "`deviceIds` is deprecated. Use `dataSource.id` instead")
 }
 
 type TrackProperties {

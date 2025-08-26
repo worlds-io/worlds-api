@@ -44,9 +44,6 @@ input FilterDetectionInput {
   """
   not: FilterDetectionInput
   """
-  :::caution
-  `deviceId` is deprecated. Use `dataSourceId` instead
-  :::
   If provided, specifies filters that work against the [unique id](/reference/objects/detection/#cameraid) of the device that initiated the detection.
   """
   deviceId: FilterIDInput @deprecated(reason: "deviceId is deprecated use dataSourceId instead")
@@ -90,10 +87,7 @@ input FilterDetectionActivityInput {
   """
   not: FilterDetectionActivityInput
   """
-  :::caution
-  `deviceId` is deprecated. Use `dataSourceId` instead
-  :::
   If provided, specifies filters that work against the [unique id](/reference/objects/detection/#cameraid) of the device that initiated the detection activity.
   """
-  deviceId: FilterIDInput @deprecated(reason: "deviceId is deprecated, use dataSourceId instead")
+  deviceId: FilterIDInput @deprecated(reason: "`deviceId` is deprecated. Use `dataSourceId` instead")
 }
