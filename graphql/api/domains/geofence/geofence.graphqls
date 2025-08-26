@@ -34,48 +34,43 @@ type GeofenceEvent {
   """The track indicated by the event."""
   track: Track!
   """
-  :::caution
   [`geofenceEvents`](/reference/query/#zoneintersections) is deprecated in favor of [`geofenceIntersections`](/reference/query/#geofenceintersections),
   and `tag` will not be present on [`GeofenceIntersection`](/reference/objects/geofenceintersection/).
   Use [track's tag](/reference/objects/track/#tag) instead.
-  :::
+
   The class label of the object that triggered the geofence event, i.e person,
   car, truck, etc.
   """
   tag: String! @deprecated(reason: "tag is deprecated and can instead be retrieved from the track.")
   """
-  :::caution
   [`geofenceEvents`](/reference/query/#zoneintersections) is deprecated in favor of [`geofenceIntersections`](/reference/query/#geofenceintersections),
   and `type` will not be present on [`GeofenceIntersection`](/reference/objects/geofenceintersection/).\
-  :::
+
   The type of geofence event, i.e ingress (an object entered the geofence), dwell
   (an object remained in the geofence), and egress. (an object exited the
   geofence)
   """
   type: ActivityType! @deprecated(reason: "geofenceEvent is deprecated in favor of geofenceIntersection, which does not use type.")
   """
-  :::caution
   [`geofenceEvents`](/reference/query/#zoneintersections) is deprecated in favor of [`geofenceIntersections`](/reference/query/#geofenceintersections),
   and `position` will not be present on [`GeofenceIntersection`](/reference/objects/geofenceintersection/).
-  :::
+
   The GeoJSON point for the position of the track at the time of the geofence
   event.
   """
   position: GeoJSONPoint! @deprecated(reason: "geofenceEvent is deprecated in favor of geofenceIntersection, which does not use position.")
   """
-  :::caution
   [`geofenceEvents`](/reference/query/#zoneintersections) is deprecated in favor of [`geofenceIntersections`](/reference/query/#geofenceintersections),
   and `timestamp` will not be present on [`GeofenceIntersection`](/reference/objects/geofenceintersection/).
   Use [`startTime`](/reference/objects/geofenceintersection/#starttime) and [`endTime`](/reference/objects/geofenceintersection/#endtime) instead.
-  :::
+
   The timestamp at which the event occurred.
   """
   timestamp: DateTimeOffset! @deprecated(reason: "geofenceEvent is deprecated in favor of geofenceIntersection, which does not use type, using startTime and endTime instead.")
   """
-  :::caution
   [`geofenceEvents`](/reference/query/#zoneintersections) is deprecated in favor of [`geofenceIntersections`](/reference/query/#geofenceintersections),
   and `metadata` will not be present on [`GeofenceIntersection`](/reference/objects/geofenceintersection/).
-  :::
+
   Any additional information about the event will be stored here.
   """
   metadata: JSON @deprecated(reason: "geofenceEvent is deprecated in favor of geofenceIntersection, which does not use metadata.")
