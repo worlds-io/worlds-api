@@ -24,9 +24,7 @@ public class CreateSummaryChronicleInput implements java.io.Serializable {
     private java.util.List<String> labels;
     private java.util.List<String> locations;
     private org.springframework.graphql.data.ArgumentValue<ChronicleValidationInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
-    @jakarta.validation.constraints.NotNull
     private java.util.List<String> activityChronicleIds;
-    @jakarta.validation.constraints.NotNull
     private java.util.List<String> eventChronicleIds;
 
     public CreateSummaryChronicleInput() {

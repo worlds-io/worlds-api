@@ -11,18 +11,18 @@ public class CreateChronicleProducerInput implements java.io.Serializable {
     private org.springframework.graphql.data.ArgumentValue<String> timezone = org.springframework.graphql.data.ArgumentValue.omitted();
     private boolean active;
     private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
-    private java.util.List<String> invalidReasons;
+    private java.util.List<String> validationReasons;
 
     public CreateChronicleProducerInput() {
     }
 
-    public CreateChronicleProducerInput(String name, org.springframework.graphql.data.ArgumentValue<String> description, org.springframework.graphql.data.ArgumentValue<String> timezone, boolean active, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, java.util.List<String> invalidReasons) {
+    public CreateChronicleProducerInput(String name, org.springframework.graphql.data.ArgumentValue<String> description, org.springframework.graphql.data.ArgumentValue<String> timezone, boolean active, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, java.util.List<String> validationReasons) {
         this.name = name;
         this.description = description;
         this.timezone = timezone;
         this.active = active;
         this.metadata = metadata;
-        this.invalidReasons = invalidReasons;
+        this.validationReasons = validationReasons;
     }
 
     public String getName() {
@@ -60,11 +60,11 @@ public class CreateChronicleProducerInput implements java.io.Serializable {
         this.metadata = metadata;
     }
 
-    public java.util.List<String> getInvalidReasons() {
-        return invalidReasons;
+    public java.util.List<String> getValidationReasons() {
+        return validationReasons;
     }
-    public void setInvalidReasons(java.util.List<String> invalidReasons) {
-        this.invalidReasons = invalidReasons;
+    public void setValidationReasons(java.util.List<String> validationReasons) {
+        this.validationReasons = validationReasons;
     }
 
 
@@ -80,7 +80,7 @@ public class CreateChronicleProducerInput implements java.io.Serializable {
         private org.springframework.graphql.data.ArgumentValue<String> timezone = org.springframework.graphql.data.ArgumentValue.omitted();
         private boolean active;
         private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
-        private java.util.List<String> invalidReasons;
+        private java.util.List<String> validationReasons;
 
         public Builder() {
         }
@@ -110,14 +110,14 @@ public class CreateChronicleProducerInput implements java.io.Serializable {
             return this;
         }
 
-        public Builder setInvalidReasons(java.util.List<String> invalidReasons) {
-            this.invalidReasons = invalidReasons;
+        public Builder setValidationReasons(java.util.List<String> validationReasons) {
+            this.validationReasons = validationReasons;
             return this;
         }
 
 
         public CreateChronicleProducerInput build() {
-            return new CreateChronicleProducerInput(name, description, timezone, active, metadata, invalidReasons);
+            return new CreateChronicleProducerInput(name, description, timezone, active, metadata, validationReasons);
         }
 
     }

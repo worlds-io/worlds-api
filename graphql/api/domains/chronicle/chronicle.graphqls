@@ -15,7 +15,7 @@ type ChronicleProducer @experimental {
     description: String
     timezone: String
     active: Boolean!
-    invalidReasons: [String!]!
+    validationReasons: [String!]!
     metadata: JSON
 }
 
@@ -25,7 +25,7 @@ input CreateChronicleProducerInput @experimental {
     timezone: String
     active: Boolean!
     metadata: JSON
-    invalidReasons: [String!]
+    validationReasons: [String!]
 }
 
 input UpdateChronicleProducerInput @experimental {
@@ -35,7 +35,7 @@ input UpdateChronicleProducerInput @experimental {
     timezone: String
     active: Boolean
     metadata: JSON
-    invalidReasons: [String!]
+    validationReasons: [String!]
 }
 
 # Supporting input for validation

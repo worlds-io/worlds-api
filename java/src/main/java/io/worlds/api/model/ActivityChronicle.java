@@ -25,7 +25,7 @@ public class ActivityChronicle implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private java.util.List<Image> images;
     @jakarta.validation.constraints.NotNull
-    private java.util.List<Video> videos;
+    private java.util.List<DataSourceClip> dataSourceClips;
     private java.util.List<Track> tracks;
     private java.util.List<Site> sites;
     private java.util.List<DataSource> dataSources;
@@ -39,7 +39,7 @@ public class ActivityChronicle implements java.io.Serializable {
     public ActivityChronicle() {
     }
 
-    public ActivityChronicle(String id, ChronicleProducer chronicleProducer, String name, String description, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, String timezone, java.lang.Object metadata, ChronicleValidation validation, String priority, String status, java.util.List<String> labels, java.util.List<String> locations, java.util.List<Image> images, java.util.List<Video> videos, java.util.List<Track> tracks, java.util.List<Site> sites, java.util.List<DataSource> dataSources, java.util.List<Tag> tags, java.util.List<PointOfInterest> pointsOfInterest, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt) {
+    public ActivityChronicle(String id, ChronicleProducer chronicleProducer, String name, String description, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, String timezone, java.lang.Object metadata, ChronicleValidation validation, String priority, String status, java.util.List<String> labels, java.util.List<String> locations, java.util.List<Image> images, java.util.List<DataSourceClip> dataSourceClips, java.util.List<Track> tracks, java.util.List<Site> sites, java.util.List<DataSource> dataSources, java.util.List<Tag> tags, java.util.List<PointOfInterest> pointsOfInterest, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt) {
         this.id = id;
         this.chronicleProducer = chronicleProducer;
         this.name = name;
@@ -54,7 +54,7 @@ public class ActivityChronicle implements java.io.Serializable {
         this.labels = labels;
         this.locations = locations;
         this.images = images;
-        this.videos = videos;
+        this.dataSourceClips = dataSourceClips;
         this.tracks = tracks;
         this.sites = sites;
         this.dataSources = dataSources;
@@ -162,11 +162,11 @@ public class ActivityChronicle implements java.io.Serializable {
         this.images = images;
     }
 
-    public java.util.List<Video> getVideos() {
-        return videos;
+    public java.util.List<DataSourceClip> getDataSourceClips() {
+        return dataSourceClips;
     }
-    public void setVideos(java.util.List<Video> videos) {
-        this.videos = videos;
+    public void setDataSourceClips(java.util.List<DataSourceClip> dataSourceClips) {
+        this.dataSourceClips = dataSourceClips;
     }
 
     public java.util.List<Track> getTracks() {
@@ -240,7 +240,7 @@ public class ActivityChronicle implements java.io.Serializable {
         private java.util.List<String> labels;
         private java.util.List<String> locations;
         private java.util.List<Image> images;
-        private java.util.List<Video> videos;
+        private java.util.List<DataSourceClip> dataSourceClips;
         private java.util.List<Track> tracks;
         private java.util.List<Site> sites;
         private java.util.List<DataSource> dataSources;
@@ -322,8 +322,8 @@ public class ActivityChronicle implements java.io.Serializable {
             return this;
         }
 
-        public Builder setVideos(java.util.List<Video> videos) {
-            this.videos = videos;
+        public Builder setDataSourceClips(java.util.List<DataSourceClip> dataSourceClips) {
+            this.dataSourceClips = dataSourceClips;
             return this;
         }
 
@@ -364,7 +364,7 @@ public class ActivityChronicle implements java.io.Serializable {
 
 
         public ActivityChronicle build() {
-            return new ActivityChronicle(id, chronicleProducer, name, description, startTime, endTime, timezone, metadata, validation, priority, status, labels, locations, images, videos, tracks, sites, dataSources, tags, pointsOfInterest, createdAt, updatedAt);
+            return new ActivityChronicle(id, chronicleProducer, name, description, startTime, endTime, timezone, metadata, validation, priority, status, labels, locations, images, dataSourceClips, tracks, sites, dataSources, tags, pointsOfInterest, createdAt, updatedAt);
         }
 
     }

@@ -1,7 +1,6 @@
 type ChronicleProducerConnection @experimental {
   edges: [ChronicleProducerEdge!]!
   pageInfo: PageInfo!
-  totalCount: Int!
 }
 
 type ChronicleProducerEdge @experimental {

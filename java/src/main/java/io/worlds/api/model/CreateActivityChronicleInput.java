@@ -24,7 +24,7 @@ public class CreateActivityChronicleInput implements java.io.Serializable {
     private java.util.List<String> locations;
     private org.springframework.graphql.data.ArgumentValue<ChronicleValidationInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<String> imageIds;
-    private java.util.List<String> videoIds;
+    private java.util.List<CreateClipInput> clips;
     private java.util.List<String> trackIds;
     private java.util.List<String> siteIds;
     private java.util.List<String> dataSourceIds;
@@ -34,7 +34,7 @@ public class CreateActivityChronicleInput implements java.io.Serializable {
     public CreateActivityChronicleInput() {
     }
 
-    public CreateActivityChronicleInput(String name, String chronicleProducerId, org.springframework.graphql.data.ArgumentValue<String> description, java.time.OffsetDateTime startTime, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, org.springframework.graphql.data.ArgumentValue<String> priority, org.springframework.graphql.data.ArgumentValue<String> status, java.util.List<String> labels, java.util.List<String> locations, org.springframework.graphql.data.ArgumentValue<ChronicleValidationInput> validation, java.util.List<String> imageIds, java.util.List<String> videoIds, java.util.List<String> trackIds, java.util.List<String> siteIds, java.util.List<String> dataSourceIds, java.util.List<String> tagIds, java.util.List<String> pointOfInterestIds) {
+    public CreateActivityChronicleInput(String name, String chronicleProducerId, org.springframework.graphql.data.ArgumentValue<String> description, java.time.OffsetDateTime startTime, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, org.springframework.graphql.data.ArgumentValue<String> priority, org.springframework.graphql.data.ArgumentValue<String> status, java.util.List<String> labels, java.util.List<String> locations, org.springframework.graphql.data.ArgumentValue<ChronicleValidationInput> validation, java.util.List<String> imageIds, java.util.List<CreateClipInput> clips, java.util.List<String> trackIds, java.util.List<String> siteIds, java.util.List<String> dataSourceIds, java.util.List<String> tagIds, java.util.List<String> pointOfInterestIds) {
         this.name = name;
         this.chronicleProducerId = chronicleProducerId;
         this.description = description;
@@ -48,7 +48,7 @@ public class CreateActivityChronicleInput implements java.io.Serializable {
         this.locations = locations;
         this.validation = validation;
         this.imageIds = imageIds;
-        this.videoIds = videoIds;
+        this.clips = clips;
         this.trackIds = trackIds;
         this.siteIds = siteIds;
         this.dataSourceIds = dataSourceIds;
@@ -147,11 +147,11 @@ public class CreateActivityChronicleInput implements java.io.Serializable {
         this.imageIds = imageIds;
     }
 
-    public java.util.List<String> getVideoIds() {
-        return videoIds;
+    public java.util.List<CreateClipInput> getClips() {
+        return clips;
     }
-    public void setVideoIds(java.util.List<String> videoIds) {
-        this.videoIds = videoIds;
+    public void setClips(java.util.List<CreateClipInput> clips) {
+        this.clips = clips;
     }
 
     public java.util.List<String> getTrackIds() {
@@ -210,7 +210,7 @@ public class CreateActivityChronicleInput implements java.io.Serializable {
         private java.util.List<String> locations;
         private org.springframework.graphql.data.ArgumentValue<ChronicleValidationInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<String> imageIds;
-        private java.util.List<String> videoIds;
+        private java.util.List<CreateClipInput> clips;
         private java.util.List<String> trackIds;
         private java.util.List<String> siteIds;
         private java.util.List<String> dataSourceIds;
@@ -285,8 +285,8 @@ public class CreateActivityChronicleInput implements java.io.Serializable {
             return this;
         }
 
-        public Builder setVideoIds(java.util.List<String> videoIds) {
-            this.videoIds = videoIds;
+        public Builder setClips(java.util.List<CreateClipInput> clips) {
+            this.clips = clips;
             return this;
         }
 
@@ -317,7 +317,7 @@ public class CreateActivityChronicleInput implements java.io.Serializable {
 
 
         public CreateActivityChronicleInput build() {
-            return new CreateActivityChronicleInput(name, chronicleProducerId, description, startTime, endTime, timezone, metadata, priority, status, labels, locations, validation, imageIds, videoIds, trackIds, siteIds, dataSourceIds, tagIds, pointOfInterestIds);
+            return new CreateActivityChronicleInput(name, chronicleProducerId, description, startTime, endTime, timezone, metadata, priority, status, labels, locations, validation, imageIds, clips, trackIds, siteIds, dataSourceIds, tagIds, pointOfInterestIds);
         }
 
     }
