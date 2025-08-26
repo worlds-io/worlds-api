@@ -1,5 +1,5 @@
 extend type Mutation {
-  """Creates a new [Track](/reference/objects/track/)."""
+  """Creates a new [Track]({{Types.track}})."""
   createTrack(
     """Arguments to create a new track."""
     track: CreateTrackInput!

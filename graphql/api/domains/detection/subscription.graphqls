@@ -1,6 +1,6 @@
 extend type Subscription {
   """
-  Subscribes to changes in any [`Detection`](/reference/objects/detection/) based on the given filter.
+  Subscribes to changes in any [`Detection`]({{Types.detection}}) based on the given filter.
   """
   detectionActivity(
     """

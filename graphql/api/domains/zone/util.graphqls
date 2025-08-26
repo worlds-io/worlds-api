@@ -7,11 +7,11 @@ type ZoneEventConnection {
 
 type ZoneEventEdge {
   """
-  Information about a particular [ZoneEvent](/reference/objects/zoneevent/).
+  Information about a particular [ZoneEvent]({{Types.zoneevent}}).
   """
   node: ZoneEvent
   """
-  The cursor to use with the [Query `zoneEvents` field](/reference/query/#zoneevents) `after` argument.
+  The cursor to use with the [Query `zoneEvents` field]({{Queries.zoneevents}}) `after` argument.
   """
   cursor: String!
 }
@@ -25,11 +25,11 @@ type ZoneIntersectionConnection {
 
 type ZoneIntersectionEdge {
   """
-  Information about a particular [ZoneIntersection](/reference/objects/zoneintersection/).
+  Information about a particular [ZoneIntersection]({{Types.zoneintersection}}).
   """
   node: ZoneIntersection
   """
-  The cursor to use with the [Query `zoneIntersections` field](/reference/query/#zoneintersections) `after` argument.
+  The cursor to use with the [Query `zoneIntersections` field]({{Queries.zoneintersections}}) `after` argument.
   """
   cursor: String!
 }
@@ -42,10 +42,10 @@ type ZoneConnection {
 }
 
 type ZoneEdge {
-  """Information about a particular [Zone](/reference/objects/zone/)."""
+  """Information about a particular [Zone]({{Types.zone}})."""
   node: Zone
   """
-  The cursor to use with the [Query `zones` field](/reference/query/#zones) `after` argument.
+  The cursor to use with the [Query `zones` field]({{Queries.zones}}) `after` argument.
   """
   cursor: String!
 }

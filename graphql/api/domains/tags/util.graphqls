@@ -1,5 +1,5 @@
 """
-A `TagConnection` is the paginated result of a [`tags` query](/reference/query/#tags)
+A `TagConnection` is the paginated result of a [`tags` query]({{Queries.tags}})
 See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type TagConnection {
@@ -10,14 +10,14 @@ type TagConnection {
 }
 
 """
-A tag edge is the pairing of a [Tag](/reference/objects/tag/) with its query cursor.
+A tag edge is the pairing of a [Tag]({{Types.tag}}) with its query cursor.
 See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type TagEdge {
-  """Information about a particular [Tag](/reference/objects/tag/)."""
+  """Information about a particular [Tag]({{Types.tag}})."""
   node: Tag
   """
-  The cursor to use with the [Query `tags` field](/reference/query/#tags) `after` argument.
+  The cursor to use with the [Query `tags` field]({{Queries.tags}}) `after` argument.
   """
   cursor: String!
 }

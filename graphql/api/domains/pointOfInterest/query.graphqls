@@ -1,5 +1,5 @@
 """
-Indicates the field used for sorting a [`pointsOfInterest` query](/reference/query/#pointsOfInterest).
+Indicates the field used for sorting a [`pointsOfInterest` query]({{Queries.pointsOfInterest}}).
 """
 enum PointOfInterestSortField {
   """

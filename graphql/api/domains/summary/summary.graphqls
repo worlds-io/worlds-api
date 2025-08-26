@@ -1,24 +1,24 @@
 type TracksSummary {
   """
-  The total number of [Tracks](/reference/objects/track/) within the time range.
+  The total number of [Tracks]({{Types.track}}) within the time range.
   """
   total: Int!
   """
-  The count of [Tracks](/reference/objects/track/) for each [Tag](/reference/objects/tag/) within the time range.
+  The count of [Tracks]({{Types.track}}) for each [Tag]({{Types.tag}}) within the time range.
   """
   totalsByTag: [TracksCountByTag!]!
   """
   A detailed summary of each [bucket](/reference/enums/#summarybucketsize) within the time range.
-  Summary buckets are only returned if `bucket` is provided as a query parameter to [`tracksSummary`](/reference/query/#trackssummary).
+  Summary buckets are only returned if `bucket` is provided as a query parameter to [`tracksSummary`]({{Queries.trackssummary}}).
   """
   buckets: [TracksSummaryBucket!]
 }
 
 type TracksCountByTag {
-  """The name of the [tag](/reference/objects/tag)."""
+  """The name of the [tag]({{Types.tag}})."""
   tag: String!
   """
-  The total count of [Tracks](/reference/objects/track/) within the time range with a matching tag.
+  The total count of [Tracks]({{Types.track}}) within the time range with a matching tag.
   """
   count: Int!
 }
@@ -27,23 +27,23 @@ type TracksSummaryBucket {
   """The start time of the bucket."""
   time: DateTimeOffset!
   """
-  The total number of [Tracks](/reference/objects/track/) within the bucket.
+  The total number of [Tracks]({{Types.track}}) within the bucket.
   """
   total: Int!
   """
-  The count of [Tracks](/reference/objects/track/) for each [Tag](/reference/objects/tag) within the bucket.
+  The count of [Tracks]({{Types.track}}) for each [Tag]({{Types.tag}}) within the bucket.
   """
   counts: [TracksCountByTag!]!
 }
 
 type EventsSummary {
   """
-  The total number of [Events](/reference/objects/event/) within the time range.
+  The total number of [Events]({{Types.event}}) within the time range.
   """
   total: Int!
   """
   A detailed summary of each [bucket](/reference/enums/#summarybucketsize) within the time range.
-  Summary buckets are only returned if `bucket` is provided as a query parameter to [`eventsSummary`](/reference/query/#eventssummary).
+  Summary buckets are only returned if `bucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventssummary}}).
   """
   buckets: [EventsSummaryBucket!]
 }
@@ -52,7 +52,7 @@ type EventsSummaryBucket {
   """The start time of the bucket."""
   time: DateTimeOffset!
   """
-  The total number of [Events](/reference/objects/event/) within the bucket.
+  The total number of [Events]({{Types.event}}) within the bucket.
   """
   total: Int!
 }

@@ -1,5 +1,5 @@
 """
-Indicates the field used for sorting an [`sites` query](/reference/query/#sites).
+Indicates the field used for sorting an [`sites` query]({{Queries.sites}}).
 """
 enum SitesSortField {
   """

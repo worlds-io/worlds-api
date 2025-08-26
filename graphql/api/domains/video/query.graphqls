@@ -1,5 +1,5 @@
 """
-Indicates the field used for sorting a [Videos query](/reference/query/#videos).
+Indicates the field used for sorting a [Videos query]({{Queries.videos}}).
 """
 enum VideosSortField {
   """Sort the resulting list in by its unique identifier."""

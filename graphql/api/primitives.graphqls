@@ -10,19 +10,19 @@ enum MessageState {
 
 # Types of collision activities for Geofences and Zones
 """
-Indicates the type of [GeofenceEvent](/reference/objects/geofenceevent/) or [ZoneEvent](/reference/objects/zoneevent/) reported by a [Geofence](/reference/objects/geofence/) or a [Zone](/reference/objects/zone/).
+Indicates the type of [GeofenceEvent]({{Types.geofenceevent}}) or [ZoneEvent]({{Types.zoneevent}}) reported by a [Geofence]({{Types.geofence}}) or a [Zone]({{Types.zone}}).
 """
 enum ActivityType {
   """
-  A detection entering a [Geofence](/reference/objects/geofence/) or a [Zone](/reference/objects/zone/).
+  A detection entering a [Geofence]({{Types.geofence}}) or a [Zone]({{Types.zone}}).
   """
   INGRESS
   """
-  A detection remaining inside a [Geofence](/reference/objects/geofence/) or a [Zone](/reference/objects/zone/).
+  A detection remaining inside a [Geofence]({{Types.geofence}}) or a [Zone]({{Types.zone}}).
   """
   DWELL
   """
-  A detection exiting a [Geofence](/reference/objects/geofence/) or a [Zone](/reference/objects/zone/).
+  A detection exiting a [Geofence]({{Types.geofence}}) or a [Zone]({{Types.zone}}).
   """
   EGRESS
 }

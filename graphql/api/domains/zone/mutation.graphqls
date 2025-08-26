@@ -1,5 +1,5 @@
 extend type Mutation {
-  """Creates a new [Zone](/reference/objects/zone/)."""
+  """Creates a new [Zone]({{Types.zone}})."""
   createZone(
     """Arguments to create a new zone."""
     zone: CreateZoneInput!

@@ -1,5 +1,5 @@
 """
-An `EventProducerConnection` is the paginated results of an [`eventProducers` query](/reference/query/#eventproducers).
+An `EventProducerConnection` is the paginated results of an [`eventProducers` query]({{Queries.eventproducers}}).
 See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type EventProducerConnection {
@@ -10,22 +10,22 @@ type EventProducerConnection {
 }
 
 """
-An event producer edge is the pairing of an [EventProducer](/reference/objects/eventProducer/) with its query cursor.
+An event producer edge is the pairing of an [EventProducer]({{Types.eventProducer}}) with its query cursor.
 See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type EventProducerEdge {
   """
-  Information about a particular [EventProducer](/reference/objects/eventproducer/).
+  Information about a particular [EventProducer]({{Types.eventproducer}}).
   """
   node: EventProducer
   """
-  The cursor to use with the [Query `eventProducers` field](/reference/query/#eventproducers) `after` argument.
+  The cursor to use with the [Query `eventProducers` field]({{Queries.eventproducers}}) `after` argument.
   """
   cursor: String!
 }
 
 """
-An `EventConnection` is the paginated results of an [`events` query](/reference/query/#events).
+An `EventConnection` is the paginated results of an [`events` query]({{Queries.events}}).
 See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type EventConnection {
@@ -36,14 +36,14 @@ type EventConnection {
 }
 
 """
-An event edge is the pairing of an [Event](/reference/objects/event/) with its query cursor.
+An event edge is the pairing of an [Event]({{Types.event}}) with its query cursor.
 See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type EventEdge {
-  """Information about a particular [Event](/reference/objects/event/)."""
+  """Information about a particular [Event]({{Types.event}})."""
   node: Event
   """
-  The cursor to use with the [Query `events` field](/reference/query/#events) `after` argument.
+  The cursor to use with the [Query `events` field]({{Queries.events}}) `after` argument.
   """
   cursor: String!
 }

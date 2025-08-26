@@ -1,5 +1,5 @@
 """
-A `DataSourceConnection` is the paginated results of a [`data sources` query](/reference/query/#datasources).
+A `DataSourceConnection` is the paginated results of a [`data sources` query]({{Queries.datasources}}).
 See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type DataSourceConnection {
@@ -10,16 +10,16 @@ type DataSourceConnection {
 }
 
 """
-A data source edge is the pairing of a [Data Source](/reference/objects/datasource/) with its query cursor.
+A data source edge is the pairing of a [Data Source]({{Types.datasource}}) with its query cursor.
 See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type DataSourceEdge {
   """
-  Information about a particular [Data Source](/reference/objects/datasource/).
+  Information about a particular [Data Source]({{Types.datasource}}).
   """
   node: DataSource
   """
-  The cursor to use with the [`dataSources` query](/reference/query/#datasources) `after` argument.
+  The cursor to use with the [`dataSources` query]({{Queries.datasources}}) `after` argument.
   """
   cursor: String!
 }

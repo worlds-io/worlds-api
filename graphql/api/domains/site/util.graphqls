@@ -6,14 +6,14 @@ type SiteConnection {
 }
 
 """
-A site edge is the pairing of a [Site](/reference/objects/site/) with its query cursor.
+A site edge is the pairing of a [Site]({{Types.site}}) with its query cursor.
 See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type SiteEdge {
-  """Information about a particular [Site](/reference/objects/site/)."""
+  """Information about a particular [Site]({{Types.site}})."""
   node: Site
   """
-  The cursor to use with the [`sites` query](/reference/query/#sites) `after` argument.
+  The cursor to use with the [`sites` query]({{Queries.sites}}) `after` argument.
   """
   cursor: String!
 }

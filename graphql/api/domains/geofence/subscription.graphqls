@@ -1,6 +1,6 @@
 extend type Subscription {
   """
-  Subscribes to changes in any [`GeofenceIntersection`](/reference/objects/geofenceintersection/) based on the given filter.
+  Subscribes to changes in any [`GeofenceIntersection`]({{Types.geofenceintersection}}) based on the given filter.
   """
   geofenceIntersections(
     """

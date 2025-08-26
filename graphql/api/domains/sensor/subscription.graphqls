@@ -1,6 +1,6 @@
 extend type Subscription {
   """
-  Subscribes to changes in any [`Measurement`](/reference/objects/measurement/) based on the given filter.
+  Subscribes to changes in any [`Measurement`]({{Types.measurement}}) based on the given filter.
   """
   measurementActivity(
     """

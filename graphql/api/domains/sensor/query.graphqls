@@ -1,5 +1,5 @@
 """
-Indicates the field used for sorting an [`sensors` query](/reference/query/#sensors).
+Indicates the field used for sorting an [`sensors` query]({{Queries.sensors}}).
 """
 enum SensorsSortField {
   """
@@ -26,7 +26,7 @@ input SensorsSort {
 }
 
 """
-Indicates the field used for sorting a [`measurements` query](/reference/query/#measurements).
+Indicates the field used for sorting a [`measurements` query]({{Queries.measurements}}).
 """
 enum MeasurementsSortField {
   """

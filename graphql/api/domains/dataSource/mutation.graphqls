@@ -1,10 +1,10 @@
 extend type Mutation {
-  """Creates a new [DataSource](/reference/objects/datasource/)."""
+  """Creates a new [DataSource]({{Types.datasource}})."""
   createDataSource(
     """Arguments to create a new data source."""
     dataSource: CreateDataSourceInput!
   ): DataSource
-  """Updates an existing [DataSource](/reference/objects/datasource/)."""
+  """Updates an existing [DataSource]({{Types.datasource}})."""
   updateDataSource(
     """Arguments to update an existing data source."""
     dataSource: UpdateDataSourceInput!

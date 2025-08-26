@@ -1,6 +1,6 @@
 extend type Subscription {
   """
-  Subscribes to changes in any [`ZoneIntersection`](/reference/objects/zoneintersection/) based on the given filter.
+  Subscribes to changes in any [`ZoneIntersection`]({{Types.zoneintersection}}) based on the given filter.
   """
   zoneIntersections(
     """

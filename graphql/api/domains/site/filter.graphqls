@@ -1,5 +1,5 @@
 """
-FilterSiteInput filters [sites](/reference/objects/site/) based on criteria described below.
+FilterSiteInput filters [sites]({{Types.site}}) based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
 """
 input FilterSiteInput {

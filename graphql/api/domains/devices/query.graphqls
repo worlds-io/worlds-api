@@ -1,5 +1,5 @@
 """
-Indicates the field used for sorting a [Devices query](/reference/query/#devices).
+Indicates the field used for sorting a [Devices query]({{Queries.devices}}).
 """
 enum DevicesSortField {
   """Sort the resulting list in by its unique identifier."""

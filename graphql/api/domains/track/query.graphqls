@@ -1,5 +1,5 @@
 """
-Indicates the field used for sorting a [Tracks query](/reference/query/#tracks).
+Indicates the field used for sorting a [Tracks query]({{Queries.tracks}}).
 """
 enum TracksSortField {
   """Sort the resulting list in by its unique identifier."""

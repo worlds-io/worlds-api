@@ -1,5 +1,5 @@
 """
-FilterEventActivityInput filters [events](/reference/objects/event/) based on criteria described below.
+FilterEventActivityInput filters [events]({{Types.event}}) based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
 """
 input FilterVideoActivityInput {
@@ -22,7 +22,7 @@ input FilterVideoActivityInput {
 }
 
 """
-FilterVideoInput filters [videos](/reference/objects/video/) based on criteria described below.
+FilterVideoInput filters [videos]({{Types.video}}) based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
 """
 input FilterVideoInput {

@@ -1,5 +1,5 @@
 """
-FilterSensorInput filters [sensors](/reference/objects/sensor/) based on criteria described below.
+FilterSensorInput filters [sensors]({{Types.sensor}}) based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
 """
 input FilterSensorInput {

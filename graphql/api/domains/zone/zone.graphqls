@@ -27,16 +27,16 @@ type ZoneEvent {
   """The track associated with the object that triggered the zone event."""
   track: Track!
   """
-  [`zoneEvents`](/reference/query/#zoneevents) is deprecated in favor of [`zoneIntersections`](/reference/query/#zoneintersections),
-  and `tag` will not be present on [`ZoneIntersection`](/reference/objects/zoneintersection/).
+  [`zoneEvents`]({{Queries.zoneevents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneintersections}}),
+  and `tag` will not be present on [`ZoneIntersection`]({{Types.zoneintersection}}).
   Use [track's tag](/reference/objects/track/#tag) instead.
 
   The class label of the object that triggered the zone event, i.e person, car, truck, etc.
   """
   tag: String! @deprecated(reason: "tag is deprecated and can instead be retrieved from the track.")
   """
-  [`zoneEvents`](/reference/query/#zoneevents) is deprecated in favor of [`zoneIntersections`](/reference/query/#zoneintersections),
-  and `type` will not be present on [`ZoneIntersection`](/reference/objects/zoneintersection/).
+  [`zoneEvents`]({{Queries.zoneevents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneintersections}}),
+  and `type` will not be present on [`ZoneIntersection`]({{Types.zoneintersection}}).
 
   The type of zone event, i.e ingress (an object entered the zone), dwell (an object remained in the zone), and egress.
   (an object exited the zone)
@@ -47,8 +47,8 @@ type ZoneEvent {
   """The time at which the event ended."""
   endTime: DateTimeOffset
   """
-  [`zoneEvents`](/reference/query/#zoneevents) is deprecated in favor of [`zoneIntersections`](/reference/query/#zoneintersections),
-  and `polygon` will not be present on [`ZoneIntersection`](/reference/objects/zoneintersection/).
+  [`zoneEvents`]({{Queries.zoneevents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneintersections}}),
+  and `polygon` will not be present on [`ZoneIntersection`]({{Types.zoneintersection}}).
 
   The two-dimensional shape of the detection that triggered the event.
   """

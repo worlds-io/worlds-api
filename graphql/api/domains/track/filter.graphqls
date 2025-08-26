@@ -1,5 +1,5 @@
 """
-`FilterTrackInput` allows for filtering a [`tracks` query](/reference/query/#tracks) based on criteria described below.
+`FilterTrackInput` allows for filtering a [`tracks` query]({{Queries.tracks}}) based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below
 """
 input FilterTrackInput {
@@ -50,7 +50,7 @@ input FilterTrackInput {
 }
 
 """
-`FilterTrackMessageInput` allows for filtering a [`tracks` subscription](/reference/subscription/#tracks) based on criteria described below.
+`FilterTrackMessageInput` allows for filtering a [`tracks` subscription]({{Subscriptions.tracks}}) based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below
 """
 input FilterTrackMessageInput {
@@ -97,7 +97,7 @@ input FilterTrackMessageInput {
 }
 
 """
-`FilterTrackPropertyInput` allows for filtering a [`tracks` query](/reference/query/#tracks) based on criteria described below
+`FilterTrackPropertyInput` allows for filtering a [`tracks` query]({{Queries.tracks}}) based on criteria described below
 """
 input FilterTrackPropertyInput {
   """

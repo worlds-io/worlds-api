@@ -1,5 +1,5 @@
 """
-Indicates the field used for sorting a [`geofences` query](/reference/query/#geofences).
+Indicates the field used for sorting a [`geofences` query]({{Queries.geofences}}).
 """
 enum GeofencesSortField {
   """
@@ -26,7 +26,7 @@ input GeofencesSort {
 }
 
 """
-Indicates the field used for sorting a [`geofenceEvents` query](/reference/query/#geofenceevents).
+Indicates the field used for sorting a [`geofenceEvents` query]({{Queries.geofenceevents}}).
 """
 enum GeofenceEventsSortField {
   """
@@ -53,7 +53,7 @@ input GeofenceEventsSort {
 }
 
 """
-Indicates the field used for sorting a [`geofenceIntersections` query](/reference/query/#geofenceintersections).
+Indicates the field used for sorting a [`geofenceIntersections` query]({{Queries.geofenceintersections}}).
 """
 enum GeofenceIntersectionsSortField {
   """

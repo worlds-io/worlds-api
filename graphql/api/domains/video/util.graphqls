@@ -1,5 +1,5 @@
 """
-A `VideoConnection` is the paginated result of a [`videos` query](/reference/query/#videos)
+A `VideoConnection` is the paginated result of a [`videos` query]({{Queries.videos}})
 See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type VideoConnection {
@@ -10,14 +10,14 @@ type VideoConnection {
 }
 
 """
-A video edge is the pairing of a [Video](/reference/objects/video/) with its query cursor.
+A video edge is the pairing of a [Video]({{Types.video}}) with its query cursor.
 See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type VideoEdge {
-  """Information about a particular [Video](/reference/objects/video/)."""
+  """Information about a particular [Video]({{Types.video}})."""
   node: Video
   """
-  The cursor to use with the [Query `videos` field](/reference/query/#videos) `after` argument.
+  The cursor to use with the [Query `videos` field]({{Queries.videos}}) `after` argument.
   """
   cursor: String!
 }

@@ -1,5 +1,5 @@
 """
-Indicates the field used for sorting a [Detections query](/reference/query/#detections).
+Indicates the field used for sorting a [Detections query]({{Queries.detections}}).
 """
 enum DetectionsSortField {
   """

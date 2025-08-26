@@ -6,16 +6,16 @@ type PointOfInterestConnection {
 }
 
 """
-A point of interest edge is the pairing of a [PointOfInterest](/reference/objects/pointofinterest/) with its query cursor.
+A point of interest edge is the pairing of a [PointOfInterest]({{Types.pointofinterest}}) with its query cursor.
 See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type PointOfInterestEdge {
   """
-  Information about a particular [PointOfInterest](/reference/objects/pointofinterest/).
+  Information about a particular [PointOfInterest]({{Types.pointofinterest}}).
   """
   node: PointOfInterest
   """
-  The cursor to use with the [`pointsOfInterest` query](/reference/query/#pointsofinterest) `after` argument.
+  The cursor to use with the [`pointsOfInterest` query]({{Queries.pointsofinterest}}) `after` argument.
   """
   cursor: String!
 }

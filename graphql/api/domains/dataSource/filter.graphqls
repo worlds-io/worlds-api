@@ -1,5 +1,5 @@
 """
-FilterDataSourceInput filters [DataSources](/reference/objects/datasource/) based on criteria described below.
+FilterDataSourceInput filters [DataSources]({{Types.datasource}}) based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
 """
 input FilterDataSourceInput {
