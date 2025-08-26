@@ -1,20 +1,49 @@
+"""
+An `EventProducerConnection` is the paginated results of an [`eventProducers` query](/reference/query/#eventproducers).
+See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+"""
 type EventProducerConnection {
-	pageInfo: PageInfo!
-	edges: [EventProducerEdge]!
+  """Pagination information for the resulting edges."""
+  pageInfo: PageInfo!
+  """The resulting collection of event producer edges."""
+  edges: [EventProducerEdge]!
 }
 
+"""
+An event producer edge is the pairing of an [EventProducer](/reference/objects/eventProducer/) with its query cursor.
+See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+"""
 type EventProducerEdge {
-	node: EventProducer
-	cursor: String!
+  """
+  Information about a particular [EventProducer](/reference/objects/eventproducer/).
+  """
+  node: EventProducer
+  """
+  The cursor to use with the [Query `eventProducers` field](/reference/query/#eventproducers) `after` argument.
+  """
+  cursor: String!
 }
 
+"""
+An `EventConnection` is the paginated results of an [`events` query](/reference/query/#events).
+See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+"""
 type EventConnection {
-	pageInfo: PageInfo!
-	edges: [EventEdge]!
+  """Pagination information for the resulting edges."""
+  pageInfo: PageInfo!
+  """The resulting collection of event edges."""
+  edges: [EventEdge]!
 }
 
+"""
+An event edge is the pairing of an [Event](/reference/objects/event/) with its query cursor.
+See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+"""
 type EventEdge {
-	node: Event
-	cursor: String!
+  """Information about a particular [Event](/reference/objects/event/)."""
+  node: Event
+  """
+  The cursor to use with the [Query `events` field](/reference/query/#events) `after` argument.
+  """
+  cursor: String!
 }
-

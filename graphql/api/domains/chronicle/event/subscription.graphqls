@@ -9,7 +9,6 @@ input FilterEventChronicleInputSubscription @experimental {
   validation: FilterStringInput
   labels: FilterStringListInput
   locations: FilterStringListInput
-
   and: [FilterEventChronicleInputSubscription!]
   or: [FilterEventChronicleInputSubscription!]
   not: FilterEventChronicleInputSubscription

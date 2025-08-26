@@ -1,27 +1,84 @@
+"""
+FilterSensorInput filters [sensors](/reference/objects/sensor/) based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
+"""
 input FilterSensorInput {
-	id: FilterIDInput
-	name: FilterStringInput
-	type: FilterStringInput
-	position: FilterPointInput
-
-	and: [FilterSensorInput!]
-	or: [FilterSensorInput!]
-	not: FilterSensorInput
+  """
+  If provided, specifies filters that work against the [Sensor's unique id](/reference/objects/sensor/#id).
+  """
+  id: FilterIDInput
+  """
+  If provided, specifies filters that work against the [Sensor's name](/reference/objects/sensor/#name).
+  """
+  name: FilterStringInput
+  """
+  If provided, specifies filters that work against the [Sensor's type](/reference/objects/sensor/#type).
+  """
+  type: FilterStringInput
+  """
+  If provided, specifies filters that work against the [Sensor's position](/reference/objects/sensor/#position).
+  """
+  position: FilterPointInput
+  """
+  If provided, a sensor must pass all filters in this list to match the current filter.
+  """
+  and: [FilterSensorInput!]
+  """
+  If provided, a sensor must pass at least one of the filters in this list to match the current filter.
+  """
+  or: [FilterSensorInput!]
+  """
+  If provided, a sensor may not match this filter to match the current filter.
+  """
+  not: FilterSensorInput
 }
 
+"""
+`FilterMeasurementInput` allows for filtering measurement of a sensor on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below
+"""
 input FilterMeasurementInput {
-	sensorId: FilterIDInput
-	time: FilterDateTimeOffsetInput!
-
-	and: [FilterMeasurementInput!]
-	or: [FilterMeasurementInput!]
-	not: FilterMeasurementInput
+  """
+  If provided, specifies filters that work against the [unique id](/reference/objects/sensor/#id) of the sensor that created a measurement.
+  """
+  sensorId: FilterIDInput
+  """
+  If provided, specifies filters that work against the [timestamp](/reference/objects/measurement/#timestamp) associated with the sensor measurement.
+  """
+  time: FilterDateTimeOffsetInput!
+  """
+  If provided, a measurement must pass all filters in this list to match the current filter.
+  """
+  and: [FilterMeasurementInput!]
+  """
+  If provided, a measurement must pass at least one of the filters in this list to match the current filter.
+  """
+  or: [FilterMeasurementInput!]
+  """
+  If provided, a measurement may not match this filter to match the current filter.
+  """
+  not: FilterMeasurementInput
 }
 
+"""
+`FilterMeasurementActivityInput` allows for filtering measurement activity based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below
+"""
 input FilterMeasurementActivityInput {
-	sensorId: FilterIDInput
-
-	and: [FilterMeasurementActivityInput!]
-	or: [FilterMeasurementActivityInput!]
-	not: FilterMeasurementActivityInput
+  """
+  If provided, specifies filters that work against the [unique id](/reference/objects/sensor/#id) of the sensor that created a measurement.
+  """
+  sensorId: FilterIDInput
+  """
+  If provided, a detection activity must pass all filters in this list to match the current filter.
+  """
+  and: [FilterMeasurementActivityInput!]
+  """
+  If provided, a detection activity must pass at least one of the filters in this list to match the current filter.
+  """
+  or: [FilterMeasurementActivityInput!]
+  """
+  If provided, a detection activity may not match this filter to match the current filter.
+  """
+  not: FilterMeasurementActivityInput
 }

@@ -1,117 +1,297 @@
+"""
+An event producer represents a custom process that detects and records events. Events
+created by an event producer can represent a wide variety of time-based activities to be
+used by your application's specific needs that aren't expressed natively through
+detections and geofences. For instance, an event producer could track detections of
+hazards and people, creating an event for each case where a person was too close
+to a hazard without personal protective equipment.
+"""
 type EventProducer {
-	id: ID!
-	name: String!
-	description: String
-	timezone: String
-	active: Boolean!
-	invalidReasons: [String!]!
-	metadata: JSON
+  """The unique identifier for the event producer."""
+  id: ID!
+  """The name of the event producer."""
+  name: String!
+  """The text description of the event producer, if provided."""
+  description: String
+  """The timezone for the event producer, if provided."""
+  timezone: String
+  """True if the event producer is currently active, otherwise false."""
+  active: Boolean!
+  """A list of invalid reasons currently used by the event producer."""
+  invalidReasons: [String!]!
+  """Arbitrary information about the event producer."""
+  metadata: JSON
 }
 
+"""
+This input type is used to create a new custom [`EventProducer`](/reference/objects/eventProducer/). See [About EventProducers](/reference/objects/eventProducer/#about-event-producersss) for more details.
+"""
 input EventProducerInput {
-	id: ID
-	name: String!
-	description: String
-	timezone: String
-	active: Boolean
-	metadata: JSON
+  id: ID
+  """The name of the event producer."""
+  name: String!
+  """The text description of the event producer."""
+  description: String
+  """The timezone for the event producer."""
+  timezone: String
+  """
+  True if the event producer should be active by default, otherwise false.
+  """
+  active: Boolean
+  """Arbitrary information about the event producer."""
+  metadata: JSON
 }
 
+"""
+This input type is used to update an existing [`EventProducer`](/reference/objects/eventProducer/). See [About EventProducers](/reference/objects/eventProducer/#about-event-producersss) for more details.
+"""
 input UpdateEventProducerInput {
-	id: ID!
-	name: String
-	description: String
-	timezone: String
-	active: Boolean
-	metadata: JSON
+  """The unique identifier for the event producer."""
+  id: ID!
+  """The name of the event producer."""
+  name: String
+  """The text description of the event producer."""
+  description: String
+  """The timezone for the event producer."""
+  timezone: String
+  """True if the event producer is active, otherwise false."""
+  active: Boolean
+  """Arbitrary information about the event producer."""
+  metadata: JSON
 }
 
+"""
+An event represents a custom event, including its start time, location, and duration. For more details on event producers and events, see [About EventProducers](/reference/objects/eventproducer/#about-event-producers).
+"""
 type Event {
-	id: ID!
-	eventProducer: EventProducer!
-	type: String!
-	subType: String
-	startTime: DateTimeOffset!
-	endTime: DateTimeOffset
-	position: GeoJSONPoint
-	timezone: String
-	metadata: JSON
-	images: [Image!]!
-	videos: [Video!]! @deprecated(reason: "The 'videos' field in the 'Event' type is deprecated. Refer to the 'dataSourceClips' field in the 'Event' type")
-	dataSourceClips: [DataSourceClip!]!
-	properties: EventProperties
-	draft: Boolean
-	validation: EventValidation
-	priority: String
+  """The unique identifier for the event."""
+  id: ID!
+  """The event producer that owns the event."""
+  eventProducer: EventProducer!
+  """
+  The type of the event, which should convey the broad category of the event.
+  """
+  type: String!
+  """
+  The subtype of the event, if provided, which should provide more context on the
+  category of the event.
+  """
+  subType: String
+  """The time at which the event started."""
+  startTime: DateTimeOffset!
+  """
+  The time at which the event ended. If not provided, the event is still ongoing.
+  """
+  endTime: DateTimeOffset
+  """The GeoJSON point recorded with the event, if any."""
+  position: GeoJSONPoint
+  """The timezone for the event, if provided."""
+  timezone: String
+  """
+  Additional metadata associated with the event. This may represent any JSON
+  object structure.
+  """
+  metadata: JSON
+  """The images that are associated with this event."""
+  images: [Image!]!
+  """
+  :::caution
+  Event videos is deprecated in favor of [`dataSourceClips`](/reference/objects/video/#datasourceclips)
+  :::
+  The videos that are associated with this event.
+  """
+  videos: [Video!]! @deprecated(reason: "The 'videos' field in the 'Event' type is deprecated. Refer to the 'dataSourceClips' field in the 'Event' type")
+  """Video clips that are associated with this event."""
+  dataSourceClips: [DataSourceClip!]!
+  """
+  Optional additional information associated with this event, including related data sources, sites, and tags.
+  """
+  properties: EventProperties
+  """Indicate that the event is a draft.  Defaults to false."""
+  draft: Boolean
+  """Optional information to validate the accuracy of the event."""
+  validation: EventValidation
+  """Optional string to indicate the priority of an event."""
+  priority: String
 }
 
+"""
+Event Properties contain additional details and related information for an event. For more details on event producers and events, see [About EventProducers](/reference/objects/eventproducer/#about-event-producers).
+"""
 type EventProperties {
-	tracks: [Track!]
-	sites: [Site!]
-	dataSources: [DataSource!]
-	tags: [Tag!]
-	pointsOfInterest: [PointOfInterest!]
+  """The tracks associated with the event."""
+  tracks: [Track!]
+  """The sites associated with the event."""
+  sites: [Site!]
+  """The data sources associated with the event."""
+  dataSources: [DataSource!]
+  """The tag labels of detections associated with the event."""
+  tags: [Tag!]
+  """The points of interest associated with the event."""
+  pointsOfInterest: [PointOfInterest!]
 }
 
+"""
+This type indicates whether an event is valid and contains additional information about the validation.
+"""
 type EventValidation {
-	status: EventValidationStatus!
-	reason: String
-	details: String
+  """Whether the event is `VALID` or `INVALID`."""
+  status: EventValidationStatus!
+  """
+  The reason for the event's validation status. Required if the `status` is `INVALID`.
+  """
+  reason: String
+  """Optional details for the event's validation status."""
+  details: String
 }
 
+"""
+This input type is used to create a new [`Event`](/reference/objects/event/) for a custom event producer. See [About EventProducers](/reference/objects/eventProducer/#about-event-producers) for more details.
+"""
 input CreateEventInput {
-	id: ID
-	eventProducerId: String!
-	type: String!
-	subType: String
-	startTime: DateTimeOffset!
-	endTime: DateTimeOffset
-	position: GeoJSONPointInput
-	timezone: String
-	metadata: JSON
-	snapshots: [CreateSnapshotInput!]
-	uploads: [UploadImageInput!]
-	clips: [CreateClipInput!]
-	trackIds: [ID!]
-	properties: EventPropertiesInput
-	draft: Boolean! = false
-	validation: EventValidationInput
-	priority: String
+  """
+  The unique identifier for the event. If not provided, one will be automatically assigned.
+  """
+  id: ID
+  """
+  The unique identifier of the [EventProducer](/reference/objects/eventproducer/) that will own the event.
+  """
+  eventProducerId: String!
+  """
+  The type of the event, which should convey the broad category of the event.
+  """
+  type: String!
+  """
+  The subtype of the event, if provided, which should provide more context on the
+  category of the event.
+  """
+  subType: String
+  """The time at which the event started."""
+  startTime: DateTimeOffset!
+  """
+  The time at which the event ended. If not provided, the event is still ongoing.
+  """
+  endTime: DateTimeOffset
+  """The GeoJSON point to be recorded with the event, if any."""
+  position: GeoJSONPointInput
+  """The timezone for the event, if provided."""
+  timezone: String
+  """
+  Additional metadata associated with the event. This may represent any JSON
+  object structure.
+  """
+  metadata: JSON
+  """Requests to generate snapshots for this event"""
+  snapshots: [CreateSnapshotInput!]
+  """Requests to upload images for this event"""
+  uploads: [UploadImageInput!]
+  """Requests to associate clips to this event"""
+  clips: [CreateClipInput!]
+  """
+  List of Track IDs to attach to this event. Ensures that the Events UI page renders a map with plotted tracks.
+  """
+  trackIds: [ID!]
+  """
+  Optional additional information associated with this event, including related data sources, sites, and tags.
+  """
+  properties: EventPropertiesInput
+  """Whether the event is a draft."""
+  draft: Boolean! = false
+  """Optional information to validate the accuracy of the event."""
+  validation: EventValidationInput
+  """Optional string to indicate the priority of an event."""
+  priority: String
 }
 
+"""
+This input type is used to update an existing [`Event`](/reference/objects/event/) for a custom event producer. See [About EventProducers](/reference/objects/eventProducer/#about-event-producers) for more details.
+"""
 input UpdateEventInput {
-	id: ID!
-	type: String
-	subType: String
-	startTime: DateTimeOffset
-	endTime: DateTimeOffset
-	position: GeoJSONPointInput
-	timezone: String
-	metadata: JSON
-	snapshots: [CreateSnapshotInput!]
-	uploads: [UploadImageInput!]
-	clips: [CreateClipInput!]
-	trackIds: [ID!]
-	properties: EventPropertiesInput
-	draft: Boolean
-	validation: EventValidationInput
-	priority: String
+  """The unique identifier for the event."""
+  id: ID!
+  """
+  The type of the event, which should convey the broad category of the event.
+  """
+  type: String
+  """
+  The subtype of the event, if provided, which should provide more context on the
+  category of the event.
+  """
+  subType: String
+  """The time at which the event started."""
+  startTime: DateTimeOffset
+  """
+  The time at which the event ended. If not provided, the event is still ongoing.
+  """
+  endTime: DateTimeOffset
+  """The GeoJSON point to be recorded with the event, if any."""
+  position: GeoJSONPointInput
+  """The timezone for the event, if provided."""
+  timezone: String
+  """
+  Additional metadata associated with the event. This may represent any JSON
+  object structure.
+  """
+  metadata: JSON
+  """
+  Requests to generate snapshots for this event
+  Snapshots are only generated when the event is ended for the first time. Therefore, snapshots will only be generated the first time that the [endTime](/reference/input-objects/updateventinput/#endtime) is specified for this event.
+  """
+  snapshots: [CreateSnapshotInput!]
+  """Requests to upload images for this event"""
+  uploads: [UploadImageInput!]
+  """Requests to associate clips to this event"""
+  clips: [CreateClipInput!]
+  """
+  List of Track IDs to attach to this event. Ensures that the Events UI page renders a map with plotted tracks.
+  """
+  trackIds: [ID!]
+  """
+  Optional additional information associated with this event, including related data sources, sites, and tags.
+  """
+  properties: EventPropertiesInput
+  """Whether the event is a draft."""
+  draft: Boolean
+  """Optional information to validate the accuracy of the event."""
+  validation: EventValidationInput
+  """Optional string to indicate the priority of an event."""
+  priority: String
 }
 
+"""
+This input type contains additional details and related information for an event. For more details on event producers and events, see [About EventProducers](/reference/objects/eventproducer/#about-event-producers).
+"""
 input EventPropertiesInput {
-	siteIds: [ID!]
-	dataSourceIds: [ID!]
-	tags: [String!]
-	pointOfInterestIds: [ID!]
+  """The unique identifiers for the sites associated with the event."""
+  siteIds: [ID!]
+  """The unique identifiers for the data sources associated with the event."""
+  dataSourceIds: [ID!]
+  """The tag labels of detections associated with the event."""
+  tags: [String!]
+  """The points of interest associated with the event."""
+  pointOfInterestIds: [ID!]
 }
 
+"""
+Used in [EventValidationInput](/reference/input-objects/eventvalidationinput/) to indicate whether an event is `VALID` or `INVALID`.
+"""
 enum EventValidationStatus {
-	VALID
-	INVALID
+  """The event is valid."""
+  VALID
+  """The event is invalid."""
+  INVALID
 }
 
+"""
+This input type indicates whether an event is valid and contains additional information about the validation.
+"""
 input EventValidationInput {
-	status: EventValidationStatus!
-	reason: String
-	details: String
+  """Whether the event is `VALID` or `INVALID`."""
+  status: EventValidationStatus!
+  """
+  The reason for the event's validation status.  Required if the `status` is `INVALID`.
+  """
+  reason: String
+  """Additional details for the event's validation status."""
+  details: String
 }

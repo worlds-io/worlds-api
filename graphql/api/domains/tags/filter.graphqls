@@ -1,8 +1,27 @@
+"""
+`FilterTagInput` allows for filtering tags based on criteria described below.
+Only one field should be provided per Filter object unless an operator
+(`and` `or` `not`) as specified below.
+"""
 input FilterTagInput {
-    id: FilterIDInput
-    name: FilterStringInput
-
-    and: [FilterTagInput!]
-    or: [FilterTagInput!]
-    not: FilterTagInput
+  """
+  If provided, specifies filters that work against the [unique id](/reference/objects/tag/#id) of a tag.
+  """
+  id: FilterIDInput
+  """
+  If provided, specifies case-insensitive filters that work against the [name](/reference/objects/tag/#name) of a tag.
+  """
+  name: FilterStringInput
+  """
+  If provided, a tag must pass all filters in this list to match the current filter.
+  """
+  and: [FilterTagInput!]
+  """
+  If provided, a tag must pass at least one of the filters in this list to match the current filter.
+  """
+  or: [FilterTagInput!]
+  """
+  If provided, a tag may not match this filter to match the current filter.
+  """
+  not: FilterTagInput
 }

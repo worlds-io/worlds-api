@@ -1,38 +1,119 @@
+"""
+`FilterGeofenceInput` allows for filtering a geofence based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below
+"""
 input FilterGeofenceInput {
-	id: FilterIDInput
-	name: FilterStringInput
-	active: FilterBooleanInput
-
-	and: [FilterGeofenceInput!]
-	or: [FilterGeofenceInput!]
-	not: FilterGeofenceInput
+  """
+  If provided, specifies filters that work against the [unique id](/reference/objects/geofence/#id) of the geofence.
+  """
+  id: FilterIDInput
+  """
+  If provided, specifies filters that work against the [name](/reference/objects/geofence/#name) of the geofence.
+  """
+  name: FilterStringInput
+  """
+  If provided, specifies filters that work against the [active](/reference/objects/geofence/#active) state of the geofence.
+  """
+  active: FilterBooleanInput
+  """
+  If provided, a geofence must pass all filters in this list to match the current filter.
+  """
+  and: [FilterGeofenceInput!]
+  """
+  If provided, a geofence must pass at least one of the filters in this list to match the current filter.
+  """
+  or: [FilterGeofenceInput!]
+  """
+  If provided, a geofence may not match this filter to match the current filter.
+  """
+  not: FilterGeofenceInput
 }
 
+"""
+`FilterGeofenceEventInput` allows for filtering a geofence event based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below
+"""
 input FilterGeofenceEventInput {
-	geofenceId: FilterIDInput
-	time: FilterDateTimeOffsetInput!
-
-	and: [FilterGeofenceEventInput!]
-	or: [FilterGeofenceEventInput!]
-	not: FilterGeofenceEventInput
+  """
+  If provided, specifies filters that work against the [unique id](/reference/objects/geofence/#geofenceid) of a geofence.
+  """
+  geofenceId: FilterIDInput
+  """
+  If provided, specifies filters that work against the [timestamp](/reference/objects/geofenceevent/#timestamp) associated with the geofence event.
+  """
+  time: FilterDateTimeOffsetInput!
+  """
+  If provided, a geofence event must pass all filters in this list to match the current filter.
+  """
+  and: [FilterGeofenceEventInput!]
+  """
+  If provided, a geofence event must pass at least one of the filters in this list to match the current filter.
+  """
+  or: [FilterGeofenceEventInput!]
+  """
+  If provided, a geofence event may not match this filter to match the current filter.
+  """
+  not: FilterGeofenceEventInput
 }
 
+"""
+`FilterGeofenceIntersectionInput` allows for filtering a geofence intersection based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below
+"""
 input FilterGeofenceIntersectionInput {
-	geofenceId: FilterIDInput
-	time: FilterDateTimeOffsetInput!
-
-	and: [FilterGeofenceIntersectionInput!]
-	or: [FilterGeofenceIntersectionInput!]
-	not: FilterGeofenceIntersectionInput
+  """
+  If provided, specifies filters that work against the [unique id](/reference/objects/geofence/#geofenceid) of a geofence.
+  """
+  geofenceId: FilterIDInput
+  """
+  Specifies filters that work against the [startTime](/reference/objects/geofenceintersection/#starttime) associated with the geofence intersection.
+  """
+  time: FilterDateTimeOffsetInput!
+  """
+  If provided, a geofence intersection must pass all filters in this list to match the current filter.
+  """
+  and: [FilterGeofenceIntersectionInput!]
+  """
+  If provided, a geofence intersection must pass at least one of the filters in this list to match the current filter.
+  """
+  or: [FilterGeofenceIntersectionInput!]
+  """
+  If provided, a geofence intersection may not match this filter to match the current filter.
+  """
+  not: FilterGeofenceIntersectionInput
 }
 
+"""
+`FilterGeofenceIntersectionMessageInput` allows for filtering a geofence intersection subscription based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
+"""
 input FilterGeofenceIntersectionMessageInput {
-	geofenceId: FilterIDInput
-	tag: FilterStringInput
-	dataSourceId: FilterIDInput
-	state: FilterMessageStateInput
-
-	and: [FilterGeofenceIntersectionMessageInput!]
-	or: [FilterGeofenceIntersectionMessageInput!]
-	not: FilterGeofenceIntersectionMessageInput
+  """
+  If provided, specifies filters that work against the [unique id](/reference/objects/geofenceintersection/#id) of the geofence collided with.
+  """
+  geofenceId: FilterIDInput
+  """
+  If provided, specifies case-insensitive filters that work against the [tag](/reference/objects/track/#tag) associated with the geofence intersection's [track](/reference/objects/geofenceintersection/#track).
+  """
+  tag: FilterStringInput
+  """
+  Specifies filters that work against the [dataSource](/reference/objects/track/#datasource) associated with the geofence intersection's [track](/reference/objects/geofenceintersection/#track).
+  """
+  dataSourceId: FilterIDInput
+  """
+  Specifies filters that work against the [state](/reference/enums/#messagestate) of the geofence intersection message.
+  """
+  state: FilterMessageStateInput
+  """
+  If provided, a detection activity must pass all filters in this list to match the current filter.
+  """
+  and: [FilterGeofenceIntersectionMessageInput!]
+  """
+  If provided, a detection activity must pass at least one of the filters in this list to match the current filter.
+  """
+  or: [FilterGeofenceIntersectionMessageInput!]
+  """
+  If provided, a detection activity may not match this filter to match the current filter.
+  """
+  not: FilterGeofenceIntersectionMessageInput
 }

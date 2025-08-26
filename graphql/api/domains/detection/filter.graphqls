@@ -1,29 +1,99 @@
+"""
+FilterDetectionInput allows for filtering a detection based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below
+"""
 input FilterDetectionInput {
-	dataSourceId: FilterIDInput
-	trackId: FilterIDInput
-	zoneId: FilterIDInput
-	geofenceId: FilterIDInput 
-	tag: FilterStringInput
-	time: FilterDateTimeOffsetInput!
-	position: FilterPointInput
-
-	and: [FilterDetectionInput!]
-	or: [FilterDetectionInput!]
-	not: FilterDetectionInput
-
-	deviceId: FilterIDInput @deprecated (reason: "deviceId is deprecated use dataSourceId instead")
+  """
+  If provided, specifies filters that work against the [unique id](/reference/objects/dataSource/#id) of the data source that initiated the detection.
+  """
+  dataSourceId: FilterIDInput
+  """
+  If provided, specifies filters that work against the [unique id](/reference/objects/track/#id) of the detection's track.
+  """
+  trackId: FilterIDInput
+  """
+  If provided, specifies filters that work against the [unique id](/reference/objects/detection/#zoneids) of the zone in which a zone event was triggered by the detection.
+  """
+  zoneId: FilterIDInput
+  """
+  If provided, specifies filters that work against the [unique id](/reference/objects/detection/#geofenceids) of the geofence in which a geofence event was triggered by the detection.
+  """
+  geofenceId: FilterIDInput
+  """
+  If provided, specifies case-insensitive filters that work against the [tag](/reference/objects/detection/#tag) associated with the detection.
+  """
+  tag: FilterStringInput
+  """
+  If provided, specifies filters that work against the [timestamp](/reference/objects/detection/#timestamp) associated with the detection.
+  """
+  time: FilterDateTimeOffsetInput!
+  """
+  If provided, specifies filters that work against the [position](/reference/objects/detection/#position) of the detection
+  """
+  position: FilterPointInput
+  """
+  If provided, a detection must pass all filters in this list to match the current filter.
+  """
+  and: [FilterDetectionInput!]
+  """
+  If provided, a detection must pass at least one of the filters in this list to match the current filter.
+  """
+  or: [FilterDetectionInput!]
+  """
+  If provided, a detection may not match this filter to match the current filter.
+  """
+  not: FilterDetectionInput
+  """
+  :::caution
+  `deviceId` is deprecated. Use `dataSourceId` instead
+  :::
+  If provided, specifies filters that work against the [unique id](/reference/objects/detection/#cameraid) of the device that initiated the detection.
+  """
+  deviceId: FilterIDInput @deprecated(reason: "deviceId is deprecated use dataSourceId instead")
 }
 
+"""
+FilterDetectionActivityInput allows for filtering a detection activity based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
+"""
 input FilterDetectionActivityInput {
-	dataSourceId: FilterIDInput
-	zoneId: FilterIDInput
-	geofenceId: FilterIDInput
-	tag: FilterStringInput
-	position: FilterPointInput
-
-	and: [FilterDetectionActivityInput!]
-	or: [FilterDetectionActivityInput!]
-	not: FilterDetectionActivityInput
-
-	deviceId: FilterIDInput @deprecated (reason: "deviceId is deprecated, use dataSourceId instead")
+  """
+  If provided, specifies filters that work against the [unique id](/reference/objects/dataSource/#id) of the data source that initiated the detection activity.
+  """
+  dataSourceId: FilterIDInput
+  """
+  If provided, specifies filters that work against the [unique id](/reference/objects/detection/#zoneids) of the zone in which a zone event was triggered by the detection.
+  """
+  zoneId: FilterIDInput
+  """
+  If provided, specifies filters that work against the [unique id](/reference/objects/detection/#geofenceids) of the geofence in which a geofence event was triggered by the detection.
+  """
+  geofenceId: FilterIDInput
+  """
+  If provided, specifies case-insensitive filters that work against the [tag](/reference/objects/detection/#tag) associated with the detection activity.
+  """
+  tag: FilterStringInput
+  """
+  If provided, specifies filters that work against the [position](/reference/objects/detection/#position) of the detection
+  """
+  position: FilterPointInput
+  """
+  If provided, a detection activity must pass all filters in this list to match the current filter.
+  """
+  and: [FilterDetectionActivityInput!]
+  """
+  If provided, a detection activity must pass at least one of the filters in this list to match the current filter.
+  """
+  or: [FilterDetectionActivityInput!]
+  """
+  If provided, a detection activity may not match this filter to match the current filter.
+  """
+  not: FilterDetectionActivityInput
+  """
+  :::caution
+  `deviceId` is deprecated. Use `dataSourceId` instead
+  :::
+  If provided, specifies filters that work against the [unique id](/reference/objects/detection/#cameraid) of the device that initiated the detection activity.
+  """
+  deviceId: FilterIDInput @deprecated(reason: "deviceId is deprecated, use dataSourceId instead")
 }

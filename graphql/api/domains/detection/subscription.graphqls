@@ -1,4 +1,11 @@
 extend type Subscription {
-	detectionActivity(filter: FilterDetectionActivityInput): Detection 
+  """
+  Subscribes to changes in any [`Detection`](/reference/objects/detection/) based on the given filter.
+  """
+  detectionActivity(
+    """
+    Filter detections by unique identifier of the device, unique identifier of the zone or geofence, type of the event, etc.
+    """
+    filter: FilterDetectionActivityInput
+  ): Detection
 }
-

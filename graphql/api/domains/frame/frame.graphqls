@@ -1,3 +1,5 @@
+"""A frame in a data source's video"""
 type Frame {
-    number: Int!
+  """The index of the frame in the video"""
+  number: Int!
 }

@@ -1,64 +1,91 @@
-### Text Reading ###
-
 type TextReadingResponse {
-    text: String!
-    textConfidence: Float!
+  """The recognized text"""
+  text: String!
+  """The confidence score for the recognized text's accuracy."""
+  textConfidence: Float!
 }
 
-### Text Recognition ###
-
 input TextRecognitionOptionsInput {
-    regions: [GeoJSONMultiPolygonInput!]
+  """
+  The model will only attempt to detect text inside the specified multipolygons
+  """
+  regions: [GeoJSONMultiPolygonInput!]
 }
 
 type TextRecognitionResponse {
-    results: [TextRecognitionResult!]!
+  """The list of detected text"""
+  results: [TextRecognitionResult!]!
 }
 
 type TextRecognitionResult {
-    textDetection: TextDetection!
-    regionIndex: Int
+  """The actual detected text"""
+  textDetection: TextDetection!
+  """
+  The index of the region in the provided regions array that contains the text detection. Only applicable if [regions](/reference/input-objects/textrecognitionoptionsinput/#regions) was specified in the original query.
+  """
+  regionIndex: Int
 }
 
 type TextDetection {
-    polygon: GeoJSONPolygon!
-    detectionConfidence: Float!
-    text: String!
-    textConfidence: Float!
+  """The position and shape of the detection in the image"""
+  polygon: GeoJSONPolygon!
+  """The confidence score for the detection's existance."""
+  detectionConfidence: Float!
+  """The recognized text"""
+  text: String!
+  """The confidence score for the recognized text's accuracy."""
+  textConfidence: Float!
 }
 
-### Segmentation ###
-
 input SegmentationOptionsInput {
-    points: [GeoJSONPointInput!]
-    regions: [GeoJSONMultiPolygonInput!]
+  """
+  The model will only attempt to generate segments at the specified points
+  """
+  points: [GeoJSONPointInput!]
+  """
+  The model will only attempt to generate segments inside the specified multipolygons
+  """
+  regions: [GeoJSONMultiPolygonInput!]
 }
 
 type SegmentationResponse {
-    results: [SegmentationResult!]!
+  """The list of segments"""
+  results: [SegmentationResult!]!
 }
 
 type SegmentationResult {
-    segment: Segment!
-    regionIndex: Int
+  """The actual segment"""
+  segment: Segment!
+  """
+  The index of the region in the provided regions array that contains the segment. Only applicable if [regions](/reference/input-objects/segmentationoptionsinput/#regions) was specified in the original query.
+  """
+  regionIndex: Int
 }
 
 type Segment {
-    polygon: GeoJSONMultiPolygon!
-    box: GeoJSONPolygon!
+  """The region of the image that defines the segment"""
+  polygon: GeoJSONMultiPolygon!
+  """A bounding box that covers the entire area of the segment"""
+  box: GeoJSONPolygon!
 }
 
-### Embedding ###
-
 input EmbeddingOptionsInput {
-    regions: [GeoJSONMultiPolygonInput!]
+  """
+  The model will only attempt to embed the image inside the specified multipolygons
+  """
+  regions: [GeoJSONMultiPolygonInput!]
 }
 
 type EmbeddingResponse {
-    results: [EmbeddingResult!]!
+  """The list of embeddings"""
+  results: [EmbeddingResult!]!
 }
 
 type EmbeddingResult {
-    embedding: [Float!]!
-    regionIndex: Int
+  """The embedding vector"""
+  embedding: [Float!]!
+  """
+  The index of the region in the provided regions array that contains the embedding. Only applicable if [regions](/reference/input-objects/embeddingoptionsinput/#regions) was specified in the original query.
+  """
+  regionIndex: Int
 }

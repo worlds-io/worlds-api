@@ -1,4 +1,26 @@
 extend type Query {
-	tracksSummary(startTime: DateTimeOffset!, endTime: DateTimeOffset!, tags: FilterTagInput, bucket: SummaryBucketSize): TracksSummary
-	eventsSummary(startTime: DateTimeOffset!, endTime: DateTimeOffset!, bucket: SummaryBucketSize): EventsSummary
+  """Summarizes tracks over a time range."""
+  tracksSummary(
+    """Start time for the summary."""
+    startTime: DateTimeOffset!
+    """End time for the summary."""
+    endTime: DateTimeOffset!
+    """Filter tracks based on their tags."""
+    tags: FilterTagInput
+    """
+    If provided, return [summary buckets](/reference/objects/trackssummarybucket/) of this size.
+    """
+    bucket: SummaryBucketSize
+  ): TracksSummary
+  """Summarizes events over a time range."""
+  eventsSummary(
+    """Start time for the summary."""
+    startTime: DateTimeOffset!
+    """End time for the summary."""
+    endTime: DateTimeOffset!
+    """
+    If provided, return [summary buckets](/reference/objects/eventssummarybucket/) of this size.
+    """
+    bucket: SummaryBucketSize
+  ): EventsSummary
 }

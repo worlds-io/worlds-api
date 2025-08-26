@@ -1,9 +1,21 @@
 type PointOfInterestConnection {
-    pageInfo: PageInfo!
-    edges: [PointOfInterestEdge]!
+  """Pagination information for the resulting edges."""
+  pageInfo: PageInfo!
+  """The resulting collection of site edges."""
+  edges: [PointOfInterestEdge]!
 }
 
+"""
+A point of interest edge is the pairing of a [PointOfInterest](/reference/objects/pointofinterest/) with its query cursor.
+See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+"""
 type PointOfInterestEdge {
-    node: PointOfInterest
-    cursor: String!
+  """
+  Information about a particular [PointOfInterest](/reference/objects/pointofinterest/).
+  """
+  node: PointOfInterest
+  """
+  The cursor to use with the [`pointsOfInterest` query](/reference/query/#pointsofinterest) `after` argument.
+  """
+  cursor: String!
 }

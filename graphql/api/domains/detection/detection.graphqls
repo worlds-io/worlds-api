@@ -1,31 +1,108 @@
+"""
+Detections are the lowest level unit of computer vision primitive within Worlds.
+A detection represents a single frame of a recognized object, which then has
+additional data associated with it, including its position, track, and
+interactions with zones and geofences.
+"""
 type Detection {
-	#id: ID! //TODO: Once we switch over to the detections table
-	track: Track!
-	timestamp: DateTimeOffset!
-	frame: Frame
-	polygon: GeoJSONPolygon
-	position: GeoJSONPoint
-	zones: [Zone!]!
-	geofences: [Geofence!]!
-	metadata: JSON
-	createdAt: DateTimeOffset
-	updatedAt: DateTimeOffset
-	direction: Float
-
-	geofenceIds: [ID!]! @deprecated (reason: "geofenceIds is deprecated, use geofences field instead")
-	zoneIds: [ID!]! @deprecated (reason: "zoneIds is deprecated, use zones field instead")
-	zoneEvents: [ZoneEvent!]! @deprecated (reason: "zoneEvents is deprecated, use track.zoneEvents instead")
-	geofenceEvents: [GeofenceEvent!]! @deprecated (reason: "geofenceEvents is deprecated, use track.geofenceEvents instead")
-	globalTrackId: String @deprecated (reason: "globalTrackId is deprecated, use track.id instead")
-	deviceId: ID @deprecated (reason: "deviceId is deprecated, use track.dataSourceId.id instead")
-	tag: String! @deprecated (reason: "tag is deprecated, use track.tag instead")
+  """The track that is associated with the detection."""
+  track: Track!
+  """The time at which the detection occurred."""
+  timestamp: DateTimeOffset!
+  """Information about the video frame in which this detection was captured"""
+  frame: Frame
+  """A GeoJSON polygon that represents the spatial bounds of the detection."""
+  polygon: GeoJSONPolygon
+  """
+  A GeoJSON point that represents the location of the detection in the world. This value may be `null` if the camera that captured the detection hasn't been calibrated. It may also be `null` if the location cannot be calculated (i.e the detected object is in the sky).
+  """
+  position: GeoJSONPoint
+  """
+  A list of [Zones](/reference/objects/zone/) with which the detection intersects.
+  """
+  zones: [Zone!]!
+  """
+  A list of [Geofences](/reference/objects/geofence/) with which the detection intersects.
+  """
+  geofences: [Geofence!]!
+  """Arbitrary metadata associated with the detection."""
+  metadata: JSON
+  """
+  Timestamp that the detection was created. May be delayed from the
+  [`timestamp`](#timestamp) due to post-processing video feeds or other latency.
+  """
+  createdAt: DateTimeOffset
+  """Timestamp that the detection was most recently updated."""
+  updatedAt: DateTimeOffset
+  """
+  The direction in which the detection is moving, represented in degrees.
+  """
+  direction: Float
+  """
+  :::caution
+  `geofenceeIds` is deprecated. Use `geofences` instead
+  :::
+  A list of [geofence](/reference/query/#geofence) unique identifiers with which the
+  detection intersects.
+  """
+  geofenceIds: [ID!]! @deprecated(reason: "geofenceIds is deprecated, use geofences field instead")
+  """
+  :::caution
+  `zoneIds` is deprecated. Use `zones` instead
+  :::
+  A list of [zone](/reference/query/#zone) unique identifiers with which the
+  detection intersects.
+  """
+  zoneIds: [ID!]! @deprecated(reason: "zoneIds is deprecated, use zones field instead")
+  """A list of zone events related to this detection."""
+  zoneEvents: [ZoneEvent!]! @deprecated(reason: "zoneEvents is deprecated, use track.zoneEvents instead")
+  """A list of geofence events related to this detection."""
+  geofenceEvents: [GeofenceEvent!]! @deprecated(reason: "geofenceEvents is deprecated, use track.geofenceEvents instead")
+  """
+  :::caution
+  `globalTrackId` is deprecated. Use `track.id` instead
+  :::
+  The global track id that governs the detection, if any.
+  """
+  globalTrackId: String @deprecated(reason: "globalTrackId is deprecated, use track.id instead")
+  """
+  :::caution
+  `deviceId` is deprecated. Use `track.dataSource.id` instead
+  :::
+  The unique identifier of the device where the detection occurred.
+  """
+  deviceId: ID @deprecated(reason: "deviceId is deprecated, use track.dataSourceId.id instead")
+  """
+  :::caution
+  `tag` is deprecated. Use `track.tag` instead
+  :::
+  The class label of the detected object, i.e person, car, truck, etc.
+  """
+  tag: String! @deprecated(reason: "tag is deprecated, use track.tag instead")
 }
 
+"""
+This type is used to create a new [`Detection`](/reference/objects/detection/)
+"""
 input CreateDetectionInput {
-	trackId: ID!
-	timestamp: DateTimeOffset!
-	position: GeoJSONPointInput
-	polygon: GeoJSONPolygonInput
-	direction: Float
-	metadata: JSON
+  """The id of the track that governs the detection"""
+  trackId: ID!
+  """The time at which the detection occurred."""
+  timestamp: DateTimeOffset!
+  """
+  A GeoJSON point that represents the location of the detection in the world.
+  """
+  position: GeoJSONPointInput
+  """
+  A GeoJSON polygon that represents the two dimensional bounds of the detection in its captured video or image.
+  """
+  polygon: GeoJSONPolygonInput
+  """
+  The direction, in degrees, of the detection in the world.
+  Direction is measured clockwise from north, so `0` is north, `90` is east, `180` is south and `270` is west.
+  The direction should be between `0` and `360` degrees.
+  """
+  direction: Float
+  """Arbitrary metadata associated with the detection."""
+  metadata: JSON
 }

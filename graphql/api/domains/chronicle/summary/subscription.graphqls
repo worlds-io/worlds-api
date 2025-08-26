@@ -11,7 +11,6 @@ input FilterSummaryChronicleInputSubscription @experimental {
   validation: FilterStringInput
   labels: FilterStringListInput
   locations: FilterStringListInput
-
   and: [FilterSummaryChronicleInputSubscription!]
   or: [FilterSummaryChronicleInputSubscription!]
   not: FilterSummaryChronicleInputSubscription

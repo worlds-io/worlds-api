@@ -14,7 +14,6 @@ input FilterActivityChronicleInputSubscription @experimental {
   dataSourceIds: FilterIDListInput
   tagIds: FilterIDListInput
   pointOfInterestIds: FilterIDListInput
-
   and: [FilterActivityChronicleInputSubscription!]
   or: [FilterActivityChronicleInputSubscription!]
   not: FilterActivityChronicleInputSubscription

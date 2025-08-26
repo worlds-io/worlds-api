@@ -1,5 +1,19 @@
 extend type Mutation {
-    createSensor(sensor: SensorInput!): Sensor
-    updateSensor(sensor: UpdateSensorInput!): Sensor
-    createMeasurement(measurement: MeasurementInput!): Measurement
+  """Creates a new [Sensor](/reference/objects/sensor/)."""
+  createSensor(
+    """Arguments to create a new sensor."""
+    sensor: SensorInput!
+  ): Sensor
+  """Updates an existing [Sensor](/reference/objects/sensor/)."""
+  updateSensor(
+    """Arguments to update an existing sensor."""
+    sensor: UpdateSensorInput!
+  ): Sensor
+  """
+  Creates a new [Measurement](/reference/objects/measurement/) for a [Sensor](/reference/objects/sensor).
+  """
+  createMeasurement(
+    """Arguments to create a new measurement."""
+    measurement: MeasurementInput!
+  ): Measurement
 }

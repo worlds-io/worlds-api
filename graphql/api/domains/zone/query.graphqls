@@ -1,36 +1,112 @@
+"""
+Indicates the field used for sorting a [zones query](/reference/query/#zones).
+"""
 enum ZonesSortField {
-	ID,
-	NAME
+  """Sort the resulting list by the zone's unique identifiers."""
+  ID
+  """Sort the resulting list by the zone's names"""
+  NAME
 }
 
-input ZonesSort{
-	field: ZonesSortField!
-	direction: SortDirection!
+"""ZonesSort allows for sorting zones by a sort field and direction."""
+input ZonesSort {
+  """
+  Any sortable field available to the ZonesSortField. See the link to the
+  type below for more details.
+  """
+  field: ZonesSortField!
+  """Sort direction. See the link to the type below for more details."""
+  direction: SortDirection!
 }
 
+"""
+Indicates the field used for sorting a [zoneEvents query](/reference/query/#zoneevents).
+"""
 enum ZoneEventsSortField {
-	ID,
-	START_TIME
+  """Sort the resulting list in by its unique identifier."""
+  ID
+  """Sort the resulting list by the track start time."""
+  START_TIME
 }
 
+"""
+ZoneEventsSort allows for sorting zone events by a sort field and direction.
+"""
 input ZoneEventsSort {
-	field: ZoneEventsSortField!
-	direction: SortDirection!
+  """
+  Any sortable field available to the ZoneEventsSortField. See the link to the
+  type below for more details.
+  """
+  field: ZoneEventsSortField!
+  """Sort direction. See the link to the type below for more details."""
+  direction: SortDirection!
 }
 
+"""
+Indicates the field used for sorting a [zoneIntersections query](/reference/query/#zoneintersections).
+"""
 enum ZoneIntersectionsSortField {
-	ID,
-	START_TIME
+  """Sort the resulting list in by its unique identifier."""
+  ID
+  """Sort the resulting list by the intersection start time."""
+  START_TIME
 }
 
+"""
+ZoneIntersectionsSort allows for sorting zone intersections by a sort field and direction.
+"""
 input ZoneIntersectionsSort {
-	field: ZoneIntersectionsSortField!
-	direction: SortDirection!
+  """
+  Any sortable field available to the ZoneIntersectionsSortField. See the link to the
+  type below for more details.
+  """
+  field: ZoneIntersectionsSortField!
+  """Sort direction. See the link to the type below for more details."""
+  direction: SortDirection!
 }
 
 extend type Query {
-	zone(id: ID!): Zone
-	zones(filter: FilterZoneInput, first: Int! = 20, after: String, sort: [ZonesSort!]! = [{field: NAME, direction: ASC}, {field:ID, direction:ASC}] ): ZoneConnection
-	zoneEvents(filter: FilterZoneEventInput!, first: Int! = 20, after: String, sort: [ZoneEventsSort!]! = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]): ZoneEventConnection @deprecated (reason: "zoneEvents is deprecated, use zoneIntersections instead")
-	zoneIntersections(filter: FilterZoneIntersectionInput!, first: Int! = 20, after: String, sort: [ZoneIntersectionsSort!]! = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]): ZoneIntersectionConnection
+  """Look up a zone, a region on a camera, by its unique identifier."""
+  zone(
+    """The zone's unique identifier."""
+    id: ID!
+  ): Zone
+  """Find zones based on a set of filters"""
+  zones(
+    """Filter zones based on the specified filters."""
+    filter: FilterZoneInput
+    """Returns the first _n_ elements from the list."""
+    first: Int! = 20
+    """Returns the elements in the list that come after the specified cursor."""
+    after: String
+    """The field and direction by which to sort the results"""
+    sort: [ZonesSort!]! = [{field: NAME, direction: ASC}, {field: ID, direction: ASC}]
+  ): ZoneConnection
+  """
+  :::caution
+  `zoneEvents` is deprecated. Use [`zoneIntersections`](/reference/query/#zoneintersections) instead.
+  :::
+  Find events for a zone based on a set of filters.
+  """
+  zoneEvents(
+    """Filter zone events based on the zone id, time period, etc."""
+    filter: FilterZoneEventInput!
+    """Returns the first _n_ elements from the list."""
+    first: Int! = 20
+    """Returns the elements in the list that come after the specified cursor."""
+    after: String
+    """The field and direction by which to sort the results"""
+    sort: [ZoneEventsSort!]! = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]
+  ): ZoneEventConnection @deprecated(reason: "zoneEvents is deprecated, use zoneIntersections instead")
+  """Find intersections for a zone based on a set of filters."""
+  zoneIntersections(
+    """Filter zone intersections based on the zone id, time period, etc."""
+    filter: FilterZoneIntersectionInput!
+    """Returns the first _n_ elements from the list."""
+    first: Int! = 20
+    """Returns the elements in the list that come after the specified cursor."""
+    after: String
+    """The field and direction by which to sort the results"""
+    sort: [ZoneIntersectionsSort!]! = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]
+  ): ZoneIntersectionConnection
 }

@@ -12,7 +12,6 @@ input FilterSummaryChronicleInput @experimental {
   chronicleProducerId: FilterIDInput
   activityChronicleIds: FilterIDListInput
   eventChronicleIds: FilterIDListInput
-
   and: [FilterSummaryChronicleInput!]
   or: [FilterSummaryChronicleInput!]
   not: FilterSummaryChronicleInput

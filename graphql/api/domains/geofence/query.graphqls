@@ -1,36 +1,130 @@
+"""
+Indicates the field used for sorting a [`geofences` query](/reference/query/#geofences).
+"""
 enum GeofencesSortField {
-	ID,
-	NAME
+  """
+  Sort the resulting list by the [`Geofence`'s unique identifier](/reference/objects/geofence/#id).
+  """
+  ID
+  """
+  Sort the resulting list by the [`Geofence`'s name](/reference/objects/geofence/#name).
+  """
+  NAME
 }
 
+"""
+GeofencesSort allows for sorting a geofence by a sort field and direction.
+"""
 input GeofencesSort {
-	field: GeofencesSortField!
-	direction: SortDirection!
+  """
+  Any sortable field available to the GeofencesSortField. See the link to the
+  type below for more details.
+  """
+  field: GeofencesSortField!
+  """Sort direction. See the link to the type below for more details."""
+  direction: SortDirection!
 }
 
+"""
+Indicates the field used for sorting a [`geofenceEvents` query](/reference/query/#geofenceevents).
+"""
 enum GeofenceEventsSortField {
-	ID,
-	OCCURRED
+  """
+  Sort the resulting list by the [`GeofenceEvent`'s unique identifier](/reference/objects/geofenceEvent/#id).
+  """
+  ID
+  """
+  Sort the resulting list by the [`GeofenceEvent`'s timestamp](/reference/objects/geofenceEvent/#timestamp).
+  """
+  OCCURRED
 }
 
+"""
+GeofenceEventsSort allows for sorting geofence events by a sort field and direction.
+"""
 input GeofenceEventsSort {
-	field: GeofenceEventsSortField!
-	direction: SortDirection!
+  """
+  Any sortable field available to the GeofenceEventsSortField. See the link to the
+  type below for more details.
+  """
+  field: GeofenceEventsSortField!
+  """Sort direction. See the link to the type below for more details."""
+  direction: SortDirection!
 }
 
+"""
+Indicates the field used for sorting a [`geofenceIntersections` query](/reference/query/#geofenceintersections).
+"""
 enum GeofenceIntersectionsSortField {
-	ID,
-	START_TIME
+  """
+  Sort the resulting list by the [`GeofenceIntersection`'s unique identifier](/reference/objects/geofenceIntersection/#id).
+  """
+  ID
+  """
+  Sort the resulting list by the [`GeofenceIntersection`'s start time](/reference/objects/geofenceIntersection/#name).
+  """
+  START_TIME
 }
 
+"""
+GeofenceIntersectionsSort allows for sorting geofence intersections by a sort field and direction.
+"""
 input GeofenceIntersectionsSort {
-	field: GeofenceIntersectionsSortField!
-	direction: SortDirection!
+  """
+  Any sortable field available to the GeofenceIntersectionsSortField. See the link to the
+  type below for more details.
+  """
+  field: GeofenceIntersectionsSortField!
+  """Sort direction. See the link to the type below for more details."""
+  direction: SortDirection!
 }
 
 extend type Query {
-	geofence(id: ID!): Geofence
-	geofences(filter: FilterGeofenceInput, first: Int! = 20, after: String, sort: [GeofencesSort!]! = [{field: NAME, direction: ASC}, {field: ID, direction: ASC}]): GeofenceConnection
-	geofenceEvents(filter: FilterGeofenceEventInput!, first: Int! = 20, after: String, sort: [GeofenceEventsSort!]! = [{field: OCCURRED, direction: ASC}, {field: ID, direction: ASC}]): GeofenceEventConnection @deprecated (reason: "geofenceEvents is deprecated, use geofenceIntersections instead")
-	geofenceIntersections(filter: FilterGeofenceIntersectionInput!, first: Int! = 20, after: String, sort: [GeofenceIntersectionsSort!]! = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]): GeofenceIntersectionConnection
+  """
+  Look up a geofence, a real-world geographic area, by its unique identifier.
+  """
+  geofence(
+    """The geofence's unique identifier."""
+    id: ID!
+  ): Geofence
+  """Search for geofences based on a set of filters."""
+  geofences(
+    """Filter geofences by unique identifier, name, etc."""
+    filter: FilterGeofenceInput
+    """Returns the first _n_ elements from the list."""
+    first: Int! = 20
+    """Returns the elements in the list that come after the specified cursor."""
+    after: String
+    """The field and direction by which to sort the results"""
+    sort: [GeofencesSort!]! = [{field: NAME, direction: ASC}, {field: ID, direction: ASC}]
+  ): GeofenceConnection
+  """
+  :::caution
+  `geofenceEvents` is deprecated. Use [`geofenceIntersections`](/reference/query/#geofenceintersections) instead.
+  :::
+  Find events for a geofence based on a set of filters.
+  """
+  geofenceEvents(
+    """Filter geofence events based on the geofence id, time period, etc."""
+    filter: FilterGeofenceEventInput!
+    """Returns the first _n_ elements from the list."""
+    first: Int! = 20
+    """Returns the elements in the list that come after the specified cursor."""
+    after: String
+    """The field and direction by which to sort the results"""
+    sort: [GeofenceEventsSort!]! = [{field: OCCURRED, direction: ASC}, {field: ID, direction: ASC}]
+  ): GeofenceEventConnection @deprecated(reason: "geofenceEvents is deprecated, use geofenceIntersections instead")
+  """Find events for a geofence based on a set of filters."""
+  geofenceIntersections(
+    """
+    Filter geofence intersections based on the geofence id, time period, etc.
+    """
+    filter: FilterGeofenceIntersectionInput!
+    """Returns the first _n_ elements from the list."""
+    first: Int! = 20
+    """Returns the elements in the list that come after the specified cursor."""
+    after: String
+    """The field and direction by which to sort the results"""
+    sort: [GeofenceIntersectionsSort!]! = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]
+  ): GeofenceIntersectionConnection
 }

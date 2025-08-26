@@ -1,4 +1,12 @@
 extend type Mutation {
-    createDataSource(dataSource: CreateDataSourceInput!): DataSource
-    updateDataSource(dataSource: UpdateDataSourceInput!): DataSource
+  """Creates a new [DataSource](/reference/objects/datasource/)."""
+  createDataSource(
+    """Arguments to create a new data source."""
+    dataSource: CreateDataSourceInput!
+  ): DataSource
+  """Updates an existing [DataSource](/reference/objects/datasource/)."""
+  updateDataSource(
+    """Arguments to update an existing data source."""
+    dataSource: UpdateDataSourceInput!
+  ): DataSource
 }

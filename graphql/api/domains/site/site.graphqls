@@ -1,9 +1,19 @@
+"""
+A site represents a business location, such as an office building, a facility or a campus. Sites can be used to logically and geospatially group various objects and events that share a physical space, such as [Devices](/reference/objects/devices/), [Geofences](/reference/objects/geofences/).
+"""
 type Site {
-    id: ID!
-    name: String!
-    position: GeoJSONPoint
-    polygon: GeoJSONMultiPolygon 
-    devices: [Device!]!
-    pointsOfInterest: [PointOfInterest!]!
-    geofences: [Geofence!]!
+  """The unique identifier of the site."""
+  id: ID!
+  """The name of the site."""
+  name: String!
+  """The geographic location of the site"""
+  position: GeoJSONPoint
+  """The geographic shape of the site"""
+  polygon: GeoJSONMultiPolygon
+  """The devices that are associated with the site"""
+  devices: [Device!]!
+  """The points of interest that are associated with this site"""
+  pointsOfInterest: [PointOfInterest!]!
+  """The geofences that are associated with this site"""
+  geofences: [Geofence!]!
 }

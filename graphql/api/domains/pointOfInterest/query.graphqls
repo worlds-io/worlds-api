@@ -1,14 +1,47 @@
+"""
+Indicates the field used for sorting a [`pointsOfInterest` query](/reference/query/#pointsOfInterest).
+"""
 enum PointOfInterestSortField {
-    ID,
-    NAME,
+  """
+  Sort the resulting list by the [`Point of Interest`'s unique identifier](/reference/objects/pointofinterest/#id).
+  """
+  ID
+  """
+  Sort the resulting list by the [`Point of Interest`'s name](/reference/objects/pointofinterest/#name).
+  """
+  NAME
 }
 
+"""
+PointOfInterestSort allows for sorting a [`pointsOfInterest` query](/references/query/#pointsofinterest) by field and direction.
+"""
 input PointOfInterestSort {
-    field: PointOfInterestSortField!
-    direction: SortDirection!
+  """
+  Any sortable field available to the `PointOfInterestSort`. See the link to the type below
+  for more details.
+  """
+  field: PointOfInterestSortField!
+  """Sort direction. See the link to the type below for more details."""
+  direction: SortDirection!
 }
 
 extend type Query {
-    pointOfInterest(id: ID!): PointOfInterest
-    pointsOfInterest(filter: FilterPointOfInterestInput, first: Int! = 20, after: String, sort: [PointOfInterestSort!]! = [{field: NAME, direction: ASC}, {field: ID, direction: ASC}]): PointOfInterestConnection
+  """
+  Look up a point of interest, such as its name, associated site, and devices.
+  """
+  pointOfInterest(
+    """The point of interest's unique identifier."""
+    id: ID!
+  ): PointOfInterest
+  """Search for points of interest based on a set of filters."""
+  pointsOfInterest(
+    """Filter points of interest by id or name."""
+    filter: FilterPointOfInterestInput
+    """Returns the first _n_ elements from the list."""
+    first: Int! = 20
+    """Returns the elements in the list that come after the specified cursor."""
+    after: String
+    """The field and direction by which to sort the results"""
+    sort: [PointOfInterestSort!]! = [{field: NAME, direction: ASC}, {field: ID, direction: ASC}]
+  ): PointOfInterestConnection
 }

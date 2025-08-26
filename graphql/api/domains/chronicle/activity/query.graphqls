@@ -14,10 +14,5 @@ input ActivityChronicleSort @experimental {
 
 extend type Query {
   activityChronicle(id: ID!): ActivityChronicle @experimental
-  activityChronicles(
-    filter: FilterActivityChronicleInput
-    first: Int! = 20
-    after: String
-    sort: [ActivityChronicleSort!]! = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]
-  ): ActivityChronicleConnection @experimental
+  activityChronicles(filter: FilterActivityChronicleInput, first: Int! = 20, after: String, sort: [ActivityChronicleSort!]! = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]): ActivityChronicleConnection @experimental
 }

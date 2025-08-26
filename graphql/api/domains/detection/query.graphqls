@@ -1,14 +1,42 @@
+"""
+Indicates the field used for sorting a [Detections query](/reference/query/#detections).
+"""
 enum DetectionsSortField {
-	DETECTION_TIME,
-	GLOBAL_TRACK_ID
+  """
+  Sort the resulting list by [detection time](/reference/objects/detection/#timestamp).
+  """
+  DETECTION_TIME
+  """
+  Sort the resulting list by the corresponding Track's [unique identifier.](/reference/objects/detection/#globaltrackid).
+  """
+  GLOBAL_TRACK_ID
 }
 
+"""
+DetectionsSort allows for sorting a detection by detection sort field and direction.
+"""
 input DetectionsSort {
-	field: DetectionsSortField!,
-	direction: SortDirection!
+  """
+  Any sortable field available to the DetectionsSort. See the link to the type
+  below for more details.
+  """
+  field: DetectionsSortField!
+  """Sort direction. See the link to the type below for more details."""
+  direction: SortDirection!
 }
 
 extend type Query {
-	detections(filter: FilterDetectionInput!, first: Int! = 20, after: String, sort: [DetectionsSort!]! = [{field: DETECTION_TIME, direction: ASC}, {field: GLOBAL_TRACK_ID, direction: ASC}]): DetectionConnection
+  """
+  Finds detections, which are objects detected by the Worlds system, based on a set of filters.
+  """
+  detections(
+    """Filter detections based on the originating device, time period, etc."""
+    filter: FilterDetectionInput!
+    """Returns the first _n_ elements from the list."""
+    first: Int! = 20
+    """Returns the elements in the list that come after the specified cursor."""
+    after: String
+    """The field and direction by which to sort the results"""
+    sort: [DetectionsSort!]! = [{field: DETECTION_TIME, direction: ASC}, {field: GLOBAL_TRACK_ID, direction: ASC}]
+  ): DetectionConnection
 }
-

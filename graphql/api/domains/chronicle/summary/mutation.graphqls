@@ -1,4 +1,4 @@
 extend type Mutation {
-    createSummaryChronicle(summaryChronicle: CreateSummaryChronicleInput!): SummaryChronicle! @experimental
-    updateSummaryChronicle(summaryChronicle: UpdateSummaryChronicleInput!): SummaryChronicle! @experimental
+  createSummaryChronicle(summaryChronicle: CreateSummaryChronicleInput!): SummaryChronicle! @experimental
+  updateSummaryChronicle(summaryChronicle: UpdateSummaryChronicleInput!): SummaryChronicle! @experimental
 }

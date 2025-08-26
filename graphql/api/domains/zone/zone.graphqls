@@ -1,50 +1,110 @@
 type Zone {
-	id: ID!
-	dataSource: DataSource
-	name: String!
-	polygon: GeoJSONPolygon! 
-	active: Boolean!
-	createdAt: DateTimeOffset
-	updatedAt: DateTimeOffset
-	
-	deviceId: ID! @deprecated (reason: "deviceId is deprecated, use dataSource.id instead")
+  """The unique identifier for the camera zone."""
+  id: ID!
+  """The data source that owns the zone"""
+  dataSource: DataSource
+  """The name given to the camera zone."""
+  name: String!
+  """The geometrical boundry of the camera zone."""
+  polygon: GeoJSONPolygon!
+  """True if the zone is currently active, otherwise false."""
+  active: Boolean!
+  """The timestamp the zone was created at."""
+  createdAt: DateTimeOffset
+  """The timestamp the zone was most recently updated."""
+  updatedAt: DateTimeOffset
+  """
+  :::caution
+  `deviceId` is deprecated. Use `dataSource` instead
+  :::
+  The unique identifier for the camera the zone belongs to.
+  """
+  deviceId: ID! @deprecated(reason: "deviceId is deprecated, use dataSource.id instead")
 }
 
 type ZoneEvent {
-	id: ID!
-	zone: Zone!
-	track: Track!
-	tag: String! @deprecated (reason: "tag is deprecated and can instead be retrieved from the track.")
-	type: ActivityType! @deprecated (reason: "zoneEvent is deprecated in favor of zoneIntersection, which does not use type.")
-	startTime: DateTimeOffset!
-	endTime: DateTimeOffset
-	polygon: GeoJSONMultiPolygon @deprecated (reason: "zoneEvent is deprecated in favor of zoneIntersection, which does not use polygon.")
+  """The unique idenifier for the zone event."""
+  id: ID!
+  """The camera zone the event happened in."""
+  zone: Zone!
+  """The track associated with the object that triggered the zone event."""
+  track: Track!
+  """
+  :::caution
+  [`zoneEvents`](/reference/query/#zoneevents) is deprecated in favor of [`zoneIntersections`](/reference/query/#zoneintersections),
+  and `tag` will not be present on [`ZoneIntersection`](/reference/objects/zoneintersection/).
+  Use [track's tag](/reference/objects/track/#tag) instead.
+  :::
+  The class label of the object that triggered the zone event, i.e person, car, truck, etc.
+  """
+  tag: String! @deprecated(reason: "tag is deprecated and can instead be retrieved from the track.")
+  """
+  :::caution
+  [`zoneEvents`](/reference/query/#zoneevents) is deprecated in favor of [`zoneIntersections`](/reference/query/#zoneintersections),
+  and `type` will not be present on [`ZoneIntersection`](/reference/objects/zoneintersection/).
+  :::
+  The type of zone event, i.e ingress (an object entered the zone), dwell (an object remained in the zone), and egress.
+  (an object exited the zone)
+  """
+  type: ActivityType! @deprecated(reason: "zoneEvent is deprecated in favor of zoneIntersection, which does not use type.")
+  """The time at which the event started."""
+  startTime: DateTimeOffset!
+  """The time at which the event ended."""
+  endTime: DateTimeOffset
+  """
+  :::caution
+  [`zoneEvents`](/reference/query/#zoneevents) is deprecated in favor of [`zoneIntersections`](/reference/query/#zoneintersections),
+  and `polygon` will not be present on [`ZoneIntersection`](/reference/objects/zoneintersection/).
+  :::
+  The two-dimensional shape of the detection that triggered the event.
+  """
+  polygon: GeoJSONMultiPolygon @deprecated(reason: "zoneEvent is deprecated in favor of zoneIntersection, which does not use polygon.")
 }
 
 type ZoneIntersection {
-	id: ID!
-	zone: Zone!
-	track: Track!
-	startTime: DateTimeOffset!
-	endTime: DateTimeOffset
+  """The unique identifier for the zone intersection."""
+  id: ID!
+  """The camera zone the intersection happened in."""
+  zone: Zone!
+  """
+  The track associated with the object that triggered the zone intersection.
+  """
+  track: Track!
+  """The time at which the intersection started."""
+  startTime: DateTimeOffset!
+  """The time at which the intersection ended."""
+  endTime: DateTimeOffset
 }
 
 type ZoneIntersectionMessage {
-	message: ZoneIntersection!
-	state: MessageState!
+  """The zone intersection."""
+  message: ZoneIntersection!
+  """
+  The state of the intersection message. Within the message, the [`endTime`](/reference/objects/zoneintersection/#endtime) will only be present on an [`END`](/reference/enums/#messagestate) event.
+  """
+  state: MessageState!
 }
 
 input CreateZoneInput {
-	dataSourceId: ID!
-	name: String!
-	polygon: GeoJSONPolygonInput!
-	active: Boolean
+  """The unique identifier of the data source that owns the zone"""
+  dataSourceId: ID!
+  """The name given to the camera zone."""
+  name: String!
+  """The geometrical boundry of the camera zone."""
+  polygon: GeoJSONPolygonInput!
+  """True if the zone is currently active, otherwise false."""
+  active: Boolean
 }
 
 input UpdateZoneInput {
-	id: ID!
-	dataSourceId: ID
-	name: String
-	polygon: GeoJSONPolygonInput
-	active: Boolean
+  """The unique identifier of the zone."""
+  id: ID!
+  """The unique identifier of the data source that owns the zone."""
+  dataSourceId: ID
+  """The name given to the camera zone."""
+  name: String
+  """The geometrical boundry of the camera zone."""
+  polygon: GeoJSONPolygonInput
+  """True if the zone is currently active, otherwise false."""
+  active: Boolean
 }

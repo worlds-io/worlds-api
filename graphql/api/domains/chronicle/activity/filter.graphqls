@@ -15,7 +15,6 @@ input FilterActivityChronicleInput @experimental {
   siteIds: FilterIDListInput
   dataSourceIds: FilterIDListInput
   pointOfInterestIds: FilterIDListInput
-
   and: [FilterActivityChronicleInput!]
   or: [FilterActivityChronicleInput!]
   not: FilterActivityChronicleInput

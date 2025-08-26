@@ -10,7 +10,6 @@ input FilterEventChronicleInput @experimental {
   locations: FilterStringListInput
   chronicleProducerId: FilterIDInput
   activityChronicleIds: FilterIDListInput
-
   and: [FilterEventChronicleInput!]
   or: [FilterEventChronicleInput!]
   not: FilterEventChronicleInput

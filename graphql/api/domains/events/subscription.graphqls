@@ -1,3 +1,11 @@
 extend type Subscription {
-    eventActivity(filter: FilterEventActivityInput): Event
+  """
+  Subscribes to changes in any [`Event`](/reference/objects/event/) based on the given filter.
+  """
+  eventActivity(
+    """
+    Filter events by unique identifier of the event producer or type of event, etc.
+    """
+    filter: FilterEventActivityInput
+  ): Event
 }

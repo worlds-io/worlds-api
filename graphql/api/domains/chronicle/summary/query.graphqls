@@ -14,10 +14,5 @@ input SummaryChronicleSort @experimental {
 
 extend type Query {
   summaryChronicle(id: ID!): SummaryChronicle @experimental
-  summaryChronicles(
-    filter: FilterSummaryChronicleInput
-    first: Int! = 20
-    after: String
-    sort: [SummaryChronicleSort!]! = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]
-  ): SummaryChronicleConnection @experimental
+  summaryChronicles(filter: FilterSummaryChronicleInput, first: Int! = 20, after: String, sort: [SummaryChronicleSort!]! = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]): SummaryChronicleConnection @experimental
 }

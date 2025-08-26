@@ -1,12 +1,42 @@
+"""
+FilterDeviceInput allows for filtering devices based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below
+"""
 input FilterDeviceInput {
-    id: FilterIDInput
-    uuid: FilterIDInput
-    name: FilterStringInput
-    externalId: FilterStringInput
-    address: FilterStringInput
-    enabled: FilterBooleanInput
-
-	and: [FilterDeviceInput!]
-	or: [FilterDeviceInput!]
-	not: FilterDeviceInput
+  """
+  If provided, specifies filters that work against the [unique id](/reference/objects/device/#id) of a device.
+  """
+  id: FilterIDInput
+  """
+  If provided, specifies filters that work against the [UUID](/reference/objects/device/#uuid) of a device.
+  """
+  uuid: FilterIDInput
+  """
+  If provided, specifies filters that work against the [name](/reference/objects/device/#name) of a device.
+  """
+  name: FilterStringInput
+  """
+  If provided, specifies filters that work against the [externalId](/refrence/objects/device/#externalId) of a device
+  """
+  externalId: FilterStringInput
+  """
+  If provided, specifies filters that work against the [address](/reference/objects/device/#address) of a device
+  """
+  address: FilterStringInput
+  """
+  If provided, specified filters that work against the [enabled](/reference/objects/device/#enabled) status of a device
+  """
+  enabled: FilterBooleanInput
+  """
+  If provided, a device must pass all filters in this list to match the current filter.
+  """
+  and: [FilterDeviceInput!]
+  """
+  If provided, a device must pass at least one of the filters in this list to match the current filter.
+  """
+  or: [FilterDeviceInput!]
+  """
+  If provided, a device may not match this filter to match the current filter.
+  """
+  not: FilterDeviceInput
 }

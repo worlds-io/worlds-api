@@ -1,41 +1,135 @@
+"""
+`FilterZoneInput` allows for filtering zones based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
+"""
 input FilterZoneInput {
-	id: FilterIDInput
-	name: FilterStringInput
-	dataSourceId: FilterIDInput
-	active: FilterBooleanInput
-	createdAt: FilterDateTimeOffsetInput
-	updatedAt: FilterDateTimeOffsetInput
-
-	and: [FilterZoneInput!]
-	or: [FilterZoneInput!]
-	not: FilterZoneInput
+  """
+  If provided, specifies filters that work against the [unique id](/reference/objects/zone/#id) of a zone.
+  """
+  id: FilterIDInput
+  """
+  If provided, specifies filters that work against the [name](/reference/objects/zone/#name) of a zone.
+  """
+  name: FilterStringInput
+  """
+  If provided, specifies filters that work against the id of the [data source](/reference/objects/zone/#datasource) that owns the zone.
+  """
+  dataSourceId: FilterIDInput
+  """
+  If provided, specifies filters that work against the [active](/reference/objects/zones/#active) state of the zone
+  """
+  active: FilterBooleanInput
+  """
+  If provided, specifies filters that work against the [timestamp the zone was created at](/reference/objects/zones/#createdat).
+  """
+  createdAt: FilterDateTimeOffsetInput
+  """
+  If provided, specifies filters that work against the [timestamp the zone was most recently updated](/reference/objects/zones/#updatedat).
+  """
+  updatedAt: FilterDateTimeOffsetInput
+  """
+  If provided, a detection activity must pass all filters in this list to match the current filter.
+  """
+  and: [FilterZoneInput!]
+  """
+  If provided, a detection activity must pass at least one of the filters in this list to match the current filter.
+  """
+  or: [FilterZoneInput!]
+  """
+  If provided, a detection activity may not match this filter to match the current filter.
+  """
+  not: FilterZoneInput
 }
 
+"""
+`FilterZoneEventInput` allows for filtering a zone event based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
+"""
 input FilterZoneEventInput {
-	zoneId: FilterIDInput
-	time: FilterDateTimeOffsetInput!
-
-	and: [FilterZoneEventInput!]
-	or: [FilterZoneEventInput!]
-	not: FilterZoneEventInput
+  """
+  If provided, specifies filters that work against the [unique id](/reference/objects/zoneevent/#id) of a zone event.
+  """
+  zoneId: FilterIDInput
+  """
+  If provided, specifies filters that work against the [timestamp](/reference/objects/zoneevent/#timestamp) associated with the zone event.
+  """
+  time: FilterDateTimeOffsetInput!
+  """
+  If provided, a detection activity must pass all filters in this list to match the current filter.
+  """
+  and: [FilterZoneEventInput!]
+  """
+  If provided, a detection activity must pass at least one of the filters in this list to match the current filter.
+  """
+  or: [FilterZoneEventInput!]
+  """
+  If provided, a detection activity may not match this filter to match the current filter.
+  """
+  not: FilterZoneEventInput
 }
+
+"""
+`FilterZoneIntersectionInput` allows for filtering a zone intersection based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
+"""
 input FilterZoneIntersectionInput {
-	zoneId: FilterIDInput
-	time: FilterDateTimeOffsetInput!
-	tag: FilterStringInput
-	dataSourceId: FilterIDInput
-
-	and: [FilterZoneIntersectionInput!]
-	or: [FilterZoneIntersectionInput!]
-	not: FilterZoneIntersectionInput
+  """
+  If provided, specifies filters that work against the [unique id](/reference/objects/zoneintersection/#id) of a zone intersection.
+  """
+  zoneId: FilterIDInput
+  """
+  Specifies filters that work against the [startTime](/reference/objects/zoneintersection/#starttime) associated with the zone intersection.
+  """
+  time: FilterDateTimeOffsetInput!
+  """
+  Specifies filters that work against the [tag](/reference/objects/track/#tag) associated with the zone intersection.
+  """
+  tag: FilterStringInput
+  """
+  Specifies filters that work against the [dataSource](/reference/objects/zone/#datasource) associated with the zone intersection.
+  """
+  dataSourceId: FilterIDInput
+  """
+  If provided, a detection activity must pass all filters in this list to match the current filter.
+  """
+  and: [FilterZoneIntersectionInput!]
+  """
+  If provided, a detection activity must pass at least one of the filters in this list to match the current filter.
+  """
+  or: [FilterZoneIntersectionInput!]
+  """
+  If provided, a detection activity may not match this filter to match the current filter.
+  """
+  not: FilterZoneIntersectionInput
 }
 
+"""
+`FilterZoneIntersectionMessageInput` allows for filtering a zone intersection subscription based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
+"""
 input FilterZoneIntersectionMessageInput {
-	zoneId: FilterIDInput
-	dataSourceId: FilterIDInput
-	state: FilterMessageStateInput
-
-	and: [FilterZoneIntersectionMessageInput!]
-	or: [FilterZoneIntersectionMessageInput!]
-	not: FilterZoneIntersectionMessageInput
+  """
+  If provided, specifies filters that work against the [unique id](/reference/objects/zoneintersection/#id) of the zone collided with.
+  """
+  zoneId: FilterIDInput
+  """
+  Specifies filters that work against the [dataSource](/reference/objects/track/#datasource) associated with the zone intersection's [track](/reference/objects/zoneintersection/#track).
+  """
+  dataSourceId: FilterIDInput
+  """
+  Specifies filters that work against the [state](/reference/enums/#messagestate) of the zone intersection message.
+  """
+  state: FilterMessageStateInput
+  """
+  If provided, a detection activity must pass all filters in this list to match the current filter.
+  """
+  and: [FilterZoneIntersectionMessageInput!]
+  """
+  If provided, a detection activity must pass at least one of the filters in this list to match the current filter.
+  """
+  or: [FilterZoneIntersectionMessageInput!]
+  """
+  If provided, a detection activity may not match this filter to match the current filter.
+  """
+  not: FilterZoneIntersectionMessageInput
 }

@@ -1,25 +1,53 @@
+"""
+This input type is used to create a new [`Image`](/references/objects/image) for an event. See [About Events](/reference/objects/#about-events) for more details.
+"""
 input CreateSnapshotInput {
-    dataSourceId: ID!
-    timestamp: DateTimeOffset!
+  """The unique ID of the datasource or device that will take the snapshot"""
+  dataSourceId: ID!
+  """The time when the snapshot will be taken"""
+  timestamp: DateTimeOffset!
 }
 
+"""This input type is used to upload an image to worlds."""
 input UploadImageInput {
-    dataSourceId: ID
-    fileName: String
-    timestamp: DateTimeOffset
-    data: String!
+  """
+  The optional UUID of the data source that this image will be associated with
+  """
+  dataSourceId: ID
+  """The optional name of the uploaded file"""
+  fileName: String
+  """The optional timestamp that will be associated with the image"""
+  timestamp: DateTimeOffset
+  """The image bytes as a base64 encoded string"""
+  data: String!
 }
 
+"""
+This input type is used to create a new clip for an event. See [About Events](/reference/objects/#about-events) for more details.
+"""
 input CreateClipInput {
-    dataSourceId: ID!
-    startTime: DateTimeOffset!
-    endTime: DateTimeOffset!
+  """The unique ID of the datasource or device of the clip"""
+  dataSourceId: ID!
+  """The start time of the clip"""
+  startTime: DateTimeOffset!
+  """The end time of the clip"""
+  endTime: DateTimeOffset!
 }
 
+"""
+An Image represents a stored image asset. It contains information about the datasource it belongs to and the URLs that can be used to access the image and its thumbnail.
+"""
 type Image {
-    id: ID!
-    dataSourceId: ID
-    timestamp: DateTimeOffset
-    url: String!
-    thumbnailUrl: String
+  """The unique identifier of the iamge"""
+  id: ID!
+  """
+  When applicable, the unique identifier of the datasource or device that generated this image.
+  """
+  dataSourceId: ID
+  """When applicable, the time when the image was taken"""
+  timestamp: DateTimeOffset
+  """The URL of the image"""
+  url: String!
+  """The URL of the image's thumbnail"""
+  thumbnailUrl: String
 }

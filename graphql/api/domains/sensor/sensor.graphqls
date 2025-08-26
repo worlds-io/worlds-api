@@ -1,47 +1,96 @@
+"""
+Indicates the type of data that is outputted by a [`sensor`](/reference/objects/sensor).
+"""
 enum SensorType {
-	NUMBER,
-	BOOLEAN,
-	TEXT
+  """Numeric data types, i.e integers, floats, and doubles."""
+  NUMBER
+  """Boolean data types, i.e true or false."""
+  BOOLEAN
+  """Text-based data types."""
+  TEXT
 }
 
 type Sensor {
-	id: ID!
-	name: String!
-	description: String
-	type: SensorType!
-	position: GeoJSONPoint
-	address: String
-	metadata: JSON
+  """The unique identifier for the Sensor."""
+  id: ID!
+  """The name of the Sensor."""
+  name: String!
+  """A brief description of the Sensor."""
+  description: String
+  """The class label of the Sensor, e.g. thermometer."""
+  type: SensorType!
+  """The geographic location of the Sensor."""
+  position: GeoJSONPoint
+  """The address of the Sensor."""
+  address: String
+  """Arbitrary information about the Sensor outside of configuration."""
+  metadata: JSON
 }
 
+"""A `Measurement` is the specific output of a sensor at a given time."""
 type Measurement {
-	id:ID!
-	sensor: Sensor!
-	timestamp: DateTimeOffset!
-	value: String!
+  """The unique identifier for the measurement."""
+  id: ID!
+  """The sensor that provided the measurement."""
+  sensor: Sensor!
+  """The time the measurement took place."""
+  timestamp: DateTimeOffset!
+  """The actual output of the sensor."""
+  value: String!
 }
 
+"""
+This input type is used to create a new [`Sensor`](/reference/objects/sensor/).
+"""
 input SensorInput {
-	name: String!
-	description: String
-	type: SensorType!
-	position: GeoJSONPointInput
-	address: String
-	metadata: JSON
+  """The name of the sensor."""
+  name: String!
+  """A text description of the sensor."""
+  description: String
+  """The type of data outputted by the sensor."""
+  type: SensorType!
+  """The geographic location of the sensor."""
+  position: GeoJSONPointInput
+  """The address of the sensor."""
+  address: String
+  """
+  Additional metadata associated with the sensor. This may represent any JSON object structure.
+  """
+  metadata: JSON
 }
 
+"""
+This input type is used update an existing [`Sensor`](/reference/objects/sensor/).
+"""
 input UpdateSensorInput {
-	id: ID!
-	name: String
-	description: String
-	type: SensorType
-	position: GeoJSONPointInput
-	address: String
-	metadata: JSON
+  """The unique identifier of the sensor."""
+  id: ID!
+  """The name of the sensor."""
+  name: String
+  """A text description of the sensor."""
+  description: String
+  """The type of data outputted by the sensor."""
+  type: SensorType
+  """The geographic location of the sensor."""
+  position: GeoJSONPointInput
+  """The address of the sensor."""
+  address: String
+  """
+  Additional metadata associated with the sensor. This may represent any JSON object structure.
+  """
+  metadata: JSON
 }
 
+"""
+This input type is used to create new [`Measurement`](/reference/objects/measurement/) for a sensor. See [About Sensors](/reference/objects/sensors/#about-sensors) for more details.
+"""
 input MeasurementInput {
-	sensorId: ID!
-	timestamp: DateTimeOffset!
-	value: String!
+  """
+  The unique idenfitier of the [Sensor](/refernece/objects/sensor/) that will own the measurement.
+  """
+  sensorId: ID!
+  """The time at which the measurement was recorded."""
+  timestamp: DateTimeOffset!
+  """The value of the measurement"""
+  value: String!
 }

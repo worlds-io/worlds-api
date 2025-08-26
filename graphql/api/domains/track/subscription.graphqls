@@ -1,4 +1,11 @@
 extend type Subscription {
-	tracks(filter: FilterTrackMessageInput): TrackMessage
+  """
+  Subscribes to changes in any [`Track`](/reference/objects/track/) based on the given filter.
+  """
+  tracks(
+    """
+    Filter tracks by unique identifier of the data source, tag, message state, etc.
+    """
+    filter: FilterTrackMessageInput
+  ): TrackMessage
 }
-
