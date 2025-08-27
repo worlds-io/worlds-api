@@ -1,16 +1,49 @@
+"""
+FilterEventProducerInput filters [EventProducers](/reference/objects/eventproducer/) based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
+"""
 input FilterChronicleProducerInput @experimental {
+    """
+    If provided, specifies filters that work against the [EventProducer's unique id](/reference/objects/eventproducer/#id).
+    """
     id: FilterIDInput
+    """
+    If provided, specifies filters that work against the [EventProducer's name](/reference/objects/eventproducer/#name).
+    """
     name: FilterStringInput
+    """
+    If provided, specifies filters that work against the [EventProducer's active status](/reference/objects/eventproducer/#active).
+    """
     active: FilterBooleanInput
-
-    and: [FilterChronicleProducerInput!]
+    """
+    If provided, an event producer must pass all filters in this list to match the current filter.
+    """and: [FilterChronicleProducerInput!]
+    """
+    If provided, an event producer must pass at least one of the filters in this list to match the current filter.
+    """
     or: [FilterChronicleProducerInput!]
+    """
+    If provided, an event producer may not match this filter to match the current filter.
+    """
     not: FilterChronicleProducerInput
 }
 
+"""
+`FilterEventValidationStatusInput` allows for filtering based on an event's validation status. Only one field should be provided per filter object.
+"""
 input FilterChronicleValidationStatusInput @experimental {
-    eq: ChronicleValidationStatus
-    ne: ChronicleValidationStatus
+    """
+    If provided, the event's validation status must be equivalent to the value provided to match the current filter.
+    """eq: ChronicleValidationStatus
+    """
+    If provided, the event's validation status must not be equivalent to the value provided to match the current filter.
+    """ne: ChronicleValidationStatus
+    """
+    If provided, the event's validation status must be present in the value provided to match the current filter.
+    """
     in: [ChronicleValidationStatus!]
+    """
+    If provided and true, the filter will pass only if the event has a validation status. If provided and false, the filter will pass only if there is no validation status.
+    """
     attributeExists: Boolean
 }

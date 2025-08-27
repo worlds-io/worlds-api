@@ -1,19 +1,45 @@
+"""
+Indicates the field used for sorting an [`chronicleProducers` query](/reference/query/#chronicleproducers).
+"""
 enum ChronicleProducersSortField @experimental {
+    """
+    Sort the resulting list by the [`ChronicleProducer`'s unique identifier](/reference/objects/chronicleProducer/#id).
+    """
     ID
+    """
+    Sort the resulting list by the [`ChronicleProducer`'s name](/reference/objects/chronicleProducer/#name).
+    """
     NAME
 }
 
+"""
+ChronicleProducersSort allows for sorting an chronicle producer by a sort field and direction.
+"""
 input ChronicleProducersSort @experimental {
+    """
+    Any sortable field available to the ChronicleProducersSortField. See the link to the
+    type below for more details.
+    """
     field: ChronicleProducersSortField!
+    """Sort direction. See the link to the type below for more details."""
     direction: SortDirection!
 }
 
 extend type Query {
-  chronicleProducer(id: ID!): ChronicleProducer @experimental
-  chronicleProducers(
-    filter: FilterChronicleProducerInput
-    first: Int! = 20
-    after: String
-    sort: [ChronicleProducersSort!]! = [{field: NAME, direction: ASC}, {field: ID, direction: ASC}]
-  ): ChronicleProducerConnection @experimental
+    """Look up an chronicle producer by its unique identifier."""
+    chronicleProducer(
+        """The chronicle producer's unique identifier."""
+        id: ID!
+    ): ChronicleProducer @experimental
+    """Search for chronicle producers based on a set of filters."""
+    chronicleProducers(
+        """Filter chronicle producers by unique identifier or name"""
+        filter: FilterChronicleProducerInput,
+        """Returns the first _n_ elements from the list."""
+        first: Int! = 20,
+        """Returns the elements in the list that come after the specified cursor."""
+        after: String,
+        """The field and direction by which to sort the results"""
+        sort: [ChronicleProducersSort!]! = [{field: NAME, direction: ASC}, {field: ID, direction: ASC}]
+    ): ChronicleProducerConnection @experimental
 }

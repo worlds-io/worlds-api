@@ -1,4 +1,14 @@
 extend type Mutation {
-    createChronicleProducer(chronicleProducer: CreateChronicleProducerInput!): ChronicleProducer! @experimental
-    updateChronicleProducer(chronicleProducer: UpdateChronicleProducerInput!): ChronicleProducer! @experimental
+    """Creates a new [EventProducer](/reference/objects/eventproducer/)."""
+    createChronicleProducer(
+        """Arguments to create a new event producer."""
+        chronicleProducer: CreateChronicleProducerInput!
+    ): ChronicleProducer! @experimental
+    """
+    Updates an existing [EventProducer](/reference/objects/eventproducer/).
+    """
+    updateChronicleProducer(
+        """Arguments to update an existing event producer."""
+        chronicleProducer: UpdateChronicleProducerInput!
+    ): ChronicleProducer! @experimental
 }

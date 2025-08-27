@@ -1,46 +1,102 @@
+"""
+Used in [ChronicleValidationInput](/reference/input-objects/chroniclevalidationinput/) to indicate whether an chronicle is `VALID` or `INVALID`.
+"""
 enum ChronicleValidationStatus @experimental {
+    """The chronicle is valid."""
     VALID
+    """The chronicle is invalid."""
     INVALID
 }
 
+"""
+This input type indicates whether an chronicle is valid and contains additional information about the validation.
+"""
 type ChronicleValidation @experimental {
+    """Whether the chronicle is `VALID` or `INVALID`."""
     status: ChronicleValidationStatus!
+    """
+    The reason for the chronicle's validation status.  Required if the `status` is `INVALID`.
+    """
     reason: String
+    """Additional details for the chronicle's validation status."""
     details: String
 }
 
+"""
+An chronicle producer represents a custom process that detects and records chronicles. Chronicles
+created by an chronicle producer can represent a wide variety of time-based activities to be
+used by your application's specific needs that aren't expressed natively through
+detections and geofences. For instance, an chronicle producer could track detections of
+hazards and people, creating an chronicle for each case where a person was too close
+to a hazard without personal protective equipment.
+"""
 type ChronicleProducer @experimental {
+    """The unique identifier for the chronicle producer."""
     id: ID!
+    """The name of the chronicle producer."""
     name: String!
+    """The text description of the chronicle producer, if provided."""
     description: String
+    """The timezone for the chronicle producer, if provided."""
     timezone: String
+    """True if the chronicle producer is currently active, otherwise false."""
     active: Boolean!
+    """A list of validation reasons currently used by the chronicle producer."""
     validationReasons: [String!]!
+    """Arbitrary information about the chronicle producer."""
     metadata: JSON
 }
 
+"""
+This input type is used to create a new custom [`ChronicleProducer`](/reference/objects/chronicleProducer/). See [About ChronicleProducers](/reference/objects/chronicleProducer/#about-chronicle-producers) for more details.
+"""
 input CreateChronicleProducerInput @experimental {
+    """The name of the chronicle producer."""
     name: String!
+    """The text description of the chronicle producer."""
     description: String
+    """The timezone for the chronicle producer."""
     timezone: String
+    """
+    True if the chronicle producer should be active by default, otherwise false.
+    """
     active: Boolean!
+    """Arbitrary information about the chronicle producer."""
     metadata: JSON
+    """ TODO """
     validationReasons: [String!]
 }
 
+"""
+This input type is used to update an existing [`ChronicleProducer`](/reference/objects/chronicleProducer/). See [About ChronicleProducers](/reference/objects/chronicleProducer/#about-chronicle-producersss) for more details.
+"""
 input UpdateChronicleProducerInput @experimental {
+    """The unique identifier for the chronicle producer."""
     id: ID!
+    """The name of the chronicle producer."""
     name: String
+    """The text description of the chronicle producer."""
     description: String
+    """The timezone for the chronicle producer."""
     timezone: String
+    """True if the chronicle producer is active, otherwise false."""
     active: Boolean
+    """Arbitrary information about the chronicle producer."""
     metadata: JSON
+    """ TODO """
     validationReasons: [String!]
 }
 
-# Supporting input for validation
+"""
+This input type indicates whether an chronicle is valid and contains additional information about the validation.
+"""
 input ChronicleValidationInput @experimental {
+    """Whether the chronicle is `VALID` or `INVALID`."""
     status: ChronicleValidationStatus!
+    """
+    The reason for the chronicle's validation status.  Required if the `status` is `INVALID`.
+    """
     summary: String
+    """Additional details for the chronicle's validation status."""
     details: String
 }
