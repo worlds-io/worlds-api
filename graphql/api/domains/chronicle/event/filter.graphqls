@@ -34,11 +34,11 @@ input FilterEventChronicleInput @experimental {
   """
   locations: FilterStringListInput
   """
-  If provided, specifies filters that work against the `chronicleProducerId` of the [`EventChronicle`]({{Types.eventchronicle}}).
+  If provided, specifies filters that work against the `chronicleProducer` ID of the [`EventChronicle`]({{Types.eventchronicle}}).
   """
     chronicleProducerId: FilterIDInput
     """
-  If provided, specifies filters that work against the `activityChronicleIds` of the [`EventChronicle`]({{Types.eventchronicle}}).
+  If provided, specifies filters that work against the `activityChronicle` IDs of the [`EventChronicle`]({{Types.eventchronicle}}).
   """activityChronicleIds: FilterIDListInput
     """
   If provided, an event must pass all filters in this list to match the current filter.

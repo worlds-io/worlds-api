@@ -1,18 +1,60 @@
+"""
+FilterSummaryChronicleInput filters [SummaryChronicles]({{Types.summaryChronicle}}) based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
+"""
 input FilterSummaryChronicleInput @experimental {
-    id: FilterIDInput
+    """
+  If provided, specifies filters that work against the `id` of the [`SummaryChronicle`]({{Types.summarychronicle}}).
+  """
+  id: FilterIDInput
+  """
+  If provided, specifies filters that work against the `name` of the [`SummaryChronicle`]({{Types.summarychronicle}}).
+  """
     name: FilterStringInput
-    startTime: FilterDateTimeOffsetInput
+    """
+  If provided, specifies filters that work against the `timestamp` of the [`SummaryChronicle`]({{Types.summarychronicle}}).
+  """startTime: FilterDateTimeOffsetInput
     endTime: FilterDateTimeOffsetInput
-    timezone: FilterStringInput
-    priority: FilterStringInput
-    status: FilterStringInput
+    """
+  If provided, specifies filters that work against the `timezone` of the [`SummaryChronicle`]({{Types.summarychronicle}}).
+  """timezone: FilterStringInput
+    """
+  If provided, specifies filters that work against the `priority` of the [`SummaryChronicle`]({{Types.summarychronicle}}).
+  """priority: FilterStringInput
+    """
+  If provided, specifies filters that work against the `status` of the [`SummaryChronicle`]({{Types.summarychronicle}}).
+  """
+  status: FilterStringInput
+  """
+  If provided, specifies filters that work against the `validation` of the [`SummaryChronicle`]({{Types.summarychronicle}}).
+  """
     validation: FilterChronicleValidationStatusInput
-    labels: FilterStringListInput
+    """
+  If provided, specifies filters that work against the `labels` of the [`SummaryChronicle`]({{Types.summarychronicle}}).
+  """
+  labels: FilterStringListInput
+  """
+  If provided, specifies filters that work against the `locations` of the [`SummaryChronicle`]({{Types.summarychronicle}}).
+  """
     locations: FilterStringListInput
-    chronicleProducerId: FilterIDInput
-    activityChronicleIds: FilterIDListInput
-    eventChronicleIds: FilterIDListInput
-    and: [FilterSummaryChronicleInput!]
-    or: [FilterSummaryChronicleInput!]
+    """
+  If provided, specifies filters that work against the `chronicleProducerId` of the [`SummaryChronicle`]({{Types.summarychronicle}}).
+  """chronicleProducerId: FilterIDInput
+    """
+  If provided, specifies filters that work against the `activityChronicle` IDs of the [`SummaryChronicle`]({{Types.summarychronicle}}).
+  """activityChronicleIds: FilterIDListInput
+    """
+  If provided, specifies filters that work against the `eventChronicle` IDs of the [`SummaryChronicle`]({{Types.summarychronicle}}).
+  """eventChronicleIds: FilterIDListInput
+    """
+  If provided, an summary must pass all filters in this list to match the current filter.
+  """and: [FilterSummaryChronicleInput!]
+    """
+  If provided, an summary must pass at least one of the filters in this list to match the current filter.
+  """
+  or: [FilterSummaryChronicleInput!]
+  """
+  If provided, an summary may not match this filter to match the current filter.
+  """
     not: FilterSummaryChronicleInput
 }

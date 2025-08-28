@@ -17,5 +17,13 @@ input FilterSummaryChronicleInputSubscription @experimental {
 }
 
 extend type Subscription {
-    summaryChronicles(filter: FilterSummaryChronicleInputSubscription): SummaryChronicle! @experimental
+    """
+    Subscribes to changes in any [`Event`]({{Types.event}}) based on the given filter.
+    """
+    summaryChronicles(
+        """
+        Filter events by unique identifier of the event producer or type of event, etc.
+        """
+        filter: FilterSummaryChronicleInputSubscription
+    ): SummaryChronicle! @experimental
 }

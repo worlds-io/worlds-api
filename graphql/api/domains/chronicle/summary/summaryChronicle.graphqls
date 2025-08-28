@@ -1,53 +1,81 @@
+"""
+A summary chronicle summarizes across a specific timeframe.  It can reference event and activity chronicles.
+"""
 type SummaryChronicle @experimental {
-    id: ID!
+    """The unique identifier for the summary."""
+  id: ID!
+  """The name of the summary"""
     name: String!
-    chronicleProducer: ChronicleProducer!
-    description: String
-    startTime: DateTimeOffset!
-    endTime: DateTimeOffset!
-    timezone: String
-    metadata: JSON
-    validation: ChronicleValidation
+    """The summary producer that owns the summary."""chronicleProducer: ChronicleProducer!
+    """A text description of the summary."""description: String
+    """The start time of the summary."""startTime: DateTimeOffset!
+    """The end time of the summary."""
+  endTime: DateTimeOffset!
+  """The timezone for the summary, if provided."""
+    timezone: String"""Additional metadata associated with the summary. This may represent any JSON object structure."""
+    metadata: JSON"""Optional information to validate the accuracy of the summary."""
+    validation: ChronicleValidation"""User-defined priority of the summary."""
     priority: String
-    status: String
-    labels: [String!]
-    locations: [String!]
-    activityChronicles: [ActivityChronicle!]!
-    eventChronicles: [EventChronicle!]!
-    createdAt: DateTimeOffset!
+    """User-defined status of the summary."""status: String
+    """Human-readable labels describing the summary."""labels: [String!]
+    """Human-readable locations describing the summary."""
+  locations: [String!]
+  """Activity chronicles associated with the summary."""
+    activityChronicles: [ActivityChronicle!]!"""Event chronicles associated with the summary."""
+    eventChronicles: [SummaryChronicle!]!
+  """Timestamp that the summary was created."""
+    createdAt: DateTimeOffset!"""Timestamp that the summary was most recently updated."""
     updatedAt: DateTimeOffset!
 }
 
+"""
+This input type is used to create a new [`SummaryChronicle`]({{Types.summarychronicle}}).
+"""
 input CreateSummaryChronicleInput @experimental {
-    name: String!
-    chronicleProducerId: ID!
-    description: String
-    startTime: DateTimeOffset!
-    endTime: DateTimeOffset!
+    """The name of the summary"""
+  name: String!
+  """The summary producer that owns the summary."""
+    chronicleProducerId: ID!"""A text description of the summary."""
+    description: String"""The start time of the summary."""
+    startTime: DateTimeOffset!"""The end time of the summary."""
+    endTime: DateTimeOffset!"""The timezone for the summary, if provided."""
     timezone: String
-    metadata: JSON
-    priority: String
+    """Additional metadata associated with the summary. This may represent any JSON object structure."""
+  metadata: JSON
+  """User-defined priority of the summary."""
+    priority: String"""User-defined status of the summary."""
     status: String
-    labels: [String!]
-    locations: [String!]
-    validation: ChronicleValidationInput
-    activityChronicleIds: [ID!]
+    """Human-readable labels describing the summary."""labels: [String!]
+    """Human-readable locations describing the summary."""locations: [String!]
+    """Optional information to validate the accuracy of the summary."""validation: ChronicleValidationInput
+    """IDs of activity chronicles associated with the summary."""
+  activityChronicleIds: [ID!]
+  """IDs of event chronicles associated with the summary."""
     eventChronicleIds: [ID!]
 }
 
+"""
+This input type is used to update an existing [`SummaryChronicle`]({{Types.summarychronicle}}).
+"""
 input UpdateSummaryChronicleInput @experimental {
-    id: ID!
-    name: String
-    description: String
-    startTime: DateTimeOffset
-    endTime: DateTimeOffset
+    """The unique identifier for the summary."""
+  id: ID!
+  """The name of the summary"""
+    name: String"""A text description of the summary."""
+    description: String"""The start time of the summary."""
+    startTime: DateTimeOffset"""The end time of the summary."""
+    endTime: DateTimeOffset"""The timezone for the summary, if provided."""
     timezone: String
-    metadata: JSON
-    priority: String
+    """Additional metadata associated with the summary. This may represent any JSON object structure."""
+  metadata: JSON
+  """User-defined priority of the summary."""
+    priority: String"""User-defined status of the summary."""
     status: String
-    labels: [String!]
-    locations: [String!]
-    validation: ChronicleValidationInput
-    activityChronicleIds: [ID!]
+    """Human-readable labels describing the summary."""labels: [String!]
+    """Human-readable locations describing the summary."""locations: [String!]
+    """Optional information to validate the accuracy of the summary."""validation: ChronicleValidationInput
+    """IDs of activity chronicles associated with the summary."""
+  activityChronicleIds: [ID!]
+  """IDs of event chronicles associated with the summary."""
     eventChronicleIds: [ID!]
 }

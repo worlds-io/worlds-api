@@ -1,5 +1,5 @@
 """
-An event represents an occurrence at a single point at time.
+An event chronicle represents an occurrence at a single point at time.
 """
 type EventChronicle @experimental {
     """The unique identifier for the event."""
@@ -45,7 +45,7 @@ input CreateEventChronicleInput @experimental {
     """Human-readable locations describing the event."""locations: [String!]
     """Optional information to validate the accuracy of the event."""
   validation: ChronicleValidationInput
-  """Activity chronicles associated with the event."""
+  """IDs of activity chronicles associated with the event."""
     activityChronicleIds: [ID!]
 }
 
@@ -71,6 +71,6 @@ input UpdateEventChronicleInput @experimental {
     """Human-readable locations describing the event."""locations: [String!]
     """Optional information to validate the accuracy of the event."""
   validation: ChronicleValidationInput
-  """Activity chronicles associated with the event."""
+  """IDs of activity chronicles associated with the event."""
     activityChronicleIds: [ID!]
 }
