@@ -15,5 +15,13 @@ input FilterEventChronicleInputSubscription @experimental {
 }
 
 extend type Subscription {
-    eventChronicles(filter: FilterEventChronicleInputSubscription): EventChronicle! @experimental
+    """
+  Subscribes to changes in any [`Event`]({{Types.event}}) based on the given filter.
+  """
+  eventChronicles(
+    """
+    Filter events by unique identifier of the event producer or type of event, etc.
+    """
+    filter: FilterEventChronicleInputSubscription
+  ): EventChronicle! @experimental
 }

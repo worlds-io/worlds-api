@@ -1,47 +1,76 @@
+"""
+An event represents an occurrence at a single point at time.
+"""
 type EventChronicle @experimental {
-    id: ID!
-    name: String!
-    chronicleProducer: ChronicleProducer!
-    description: String
-    timestamp: DateTimeOffset!
-    timezone: String
-    metadata: JSON
-    validation: ChronicleValidation
-    priority: String
-    status: String
-    labels: [String!]
-    locations: [String!]
+    """The unique identifier for the event."""
+  id: ID!
+  """The name of the event"""
+    name: String!"""The event producer that owns the event."""
+    chronicleProducer: ChronicleProducer!"""A text description of the event."""
+    description: String"""The time at which the event occurred."""
+    timestamp: DateTimeOffset!"""The timezone for the event, if provided."""
+    timezone: String"""Additional metadata associated with the event. This may represent any JSON object structure."""
+    metadata: JSON"""Optional information to validate the accuracy of the event."""
+    validation: ChronicleValidation"""User-defined priority of the event."""
+    priority: String"""User-defined status of the event."""
+    status: String"""Human-readable labels describing the event."""
+    labels: [String!]"""Human-readable locations describing the event."""
+    locations: [String!]"""Activity chronicles associated with the event."""
     activityChronicles: [ActivityChronicle!]!
-    createdAt: DateTimeOffset!
+    """Timestamp that the event was created."""
+  createdAt: DateTimeOffset!
+  """Timestamp that the event was most recently updated."""
     updatedAt: DateTimeOffset!
 }
 
+"""
+This input type is used to create a new [`EventChronicle`]({{Types.eventchronicle}}).
+"""
 input CreateEventChronicleInput @experimental {
-    name: String!
-    chronicleProducerId: ID!
+    """The name of the event"""
+  name: String!
+  """The event producer that owns the event."""
+    chronicleProducerId: ID!"""A text description of the event."""
     description: String
-    timestamp: DateTimeOffset!
-    timezone: String
-    metadata: JSON
+    """The time at which the event occurred."""timestamp: DateTimeOffset!
+    """The timezone for the event, if provided."""timezone: String
+    """Additional metadata associated with the event. This may represent any JSON object structure."""
+  metadata: JSON
+  """User-defined priority of the event."""
     priority: String
-    status: String
+    """User-defined status of the event."""
+  status: String
+  """Human-readable labels describing the event."""
     labels: [String!]
-    locations: [String!]
-    validation: ChronicleValidationInput
+    """Human-readable locations describing the event."""locations: [String!]
+    """Optional information to validate the accuracy of the event."""
+  validation: ChronicleValidationInput
+  """Activity chronicles associated with the event."""
     activityChronicleIds: [ID!]
 }
 
+"""
+This input type is used to update an existing [`EventChronicle`]({{Types.eventchronicle}}).
+"""
 input UpdateEventChronicleInput @experimental {
-    id: ID!
-    name: String
+    """The unique identifier for the event."""
+  id: ID!
+  """The name of the event"""
+    name: String"""A text description of the event."""
     description: String
-    timestamp: DateTimeOffset
-    timezone: String
-    metadata: JSON
+    """The time at which the event occurred."""timestamp: DateTimeOffset
+    """The timezone for the event, if provided."""timezone: String
+    """Additional metadata associated with the event. This may represent any JSON object structure."""
+  metadata: JSON
+  """User-defined priority of the event."""
     priority: String
-    status: String
+    """User-defined status of the event."""
+  status: String
+  """Human-readable labels describing the event."""
     labels: [String!]
-    locations: [String!]
-    validation: ChronicleValidationInput
+    """Human-readable locations describing the event."""locations: [String!]
+    """Optional information to validate the accuracy of the event."""
+  validation: ChronicleValidationInput
+  """Activity chronicles associated with the event."""
     activityChronicleIds: [ID!]
 }
