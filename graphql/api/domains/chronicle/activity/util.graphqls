@@ -1,9 +1,23 @@
+"""
+An `ActivityConnection` is the paginated results of an [`activities` query]({{Queries.activities}}).
+See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+"""
 type ActivityChronicleConnection @experimental {
+    """Pagination information for the resulting edges."""
     edges: [ActivityChronicleEdge!]!
+    """The resulting collection of activity edges."""
     pageInfo: PageInfo!
 }
 
+"""
+An activity edge is the pairing of an [Activity]({{Types.activity}}) with its query cursor.
+See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+"""
 type ActivityChronicleEdge @experimental {
-    node: ActivityChronicle!
+    """Information about a particular [Activity]({{Types.activity}})."""
+  node: ActivityChronicle!
+  """
+  The cursor to use with the [Query `activities` field]({{Queries.activities}}) `after` argument.
+  """
     cursor: String!
 }

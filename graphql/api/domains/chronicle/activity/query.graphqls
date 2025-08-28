@@ -1,18 +1,58 @@
+"""
+Indicates the field used for sorting an [`activitys` query]({{Queries.activitys}}).
+"""
 enum ActivityChronicleSortField @experimental {
-    ID
-    START_TIME
+    """
+  Sort the resulting list by the [`Activity`'s unique identifier](/reference/objects/activity/#id).
+  """ID
+    """
+  Sort the resulting list by the [`Activity`'s start time](/reference/objects/activity/#id).
+  """
+  START_TIME
+  """
+  Sort the resulting list by the [`Activity`'s end time](/reference/objects/activity/#id).
+  """
     END_TIME
-    NAME
-    PRIORITY
+    """
+  Sort the resulting list by the [`Activity`'s name](/reference/objects/activity/#id).
+  """NAME
+    """
+  Sort the resulting list by the [`Activity`'s priority](/reference/objects/activity/#id).
+  """
+  PRIORITY
+  """
+  Sort the resulting list by the [`Activity`'s status](/reference/objects/activity/#id).
+  """
     STATUS
 }
 
+"""
+Indicates the field used for sorting an [`activityProducers` query]({{Queries.activityproducers}}).
+"""
 input ActivityChronicleSort @experimental {
-    field: ActivityChronicleSortField!
+    """
+  Any sortable field available to the ActivityProducersSortField. See the link to the
+  type below for more details.
+  """
+  field: ActivityChronicleSortField!
+  """Sort direction. See the link to the type below for more details."""
     direction: SortDirection!
 }
 
 extend type Query {
-    activityChronicle(id: ID!): ActivityChronicle @experimental
-    activityChronicles(filter: FilterActivityChronicleInput, first: Int! = 20, after: String, sort: [ActivityChronicleSort!]! = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]): ActivityChronicleConnection @experimental
+    """Look up an activity by its unique identifier."""
+  activityChronicle(
+  """The activity's unique identifier."""
+  id: ID!
+  ): ActivityChronicle @experimental
+  """Search for activitys based on a set of filters."""
+    activityChronicles("""Filter activitys by unique identifier, type, time, etc."""
+  filter: FilterActivityChronicleInput,
+  """Returns the first _n_ elements from the list."""
+  first: Int! = 20,
+  """Returns the elements in the list that come after the specified cursor."""
+  after: String,
+  """The field and direction by which to sort the results"""
+  sort: [ActivityChronicleSort!]! = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]
+  ): ActivityChronicleConnection @experimental
 }
