@@ -4,31 +4,31 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterDetectionInput {
     """
-    If provided, specifies filters that work against the [unique id](/reference/objects/dataSource/#id) of the data source that initiated the detection.
+    If provided, specifies filters that work against the [unique id]({{Types.dataSource}}) of the data source that initiated the detection.
     """
     dataSourceId: FilterIDInput
     """
-    If provided, specifies filters that work against the [unique id](/reference/objects/track/#id) of the detection's track.
+    If provided, specifies filters that work against the [unique id]({{Types.track}}) of the detection's track.
     """
     trackId: FilterIDInput
     """
-    If provided, specifies filters that work against the [unique id](/reference/objects/detection/#zoneids) of the zone in which a zone event was triggered by the detection.
+    If provided, specifies filters that work against the [unique id]({{Types.detection}}) of the zone in which a zone event was triggered by the detection.
     """
     zoneId: FilterIDInput
     """
-    If provided, specifies filters that work against the [unique id](/reference/objects/detection/#geofenceids) of the geofence in which a geofence event was triggered by the detection.
+    If provided, specifies filters that work against the [unique id]({{Types.detection}}) of the geofence in which a geofence event was triggered by the detection.
     """
     geofenceId: FilterIDInput
     """
-    If provided, specifies case-insensitive filters that work against the [tag](/reference/objects/detection/#tag) associated with the detection.
+    If provided, specifies case-insensitive filters that work against the [tag]({{Types.detection}}) associated with the detection.
     """
     tag: FilterStringInput
     """
-    If provided, specifies filters that work against the [timestamp](/reference/objects/detection/#timestamp) associated with the detection.
+    If provided, specifies filters that work against the [timestamp]({{Types.detection}}) associated with the detection.
     """
     time: FilterDateTimeOffsetInput!
     """
-    If provided, specifies filters that work against the [position](/reference/objects/detection/#position) of the detection
+    If provided, specifies filters that work against the [position]({{Types.detection}}) of the detection
     """
     position: FilterPointInput
     """
@@ -44,7 +44,7 @@ input FilterDetectionInput {
     """
     not: FilterDetectionInput
     """
-    If provided, specifies filters that work against the [unique id](/reference/objects/detection/#cameraid) of the device that initiated the detection.
+    If provided, specifies filters that work against the [unique id]({{Types.detection}}) of the device that initiated the detection.
     """
     deviceId: FilterIDInput @deprecated(reason: "deviceId is deprecated use dataSourceId instead")
 }
@@ -55,23 +55,23 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterDetectionActivityInput {
     """
-    If provided, specifies filters that work against the [unique id](/reference/objects/dataSource/#id) of the data source that initiated the detection activity.
+    If provided, specifies filters that work against the [unique id]({{Types.dataSource}}) of the data source that initiated the detection activity.
     """
     dataSourceId: FilterIDInput
     """
-    If provided, specifies filters that work against the [unique id](/reference/objects/detection/#zoneids) of the zone in which a zone event was triggered by the detection.
+    If provided, specifies filters that work against the [unique id]({{Types.detection}}) of the zone in which a zone event was triggered by the detection.
     """
     zoneId: FilterIDInput
     """
-    If provided, specifies filters that work against the [unique id](/reference/objects/detection/#geofenceids) of the geofence in which a geofence event was triggered by the detection.
+    If provided, specifies filters that work against the [unique id]({{Types.detection}}) of the geofence in which a geofence event was triggered by the detection.
     """
     geofenceId: FilterIDInput
     """
-    If provided, specifies case-insensitive filters that work against the [tag](/reference/objects/detection/#tag) associated with the detection activity.
+    If provided, specifies case-insensitive filters that work against the [tag]({{Types.detection}}) associated with the detection activity.
     """
     tag: FilterStringInput
     """
-    If provided, specifies filters that work against the [position](/reference/objects/detection/#position) of the detection
+    If provided, specifies filters that work against the [position]({{Types.detection}}) of the detection
     """
     position: FilterPointInput
     """
@@ -87,7 +87,7 @@ input FilterDetectionActivityInput {
     """
     not: FilterDetectionActivityInput
     """
-    If provided, specifies filters that work against the [unique id](/reference/objects/detection/#cameraid) of the device that initiated the detection activity.
+    If provided, specifies filters that work against the [unique id]({{Types.detection}}) of the device that initiated the detection activity.
     """
     deviceId: FilterIDInput @deprecated(reason: "`deviceId` is deprecated. Use `dataSourceId` instead")
 }

@@ -4,27 +4,27 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterZoneInput {
     """
-    If provided, specifies filters that work against the [unique id](/reference/objects/zone/#id) of a zone.
+    If provided, specifies filters that work against the [unique id]({{Types.zone}}) of a zone.
     """
     id: FilterIDInput
     """
-    If provided, specifies filters that work against the [name](/reference/objects/zone/#name) of a zone.
+    If provided, specifies filters that work against the [name]({{Types.zone}}) of a zone.
     """
     name: FilterStringInput
     """
-    If provided, specifies filters that work against the id of the [data source](/reference/objects/zone/#datasource) that owns the zone.
+    If provided, specifies filters that work against the id of the [data source]({{Types.zone}}) that owns the zone.
     """
     dataSourceId: FilterIDInput
     """
-    If provided, specifies filters that work against the [active](/reference/objects/zones/#active) state of the zone
+    If provided, specifies filters that work against the [active]({{Types.zones}}) state of the zone
     """
     active: FilterBooleanInput
     """
-    If provided, specifies filters that work against the [timestamp the zone was created at](/reference/objects/zones/#createdat).
+    If provided, specifies filters that work against the [timestamp the zone was created at]({{Types.zones}}).
     """
     createdAt: FilterDateTimeOffsetInput
     """
-    If provided, specifies filters that work against the [timestamp the zone was most recently updated](/reference/objects/zones/#updatedat).
+    If provided, specifies filters that work against the [timestamp the zone was most recently updated]({{Types.zones}}).
     """
     updatedAt: FilterDateTimeOffsetInput
     """
@@ -47,11 +47,11 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterZoneEventInput {
     """
-    If provided, specifies filters that work against the [unique id](/reference/objects/zoneevent/#id) of a zone event.
+    If provided, specifies filters that work against the [unique id]({{Types.zoneevent}}) of a zone event.
     """
     zoneId: FilterIDInput
     """
-    If provided, specifies filters that work against the [timestamp](/reference/objects/zoneevent/#timestamp) associated with the zone event.
+    If provided, specifies filters that work against the [timestamp]({{Types.zoneevent}}) associated with the zone event.
     """
     time: FilterDateTimeOffsetInput!
     """
@@ -74,19 +74,19 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterZoneIntersectionInput {
     """
-    If provided, specifies filters that work against the [unique id](/reference/objects/zoneintersection/#id) of a zone intersection.
+    If provided, specifies filters that work against the [unique id]({{Types.zoneintersection}}) of a zone intersection.
     """
     zoneId: FilterIDInput
     """
-    Specifies filters that work against the [startTime](/reference/objects/zoneintersection/#starttime) associated with the zone intersection.
+    Specifies filters that work against the [startTime]({{Types.zoneintersection}}) associated with the zone intersection.
     """
     time: FilterDateTimeOffsetInput!
     """
-    Specifies filters that work against the [tag](/reference/objects/track/#tag) associated with the zone intersection.
+    Specifies filters that work against the [tag]({{Types.track}}) associated with the zone intersection.
     """
     tag: FilterStringInput
     """
-    Specifies filters that work against the [dataSource](/reference/objects/zone/#datasource) associated with the zone intersection.
+    Specifies filters that work against the [dataSource]({{Types.zone}}) associated with the zone intersection.
     """
     dataSourceId: FilterIDInput
     """
@@ -109,11 +109,11 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterZoneIntersectionMessageInput {
     """
-    If provided, specifies filters that work against the [unique id](/reference/objects/zoneintersection/#id) of the zone collided with.
+    If provided, specifies filters that work against the [unique id]({{Types.zoneintersection}}) of the zone collided with.
     """
     zoneId: FilterIDInput
     """
-    Specifies filters that work against the [dataSource](/reference/objects/track/#datasource) associated with the zone intersection's [track](/reference/objects/zoneintersection/#track).
+    Specifies filters that work against the [dataSource]({{Types.track}}) associated with the zone intersection's [track]({{Types.zoneintersection}}).
     """
     dataSourceId: FilterIDInput
     """

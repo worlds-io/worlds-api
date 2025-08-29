@@ -5,11 +5,11 @@ Only one field should be provided per Filter object unless an operator
 """
 input FilterTagInput {
     """
-    If provided, specifies filters that work against the [unique id](/reference/objects/tag/#id) of a tag.
+    If provided, specifies filters that work against the [unique id]({{Types.tag}}) of a tag.
     """
     id: FilterIDInput
     """
-    If provided, specifies case-insensitive filters that work against the [name](/reference/objects/tag/#name) of a tag.
+    If provided, specifies case-insensitive filters that work against the [name]({{Types.tag}}) of a tag.
     """
     name: FilterStringInput
     """

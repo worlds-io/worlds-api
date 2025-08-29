@@ -3,11 +3,11 @@ Indicates the field used for sorting a [`geofences` query]({{Queries.geofences}}
 """
 enum GeofencesSortField {
     """
-    Sort the resulting list by the [`Geofence`'s unique identifier](/reference/objects/geofence/#id).
+    Sort the resulting list by the [`Geofence`](({{Types.geofence}}))'s unique identifier.
     """
     ID
     """
-    Sort the resulting list by the [`Geofence`'s name](/reference/objects/geofence/#name).
+    Sort the resulting list by the [`Geofence`](({{Types.geofence}}))'s name.
     """
     NAME
 }
@@ -30,11 +30,11 @@ Indicates the field used for sorting a [`geofenceEvents` query]({{Queries.geofen
 """
 enum GeofenceEventsSortField {
     """
-    Sort the resulting list by the [`GeofenceEvent`'s unique identifier](/reference/objects/geofenceEvent/#id).
+    Sort the resulting list by the [`GeofenceEvent`](({{Types.geofenceEvent}}))'s unique identifier.
     """
     ID
     """
-    Sort the resulting list by the [`GeofenceEvent`'s timestamp](/reference/objects/geofenceEvent/#timestamp).
+    Sort the resulting list by the [`GeofenceEvent`](({{Types.geofenceEvent}}))'s timestamp.
     """
     OCCURRED
 }
@@ -57,11 +57,11 @@ Indicates the field used for sorting a [`geofenceIntersections` query]({{Queries
 """
 enum GeofenceIntersectionsSortField {
     """
-    Sort the resulting list by the [`GeofenceIntersection`'s unique identifier](/reference/objects/geofenceIntersection/#id).
+    Sort the resulting list by the [`GeofenceIntersection`](({{Types.geofenceIntersection}}))'s unique identifier.
     """
     ID
     """
-    Sort the resulting list by the [`GeofenceIntersection`'s start time](/reference/objects/geofenceIntersection/#name).
+    Sort the resulting list by the [`GeofenceIntersection`](({{Types.geofenceIntersection}}))'s start time.
     """
     START_TIME
 }

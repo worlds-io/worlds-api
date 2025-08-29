@@ -4,11 +4,11 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterSiteInput {
     """
-    If provided, specifies filters that work against the [Site's unique id](/reference/objects/site/#id).
+    If provided, specifies filters that work against the [Site's unique id]({{Types.site}}).
     """
     id: FilterIDInput
     """
-    If provided, specifies filters that work against the [Site's name](/reference/objects/site/#name).
+    If provided, specifies filters that work against the [Site's name]({{Types.site}}).
     """
     name: FilterStringInput
     """

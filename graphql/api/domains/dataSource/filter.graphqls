@@ -9,15 +9,15 @@ input FilterDataSourceInput {
     """
     type: FilterStringInput
     """
-    If provided, specifies filters that work against the position of the data source's [device](/reference/objects/datasource/#device).
+    If provided, specifies filters that work against the position of the data source's [device]({{Types.datasource}}).
     """
     position: FilterPointInput
     """
-    If provided, specifies filters that work against the [data source`'s unique id](/reference/objects/datasource/#id).
+    If provided, specifies filters that work against the [data source`'s unique id]({{Types.datasource}}).
     """
     id: FilterIDInput
     """
-    If provided, specifies filters that work against the [data source`'s name](/reference/objects/datasource/#name).
+    If provided, specifies filters that work against the [data source`'s name]({{Types.datasource}}).
     """
     name: FilterStringInput
     """

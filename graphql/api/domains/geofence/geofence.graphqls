@@ -36,7 +36,7 @@ type GeofenceEvent {
     """
     [`geofenceEvents`]({{Queries.zoneintersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceintersections}}),
     and `tag` will not be present on [`GeofenceIntersection`]({{Types.geofenceintersection}}).
-    Use [track's tag](/reference/objects/track/#tag) instead.
+    Use [track's tag]({{Types.track}}) instead.
 
     The class label of the object that triggered the geofence event, i.e person,
     car, truck, etc.
@@ -62,7 +62,7 @@ type GeofenceEvent {
     """
     [`geofenceEvents`]({{Queries.zoneintersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceintersections}}),
     and `timestamp` will not be present on [`GeofenceIntersection`]({{Types.geofenceintersection}}).
-    Use [`startTime`](/reference/objects/geofenceintersection/#starttime) and [`endTime`](/reference/objects/geofenceintersection/#endtime) instead.
+    Use [`startTime`]({{Types.geofenceintersection}}) and [`endTime`]({{Types.geofenceintersection}}) instead.
 
     The timestamp at which the event occurred.
     """
@@ -98,7 +98,7 @@ type GeofenceIntersectionMessage {
     """The zone intersection."""
     message: GeofenceIntersection!
     """
-    The state of the intersection message. Within the message, the [`endTime`](/reference/objects/geofenceIntersection/#endtime) will only be present on an [`END`](/reference/enums/#messagestate) event.
+    The state of the intersection message. Within the message, the [`endTime`]({{Types.geofenceIntersection}}) will only be present on an [`END`](/reference/enums/#messagestate) event.
     """
     state: MessageState!
 }

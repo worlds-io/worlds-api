@@ -4,7 +4,7 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterVideoActivityInput {
     """
-    If provided, specifies filters that work against the [`DataSource`'s unique id](/reference/objects/dataSource/#id) of the video that created the event.
+    If provided, specifies filters that work against the [`DataSource`](({{Types.dataSource}}))'s unique id of the video that created the event.
     """
     dataSourceId: FilterIDInput
     """
@@ -27,19 +27,19 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterVideoInput {
     """
-    If provided, specifies filters that work against the [`Videos`'s unique id](/reference/objects/video/#id).
+    If provided, specifies filters that work against the [`Videos`](({{Types.video}}))'s unique id.
     """
     id: FilterIDInput
     """
-    If provided, specifies filters that work against the [unique ID of the `data source`](/reference/objects/dataSource/#id) that the video belongs to.
+    If provided, specifies filters that work against the unique ID of the [`data source`]({{Types.dataSource}}) that the video belongs to.
     """
     dataSourceId: FilterIDInput
     """
-    If provided, specifies filters that work against the [`Videos`'s start time](/reference/objects/video/#startTime).
+    If provided, specifies filters that work against the [`Videos`](({{Types.video}}))'s start time.
     """
     startTime: FilterDateTimeOffsetInput!
     """
-    If provided, specifies filters that work against the [`Videos`'s end time](/reference/objects/video/#endTime).
+    If provided, specifies filters that work against the [`Videos`](({{Types.video}}))'s end time.
     """
     endTime: FilterDateTimeOffsetInput
     """

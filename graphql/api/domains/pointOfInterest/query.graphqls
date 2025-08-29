@@ -3,11 +3,11 @@ Indicates the field used for sorting a [`pointsOfInterest` query]({{Queries.poin
 """
 enum PointOfInterestSortField {
     """
-    Sort the resulting list by the [`Point of Interest`'s unique identifier](/reference/objects/pointofinterest/#id).
+    Sort the resulting list by the [`Point of Interest`](({{Types.pointofinterest}}))'s unique identifier.
     """
     ID
     """
-    Sort the resulting list by the [`Point of Interest`'s name](/reference/objects/pointofinterest/#name).
+    Sort the resulting list by the [`Point of Interest`](({{Types.pointofinterest}}))'s name.
     """
     NAME
 }

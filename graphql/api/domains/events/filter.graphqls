@@ -4,11 +4,11 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterEventProducerInput {
     """
-    If provided, specifies filters that work against the [EventProducer's unique id](/reference/objects/eventproducer/#id).
+    If provided, specifies filters that work against the [EventProducer's unique id]({{Types.eventproducer}}).
     """
     id: FilterIDInput
     """
-    If provided, specifies filters that work against the [EventProducer's name](/reference/objects/eventproducer/#name).
+    If provided, specifies filters that work against the [EventProducer's name]({{Types.eventproducer}}).
     """
     name: FilterStringInput
     """
@@ -31,27 +31,27 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterEventInput {
     """
-    If provided, specifies filters that work against the [EventProducer's unique id](/reference/objects/eventProducer/#id) of the event producer owning the event.
+    If provided, specifies filters that work against the [EventProducer's unique id]({{Types.eventProducer}}) of the event producer owning the event.
     """
     eventProducerId: FilterIDInput
     """
-    If provided, specifies filters that work against the [type](/reference/objects/event/#type) of the [`Event`]({{Types.event}}).
+    If provided, specifies filters that work against the [type]({{Types.event}}) of the [`Event`]({{Types.event}}).
     """
     type: FilterStringInput
     """
-    If provided, specifies filters that work against the [subType](/reference/objects/event/#subtype) of the [`Event`]({{Types.event}}).
+    If provided, specifies filters that work against the [subType]({{Types.event}}) of the [`Event`]({{Types.event}}).
     """
     subType: FilterStringInput
     """
-    If provided, specifies filters that work against the [time](/reference/objects/event/#time) of the [`Event`]({{Types.event}}).
+    If provided, specifies filters that work against the [time]({{Types.event}}) of the [`Event`]({{Types.event}}).
     """
     time: FilterDateTimeOffsetInput!
     """
-    If provided, specifies filters that work against the [draft status](/reference/objects/event/#draft) of the [`Event`]({{Types.event}}).
+    If provided, specifies filters that work against the [draft status]({{Types.event}}) of the [`Event`]({{Types.event}}).
     """
     draft: FilterBooleanInput
     """
-    If provided, specifies filters that work against the [priority](/reference/objects/event/#priority) of the [`Event`]({{Types.event}}).
+    If provided, specifies filters that work against the [priority]({{Types.event}}) of the [`Event`]({{Types.event}}).
     """
     priority: FilterStringInput
     """
@@ -78,23 +78,23 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterEventActivityInput {
     """
-    If provided, specifies filters that work against the [`EventProducer`'s unique id](/reference/objects/eventProducer/#id) of the event producer owning the event.
+    If provided, specifies filters that work against the [`EventProducer`](({{Types.eventProducer}}))'s unique id of the event producer owning the event.
     """
     eventProducerId: FilterIDInput
     """
-    If provided, specifies filters that work against the [type](/reference/objects/event/#type) of the [`Event`]({{Types.event}}).
+    If provided, specifies filters that work against the [type]({{Types.event}}) of the [`Event`]({{Types.event}}).
     """
     type: FilterStringInput
     """
-    If provided, specifies filters that work against the [subType](/reference/objects/event/#subtype) of the [`Event`]({{Types.event}}).
+    If provided, specifies filters that work against the [subType]({{Types.event}}) of the [`Event`]({{Types.event}}).
     """
     subType: FilterStringInput
     """
-    If provided, specifies filters that work against the [draft status](/reference/objects/event/#draft) of the [`Event`]({{Types.event}}).
+    If provided, specifies filters that work against the [draft status]({{Types.event}}) of the [`Event`]({{Types.event}}).
     """
     draft: FilterBooleanInput
     """
-    If provided, specifies filters that work against the [priority](/reference/objects/event/#priority) of the [`Event`]({{Types.event}}).
+    If provided, specifies filters that work against the [priority]({{Types.event}}) of the [`Event`]({{Types.event}}).
     """
     priority: FilterStringInput
     """

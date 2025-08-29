@@ -29,7 +29,7 @@ type ZoneEvent {
     """
     [`zoneEvents`]({{Queries.zoneevents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneintersections}}),
     and `tag` will not be present on [`ZoneIntersection`]({{Types.zoneintersection}}).
-    Use [track's tag](/reference/objects/track/#tag) instead.
+    Use [track's tag]({{Types.track}}) instead.
 
     The class label of the object that triggered the zone event, i.e person, car, truck, etc.
     """
@@ -74,7 +74,7 @@ type ZoneIntersectionMessage {
     """The zone intersection."""
     message: ZoneIntersection!
     """
-    The state of the intersection message. Within the message, the [`endTime`](/reference/objects/zoneintersection/#endtime) will only be present on an [`END`](/reference/enums/#messagestate) event.
+    The state of the intersection message. Within the message, the [`endTime`]({{Types.zoneintersection}}) will only be present on an [`END`](/reference/enums/#messagestate) event.
     """
     state: MessageState!
 }

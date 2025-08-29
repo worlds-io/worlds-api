@@ -3,11 +3,11 @@ Indicates the field used for sorting an [`sites` query]({{Queries.sites}}).
 """
 enum SitesSortField {
     """
-    Sort the resulting list by the [`sites`'s unique identifier](/reference/objects/site/#id).
+    Sort the resulting list by the [`sites`](({{Types.site}}))'s unique identifier.
     """
     ID
     """
-    Sort the resulting list by the [`sites`'s name](/reference/objects/site/#name).
+    Sort the resulting list by the [`sites`](({{Types.site}}))'s name.
     """
     NAME
 }
