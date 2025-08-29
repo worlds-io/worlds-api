@@ -6,7 +6,7 @@ type SummaryChronicle @experimental {
   id: ID!
   """The name of the summary"""
     name: String!
-    """The summary producer that owns the summary."""chronicleProducer: ChronicleProducer!
+    """The chronicle producer that created the summary."""chronicleProducer: ChronicleProducer!
     """A text description of the summary."""description: String
     """The start time of the summary."""startTime: DateTimeOffset!
     """The end time of the summary."""

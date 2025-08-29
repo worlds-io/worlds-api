@@ -4,7 +4,7 @@ An activity chronicle represents behavior which occurs over a period of time.
 type ActivityChronicle @experimental {
     """The unique identifier for the activity."""
     id: ID!
-    """The chronicle producer that owns the activity."""
+    """The chronicle producer that created the activity."""
     chronicleProducer: ChronicleProducer!"""The name of the activity"""
     name: String!"""A text description of the activity."""
     description: String"""The time at which the activity started."""

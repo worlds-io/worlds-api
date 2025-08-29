@@ -4,9 +4,10 @@ An event chronicle represents an occurrence at a single point at time.
 type EventChronicle @experimental {
     """The unique identifier for the event."""
   id: ID!
+  """The chronicle producer that created the event."""
+  chronicleProducer: ChronicleProducer!
   """The name of the event"""
-    name: String!"""The event producer that owns the event."""
-    chronicleProducer: ChronicleProducer!"""A text description of the event."""
+    name: String!"""A text description of the event."""
     description: String"""The time at which the event occurred."""
     timestamp: DateTimeOffset!"""The timezone for the event, if provided."""
     timezone: String"""Additional metadata associated with the event. This may represent any JSON object structure."""
