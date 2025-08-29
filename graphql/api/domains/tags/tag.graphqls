@@ -2,12 +2,12 @@
 Tags are descriptive labels used to classify and group both detections and training data for models.
 """
 type Tag {
-  """The unique identifier for a tag."""
-  id: ID!
-  """
-  The name of the tag. The name is not case-sensitive, and this field will always return as lowercase.
-  """
-  name: String!
-  """The bounding box color used for detections of this tag type."""
-  color: String
+    """The unique identifier for a tag."""
+    id: ID!
+    """
+    The name of the tag. The name is not case-sensitive, and this field will always return as lowercase.
+    """
+    name: String!
+    """The bounding box color used for detections of this tag type."""
+    color: String
 }

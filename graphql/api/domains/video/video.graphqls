@@ -2,28 +2,28 @@
 A video represents a video from a data source, including its start and end time.
 """
 type Video {
-  """The unique identifier for the video."""
-  id: ID!
-  """The data source that created the video."""
-  dataSource: DataSource!
-  """The time at which the video started."""
-  startTime: DateTimeOffset!
-  """
-  The time at which the video ended. If not provided, the video is still ongoing.
-  """
-  endTime: DateTimeOffset
-  """The signed URL to be used to stream the video."""
-  url: String!
-  """The signed URL to be used to retrieve the video thumbnail."""
-  thumbnailUrl: String
-  """The display name of the video."""
-  displayName: String
-  """The resolution height of the video."""
-  resolutionHeight: String
-  """The resolution width of the video."""
-  resolutionWidth: String
-  """The frame rate of the video."""
-  frameRate: Float
-  """The user the video was created by."""
-  createdBy: User
+    """The unique identifier for the video."""
+    id: ID!
+    """The data source that created the video."""
+    dataSource: DataSource!
+    """The time at which the video started."""
+    startTime: DateTimeOffset!
+    """
+    The time at which the video ended. If not provided, the video is still ongoing.
+    """
+    endTime: DateTimeOffset
+    """The signed URL to be used to stream the video."""
+    url: String!
+    """The signed URL to be used to retrieve the video thumbnail."""
+    thumbnailUrl: String
+    """The display name of the video."""
+    displayName: String
+    """The resolution height of the video."""
+    resolutionHeight: String
+    """The resolution width of the video."""
+    resolutionWidth: String
+    """The frame rate of the video."""
+    frameRate: Float
+    """The user the video was created by."""
+    createdBy: User
 }

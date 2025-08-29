@@ -2,48 +2,48 @@
 Indicates the field used for sorting a [Tracks query]({{Queries.tracks}}).
 """
 enum TracksSortField {
-  """Sort the resulting list in by its unique identifier."""
-  ID
-  """Sort the resulting list by the track start time."""
-  TRACK_START_TIME
+    """Sort the resulting list in by its unique identifier."""
+    ID
+    """Sort the resulting list by the track start time."""
+    TRACK_START_TIME
 }
 
 """
 TracksSort allows for sorting a [`tracks` query](/references/query/#tracks) by field and direction.
 """
 input TracksSort {
-  """
-  Any sortable field available to the `TracksSort`. See the link to the type below
-  for more details.
-  """
-  field: TracksSortField!
-  """Sort direction. See the link to the type below for more details."""
-  direction: SortDirection!
+    """
+    Any sortable field available to the `TracksSort`. See the link to the type below
+    for more details.
+    """
+    field: TracksSortField!
+    """Sort direction. See the link to the type below for more details."""
+    direction: SortDirection!
 }
 
 extend type Query {
-  """
-  Look up a track, a record of the motion of a detected object, by its unique identifier.
-  """
-  track(
-    """The track's unique identifier."""
-    id: ID!
     """
-    If provided, locate the track within 24 hours of the given time. Otherwise, the track will only be identified if it is less than 24 hours since it was active.
+    Look up a track, a record of the motion of a detected object, by its unique identifier.
     """
-    timestamp: DateTimeOffset
-  ): Track
-  """
-  Finds tracks, which are records of a detected object over time, based on a set of filters.
-  """
-  tracks(
-    """Filter tracks based on the originating device, time period, etc."""
-    filter: FilterTrackInput!
-    """Returns the first _n_ elements from the list."""
-    first: Int! = 20
-    """Returns the elements in the list that come after the specified cursor."""
-    after: String
-    """The field and direction by which to sort the results"""
-    sort: [TracksSort!]! = [{field: TRACK_START_TIME, direction: ASC}, {field: ID, direction: ASC}]
-  ): TrackConnection
+    track(
+        """The track's unique identifier."""
+        id: ID!
+        """
+        If provided, locate the track within 24 hours of the given time. Otherwise, the track will only be identified if it is less than 24 hours since it was active.
+        """
+        timestamp: DateTimeOffset
+    ): Track
+    """
+    Finds tracks, which are records of a detected object over time, based on a set of filters.
+    """
+    tracks(
+        """Filter tracks based on the originating device, time period, etc."""
+        filter: FilterTrackInput!
+        """Returns the first _n_ elements from the list."""
+        first: Int! = 20
+        """Returns the elements in the list that come after the specified cursor."""
+        after: String
+        """The field and direction by which to sort the results"""
+        sort: [TracksSort!]! = [{field: TRACK_START_TIME, direction: ASC}, {field: ID, direction: ASC}]
+    ): TrackConnection
 }

@@ -3,26 +3,26 @@ FilterEventProducerInput filters [EventProducers]({{Types.eventproducer}}) based
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
 """
 input FilterEventProducerInput {
-  """
-  If provided, specifies filters that work against the [EventProducer's unique id](/reference/objects/eventproducer/#id).
-  """
-  id: FilterIDInput
-  """
-  If provided, specifies filters that work against the [EventProducer's name](/reference/objects/eventproducer/#name).
-  """
-  name: FilterStringInput
-  """
-  If provided, an event producer must pass all filters in this list to match the current filter.
-  """
-  and: [FilterEventProducerInput!]
-  """
-  If provided, an event producer must pass at least one of the filters in this list to match the current filter.
-  """
-  or: [FilterEventProducerInput!]
-  """
-  If provided, an event producer may not match this filter to match the current filter.
-  """
-  not: FilterEventProducerInput
+    """
+    If provided, specifies filters that work against the [EventProducer's unique id](/reference/objects/eventproducer/#id).
+    """
+    id: FilterIDInput
+    """
+    If provided, specifies filters that work against the [EventProducer's name](/reference/objects/eventproducer/#name).
+    """
+    name: FilterStringInput
+    """
+    If provided, an event producer must pass all filters in this list to match the current filter.
+    """
+    and: [FilterEventProducerInput!]
+    """
+    If provided, an event producer must pass at least one of the filters in this list to match the current filter.
+    """
+    or: [FilterEventProducerInput!]
+    """
+    If provided, an event producer may not match this filter to match the current filter.
+    """
+    not: FilterEventProducerInput
 }
 
 """
@@ -30,46 +30,46 @@ FilterEventInput filters [events]({{Types.event}}) based on criteria described b
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
 """
 input FilterEventInput {
-  """
-  If provided, specifies filters that work against the [EventProducer's unique id](/reference/objects/eventProducer/#id) of the event producer owning the event.
-  """
-  eventProducerId: FilterIDInput
-  """
-  If provided, specifies filters that work against the [type](/reference/objects/event/#type) of the [`Event`]({{Types.event}}).
-  """
-  type: FilterStringInput
-  """
-  If provided, specifies filters that work against the [subType](/reference/objects/event/#subtype) of the [`Event`]({{Types.event}}).
-  """
-  subType: FilterStringInput
-  """
-  If provided, specifies filters that work against the [time](/reference/objects/event/#time) of the [`Event`]({{Types.event}}).
-  """
-  time: FilterDateTimeOffsetInput!
-  """
-  If provided, specifies filters that work against the [draft status](/reference/objects/event/#draft) of the [`Event`]({{Types.event}}).
-  """
-  draft: FilterBooleanInput
-  """
-  If provided, specifies filters that work against the [priority](/reference/objects/event/#priority) of the [`Event`]({{Types.event}}).
-  """
-  priority: FilterStringInput
-  """
-  If provided, specifies filters that work against the [validation status]({{Types.eventvalidation}}) of the [`Event`]({{Types.event}}).
-  """
-  validation: FilterEventValidationStatusInput
-  """
-  If provided, an event must pass all filters in this list to match the current filter.
-  """
-  and: [FilterEventInput!]
-  """
-  If provided, an event must pass at least one of the filters in this list to match the current filter.
-  """
-  or: [FilterEventInput!]
-  """
-  If provided, an event may not match this filter to match the current filter.
-  """
-  not: FilterEventInput
+    """
+    If provided, specifies filters that work against the [EventProducer's unique id](/reference/objects/eventProducer/#id) of the event producer owning the event.
+    """
+    eventProducerId: FilterIDInput
+    """
+    If provided, specifies filters that work against the [type](/reference/objects/event/#type) of the [`Event`]({{Types.event}}).
+    """
+    type: FilterStringInput
+    """
+    If provided, specifies filters that work against the [subType](/reference/objects/event/#subtype) of the [`Event`]({{Types.event}}).
+    """
+    subType: FilterStringInput
+    """
+    If provided, specifies filters that work against the [time](/reference/objects/event/#time) of the [`Event`]({{Types.event}}).
+    """
+    time: FilterDateTimeOffsetInput!
+    """
+    If provided, specifies filters that work against the [draft status](/reference/objects/event/#draft) of the [`Event`]({{Types.event}}).
+    """
+    draft: FilterBooleanInput
+    """
+    If provided, specifies filters that work against the [priority](/reference/objects/event/#priority) of the [`Event`]({{Types.event}}).
+    """
+    priority: FilterStringInput
+    """
+    If provided, specifies filters that work against the [validation status]({{Types.eventvalidation}}) of the [`Event`]({{Types.event}}).
+    """
+    validation: FilterEventValidationStatusInput
+    """
+    If provided, an event must pass all filters in this list to match the current filter.
+    """
+    and: [FilterEventInput!]
+    """
+    If provided, an event must pass at least one of the filters in this list to match the current filter.
+    """
+    or: [FilterEventInput!]
+    """
+    If provided, an event may not match this filter to match the current filter.
+    """
+    not: FilterEventInput
 }
 
 """
@@ -77,36 +77,36 @@ FilterEventActivityInput filters [events]({{Types.event}}) based on criteria des
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
 """
 input FilterEventActivityInput {
-  """
-  If provided, specifies filters that work against the [`EventProducer`'s unique id](/reference/objects/eventProducer/#id) of the event producer owning the event.
-  """
-  eventProducerId: FilterIDInput
-  """
-  If provided, specifies filters that work against the [type](/reference/objects/event/#type) of the [`Event`]({{Types.event}}).
-  """
-  type: FilterStringInput
-  """
-  If provided, specifies filters that work against the [subType](/reference/objects/event/#subtype) of the [`Event`]({{Types.event}}).
-  """
-  subType: FilterStringInput
-  """
-  If provided, specifies filters that work against the [draft status](/reference/objects/event/#draft) of the [`Event`]({{Types.event}}).
-  """
-  draft: FilterBooleanInput
-  """
-  If provided, specifies filters that work against the [priority](/reference/objects/event/#priority) of the [`Event`]({{Types.event}}).
-  """
-  priority: FilterStringInput
-  """
-  If provided, an event must pass all filters in this list to match the current filter.
-  """
-  and: [FilterEventActivityInput!]
-  """
-  If provided, an event must pass at least one of the filters in this list to match the current filter.
-  """
-  or: [FilterEventActivityInput!]
-  """
-  If provided, an event may not match this filter to match the current filter.
-  """
-  not: FilterEventActivityInput
+    """
+    If provided, specifies filters that work against the [`EventProducer`'s unique id](/reference/objects/eventProducer/#id) of the event producer owning the event.
+    """
+    eventProducerId: FilterIDInput
+    """
+    If provided, specifies filters that work against the [type](/reference/objects/event/#type) of the [`Event`]({{Types.event}}).
+    """
+    type: FilterStringInput
+    """
+    If provided, specifies filters that work against the [subType](/reference/objects/event/#subtype) of the [`Event`]({{Types.event}}).
+    """
+    subType: FilterStringInput
+    """
+    If provided, specifies filters that work against the [draft status](/reference/objects/event/#draft) of the [`Event`]({{Types.event}}).
+    """
+    draft: FilterBooleanInput
+    """
+    If provided, specifies filters that work against the [priority](/reference/objects/event/#priority) of the [`Event`]({{Types.event}}).
+    """
+    priority: FilterStringInput
+    """
+    If provided, an event must pass all filters in this list to match the current filter.
+    """
+    and: [FilterEventActivityInput!]
+    """
+    If provided, an event must pass at least one of the filters in this list to match the current filter.
+    """
+    or: [FilterEventActivityInput!]
+    """
+    If provided, an event may not match this filter to match the current filter.
+    """
+    not: FilterEventActivityInput
 }

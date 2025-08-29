@@ -1,18 +1,18 @@
 extend type Query {
-  """
-  Retrieve the URL for a screenshot from the given device at a particular timestamp.
-  """
-  imageUrl(
-    """The unique identifier of the device from which to capture the image."""
-    deviceId: ID!
     """
-    The time at which the given image should have been recorded by the device.
+    Retrieve the URL for a screenshot from the given device at a particular timestamp.
     """
-    timestamp: DateTimeOffset!
-  ): String @deprecated(reason: "`imageUrl` is deprecated. Use [`snapshot`]({{Queries.snapshot}}) instead")
-  """Retrieve an Image for the given data source at a particular timestamp."""
-  snapshot(
-    """Arguments for retrieving an image (A Data Source ID and a Timestamp)."""
-    input: CreateSnapshotInput!
-  ): Image
+    imageUrl(
+        """The unique identifier of the device from which to capture the image."""
+        deviceId: ID!
+        """
+        The time at which the given image should have been recorded by the device.
+        """
+        timestamp: DateTimeOffset!
+    ): String @deprecated(reason: "`imageUrl` is deprecated. Use [`snapshot`]({{Queries.snapshot}}) instead")
+    """Retrieve an Image for the given data source at a particular timestamp."""
+    snapshot(
+        """Arguments for retrieving an image (A Data Source ID and a Timestamp)."""
+        input: CreateSnapshotInput!
+    ): Image
 }

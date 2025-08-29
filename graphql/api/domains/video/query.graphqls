@@ -2,43 +2,43 @@
 Indicates the field used for sorting a [Videos query]({{Queries.videos}}).
 """
 enum VideosSortField {
-  """Sort the resulting list in by its unique identifier."""
-  ID
-  """Sort the resulting list by the datasource identifier."""
-  DATA_SOURCE_ID
-  """Sort the resulting list by start time."""
-  START_TIME
-  """Sort the resulting list by end time."""
-  END_TIME
+    """Sort the resulting list in by its unique identifier."""
+    ID
+    """Sort the resulting list by the datasource identifier."""
+    DATA_SOURCE_ID
+    """Sort the resulting list by start time."""
+    START_TIME
+    """Sort the resulting list by end time."""
+    END_TIME
 }
 
 """
 VideosSort allows for sorting a [`videos` query](/references/query/#videos) by field and direction.
 """
 input VideosSort {
-  """
-  Any sortable field available to the `VideosSort`. See the link to the type below for more details.
-  """
-  field: VideosSortField!
-  """Sort direction. See the link to the type below for more details."""
-  direction: SortDirection!
+    """
+    Any sortable field available to the `VideosSort`. See the link to the type below for more details.
+    """
+    field: VideosSortField!
+    """Sort direction. See the link to the type below for more details."""
+    direction: SortDirection!
 }
 
 extend type Query {
-  """Look up a video by its unique identifier."""
-  video(
-    """The video's UUID."""
-    id: ID!
-  ): Video
-  """Search for videos based on a set of filters."""
-  videos(
-    """Filter videos by Fields to filter videos"""
-    filter: FilterVideoInput!
-    """Returns the first _n_ elements from the list."""
-    first: Int! = 20
-    """Returns the elements in the list that come after the specified cursor."""
-    after: String
-    """The field and direction by which to sort the results"""
-    sort: [VideosSort!]! = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]
-  ): VideoConnection
+    """Look up a video by its unique identifier."""
+    video(
+        """The video's UUID."""
+        id: ID!
+    ): Video
+    """Search for videos based on a set of filters."""
+    videos(
+        """Filter videos by Fields to filter videos"""
+        filter: FilterVideoInput!
+        """Returns the first _n_ elements from the list."""
+        first: Int! = 20
+        """Returns the elements in the list that come after the specified cursor."""
+        after: String
+        """The field and direction by which to sort the results"""
+        sort: [VideosSort!]! = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]
+    ): VideoConnection
 }

@@ -2,18 +2,18 @@
 A data source clip represents a video from a data source, bounded by a start and end time.
 """
 type DataSourceClip {
-  """The unique identifier of the data source clip."""
-  id: ID!
-  """The data source that created the video."""
-  dataSource: DataSource!
-  """Start time of the clip"""
-  startTime: DateTimeOffset!
-  """End time of the clip"""
-  endTime: DateTimeOffset!
-  """The signed URL to be used to stream the clip."""
-  url: String!
-  """The signed URL to be used to retrieve the clip thumbnail."""
-  thumbnailUrl: String
-  """Optional display name for a clip"""
-  displayName: String
+    """The unique identifier of the data source clip."""
+    id: ID!
+    """The data source that created the video."""
+    dataSource: DataSource!
+    """Start time of the clip"""
+    startTime: DateTimeOffset!
+    """End time of the clip"""
+    endTime: DateTimeOffset!
+    """The signed URL to be used to stream the clip."""
+    url: String!
+    """The signed URL to be used to retrieve the clip thumbnail."""
+    thumbnailUrl: String
+    """Optional display name for a clip"""
+    displayName: String
 }

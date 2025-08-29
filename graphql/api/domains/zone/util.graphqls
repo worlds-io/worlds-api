@@ -1,51 +1,51 @@
 type ZoneEventConnection {
-  """Pagination information for the resulting edges."""
-  pageInfo: PageInfo!
-  """The resulting collection of zone events edges."""
-  edges: [ZoneEventEdge]!
+    """Pagination information for the resulting edges."""
+    pageInfo: PageInfo!
+    """The resulting collection of zone events edges."""
+    edges: [ZoneEventEdge]!
 }
 
 type ZoneEventEdge {
-  """
-  Information about a particular [ZoneEvent]({{Types.zoneevent}}).
-  """
-  node: ZoneEvent
-  """
-  The cursor to use with the [Query `zoneEvents` field]({{Queries.zoneevents}}) `after` argument.
-  """
-  cursor: String!
+    """
+    Information about a particular [ZoneEvent]({{Types.zoneevent}}).
+    """
+    node: ZoneEvent
+    """
+    The cursor to use with the [Query `zoneEvents` field]({{Queries.zoneevents}}) `after` argument.
+    """
+    cursor: String!
 }
 
 type ZoneIntersectionConnection {
-  """Pagination information for the resulting edges."""
-  pageInfo: PageInfo!
-  """The resulting collection of zone intersections edges."""
-  edges: [ZoneIntersectionEdge]!
+    """Pagination information for the resulting edges."""
+    pageInfo: PageInfo!
+    """The resulting collection of zone intersections edges."""
+    edges: [ZoneIntersectionEdge]!
 }
 
 type ZoneIntersectionEdge {
-  """
-  Information about a particular [ZoneIntersection]({{Types.zoneintersection}}).
-  """
-  node: ZoneIntersection
-  """
-  The cursor to use with the [Query `zoneIntersections` field]({{Queries.zoneintersections}}) `after` argument.
-  """
-  cursor: String!
+    """
+    Information about a particular [ZoneIntersection]({{Types.zoneintersection}}).
+    """
+    node: ZoneIntersection
+    """
+    The cursor to use with the [Query `zoneIntersections` field]({{Queries.zoneintersections}}) `after` argument.
+    """
+    cursor: String!
 }
 
 type ZoneConnection {
-  """Pagination information for the resulting edges."""
-  pageInfo: PageInfo!
-  """The resulting collection of zone edges."""
-  edges: [ZoneEdge]!
+    """Pagination information for the resulting edges."""
+    pageInfo: PageInfo!
+    """The resulting collection of zone edges."""
+    edges: [ZoneEdge]!
 }
 
 type ZoneEdge {
-  """Information about a particular [Zone]({{Types.zone}})."""
-  node: Zone
-  """
-  The cursor to use with the [Query `zones` field]({{Queries.zones}}) `after` argument.
-  """
-  cursor: String!
+    """Information about a particular [Zone]({{Types.zone}})."""
+    node: Zone
+    """
+    The cursor to use with the [Query `zones` field]({{Queries.zones}}) `after` argument.
+    """
+    cursor: String!
 }

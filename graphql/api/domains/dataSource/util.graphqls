@@ -3,10 +3,10 @@ A `DataSourceConnection` is the paginated results of a [`data sources` query]({{
 See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type DataSourceConnection {
-  """Pagination information for the resulting edges."""
-  pageInfo: PageInfo!
-  """The resulting collection of detection edges."""
-  edges: [DataSourceEdge]!
+    """Pagination information for the resulting edges."""
+    pageInfo: PageInfo!
+    """The resulting collection of detection edges."""
+    edges: [DataSourceEdge]!
 }
 
 """
@@ -14,12 +14,12 @@ A data source edge is the pairing of a [Data Source]({{Types.datasource}}) with 
 See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type DataSourceEdge {
-  """
-  Information about a particular [Data Source]({{Types.datasource}}).
-  """
-  node: DataSource
-  """
-  The cursor to use with the [`dataSources` query]({{Queries.datasources}}) `after` argument.
-  """
-  cursor: String!
+    """
+    Information about a particular [Data Source]({{Types.datasource}}).
+    """
+    node: DataSource
+    """
+    The cursor to use with the [`dataSources` query]({{Queries.datasources}}) `after` argument.
+    """
+    cursor: String!
 }

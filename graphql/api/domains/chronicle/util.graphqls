@@ -1,9 +1,9 @@
 type ChronicleProducerConnection @experimental {
-  edges: [ChronicleProducerEdge!]!
-  pageInfo: PageInfo!
+    edges: [ChronicleProducerEdge!]!
+    pageInfo: PageInfo!
 }
 
 type ChronicleProducerEdge @experimental {
-  node: ChronicleProducer!
-  cursor: String!
+    node: ChronicleProducer!
+    cursor: String!
 }

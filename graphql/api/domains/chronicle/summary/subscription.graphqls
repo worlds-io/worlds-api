@@ -1,21 +1,21 @@
 input FilterSummaryChronicleInputSubscription @experimental {
-  id: FilterIDInput
-  name: FilterStringInput
-  description: FilterStringInput
-  startTime: FilterDateTimeOffsetInput
-  endTime: FilterDateTimeOffsetInput
-  timezone: FilterStringInput
-  priority: FilterStringInput
-  status: FilterStringInput
-  chronicleProducerId: FilterIDInput
-  validation: FilterStringInput
-  labels: FilterStringListInput
-  locations: FilterStringListInput
-  and: [FilterSummaryChronicleInputSubscription!]
-  or: [FilterSummaryChronicleInputSubscription!]
-  not: FilterSummaryChronicleInputSubscription
+    id: FilterIDInput
+    name: FilterStringInput
+    description: FilterStringInput
+    startTime: FilterDateTimeOffsetInput
+    endTime: FilterDateTimeOffsetInput
+    timezone: FilterStringInput
+    priority: FilterStringInput
+    status: FilterStringInput
+    chronicleProducerId: FilterIDInput
+    validation: FilterStringInput
+    labels: FilterStringListInput
+    locations: FilterStringListInput
+    and: [FilterSummaryChronicleInputSubscription!]
+    or: [FilterSummaryChronicleInputSubscription!]
+    not: FilterSummaryChronicleInputSubscription
 }
 
 extend type Subscription {
-  summaryChronicles(filter: FilterSummaryChronicleInputSubscription): SummaryChronicle! @experimental
+    summaryChronicles(filter: FilterSummaryChronicleInputSubscription): SummaryChronicle! @experimental
 }

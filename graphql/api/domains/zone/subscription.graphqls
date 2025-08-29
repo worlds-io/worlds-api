@@ -1,11 +1,11 @@
 extend type Subscription {
-  """
-  Subscribes to changes in any [`ZoneIntersection`]({{Types.zoneintersection}}) based on the given filter.
-  """
-  zoneIntersections(
     """
-    Filter detections by unique identifier of the device, unique identifier of the zone, message state, etc.
+    Subscribes to changes in any [`ZoneIntersection`]({{Types.zoneintersection}}) based on the given filter.
     """
-    filter: FilterZoneIntersectionMessageInput
-  ): ZoneIntersectionMessage
+    zoneIntersections(
+        """
+        Filter detections by unique identifier of the device, unique identifier of the zone, message state, etc.
+        """
+        filter: FilterZoneIntersectionMessageInput
+    ): ZoneIntersectionMessage
 }

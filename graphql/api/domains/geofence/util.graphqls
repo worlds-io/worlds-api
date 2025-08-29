@@ -3,10 +3,10 @@ An `GeofenceConnection` is the paginated results of a [`geofences` query]({{Quer
 See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type GeofenceConnection {
-  """Pagination information for the resulting edges."""
-  pageInfo: PageInfo!
-  """The resulting collection of geofence edges."""
-  edges: [GeofenceEdge]!
+    """Pagination information for the resulting edges."""
+    pageInfo: PageInfo!
+    """The resulting collection of geofence edges."""
+    edges: [GeofenceEdge]!
 }
 
 """
@@ -14,48 +14,48 @@ An geofence edge is the pairing of a [Geofence]({{Types.geofence}}) with its que
 See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type GeofenceEdge {
-  """
-  Information about a particular [Geofence]({{Types.geofence}}).
-  """
-  node: Geofence
-  """
-  The cursor to use with the [Query `geofences` field]({{Queries.geofences}}) `after` argument.
-  """
-  cursor: String!
+    """
+    Information about a particular [Geofence]({{Types.geofence}}).
+    """
+    node: Geofence
+    """
+    The cursor to use with the [Query `geofences` field]({{Queries.geofences}}) `after` argument.
+    """
+    cursor: String!
 }
 
 type GeofenceEventConnection {
-  """Pagination information for the resulting edges."""
-  pageInfo: PageInfo!
-  """The resulting collection of geofence events edges."""
-  edges: [GeofenceEventEdge]!
+    """Pagination information for the resulting edges."""
+    pageInfo: PageInfo!
+    """The resulting collection of geofence events edges."""
+    edges: [GeofenceEventEdge]!
 }
 
 type GeofenceEventEdge {
-  """
-  Information about a particular [GeofenceEvent]({{Types.geofenceevent}}).
-  """
-  node: GeofenceEvent
-  """
-  The cursor to use with the [Query `geofenceEvents` field]({{Queries.geofenceevents}}) `after` argument.
-  """
-  cursor: String!
+    """
+    Information about a particular [GeofenceEvent]({{Types.geofenceevent}}).
+    """
+    node: GeofenceEvent
+    """
+    The cursor to use with the [Query `geofenceEvents` field]({{Queries.geofenceevents}}) `after` argument.
+    """
+    cursor: String!
 }
 
 type GeofenceIntersectionConnection {
-  """Pagination information for the resulting edges."""
-  pageInfo: PageInfo!
-  """The resulting collection of geofence intersections edges."""
-  edges: [GeofenceIntersectionEdge]!
+    """Pagination information for the resulting edges."""
+    pageInfo: PageInfo!
+    """The resulting collection of geofence intersections edges."""
+    edges: [GeofenceIntersectionEdge]!
 }
 
 type GeofenceIntersectionEdge {
-  """
-  Information about a particular [GeofenceIntersection]({{Types.geofenceintersection}}).
-  """
-  node: GeofenceIntersection
-  """
-  The cursor to use with the [Query `geofenceIntersections` field]({{Queries.geofenceintersections}}) `after` argument.
-  """
-  cursor: String!
+    """
+    Information about a particular [GeofenceIntersection]({{Types.geofenceintersection}}).
+    """
+    node: GeofenceIntersection
+    """
+    The cursor to use with the [Query `geofenceIntersections` field]({{Queries.geofenceintersections}}) `after` argument.
+    """
+    cursor: String!
 }

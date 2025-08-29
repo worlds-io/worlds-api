@@ -3,33 +3,33 @@ FilterDataSourceInput filters [DataSources]({{Types.datasource}}) based on crite
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
 """
 input FilterDataSourceInput {
-  """
-  If provided, specifies filters that work against the [data source type](/reference/enums/#datasourcetype).
-  The type of the data source
-  """
-  type: FilterStringInput
-  """
-  If provided, specifies filters that work against the position of the data source's [device](/reference/objects/datasource/#device).
-  """
-  position: FilterPointInput
-  """
-  If provided, specifies filters that work against the [data source`'s unique id](/reference/objects/datasource/#id).
-  """
-  id: FilterIDInput
-  """
-  If provided, specifies filters that work against the [data source`'s name](/reference/objects/datasource/#name).
-  """
-  name: FilterStringInput
-  """
-  If provided, a data source must pass all filters in this list to match the current filter.
-  """
-  and: [FilterDataSourceInput!]
-  """
-  If provided, a data source must pass at least one of the filters in this list to match the current filter.
-  """
-  or: [FilterDataSourceInput!]
-  """
-  If provided, a data source may not match this filter to match the current filter.
-  """
-  not: FilterDataSourceInput
+    """
+    If provided, specifies filters that work against the [data source type](/reference/enums/#datasourcetype).
+    The type of the data source
+    """
+    type: FilterStringInput
+    """
+    If provided, specifies filters that work against the position of the data source's [device](/reference/objects/datasource/#device).
+    """
+    position: FilterPointInput
+    """
+    If provided, specifies filters that work against the [data source`'s unique id](/reference/objects/datasource/#id).
+    """
+    id: FilterIDInput
+    """
+    If provided, specifies filters that work against the [data source`'s name](/reference/objects/datasource/#name).
+    """
+    name: FilterStringInput
+    """
+    If provided, a data source must pass all filters in this list to match the current filter.
+    """
+    and: [FilterDataSourceInput!]
+    """
+    If provided, a data source must pass at least one of the filters in this list to match the current filter.
+    """
+    or: [FilterDataSourceInput!]
+    """
+    If provided, a data source may not match this filter to match the current filter.
+    """
+    not: FilterDataSourceInput
 }

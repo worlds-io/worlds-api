@@ -3,10 +3,10 @@ A `DeviceConnection` is the paginated results of a [`devices` query]({{Queries.d
 See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type DeviceConnection {
-  """Pagination information for the resulting edges."""
-  pageInfo: PageInfo!
-  """The resulting collection of Device edges."""
-  edges: [DeviceEdge]!
+    """Pagination information for the resulting edges."""
+    pageInfo: PageInfo!
+    """The resulting collection of Device edges."""
+    edges: [DeviceEdge]!
 }
 
 """
@@ -14,10 +14,10 @@ A device edge is the pairing of a [Device]({{Types.device}}) with its query curs
 See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type DeviceEdge {
-  """Information about a particular [Device]({{Types.device}})."""
-  node: Device
-  """
-  The cursor to use with the [Query `devices` field]({{Queries.devices}}) `after` argument.
-  """
-  cursor: String!
+    """Information about a particular [Device]({{Types.device}})."""
+    node: Device
+    """
+    The cursor to use with the [Query `devices` field]({{Queries.devices}}) `after` argument.
+    """
+    cursor: String!
 }

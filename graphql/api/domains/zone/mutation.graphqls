@@ -1,12 +1,12 @@
 extend type Mutation {
-  """Creates a new [Zone]({{Types.zone}})."""
-  createZone(
-    """Arguments to create a new zone."""
-    zone: CreateZoneInput!
-  ): Zone
-  """Updates an existing zone."""
-  updateZone(
-    """Arguments to update an existing zone."""
-    zone: UpdateZoneInput!
-  ): Zone
+    """Creates a new [Zone]({{Types.zone}})."""
+    createZone(
+        """Arguments to create a new zone."""
+        zone: CreateZoneInput!
+    ): Zone
+    """Updates an existing zone."""
+    updateZone(
+        """Arguments to update an existing zone."""
+        zone: UpdateZoneInput!
+    ): Zone
 }

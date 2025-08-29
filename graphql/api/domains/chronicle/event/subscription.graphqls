@@ -1,19 +1,19 @@
 input FilterEventChronicleInputSubscription @experimental {
-  id: FilterIDInput
-  name: FilterStringInput
-  timestamp: FilterDateTimeOffsetInput
-  timezone: FilterStringInput
-  priority: FilterStringInput
-  status: FilterStringInput
-  chronicleProducerId: FilterIDInput
-  validation: FilterStringInput
-  labels: FilterStringListInput
-  locations: FilterStringListInput
-  and: [FilterEventChronicleInputSubscription!]
-  or: [FilterEventChronicleInputSubscription!]
-  not: FilterEventChronicleInputSubscription
+    id: FilterIDInput
+    name: FilterStringInput
+    timestamp: FilterDateTimeOffsetInput
+    timezone: FilterStringInput
+    priority: FilterStringInput
+    status: FilterStringInput
+    chronicleProducerId: FilterIDInput
+    validation: FilterStringInput
+    labels: FilterStringListInput
+    locations: FilterStringListInput
+    and: [FilterEventChronicleInputSubscription!]
+    or: [FilterEventChronicleInputSubscription!]
+    not: FilterEventChronicleInputSubscription
 }
 
 extend type Subscription {
-  eventChronicles(filter: FilterEventChronicleInputSubscription): EventChronicle! @experimental
+    eventChronicles(filter: FilterEventChronicleInputSubscription): EventChronicle! @experimental
 }

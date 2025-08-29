@@ -1,8 +1,8 @@
 type SensorConnection {
-  """Pagination information for the resulting edges."""
-  pageInfo: PageInfo!
-  """The resulting collection of sensor edges."""
-  edges: [SensorEdge]!
+    """Pagination information for the resulting edges."""
+    pageInfo: PageInfo!
+    """The resulting collection of sensor edges."""
+    edges: [SensorEdge]!
 }
 
 """
@@ -10,12 +10,12 @@ A sensor edge is the pairing of a [Sensor]({{Types.sensor}}) with its query curs
 See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type SensorEdge {
-  """Information about a particular [Sensor]({{Types.sensor}})."""
-  node: Sensor
-  """
-  The cursor to use with the [`sensors` query]({{Queries.sensors}}) `after` argument.
-  """
-  cursor: String!
+    """Information about a particular [Sensor]({{Types.sensor}})."""
+    node: Sensor
+    """
+    The cursor to use with the [`sensors` query]({{Queries.sensors}}) `after` argument.
+    """
+    cursor: String!
 }
 
 """
@@ -23,10 +23,10 @@ A `MeasurementConnection` is the paginated results of an [`measurements` query](
 See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type MeasurementConnection {
-  """Pagination information for the resulting edges."""
-  pageInfo: PageInfo!
-  """The resulting collection of measurement edges."""
-  edges: [MeasurementEdge]!
+    """Pagination information for the resulting edges."""
+    pageInfo: PageInfo!
+    """The resulting collection of measurement edges."""
+    edges: [MeasurementEdge]!
 }
 
 """
@@ -34,10 +34,10 @@ An measurement edge is the pairing of an [Measurement]({{Types.measurement}}) wi
 See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type MeasurementEdge {
-  """Information about a particular measurement."""
-  node: Measurement
-  """
-  The cursor to use with the [`measurements` query]({{Queries.measurements}}) `after` argument.
-  """
-  cursor: String!
+    """Information about a particular measurement."""
+    node: Measurement
+    """
+    The cursor to use with the [`measurements` query]({{Queries.measurements}}) `after` argument.
+    """
+    cursor: String!
 }

@@ -1,145 +1,145 @@
 type Track {
-  """The unique identifier for the Track."""
-  id: ID!
-  """The data source that captured the Track."""
-  dataSource: DataSource
-  """The video that this detection was captured in"""
-  video: Video
-  """The class label of the tracked object, i.e person, car, truck, etc."""
-  tag: String!
-  """The time of the first detection of the tracked object."""
-  startTime: DateTimeOffset!
-  """
-  The time of the last detection of the tracked object, or null if it is still being tracked.
-  """
-  endTime: DateTimeOffset
-  """A collection of every Detection associated with the Track."""
-  detections: [Detection!]!
-  """The identifying and descriptive attributes of the Track"""
-  properties: TrackProperties
-  """Arbitrary information about the Track."""
-  metadata: JSON
-  """Intersections triggered by this track interacting with a zone."""
-  zoneIntersections: [ZoneIntersection!]
-  """
-  Point-in-time representations of an interaction between the track and a geofence.
-  """
-  geofenceIntersections: [GeofenceIntersection!]
-  """
-  The unique identifiers of the devices that captured the Track.
-  """
-  deviceIds: [ID!] @deprecated(reason: "`deviceIds` is deprecated. Use `dataSource.id` instead")
+    """The unique identifier for the Track."""
+    id: ID!
+    """The data source that captured the Track."""
+    dataSource: DataSource
+    """The video that this detection was captured in"""
+    video: Video
+    """The class label of the tracked object, i.e person, car, truck, etc."""
+    tag: String!
+    """The time of the first detection of the tracked object."""
+    startTime: DateTimeOffset!
+    """
+    The time of the last detection of the tracked object, or null if it is still being tracked.
+    """
+    endTime: DateTimeOffset
+    """A collection of every Detection associated with the Track."""
+    detections: [Detection!]!
+    """The identifying and descriptive attributes of the Track"""
+    properties: TrackProperties
+    """Arbitrary information about the Track."""
+    metadata: JSON
+    """Intersections triggered by this track interacting with a zone."""
+    zoneIntersections: [ZoneIntersection!]
+    """
+    Point-in-time representations of an interaction between the track and a geofence.
+    """
+    geofenceIntersections: [GeofenceIntersection!]
+    """
+    The unique identifiers of the devices that captured the Track.
+    """
+    deviceIds: [ID!] @deprecated(reason: "`deviceIds` is deprecated. Use `dataSource.id` instead")
 }
 
 type TrackProperties {
-  """A property that identifies the Track"""
-  identifier: TrackProperty
-  """Properties that describe the Track"""
-  attributes: [TrackProperty!]
+    """A property that identifies the Track"""
+    identifier: TrackProperty
+    """Properties that describe the Track"""
+    attributes: [TrackProperty!]
 }
 
 type TrackProperty {
-  """The type or name of the property"""
-  type: String!
-  """The stored value of the property"""
-  value: String!
+    """The type or name of the property"""
+    type: String!
+    """The stored value of the property"""
+    value: String!
 }
 
 """
 This type is used to create a new [`Detection`]({{Types.detection}}) when [creating](/reference/input-objects/createtrackinput/#detections) or [updating](/reference/input-objects/updatetrackinput/#detections) a [`Track`]({{Types.track}})
 """
 input TrackDetectionInput {
-  """The time at which the detection occurred."""
-  timestamp: DateTimeOffset!
-  """
-  A GeoJSON point that represents the location of the detection in the world.
-  """
-  position: GeoJSONPointInput
-  """
-  A GeoJSON polygon that represents the two dimensional bounds of the detection in its captured video or image.
-  """
-  polygon: GeoJSONPolygonInput
-  """
-  The direction, in degrees, of the detection in the world.
-  Direction is measured clockwise from north, so `0` is north, `90` is east, `180` is south and `270` is west.
-  The direction should be between `0` and `360` degrees.
-  """
-  direction: Float
-  """Arbitrary metadata associated with the detection."""
-  metadata: JSON
+    """The time at which the detection occurred."""
+    timestamp: DateTimeOffset!
+    """
+    A GeoJSON point that represents the location of the detection in the world.
+    """
+    position: GeoJSONPointInput
+    """
+    A GeoJSON polygon that represents the two dimensional bounds of the detection in its captured video or image.
+    """
+    polygon: GeoJSONPolygonInput
+    """
+    The direction, in degrees, of the detection in the world.
+    Direction is measured clockwise from north, so `0` is north, `90` is east, `180` is south and `270` is west.
+    The direction should be between `0` and `360` degrees.
+    """
+    direction: Float
+    """Arbitrary metadata associated with the detection."""
+    metadata: JSON
 }
 
 input TrackPropertiesInput {
-  """A property that identifies the Track"""
-  identifier: TrackPropertyInput
-  """Properties that describe the Track"""
-  attributes: [TrackPropertyInput!]
+    """A property that identifies the Track"""
+    identifier: TrackPropertyInput
+    """Properties that describe the Track"""
+    attributes: [TrackPropertyInput!]
 }
 
 input TrackPropertyInput {
-  """The type or name of the property"""
-  type: String!
-  """The stored value of the property"""
-  value: String!
+    """The type or name of the property"""
+    type: String!
+    """The stored value of the property"""
+    value: String!
 }
 
 """
 This input type is used to create a new [`Track`]({{Types.track}}).
 """
 input CreateTrackInput {
-  """
-  The unique identifier for the Track. Will be autogenerated if one is not provided.
-  """
-  id: ID
-  """
-  The unique identifier of the [`data source`]({{Types.datasource}}) that captured the Track.
-  """
-  dataSourceId: ID!
-  """The class label of the tracked object, i.e person, car, truck, etc."""
-  tag: String!
-  """The time of the first detection of the tracked object."""
-  startTime: DateTimeOffset!
-  """
-  The time of the last detection of the tracked object, or null if it is still being tracked.
-  """
-  endTime: DateTimeOffset
-  """
-  A list of detections that will also be created and associated to the new track.
-  """
-  detections: [TrackDetectionInput!]!
-  """The identifying and descriptive attributes of a new track."""
-  properties: TrackPropertiesInput
-  """Arbitrary information about the Track."""
-  metadata: JSON
+    """
+    The unique identifier for the Track. Will be autogenerated if one is not provided.
+    """
+    id: ID
+    """
+    The unique identifier of the [`data source`]({{Types.datasource}}) that captured the Track.
+    """
+    dataSourceId: ID!
+    """The class label of the tracked object, i.e person, car, truck, etc."""
+    tag: String!
+    """The time of the first detection of the tracked object."""
+    startTime: DateTimeOffset!
+    """
+    The time of the last detection of the tracked object, or null if it is still being tracked.
+    """
+    endTime: DateTimeOffset
+    """
+    A list of detections that will also be created and associated to the new track.
+    """
+    detections: [TrackDetectionInput!]!
+    """The identifying and descriptive attributes of a new track."""
+    properties: TrackPropertiesInput
+    """Arbitrary information about the Track."""
+    metadata: JSON
 }
 
 """
 This input type is used to update an existing [`Track`]({{Types.track}}).
 """
 input UpdateTrackInput {
-  """The unique identifier of the Track."""
-  id: ID!
-  """The class label of the tracked object, i.e person, car, truck, etc."""
-  tag: String
-  """The time of the first detection of the tracked object."""
-  startTime: DateTimeOffset
-  """
-  The time of the last detection of the tracked object, or null if it is still being tracked.
-  """
-  endTime: DateTimeOffset
-  """
-  A list of detections that will be created and associated to the existing track.
-  """
-  detections: [TrackDetectionInput!]
-  """The identifying and descriptive attributes of a track."""
-  properties: TrackPropertiesInput
-  """Arbitrary information about the Track."""
-  metadata: JSON
+    """The unique identifier of the Track."""
+    id: ID!
+    """The class label of the tracked object, i.e person, car, truck, etc."""
+    tag: String
+    """The time of the first detection of the tracked object."""
+    startTime: DateTimeOffset
+    """
+    The time of the last detection of the tracked object, or null if it is still being tracked.
+    """
+    endTime: DateTimeOffset
+    """
+    A list of detections that will be created and associated to the existing track.
+    """
+    detections: [TrackDetectionInput!]
+    """The identifying and descriptive attributes of a track."""
+    properties: TrackPropertiesInput
+    """Arbitrary information about the Track."""
+    metadata: JSON
 }
 
 type TrackMessage {
-  """The track."""
-  message: Track!
-  """The state of the track message."""
-  state: MessageState!
+    """The track."""
+    message: Track!
+    """The state of the track message."""
+    state: MessageState!
 }

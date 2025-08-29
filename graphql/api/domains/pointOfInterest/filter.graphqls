@@ -4,28 +4,28 @@ Only one field should be provided per Filter object unless an operator
 (`and` `or` `not`) as specified below.
 """
 input FilterPointOfInterestInput {
-  """
-  If provided, specifies filters that work against the [unique id](/reference/objects/pointofinterest/#id) of a point of interest.
-  """
-  id: FilterIDInput
-  """
-  If provided, specifies filters that work against the [unique id](/reference/objects/pointofinterest/#siteid) of the site the point of interest is associated with.
-  """
-  siteId: FilterIDInput
-  """
-  If provided, specifies filters that work against the [name](/reference/objects/pointofinterest/#name) of a point of interest.
-  """
-  name: FilterStringInput
-  """
-  If provided, a point of interest must pass all filters in this list to match the current filter.
-  """
-  and: [FilterPointOfInterestInput!]
-  """
-  If provided, a point of interest must pass at least one of the filters in this list to match the current filter.
-  """
-  or: [FilterPointOfInterestInput!]
-  """
-  If provided, a point of interest may not match this filter to match the current filter.
-  """
-  not: FilterPointOfInterestInput
+    """
+    If provided, specifies filters that work against the [unique id](/reference/objects/pointofinterest/#id) of a point of interest.
+    """
+    id: FilterIDInput
+    """
+    If provided, specifies filters that work against the [unique id](/reference/objects/pointofinterest/#siteid) of the site the point of interest is associated with.
+    """
+    siteId: FilterIDInput
+    """
+    If provided, specifies filters that work against the [name](/reference/objects/pointofinterest/#name) of a point of interest.
+    """
+    name: FilterStringInput
+    """
+    If provided, a point of interest must pass all filters in this list to match the current filter.
+    """
+    and: [FilterPointOfInterestInput!]
+    """
+    If provided, a point of interest must pass at least one of the filters in this list to match the current filter.
+    """
+    or: [FilterPointOfInterestInput!]
+    """
+    If provided, a point of interest may not match this filter to match the current filter.
+    """
+    not: FilterPointOfInterestInput
 }

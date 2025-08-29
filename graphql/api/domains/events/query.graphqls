@@ -2,85 +2,85 @@
 Indicates the field used for sorting an [`eventProducers` query]({{Queries.eventproducers}}).
 """
 enum EventProducersSortField {
-  """
-  Sort the resulting list by the [`EventProducer`'s unique identifier](/reference/objects/eventProducer/#id).
-  """
-  ID
-  """
-  Sort the resulting list by the [`EventProducer`'s name](/reference/objects/eventProducer/#name).
-  """
-  EVENT_PRODUCER_NAME
+    """
+    Sort the resulting list by the [`EventProducer`'s unique identifier](/reference/objects/eventProducer/#id).
+    """
+    ID
+    """
+    Sort the resulting list by the [`EventProducer`'s name](/reference/objects/eventProducer/#name).
+    """
+    EVENT_PRODUCER_NAME
 }
 
 """
 Indicates the field used for sorting an [`events` query]({{Queries.events}}).
 """
 enum EventsSortField {
-  """
-  Sort the resulting list by the [`Event`'s unique identifier](/reference/objects/event/#id).
-  """
-  ID
-  """
-  Sort the resulting list by the [`Event`'s start time](/reference/objects/event/#starttime).
-  """
-  START_TIME
+    """
+    Sort the resulting list by the [`Event`'s unique identifier](/reference/objects/event/#id).
+    """
+    ID
+    """
+    Sort the resulting list by the [`Event`'s start time](/reference/objects/event/#starttime).
+    """
+    START_TIME
 }
 
 """
 EventProducersSort allows for sorting an event producer by a sort field and direction.
 """
 input EventProducersSort {
-  """
-  Any sortable field available to the EventProducersSortField. See the link to the
-  type below for more details.
-  """
-  field: EventProducersSortField!
-  """Sort direction. See the link to the type below for more details."""
-  direction: SortDirection!
+    """
+    Any sortable field available to the EventProducersSortField. See the link to the
+    type below for more details.
+    """
+    field: EventProducersSortField!
+    """Sort direction. See the link to the type below for more details."""
+    direction: SortDirection!
 }
 
 """EventsSort allows for sorting an event by a sort field and direction."""
 input EventsSort {
-  """
-  Any sortable field available to the EventsSortField. See the link to the
-  type below for more details.
-  """
-  field: EventsSortField!
-  """Sort direction. See the link to the type below for more details."""
-  direction: SortDirection!
+    """
+    Any sortable field available to the EventsSortField. See the link to the
+    type below for more details.
+    """
+    field: EventsSortField!
+    """Sort direction. See the link to the type below for more details."""
+    direction: SortDirection!
 }
 
 extend type Query {
-  """Look up an event producer by its unique identifier."""
-  eventProducer(
-    """The event producer's unique identifier."""
-    id: ID!
-  ): EventProducer
-  """Search for event producers based on a set of filters."""
-  eventProducers(
-    """Filter event producers by unique identifier or name"""
-    filter: FilterEventProducerInput
-    """Returns the first _n_ elements from the list."""
-    first: Int! = 20
-    """Returns the elements in the list that come after the specified cursor."""
-    after: String
-    """The field and direction by which to sort the results"""
-    sort: [EventProducersSort!]! = [{field: EVENT_PRODUCER_NAME, direction: ASC}, {field: ID, direction: ASC}]
-  ): EventProducerConnection
-  """Look up an event by its unique identifier."""
-  event(
-    """The event's unique identifier."""
-    id: ID!
-  ): Event
-  """Search for events based on a set of filters."""
-  events(
-    """Filter events by unique identifier, type, time, etc."""
-    filter: FilterEventInput!
-    """Returns the first _n_ elements from the list."""
-    first: Int! = 20
-    """Returns the elements in the list that come after the specified cursor."""
-    after: String
-    """The field and direction by which to sort the results"""
-    sort: [EventsSort!]! = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]
-  ): EventConnection
+    """Look up an event producer by its unique identifier."""
+    eventProducer(
+        """The event producer's unique identifier."""
+        id: ID!
+    ): EventProducer
+    """Search for event producers based on a set of filters."""
+    eventProducers(
+        """Filter event producers by unique identifier or name"""
+        filter: FilterEventProducerInput
+        """Returns the first _n_ elements from the list."""
+        first: Int! = 20
+        """Returns the elements in the list that come after the specified cursor."""
+        after: String
+        """The field and direction by which to sort the results"""
+        sort: [EventProducersSort!]! = [{field: EVENT_PRODUCER_NAME, direction: ASC}, {field: ID, direction: ASC}]
+    ): EventProducerConnection
+    """Look up an event by its unique identifier."""
+    event(
+        """The event's unique identifier."""
+        id: ID!
+    ): Event
+    """Search for events based on a set of filters."""
+    events(
+        """Filter events by unique identifier, type, time, etc."""
+        filter: FilterEventInput!
+        """Returns the first _n_ elements from the list."""
+        first: Int! = 20
+        """Returns the elements in the list that come after the specified cursor."""
+        after: String
+        """The field and direction by which to sort the results"""
+        sort: [EventsSort!]! = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]
+    ): EventConnection
 }

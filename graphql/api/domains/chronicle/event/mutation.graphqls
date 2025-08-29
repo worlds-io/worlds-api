@@ -1,4 +1,4 @@
 extend type Mutation {
-  createEventChronicle(eventChronicle: CreateEventChronicleInput!): EventChronicle! @experimental
-  updateEventChronicle(eventChronicle: UpdateEventChronicleInput!): EventChronicle! @experimental
+    createEventChronicle(eventChronicle: CreateEventChronicleInput!): EventChronicle! @experimental
+    updateEventChronicle(eventChronicle: UpdateEventChronicleInput!): EventChronicle! @experimental
 }

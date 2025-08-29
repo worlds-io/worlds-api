@@ -1,26 +1,26 @@
 extend type Mutation {
-  """Creates a new [EventProducer]({{Types.eventproducer}})."""
-  createEventProducer(
-    """Arguments to create a new event producer."""
-    eventProducer: EventProducerInput!
-  ): EventProducer
-  """
-  Updates an existing [EventProducer]({{Types.eventproducer}}).
-  """
-  updateEventProducer(
-    """Arguments to update an existing event producer."""
-    eventProducer: UpdateEventProducerInput!
-  ): EventProducer
-  """
-  Creates a new [Event]({{Types.event}}). This allows for the creation of custom events within the Worlds system.
-  """
-  createEvent(
-    """Arguments to create a new event."""
-    event: CreateEventInput!
-  ): Event
-  """Updates an existing [Event]({{Types.event}})."""
-  updateEvent(
-    """Arguments to update an existing event."""
-    event: UpdateEventInput!
-  ): Event
+    """Creates a new [EventProducer]({{Types.eventproducer}})."""
+    createEventProducer(
+        """Arguments to create a new event producer."""
+        eventProducer: EventProducerInput!
+    ): EventProducer
+    """
+    Updates an existing [EventProducer]({{Types.eventproducer}}).
+    """
+    updateEventProducer(
+        """Arguments to update an existing event producer."""
+        eventProducer: UpdateEventProducerInput!
+    ): EventProducer
+    """
+    Creates a new [Event]({{Types.event}}). This allows for the creation of custom events within the Worlds system.
+    """
+    createEvent(
+        """Arguments to create a new event."""
+        event: CreateEventInput!
+    ): Event
+    """Updates an existing [Event]({{Types.event}})."""
+    updateEvent(
+        """Arguments to update an existing event."""
+        event: UpdateEventInput!
+    ): Event
 }

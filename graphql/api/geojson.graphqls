@@ -2,20 +2,20 @@
 A [GeoJSON][geojson] point represents a single position in the world. GeoJSON is a formal specification as defined by [RFC 7946][geojson-rfc].
 """
 type GeoJSONPoint {
-  """
-  The type of the GeoJSON node. For the GeoJSON point, this will be "Point".
-  """
-  type: String!
-  """
-  The coordinates for the the GeoJSON point, as determined by the [coordinate
-  reference system](#crs).
-  """
-  coordinates: [Float!]!
-  """
-  The coordinate reference system used for this geographical position. See
-  [`GeoJSONCRS`]({{Types.geojsoncrs}}) for more information.
-  """
-  crs: GeoJSONCRS
+    """
+    The type of the GeoJSON node. For the GeoJSON point, this will be "Point".
+    """
+    type: String!
+    """
+    The coordinates for the the GeoJSON point, as determined by the [coordinate
+    reference system](#crs).
+    """
+    coordinates: [Float!]!
+    """
+    The coordinate reference system used for this geographical position. See
+    [`GeoJSONCRS`]({{Types.geojsoncrs}}) for more information.
+    """
+    crs: GeoJSONCRS
 }
 
 """
@@ -23,22 +23,22 @@ A [GeoJSON][geojson] polygon represents a region in the world. GeoJSON is a form
 specification as defined by [RFC 7946][geojson-rfc].
 """
 type GeoJSONPolygon {
-  """
-  The type of the GeoJSON node. For the GeoJSON polygon, this will be "Polygon".
-  """
-  type: String!
-  """
-  The coordinates that define the region, as determined by the [coordinate
-  reference system](#crs). The first element in the array represents the exterior
-  ring.  Any subsequent elements represent interior rings (or holes).
-  For more information, see [Polygons in RFC 7946](https://datatracker.ietf.org/doc/html/rfc7946#appendix-A.3).
-  """
-  coordinates: [[[Float!]!]!]!
-  """
-  The coordinate reference system used for this  polygon. See
-  [`GeoJSONCRS`]({{Types.geojsoncrs}}) for more information.
-  """
-  crs: GeoJSONCRS
+    """
+    The type of the GeoJSON node. For the GeoJSON polygon, this will be "Polygon".
+    """
+    type: String!
+    """
+    The coordinates that define the region, as determined by the [coordinate
+    reference system](#crs). The first element in the array represents the exterior
+    ring.  Any subsequent elements represent interior rings (or holes).
+    For more information, see [Polygons in RFC 7946](https://datatracker.ietf.org/doc/html/rfc7946#appendix-A.3).
+    """
+    coordinates: [[[Float!]!]!]!
+    """
+    The coordinate reference system used for this  polygon. See
+    [`GeoJSONCRS`]({{Types.geojsoncrs}}) for more information.
+    """
+    crs: GeoJSONCRS
 }
 
 """
@@ -46,22 +46,22 @@ A [GeoJSON][geojson] multi-polygon represents any number of regions in the world
 GeoJSON is a formal specification as defined by [RFC 7946][geojson-rfc].
 """
 type GeoJSONMultiPolygon {
-  """
-  The type of the GeoJSON node. For the GeoJSON multi-polygon, this will be "MultiPolygon".
-  """
-  type: String!
-  """
-  The coordinates that define the regions, as determined by the [coordinate
-  reference system](#crs). Each element of the outermost array represent a region; the first element in each array represents the exterior
-  ring.  Any subsequent elements represent interior rings (or holes).
-  For more information, see [MultiPolygons in RFC 7946](https://datatracker.ietf.org/doc/html/rfc7946#appendix-A.6).
-  """
-  coordinates: [[[[Float!]!]!]!]!
-  """
-  The coordinate reference system used for this multipolygon. See
-  [`GeoJSONCRS`]({{Types.geojsoncrs}}) for more information.
-  """
-  crs: GeoJSONCRS
+    """
+    The type of the GeoJSON node. For the GeoJSON multi-polygon, this will be "MultiPolygon".
+    """
+    type: String!
+    """
+    The coordinates that define the regions, as determined by the [coordinate
+    reference system](#crs). Each element of the outermost array represent a region; the first element in each array represents the exterior
+    ring.  Any subsequent elements represent interior rings (or holes).
+    For more information, see [MultiPolygons in RFC 7946](https://datatracker.ietf.org/doc/html/rfc7946#appendix-A.6).
+    """
+    coordinates: [[[[Float!]!]!]!]!
+    """
+    The coordinate reference system used for this multipolygon. See
+    [`GeoJSONCRS`]({{Types.geojsoncrs}}) for more information.
+    """
+    crs: GeoJSONCRS
 }
 
 union GeoJSONGeometry = GeoJSONPoint | GeoJSONPolygon | GeoJSONMultiPolygon
@@ -71,16 +71,16 @@ A [GeoJSON][geojson] feature represents any spatially bounded thing.
 GeoJSON is a formal specification as defined by [RFC 7946][geojson-rfc].
 """
 type GeoJSONFeature {
-  """
-  The type of the GeoJSON node. For the GeoJSON feature, this will be "Feature".
-  """
-  type: String!
-  """Any supported GeoJSON geometry object."""
-  geometry: GeoJSONGeometry
-  """
-  An arbitrary set of properties associated with the coordinate reference system.
-  """
-  properties: JSON
+    """
+    The type of the GeoJSON node. For the GeoJSON feature, this will be "Feature".
+    """
+    type: String!
+    """Any supported GeoJSON geometry object."""
+    geometry: GeoJSONGeometry
+    """
+    An arbitrary set of properties associated with the coordinate reference system.
+    """
+    properties: JSON
 }
 
 """
@@ -96,95 +96,95 @@ For more information, see the [RFC 7946, Section 4 Coordinate Reference
 System][rfc7946-4] and the [GeoJSON 1.0 specification][GJ2008].
 """
 type GeoJSONCRS {
-  """
-  An Open Geospatial Consortium URN that indicates the coordinate reference system.
-  """
-  type: String
-  """
-  An arbitrary set of properties associated with the coordinate reference system.
-  """
-  properties: JSON
+    """
+    An Open Geospatial Consortium URN that indicates the coordinate reference system.
+    """
+    type: String
+    """
+    An arbitrary set of properties associated with the coordinate reference system.
+    """
+    properties: JSON
 }
 
 """
 This type represents the input data needed to initialize a [GeoJSON point]({{Types.geojsonpoint}}).
 """
 input GeoJSONPointInput {
-  """The type of the GeoJSON node. This must be "Point"."""
-  type: String! = "Point"
-  """
-  The coordinates for the the GeoJSON point, as determined by the [coordinate
-  reference system](#crs). Typically, this should be an array of coordinates, with each coordinate having either two or three values, as follows:
-  1. Longitude (in degrees)
-  2. Latitude (in degrees)
-  3. Altitude (in meters, optional, assumed to be sea-level if omitted)
-  See
-  [`GeoJSONCRS`]({{Types.geojsoncrs}}) for more information.
-  """
-  coordinates: [Float!]!
-  """
-  The coordinate reference system used for this geographical position. See
-  [`GeoJSONCRS`]({{Types.geojsoncrs}}) for more information.
-  """
-  crs: GeoJSONCRSInput
+    """The type of the GeoJSON node. This must be "Point"."""
+    type: String! = "Point"
+    """
+    The coordinates for the the GeoJSON point, as determined by the [coordinate
+    reference system](#crs). Typically, this should be an array of coordinates, with each coordinate having either two or three values, as follows:
+    1. Longitude (in degrees)
+    2. Latitude (in degrees)
+    3. Altitude (in meters, optional, assumed to be sea-level if omitted)
+    See
+    [`GeoJSONCRS`]({{Types.geojsoncrs}}) for more information.
+    """
+    coordinates: [Float!]!
+    """
+    The coordinate reference system used for this geographical position. See
+    [`GeoJSONCRS`]({{Types.geojsoncrs}}) for more information.
+    """
+    crs: GeoJSONCRSInput
 }
 
 """
 This type represents the input data needed to initialize a [GeoJSON polygon]({{Types.geojsonpolygon}}).
 """
 input GeoJSONPolygonInput {
-  """The type of the GeoJSON node. This defaults to and must be "Polygon"."""
-  type: String! = "Polygon"
-  """
-  The coordinates for the the GeoJSON polygon, as determined by the [coordinate
-  reference system](#crs). The first element in the array represents the exterior
-  ring.  Any subsequent elements represent interior rings (or holes).
-  Each element consists of the points that make up the shape.
-  See
-  [`GeoJSONCRS`]({{Types.geojsoncrs}}) for more information.
-  """
-  coordinates: [[[Float!]!]!]!
-  """
-  The coordinate reference system used for this geographical position. See
-  [`GeoJSONCRS`]({{Types.geojsoncrs}}) for more information.
-  """
-  crs: GeoJSONCRSInput
+    """The type of the GeoJSON node. This defaults to and must be "Polygon"."""
+    type: String! = "Polygon"
+    """
+    The coordinates for the the GeoJSON polygon, as determined by the [coordinate
+    reference system](#crs). The first element in the array represents the exterior
+    ring.  Any subsequent elements represent interior rings (or holes).
+    Each element consists of the points that make up the shape.
+    See
+    [`GeoJSONCRS`]({{Types.geojsoncrs}}) for more information.
+    """
+    coordinates: [[[Float!]!]!]!
+    """
+    The coordinate reference system used for this geographical position. See
+    [`GeoJSONCRS`]({{Types.geojsoncrs}}) for more information.
+    """
+    crs: GeoJSONCRSInput
 }
 
 """
 This type represents the input data needed to initialize a [GeoJSON multipolygon]({{Types.geojsonmultipolygon}}).
 """
 input GeoJSONMultiPolygonInput {
-  """
-  The type of the GeoJSON node. This defaults to and must be "MultiPolygon".
-  """
-  type: String! = "MultiPolygon"
-  """
-  The coordinates for the the GeoJSON multipolygon, as determined by the [coordinate
-  reference system](#crs). Each element of the outermost array represent a region; the first element in each array represents the exterior
-  ring.  Any subsequent elements represent interior rings (or holes).
-  Each element consists of the points that make up the polygon.
-  See
-  [`GeoJSONCRS`]({{Types.geojsoncrs}}) for more information.
-  """
-  coordinates: [[[[Float!]!]!]!]!
-  """
-  The coordinate reference system used for thismultipolygon. See
-  [`GeoJSONCRS`]({{Types.geojsoncrs}}) for more information.
-  """
-  crs: GeoJSONCRSInput
+    """
+    The type of the GeoJSON node. This defaults to and must be "MultiPolygon".
+    """
+    type: String! = "MultiPolygon"
+    """
+    The coordinates for the the GeoJSON multipolygon, as determined by the [coordinate
+    reference system](#crs). Each element of the outermost array represent a region; the first element in each array represents the exterior
+    ring.  Any subsequent elements represent interior rings (or holes).
+    Each element consists of the points that make up the polygon.
+    See
+    [`GeoJSONCRS`]({{Types.geojsoncrs}}) for more information.
+    """
+    coordinates: [[[[Float!]!]!]!]!
+    """
+    The coordinate reference system used for thismultipolygon. See
+    [`GeoJSONCRS`]({{Types.geojsoncrs}}) for more information.
+    """
+    crs: GeoJSONCRSInput
 }
 
 """
 This type represents the input data needed to initialize a [GeoJSON coordinate reference system]({{Types.geojsoncrs}}).
 """
 input GeoJSONCRSInput {
-  """
-  An Open Geospatial Consortium URN that indicates the coordinate reference system.
-  """
-  type: String = "name"
-  """
-  An arbitrary set of properties associated with the coordinate reference system.
-  """
-  properties: JSON
+    """
+    An Open Geospatial Consortium URN that indicates the coordinate reference system.
+    """
+    type: String = "name"
+    """
+    An arbitrary set of properties associated with the coordinate reference system.
+    """
+    properties: JSON
 }

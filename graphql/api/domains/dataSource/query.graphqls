@@ -2,40 +2,40 @@
 Indicates the field used for sorting a [Data Sources query]({{Queries.datasources}}).
 """
 enum DataSourceSortField {
-  """Sort the resulting list in by its unique identifier."""
-  ID
-  """Sort the resulting list by the device name."""
-  NAME
+    """Sort the resulting list in by its unique identifier."""
+    ID
+    """Sort the resulting list by the device name."""
+    NAME
 }
 
 """
 DataSourceSort allows for sorting a [`dataSources` query](/references/query/#datasources) by field and direction.
 """
 input DataSourceSort {
-  """
-  Any sortable field available to the `DataSourceSort`. See the link to the type below
-  for more details.
-  """
-  field: DataSourceSortField!
-  """Sort direction. See the link to the type below for more details."""
-  direction: SortDirection!
+    """
+    Any sortable field available to the `DataSourceSort`. See the link to the type below
+    for more details.
+    """
+    field: DataSourceSortField!
+    """Sort direction. See the link to the type below for more details."""
+    direction: SortDirection!
 }
 
 extend type Query {
-  """Look up a data source's information by its unique identifier."""
-  dataSource(
-    """The data source's unique numeric ID or UUID."""
-    id: ID!
-  ): DataSource
-  """Search for data sources based on a set of filters."""
-  dataSources(
-    """Filter data sources by type and/or position."""
-    filter: FilterDataSourceInput
-    """Returns the first _n_ elements from the list."""
-    first: Int! = 20
-    """Returns the elements in the list that come after the specified cursor."""
-    after: String
-    """The field and direction by which to sort the results"""
-    sort: [DataSourceSort!]! = [{field: NAME, direction: ASC}, {field: ID, direction: ASC}]
-  ): DataSourceConnection
+    """Look up a data source's information by its unique identifier."""
+    dataSource(
+        """The data source's unique numeric ID or UUID."""
+        id: ID!
+    ): DataSource
+    """Search for data sources based on a set of filters."""
+    dataSources(
+        """Filter data sources by type and/or position."""
+        filter: FilterDataSourceInput
+        """Returns the first _n_ elements from the list."""
+        first: Int! = 20
+        """Returns the elements in the list that come after the specified cursor."""
+        after: String
+        """The field and direction by which to sort the results"""
+        sort: [DataSourceSort!]! = [{field: NAME, direction: ASC}, {field: ID, direction: ASC}]
+    ): DataSourceConnection
 }

@@ -1,11 +1,11 @@
 extend type Subscription {
-  """
-  Subscribes to changes in any [`Measurement`]({{Types.measurement}}) based on the given filter.
-  """
-  measurementActivity(
     """
-    Filter measurements by unique identifier of the sensor, type of the event, etc.
+    Subscribes to changes in any [`Measurement`]({{Types.measurement}}) based on the given filter.
     """
-    filter: FilterMeasurementActivityInput
-  ): Measurement
+    measurementActivity(
+        """
+        Filter measurements by unique identifier of the sensor, type of the event, etc.
+        """
+        filter: FilterMeasurementActivityInput
+    ): Measurement
 }

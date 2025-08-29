@@ -4,30 +4,30 @@
 
 """Pagination info for any connection"""
 type PageInfo {
-  """
-  True if the connection `edges` field does not contain the last element available, otherwise false.
-  """
-  hasNextPage: Boolean!
-  """
-  True if the connection `edges` field does not contain the first element available, otherwise false.
-  """
-  hasPreviousPage: Boolean!
-  """
-  The `cursor` of the first edge returned. Used for the query `after` argument.
-  """
-  startCursor: String
-  """
-  The `cursor` of the last edge returned. Used for the query `after` argument.
-  """
-  endCursor: String
+    """
+    True if the connection `edges` field does not contain the last element available, otherwise false.
+    """
+    hasNextPage: Boolean!
+    """
+    True if the connection `edges` field does not contain the first element available, otherwise false.
+    """
+    hasPreviousPage: Boolean!
+    """
+    The `cursor` of the first edge returned. Used for the query `after` argument.
+    """
+    startCursor: String
+    """
+    The `cursor` of the last edge returned. Used for the query `after` argument.
+    """
+    endCursor: String
 }
 
 """
 Indicates the direction of sorting based on a particular field's value.
 """
 enum SortDirection {
-  """Sort the resulting list in ascending order."""
-  ASC
-  """Sort the resulting list in descending order."""
-  DESC
+    """Sort the resulting list in ascending order."""
+    ASC
+    """Sort the resulting list in descending order."""
+    DESC
 }
