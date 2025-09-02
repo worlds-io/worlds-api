@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * Tags are descriptive labels used to classify and group both detections and training data for models.
+ */
 public class Tag implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -20,23 +23,41 @@ public class Tag implements java.io.Serializable {
         this.color = color;
     }
 
+    /**
+     * The unique identifier for a tag.
+     */
     public String getId() {
         return id;
     }
+    /**
+     * The unique identifier for a tag.
+     */
     public void setId(String id) {
         this.id = id;
     }
 
+    /**
+     * The name of the tag. The name is not case-sensitive, and this field will always return as lowercase.
+     */
     public String getName() {
         return name;
     }
+    /**
+     * The name of the tag. The name is not case-sensitive, and this field will always return as lowercase.
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * The bounding box color used for detections of this tag type.
+     */
     public String getColor() {
         return color;
     }
+    /**
+     * The bounding box color used for detections of this tag type.
+     */
     public void setColor(String color) {
         this.color = color;
     }
@@ -56,16 +77,25 @@ public class Tag implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * The unique identifier for a tag.
+         */
         public Builder setId(String id) {
             this.id = id;
             return this;
         }
 
+        /**
+         * The name of the tag. The name is not case-sensitive, and this field will always return as lowercase.
+         */
         public Builder setName(String name) {
             this.name = name;
             return this;
         }
 
+        /**
+         * The bounding box color used for detections of this tag type.
+         */
         public Builder setColor(String color) {
             this.color = color;
             return this;

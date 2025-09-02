@@ -18,16 +18,28 @@ public class ZoneIntersectionMessage implements java.io.Serializable {
         this.state = state;
     }
 
+    /**
+     * The zone intersection.
+     */
     public ZoneIntersection getMessage() {
         return message;
     }
+    /**
+     * The zone intersection.
+     */
     public void setMessage(ZoneIntersection message) {
         this.message = message;
     }
 
+    /**
+     * The state of the intersection message. Within the message, the [`endTime`]({{Types.zoneintersection}}) will only be present on an [`END`]({{Types.messagestate}}) event.
+     */
     public MessageState getState() {
         return state;
     }
+    /**
+     * The state of the intersection message. Within the message, the [`endTime`]({{Types.zoneintersection}}) will only be present on an [`END`]({{Types.messagestate}}) event.
+     */
     public void setState(MessageState state) {
         this.state = state;
     }
@@ -46,11 +58,17 @@ public class ZoneIntersectionMessage implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * The zone intersection.
+         */
         public Builder setMessage(ZoneIntersection message) {
             this.message = message;
             return this;
         }
 
+        /**
+         * The state of the intersection message. Within the message, the [`endTime`]({{Types.zoneintersection}}) will only be present on an [`END`]({{Types.messagestate}}) event.
+         */
         public Builder setState(MessageState state) {
             this.state = state;
             return this;

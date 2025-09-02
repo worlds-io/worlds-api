@@ -18,16 +18,28 @@ public class TrackMessage implements java.io.Serializable {
         this.state = state;
     }
 
+    /**
+     * The track.
+     */
     public Track getMessage() {
         return message;
     }
+    /**
+     * The track.
+     */
     public void setMessage(Track message) {
         this.message = message;
     }
 
+    /**
+     * The state of the track message.
+     */
     public MessageState getState() {
         return state;
     }
+    /**
+     * The state of the track message.
+     */
     public void setState(MessageState state) {
         this.state = state;
     }
@@ -46,11 +58,17 @@ public class TrackMessage implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * The track.
+         */
         public Builder setMessage(Track message) {
             this.message = message;
             return this;
         }
 
+        /**
+         * The state of the track message.
+         */
         public Builder setState(MessageState state) {
             this.state = state;
             return this;

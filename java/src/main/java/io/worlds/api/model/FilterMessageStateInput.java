@@ -2,7 +2,8 @@ package io.worlds.api.model;
 
 
 /**
- * Filtration for Activity subscriber statuses
+ * `FilterMessageStateInput` allows for filtering based on a [MessageState]({{Types.messagestate}}) parameter. Only one field should be provided per filter object.
+Note that the `UPDATE` state will exclude `START` and `END` messages.
  */
 public class FilterMessageStateInput implements java.io.Serializable {
 

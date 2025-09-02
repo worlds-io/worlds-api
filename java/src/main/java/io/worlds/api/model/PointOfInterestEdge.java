@@ -1,6 +1,10 @@
 package io.worlds.api.model;
 
 
+/**
+ * A point of interest edge is the pairing of a [PointOfInterest]({{Types.pointofinterest}}) with its query cursor.
+See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+ */
 public class PointOfInterestEdge implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -17,16 +21,28 @@ public class PointOfInterestEdge implements java.io.Serializable {
         this.cursor = cursor;
     }
 
+    /**
+     * Information about a particular [PointOfInterest]({{Types.pointofinterest}}).
+     */
     public PointOfInterest getNode() {
         return node;
     }
+    /**
+     * Information about a particular [PointOfInterest]({{Types.pointofinterest}}).
+     */
     public void setNode(PointOfInterest node) {
         this.node = node;
     }
 
+    /**
+     * The cursor to use with the [`pointsOfInterest` query]({{Queries.pointsofinterest}}) `after` argument.
+     */
     public String getCursor() {
         return cursor;
     }
+    /**
+     * The cursor to use with the [`pointsOfInterest` query]({{Queries.pointsofinterest}}) `after` argument.
+     */
     public void setCursor(String cursor) {
         this.cursor = cursor;
     }
@@ -45,11 +61,17 @@ public class PointOfInterestEdge implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * Information about a particular [PointOfInterest]({{Types.pointofinterest}}).
+         */
         public Builder setNode(PointOfInterest node) {
             this.node = node;
             return this;
         }
 
+        /**
+         * The cursor to use with the [`pointsOfInterest` query]({{Queries.pointsofinterest}}) `after` argument.
+         */
         public Builder setCursor(String cursor) {
             this.cursor = cursor;
             return this;

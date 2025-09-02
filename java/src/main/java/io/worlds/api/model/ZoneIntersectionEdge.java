@@ -17,16 +17,28 @@ public class ZoneIntersectionEdge implements java.io.Serializable {
         this.cursor = cursor;
     }
 
+    /**
+     * Information about a particular [ZoneIntersection]({{Types.zoneintersection}}).
+     */
     public ZoneIntersection getNode() {
         return node;
     }
+    /**
+     * Information about a particular [ZoneIntersection]({{Types.zoneintersection}}).
+     */
     public void setNode(ZoneIntersection node) {
         this.node = node;
     }
 
+    /**
+     * The cursor to use with the [Query `zoneIntersections` field]({{Queries.zoneintersections}}) `after` argument.
+     */
     public String getCursor() {
         return cursor;
     }
+    /**
+     * The cursor to use with the [Query `zoneIntersections` field]({{Queries.zoneintersections}}) `after` argument.
+     */
     public void setCursor(String cursor) {
         this.cursor = cursor;
     }
@@ -45,11 +57,17 @@ public class ZoneIntersectionEdge implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * Information about a particular [ZoneIntersection]({{Types.zoneintersection}}).
+         */
         public Builder setNode(ZoneIntersection node) {
             this.node = node;
             return this;
         }
 
+        /**
+         * The cursor to use with the [Query `zoneIntersections` field]({{Queries.zoneintersections}}) `after` argument.
+         */
         public Builder setCursor(String cursor) {
             this.cursor = cursor;
             return this;

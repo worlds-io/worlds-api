@@ -1,6 +1,10 @@
 package io.worlds.api.model;
 
 
+/**
+ * FilterVideoInput filters [videos]({{Types.video}}) based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
+ */
 public class FilterVideoInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

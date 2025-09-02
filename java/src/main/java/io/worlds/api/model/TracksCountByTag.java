@@ -17,16 +17,28 @@ public class TracksCountByTag implements java.io.Serializable {
         this.count = count;
     }
 
+    /**
+     * The name of the [tag]({{Types.tag}}).
+     */
     public String getTag() {
         return tag;
     }
+    /**
+     * The name of the [tag]({{Types.tag}}).
+     */
     public void setTag(String tag) {
         this.tag = tag;
     }
 
+    /**
+     * The total count of [Tracks]({{Types.track}}) within the time range with a matching tag.
+     */
     public int getCount() {
         return count;
     }
+    /**
+     * The total count of [Tracks]({{Types.track}}) within the time range with a matching tag.
+     */
     public void setCount(int count) {
         this.count = count;
     }
@@ -45,11 +57,17 @@ public class TracksCountByTag implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * The name of the [tag]({{Types.tag}}).
+         */
         public Builder setTag(String tag) {
             this.tag = tag;
             return this;
         }
 
+        /**
+         * The total count of [Tracks]({{Types.track}}) within the time range with a matching tag.
+         */
         public Builder setCount(int count) {
             this.count = count;
             return this;

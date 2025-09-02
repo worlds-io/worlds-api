@@ -2,7 +2,7 @@ package io.worlds.api.model;
 
 
 /**
- * Standard filtration for boolean fields
+ * `FilterBooleanInput` allows for filtering based on a Boolean parameter. Only one field should be provided per filter object.
  */
 public class FilterBooleanInput implements java.io.Serializable {
 

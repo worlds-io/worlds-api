@@ -17,16 +17,28 @@ public class TrackEdge implements java.io.Serializable {
         this.cursor = cursor;
     }
 
+    /**
+     * Information about a particular track.
+     */
     public Track getNode() {
         return node;
     }
+    /**
+     * Information about a particular track.
+     */
     public void setNode(Track node) {
         this.node = node;
     }
 
+    /**
+     * The cursor to use with the [`tracks` query]({{Queries.tracks}}) `after` argument.
+     */
     public String getCursor() {
         return cursor;
     }
+    /**
+     * The cursor to use with the [`tracks` query]({{Queries.tracks}}) `after` argument.
+     */
     public void setCursor(String cursor) {
         this.cursor = cursor;
     }
@@ -45,11 +57,17 @@ public class TrackEdge implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * Information about a particular track.
+         */
         public Builder setNode(Track node) {
             this.node = node;
             return this;
         }
 
+        /**
+         * The cursor to use with the [`tracks` query]({{Queries.tracks}}) `after` argument.
+         */
         public Builder setCursor(String cursor) {
             this.cursor = cursor;
             return this;

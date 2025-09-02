@@ -15,9 +15,15 @@ public class TextRecognitionResponse implements java.io.Serializable {
         this.results = results;
     }
 
+    /**
+     * The list of detected text
+     */
     public java.util.List<TextRecognitionResult> getResults() {
         return results;
     }
+    /**
+     * The list of detected text
+     */
     public void setResults(java.util.List<TextRecognitionResult> results) {
         this.results = results;
     }
@@ -35,6 +41,9 @@ public class TextRecognitionResponse implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * The list of detected text
+         */
         public Builder setResults(java.util.List<TextRecognitionResult> results) {
             this.results = results;
             return this;

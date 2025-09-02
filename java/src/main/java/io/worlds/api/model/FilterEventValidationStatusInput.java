@@ -2,7 +2,7 @@ package io.worlds.api.model;
 
 
 /**
- * Filtration for Activity subscriber statuses
+ * `FilterEventValidationStatusInput` allows for filtering based on an event's validation status. Only one field should be provided per filter object.
  */
 public class FilterEventValidationStatusInput implements java.io.Serializable {
 

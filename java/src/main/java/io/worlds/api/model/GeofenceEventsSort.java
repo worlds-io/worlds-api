@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * GeofenceEventsSort allows for sorting geofence events by a sort field and direction.
+ */
 public class GeofenceEventsSort implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

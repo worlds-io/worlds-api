@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * This input type indicates whether an event is valid and contains additional information about the validation.
+ */
 public class EventValidationInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

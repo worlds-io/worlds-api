@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * This input type is used to upload an image to worlds.
+ */
 public class UploadImageInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

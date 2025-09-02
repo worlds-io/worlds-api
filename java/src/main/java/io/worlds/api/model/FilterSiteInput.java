@@ -1,6 +1,10 @@
 package io.worlds.api.model;
 
 
+/**
+ * FilterSiteInput filters [sites]({{Types.site}}) based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
+ */
 public class FilterSiteInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

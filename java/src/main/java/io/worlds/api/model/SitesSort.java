@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * SitesSort allows for sorting a [`sites` query]({{Query.sites}}) by field and direction.
+ */
 public class SitesSort implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * This input type is used to create a new [`Event`]({{Types.event}}) for a custom event producer. See [About EventProducers](/reference/objects/eventProducer/#about-event-producers) for more details.
+ */
 public class CreateEventInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

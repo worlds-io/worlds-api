@@ -26,37 +26,67 @@ public class ZoneIntersection implements java.io.Serializable {
         this.endTime = endTime;
     }
 
+    /**
+     * The unique identifier for the zone intersection.
+     */
     public String getId() {
         return id;
     }
+    /**
+     * The unique identifier for the zone intersection.
+     */
     public void setId(String id) {
         this.id = id;
     }
 
+    /**
+     * The camera zone the intersection happened in.
+     */
     public Zone getZone() {
         return zone;
     }
+    /**
+     * The camera zone the intersection happened in.
+     */
     public void setZone(Zone zone) {
         this.zone = zone;
     }
 
+    /**
+     * The track associated with the object that triggered the zone intersection.
+     */
     public Track getTrack() {
         return track;
     }
+    /**
+     * The track associated with the object that triggered the zone intersection.
+     */
     public void setTrack(Track track) {
         this.track = track;
     }
 
+    /**
+     * The time at which the intersection started.
+     */
     public java.time.OffsetDateTime getStartTime() {
         return startTime;
     }
+    /**
+     * The time at which the intersection started.
+     */
     public void setStartTime(java.time.OffsetDateTime startTime) {
         this.startTime = startTime;
     }
 
+    /**
+     * The time at which the intersection ended.
+     */
     public java.time.OffsetDateTime getEndTime() {
         return endTime;
     }
+    /**
+     * The time at which the intersection ended.
+     */
     public void setEndTime(java.time.OffsetDateTime endTime) {
         this.endTime = endTime;
     }
@@ -78,26 +108,41 @@ public class ZoneIntersection implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * The unique identifier for the zone intersection.
+         */
         public Builder setId(String id) {
             this.id = id;
             return this;
         }
 
+        /**
+         * The camera zone the intersection happened in.
+         */
         public Builder setZone(Zone zone) {
             this.zone = zone;
             return this;
         }
 
+        /**
+         * The track associated with the object that triggered the zone intersection.
+         */
         public Builder setTrack(Track track) {
             this.track = track;
             return this;
         }
 
+        /**
+         * The time at which the intersection started.
+         */
         public Builder setStartTime(java.time.OffsetDateTime startTime) {
             this.startTime = startTime;
             return this;
         }
 
+        /**
+         * The time at which the intersection ended.
+         */
         public Builder setEndTime(java.time.OffsetDateTime endTime) {
             this.endTime = endTime;
             return this;

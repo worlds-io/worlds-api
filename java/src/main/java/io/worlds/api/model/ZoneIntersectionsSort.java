@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * ZoneIntersectionsSort allows for sorting zone intersections by a sort field and direction.
+ */
 public class ZoneIntersectionsSort implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

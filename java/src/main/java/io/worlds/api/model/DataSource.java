@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * A data source is responsible for producing the videos, images and other sensor data that may eventually produce detections and tracks. For more details on detections, see [About Detections](/reference/objects/detection/#about-detections)
+ */
 public class DataSource implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -26,37 +29,67 @@ public class DataSource implements java.io.Serializable {
         this.zones = zones;
     }
 
+    /**
+     * The unique identifier of the data source.
+     */
     public String getId() {
         return id;
     }
+    /**
+     * The unique identifier of the data source.
+     */
     public void setId(String id) {
         this.id = id;
     }
 
+    /**
+     * The name of the data source
+     */
     public String getName() {
         return name;
     }
+    /**
+     * The name of the data source
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * The type of the data source
+     */
     public DataSourceType getType() {
         return type;
     }
+    /**
+     * The type of the data source
+     */
     public void setType(DataSourceType type) {
         this.type = type;
     }
 
+    /**
+     * The device associated with this data source
+     */
     public Device getDevice() {
         return device;
     }
+    /**
+     * The device associated with this data source
+     */
     public void setDevice(Device device) {
         this.device = device;
     }
 
+    /**
+     * The zones associated with this data source
+     */
     public java.util.List<Zone> getZones() {
         return zones;
     }
+    /**
+     * The zones associated with this data source
+     */
     public void setZones(java.util.List<Zone> zones) {
         this.zones = zones;
     }
@@ -78,26 +111,41 @@ public class DataSource implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * The unique identifier of the data source.
+         */
         public Builder setId(String id) {
             this.id = id;
             return this;
         }
 
+        /**
+         * The name of the data source
+         */
         public Builder setName(String name) {
             this.name = name;
             return this;
         }
 
+        /**
+         * The type of the data source
+         */
         public Builder setType(DataSourceType type) {
             this.type = type;
             return this;
         }
 
+        /**
+         * The device associated with this data source
+         */
         public Builder setDevice(Device device) {
             this.device = device;
             return this;
         }
 
+        /**
+         * The zones associated with this data source
+         */
         public Builder setZones(java.util.List<Zone> zones) {
             this.zones = zones;
             return this;

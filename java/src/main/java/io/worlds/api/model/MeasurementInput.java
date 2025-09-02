@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * This input type is used to create new [`Measurement`]({{Types.measurement}}) for a sensor. See [About Sensors](/reference/objects/sensors/#about-sensors) for more details.
+ */
 public class MeasurementInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

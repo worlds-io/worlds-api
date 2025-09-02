@@ -2,7 +2,7 @@ package io.worlds.api.model;
 
 
 /**
- * Standard filtration for ID fields
+ * `FilterIDInput` allows for filtering based on an ID parameter. Only one field should be provided per filter object.
  */
 public class FilterIDInput implements java.io.Serializable {
 

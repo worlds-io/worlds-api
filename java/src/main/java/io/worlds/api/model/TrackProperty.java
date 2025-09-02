@@ -18,16 +18,28 @@ public class TrackProperty implements java.io.Serializable {
         this.value = value;
     }
 
+    /**
+     * The type or name of the property
+     */
     public String getType() {
         return type;
     }
+    /**
+     * The type or name of the property
+     */
     public void setType(String type) {
         this.type = type;
     }
 
+    /**
+     * The stored value of the property
+     */
     public String getValue() {
         return value;
     }
+    /**
+     * The stored value of the property
+     */
     public void setValue(String value) {
         this.value = value;
     }
@@ -46,11 +58,17 @@ public class TrackProperty implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * The type or name of the property
+         */
         public Builder setType(String type) {
             this.type = type;
             return this;
         }
 
+        /**
+         * The stored value of the property
+         */
         public Builder setValue(String value) {
             this.value = value;
             return this;

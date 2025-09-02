@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * This input type is used to create a new [`Image`](/references/objects/image) for an event. See [About Events](/reference/objects/#about-events) for more details.
+ */
 public class CreateSnapshotInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

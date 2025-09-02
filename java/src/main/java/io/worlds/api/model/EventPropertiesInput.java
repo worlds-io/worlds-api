@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * This input type contains additional details and related information for an event. For more details on event producers and events, see [About EventProducers](/reference/objects/eventproducer/#about-event-producers).
+ */
 public class EventPropertiesInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

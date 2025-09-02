@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * SensorsSort allows for sorting a [`sensors` query]({{Query.sensors}}) by field and direction.
+ */
 public class SensorsSort implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

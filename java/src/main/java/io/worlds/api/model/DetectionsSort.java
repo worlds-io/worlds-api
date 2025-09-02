@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * DetectionsSort allows for sorting a detection by detection sort field and direction.
+ */
 public class DetectionsSort implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

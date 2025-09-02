@@ -1,9 +1,6 @@
 package io.worlds.api.model;
 
 
-/**
- * ## Text Reading ###
- */
 public class TextReadingResponse implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -20,16 +17,28 @@ public class TextReadingResponse implements java.io.Serializable {
         this.textConfidence = textConfidence;
     }
 
+    /**
+     * The recognized text
+     */
     public String getText() {
         return text;
     }
+    /**
+     * The recognized text
+     */
     public void setText(String text) {
         this.text = text;
     }
 
+    /**
+     * The confidence score for the recognized text's accuracy.
+     */
     public double getTextConfidence() {
         return textConfidence;
     }
+    /**
+     * The confidence score for the recognized text's accuracy.
+     */
     public void setTextConfidence(double textConfidence) {
         this.textConfidence = textConfidence;
     }
@@ -48,11 +57,17 @@ public class TextReadingResponse implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * The recognized text
+         */
         public Builder setText(String text) {
             this.text = text;
             return this;
         }
 
+        /**
+         * The confidence score for the recognized text's accuracy.
+         */
         public Builder setTextConfidence(double textConfidence) {
             this.textConfidence = textConfidence;
             return this;

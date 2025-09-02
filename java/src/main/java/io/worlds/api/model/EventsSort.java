@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * EventsSort allows for sorting an event by a sort field and direction.
+ */
 public class EventsSort implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

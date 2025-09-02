@@ -1,9 +1,6 @@
 package io.worlds.api.model;
 
 
-/**
- * ## Text Recognition ###
- */
 public class TextRecognitionOptionsInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

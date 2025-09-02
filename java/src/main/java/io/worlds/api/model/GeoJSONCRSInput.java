@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * This type represents the input data needed to initialize a [GeoJSON coordinate reference system]({{Types.geojsoncrs}}).
+ */
 public class GeoJSONCRSInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

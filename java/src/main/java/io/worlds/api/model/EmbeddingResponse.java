@@ -15,9 +15,15 @@ public class EmbeddingResponse implements java.io.Serializable {
         this.results = results;
     }
 
+    /**
+     * The list of embeddings
+     */
     public java.util.List<EmbeddingResult> getResults() {
         return results;
     }
+    /**
+     * The list of embeddings
+     */
     public void setResults(java.util.List<EmbeddingResult> results) {
         this.results = results;
     }
@@ -35,6 +41,9 @@ public class EmbeddingResponse implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * The list of embeddings
+         */
         public Builder setResults(java.util.List<EmbeddingResult> results) {
             this.results = results;
             return this;

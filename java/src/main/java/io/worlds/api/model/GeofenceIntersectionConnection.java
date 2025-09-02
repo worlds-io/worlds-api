@@ -18,16 +18,28 @@ public class GeofenceIntersectionConnection implements java.io.Serializable {
         this.edges = edges;
     }
 
+    /**
+     * Pagination information for the resulting edges.
+     */
     public PageInfo getPageInfo() {
         return pageInfo;
     }
+    /**
+     * Pagination information for the resulting edges.
+     */
     public void setPageInfo(PageInfo pageInfo) {
         this.pageInfo = pageInfo;
     }
 
+    /**
+     * The resulting collection of geofence intersections edges.
+     */
     public java.util.List<GeofenceIntersectionEdge> getEdges() {
         return edges;
     }
+    /**
+     * The resulting collection of geofence intersections edges.
+     */
     public void setEdges(java.util.List<GeofenceIntersectionEdge> edges) {
         this.edges = edges;
     }
@@ -46,11 +58,17 @@ public class GeofenceIntersectionConnection implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * Pagination information for the resulting edges.
+         */
         public Builder setPageInfo(PageInfo pageInfo) {
             this.pageInfo = pageInfo;
             return this;
         }
 
+        /**
+         * The resulting collection of geofence intersections edges.
+         */
         public Builder setEdges(java.util.List<GeofenceIntersectionEdge> edges) {
             this.edges = edges;
             return this;

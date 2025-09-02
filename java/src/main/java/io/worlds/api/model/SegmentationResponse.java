@@ -15,9 +15,15 @@ public class SegmentationResponse implements java.io.Serializable {
         this.results = results;
     }
 
+    /**
+     * The list of segments
+     */
     public java.util.List<SegmentationResult> getResults() {
         return results;
     }
+    /**
+     * The list of segments
+     */
     public void setResults(java.util.List<SegmentationResult> results) {
         this.results = results;
     }
@@ -35,6 +41,9 @@ public class SegmentationResponse implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * The list of segments
+         */
         public Builder setResults(java.util.List<SegmentationResult> results) {
             this.results = results;
             return this;

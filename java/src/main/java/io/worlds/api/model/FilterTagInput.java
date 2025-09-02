@@ -1,6 +1,11 @@
 package io.worlds.api.model;
 
 
+/**
+ * `FilterTagInput` allows for filtering tags based on criteria described below.
+Only one field should be provided per Filter object unless an operator
+(`and` `or` `not`) as specified below.
+ */
 public class FilterTagInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

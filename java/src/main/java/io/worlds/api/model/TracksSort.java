@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * TracksSort allows for sorting a [`tracks` query]({{Query.tracks}}) by field and direction.
+ */
 public class TracksSort implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

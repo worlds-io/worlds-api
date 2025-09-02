@@ -17,16 +17,28 @@ public class GeofenceEventEdge implements java.io.Serializable {
         this.cursor = cursor;
     }
 
+    /**
+     * Information about a particular [GeofenceEvent]({{Types.geofenceevent}}).
+     */
     public GeofenceEvent getNode() {
         return node;
     }
+    /**
+     * Information about a particular [GeofenceEvent]({{Types.geofenceevent}}).
+     */
     public void setNode(GeofenceEvent node) {
         this.node = node;
     }
 
+    /**
+     * The cursor to use with the [Query `geofenceEvents` field]({{Queries.geofenceevents}}) `after` argument.
+     */
     public String getCursor() {
         return cursor;
     }
+    /**
+     * The cursor to use with the [Query `geofenceEvents` field]({{Queries.geofenceevents}}) `after` argument.
+     */
     public void setCursor(String cursor) {
         this.cursor = cursor;
     }
@@ -45,11 +57,17 @@ public class GeofenceEventEdge implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * Information about a particular [GeofenceEvent]({{Types.geofenceevent}}).
+         */
         public Builder setNode(GeofenceEvent node) {
             this.node = node;
             return this;
         }
 
+        /**
+         * The cursor to use with the [Query `geofenceEvents` field]({{Queries.geofenceevents}}) `after` argument.
+         */
         public Builder setCursor(String cursor) {
             this.cursor = cursor;
             return this;

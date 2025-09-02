@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * MeasurementsSort allows for sorting measurements by a sort field and direction.
+ */
 public class MeasurementsSort implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

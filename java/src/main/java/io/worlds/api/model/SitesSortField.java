@@ -1,8 +1,19 @@
 package io.worlds.api.model;
 
+/**
+ * Indicates the field used for sorting an [`sites` query]({{Queries.sites}}).
+ */
 public enum SitesSortField {
 
+    /**
+     * 
+Sort the resulting list by the [`sites`](({{Types.site}}))'s unique identifier.
+     */
     ID("ID"),
+    /**
+     * 
+Sort the resulting list by the [`sites`](({{Types.site}}))'s name.
+     */
     NAME("NAME");
 
     private final String graphqlName;

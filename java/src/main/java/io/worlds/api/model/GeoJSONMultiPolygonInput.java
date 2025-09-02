@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * This type represents the input data needed to initialize a [GeoJSON multipolygon]({{Types.geojsonmultipolygon}}).
+ */
 public class GeoJSONMultiPolygonInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -1,8 +1,17 @@
 package io.worlds.api.model;
 
+/**
+ * Indicates the time bucket size for a summary query.
+ */
 public enum SummaryBucketSize {
 
+    /**
+     * Bucket by minutes.
+     */
     MINUTES("MINUTES"),
+    /**
+     * Bucket by hours.
+     */
     HOURS("HOURS");
 
     private final String graphqlName;

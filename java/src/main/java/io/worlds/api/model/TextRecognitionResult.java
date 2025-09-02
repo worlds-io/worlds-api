@@ -17,16 +17,28 @@ public class TextRecognitionResult implements java.io.Serializable {
         this.regionIndex = regionIndex;
     }
 
+    /**
+     * The actual detected text
+     */
     public TextDetection getTextDetection() {
         return textDetection;
     }
+    /**
+     * The actual detected text
+     */
     public void setTextDetection(TextDetection textDetection) {
         this.textDetection = textDetection;
     }
 
+    /**
+     * The index of the region in the provided regions array that contains the text detection. Only applicable if `regions` was specified in the [original query]({{Types.textrecognitionoptionsinput}}}).
+     */
     public Integer getRegionIndex() {
         return regionIndex;
     }
+    /**
+     * The index of the region in the provided regions array that contains the text detection. Only applicable if `regions` was specified in the [original query]({{Types.textrecognitionoptionsinput}}}).
+     */
     public void setRegionIndex(Integer regionIndex) {
         this.regionIndex = regionIndex;
     }
@@ -45,11 +57,17 @@ public class TextRecognitionResult implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * The actual detected text
+         */
         public Builder setTextDetection(TextDetection textDetection) {
             this.textDetection = textDetection;
             return this;
         }
 
+        /**
+         * The index of the region in the provided regions array that contains the text detection. Only applicable if `regions` was specified in the [original query]({{Types.textrecognitionoptionsinput}}}).
+         */
         public Builder setRegionIndex(Integer regionIndex) {
             this.regionIndex = regionIndex;
             return this;
