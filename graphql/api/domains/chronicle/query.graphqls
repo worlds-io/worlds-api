@@ -9,11 +9,11 @@ input ChronicleProducersSort @experimental {
 }
 
 extend type Query {
-    chronicleProducer(id: ID!): ChronicleProducer @experimental
-    chronicleProducers(
-        filter: FilterChronicleProducerInput
-        first: Int! = 20
-        after: String
-        sort: [ChronicleProducersSort!]! = [{field: NAME, direction: ASC}, {field: ID, direction: ASC}]
-    ): ChronicleProducerConnection @experimental
+  chronicleProducer(id: ID!): ChronicleProducer @experimental
+  chronicleProducers(
+    filter: FilterChronicleProducerInput
+    first: Int! = 20
+    after: String
+    sort: [ChronicleProducersSort!]! = [{field: NAME, direction: ASC}, {field: ID, direction: ASC}]
+  ): ChronicleProducerConnection @experimental
 }
