@@ -101,7 +101,7 @@ input FilterGeofenceIntersectionMessageInput {
     """
     dataSourceId: FilterIDInput
     """
-    Specifies filters that work against the [state](/reference/enums/#messagestate) of the geofence intersection message.
+    Specifies filters that work against the [state]({{Types.messagestate}}) of the geofence intersection message.
     """
     state: FilterMessageStateInput
     """

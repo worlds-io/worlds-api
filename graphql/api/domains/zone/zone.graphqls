@@ -74,7 +74,7 @@ type ZoneIntersectionMessage {
     """The zone intersection."""
     message: ZoneIntersection!
     """
-    The state of the intersection message. Within the message, the [`endTime`]({{Types.zoneintersection}}) will only be present on an [`END`](/reference/enums/#messagestate) event.
+    The state of the intersection message. Within the message, the [`endTime`]({{Types.zoneintersection}}) will only be present on an [`END`]({{Types.messagestate}}) event.
     """
     state: MessageState!
 }

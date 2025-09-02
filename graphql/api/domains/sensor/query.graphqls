@@ -13,7 +13,7 @@ enum SensorsSortField {
 }
 
 """
-SensorsSort allows for sorting a [`sensors` query](/references/query/#sensors) by field and direction.
+SensorsSort allows for sorting a [`sensors` query]({{Query.sensors}}) by field and direction.
 """
 input SensorsSort {
     """

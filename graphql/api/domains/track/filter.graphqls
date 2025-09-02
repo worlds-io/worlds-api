@@ -79,7 +79,7 @@ input FilterTrackMessageInput {
     """
     pointOfInterestId: FilterIDInput
     """
-    Specifies filters that work against the [state](/reference/enums/#messagestate) of the track message.
+    Specifies filters that work against the [state]({{Types.messagestate}}) of the track message.
     """
     state: FilterMessageStateInput
     """

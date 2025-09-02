@@ -232,7 +232,8 @@ input UpdateEventInput {
     metadata: JSON
     """
     Requests to generate snapshots for this event
-    Snapshots are only generated when the event is ended for the first time. Therefore, snapshots will only be generated the first time that the [endTime](/reference/input-objects/updateventinput/#endtime) is specified for this event.
+    Snapshots are only generated when the event is ended for the first time.
+    Therefore, snapshots will only be generated the first time that the `endTime` is specified for this event.
     """
     snapshots: [CreateSnapshotInput!]
     """Requests to upload images for this event"""

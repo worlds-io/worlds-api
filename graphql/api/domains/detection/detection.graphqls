@@ -29,7 +29,7 @@ type Detection {
     metadata: JSON
     """
     Timestamp that the detection was created. May be delayed from the
-    [`timestamp`](#timestamp) due to post-processing video feeds or other latency.
+    `timestamp` due to post-processing video feeds or other latency.
     """
     createdAt: DateTimeOffset
     """Timestamp that the detection was most recently updated."""

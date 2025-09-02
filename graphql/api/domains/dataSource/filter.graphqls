@@ -4,7 +4,7 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterDataSourceInput {
     """
-    If provided, specifies filters that work against the [data source type](/reference/enums/#datasourcetype).
+    If provided, specifies filters that work against the [`dataSource`]({{Types.datasource}})'s type.
     The type of the data source
     """
     type: FilterStringInput
@@ -13,11 +13,11 @@ input FilterDataSourceInput {
     """
     position: FilterPointInput
     """
-    If provided, specifies filters that work against the [data source`'s unique id]({{Types.datasource}}).
+    If provided, specifies filters that work against the [data source`]({{Types.datasource}})'s unique id.
     """
     id: FilterIDInput
     """
-    If provided, specifies filters that work against the [data source`'s name]({{Types.datasource}}).
+    If provided, specifies filters that work against the [data source`]({{Types.datasource}})'s name.
     """
     name: FilterStringInput
     """

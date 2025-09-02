@@ -204,7 +204,7 @@ input FilterPointNearInput {
 }
 
 """
-`FilterMessageStateInput` allows for filtering based on a [MessageState](/reference/enums/#messagestate) parameter. Only one field should be provided per filter object.
+`FilterMessageStateInput` allows for filtering based on a [MessageState]({{Types.messagestate}}) parameter. Only one field should be provided per filter object.
 Note that the `UPDATE` state will exclude `START` and `END` messages.
 """
 input FilterMessageStateInput {

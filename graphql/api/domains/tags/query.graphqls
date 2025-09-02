@@ -9,7 +9,7 @@ enum TagsSortField {
 }
 
 """
-TagsSort allows for sorting a [`tags` query](/references/query/#tags) by field and direction.
+TagsSort allows for sorting a [`tags` query]({{Query.tags}}) by field and direction.
 """
 input TagsSort {
     """

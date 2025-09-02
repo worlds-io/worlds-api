@@ -46,7 +46,7 @@ type TrackProperty {
 }
 
 """
-This type is used to create a new [`Detection`]({{Types.detection}}) when [creating](/reference/input-objects/createtrackinput/#detections) or [updating](/reference/input-objects/updatetrackinput/#detections) a [`Track`]({{Types.track}})
+This type is used to create a new [`Detection`]({{Types.detection}}) when [creating]({{Types.createtrackinput}}) or [updating]({{Types.updatetrackinput}}) a [`Track`]({{Types.track}})
 """
 input TrackDetectionInput {
     """The time at which the detection occurred."""

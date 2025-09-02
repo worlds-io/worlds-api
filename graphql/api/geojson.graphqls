@@ -7,8 +7,8 @@ type GeoJSONPoint {
     """
     type: String!
     """
-    The coordinates for the the GeoJSON point, as determined by the [coordinate
-    reference system](#crs).
+    The coordinates for the the GeoJSON point, as determined by the `crs` (coordinate reference system).
+
     """
     coordinates: [Float!]!
     """
@@ -28,8 +28,8 @@ type GeoJSONPolygon {
     """
     type: String!
     """
-    The coordinates that define the region, as determined by the [coordinate
-    reference system](#crs). The first element in the array represents the exterior
+    The coordinates that define the region, as determined by the `crs` (coordinate reference system).
+    The first element in the array represents the exterior
     ring.  Any subsequent elements represent interior rings (or holes).
     For more information, see [Polygons in RFC 7946](https://datatracker.ietf.org/doc/html/rfc7946#appendix-A.3).
     """
@@ -51,8 +51,8 @@ type GeoJSONMultiPolygon {
     """
     type: String!
     """
-    The coordinates that define the regions, as determined by the [coordinate
-    reference system](#crs). Each element of the outermost array represent a region; the first element in each array represents the exterior
+    The coordinates that define the regions, as determined by the `crs` (coordinate reference system).
+    Each element of the outermost array represent a region; the first element in each array represents the exterior
     ring.  Any subsequent elements represent interior rings (or holes).
     For more information, see [MultiPolygons in RFC 7946](https://datatracker.ietf.org/doc/html/rfc7946#appendix-A.6).
     """
@@ -113,8 +113,8 @@ input GeoJSONPointInput {
     """The type of the GeoJSON node. This must be "Point"."""
     type: String! = "Point"
     """
-    The coordinates for the the GeoJSON point, as determined by the [coordinate
-    reference system](#crs). Typically, this should be an array of coordinates, with each coordinate having either two or three values, as follows:
+    The coordinates for the the GeoJSON point, as determined by the `crs` (coordinate reference system).
+    Typically, this should be an array of coordinates, with each coordinate having either two or three values, as follows:
     1. Longitude (in degrees)
     2. Latitude (in degrees)
     3. Altitude (in meters, optional, assumed to be sea-level if omitted)
@@ -136,8 +136,8 @@ input GeoJSONPolygonInput {
     """The type of the GeoJSON node. This defaults to and must be "Polygon"."""
     type: String! = "Polygon"
     """
-    The coordinates for the the GeoJSON polygon, as determined by the [coordinate
-    reference system](#crs). The first element in the array represents the exterior
+    The coordinates for the the GeoJSON polygon, as determined by the `crs` (coordinate reference system).
+    The first element in the array represents the exterior
     ring.  Any subsequent elements represent interior rings (or holes).
     Each element consists of the points that make up the shape.
     See
@@ -160,8 +160,8 @@ input GeoJSONMultiPolygonInput {
     """
     type: String! = "MultiPolygon"
     """
-    The coordinates for the the GeoJSON multipolygon, as determined by the [coordinate
-    reference system](#crs). Each element of the outermost array represent a region; the first element in each array represents the exterior
+    The coordinates for the the GeoJSON multipolygon, as determined by the `crs` (coordinate reference system).
+    Each element of the outermost array represent a region; the first element in each array represents the exterior
     ring.  Any subsequent elements represent interior rings (or holes).
     Each element consists of the points that make up the polygon.
     See

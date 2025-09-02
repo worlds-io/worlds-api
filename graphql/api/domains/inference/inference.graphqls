@@ -21,7 +21,7 @@ type TextRecognitionResult {
     """The actual detected text"""
     textDetection: TextDetection!
     """
-    The index of the region in the provided regions array that contains the text detection. Only applicable if [regions](/reference/input-objects/textrecognitionoptionsinput/#regions) was specified in the original query.
+    The index of the region in the provided regions array that contains the text detection. Only applicable if `regions` was specified in the [original query]({{Types.textrecognitionoptionsinput}}}).
     """
     regionIndex: Int
 }
@@ -57,7 +57,7 @@ type SegmentationResult {
     """The actual segment"""
     segment: Segment!
     """
-    The index of the region in the provided regions array that contains the segment. Only applicable if [regions](/reference/input-objects/segmentationoptionsinput/#regions) was specified in the original query.
+    The index of the region in the provided regions array that contains the segment. Only applicable if `regions` was specified in the [original query]({{Types.segmentationoptionsinput}}).
     """
     regionIndex: Int
 }
@@ -85,7 +85,7 @@ type EmbeddingResult {
     """The embedding vector"""
     embedding: [Float!]!
     """
-    The index of the region in the provided regions array that contains the embedding. Only applicable if [regions](/reference/input-objects/embeddingoptionsinput/#regions) was specified in the original query.
+    The index of the region in the provided regions array that contains the embedding. Only applicable if `regions` was specified in the [original query]({{Types.embeddingoptionsinput}}).
     """
     regionIndex: Int
 }

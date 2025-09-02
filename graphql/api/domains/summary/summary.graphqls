@@ -8,7 +8,7 @@ type TracksSummary {
     """
     totalsByTag: [TracksCountByTag!]!
     """
-    A detailed summary of each [bucket](/reference/enums/#summarybucketsize) within the time range.
+    A detailed summary of each [bucket]({{Types.summarybucketsize}}) within the time range.
     Summary buckets are only returned if `bucket` is provided as a query parameter to [`tracksSummary`]({{Queries.trackssummary}}).
     """
     buckets: [TracksSummaryBucket!]
@@ -42,7 +42,7 @@ type EventsSummary {
     """
     total: Int!
     """
-    A detailed summary of each [bucket](/reference/enums/#summarybucketsize) within the time range.
+    A detailed summary of each [bucket]({{Types.summarybucketsize}}) within the time range.
     Summary buckets are only returned if `bucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventssummary}}).
     """
     buckets: [EventsSummaryBucket!]

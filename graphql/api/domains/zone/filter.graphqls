@@ -117,7 +117,7 @@ input FilterZoneIntersectionMessageInput {
     """
     dataSourceId: FilterIDInput
     """
-    Specifies filters that work against the [state](/reference/enums/#messagestate) of the zone intersection message.
+    Specifies filters that work against the [state]({{Types.messagestate}}) of the zone intersection message.
     """
     state: FilterMessageStateInput
     """
