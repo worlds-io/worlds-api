@@ -1,13 +1,13 @@
 """
-Indicates the field used for sorting an [`chronicleProducers` query](/reference/query/#chronicleproducers).
+Indicates the field used for sorting an [`chronicleProducers` query]({{Queries.chronicleProducers}}).
 """
 enum ChronicleProducersSortField @experimental {
     """
-    Sort the resulting list by the [`ChronicleProducer`'s unique identifier](/reference/objects/chronicleProducer/#id).
+    Sort the resulting list by the [`ChronicleProducer`]({{Types.chronicleProducer}})'s unique identifier.
     """
     ID
     """
-    Sort the resulting list by the [`ChronicleProducer`'s name](/reference/objects/chronicleProducer/#name).
+    Sort the resulting list by the [`ChronicleProducer`]({{Types.chronicleProducer}})'s name.
     """
     NAME
 }

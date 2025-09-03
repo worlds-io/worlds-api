@@ -1,35 +1,35 @@
 """
-Indicates the field used for sorting an [`activitys` query]({{Queries.activitys}}).
+Indicates the field used for sorting an [`activities` query]({{Queries.activityChronicles}}).
 """
 enum ActivityChronicleSortField @experimental {
     """
-    Sort the resulting list by the [`Activity`'s unique identifier](/reference/objects/activity/#id).
+    Sort the resulting list by the [`activityChronicle`]({{Types.activityChronicle}})'s unique identifier.
     """
     ID
     """
-    Sort the resulting list by the [`Activity`'s start time](/reference/objects/activity/#id).
+    Sort the resulting list by the [`activityChronicle`]({{Types.activityChronicle}})'s start time.
     """
     START_TIME
     """
-    Sort the resulting list by the [`Activity`'s end time](/reference/objects/activity/#id).
+    Sort the resulting list by the [`activityChronicle`]({{Types.activityChronicle}})'s end time.
     """
     END_TIME
     """
-    Sort the resulting list by the [`Activity`'s name](/reference/objects/activity/#id).
+    Sort the resulting list by the [`activityChronicle`]({{Types.activityChronicle}})'s name.
     """
     NAME
     """
-    Sort the resulting list by the [`Activity`'s priority](/reference/objects/activity/#id).
+    Sort the resulting list by the [`activityChronicle`]({{Types.activityChronicle}})'s priority.
     """
     PRIORITY
     """
-    Sort the resulting list by the [`Activity`'s status](/reference/objects/activity/#id).
+    Sort the resulting list by the [`activityChronicle`]({{Types.activityChronicle}})'s status.
     """
     STATUS
 }
 
 """
-Indicates the field used for sorting an [`activityProducers` query]({{Queries.activityproducers}}).
+Indicates the field used for sorting an [`activityChronicles` query]({{Queries.activityChronicles}}).
 """
 input ActivityChronicleSort @experimental {
     """
@@ -47,9 +47,9 @@ extend type Query {
         """The activity's unique identifier."""
         id: ID!
     ): ActivityChronicle @experimental
-    """Search for activitys based on a set of filters."""
+    """Search for activities based on a set of filters."""
     activityChronicles(
-        """Filter activitys by unique identifier, type, time, etc."""
+        """Filter activities by unique identifier, type, time, etc."""
         filter: FilterActivityChronicleInput,
         """Returns the first _n_ elements from the list."""
         first: Int! = 20,

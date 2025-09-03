@@ -1,5 +1,5 @@
 """
-An `SummaryConnection` is the paginated results of an [`summaries` query]({{Queries.summaries}}).
+An `SummaryConnection` is the paginated results of an [`summaries` query]({{Queries.summaryChronicles}}).
 See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type SummaryChronicleConnection @experimental {
@@ -17,7 +17,7 @@ type SummaryChronicleEdge @experimental {
     """Information about a particular [Summary]({{Types.summary}})."""
     node: SummaryChronicle!
     """
-    The cursor to use with the [Query `summaries` field]({{Queries.summaries}}) `after` argument.
+    The cursor to use with the [Query `summaries` field]({{Queries.summaryChronicles}}) `after` argument.
     """
     cursor: String!
 }

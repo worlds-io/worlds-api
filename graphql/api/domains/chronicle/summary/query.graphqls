@@ -1,27 +1,27 @@
 """
-Indicates the field used for sorting an [`summaries` query]({{Queries.summaries}}).
+Indicates the field used for sorting an [`summaries` query]({{Queries.summaryChronicles}}).
 """
 enum SummaryChronicleSortField @experimental {
     """
-    Sort the resulting list by the [`Summary`'s unique identifier](/reference/objects/summary/#id).
+    Sort the resulting list by the [`summaryChronicle`]({{Types.summaryChronicle}})'s unique identifier.
     """ID
     """
-    Sort the resulting list by the [`Summary`'s start time](/reference/objects/summary/#id).
+    Sort the resulting list by the [`summaryChronicle`]({{Types.summaryChronicle}})'s start time.
     """
     START_TIME
     """
-    Sort the resulting list by the [`Summary`'s end time](/reference/objects/summary/#id).
+    Sort the resulting list by the [`summaryChronicle`]({{Types.summaryChronicle}})'s end time.
     """
     END_TIME
     """
-    Sort the resulting list by the [`Summary`'s name](/reference/objects/summary/#id).
+    Sort the resulting list by the [`summaryChronicle`]({{Types.summaryChronicle}})'s name.
     """NAME
     """
-    Sort the resulting list by the [`Summary`'s priority](/reference/objects/summary/#id).
+    Sort the resulting list by the [`summaryChronicle`]({{Types.summaryChronicle}})'s priority.
     """
     PRIORITY
     """
-    Sort the resulting list by the [`Summary`'s status](/reference/objects/summary/#id).
+    Sort the resulting list by the [`summaryChronicle`]({{Types.summaryChronicle}})'s status.
     """
     STATUS
 }

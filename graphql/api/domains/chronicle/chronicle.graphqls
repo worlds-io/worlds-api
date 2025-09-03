@@ -1,5 +1,5 @@
 """
-Used in [ChronicleValidationInput](/reference/input-objects/chroniclevalidationinput/) to indicate whether an chronicle is `VALID` or `INVALID`.
+Used in [ChronicleValidationInput]({{Types.chroniclevalidationinput}}) to indicate whether an chronicle is `VALID` or `INVALID`.
 """
 enum ChronicleValidationStatus @experimental {
     """The chronicle is valid."""
@@ -48,7 +48,7 @@ type ChronicleProducer @experimental {
 }
 
 """
-This input type is used to create a new custom [`ChronicleProducer`](/reference/objects/chronicleProducer/). See [About ChronicleProducers](/reference/objects/chronicleProducer/#about-chronicle-producers) for more details.
+This input type is used to create a new custom [`ChronicleProducer`]({{Types.chronicleProducer}}).
 """
 input CreateChronicleProducerInput @experimental {
     """The name of the chronicle producer."""
@@ -68,7 +68,7 @@ input CreateChronicleProducerInput @experimental {
 }
 
 """
-This input type is used to update an existing [`ChronicleProducer`](/reference/objects/chronicleProducer/). See [About ChronicleProducers](/reference/objects/chronicleProducer/#about-chronicle-producersss) for more details.
+This input type is used to update an existing [`ChronicleProducer`]({{Types.chronicleProducer}}).
 """
 input UpdateChronicleProducerInput @experimental {
     """The unique identifier for the chronicle producer."""
