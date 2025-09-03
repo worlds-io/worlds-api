@@ -1,3 +1,7 @@
 extend type Mutation {
-    uploadImage(image: UploadImageInput!): Image
+    """Uploads an image."""
+    uploadImage(
+        """Arguments to upload an image."""
+        image: UploadImageInput!
+    ): Image
 }

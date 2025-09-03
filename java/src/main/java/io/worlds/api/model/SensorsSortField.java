@@ -1,8 +1,19 @@
 package io.worlds.api.model;
 
+/**
+ * Indicates the field used for sorting an [`sensors` query]({{Queries.sensors}}).
+ */
 public enum SensorsSortField {
 
+    /**
+     * 
+Sort the resulting list by the [`sensor`](({{Types.sensor}}))'s unique identifier.
+     */
     ID("ID"),
+    /**
+     * 
+Sort the resulting list by the [`sensor`](({{Types.sensor}}))'s name.
+     */
     NAME("NAME");
 
     private final String graphqlName;

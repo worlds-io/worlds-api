@@ -1,8 +1,26 @@
+"""
+FilterSiteInput filters [sites]({{Types.site}}) based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
+"""
 input FilterSiteInput {
+    """
+    If provided, specifies filters that work against the [Site's unique id]({{Types.site}}).
+    """
     id: FilterIDInput
+    """
+    If provided, specifies filters that work against the [Site's name]({{Types.site}}).
+    """
     name: FilterStringInput
-    
+    """
+    If provided, a site must pass all filters in this list to match the current filter.
+    """
     and: [FilterSiteInput!]
+    """
+    If provided, a site must pass at least one of the filters in this list to match the current filter.
+    """
     or: [FilterSiteInput!]
+    """
+    If provided, a site may not match this filter to match the current filter.
+    """
     not: FilterSiteInput
 }

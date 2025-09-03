@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * GeofenceIntersectionsSort allows for sorting geofence intersections by a sort field and direction.
+ */
 public class GeofenceIntersectionsSort implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

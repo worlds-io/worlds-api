@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * This type is used to create a new [`DataSource`]({{Types.datasource}})
+ */
 public class CreateDataSourceInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

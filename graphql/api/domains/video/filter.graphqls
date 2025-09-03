@@ -1,18 +1,57 @@
+"""
+FilterEventActivityInput filters [events]({{Types.event}}) based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
+"""
 input FilterVideoActivityInput {
-	dataSourceId: FilterIDInput
-
-	and: [FilterVideoActivityInput!]
-	or: [FilterVideoActivityInput!]
-	not: FilterVideoActivityInput
+    """
+    If provided, specifies filters that work against the [`DataSource`](({{Types.dataSource}}))'s unique id of the video that created the event.
+    """
+    dataSourceId: FilterIDInput
+    """
+    If provided, an event must pass all filters in this list to match the current filter.
+    """
+    and: [FilterVideoActivityInput!]
+    """
+    If provided, an event must pass at least one of the filters in this list to match the current filter.
+    """
+    or: [FilterVideoActivityInput!]
+    """
+    If provided, an event may not match this filter to match the current filter.
+    """
+    not: FilterVideoActivityInput
 }
 
+"""
+FilterVideoInput filters [videos]({{Types.video}}) based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
+"""
 input FilterVideoInput {
-	id: FilterIDInput
-	dataSourceId: FilterIDInput
-	startTime: FilterDateTimeOffsetInput!
-	endTime: FilterDateTimeOffsetInput
-
-	and: [FilterVideoInput!]
-	or: [FilterVideoInput!]
-	not: FilterVideoInput
+    """
+    If provided, specifies filters that work against the [`Videos`](({{Types.video}}))'s unique id.
+    """
+    id: FilterIDInput
+    """
+    If provided, specifies filters that work against the unique ID of the [`data source`]({{Types.dataSource}}) that the video belongs to.
+    """
+    dataSourceId: FilterIDInput
+    """
+    If provided, specifies filters that work against the [`Videos`](({{Types.video}}))'s start time.
+    """
+    startTime: FilterDateTimeOffsetInput!
+    """
+    If provided, specifies filters that work against the [`Videos`](({{Types.video}}))'s end time.
+    """
+    endTime: FilterDateTimeOffsetInput
+    """
+    If provided, an event must pass all filters in this list to match the current filter.
+    """
+    and: [FilterVideoInput!]
+    """
+    If provided, an event must pass at least one of the filters in this list to match the current filter.
+    """
+    or: [FilterVideoInput!]
+    """
+    If provided, an event may not match this filter to match the current filter.
+    """
+    not: FilterVideoInput
 }

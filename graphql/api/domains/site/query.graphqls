@@ -1,15 +1,47 @@
+"""
+Indicates the field used for sorting an [`sites` query]({{Queries.sites}}).
+"""
 enum SitesSortField {
-    ID,
+    """
+    Sort the resulting list by the [`sites`](({{Types.site}}))'s unique identifier.
+    """
+    ID
+    """
+    Sort the resulting list by the [`sites`](({{Types.site}}))'s name.
+    """
     NAME
 }
 
+"""
+SitesSort allows for sorting a [`sites` query]({{Query.sites}}) by field and direction.
+"""
 input SitesSort {
+    """
+    Any sortable field available to the `SitesSort`. See the link to the type below
+    for more details.
+    """
     field: SitesSortField!
+    """Sort direction. See the link to the type below for more details."""
     direction: SortDirection!
 }
 
-
 extend type Query {
-    site(id: ID!): Site
-    sites(filter: FilterSiteInput, first: Int! = 20, after: String, sort: [SitesSort!]! = [{field: NAME, direction: ASC}, {field: ID, direction: ASC}]): SiteConnection
+    """
+    Look up a site's information, such as its name, location and devices, by its unique identifier.
+    """
+    site(
+        """The site's unique identifier."""
+        id: ID!
+    ): Site
+    """Find sites based on a set of filters."""
+    sites(
+        """Filter sites based on id."""
+        filter: FilterSiteInput
+        """Returns the first _n_ elements from the list."""
+        first: Int! = 20
+        """Returns the elements in the list that come after the specified cursor."""
+        after: String
+        """The field and direction by which to sort the results"""
+        sort: [SitesSort!]! = [{field: NAME, direction: ASC}, {field: ID, direction: ASC}]
+    ): SiteConnection
 }

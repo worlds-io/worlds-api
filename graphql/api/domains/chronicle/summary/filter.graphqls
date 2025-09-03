@@ -1,19 +1,18 @@
 input FilterSummaryChronicleInput @experimental {
-  id: FilterIDInput
-  name: FilterStringInput
-  startTime: FilterDateTimeOffsetInput
-  endTime: FilterDateTimeOffsetInput
-  timezone: FilterStringInput
-  priority: FilterStringInput
-  status: FilterStringInput
-  validation: FilterChronicleValidationStatusInput
-  labels: FilterStringListInput
-  locations: FilterStringListInput
-  chronicleProducerId: FilterIDInput
-  activityChronicleIds: FilterIDListInput
-  eventChronicleIds: FilterIDListInput
-
-  and: [FilterSummaryChronicleInput!]
-  or: [FilterSummaryChronicleInput!]
-  not: FilterSummaryChronicleInput
+    id: FilterIDInput
+    name: FilterStringInput
+    startTime: FilterDateTimeOffsetInput
+    endTime: FilterDateTimeOffsetInput
+    timezone: FilterStringInput
+    priority: FilterStringInput
+    status: FilterStringInput
+    validation: FilterChronicleValidationStatusInput
+    labels: FilterStringListInput
+    locations: FilterStringListInput
+    chronicleProducerId: FilterIDInput
+    activityChronicleIds: FilterIDListInput
+    eventChronicleIds: FilterIDListInput
+    and: [FilterSummaryChronicleInput!]
+    or: [FilterSummaryChronicleInput!]
+    not: FilterSummaryChronicleInput
 }

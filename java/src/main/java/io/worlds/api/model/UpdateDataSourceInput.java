@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * This type is used to update an existing [`DataSource`]({{Types.datasource}})
+ */
 public class UpdateDataSourceInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

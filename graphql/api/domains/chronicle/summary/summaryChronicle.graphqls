@@ -18,7 +18,6 @@ type SummaryChronicle @experimental {
     updatedAt: DateTimeOffset!
 }
 
-# Input types for SummaryChronicle
 input CreateSummaryChronicleInput @experimental {
     name: String!
     chronicleProducerId: ID!

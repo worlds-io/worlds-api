@@ -1,9 +1,9 @@
 type SummaryChronicleConnection @experimental {
-  edges: [SummaryChronicleEdge!]!
-  pageInfo: PageInfo!
+    edges: [SummaryChronicleEdge!]!
+    pageInfo: PageInfo!
 }
 
 type SummaryChronicleEdge @experimental {
-  node: SummaryChronicle!
-  cursor: String!
+    node: SummaryChronicle!
+    cursor: String!
 }

@@ -1,16 +1,16 @@
 input FilterChronicleProducerInput @experimental {
-  id: FilterIDInput
-  name: FilterStringInput
-  active: FilterBooleanInput
+    id: FilterIDInput
+    name: FilterStringInput
+    active: FilterBooleanInput
 
-  and: [FilterChronicleProducerInput!]
-  or: [FilterChronicleProducerInput!]
-  not: FilterChronicleProducerInput
+    and: [FilterChronicleProducerInput!]
+    or: [FilterChronicleProducerInput!]
+    not: FilterChronicleProducerInput
 }
 
 input FilterChronicleValidationStatusInput @experimental {
-  eq: ChronicleValidationStatus
-  ne: ChronicleValidationStatus
-  in: [ChronicleValidationStatus!]
-  attributeExists: Boolean
+    eq: ChronicleValidationStatus
+    ne: ChronicleValidationStatus
+    in: [ChronicleValidationStatus!]
+    attributeExists: Boolean
 }

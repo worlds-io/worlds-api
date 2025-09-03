@@ -1,6 +1,11 @@
 package io.worlds.api.model;
 
 
+/**
+ * `FilterPointOfInterestInput` allows for filtering points of interest based on criteria described below.
+Only one field should be provided per Filter object unless an operator
+(`and` `or` `not`) as specified below.
+ */
 public class FilterPointOfInterestInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

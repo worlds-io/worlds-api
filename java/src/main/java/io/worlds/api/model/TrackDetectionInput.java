@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * This type is used to create a new [`Detection`]({{Types.detection}}) when [creating]({{Types.createtrackinput}}) or [updating]({{Types.updatetrackinput}}) a [`Track`]({{Types.track}})
+ */
 public class TrackDetectionInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

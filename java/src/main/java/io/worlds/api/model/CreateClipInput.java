@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * This input type is used to create a new clip for an event. See [About Events](/reference/objects/#about-events) for more details.
+ */
 public class CreateClipInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

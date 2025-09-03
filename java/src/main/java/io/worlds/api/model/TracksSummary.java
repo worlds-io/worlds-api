@@ -19,23 +19,43 @@ public class TracksSummary implements java.io.Serializable {
         this.buckets = buckets;
     }
 
+    /**
+     * The total number of [Tracks]({{Types.track}}) within the time range.
+     */
     public int getTotal() {
         return total;
     }
+    /**
+     * The total number of [Tracks]({{Types.track}}) within the time range.
+     */
     public void setTotal(int total) {
         this.total = total;
     }
 
+    /**
+     * The count of [Tracks]({{Types.track}}) for each [Tag]({{Types.tag}}) within the time range.
+     */
     public java.util.List<TracksCountByTag> getTotalsByTag() {
         return totalsByTag;
     }
+    /**
+     * The count of [Tracks]({{Types.track}}) for each [Tag]({{Types.tag}}) within the time range.
+     */
     public void setTotalsByTag(java.util.List<TracksCountByTag> totalsByTag) {
         this.totalsByTag = totalsByTag;
     }
 
+    /**
+     * A detailed summary of each [bucket]({{Types.summarybucketsize}}) within the time range.
+Summary buckets are only returned if `bucket` is provided as a query parameter to [`tracksSummary`]({{Queries.trackssummary}}).
+     */
     public java.util.List<TracksSummaryBucket> getBuckets() {
         return buckets;
     }
+    /**
+     * A detailed summary of each [bucket]({{Types.summarybucketsize}}) within the time range.
+Summary buckets are only returned if `bucket` is provided as a query parameter to [`tracksSummary`]({{Queries.trackssummary}}).
+     */
     public void setBuckets(java.util.List<TracksSummaryBucket> buckets) {
         this.buckets = buckets;
     }
@@ -55,16 +75,26 @@ public class TracksSummary implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * The total number of [Tracks]({{Types.track}}) within the time range.
+         */
         public Builder setTotal(int total) {
             this.total = total;
             return this;
         }
 
+        /**
+         * The count of [Tracks]({{Types.track}}) for each [Tag]({{Types.tag}}) within the time range.
+         */
         public Builder setTotalsByTag(java.util.List<TracksCountByTag> totalsByTag) {
             this.totalsByTag = totalsByTag;
             return this;
         }
 
+        /**
+         * A detailed summary of each [bucket]({{Types.summarybucketsize}}) within the time range.
+Summary buckets are only returned if `bucket` is provided as a query parameter to [`tracksSummary`]({{Queries.trackssummary}}).
+         */
         public Builder setBuckets(java.util.List<TracksSummaryBucket> buckets) {
             this.buckets = buckets;
             return this;

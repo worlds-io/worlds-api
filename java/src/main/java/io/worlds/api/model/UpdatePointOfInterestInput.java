@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * Fields to update an existing [PointOfInterest]({{Types.pointofinterest}})
+ */
 public class UpdatePointOfInterestInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

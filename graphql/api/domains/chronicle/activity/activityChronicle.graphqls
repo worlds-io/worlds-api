@@ -23,7 +23,6 @@ type ActivityChronicle @experimental {
     updatedAt: DateTimeOffset!
 }
 
-# Input types for ActivityChronicle
 input CreateActivityChronicleInput @experimental {
     name: String!
     chronicleProducerId: ID!

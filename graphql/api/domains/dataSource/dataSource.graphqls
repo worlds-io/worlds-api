@@ -1,25 +1,55 @@
+"""Indicates the type of a [DataSource]({{Types.datasource}})"""
 enum DataSourceType {
-    FOLDER,
-    VIDEO_DEVICE,
+    """A data source that is simply meant to store videos or images"""
+    FOLDER
+    """
+    A data source that corresponds to a [Device]({{Types.device}}) that is generating video.
+    """
+    VIDEO_DEVICE
+    """
+    A data source that corresponds to a [Device]({{Types.device}}) that is generating images.
+    """
     IMAGE_DEVICE
+    """
+    A data source that directly produces [Tracks]({{Types.track}}) and [detections]({{Types.detection}})
+    """
     GEOPOSITION
 }
 
+"""
+A data source is responsible for producing the videos, images and other sensor data that may eventually produce detections and tracks. For more details on detections, see [About Detections](/reference/objects/detection/#about-detections)
+"""
 type DataSource {
+    """The unique identifier of the data source."""
     id: ID!
+    """The name of the data source"""
     name: String!
+    """The type of the data source"""
     type: DataSourceType!
+    """The device associated with this data source"""
     device: Device
+    """The zones associated with this data source"""
     zones: [Zone!]!
 }
 
+"""
+This type is used to create a new [`DataSource`]({{Types.datasource}})
+"""
 input CreateDataSourceInput {
+    """The name of the data source"""
     name: String!
+    """The type of the data source"""
     type: DataSourceType!
 }
 
+"""
+This type is used to update an existing [`DataSource`]({{Types.datasource}})
+"""
 input UpdateDataSourceInput {
+    """The unique identifier of the data source"""
     id: ID!
+    """The name of the data source"""
     name: String
+    """The type of the data source"""
     type: DataSourceType
 }

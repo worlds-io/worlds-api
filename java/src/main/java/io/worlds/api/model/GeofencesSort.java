@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * GeofencesSort allows for sorting a geofence by a sort field and direction.
+ */
 public class GeofencesSort implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

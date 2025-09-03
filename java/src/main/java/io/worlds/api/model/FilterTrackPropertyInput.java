@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * `FilterTrackPropertyInput` allows for filtering a [`tracks` query]({{Queries.tracks}}) based on criteria described below
+ */
 public class FilterTrackPropertyInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

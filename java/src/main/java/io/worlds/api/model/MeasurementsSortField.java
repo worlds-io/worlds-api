@@ -1,8 +1,19 @@
 package io.worlds.api.model;
 
+/**
+ * Indicates the field used for sorting a [`measurements` query]({{Queries.measurements}}).
+ */
 public enum MeasurementsSortField {
 
+    /**
+     * 
+Sort the resulting list by the [`Measurement`](({{Types.measurement}}))'s unique identifier.
+     */
     ID("ID"),
+    /**
+     * 
+Sort the resulting list by the [`Measurement`](({{Types.measurement}}))'s timestamp.
+     */
     TIMESTAMP("TIMESTAMP");
 
     private final String graphqlName;

@@ -1,14 +1,42 @@
+"""
+Indicates the field used for sorting a [Tags query]({{Queries.tags}}).
+"""
 enum TagsSortField {
-    ID,
+    """Sort the resulting list in by its unique identifier."""
+    ID
+    """Sort the resulting list by the tag name."""
     LABEL_NAME
 }
 
+"""
+TagsSort allows for sorting a [`tags` query]({{Query.tags}}) by field and direction.
+"""
 input TagsSort {
+    """
+    Any sortable field available to the `TagsSort`. See the link to the type below for more details.
+    """
     field: TagsSortField!
+    """Sort direction. See the link to the type below for more details."""
     direction: SortDirection!
 }
 
 extend type Query {
-    tag(id: ID, name: String): Tag
-    tags(filter: FilterTagInput, first: Int! = 20, after: String, sort: [TagsSort!]! = [{field: LABEL_NAME, direction: ASC}, {field: ID, direction: ASC}]): TagConnection
+    """Look up a tag's information by its unique identifier."""
+    tag(
+        """The tag's unique numeric ID."""
+        id: ID
+        """The tag's name."""
+        name: String
+    ): Tag
+    """Search for tags based on a set of filters."""
+    tags(
+        """Filter tags by id or name."""
+        filter: FilterTagInput
+        """Returns the first _n_ elements from the list."""
+        first: Int! = 20
+        """Returns the elements in the list that come after the specified cursor."""
+        after: String
+        """The field and direction by which to sort the results"""
+        sort: [TagsSort!]! = [{field: LABEL_NAME, direction: ASC}, {field: ID, direction: ASC}]
+    ): TagConnection
 }

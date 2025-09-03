@@ -1,6 +1,14 @@
 package io.worlds.api.model;
 
 
+/**
+ * A geofence is a user-defined region in world coordinates. When a
+[detection]({{Types.detection}}) occurs within a geofence, or a
+[track]({{Types.track}}) crosses the border of a geofence, a [geofence
+event]({{Types.geofenceevent}}) is created. Geofence events, along
+with [zone events]({{Types.zoneevent}}) are a key part of creating
+custom business logic with Worlds.
+ */
 public class Geofence implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -23,30 +31,56 @@ public class Geofence implements java.io.Serializable {
         this.active = active;
     }
 
+    /**
+     * The unique identifier of the geofence.
+     */
     public String getId() {
         return id;
     }
+    /**
+     * The unique identifier of the geofence.
+     */
     public void setId(String id) {
         this.id = id;
     }
 
+    /**
+     * The display name of the geofence.
+     */
     public String getName() {
         return name;
     }
+    /**
+     * The display name of the geofence.
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * An object that represents the bounds of the geofence.
+     */
     public GeofenceBounds getBounds() {
         return bounds;
     }
+    /**
+     * An object that represents the bounds of the geofence.
+     */
     public void setBounds(GeofenceBounds bounds) {
         this.bounds = bounds;
     }
 
+    /**
+     * True if the geofence is active, otherwise false. Geofences that are not active
+will not produce events.
+     */
     public boolean getActive() {
         return active;
     }
+    /**
+     * True if the geofence is active, otherwise false. Geofences that are not active
+will not produce events.
+     */
     public void setActive(boolean active) {
         this.active = active;
     }
@@ -67,21 +101,34 @@ public class Geofence implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * The unique identifier of the geofence.
+         */
         public Builder setId(String id) {
             this.id = id;
             return this;
         }
 
+        /**
+         * The display name of the geofence.
+         */
         public Builder setName(String name) {
             this.name = name;
             return this;
         }
 
+        /**
+         * An object that represents the bounds of the geofence.
+         */
         public Builder setBounds(GeofenceBounds bounds) {
             this.bounds = bounds;
             return this;
         }
 
+        /**
+         * True if the geofence is active, otherwise false. Geofences that are not active
+will not produce events.
+         */
         public Builder setActive(boolean active) {
             this.active = active;
             return this;

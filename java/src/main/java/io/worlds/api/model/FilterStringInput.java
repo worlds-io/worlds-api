@@ -2,7 +2,7 @@ package io.worlds.api.model;
 
 
 /**
- * Standard filtration for string fields
+ * `FilterStringInput` allows for filtering based on a string parameter. Only one field should be provided per filter object.
  */
 public class FilterStringInput implements java.io.Serializable {
 

@@ -1,3 +1,9 @@
 extend type Subscription {
-    videoActivity(filter: FilterVideoActivityInput): Video
+    """
+    Subscribes to any created [`Video`]({{Types.video}}) from a given [`DataSource`]({{Types.datasource}}).
+    """
+    videoActivity(
+        """Filter videos by unique identifier of the data source."""
+        filter: FilterVideoActivityInput
+    ): Video
 }

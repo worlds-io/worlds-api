@@ -37,63 +37,133 @@ public class ZoneEvent implements java.io.Serializable {
         this.polygon = polygon;
     }
 
+    /**
+     * The unique idenifier for the zone event.
+     */
     public String getId() {
         return id;
     }
+    /**
+     * The unique idenifier for the zone event.
+     */
     public void setId(String id) {
         this.id = id;
     }
 
+    /**
+     * The camera zone the event happened in.
+     */
     public Zone getZone() {
         return zone;
     }
+    /**
+     * The camera zone the event happened in.
+     */
     public void setZone(Zone zone) {
         this.zone = zone;
     }
 
+    /**
+     * The track associated with the object that triggered the zone event.
+     */
     public Track getTrack() {
         return track;
     }
+    /**
+     * The track associated with the object that triggered the zone event.
+     */
     public void setTrack(Track track) {
         this.track = track;
     }
 
+    /**
+     * [`zoneEvents`]({{Queries.zoneevents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneintersections}}),
+    and `tag` will not be present on [`ZoneIntersection`]({{Types.zoneintersection}}).
+    Use [track's tag]({{Types.track}}) instead.
+
+    The class label of the object that triggered the zone event, i.e person, car, truck, etc.
+     */
     @Deprecated
     public String getTag() {
         return tag;
     }
+    /**
+     * [`zoneEvents`]({{Queries.zoneevents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneintersections}}),
+    and `tag` will not be present on [`ZoneIntersection`]({{Types.zoneintersection}}).
+    Use [track's tag]({{Types.track}}) instead.
+
+    The class label of the object that triggered the zone event, i.e person, car, truck, etc.
+     */
     @Deprecated
     public void setTag(String tag) {
         this.tag = tag;
     }
 
+    /**
+     * [`zoneEvents`]({{Queries.zoneevents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneintersections}}),
+    and `type` will not be present on [`ZoneIntersection`]({{Types.zoneintersection}}).
+
+    The type of zone event, i.e ingress (an object entered the zone), dwell (an object remained in the zone), and egress.
+    (an object exited the zone)
+     */
     @Deprecated
     public ActivityType getType() {
         return type;
     }
+    /**
+     * [`zoneEvents`]({{Queries.zoneevents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneintersections}}),
+    and `type` will not be present on [`ZoneIntersection`]({{Types.zoneintersection}}).
+
+    The type of zone event, i.e ingress (an object entered the zone), dwell (an object remained in the zone), and egress.
+    (an object exited the zone)
+     */
     @Deprecated
     public void setType(ActivityType type) {
         this.type = type;
     }
 
+    /**
+     * The time at which the event started.
+     */
     public java.time.OffsetDateTime getStartTime() {
         return startTime;
     }
+    /**
+     * The time at which the event started.
+     */
     public void setStartTime(java.time.OffsetDateTime startTime) {
         this.startTime = startTime;
     }
 
+    /**
+     * The time at which the event ended.
+     */
     public java.time.OffsetDateTime getEndTime() {
         return endTime;
     }
+    /**
+     * The time at which the event ended.
+     */
     public void setEndTime(java.time.OffsetDateTime endTime) {
         this.endTime = endTime;
     }
 
+    /**
+     * [`zoneEvents`]({{Queries.zoneevents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneintersections}}),
+    and `polygon` will not be present on [`ZoneIntersection`]({{Types.zoneintersection}}).
+
+    The two-dimensional shape of the detection that triggered the event.
+     */
     @Deprecated
     public GeoJSONMultiPolygon getPolygon() {
         return polygon;
     }
+    /**
+     * [`zoneEvents`]({{Queries.zoneevents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneintersections}}),
+    and `polygon` will not be present on [`ZoneIntersection`]({{Types.zoneintersection}}).
+
+    The two-dimensional shape of the detection that triggered the event.
+     */
     @Deprecated
     public void setPolygon(GeoJSONMultiPolygon polygon) {
         this.polygon = polygon;
@@ -119,43 +189,78 @@ public class ZoneEvent implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * The unique idenifier for the zone event.
+         */
         public Builder setId(String id) {
             this.id = id;
             return this;
         }
 
+        /**
+         * The camera zone the event happened in.
+         */
         public Builder setZone(Zone zone) {
             this.zone = zone;
             return this;
         }
 
+        /**
+         * The track associated with the object that triggered the zone event.
+         */
         public Builder setTrack(Track track) {
             this.track = track;
             return this;
         }
 
+        /**
+         * [`zoneEvents`]({{Queries.zoneevents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneintersections}}),
+    and `tag` will not be present on [`ZoneIntersection`]({{Types.zoneintersection}}).
+    Use [track's tag]({{Types.track}}) instead.
+
+    The class label of the object that triggered the zone event, i.e person, car, truck, etc.
+         */
         @Deprecated
         public Builder setTag(String tag) {
             this.tag = tag;
             return this;
         }
 
+        /**
+         * [`zoneEvents`]({{Queries.zoneevents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneintersections}}),
+    and `type` will not be present on [`ZoneIntersection`]({{Types.zoneintersection}}).
+
+    The type of zone event, i.e ingress (an object entered the zone), dwell (an object remained in the zone), and egress.
+    (an object exited the zone)
+         */
         @Deprecated
         public Builder setType(ActivityType type) {
             this.type = type;
             return this;
         }
 
+        /**
+         * The time at which the event started.
+         */
         public Builder setStartTime(java.time.OffsetDateTime startTime) {
             this.startTime = startTime;
             return this;
         }
 
+        /**
+         * The time at which the event ended.
+         */
         public Builder setEndTime(java.time.OffsetDateTime endTime) {
             this.endTime = endTime;
             return this;
         }
 
+        /**
+         * [`zoneEvents`]({{Queries.zoneevents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneintersections}}),
+    and `polygon` will not be present on [`ZoneIntersection`]({{Types.zoneintersection}}).
+
+    The two-dimensional shape of the detection that triggered the event.
+         */
         @Deprecated
         public Builder setPolygon(GeoJSONMultiPolygon polygon) {
             this.polygon = polygon;

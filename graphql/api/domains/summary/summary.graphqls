@@ -1,26 +1,58 @@
 type TracksSummary {
-	total: Int!
-	totalsByTag: [TracksCountByTag!]!
-	buckets: [TracksSummaryBucket!]
+    """
+    The total number of [Tracks]({{Types.track}}) within the time range.
+    """
+    total: Int!
+    """
+    The count of [Tracks]({{Types.track}}) for each [Tag]({{Types.tag}}) within the time range.
+    """
+    totalsByTag: [TracksCountByTag!]!
+    """
+    A detailed summary of each [bucket]({{Types.summarybucketsize}}) within the time range.
+    Summary buckets are only returned if `bucket` is provided as a query parameter to [`tracksSummary`]({{Queries.trackssummary}}).
+    """
+    buckets: [TracksSummaryBucket!]
 }
 
 type TracksCountByTag {
-	tag: String!
-	count: Int!
+    """The name of the [tag]({{Types.tag}})."""
+    tag: String!
+    """
+    The total count of [Tracks]({{Types.track}}) within the time range with a matching tag.
+    """
+    count: Int!
 }
 
 type TracksSummaryBucket {
-	time: DateTimeOffset!
-	total: Int!
-	counts: [TracksCountByTag!]!
+    """The start time of the bucket."""
+    time: DateTimeOffset!
+    """
+    The total number of [Tracks]({{Types.track}}) within the bucket.
+    """
+    total: Int!
+    """
+    The count of [Tracks]({{Types.track}}) for each [Tag]({{Types.tag}}) within the bucket.
+    """
+    counts: [TracksCountByTag!]!
 }
 
 type EventsSummary {
-	total: Int!
-	buckets: [EventsSummaryBucket!]
+    """
+    The total number of [Events]({{Types.event}}) within the time range.
+    """
+    total: Int!
+    """
+    A detailed summary of each [bucket]({{Types.summarybucketsize}}) within the time range.
+    Summary buckets are only returned if `bucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventssummary}}).
+    """
+    buckets: [EventsSummaryBucket!]
 }
 
 type EventsSummaryBucket {
-	time: DateTimeOffset!
-	total: Int!
+    """The start time of the bucket."""
+    time: DateTimeOffset!
+    """
+    The total number of [Events]({{Types.event}}) within the bucket.
+    """
+    total: Int!
 }

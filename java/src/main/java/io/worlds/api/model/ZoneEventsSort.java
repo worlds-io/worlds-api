@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * ZoneEventsSort allows for sorting zone events by a sort field and direction.
+ */
 public class ZoneEventsSort implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

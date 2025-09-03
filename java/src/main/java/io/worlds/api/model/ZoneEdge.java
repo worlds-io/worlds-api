@@ -17,16 +17,28 @@ public class ZoneEdge implements java.io.Serializable {
         this.cursor = cursor;
     }
 
+    /**
+     * Information about a particular [Zone]({{Types.zone}}).
+     */
     public Zone getNode() {
         return node;
     }
+    /**
+     * Information about a particular [Zone]({{Types.zone}}).
+     */
     public void setNode(Zone node) {
         this.node = node;
     }
 
+    /**
+     * The cursor to use with the [Query `zones` field]({{Queries.zones}}) `after` argument.
+     */
     public String getCursor() {
         return cursor;
     }
+    /**
+     * The cursor to use with the [Query `zones` field]({{Queries.zones}}) `after` argument.
+     */
     public void setCursor(String cursor) {
         this.cursor = cursor;
     }
@@ -45,11 +57,17 @@ public class ZoneEdge implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * Information about a particular [Zone]({{Types.zone}}).
+         */
         public Builder setNode(Zone node) {
             this.node = node;
             return this;
         }
 
+        /**
+         * The cursor to use with the [Query `zones` field]({{Queries.zones}}) `after` argument.
+         */
         public Builder setCursor(String cursor) {
             this.cursor = cursor;
             return this;

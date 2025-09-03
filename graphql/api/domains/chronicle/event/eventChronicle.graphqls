@@ -16,7 +16,6 @@ type EventChronicle @experimental {
     updatedAt: DateTimeOffset!
 }
 
-# Input types for EventChronicle
 input CreateEventChronicleInput @experimental {
     name: String!
     chronicleProducerId: ID!

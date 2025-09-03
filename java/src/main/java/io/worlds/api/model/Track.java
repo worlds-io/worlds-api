@@ -41,87 +41,159 @@ public class Track implements java.io.Serializable {
         this.deviceIds = deviceIds;
     }
 
+    /**
+     * The unique identifier for the Track.
+     */
     public String getId() {
         return id;
     }
+    /**
+     * The unique identifier for the Track.
+     */
     public void setId(String id) {
         this.id = id;
     }
 
+    /**
+     * The data source that captured the Track.
+     */
     public DataSource getDataSource() {
         return dataSource;
     }
+    /**
+     * The data source that captured the Track.
+     */
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
     }
 
+    /**
+     * The video that this detection was captured in
+     */
     public Video getVideo() {
         return video;
     }
+    /**
+     * The video that this detection was captured in
+     */
     public void setVideo(Video video) {
         this.video = video;
     }
 
+    /**
+     * The class label of the tracked object, i.e person, car, truck, etc.
+     */
     public String getTag() {
         return tag;
     }
+    /**
+     * The class label of the tracked object, i.e person, car, truck, etc.
+     */
     public void setTag(String tag) {
         this.tag = tag;
     }
 
+    /**
+     * The time of the first detection of the tracked object.
+     */
     public java.time.OffsetDateTime getStartTime() {
         return startTime;
     }
+    /**
+     * The time of the first detection of the tracked object.
+     */
     public void setStartTime(java.time.OffsetDateTime startTime) {
         this.startTime = startTime;
     }
 
+    /**
+     * The time of the last detection of the tracked object, or null if it is still being tracked.
+     */
     public java.time.OffsetDateTime getEndTime() {
         return endTime;
     }
+    /**
+     * The time of the last detection of the tracked object, or null if it is still being tracked.
+     */
     public void setEndTime(java.time.OffsetDateTime endTime) {
         this.endTime = endTime;
     }
 
+    /**
+     * A collection of every Detection associated with the Track.
+     */
     public java.util.List<Detection> getDetections() {
         return detections;
     }
+    /**
+     * A collection of every Detection associated with the Track.
+     */
     public void setDetections(java.util.List<Detection> detections) {
         this.detections = detections;
     }
 
+    /**
+     * The identifying and descriptive attributes of the Track
+     */
     public TrackProperties getProperties() {
         return properties;
     }
+    /**
+     * The identifying and descriptive attributes of the Track
+     */
     public void setProperties(TrackProperties properties) {
         this.properties = properties;
     }
 
+    /**
+     * Arbitrary information about the Track.
+     */
     public java.lang.Object getMetadata() {
         return metadata;
     }
+    /**
+     * Arbitrary information about the Track.
+     */
     public void setMetadata(java.lang.Object metadata) {
         this.metadata = metadata;
     }
 
+    /**
+     * Intersections triggered by this track interacting with a zone.
+     */
     public java.util.List<ZoneIntersection> getZoneIntersections() {
         return zoneIntersections;
     }
+    /**
+     * Intersections triggered by this track interacting with a zone.
+     */
     public void setZoneIntersections(java.util.List<ZoneIntersection> zoneIntersections) {
         this.zoneIntersections = zoneIntersections;
     }
 
+    /**
+     * Point-in-time representations of an interaction between the track and a geofence.
+     */
     public java.util.List<GeofenceIntersection> getGeofenceIntersections() {
         return geofenceIntersections;
     }
+    /**
+     * Point-in-time representations of an interaction between the track and a geofence.
+     */
     public void setGeofenceIntersections(java.util.List<GeofenceIntersection> geofenceIntersections) {
         this.geofenceIntersections = geofenceIntersections;
     }
 
+    /**
+     * The unique identifiers of the devices that captured the Track.
+     */
     @Deprecated
     public java.util.List<String> getDeviceIds() {
         return deviceIds;
     }
+    /**
+     * The unique identifiers of the devices that captured the Track.
+     */
     @Deprecated
     public void setDeviceIds(java.util.List<String> deviceIds) {
         this.deviceIds = deviceIds;
@@ -151,61 +223,97 @@ public class Track implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * The unique identifier for the Track.
+         */
         public Builder setId(String id) {
             this.id = id;
             return this;
         }
 
+        /**
+         * The data source that captured the Track.
+         */
         public Builder setDataSource(DataSource dataSource) {
             this.dataSource = dataSource;
             return this;
         }
 
+        /**
+         * The video that this detection was captured in
+         */
         public Builder setVideo(Video video) {
             this.video = video;
             return this;
         }
 
+        /**
+         * The class label of the tracked object, i.e person, car, truck, etc.
+         */
         public Builder setTag(String tag) {
             this.tag = tag;
             return this;
         }
 
+        /**
+         * The time of the first detection of the tracked object.
+         */
         public Builder setStartTime(java.time.OffsetDateTime startTime) {
             this.startTime = startTime;
             return this;
         }
 
+        /**
+         * The time of the last detection of the tracked object, or null if it is still being tracked.
+         */
         public Builder setEndTime(java.time.OffsetDateTime endTime) {
             this.endTime = endTime;
             return this;
         }
 
+        /**
+         * A collection of every Detection associated with the Track.
+         */
         public Builder setDetections(java.util.List<Detection> detections) {
             this.detections = detections;
             return this;
         }
 
+        /**
+         * The identifying and descriptive attributes of the Track
+         */
         public Builder setProperties(TrackProperties properties) {
             this.properties = properties;
             return this;
         }
 
+        /**
+         * Arbitrary information about the Track.
+         */
         public Builder setMetadata(java.lang.Object metadata) {
             this.metadata = metadata;
             return this;
         }
 
+        /**
+         * Intersections triggered by this track interacting with a zone.
+         */
         public Builder setZoneIntersections(java.util.List<ZoneIntersection> zoneIntersections) {
             this.zoneIntersections = zoneIntersections;
             return this;
         }
 
+        /**
+         * Point-in-time representations of an interaction between the track and a geofence.
+         */
         public Builder setGeofenceIntersections(java.util.List<GeofenceIntersection> geofenceIntersections) {
             this.geofenceIntersections = geofenceIntersections;
             return this;
         }
 
+        /**
+         * The unique identifiers of the devices that captured the Track.
+         */
         @Deprecated
         public Builder setDeviceIds(java.util.List<String> deviceIds) {
             this.deviceIds = deviceIds;

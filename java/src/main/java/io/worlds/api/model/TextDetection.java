@@ -22,30 +22,54 @@ public class TextDetection implements java.io.Serializable {
         this.textConfidence = textConfidence;
     }
 
+    /**
+     * The position and shape of the detection in the image
+     */
     public GeoJSONPolygon getPolygon() {
         return polygon;
     }
+    /**
+     * The position and shape of the detection in the image
+     */
     public void setPolygon(GeoJSONPolygon polygon) {
         this.polygon = polygon;
     }
 
+    /**
+     * The confidence score for the detection's existance.
+     */
     public double getDetectionConfidence() {
         return detectionConfidence;
     }
+    /**
+     * The confidence score for the detection's existance.
+     */
     public void setDetectionConfidence(double detectionConfidence) {
         this.detectionConfidence = detectionConfidence;
     }
 
+    /**
+     * The recognized text
+     */
     public String getText() {
         return text;
     }
+    /**
+     * The recognized text
+     */
     public void setText(String text) {
         this.text = text;
     }
 
+    /**
+     * The confidence score for the recognized text's accuracy.
+     */
     public double getTextConfidence() {
         return textConfidence;
     }
+    /**
+     * The confidence score for the recognized text's accuracy.
+     */
     public void setTextConfidence(double textConfidence) {
         this.textConfidence = textConfidence;
     }
@@ -66,21 +90,33 @@ public class TextDetection implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * The position and shape of the detection in the image
+         */
         public Builder setPolygon(GeoJSONPolygon polygon) {
             this.polygon = polygon;
             return this;
         }
 
+        /**
+         * The confidence score for the detection's existance.
+         */
         public Builder setDetectionConfidence(double detectionConfidence) {
             this.detectionConfidence = detectionConfidence;
             return this;
         }
 
+        /**
+         * The recognized text
+         */
         public Builder setText(String text) {
             this.text = text;
             return this;
         }
 
+        /**
+         * The confidence score for the recognized text's accuracy.
+         */
         public Builder setTextConfidence(double textConfidence) {
             this.textConfidence = textConfidence;
             return this;

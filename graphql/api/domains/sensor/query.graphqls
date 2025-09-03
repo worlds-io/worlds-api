@@ -1,25 +1,85 @@
+"""
+Indicates the field used for sorting an [`sensors` query]({{Queries.sensors}}).
+"""
 enum SensorsSortField {
-	ID,
-	NAME
+    """
+    Sort the resulting list by the [`sensor`](({{Types.sensor}}))'s unique identifier.
+    """
+    ID
+    """
+    Sort the resulting list by the [`sensor`](({{Types.sensor}}))'s name.
+    """
+    NAME
 }
 
+"""
+SensorsSort allows for sorting a [`sensors` query]({{Query.sensors}}) by field and direction.
+"""
 input SensorsSort {
-	field: SensorsSortField!
-	direction: SortDirection!
+    """
+    Any sortable field available to the `SensorsSort`. See the link to the type below
+    for more details.
+    """
+    field: SensorsSortField!
+    """Sort direction. See the link to the type below for more details."""
+    direction: SortDirection!
 }
 
+"""
+Indicates the field used for sorting a [`measurements` query]({{Queries.measurements}}).
+"""
 enum MeasurementsSortField {
-	ID,
-	TIMESTAMP
+    """
+    Sort the resulting list by the [`Measurement`](({{Types.measurement}}))'s unique identifier.
+    """
+    ID
+    """
+    Sort the resulting list by the [`Measurement`](({{Types.measurement}}))'s timestamp.
+    """
+    TIMESTAMP
 }
 
+"""
+MeasurementsSort allows for sorting measurements by a sort field and direction.
+"""
 input MeasurementsSort {
-	field: MeasurementsSortField!
-	direction: SortDirection!
+    """
+    Any sortable field available to the MeasurementsSortField. See the link to the
+    type below for more details.
+    """
+    field: MeasurementsSortField!
+    """Sort direction. See the link to the type below for more details."""
+    direction: SortDirection!
 }
 
 extend type Query {
-	sensor(id: ID!): Sensor
-	sensors(filter: FilterSensorInput, first: Int! = 20, after: String, sort: [SensorsSort!]! = [{field: NAME, direction: ASC }, {field: ID, direction: ASC }]): SensorConnection
-	measurements(filter: FilterMeasurementInput!, first: Int! = 20, after: String, sort: [MeasurementsSort!]! = [{field: TIMESTAMP, direction: ASC}, {field: ID, direction: ASC}]): MeasurementConnection
+    """
+    Look up a sensor's information, such as its name, description, and location, by its unique identifier.
+    """
+    sensor(
+        """The sensor's unique identifier."""
+        id: ID!
+    ): Sensor
+    """Find sensors based on a set of filters."""
+    sensors(
+        """Filter sensors based on id, name, type, or position."""
+        filter: FilterSensorInput
+        """Returns the first _n_ elements from the list."""
+        first: Int! = 20
+        """Returns the elements in the list that come after the specified cursor."""
+        after: String
+        """The field and direction by which to sort the results"""
+        sort: [SensorsSort!]! = [{field: NAME, direction: ASC}, {field: ID, direction: ASC}]
+    ): SensorConnection
+    """Finds measurements of a sensor based on a set of filters."""
+    measurements(
+        """Filter measurements based on the originating sensor, time period, etc."""
+        filter: FilterMeasurementInput!
+        """Returns the first _n_ elements from the list."""
+        first: Int! = 20
+        """Returns the elements in the list that come after the specified cursor."""
+        after: String
+        """The field and direction by which to sort the results"""
+        sort: [MeasurementsSort!]! = [{field: TIMESTAMP, direction: ASC}, {field: ID, direction: ASC}]
+    ): MeasurementConnection
 }

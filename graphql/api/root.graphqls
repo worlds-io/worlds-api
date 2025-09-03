@@ -1,5 +1,10 @@
 type Query
+
 type Mutation
+
 type Subscription
 
+"""
+Indicates that the annotated type or field is experimental and may change in the future.  Documentation may not be provided for experimental types.
+"""
 directive @experimental on INPUT_OBJECT | OBJECT | ENUM | FIELD_DEFINITION

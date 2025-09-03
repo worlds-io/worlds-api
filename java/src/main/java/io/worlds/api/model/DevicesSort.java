@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * DevicesSort allows for sorting a [`devices` query]({{Query.devices}}) by field and direction.
+ */
 public class DevicesSort implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

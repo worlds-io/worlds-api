@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * This input type is used to create a new [`Sensor`]({{Types.sensor}}).
+ */
 public class SensorInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

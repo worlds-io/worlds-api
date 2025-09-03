@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * A video represents a video from a data source, including its start and end time.
+ */
 public class Video implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -38,79 +41,145 @@ public class Video implements java.io.Serializable {
         this.createdBy = createdBy;
     }
 
+    /**
+     * The unique identifier for the video.
+     */
     public String getId() {
         return id;
     }
+    /**
+     * The unique identifier for the video.
+     */
     public void setId(String id) {
         this.id = id;
     }
 
+    /**
+     * The data source that created the video.
+     */
     public DataSource getDataSource() {
         return dataSource;
     }
+    /**
+     * The data source that created the video.
+     */
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
     }
 
+    /**
+     * The time at which the video started.
+     */
     public java.time.OffsetDateTime getStartTime() {
         return startTime;
     }
+    /**
+     * The time at which the video started.
+     */
     public void setStartTime(java.time.OffsetDateTime startTime) {
         this.startTime = startTime;
     }
 
+    /**
+     * The time at which the video ended. If not provided, the video is still ongoing.
+     */
     public java.time.OffsetDateTime getEndTime() {
         return endTime;
     }
+    /**
+     * The time at which the video ended. If not provided, the video is still ongoing.
+     */
     public void setEndTime(java.time.OffsetDateTime endTime) {
         this.endTime = endTime;
     }
 
+    /**
+     * The signed URL to be used to stream the video.
+     */
     public String getUrl() {
         return url;
     }
+    /**
+     * The signed URL to be used to stream the video.
+     */
     public void setUrl(String url) {
         this.url = url;
     }
 
+    /**
+     * The signed URL to be used to retrieve the video thumbnail.
+     */
     public String getThumbnailUrl() {
         return thumbnailUrl;
     }
+    /**
+     * The signed URL to be used to retrieve the video thumbnail.
+     */
     public void setThumbnailUrl(String thumbnailUrl) {
         this.thumbnailUrl = thumbnailUrl;
     }
 
+    /**
+     * The display name of the video.
+     */
     public String getDisplayName() {
         return displayName;
     }
+    /**
+     * The display name of the video.
+     */
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
 
+    /**
+     * The resolution height of the video.
+     */
     public String getResolutionHeight() {
         return resolutionHeight;
     }
+    /**
+     * The resolution height of the video.
+     */
     public void setResolutionHeight(String resolutionHeight) {
         this.resolutionHeight = resolutionHeight;
     }
 
+    /**
+     * The resolution width of the video.
+     */
     public String getResolutionWidth() {
         return resolutionWidth;
     }
+    /**
+     * The resolution width of the video.
+     */
     public void setResolutionWidth(String resolutionWidth) {
         this.resolutionWidth = resolutionWidth;
     }
 
+    /**
+     * The frame rate of the video.
+     */
     public Double getFrameRate() {
         return frameRate;
     }
+    /**
+     * The frame rate of the video.
+     */
     public void setFrameRate(Double frameRate) {
         this.frameRate = frameRate;
     }
 
+    /**
+     * The user the video was created by.
+     */
     public User getCreatedBy() {
         return createdBy;
     }
+    /**
+     * The user the video was created by.
+     */
     public void setCreatedBy(User createdBy) {
         this.createdBy = createdBy;
     }
@@ -138,56 +207,89 @@ public class Video implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * The unique identifier for the video.
+         */
         public Builder setId(String id) {
             this.id = id;
             return this;
         }
 
+        /**
+         * The data source that created the video.
+         */
         public Builder setDataSource(DataSource dataSource) {
             this.dataSource = dataSource;
             return this;
         }
 
+        /**
+         * The time at which the video started.
+         */
         public Builder setStartTime(java.time.OffsetDateTime startTime) {
             this.startTime = startTime;
             return this;
         }
 
+        /**
+         * The time at which the video ended. If not provided, the video is still ongoing.
+         */
         public Builder setEndTime(java.time.OffsetDateTime endTime) {
             this.endTime = endTime;
             return this;
         }
 
+        /**
+         * The signed URL to be used to stream the video.
+         */
         public Builder setUrl(String url) {
             this.url = url;
             return this;
         }
 
+        /**
+         * The signed URL to be used to retrieve the video thumbnail.
+         */
         public Builder setThumbnailUrl(String thumbnailUrl) {
             this.thumbnailUrl = thumbnailUrl;
             return this;
         }
 
+        /**
+         * The display name of the video.
+         */
         public Builder setDisplayName(String displayName) {
             this.displayName = displayName;
             return this;
         }
 
+        /**
+         * The resolution height of the video.
+         */
         public Builder setResolutionHeight(String resolutionHeight) {
             this.resolutionHeight = resolutionHeight;
             return this;
         }
 
+        /**
+         * The resolution width of the video.
+         */
         public Builder setResolutionWidth(String resolutionWidth) {
             this.resolutionWidth = resolutionWidth;
             return this;
         }
 
+        /**
+         * The frame rate of the video.
+         */
         public Builder setFrameRate(Double frameRate) {
             this.frameRate = frameRate;
             return this;
         }
 
+        /**
+         * The user the video was created by.
+         */
         public Builder setCreatedBy(User createdBy) {
             this.createdBy = createdBy;
             return this;

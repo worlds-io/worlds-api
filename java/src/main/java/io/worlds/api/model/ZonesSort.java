@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * ZonesSort allows for sorting zones by a sort field and direction.
+ */
 public class ZonesSort implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

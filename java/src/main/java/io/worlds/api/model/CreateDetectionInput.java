@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * This type is used to create a new [`Detection`]({{Types.detection}})
+ */
 public class CreateDetectionInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

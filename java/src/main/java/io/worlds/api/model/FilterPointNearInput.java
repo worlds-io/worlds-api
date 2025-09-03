@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * FilterPointNearInput is used to filter records with positional arguments by proximity to the specified point
+ */
 public class FilterPointNearInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

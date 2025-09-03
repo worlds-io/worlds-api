@@ -1,25 +1,24 @@
 input FilterActivityChronicleInputSubscription @experimental {
-  id: FilterIDInput
-  name: FilterStringInput
-  chronicleProducerId: FilterIDInput
-  startTime: FilterDateTimeOffsetInput
-  endTime: FilterDateTimeOffsetInput
-  timezone: FilterStringInput
-  priority: FilterStringInput
-  status: FilterStringInput
-  validation: FilterStringInput
-  labels: FilterStringListInput
-  locations: FilterStringListInput
-  siteIds: FilterIDListInput
-  dataSourceIds: FilterIDListInput
-  tagIds: FilterIDListInput
-  pointOfInterestIds: FilterIDListInput
-
-  and: [FilterActivityChronicleInputSubscription!]
-  or: [FilterActivityChronicleInputSubscription!]
-  not: FilterActivityChronicleInputSubscription
+    id: FilterIDInput
+    name: FilterStringInput
+    chronicleProducerId: FilterIDInput
+    startTime: FilterDateTimeOffsetInput
+    endTime: FilterDateTimeOffsetInput
+    timezone: FilterStringInput
+    priority: FilterStringInput
+    status: FilterStringInput
+    validation: FilterStringInput
+    labels: FilterStringListInput
+    locations: FilterStringListInput
+    siteIds: FilterIDListInput
+    dataSourceIds: FilterIDListInput
+    tagIds: FilterIDListInput
+    pointOfInterestIds: FilterIDListInput
+    and: [FilterActivityChronicleInputSubscription!]
+    or: [FilterActivityChronicleInputSubscription!]
+    not: FilterActivityChronicleInputSubscription
 }
 
 extend type Subscription {
-  activityChronicles(filter: FilterActivityChronicleInputSubscription): ActivityChronicle! @experimental
+    activityChronicles(filter: FilterActivityChronicleInputSubscription): ActivityChronicle! @experimental
 }

@@ -1,50 +1,102 @@
+"""
+A device represents a camera: a source of videos and images. These videos and images may then be processed to produce detections and tracks or to train models. For more details on detections, see [About Detections](/reference/objects/detection/#about-detections)
+"""
 type Device {
+    """The unique identifier of the device."""
     id: ID!
+    """An alternative UUID for the device."""
     uuid: ID!
+    """An identifier that the device may use outside of Worlds."""
     externalId: ID
+    """The name of the device"""
     name: String!
+    """`true` if the device's feed is being persisted by Worlds."""
     enabled: Boolean!
+    """The address of the device"""
     address: String
+    """The target frame rate for videos produced by this Device"""
     frameRate: Float
+    """The geographic location of the device"""
     position: GeoJSONPoint
+    """The data source associated with this device"""
     dataSource: DataSource
+    """The site that this device belongs to"""
     site: Site
+    """The list of calibrations for the device"""
     calibrations: [DeviceCalibration!]!
+    """The point of interest the device belongs to"""
     pointOfInterest: PointOfInterest
     lastHeartbeat: DateTimeOffset
 }
 
+"""
+A device calibration determines how objects captured by in a video or image are georeferenced into the real world.
+"""
 type DeviceCalibration {
+    """The unique identifier of the device calibration."""
     id: ID!
+    """
+    The start time of the calibration. Detections generated after this time for this device will be georeferenced according to this calibration.
+    """
     timestamp: DateTimeOffset!
+    """The markers associated with the calibration."""
     markers: [DeviceCalibrationMarker!]!
+    """The time the calibration was precomputed, if any."""
     precomputeAt: DateTimeOffset
 }
 
+"""
+DeviceCalibrationMarker represents a reference point used in device calibration. Markers consist of a point in an image and their corresponding point in the real world.
+"""
 type DeviceCalibrationMarker {
+    """The unique identifier of the calibration marker."""
     id: ID!
+    """The name of the calibration marker."""
     name: String!
+    """The corresponding geographic position for the marker."""
     position: GeoJSONPoint!
+    """The corresponding point in the video for the marker."""
     pixel: GeoJSONPoint!
 }
 
+"""
+This input type is used to create a new [`Device`]({{Types.device}}).
+"""
 input CreateDeviceInput {
+    """The unique identifier for the site that this device belongs to."""
     siteId: ID
+    """The unique identifier for the point of interest the device belongs to."""
     pointOfInterestId: ID
+    """An identifier that the device may use outside of Worlds."""
     externalId: ID
+    """The name of the device."""
     name: String!
+    """The address of the device."""
     address: String
+    """The geographic location of the device."""
     position: GeoJSONPointInput
+    """`true` if the device's feed is being persisted by Worlds."""
     enabled: Boolean!
 }
 
+"""
+This input type is used to update an existing [`Device`]({{Types.device}}).
+"""
 input UpdateDeviceInput {
+    """The unique identifier for the event."""
     id: ID!
+    """The unique identifier for the site that this device belongs to."""
     siteId: ID
+    """The unique identifier for the point of interest the device belongs to."""
     pointOfInterestId: ID
+    """An identifier that the device may use outside of Worlds."""
     externalId: ID
+    """The name of the device."""
     name: String
+    """The address of the device."""
     address: String
+    """The geographic location of the device."""
     position: GeoJSONPointInput
+    """`true` if the device's feed is being persisted by Worlds."""
     enabled: Boolean
 }

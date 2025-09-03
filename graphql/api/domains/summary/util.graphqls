@@ -1,4 +1,7 @@
+"""Indicates the time bucket size for a summary query."""
 enum SummaryBucketSize {
-    MINUTES,
-    HOURS,
+    """Bucket by minutes."""
+    MINUTES
+    """Bucket by hours."""
+    HOURS
 }

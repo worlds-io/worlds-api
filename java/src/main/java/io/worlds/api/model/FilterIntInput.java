@@ -2,7 +2,7 @@ package io.worlds.api.model;
 
 
 /**
- * Standard filtration for integer fields
+ * `FilterIntInput` allows for filtering based on an Int parameter. Only one field should be provided per filter object.
  */
 public class FilterIntInput implements java.io.Serializable {
 

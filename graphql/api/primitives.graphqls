@@ -1,12 +1,28 @@
+"""Indicates the state of a message from a subscription."""
 enum MessageState {
-	START
-	UPDATE
-	END
+    """The start of the messages for a given group of messages."""
+    START
+    """An update to an existing group of messages."""
+    UPDATE
+    """The ending of an existing group of messages."""
+    END
 }
 
 # Types of collision activities for Geofences and Zones
+"""
+Indicates the type of [GeofenceEvent]({{Types.geofenceevent}}) or [ZoneEvent]({{Types.zoneevent}}) reported by a [Geofence]({{Types.geofence}}) or a [Zone]({{Types.zone}}).
+"""
 enum ActivityType {
-	INGRESS,
-	DWELL,
-	EGRESS
+    """
+    A detection entering a [Geofence]({{Types.geofence}}) or a [Zone]({{Types.zone}}).
+    """
+    INGRESS
+    """
+    A detection remaining inside a [Geofence]({{Types.geofence}}) or a [Zone]({{Types.zone}}).
+    """
+    DWELL
+    """
+    A detection exiting a [Geofence]({{Types.geofence}}) or a [Zone]({{Types.zone}}).
+    """
+    EGRESS
 }

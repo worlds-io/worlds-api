@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * A `Measurement` is the specific output of a sensor at a given time.
+ */
 public class Measurement implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -24,30 +27,54 @@ public class Measurement implements java.io.Serializable {
         this.value = value;
     }
 
+    /**
+     * The unique identifier for the measurement.
+     */
     public String getId() {
         return id;
     }
+    /**
+     * The unique identifier for the measurement.
+     */
     public void setId(String id) {
         this.id = id;
     }
 
+    /**
+     * The sensor that provided the measurement.
+     */
     public Sensor getSensor() {
         return sensor;
     }
+    /**
+     * The sensor that provided the measurement.
+     */
     public void setSensor(Sensor sensor) {
         this.sensor = sensor;
     }
 
+    /**
+     * The time the measurement took place.
+     */
     public java.time.OffsetDateTime getTimestamp() {
         return timestamp;
     }
+    /**
+     * The time the measurement took place.
+     */
     public void setTimestamp(java.time.OffsetDateTime timestamp) {
         this.timestamp = timestamp;
     }
 
+    /**
+     * The actual output of the sensor.
+     */
     public String getValue() {
         return value;
     }
+    /**
+     * The actual output of the sensor.
+     */
     public void setValue(String value) {
         this.value = value;
     }
@@ -68,21 +95,33 @@ public class Measurement implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * The unique identifier for the measurement.
+         */
         public Builder setId(String id) {
             this.id = id;
             return this;
         }
 
+        /**
+         * The sensor that provided the measurement.
+         */
         public Builder setSensor(Sensor sensor) {
             this.sensor = sensor;
             return this;
         }
 
+        /**
+         * The time the measurement took place.
+         */
         public Builder setTimestamp(java.time.OffsetDateTime timestamp) {
             this.timestamp = timestamp;
             return this;
         }
 
+        /**
+         * The actual output of the sensor.
+         */
         public Builder setValue(String value) {
             this.value = value;
             return this;

@@ -1,24 +1,53 @@
+"""
+A point of interest is a designated area within a Site, used to subdivide a location into meaningful sections. Each POI belongs to a single [Site]({{Types.site}}) and can contain multiple [Devices](/reference/object/device/).
+"""
 type PointOfInterest {
+    """The unique identifier of the point of interest."""
     id: ID!
+    """The site the point of interest belongs to."""
     site: Site!
+    """The name of the point of interest."""
     name: String!
+    """The geographic position of the point of interest"""
     position: GeoJSONPoint!
+    """The devices located within the point of interest."""
     devices: [Device!]!
+    """The geofences located within the point of interest"""
     geofences: [Geofence!]!
+    """The metadata associated with the point of interest."""
     metadata: JSON
 }
 
+"""
+Fields to create a new [PointOfInterest]({{Types.pointofinterest}})
+"""
 input CreatePointOfInterestInput {
+    """
+    The ID of the [Site]({{Types.site}}) that the PointOfInterest belongs to
+    """
     siteId: ID!
+    """The name of the PointOfInterest."""
     name: String!
+    """The geographic position of the PointOfInterest"""
     position: GeoJSONPointInput!
+    """The metadata associated with the PointOfInterest."""
     metadata: JSON
 }
 
+"""
+Fields to update an existing [PointOfInterest]({{Types.pointofinterest}})
+"""
 input UpdatePointOfInterestInput {
+    """The ID of the PointOfInterest that will be updated"""
     id: ID!
+    """
+    The ID of the [Site]({{Types.site}}) that the PointOfInterest belongs to
+    """
     siteId: ID
+    """The name of the PointOfInterest."""
     name: String
+    """The geographic position of the PointOfInterest"""
     position: GeoJSONPointInput
+    """The metadata associated with the PointOfInterest."""
     metadata: JSON
 }

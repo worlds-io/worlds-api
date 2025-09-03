@@ -1,9 +1,9 @@
 type ActivityChronicleConnection @experimental {
-  edges: [ActivityChronicleEdge!]!
-  pageInfo: PageInfo!
+    edges: [ActivityChronicleEdge!]!
+    pageInfo: PageInfo!
 }
 
 type ActivityChronicleEdge @experimental {
-  node: ActivityChronicle!
-  cursor: String!
+    node: ActivityChronicle!
+    cursor: String!
 }

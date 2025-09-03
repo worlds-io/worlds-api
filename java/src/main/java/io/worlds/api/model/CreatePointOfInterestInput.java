@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * Fields to create a new [PointOfInterest]({{Types.pointofinterest}})
+ */
 public class CreatePointOfInterestInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

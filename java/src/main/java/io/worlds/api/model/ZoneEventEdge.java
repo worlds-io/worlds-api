@@ -17,16 +17,28 @@ public class ZoneEventEdge implements java.io.Serializable {
         this.cursor = cursor;
     }
 
+    /**
+     * Information about a particular [ZoneEvent]({{Types.zoneevent}}).
+     */
     public ZoneEvent getNode() {
         return node;
     }
+    /**
+     * Information about a particular [ZoneEvent]({{Types.zoneevent}}).
+     */
     public void setNode(ZoneEvent node) {
         this.node = node;
     }
 
+    /**
+     * The cursor to use with the [Query `zoneEvents` field]({{Queries.zoneevents}}) `after` argument.
+     */
     public String getCursor() {
         return cursor;
     }
+    /**
+     * The cursor to use with the [Query `zoneEvents` field]({{Queries.zoneevents}}) `after` argument.
+     */
     public void setCursor(String cursor) {
         this.cursor = cursor;
     }
@@ -45,11 +57,17 @@ public class ZoneEventEdge implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * Information about a particular [ZoneEvent]({{Types.zoneevent}}).
+         */
         public Builder setNode(ZoneEvent node) {
             this.node = node;
             return this;
         }
 
+        /**
+         * The cursor to use with the [Query `zoneEvents` field]({{Queries.zoneevents}}) `after` argument.
+         */
         public Builder setCursor(String cursor) {
             this.cursor = cursor;
             return this;

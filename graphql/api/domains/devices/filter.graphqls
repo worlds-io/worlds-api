@@ -1,12 +1,42 @@
+"""
+FilterDeviceInput allows for filtering devices based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below
+"""
 input FilterDeviceInput {
+    """
+    If provided, specifies filters that work against the `id` of a [device]({{Types.device}}).
+    """
     id: FilterIDInput
+    """
+    If provided, specifies filters that work against the `uuid` of a [device]({{Types.device}}).
+    """
     uuid: FilterIDInput
+    """
+    If provided, specifies filters that work against the `name` of a [device]({{Types.device}}).
+    """
     name: FilterStringInput
+    """
+    If provided, specifies filters that work against the `externalId` of a [device]({{Types.device}}).
+    """
     externalId: FilterStringInput
+    """
+    If provided, specifies filters that work against the `address` of a [device]({{Types.device}}).
+    """
     address: FilterStringInput
+    """
+    If provided, specified filters that work against the `enabled` status of a [device]({{Types.device}}).
+    """
     enabled: FilterBooleanInput
-
-	and: [FilterDeviceInput!]
-	or: [FilterDeviceInput!]
-	not: FilterDeviceInput
+    """
+    If provided, a device must pass all filters in this list to match the current filter.
+    """
+    and: [FilterDeviceInput!]
+    """
+    If provided, a device must pass at least one of the filters in this list to match the current filter.
+    """
+    or: [FilterDeviceInput!]
+    """
+    If provided, a device may not match this filter to match the current filter.
+    """
+    not: FilterDeviceInput
 }

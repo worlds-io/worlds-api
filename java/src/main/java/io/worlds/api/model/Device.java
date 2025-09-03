@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * A device represents a camera: a source of videos and images. These videos and images may then be processed to produce detections and tracks or to train models. For more details on detections, see [About Detections](/reference/objects/detection/#about-detections)
+ */
 public class Device implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -42,86 +45,158 @@ public class Device implements java.io.Serializable {
         this.lastHeartbeat = lastHeartbeat;
     }
 
+    /**
+     * The unique identifier of the device.
+     */
     public String getId() {
         return id;
     }
+    /**
+     * The unique identifier of the device.
+     */
     public void setId(String id) {
         this.id = id;
     }
 
+    /**
+     * An alternative UUID for the device.
+     */
     public String getUuid() {
         return uuid;
     }
+    /**
+     * An alternative UUID for the device.
+     */
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
 
+    /**
+     * An identifier that the device may use outside of Worlds.
+     */
     public String getExternalId() {
         return externalId;
     }
+    /**
+     * An identifier that the device may use outside of Worlds.
+     */
     public void setExternalId(String externalId) {
         this.externalId = externalId;
     }
 
+    /**
+     * The name of the device
+     */
     public String getName() {
         return name;
     }
+    /**
+     * The name of the device
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * `true` if the device's feed is being persisted by Worlds.
+     */
     public boolean getEnabled() {
         return enabled;
     }
+    /**
+     * `true` if the device's feed is being persisted by Worlds.
+     */
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
 
+    /**
+     * The address of the device
+     */
     public String getAddress() {
         return address;
     }
+    /**
+     * The address of the device
+     */
     public void setAddress(String address) {
         this.address = address;
     }
 
+    /**
+     * The target frame rate for videos produced by this Device
+     */
     public Double getFrameRate() {
         return frameRate;
     }
+    /**
+     * The target frame rate for videos produced by this Device
+     */
     public void setFrameRate(Double frameRate) {
         this.frameRate = frameRate;
     }
 
+    /**
+     * The geographic location of the device
+     */
     public GeoJSONPoint getPosition() {
         return position;
     }
+    /**
+     * The geographic location of the device
+     */
     public void setPosition(GeoJSONPoint position) {
         this.position = position;
     }
 
+    /**
+     * The data source associated with this device
+     */
     public DataSource getDataSource() {
         return dataSource;
     }
+    /**
+     * The data source associated with this device
+     */
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
     }
 
+    /**
+     * The site that this device belongs to
+     */
     public Site getSite() {
         return site;
     }
+    /**
+     * The site that this device belongs to
+     */
     public void setSite(Site site) {
         this.site = site;
     }
 
+    /**
+     * The list of calibrations for the device
+     */
     public java.util.List<DeviceCalibration> getCalibrations() {
         return calibrations;
     }
+    /**
+     * The list of calibrations for the device
+     */
     public void setCalibrations(java.util.List<DeviceCalibration> calibrations) {
         this.calibrations = calibrations;
     }
 
+    /**
+     * The point of interest the device belongs to
+     */
     public PointOfInterest getPointOfInterest() {
         return pointOfInterest;
     }
+    /**
+     * The point of interest the device belongs to
+     */
     public void setPointOfInterest(PointOfInterest pointOfInterest) {
         this.pointOfInterest = pointOfInterest;
     }
@@ -158,61 +233,97 @@ public class Device implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * The unique identifier of the device.
+         */
         public Builder setId(String id) {
             this.id = id;
             return this;
         }
 
+        /**
+         * An alternative UUID for the device.
+         */
         public Builder setUuid(String uuid) {
             this.uuid = uuid;
             return this;
         }
 
+        /**
+         * An identifier that the device may use outside of Worlds.
+         */
         public Builder setExternalId(String externalId) {
             this.externalId = externalId;
             return this;
         }
 
+        /**
+         * The name of the device
+         */
         public Builder setName(String name) {
             this.name = name;
             return this;
         }
 
+        /**
+         * `true` if the device's feed is being persisted by Worlds.
+         */
         public Builder setEnabled(boolean enabled) {
             this.enabled = enabled;
             return this;
         }
 
+        /**
+         * The address of the device
+         */
         public Builder setAddress(String address) {
             this.address = address;
             return this;
         }
 
+        /**
+         * The target frame rate for videos produced by this Device
+         */
         public Builder setFrameRate(Double frameRate) {
             this.frameRate = frameRate;
             return this;
         }
 
+        /**
+         * The geographic location of the device
+         */
         public Builder setPosition(GeoJSONPoint position) {
             this.position = position;
             return this;
         }
 
+        /**
+         * The data source associated with this device
+         */
         public Builder setDataSource(DataSource dataSource) {
             this.dataSource = dataSource;
             return this;
         }
 
+        /**
+         * The site that this device belongs to
+         */
         public Builder setSite(Site site) {
             this.site = site;
             return this;
         }
 
+        /**
+         * The list of calibrations for the device
+         */
         public Builder setCalibrations(java.util.List<DeviceCalibration> calibrations) {
             this.calibrations = calibrations;
             return this;
         }
 
+        /**
+         * The point of interest the device belongs to
+         */
         public Builder setPointOfInterest(PointOfInterest pointOfInterest) {
             this.pointOfInterest = pointOfInterest;
             return this;

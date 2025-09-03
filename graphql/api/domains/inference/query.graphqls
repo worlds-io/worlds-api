@@ -1,25 +1,170 @@
 extend type Query {
-    textReadingForImage(imageId: ID!): TextReadingResponse
-    textReadingForUrl(url: String!): TextReadingResponse
-
-    textRecognitionForDataSource(dataSourceId: ID!, timestamp: DateTimeOffset!, options: TextRecognitionOptionsInput): TextRecognitionResponse
-    textRecognitionForVideo(videoId: ID!, timestamp: DateTimeOffset!, options: TextRecognitionOptionsInput): TextRecognitionResponse
-    textRecognitionForFrame(frameId: ID!, options: TextRecognitionOptionsInput): TextRecognitionResponse
-    textRecognitionForImage(imageId: ID!, options: TextRecognitionOptionsInput): TextRecognitionResponse
-    textRecognitionForUrl(url: String!, options: TextRecognitionOptionsInput): TextRecognitionResponse
-    textRecognitionForTrack(trackId: ID!, timestamp: DateTimeOffset!, options: TextRecognitionOptionsInput): TextRecognitionResponse
-    
-    segmentationForDataSource(dataSourceId: ID!, timestamp: DateTimeOffset!, options: SegmentationOptionsInput): SegmentationResponse
-    segmentationForVideo(videoId: ID!, timestamp: DateTimeOffset!, options: SegmentationOptionsInput): SegmentationResponse
-    segmentationForFrame(frameId: ID!, options: SegmentationOptionsInput): SegmentationResponse
-    segmentationForImage(imageId: ID!, options: SegmentationOptionsInput): SegmentationResponse
-    segmentationForUrl(url: String!, options: SegmentationOptionsInput): SegmentationResponse
-    segmentationForTrack(trackId: ID!, timestamp: DateTimeOffset!, options: SegmentationOptionsInput): SegmentationResponse
-    
-    embeddingForDataSource(dataSourceId: ID!, timestamp: DateTimeOffset!, options: EmbeddingOptionsInput): EmbeddingResponse
-    embeddingForVideo(videoId: ID!, timestamp: DateTimeOffset!, options: EmbeddingOptionsInput): EmbeddingResponse
-    embeddingForFrame(frameId: ID!, options: EmbeddingOptionsInput): EmbeddingResponse
-    embeddingForImage(imageId: ID!, options: EmbeddingOptionsInput): EmbeddingResponse
-    embeddingForUrl(url: String!, options: EmbeddingOptionsInput): EmbeddingResponse
-    embeddingForTrack(trackId: ID!, timestamp: DateTimeOffset!, options: EmbeddingOptionsInput): EmbeddingResponse
+    """
+    Read text in an image. The image supplied should be a pre-cropped image containing text.
+    """
+    textReadingForImage(
+        """The ID of the image"""
+        imageId: ID!
+    ): TextReadingResponse
+    """
+    Read text in the image at the specified URL. The URL supplied should be a pre-cropped image containing text.
+    """
+    textReadingForUrl(
+        """The URL of the image"""
+        url: String!
+    ): TextReadingResponse
+    """Detect text in a data source's asset at a specified timestamp"""
+    textRecognitionForDataSource(
+        """The ID of the data source"""
+        dataSourceId: ID!
+        """The time at which text will be detected"""
+        timestamp: DateTimeOffset!
+        """Optional text recognition parameters."""
+        options: TextRecognitionOptionsInput
+    ): TextRecognitionResponse
+    """Detect text in a video at the specified timestamp"""
+    textRecognitionForVideo(
+        """The ID of the video"""
+        videoId: ID!
+        """The time at which text will be detected"""
+        timestamp: DateTimeOffset!
+        """Optional text recognition parameters."""
+        options: TextRecognitionOptionsInput
+    ): TextRecognitionResponse
+    """Detect text in a frame"""
+    textRecognitionForFrame(
+        """The ID of the frame"""
+        frameId: ID!
+        """Optional text recognition parameters."""
+        options: TextRecognitionOptionsInput
+    ): TextRecognitionResponse
+    """Detect text in an image"""
+    textRecognitionForImage(
+        """The ID of the image"""
+        imageId: ID!
+        """Optional text recognition parameters."""
+        options: TextRecognitionOptionsInput
+    ): TextRecognitionResponse
+    """Detect text in the image at the specified URL"""
+    textRecognitionForUrl(
+        """The URL of the image"""
+        url: String!
+        """Optional text recognition parameters."""
+        options: TextRecognitionOptionsInput
+    ): TextRecognitionResponse
+    """Detect text within the polygon defined by a track's detection"""
+    textRecognitionForTrack(
+        """The ID of the track"""
+        trackId: ID!
+        """
+        The time of the track's detection. Will use the nearest detection if there isn't one at this exact timestamp
+        """
+        timestamp: DateTimeOffset!
+        """Optional text recognition parameters."""
+        options: TextRecognitionOptionsInput
+    ): TextRecognitionResponse
+    """Segment a data source's asset at a specified timestamp"""
+    segmentationForDataSource(
+        """The ID of the data source"""
+        dataSourceId: ID!
+        """The time at which the data source will be segmented"""
+        timestamp: DateTimeOffset!
+        """Optional segmentation parameters."""
+        options: SegmentationOptionsInput
+    ): SegmentationResponse
+    """Segment a video at the specified timestamp"""
+    segmentationForVideo(
+        """The ID of the video"""
+        videoId: ID!
+        """The time at which the video will be segmented"""
+        timestamp: DateTimeOffset!
+        """Optional segmentation parameters."""
+        options: SegmentationOptionsInput
+    ): SegmentationResponse
+    """Segment a frame"""
+    segmentationForFrame(
+        """The ID of the frame"""
+        frameId: ID!
+        """Optional segmentation parameters."""
+        options: SegmentationOptionsInput
+    ): SegmentationResponse
+    """Segment an image"""
+    segmentationForImage(
+        """The ID of the image"""
+        imageId: ID!
+        """Optional segmentation parameters."""
+        options: SegmentationOptionsInput
+    ): SegmentationResponse
+    """Segment the image at the specified URL"""
+    segmentationForUrl(
+        """The URL of the image"""
+        url: String!
+        """Optional segmentation parameters."""
+        options: SegmentationOptionsInput
+    ): SegmentationResponse
+    """Segment an image within the polygon defined by a track's detection"""
+    segmentationForTrack(
+        """The ID of the track"""
+        trackId: ID!
+        """
+        The time of the track's detection. Will use the nearest detection if there isn't one at this exact timestamp
+        """
+        timestamp: DateTimeOffset!
+        """Optional segmentation parameters."""
+        options: SegmentationOptionsInput
+    ): SegmentationResponse
+    """
+    Generate an embedding vector of a data source's asset at a specified timestamp
+    """
+    embeddingForDataSource(
+        """The ID of the data source"""
+        dataSourceId: ID!
+        """The time at which the embedding vector will be generated"""
+        timestamp: DateTimeOffset!
+        """Optional embedding parameters."""
+        options: EmbeddingOptionsInput
+    ): EmbeddingResponse
+    """Generate an embedding vector of a video at the specified timestamp"""
+    embeddingForVideo(
+        """The ID of the video"""
+        videoId: ID!
+        """The time at which the embedding vector will be generated"""
+        timestamp: DateTimeOffset!
+        """Optional embedding parameters."""
+        options: EmbeddingOptionsInput
+    ): EmbeddingResponse
+    """Generate an embedding vector of a frame"""
+    embeddingForFrame(
+        """The ID of the frame"""
+        frameId: ID!
+        """Optional embedding parameters."""
+        options: EmbeddingOptionsInput
+    ): EmbeddingResponse
+    """Generate an embedding vector of an image"""
+    embeddingForImage(
+        """The ID of the image"""
+        imageId: ID!
+        """Optional embedding parameters."""
+        options: EmbeddingOptionsInput
+    ): EmbeddingResponse
+    """Generate an embedding vector of the image at the specified URL"""
+    embeddingForUrl(
+        """The URL of the image"""
+        url: String!
+        """Optional embedding parameters."""
+        options: EmbeddingOptionsInput
+    ): EmbeddingResponse
+    """
+    Generate an embedding vector for the detection described by the provided track ID and timestamp.
+    """
+    embeddingForTrack(
+        """The ID of the track"""
+        trackId: ID!
+        """
+        A timestamp within the lifetime of the track. An embedding will be generated for the detection closest to this timestamp for the specified track.
+        """
+        timestamp: DateTimeOffset!
+        """Optional embedding parameters."""
+        options: EmbeddingOptionsInput
+    ): EmbeddingResponse
 }

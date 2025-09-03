@@ -1,17 +1,16 @@
 input FilterEventChronicleInput @experimental {
-  id: FilterIDInput
-  name: FilterStringInput
-  timestamp: FilterDateTimeOffsetInput
-  timezone: FilterStringInput
-  priority: FilterStringInput
-  status: FilterStringInput
-  validation: FilterChronicleValidationStatusInput
-  labels: FilterStringListInput
-  locations: FilterStringListInput
-  chronicleProducerId: FilterIDInput
-  activityChronicleIds: FilterIDListInput
-
-  and: [FilterEventChronicleInput!]
-  or: [FilterEventChronicleInput!]
-  not: FilterEventChronicleInput
+    id: FilterIDInput
+    name: FilterStringInput
+    timestamp: FilterDateTimeOffsetInput
+    timezone: FilterStringInput
+    priority: FilterStringInput
+    status: FilterStringInput
+    validation: FilterChronicleValidationStatusInput
+    labels: FilterStringListInput
+    locations: FilterStringListInput
+    chronicleProducerId: FilterIDInput
+    activityChronicleIds: FilterIDListInput
+    and: [FilterEventChronicleInput!]
+    or: [FilterEventChronicleInput!]
+    not: FilterEventChronicleInput
 }

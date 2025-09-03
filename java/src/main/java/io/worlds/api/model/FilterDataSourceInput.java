@@ -1,6 +1,10 @@
 package io.worlds.api.model;
 
 
+/**
+ * FilterDataSourceInput filters [DataSources]({{Types.datasource}}) based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
+ */
 public class FilterDataSourceInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

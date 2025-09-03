@@ -2,7 +2,7 @@ package io.worlds.api.model;
 
 
 /**
- * Standard filtration for DateTimeOffset fields
+ * `FilterDateTimeOffsetInput` allows for filtering based on a DateTimeOffset parameter. Only one field should be provided per filter object.
  */
 public class FilterDateTimeOffsetInput implements java.io.Serializable {
 

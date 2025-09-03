@@ -1,4 +1,14 @@
 extend type Mutation {
-    createPointOfInterest(pointOfInterest: CreatePointOfInterestInput!): PointOfInterest
-    updatePointOfInterest(pointOfInterest: UpdatePointOfInterestInput!): PointOfInterest
+    """Creates a new [PointOfInterest]({{Types.pointofinterest}})."""
+    createPointOfInterest(
+        """Arguments to create a new point of interest."""
+        pointOfInterest: CreatePointOfInterestInput!
+    ): PointOfInterest
+    """
+    Updates an existing [PointOfInterest]({{Types.pointofinterest}}).
+    """
+    updatePointOfInterest(
+        """Arguments to update an existing point of interest."""
+        pointOfInterest: UpdatePointOfInterestInput!
+    ): PointOfInterest
 }

@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * A frame in a data source's video
+ */
 public class Frame implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -14,9 +17,15 @@ public class Frame implements java.io.Serializable {
         this.number = number;
     }
 
+    /**
+     * The index of the frame in the video
+     */
     public int getNumber() {
         return number;
     }
+    /**
+     * The index of the frame in the video
+     */
     public void setNumber(int number) {
         this.number = number;
     }
@@ -34,6 +43,9 @@ public class Frame implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * The index of the frame in the video
+         */
         public Builder setNumber(int number) {
             this.number = number;
             return this;

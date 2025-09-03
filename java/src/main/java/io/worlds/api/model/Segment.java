@@ -18,16 +18,28 @@ public class Segment implements java.io.Serializable {
         this.box = box;
     }
 
+    /**
+     * The region of the image that defines the segment
+     */
     public GeoJSONMultiPolygon getPolygon() {
         return polygon;
     }
+    /**
+     * The region of the image that defines the segment
+     */
     public void setPolygon(GeoJSONMultiPolygon polygon) {
         this.polygon = polygon;
     }
 
+    /**
+     * A bounding box that covers the entire area of the segment
+     */
     public GeoJSONPolygon getBox() {
         return box;
     }
+    /**
+     * A bounding box that covers the entire area of the segment
+     */
     public void setBox(GeoJSONPolygon box) {
         this.box = box;
     }
@@ -46,11 +58,17 @@ public class Segment implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * The region of the image that defines the segment
+         */
         public Builder setPolygon(GeoJSONMultiPolygon polygon) {
             this.polygon = polygon;
             return this;
         }
 
+        /**
+         * A bounding box that covers the entire area of the segment
+         */
         public Builder setBox(GeoJSONPolygon box) {
             this.box = box;
             return this;

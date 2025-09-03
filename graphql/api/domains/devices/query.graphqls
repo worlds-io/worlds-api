@@ -1,14 +1,41 @@
+"""
+Indicates the field used for sorting a [Devices query]({{Queries.devices}}).
+"""
 enum DevicesSortField {
-	ID,
-	NAME
+    """Sort the resulting list in by its unique identifier."""
+    ID
+    """Sort the resulting list by the device name."""
+    NAME
 }
 
+"""
+DevicesSort allows for sorting a [`devices` query]({{Query.devices}}) by field and direction.
+"""
 input DevicesSort {
-	field: DevicesSortField!
-	direction: SortDirection!
+    """
+    Any sortable field available to the `DevicesSort`. See the link to the type below
+    for more details.
+    """
+    field: DevicesSortField!
+    """Sort direction. See the link to the type below for more details."""
+    direction: SortDirection!
 }
 
 extend type Query {
-    device(id: ID!): Device
-    devices(filter: FilterDeviceInput, first: Int! = 20, after: String, sort: [DevicesSort!]! = [{field: NAME, direction: ASC}, {field: ID, direction: ASC}]): DeviceConnection
+    """Look up a device's information by its unique identifier."""
+    device(
+        """The sensor's unique numeric ID or UUID."""
+        id: ID!
+    ): Device
+    """Search for devices based on a set of filters."""
+    devices(
+        """Filter devices by id, uuid and/or name."""
+        filter: FilterDeviceInput
+        """Returns the first _n_ elements from the list."""
+        first: Int! = 20
+        """Returns the elements in the list that come after the specified cursor."""
+        after: String
+        """The field and direction by which to sort the results"""
+        sort: [DevicesSort!]! = [{field: NAME, direction: ASC}, {field: ID, direction: ASC}]
+    ): DeviceConnection
 }

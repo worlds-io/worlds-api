@@ -1,34 +1,111 @@
+"""
+`FilterTrackInput` allows for filtering a [`tracks` query]({{Queries.tracks}}) based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below
+"""
 input FilterTrackInput {
-	dataSourceId: FilterIDInput
-	time: FilterDateTimeOffsetInput!
-	tag: FilterStringInput
-	position: FilterPointInput
-	identifier: FilterTrackPropertyInput
-	attribute: FilterTrackPropertyInput
-	pointOfInterestId: FilterIDInput
-
-	and: [FilterTrackInput!]
-	or: [FilterTrackInput!]
-	not: FilterTrackInput
-
-	deviceId: FilterIDInput @deprecated (reason: "deviceId is deprecated, use dataSourceId instead")
+    """
+    If provided, specifies filters that work against the [unique id]({{Types.dataSource}}) of the data source that initiated the track.
+    """
+    dataSourceId: FilterIDInput
+    """
+    If provided, specifies filters that work against the [time]({{Types.track}}) associated with the start time of a track.
+    """
+    time: FilterDateTimeOffsetInput!
+    """
+    If provided, specifies case-insensitive filters that work against the [tag]({{Types.track}}) of a track
+    """
+    tag: FilterStringInput
+    """
+    If provided, specifies filters that work against the [positions]({{Types.detection}}) of the track's detections
+    """
+    position: FilterPointInput
+    """
+    If provided, specifies filters that work against the [identifier]({{Types.trackproperties}}) of the track
+    """
+    identifier: FilterTrackPropertyInput
+    """
+    If provided, specifies filters that work against the [attributes]({{Types.trackproperties}}) of the track
+    """
+    attribute: FilterTrackPropertyInput
+    """
+    If provided, specifies filters that work against the [unique identifier of the point of interest]({{Types.site}}) of the track's data source.
+    """
+    pointOfInterestId: FilterIDInput
+    """
+    If provided, a detection activity must pass all filters in this list to match the current filter.
+    """
+    and: [FilterTrackInput!]
+    """
+    If provided, a detection activity must pass at least one of the filters in this list to match the current filter.
+    """
+    or: [FilterTrackInput!]
+    """
+    If provided, a detection activity may not match this filter to match the current filter.
+    """
+    not: FilterTrackInput
+    """
+    If provided, specifies filters that work against the [unique id]({{Types.detection}}) of the device that initiated the track.
+    """
+    deviceId: FilterIDInput @deprecated(reason: "`deviceId` is deprecated. Use `dataSourceId` instead")
 }
 
+"""
+`FilterTrackMessageInput` allows for filtering a [`tracks` subscription]({{Subscriptions.tracks}}) based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below
+"""
 input FilterTrackMessageInput {
-	dataSourceId: FilterIDInput
-	tag: FilterStringInput
-	position: FilterPointInput
-	identifier: FilterTrackPropertyInput
-	attribute: FilterTrackPropertyInput
-	pointOfInterestId: FilterIDInput
-	state: FilterMessageStateInput
-
-	and: [FilterTrackMessageInput!]
-	or: [FilterTrackMessageInput!]
-	not: FilterTrackMessageInput
+    """
+    If provided, specifies filters that work against the [unique id]({{Types.dataSource}}) of the data source that initiated the track.
+    """
+    dataSourceId: FilterIDInput
+    """
+    If provided, specifies case-insensitive filters that work against the [tag]({{Types.track}}) of a track
+    """
+    tag: FilterStringInput
+    """
+    If provided, specifies filters that work against the [positions]({{Types.detection}}) of the track's detections
+    """
+    position: FilterPointInput
+    """
+    If provided, specifies filters that work against the [identifier]({{Types.trackproperties}}) of the track
+    """
+    identifier: FilterTrackPropertyInput
+    """
+    If provided, specifies filters that work against the [attributes]({{Types.trackproperties}}) of the track
+    """
+    attribute: FilterTrackPropertyInput
+    """
+    If provided, specifies filters that work against the [unique identifier of the point of interest]({{Types.site}}) of the track's data source.
+    """
+    pointOfInterestId: FilterIDInput
+    """
+    Specifies filters that work against the [state]({{Types.messagestate}}) of the track message.
+    """
+    state: FilterMessageStateInput
+    """
+    If provided, a detection activity must pass all filters in this list to match the current filter.
+    """
+    and: [FilterTrackMessageInput!]
+    """
+    If provided, a detection activity must pass at least one of the filters in this list to match the current filter.
+    """
+    or: [FilterTrackMessageInput!]
+    """
+    If provided, a detection activity may not match this filter to match the current filter.
+    """
+    not: FilterTrackMessageInput
 }
 
+"""
+`FilterTrackPropertyInput` allows for filtering a [`tracks` query]({{Queries.tracks}}) based on criteria described below
+"""
 input FilterTrackPropertyInput {
-	type: FilterStringInput
-	value: FilterStringInput
+    """
+    If provided, specifies filters that work against the type or name of the track's property
+    """
+    type: FilterStringInput
+    """
+    If provided, specifies filters that work against value of the track's property
+    """
+    value: FilterStringInput
 }

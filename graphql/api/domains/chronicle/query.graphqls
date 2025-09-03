@@ -1,11 +1,11 @@
 enum ChronicleProducersSortField @experimental {
-  ID
-  NAME
+    ID
+    NAME
 }
 
 input ChronicleProducersSort @experimental {
-  field: ChronicleProducersSortField!
-  direction: SortDirection!
+    field: ChronicleProducersSortField!
+    direction: SortDirection!
 }
 
 extend type Query {
