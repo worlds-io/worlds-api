@@ -46,7 +46,8 @@ extend type Query {
         id: ID!
     ): SummaryChronicle @experimental
     """Search for summaries based on a set of filters."""
-    summaryChronicles("""Filter summaries by unique identifier, type, time, etc."""
+    summaryChronicles(
+        """Filter summaries by unique identifier, type, time, etc."""
         filter: FilterSummaryChronicleInput,
         """Returns the first _n_ elements from the list."""
         first: Int! = 20,

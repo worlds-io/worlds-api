@@ -15,9 +15,9 @@ See [about queries](/reference/query/#about-queries) for details on how "connect
 """
 type ActivityChronicleEdge @experimental {
     """Information about a particular [Activity]({{Types.activity}})."""
-  node: ActivityChronicle!
-  """
-  The cursor to use with the [Query `activities` field]({{Queries.activities}}) `after` argument.
-  """
+    node: ActivityChronicle!
+    """
+    The cursor to use with the [Query `activities` field]({{Queries.activities}}) `after` argument.
+    """
     cursor: String!
 }

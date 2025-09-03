@@ -1,12 +1,14 @@
 extend type Mutation {
     """
-  Creates a new [Summary Chronicle]({{Types.summarychronicle}}). This allows for the creation of custom summaries within the Worlds system.
-  """
-  createSummaryChronicle(
-    """Arguments to create a new summary chronicle."""summaryChronicle: CreateSummaryChronicleInput!): SummaryChronicle! @experimental
+    Creates a new [Summary Chronicle]({{Types.summarychronicle}}). This allows for the creation of custom summaries within the Worlds system.
+    """
+    createSummaryChronicle(
+        """Arguments to create a new summary chronicle."""
+        summaryChronicle: CreateSummaryChronicleInput!
+    ): SummaryChronicle! @experimental
     """Updates an existing [Summary Chronicle]({{Types.summarychronicle}})."""
-  updateSummaryChronicle(
-    """Arguments to update an existing summary chronicle."""
-    summaryChronicle: UpdateSummaryChronicleInput!
-  ): SummaryChronicle! @experimental
+    updateSummaryChronicle(
+        """Arguments to update an existing summary chronicle."""
+        summaryChronicle: UpdateSummaryChronicleInput!
+    ): SummaryChronicle! @experimental
 }

@@ -4,8 +4,8 @@ See [about queries](/reference/query/#about-queries) for details on how "connect
 """
 type EventChronicleConnection @experimental {
     """Pagination information for the resulting edges."""
-  edges: [EventChronicleEdge!]!
-  """The resulting collection of event edges."""
+    edges: [EventChronicleEdge!]!
+    """The resulting collection of event edges."""
     pageInfo: PageInfo!
 }
 
@@ -15,9 +15,9 @@ See [about queries](/reference/query/#about-queries) for details on how "connect
 """
 type EventChronicleEdge @experimental {
     """Information about a particular [Event]({{Types.event}})."""
-  node: EventChronicle!
-  """
-  The cursor to use with the [Query `events` field]({{Queries.events}}) `after` argument.
-  """
+    node: EventChronicle!
+    """
+    The cursor to use with the [Query `events` field]({{Queries.events}}) `after` argument.
+    """
     cursor: String!
 }
