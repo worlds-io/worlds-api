@@ -27,7 +27,7 @@ An chronicle producer represents a custom process that detects and records chron
 created by an chronicle producer can represent a wide variety of time-based activities to be
 used by your application's specific needs that aren't expressed natively through
 detections and geofences. For instance, an chronicle producer could track detections of
-hazards and people, creating an chronicle for each case where a person was too close
+hazards and people, creating an event chronicle for each case where a person was too close
 to a hazard without personal protective equipment.
 """
 type ChronicleProducer @experimental {
@@ -63,7 +63,7 @@ input CreateChronicleProducerInput @experimental {
     active: Boolean!
     """Arbitrary information about the chronicle producer."""
     metadata: JSON
-    """ TODO """
+    """A list of validation reasons to be used by the chronicle producer."""
     validationReasons: [String!]
 }
 
@@ -83,7 +83,7 @@ input UpdateChronicleProducerInput @experimental {
     active: Boolean
     """Arbitrary information about the chronicle producer."""
     metadata: JSON
-    """ TODO """
+    """A list of validation reasons to be used by the chronicle producer."""
     validationReasons: [String!]
 }
 
