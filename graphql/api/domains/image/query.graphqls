@@ -9,7 +9,7 @@ extend type Query {
         The time at which the given image should have been recorded by the device.
         """
         timestamp: DateTimeOffset!
-    ): String @deprecated(reason: "`imageUrl` is deprecated. Use [`snapshot`]({{Queries.snapshot}}) instead")
+    ): String @deprecated(reason: "`imageUrl` is deprecated. Use `snapshot` query instead")
     """Retrieve an Image for the given data source at a particular timestamp."""
     snapshot(
         """Arguments for retrieving an image (A Data Source ID and a Timestamp)."""
