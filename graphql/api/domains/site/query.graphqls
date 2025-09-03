@@ -13,7 +13,7 @@ enum SitesSortField {
 }
 
 """
-SitesSort allows for sorting a [`sites` query]({{Query.sites}}) by field and direction.
+SitesSort allows for sorting a [`sites` query]({{Queries.sites}}) by field and direction.
 """
 input SitesSort {
     """

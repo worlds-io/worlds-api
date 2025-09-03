@@ -9,7 +9,7 @@ enum TracksSortField {
 }
 
 """
-TracksSort allows for sorting a [`tracks` query]({{Query.tracks}}) by field and direction.
+TracksSort allows for sorting a [`tracks` query]({{Queries.tracks}}) by field and direction.
 """
 input TracksSort {
     """
