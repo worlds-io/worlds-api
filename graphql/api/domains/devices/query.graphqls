@@ -9,7 +9,7 @@ enum DevicesSortField {
 }
 
 """
-DevicesSort allows for sorting a [`devices` query]({{Query.devices}}) by field and direction.
+DevicesSort allows for sorting a [`devices` query]({{Queries.devices}}) by field and direction.
 """
 input DevicesSort {
     """
