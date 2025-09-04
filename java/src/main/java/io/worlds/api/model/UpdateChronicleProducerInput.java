@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * This input type is used to update an existing [`ChronicleProducer`]({{Types.chronicleProducer}}).
+ */
 public class UpdateChronicleProducerInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * ChronicleProducersSort allows for sorting an chronicle producer by a sort field and direction.
+ */
 public class ChronicleProducersSort implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

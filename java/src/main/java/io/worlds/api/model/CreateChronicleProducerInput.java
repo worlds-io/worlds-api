@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * This input type is used to create a new custom [`ChronicleProducer`]({{Types.chronicleProducer}}).
+ */
 public class CreateChronicleProducerInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

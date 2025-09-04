@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * This input type is used to update an existing [`EventChronicle`]({{Types.eventchronicle}}).
+ */
 public class UpdateEventChronicleInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

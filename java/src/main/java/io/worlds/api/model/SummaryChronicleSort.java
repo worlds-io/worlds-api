@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * Indicates the field used for sorting an [`summaryProducers` query]({{Queries.summaryproducers}}).
+ */
 public class SummaryChronicleSort implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -1,6 +1,10 @@
 package io.worlds.api.model;
 
 
+/**
+ * An `ActivityConnection` is the paginated results of an [`activities` query]({{Queries.activityChronicles}}).
+See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+ */
 public class ActivityChronicleConnection implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -18,16 +22,28 @@ public class ActivityChronicleConnection implements java.io.Serializable {
         this.pageInfo = pageInfo;
     }
 
+    /**
+     * Pagination information for the resulting edges.
+     */
     public java.util.List<ActivityChronicleEdge> getEdges() {
         return edges;
     }
+    /**
+     * Pagination information for the resulting edges.
+     */
     public void setEdges(java.util.List<ActivityChronicleEdge> edges) {
         this.edges = edges;
     }
 
+    /**
+     * The resulting collection of activity edges.
+     */
     public PageInfo getPageInfo() {
         return pageInfo;
     }
+    /**
+     * The resulting collection of activity edges.
+     */
     public void setPageInfo(PageInfo pageInfo) {
         this.pageInfo = pageInfo;
     }
@@ -46,11 +62,17 @@ public class ActivityChronicleConnection implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * Pagination information for the resulting edges.
+         */
         public Builder setEdges(java.util.List<ActivityChronicleEdge> edges) {
             this.edges = edges;
             return this;
         }
 
+        /**
+         * The resulting collection of activity edges.
+         */
         public Builder setPageInfo(PageInfo pageInfo) {
             this.pageInfo = pageInfo;
             return this;
