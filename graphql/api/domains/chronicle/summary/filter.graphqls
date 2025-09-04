@@ -12,9 +12,16 @@ input FilterSummaryChronicleInput @experimental {
     """
     name: FilterStringInput
     """
-    If provided, specifies filters that work against the `timestamp` of the [`SummaryChronicle`]({{Types.summarychronicle}}).
+    If provided, specifies filters that work against the `chronicleProducerId` of the [`SummaryChronicle`]({{Types.summarychronicle}}).
+    """
+    chronicleProducerId: FilterIDInput
+    """
+    If provided, specifies filters that work against the `startTime` of the [`SummaryChronicle`]({{Types.summarychronicle}}).
     """
     startTime: FilterDateTimeOffsetInput
+    """
+    If provided, specifies filters that work against the `endTime` of the [`SummaryChronicle`]({{Types.summarychronicle}}).
+    """
     endTime: FilterDateTimeOffsetInput
     """
     If provided, specifies filters that work against the `timezone` of the [`SummaryChronicle`]({{Types.summarychronicle}}).
@@ -41,15 +48,11 @@ input FilterSummaryChronicleInput @experimental {
     """
     locations: FilterStringListInput
     """
-    If provided, specifies filters that work against the `chronicleProducerId` of the [`SummaryChronicle`]({{Types.summarychronicle}}).
-    """
-    chronicleProducerId: FilterIDInput
-    """
-    If provided, specifies filters that work against the `activityChronicle` IDs of the [`SummaryChronicle`]({{Types.summarychronicle}}).
+    If provided, specifies filters that work against the `activityChronicles` IDs of the [`SummaryChronicle`]({{Types.summarychronicle}}).
     """
     activityChronicleIds: FilterIDListInput
     """
-    If provided, specifies filters that work against the `eventChronicle` IDs of the [`SummaryChronicle`]({{Types.summarychronicle}}).
+    If provided, specifies filters that work against the `eventChronicles` IDs of the [`SummaryChronicle`]({{Types.summarychronicle}}).
     """
     eventChronicleIds: FilterIDListInput
     """

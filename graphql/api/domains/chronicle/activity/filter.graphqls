@@ -48,23 +48,19 @@ input FilterActivityChronicleInput @experimental {
     """
     chronicleProducerId: FilterIDInput
     """
-    If provided, specifies filters that work against the `video` IDs of the [`ActivityChronicle`]({{Types.activitychronicle}}).
-    """
-    videoIds: FilterIDListInput
-    """
-    If provided, specifies filters that work against the `tag` IDs of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    If provided, specifies filters that work against the `tags` IDs of the [`ActivityChronicle`]({{Types.activitychronicle}}).
     """
     tagIds: FilterIDListInput
     """
-    If provided, specifies filters that work against the `site` IDs of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    If provided, specifies filters that work against the `sites` IDs of the [`ActivityChronicle`]({{Types.activitychronicle}}).
     """
     siteIds: FilterIDListInput
     """
-    If provided, specifies filters that work against the `dataSource` IDs of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    If provided, specifies filters that work against the `dataSources` IDs of the [`ActivityChronicle`]({{Types.activitychronicle}}).
     """
     dataSourceIds: FilterIDListInput
     """
-    If provided, specifies filters that work against the `pointOfInterest` IDs of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    If provided, specifies filters that work against the `pointsOfInterest` IDs of the [`ActivityChronicle`]({{Types.activitychronicle}}).
     """
     pointOfInterestIds: FilterIDListInput
     """

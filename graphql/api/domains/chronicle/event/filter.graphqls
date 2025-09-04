@@ -12,6 +12,10 @@ input FilterEventChronicleInput @experimental {
     """
     name: FilterStringInput
     """
+    If provided, specifies filters that work against the `chronicleProducer` ID of the [`EventChronicle`]({{Types.eventchronicle}}).
+    """
+    chronicleProducerId: FilterIDInput
+    """
     If provided, specifies filters that work against the `timestamp` of the [`EventChronicle`]({{Types.eventchronicle}}).
     """
     timestamp: FilterDateTimeOffsetInput
@@ -40,11 +44,7 @@ input FilterEventChronicleInput @experimental {
     """
     locations: FilterStringListInput
     """
-    If provided, specifies filters that work against the `chronicleProducer` ID of the [`EventChronicle`]({{Types.eventchronicle}}).
-    """
-    chronicleProducerId: FilterIDInput
-    """
-    If provided, specifies filters that work against the `activityChronicle` IDs of the [`EventChronicle`]({{Types.eventchronicle}}).
+    If provided, specifies filters that work against the `activityChronicles` IDs of the [`EventChronicle`]({{Types.eventchronicle}}).
     """
     activityChronicleIds: FilterIDListInput
     """
