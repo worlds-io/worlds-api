@@ -30,8 +30,8 @@ type ActivityChronicle @experimental {
     locations: [String!]
     """Images associated with the activity."""
     images: [Image!]!
-    """Clips associated with the activity.
-    """dataSourceClips: [DataSourceClip!]!
+    """Clips associated with the activity."""
+    dataSourceClips: [DataSourceClip!]!
     """Tracks associated with the activity."""
     tracks: [Track!]
     """Sites associated with the activity."""
@@ -110,10 +110,10 @@ input UpdateActivityChronicleInput @experimental {
     timezone: String
     """Additional metadata associated with the activity. This may represent any JSON object structure."""
     metadata: JSON
-    """Optional information to validate the accuracy of the activity.
-    """priority: String
-    """User-defined priority of the activity.
-    """status: String
+    """Optional information to validate the accuracy of the activity."""
+    priority: String
+    """User-defined priority of the activity."""
+    status: String
     """User-defined status of the activity."""
     labels: [String!]
     """Human-readable labels describing the activity."""
