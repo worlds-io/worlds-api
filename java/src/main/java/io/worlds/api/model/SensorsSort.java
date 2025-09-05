@@ -2,7 +2,7 @@ package io.worlds.api.model;
 
 
 /**
- * SensorsSort allows for sorting a [`sensors` query]({{Query.sensors}}) by field and direction.
+ * SensorsSort allows for sorting a [`sensors` query]({{Queries.sensors}}) by field and direction.
  */
 public class SensorsSort implements java.io.Serializable {
 

@@ -1,8 +1,19 @@
 package io.worlds.api.model;
 
+/**
+ * Indicates the field used for sorting an [`chronicleProducers` query]({{Queries.chronicleProducers}}).
+ */
 public enum ChronicleProducersSortField {
 
+    /**
+     * 
+Sort the resulting list by the [`ChronicleProducer`]({{Types.chronicleProducer}})'s unique identifier.
+     */
     ID("ID"),
+    /**
+     * 
+Sort the resulting list by the [`ChronicleProducer`]({{Types.chronicleProducer}})'s name.
+     */
     NAME("NAME");
 
     private final String graphqlName;

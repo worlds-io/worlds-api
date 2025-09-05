@@ -2,7 +2,7 @@ package io.worlds.api.model;
 
 
 /**
- * DataSourceSort allows for sorting a [`dataSources` query]({{Query.datasources}}) by field and direction.
+ * DataSourceSort allows for sorting a [`dataSources` query]({{Queries.datasources}}) by field and direction.
  */
 public class DataSourceSort implements java.io.Serializable {
 

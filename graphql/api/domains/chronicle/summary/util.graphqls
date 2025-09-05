@@ -1,9 +1,23 @@
+"""
+An `SummaryConnection` is the paginated results of an [`summaries` query]({{Queries.summaryChronicles}}).
+See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+"""
 type SummaryChronicleConnection @experimental {
+    """Pagination information for the resulting edges."""
     edges: [SummaryChronicleEdge!]!
+    """The resulting collection of summary edges."""
     pageInfo: PageInfo!
 }
 
+"""
+An summary edge is the pairing of an [Summary]({{Types.summary}}) with its query cursor.
+See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+"""
 type SummaryChronicleEdge @experimental {
+    """Information about a particular [Summary]({{Types.summary}})."""
     node: SummaryChronicle!
+    """
+    The cursor to use with the [Query `summaries` field]({{Queries.summaryChronicles}}) `after` argument.
+    """
     cursor: String!
 }

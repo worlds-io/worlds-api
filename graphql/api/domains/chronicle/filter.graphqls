@@ -1,16 +1,49 @@
+"""
+FilterChronicleProducerInput filters [ChronicleProducer]({{Types.chronicleproducer}}) based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
+"""
 input FilterChronicleProducerInput @experimental {
+    """
+    If provided, specifies filters that work against the [ChronicleProducer]({{Types.chronicleproducer}})'s unique id.
+    """
     id: FilterIDInput
+    """
+    If provided, specifies filters that work against the [ChronicleProducer]({{Types.chronicleproducer}})'s name.
+    """
     name: FilterStringInput
+    """
+    If provided, specifies filters that work against the [ChronicleProducer]({{Types.chronicleproducer}})'s active status.
+    """
     active: FilterBooleanInput
-
-    and: [FilterChronicleProducerInput!]
+    """
+    If provided, an chronicle producer must pass all filters in this list to match the current filter.
+    """and: [FilterChronicleProducerInput!]
+    """
+    If provided, an chronicle producer must pass at least one of the filters in this list to match the current filter.
+    """
     or: [FilterChronicleProducerInput!]
+    """
+    If provided, an chronicle producer may not match this filter to match the current filter.
+    """
     not: FilterChronicleProducerInput
 }
 
+"""
+`FilterChronicleValidationStatusInput` allows for filtering based on an chronicle's validation status. Only one field should be provided per filter object.
+"""
 input FilterChronicleValidationStatusInput @experimental {
-    eq: ChronicleValidationStatus
-    ne: ChronicleValidationStatus
+    """
+    If provided, the chronicle's validation status must be equivalent to the value provided to match the current filter.
+    """eq: ChronicleValidationStatus
+    """
+    If provided, the chronicle's validation status must not be equivalent to the value provided to match the current filter.
+    """ne: ChronicleValidationStatus
+    """
+    If provided, the chronicle's validation status must be present in the value provided to match the current filter.
+    """
     in: [ChronicleValidationStatus!]
+    """
+    If provided and true, the filter will pass only if the chronicle has a validation status. If provided and false, the filter will pass only if there is no validation status.
+    """
     attributeExists: Boolean
 }

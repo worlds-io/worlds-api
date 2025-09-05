@@ -2,7 +2,7 @@ package io.worlds.api.model;
 
 
 /**
- * Supporting input for validation
+ * This input type indicates whether an chronicle is valid and contains additional information about the validation.
  */
 public class ChronicleValidationInput implements java.io.Serializable {
 

@@ -1,24 +1,89 @@
+"""
+FilterActivityChronicleInput filters [ActivityChronicles]({{Types.activityChronicle}}) based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
+"""
 input FilterActivityChronicleInputSubscription @experimental {
+    """
+    If provided, specifies filters that work against the `id` of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    """
     id: FilterIDInput
+    """
+    If provided, specifies filters that work against the `name` of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    """
     name: FilterStringInput
-    chronicleProducerId: FilterIDInput
+    """
+    If provided, specifies filters that work against the `startTime` of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    """
     startTime: FilterDateTimeOffsetInput
+    """
+    If provided, specifies filters that work against the `endTime` of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    """
     endTime: FilterDateTimeOffsetInput
+    """
+    If provided, specifies filters that work against the `timezone` of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    """
     timezone: FilterStringInput
+    """
+    If provided, specifies filters that work against the `priority` of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    """
     priority: FilterStringInput
+    """
+    If provided, specifies filters that work against the `status` of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    """
     status: FilterStringInput
+    """
+    If provided, specifies filters that work against the `validation` of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    """
     validation: FilterStringInput
+    """
+    If provided, specifies filters that work against the `labels` of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    """
     labels: FilterStringListInput
+    """
+    If provided, specifies filters that work against the `locations` of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    """
     locations: FilterStringListInput
-    siteIds: FilterIDListInput
-    dataSourceIds: FilterIDListInput
+    """
+    If provided, specifies filters that work against the `chronicleProducer` ID of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    """
+    chronicleProducerId: FilterIDInput
+    """
+    If provided, specifies filters that work against the `tag` IDs of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    """
     tagIds: FilterIDListInput
+    """
+    If provided, specifies filters that work against the `site` IDs of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    """
+    siteIds: FilterIDListInput
+    """
+    If provided, specifies filters that work against the `dataSource` IDs of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    """
+    dataSourceIds: FilterIDListInput
+    """
+    If provided, specifies filters that work against the `pointOfInterest` IDs of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    """
     pointOfInterestIds: FilterIDListInput
+    """
+    If provided, an activity must pass all filters in this list to match the current filter.
+    """
     and: [FilterActivityChronicleInputSubscription!]
+    """
+    If provided, an activity must pass at least one of the filters in this list to match the current filter.
+    """
     or: [FilterActivityChronicleInputSubscription!]
+    """
+    If provided, an activity may not match this filter to match the current filter.
+    """
     not: FilterActivityChronicleInputSubscription
 }
 
 extend type Subscription {
-    activityChronicles(filter: FilterActivityChronicleInputSubscription): ActivityChronicle! @experimental
+    """
+    Subscribes to changes in any [`Event`]({{Types.event}}) based on the given filter.
+    """
+    activityChronicles(
+        """
+        Filter events by unique identifier of the event producer or type of event, etc.
+        """filter: FilterActivityChronicleInputSubscription
+    ): ActivityChronicle! @experimental
 }

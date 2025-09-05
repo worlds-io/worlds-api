@@ -1,6 +1,10 @@
 package io.worlds.api.model;
 
 
+/**
+ * The paginated results of an [`chronicleProducers` query]({{Queries.chronicleproducers}}).
+See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+ */
 public class ChronicleProducerConnection implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -18,16 +22,28 @@ public class ChronicleProducerConnection implements java.io.Serializable {
         this.pageInfo = pageInfo;
     }
 
+    /**
+     * The resulting collection of chronicle producer edges.
+     */
     public java.util.List<ChronicleProducerEdge> getEdges() {
         return edges;
     }
+    /**
+     * The resulting collection of chronicle producer edges.
+     */
     public void setEdges(java.util.List<ChronicleProducerEdge> edges) {
         this.edges = edges;
     }
 
+    /**
+     * Pagination information for the resulting edges.
+     */
     public PageInfo getPageInfo() {
         return pageInfo;
     }
+    /**
+     * Pagination information for the resulting edges.
+     */
     public void setPageInfo(PageInfo pageInfo) {
         this.pageInfo = pageInfo;
     }
@@ -46,11 +62,17 @@ public class ChronicleProducerConnection implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * The resulting collection of chronicle producer edges.
+         */
         public Builder setEdges(java.util.List<ChronicleProducerEdge> edges) {
             this.edges = edges;
             return this;
         }
 
+        /**
+         * Pagination information for the resulting edges.
+         */
         public Builder setPageInfo(PageInfo pageInfo) {
             this.pageInfo = pageInfo;
             return this;
