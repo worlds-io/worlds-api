@@ -1,6 +1,10 @@
 package io.worlds.api.model;
 
 
+/**
+ * FilterChronicleProducerInput filters [ChronicleProducer]({{Types.chronicleproducer}}) based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
+ */
 public class FilterChronicleProducerInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

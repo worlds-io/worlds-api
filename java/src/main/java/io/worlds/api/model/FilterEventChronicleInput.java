@@ -1,12 +1,17 @@
 package io.worlds.api.model;
 
 
+/**
+ * FilterEventChronicleInput filters [EventChronicles]({{Types.eventChronicle}}) based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
+ */
 public class FilterEventChronicleInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
     private org.springframework.graphql.data.ArgumentValue<FilterIDInput> id = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterStringInput> name = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<FilterIDInput> chronicleProducerId = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterDateTimeOffsetInput> timestamp = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterStringInput> timezone = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterStringInput> priority = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -14,7 +19,6 @@ public class FilterEventChronicleInput implements java.io.Serializable {
     private org.springframework.graphql.data.ArgumentValue<FilterChronicleValidationStatusInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterStringListInput> labels = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterStringListInput> locations = org.springframework.graphql.data.ArgumentValue.omitted();
-    private org.springframework.graphql.data.ArgumentValue<FilterIDInput> chronicleProducerId = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterIDListInput> activityChronicleIds = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<FilterEventChronicleInput> and;
     private java.util.List<FilterEventChronicleInput> or;
@@ -23,9 +27,10 @@ public class FilterEventChronicleInput implements java.io.Serializable {
     public FilterEventChronicleInput() {
     }
 
-    public FilterEventChronicleInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> id, org.springframework.graphql.data.ArgumentValue<FilterStringInput> name, org.springframework.graphql.data.ArgumentValue<FilterDateTimeOffsetInput> timestamp, org.springframework.graphql.data.ArgumentValue<FilterStringInput> timezone, org.springframework.graphql.data.ArgumentValue<FilterStringInput> priority, org.springframework.graphql.data.ArgumentValue<FilterStringInput> status, org.springframework.graphql.data.ArgumentValue<FilterChronicleValidationStatusInput> validation, org.springframework.graphql.data.ArgumentValue<FilterStringListInput> labels, org.springframework.graphql.data.ArgumentValue<FilterStringListInput> locations, org.springframework.graphql.data.ArgumentValue<FilterIDInput> chronicleProducerId, org.springframework.graphql.data.ArgumentValue<FilterIDListInput> activityChronicleIds, java.util.List<FilterEventChronicleInput> and, java.util.List<FilterEventChronicleInput> or, org.springframework.graphql.data.ArgumentValue<FilterEventChronicleInput> not) {
+    public FilterEventChronicleInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> id, org.springframework.graphql.data.ArgumentValue<FilterStringInput> name, org.springframework.graphql.data.ArgumentValue<FilterIDInput> chronicleProducerId, org.springframework.graphql.data.ArgumentValue<FilterDateTimeOffsetInput> timestamp, org.springframework.graphql.data.ArgumentValue<FilterStringInput> timezone, org.springframework.graphql.data.ArgumentValue<FilterStringInput> priority, org.springframework.graphql.data.ArgumentValue<FilterStringInput> status, org.springframework.graphql.data.ArgumentValue<FilterChronicleValidationStatusInput> validation, org.springframework.graphql.data.ArgumentValue<FilterStringListInput> labels, org.springframework.graphql.data.ArgumentValue<FilterStringListInput> locations, org.springframework.graphql.data.ArgumentValue<FilterIDListInput> activityChronicleIds, java.util.List<FilterEventChronicleInput> and, java.util.List<FilterEventChronicleInput> or, org.springframework.graphql.data.ArgumentValue<FilterEventChronicleInput> not) {
         this.id = id;
         this.name = name;
+        this.chronicleProducerId = chronicleProducerId;
         this.timestamp = timestamp;
         this.timezone = timezone;
         this.priority = priority;
@@ -33,7 +38,6 @@ public class FilterEventChronicleInput implements java.io.Serializable {
         this.validation = validation;
         this.labels = labels;
         this.locations = locations;
-        this.chronicleProducerId = chronicleProducerId;
         this.activityChronicleIds = activityChronicleIds;
         this.and = and;
         this.or = or;
@@ -52,6 +56,13 @@ public class FilterEventChronicleInput implements java.io.Serializable {
     }
     public void setName(org.springframework.graphql.data.ArgumentValue<FilterStringInput> name) {
         this.name = name;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<FilterIDInput> getChronicleProducerId() {
+        return chronicleProducerId;
+    }
+    public void setChronicleProducerId(org.springframework.graphql.data.ArgumentValue<FilterIDInput> chronicleProducerId) {
+        this.chronicleProducerId = chronicleProducerId;
     }
 
     public org.springframework.graphql.data.ArgumentValue<FilterDateTimeOffsetInput> getTimestamp() {
@@ -103,13 +114,6 @@ public class FilterEventChronicleInput implements java.io.Serializable {
         this.locations = locations;
     }
 
-    public org.springframework.graphql.data.ArgumentValue<FilterIDInput> getChronicleProducerId() {
-        return chronicleProducerId;
-    }
-    public void setChronicleProducerId(org.springframework.graphql.data.ArgumentValue<FilterIDInput> chronicleProducerId) {
-        this.chronicleProducerId = chronicleProducerId;
-    }
-
     public org.springframework.graphql.data.ArgumentValue<FilterIDListInput> getActivityChronicleIds() {
         return activityChronicleIds;
     }
@@ -148,6 +152,7 @@ public class FilterEventChronicleInput implements java.io.Serializable {
 
         private org.springframework.graphql.data.ArgumentValue<FilterIDInput> id = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterStringInput> name = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<FilterIDInput> chronicleProducerId = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterDateTimeOffsetInput> timestamp = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterStringInput> timezone = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterStringInput> priority = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -155,7 +160,6 @@ public class FilterEventChronicleInput implements java.io.Serializable {
         private org.springframework.graphql.data.ArgumentValue<FilterChronicleValidationStatusInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterStringListInput> labels = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterStringListInput> locations = org.springframework.graphql.data.ArgumentValue.omitted();
-        private org.springframework.graphql.data.ArgumentValue<FilterIDInput> chronicleProducerId = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterIDListInput> activityChronicleIds = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<FilterEventChronicleInput> and;
         private java.util.List<FilterEventChronicleInput> or;
@@ -171,6 +175,11 @@ public class FilterEventChronicleInput implements java.io.Serializable {
 
         public Builder setName(org.springframework.graphql.data.ArgumentValue<FilterStringInput> name) {
             this.name = name;
+            return this;
+        }
+
+        public Builder setChronicleProducerId(org.springframework.graphql.data.ArgumentValue<FilterIDInput> chronicleProducerId) {
+            this.chronicleProducerId = chronicleProducerId;
             return this;
         }
 
@@ -209,11 +218,6 @@ public class FilterEventChronicleInput implements java.io.Serializable {
             return this;
         }
 
-        public Builder setChronicleProducerId(org.springframework.graphql.data.ArgumentValue<FilterIDInput> chronicleProducerId) {
-            this.chronicleProducerId = chronicleProducerId;
-            return this;
-        }
-
         public Builder setActivityChronicleIds(org.springframework.graphql.data.ArgumentValue<FilterIDListInput> activityChronicleIds) {
             this.activityChronicleIds = activityChronicleIds;
             return this;
@@ -236,7 +240,7 @@ public class FilterEventChronicleInput implements java.io.Serializable {
 
 
         public FilterEventChronicleInput build() {
-            return new FilterEventChronicleInput(id, name, timestamp, timezone, priority, status, validation, labels, locations, chronicleProducerId, activityChronicleIds, and, or, not);
+            return new FilterEventChronicleInput(id, name, chronicleProducerId, timestamp, timezone, priority, status, validation, labels, locations, activityChronicleIds, and, or, not);
         }
 
     }

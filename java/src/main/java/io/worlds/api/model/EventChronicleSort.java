@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * Indicates the field used for sorting an [`eventProducers` query]({{Queries.eventProducers}}).
+ */
 public class EventChronicleSort implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

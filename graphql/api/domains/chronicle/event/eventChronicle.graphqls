@@ -1,47 +1,95 @@
+"""
+An event chronicle represents an occurrence at a single point at time.
+"""
 type EventChronicle @experimental {
+    """The unique identifier for the event."""
     id: ID!
-    name: String!
+    """The chronicle producer that created the event."""
     chronicleProducer: ChronicleProducer!
+    """The name of the event"""
+    name: String!
+    """A text description of the event."""
     description: String
+    """The time at which the event occurred."""
     timestamp: DateTimeOffset!
+    """The timezone for the event, if provided."""
     timezone: String
+    """Additional metadata associated with the event. This may represent any JSON object structure."""
     metadata: JSON
+    """Optional information to validate the accuracy of the event."""
     validation: ChronicleValidation
+    """User-defined priority of the event."""
     priority: String
+    """User-defined status of the event."""
     status: String
+    """Human-readable labels describing the event."""
     labels: [String!]
+    """Human-readable locations describing the event."""
     locations: [String!]
+    """Activity chronicles associated with the event."""
     activityChronicles: [ActivityChronicle!]!
+    """Timestamp that the event was created."""
     createdAt: DateTimeOffset!
+    """Timestamp that the event was most recently updated."""
     updatedAt: DateTimeOffset!
 }
 
+"""
+This input type is used to create a new [`EventChronicle`]({{Types.eventchronicle}}).
+"""
 input CreateEventChronicleInput @experimental {
+    """The name of the event"""
     name: String!
+    """The event producer that owns the event."""
     chronicleProducerId: ID!
+    """A text description of the event."""
     description: String
+    """The time at which the event occurred."""
     timestamp: DateTimeOffset!
+    """The timezone for the event, if provided."""
     timezone: String
+    """Additional metadata associated with the event. This may represent any JSON object structure."""
     metadata: JSON
+    """User-defined priority of the event."""
     priority: String
+    """User-defined status of the event."""
     status: String
+    """Human-readable labels describing the event."""
     labels: [String!]
+    """Human-readable locations describing the event."""
     locations: [String!]
+    """Optional information to validate the accuracy of the event."""
     validation: ChronicleValidationInput
+    """IDs of activity chronicles associated with the event."""
     activityChronicleIds: [ID!]
 }
 
+"""
+This input type is used to update an existing [`EventChronicle`]({{Types.eventchronicle}}).
+"""
 input UpdateEventChronicleInput @experimental {
+    """The unique identifier for the event."""
     id: ID!
+    """The name of the event"""
     name: String
+    """A text description of the event."""
     description: String
+    """The time at which the event occurred."""
     timestamp: DateTimeOffset
+    """The timezone for the event, if provided."""
     timezone: String
+    """Additional metadata associated with the event. This may represent any JSON object structure."""
     metadata: JSON
+    """User-defined priority of the event."""
     priority: String
+    """User-defined status of the event."""
     status: String
+    """Human-readable labels describing the event."""
     labels: [String!]
+    """Human-readable locations describing the event."""
     locations: [String!]
+    """Optional information to validate the accuracy of the event."""
     validation: ChronicleValidationInput
+    """IDs of activity chronicles associated with the event."""
     activityChronicleIds: [ID!]
 }

@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * `FilterChronicleValidationStatusInput` allows for filtering based on an chronicle's validation status. Only one field should be provided per filter object.
+ */
 public class FilterChronicleValidationStatusInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

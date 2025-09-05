@@ -1,17 +1,57 @@
+"""
+Indicates the field used for sorting an [`events` query]({{Queries.eventChronicles}}).
+"""
 enum EventChronicleSortField @experimental {
+    """
+    Sort the resulting list by the [`eventChronicle`]({{Types.eventChronicle}})'s unique identifier.
+    """
     ID
+    """
+    Sort the resulting list by the [`eventChronicle`]({{Types.eventChronicle}})'s timestamp.
+    """
     TIMESTAMP
+    """
+    Sort the resulting list by the [`eventChronicle`]({{Types.eventChronicle}})'s name.
+    """
     NAME
+    """
+    Sort the resulting list by the [`eventChronicle`]({{Types.eventChronicle}})'s priority.
+    """
     PRIORITY
+    """
+    Sort the resulting list by the [`eventChronicle`]({{Types.eventChronicle}})'s status.
+    """
     STATUS
 }
 
+"""
+Indicates the field used for sorting an [`eventProducers` query]({{Queries.eventProducers}}).
+"""
 input EventChronicleSort @experimental {
+    """
+    Any sortable field available to the EventProducersSortField. See the link to the
+    type below for more details.
+    """
     field: EventChronicleSortField!
+    """Sort direction. See the link to the type below for more details."""
     direction: SortDirection!
 }
 
 extend type Query {
-    eventChronicle(id: ID!): EventChronicle @experimental
-    eventChronicles(filter: FilterEventChronicleInput, first: Int! = 20, after: String, sort: [EventChronicleSort!]! = [{field: TIMESTAMP, direction: ASC}, {field: ID, direction: ASC}]): EventChronicleConnection @experimental
+    """Look up an event by its unique identifier."""
+    eventChronicle(
+        """The event's unique identifier."""
+        id: ID!
+    ): EventChronicle @experimental
+    """Search for events based on a set of filters."""
+    eventChronicles(
+        """Filter events by unique identifier, type, time, etc."""
+        filter: FilterEventChronicleInput,
+        """Returns the first _n_ elements from the list."""
+        first: Int! = 20,
+        """Returns the elements in the list that come after the specified cursor."""
+        after: String,
+        """The field and direction by which to sort the results"""
+        sort: [EventChronicleSort!]! = [{field: TIMESTAMP, direction: ASC}, {field: ID, direction: ASC}]
+    ): EventChronicleConnection @experimental
 }

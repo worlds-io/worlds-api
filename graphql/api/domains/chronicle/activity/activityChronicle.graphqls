@@ -1,68 +1,137 @@
+"""
+An activity chronicle represents behavior which occurs over a period of time.
+"""
 type ActivityChronicle @experimental {
+    """The unique identifier for the activity."""
     id: ID!
+    """The chronicle producer that created the activity."""
     chronicleProducer: ChronicleProducer!
+    """The name of the activity"""
     name: String!
+    """A text description of the activity."""
     description: String
+    """The time at which the activity started."""
     startTime: DateTimeOffset!
+    """The time at which the activity ended."""
     endTime: DateTimeOffset
+    """The timezone for the activity, if provided."""
     timezone: String
+    """Additional metadata associated with the activity. This may represent any JSON object structure."""
     metadata: JSON
+    """Optional information to validate the accuracy of the activity."""
     validation: ChronicleValidation
+    """User-defined priority of the activity."""
     priority: String
+    """User-defined status of the activity."""
     status: String
+    """Human-readable labels describing the activity."""
     labels: [String!]
+    """Human-readable locations describing the activity."""
     locations: [String!]
+    """Images associated with the activity."""
     images: [Image!]!
+    """Clips associated with the activity."""
     dataSourceClips: [DataSourceClip!]!
+    """Tracks associated with the activity."""
     tracks: [Track!]
+    """Sites associated with the activity."""
     sites: [Site!]
+    """Data Sources associated with the activity."""
     dataSources: [DataSource!]
+    """Tags associated with the activity."""
     tags: [Tag!]
+    """Points of Interest associated with the activity."""
     pointsOfInterest: [PointOfInterest!]
+    """Timestamp that the activity was created."""
     createdAt: DateTimeOffset!
+    """Timestamp that the activity was most recently updated."""
     updatedAt: DateTimeOffset!
 }
 
+"""
+This input type is used to create a new [`ActivityChronicle`]({{Types.activitychronicle}}).
+"""
 input CreateActivityChronicleInput @experimental {
+    """The chronicle producer that owns the activity."""
     name: String!
+    """The name of the activity"""
     chronicleProducerId: ID!
+    """A text description of the activity."""
     description: String
+    """The time at which the activity started."""
     startTime: DateTimeOffset!
+    """The time at which the activity ended."""
     endTime: DateTimeOffset
+    """The timezone for the activity, if provided."""
     timezone: String
+    """Additional metadata associated with the activity. This may represent any JSON object structure."""
     metadata: JSON
+    """Optional information to validate the accuracy of the activity."""
     priority: String
+    """User-defined priority of the activity."""
     status: String
+    """User-defined status of the activity."""
     labels: [String!]
+    """Human-readable labels describing the activity."""
     locations: [String!]
+    """Human-readable locations describing the activity."""
     validation: ChronicleValidationInput
+    """IDs for images to associate with the activity."""
     imageIds: [ID!]
+    """Requests to create clips associated with the activity."""
     clips: [CreateClipInput!]
+    """IDs for tracks to associate with the activity."""
     trackIds: [ID!]
+    """IDs for sites to associate with the activity."""
     siteIds: [ID!]
+    """IDs for data sources to associate with the activity."""
     dataSourceIds: [ID!]
+    """IDs for tags to associate with the activity."""
     tagIds: [ID!]
+    """IDs for points of interest to associate with the activity."""
     pointOfInterestIds: [ID!]
 }
 
+"""
+This input type is used to update an existing [`ActivityChronicle`]({{Types.activitychronicle}}).
+"""
 input UpdateActivityChronicleInput @experimental {
+    """The unique identifier of activity."""
     id: ID!
+    """The name of the activity"""
     name: String
+    """A text description of the activity."""
     description: String
+    """The time at which the activity started."""
     startTime: DateTimeOffset
+    """The time at which the activity ended."""
     endTime: DateTimeOffset
+    """The timezone for the activity, if provided."""
     timezone: String
+    """Additional metadata associated with the activity. This may represent any JSON object structure."""
     metadata: JSON
+    """Optional information to validate the accuracy of the activity."""
     priority: String
+    """User-defined priority of the activity."""
     status: String
+    """User-defined status of the activity."""
     labels: [String!]
+    """Human-readable labels describing the activity."""
     locations: [String!]
+    """Human-readable locations describing the activity."""
     validation: ChronicleValidationInput
+    """IDs for images to associate with the activity."""
     imageIds: [ID!]
+    """Requests to create clips associated with the activity."""
     clips: [CreateClipInput!]
+    """IDs for tracks to associate with the activity."""
     trackIds: [ID!]
+    """IDs for sites to associate with the activity."""
     siteIds: [ID!]
+    """IDs for data sources to associate with the activity."""
     dataSourceIds: [ID!]
+    """IDs for tags to associate with the activity."""
     tagIds: [ID!]
+    """IDs for points of interest to associate with the activity."""
     pointOfInterestIds: [ID!]
 }

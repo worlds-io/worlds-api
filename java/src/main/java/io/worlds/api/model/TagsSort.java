@@ -2,7 +2,7 @@ package io.worlds.api.model;
 
 
 /**
- * TagsSort allows for sorting a [`tags` query]({{Query.tags}}) by field and direction.
+ * TagsSort allows for sorting a [`tags` query]({{Queries.tags}}) by field and direction.
  */
 public class TagsSort implements java.io.Serializable {
 

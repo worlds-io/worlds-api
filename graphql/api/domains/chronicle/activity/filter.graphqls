@@ -1,21 +1,78 @@
+"""
+FilterActivityChronicleInput filters [ActivityChronicles]({{Types.activityChronicle}}) based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
+"""
 input FilterActivityChronicleInput @experimental {
+    """
+    If provided, specifies filters that work against the `id` of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    """
     id: FilterIDInput
+    """
+    If provided, specifies filters that work against the `name` of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    """
     name: FilterStringInput
+    """
+    If provided, specifies filters that work against the `startTime` of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    """
     startTime: FilterDateTimeOffsetInput
+    """
+    If provided, specifies filters that work against the `endTime` of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    """
     endTime: FilterDateTimeOffsetInput
+    """
+    If provided, specifies filters that work against the `timezone` of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    """
     timezone: FilterStringInput
+    """
+    If provided, specifies filters that work against the `priority` of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    """
     priority: FilterStringInput
+    """
+    If provided, specifies filters that work against the `status` of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    """
     status: FilterStringInput
+    """
+    If provided, specifies filters that work against the `validation` of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    """
     validation: FilterChronicleValidationStatusInput
+    """
+    If provided, specifies filters that work against the `labels` of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    """
     labels: FilterStringListInput
+    """
+    If provided, specifies filters that work against the `locations` of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    """
     locations: FilterStringListInput
+    """
+    If provided, specifies filters that work against the `chronicleProducer` ID of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    """
     chronicleProducerId: FilterIDInput
-    videoIds: FilterIDListInput
+    """
+    If provided, specifies filters that work against the `tags` IDs of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    """
     tagIds: FilterIDListInput
+    """
+    If provided, specifies filters that work against the `sites` IDs of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    """
     siteIds: FilterIDListInput
+    """
+    If provided, specifies filters that work against the `dataSources` IDs of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    """
     dataSourceIds: FilterIDListInput
+    """
+    If provided, specifies filters that work against the `pointsOfInterest` IDs of the [`ActivityChronicle`]({{Types.activitychronicle}}).
+    """
     pointOfInterestIds: FilterIDListInput
+    """
+    If provided, an activity must pass all filters in this list to match the current filter.
+    """
     and: [FilterActivityChronicleInput!]
+    """
+    If provided, an activity must pass at least one of the filters in this list to match the current filter.
+    """
     or: [FilterActivityChronicleInput!]
+    """
+    If provided, an activity may not match this filter to match the current filter.
+    """
     not: FilterActivityChronicleInput
 }

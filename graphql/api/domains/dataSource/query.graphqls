@@ -9,7 +9,7 @@ enum DataSourceSortField {
 }
 
 """
-DataSourceSort allows for sorting a [`dataSources` query]({{Query.datasources}}) by field and direction.
+DataSourceSort allows for sorting a [`dataSources` query]({{Queries.datasources}}) by field and direction.
 """
 input DataSourceSort {
     """

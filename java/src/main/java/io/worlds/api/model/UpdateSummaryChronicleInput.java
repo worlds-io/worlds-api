@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * This input type is used to update an existing [`SummaryChronicle`]({{Types.summarychronicle}}).
+ */
 public class UpdateSummaryChronicleInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -1,18 +1,59 @@
+"""
+Indicates the field used for sorting an [`summaries` query]({{Queries.summaryChronicles}}).
+"""
 enum SummaryChronicleSortField @experimental {
-    ID
+    """
+    Sort the resulting list by the [`summaryChronicle`]({{Types.summaryChronicle}})'s unique identifier.
+    """ID
+    """
+    Sort the resulting list by the [`summaryChronicle`]({{Types.summaryChronicle}})'s start time.
+    """
     START_TIME
+    """
+    Sort the resulting list by the [`summaryChronicle`]({{Types.summaryChronicle}})'s end time.
+    """
     END_TIME
-    NAME
+    """
+    Sort the resulting list by the [`summaryChronicle`]({{Types.summaryChronicle}})'s name.
+    """NAME
+    """
+    Sort the resulting list by the [`summaryChronicle`]({{Types.summaryChronicle}})'s priority.
+    """
     PRIORITY
+    """
+    Sort the resulting list by the [`summaryChronicle`]({{Types.summaryChronicle}})'s status.
+    """
     STATUS
 }
 
+"""
+Indicates the field used for sorting an [`summaryProducers` query]({{Queries.summaryproducers}}).
+"""
 input SummaryChronicleSort @experimental {
+    """
+    Any sortable field available to the SummaryProducersSortField. See the link to the
+    type below for more details.
+    """
     field: SummaryChronicleSortField!
+    """Sort direction. See the link to the type below for more details."""
     direction: SortDirection!
 }
 
 extend type Query {
-    summaryChronicle(id: ID!): SummaryChronicle @experimental
-    summaryChronicles(filter: FilterSummaryChronicleInput, first: Int! = 20, after: String, sort: [SummaryChronicleSort!]! = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]): SummaryChronicleConnection @experimental
+    """Look up an summary by its unique identifier."""
+    summaryChronicle(
+        """The summary's unique identifier."""
+        id: ID!
+    ): SummaryChronicle @experimental
+    """Search for summaries based on a set of filters."""
+    summaryChronicles(
+        """Filter summaries by unique identifier, type, time, etc."""
+        filter: FilterSummaryChronicleInput,
+        """Returns the first _n_ elements from the list."""
+        first: Int! = 20,
+        """Returns the elements in the list that come after the specified cursor."""
+        after: String,
+        """The field and direction by which to sort the results"""
+        sort: [SummaryChronicleSort!]! = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]
+    ): SummaryChronicleConnection @experimental
 }
