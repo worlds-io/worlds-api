@@ -17,6 +17,7 @@ public class FilterTrackInput implements java.io.Serializable {
     private org.springframework.graphql.data.ArgumentValue<FilterTrackPropertyInput> identifier = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterTrackPropertyInput> attribute = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterIDInput> pointOfInterestId = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<FilterStringInput> dataSourceType = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<FilterTrackInput> and;
     private java.util.List<FilterTrackInput> or;
     private org.springframework.graphql.data.ArgumentValue<FilterTrackInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -26,7 +27,7 @@ public class FilterTrackInput implements java.io.Serializable {
     public FilterTrackInput() {
     }
 
-    public FilterTrackInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> dataSourceId, FilterDateTimeOffsetInput time, org.springframework.graphql.data.ArgumentValue<FilterStringInput> tag, org.springframework.graphql.data.ArgumentValue<FilterPointInput> position, org.springframework.graphql.data.ArgumentValue<FilterTrackPropertyInput> identifier, org.springframework.graphql.data.ArgumentValue<FilterTrackPropertyInput> attribute, org.springframework.graphql.data.ArgumentValue<FilterIDInput> pointOfInterestId, java.util.List<FilterTrackInput> and, java.util.List<FilterTrackInput> or, org.springframework.graphql.data.ArgumentValue<FilterTrackInput> not, org.springframework.graphql.data.ArgumentValue<FilterIDInput> deviceId) {
+    public FilterTrackInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> dataSourceId, FilterDateTimeOffsetInput time, org.springframework.graphql.data.ArgumentValue<FilterStringInput> tag, org.springframework.graphql.data.ArgumentValue<FilterPointInput> position, org.springframework.graphql.data.ArgumentValue<FilterTrackPropertyInput> identifier, org.springframework.graphql.data.ArgumentValue<FilterTrackPropertyInput> attribute, org.springframework.graphql.data.ArgumentValue<FilterIDInput> pointOfInterestId, org.springframework.graphql.data.ArgumentValue<FilterStringInput> dataSourceType, java.util.List<FilterTrackInput> and, java.util.List<FilterTrackInput> or, org.springframework.graphql.data.ArgumentValue<FilterTrackInput> not, org.springframework.graphql.data.ArgumentValue<FilterIDInput> deviceId) {
         this.dataSourceId = dataSourceId;
         this.time = time;
         this.tag = tag;
@@ -34,6 +35,7 @@ public class FilterTrackInput implements java.io.Serializable {
         this.identifier = identifier;
         this.attribute = attribute;
         this.pointOfInterestId = pointOfInterestId;
+        this.dataSourceType = dataSourceType;
         this.and = and;
         this.or = or;
         this.not = not;
@@ -89,6 +91,13 @@ public class FilterTrackInput implements java.io.Serializable {
         this.pointOfInterestId = pointOfInterestId;
     }
 
+    public org.springframework.graphql.data.ArgumentValue<FilterStringInput> getDataSourceType() {
+        return dataSourceType;
+    }
+    public void setDataSourceType(org.springframework.graphql.data.ArgumentValue<FilterStringInput> dataSourceType) {
+        this.dataSourceType = dataSourceType;
+    }
+
     public java.util.List<FilterTrackInput> getAnd() {
         return and;
     }
@@ -134,6 +143,7 @@ public class FilterTrackInput implements java.io.Serializable {
         private org.springframework.graphql.data.ArgumentValue<FilterTrackPropertyInput> identifier = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterTrackPropertyInput> attribute = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterIDInput> pointOfInterestId = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<FilterStringInput> dataSourceType = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<FilterTrackInput> and;
         private java.util.List<FilterTrackInput> or;
         private org.springframework.graphql.data.ArgumentValue<FilterTrackInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -177,6 +187,11 @@ public class FilterTrackInput implements java.io.Serializable {
             return this;
         }
 
+        public Builder setDataSourceType(org.springframework.graphql.data.ArgumentValue<FilterStringInput> dataSourceType) {
+            this.dataSourceType = dataSourceType;
+            return this;
+        }
+
         public Builder setAnd(java.util.List<FilterTrackInput> and) {
             this.and = and;
             return this;
@@ -200,7 +215,7 @@ public class FilterTrackInput implements java.io.Serializable {
 
 
         public FilterTrackInput build() {
-            return new FilterTrackInput(dataSourceId, time, tag, position, identifier, attribute, pointOfInterestId, and, or, not, deviceId);
+            return new FilterTrackInput(dataSourceId, time, tag, position, identifier, attribute, pointOfInterestId, dataSourceType, and, or, not, deviceId);
         }
 
     }
