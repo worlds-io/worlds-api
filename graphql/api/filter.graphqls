@@ -70,7 +70,7 @@ input FilterIntInput {
 }
 
 """
-`FilterFloatInput` allows for filtering based on a Float parameter. Only one field should be provided per filter object.
+`FilterFloatInput` allows for filtering based on a Float parameter. Only one field  should be provided per filter object.
 """
 input FilterFloatInput {
     """

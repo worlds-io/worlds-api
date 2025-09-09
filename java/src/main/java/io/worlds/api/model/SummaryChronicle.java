@@ -29,7 +29,7 @@ public class SummaryChronicle implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private java.util.List<ActivityChronicle> activityChronicles;
     @jakarta.validation.constraints.NotNull
-    private java.util.List<SummaryChronicle> eventChronicles;
+    private java.util.List<EventChronicle> eventChronicles;
     @jakarta.validation.constraints.NotNull
     private java.time.OffsetDateTime createdAt;
     @jakarta.validation.constraints.NotNull
@@ -38,7 +38,7 @@ public class SummaryChronicle implements java.io.Serializable {
     public SummaryChronicle() {
     }
 
-    public SummaryChronicle(String id, String name, ChronicleProducer chronicleProducer, String description, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, String timezone, java.lang.Object metadata, ChronicleValidation validation, String priority, String status, java.util.List<String> labels, java.util.List<String> locations, java.util.List<ActivityChronicle> activityChronicles, java.util.List<SummaryChronicle> eventChronicles, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt) {
+    public SummaryChronicle(String id, String name, ChronicleProducer chronicleProducer, String description, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, String timezone, java.lang.Object metadata, ChronicleValidation validation, String priority, String status, java.util.List<String> labels, java.util.List<String> locations, java.util.List<ActivityChronicle> activityChronicles, java.util.List<EventChronicle> eventChronicles, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt) {
         this.id = id;
         this.name = name;
         this.chronicleProducer = chronicleProducer;
@@ -243,13 +243,13 @@ public class SummaryChronicle implements java.io.Serializable {
     /**
      * Event chronicles associated with the summary.
      */
-    public java.util.List<SummaryChronicle> getEventChronicles() {
+    public java.util.List<EventChronicle> getEventChronicles() {
         return eventChronicles;
     }
     /**
      * Event chronicles associated with the summary.
      */
-    public void setEventChronicles(java.util.List<SummaryChronicle> eventChronicles) {
+    public void setEventChronicles(java.util.List<EventChronicle> eventChronicles) {
         this.eventChronicles = eventChronicles;
     }
 
@@ -301,7 +301,7 @@ public class SummaryChronicle implements java.io.Serializable {
         private java.util.List<String> labels;
         private java.util.List<String> locations;
         private java.util.List<ActivityChronicle> activityChronicles;
-        private java.util.List<SummaryChronicle> eventChronicles;
+        private java.util.List<EventChronicle> eventChronicles;
         private java.time.OffsetDateTime createdAt;
         private java.time.OffsetDateTime updatedAt;
 
@@ -423,7 +423,7 @@ public class SummaryChronicle implements java.io.Serializable {
         /**
          * Event chronicles associated with the summary.
          */
-        public Builder setEventChronicles(java.util.List<SummaryChronicle> eventChronicles) {
+        public Builder setEventChronicles(java.util.List<EventChronicle> eventChronicles) {
             this.eventChronicles = eventChronicles;
             return this;
         }

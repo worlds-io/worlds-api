@@ -201,9 +201,15 @@ public class Device implements java.io.Serializable {
         this.pointOfInterest = pointOfInterest;
     }
 
+    /**
+     * Timestamp at which this device last received a heartbeat update.  Can be used to confirm the device is still active.
+     */
     public java.time.OffsetDateTime getLastHeartbeat() {
         return lastHeartbeat;
     }
+    /**
+     * Timestamp at which this device last received a heartbeat update.  Can be used to confirm the device is still active.
+     */
     public void setLastHeartbeat(java.time.OffsetDateTime lastHeartbeat) {
         this.lastHeartbeat = lastHeartbeat;
     }
@@ -329,6 +335,9 @@ public class Device implements java.io.Serializable {
             return this;
         }
 
+        /**
+         * Timestamp at which this device last received a heartbeat update.  Can be used to confirm the device is still active.
+         */
         public Builder setLastHeartbeat(java.time.OffsetDateTime lastHeartbeat) {
             this.lastHeartbeat = lastHeartbeat;
             return this;

@@ -26,17 +26,26 @@ type Device {
     calibrations: [DeviceCalibration!]!
     """The point of interest the device belongs to"""
     pointOfInterest: PointOfInterest
+    """Timestamp at which this device last received a heartbeat update.  Can be used to confirm the device is still active."""
     lastHeartbeat: DateTimeOffset
 }
 
+"""A message containing a `Device` from a `devices` subscription."""
+type DeviceMessage {
+    """The device."""
+    message: Device!
+    """The state of the device message."""
+    state: MessageState!
+}
+
 """
-A device calibration determines how objects captured by in a video or image are georeferenced into the real world.
+A device calibration determines how objects captured by in a video or image are geo-referenced into the real world.
 """
 type DeviceCalibration {
     """The unique identifier of the device calibration."""
     id: ID!
     """
-    The start time of the calibration. Detections generated after this time for this device will be georeferenced according to this calibration.
+    The start time of the calibration. Detections generated after this time for this device will be geo-referenced according to this calibration.
     """
     timestamp: DateTimeOffset!
     """The markers associated with the calibration."""
