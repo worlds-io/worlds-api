@@ -21,6 +21,10 @@ input FilterDataSourceInput {
     """
     name: FilterStringInput
     """
+    If provided, specifies filters that work against the `labels` of the [`DataSource`]({{Types.datasource}}).
+    """
+    labels: FilterStringListInput
+    """
     If provided, a data source must pass all filters in this list to match the current filter.
     """
     and: [FilterDataSourceInput!]

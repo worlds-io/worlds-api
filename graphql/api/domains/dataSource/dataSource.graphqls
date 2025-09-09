@@ -30,6 +30,8 @@ type DataSource {
     device: Device
     """The zones associated with this data source"""
     zones: [Zone!]!
+    """Human-readable labels describing this data source"""
+    labels: [String!]
 }
 
 """
@@ -40,6 +42,8 @@ input CreateDataSourceInput {
     name: String!
     """The type of the data source"""
     type: DataSourceType!
+    """Human-readable labels describing this data source"""
+    labels: [String!]
 }
 
 """
@@ -52,4 +56,6 @@ input UpdateDataSourceInput {
     name: String
     """The type of the data source"""
     type: DataSourceType
+    """Human-readable labels describing this data source"""
+    labels: [String!]
 }
