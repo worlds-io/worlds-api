@@ -17,16 +17,18 @@ public class DataSource implements java.io.Serializable {
     private Device device;
     @jakarta.validation.constraints.NotNull
     private java.util.List<Zone> zones;
+    private java.util.List<String> labels;
 
     public DataSource() {
     }
 
-    public DataSource(String id, String name, DataSourceType type, Device device, java.util.List<Zone> zones) {
+    public DataSource(String id, String name, DataSourceType type, Device device, java.util.List<Zone> zones, java.util.List<String> labels) {
         this.id = id;
         this.name = name;
         this.type = type;
         this.device = device;
         this.zones = zones;
+        this.labels = labels;
     }
 
     /**
@@ -94,6 +96,19 @@ public class DataSource implements java.io.Serializable {
         this.zones = zones;
     }
 
+    /**
+     * Human-readable labels describing this data source
+     */
+    public java.util.List<String> getLabels() {
+        return labels;
+    }
+    /**
+     * Human-readable labels describing this data source
+     */
+    public void setLabels(java.util.List<String> labels) {
+        this.labels = labels;
+    }
+
 
 
     public static DataSource.Builder builder() {
@@ -107,6 +122,7 @@ public class DataSource implements java.io.Serializable {
         private DataSourceType type;
         private Device device;
         private java.util.List<Zone> zones;
+        private java.util.List<String> labels;
 
         public Builder() {
         }
@@ -151,9 +167,17 @@ public class DataSource implements java.io.Serializable {
             return this;
         }
 
+        /**
+         * Human-readable labels describing this data source
+         */
+        public Builder setLabels(java.util.List<String> labels) {
+            this.labels = labels;
+            return this;
+        }
+
 
         public DataSource build() {
-            return new DataSource(id, name, type, device, zones);
+            return new DataSource(id, name, type, device, zones, labels);
         }
 
     }
