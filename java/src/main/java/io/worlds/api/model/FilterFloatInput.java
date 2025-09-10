@@ -2,7 +2,7 @@ package io.worlds.api.model;
 
 
 /**
- * `FilterFloatInput` allows for filtering based on a Float parameter. Only one field should be provided per filter object.
+ * `FilterFloatInput` allows for filtering based on a Float parameter. Only one field  should be provided per filter object.
  */
 public class FilterFloatInput implements java.io.Serializable {
 

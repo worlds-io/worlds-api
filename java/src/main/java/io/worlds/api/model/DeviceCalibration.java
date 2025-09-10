@@ -2,7 +2,7 @@ package io.worlds.api.model;
 
 
 /**
- * A device calibration determines how objects captured by in a video or image are georeferenced into the real world.
+ * A device calibration determines how objects captured by in a video or image are geo-referenced into the real world.
  */
 public class DeviceCalibration implements java.io.Serializable {
 
@@ -40,13 +40,13 @@ public class DeviceCalibration implements java.io.Serializable {
     }
 
     /**
-     * The start time of the calibration. Detections generated after this time for this device will be georeferenced according to this calibration.
+     * The start time of the calibration. Detections generated after this time for this device will be geo-referenced according to this calibration.
      */
     public java.time.OffsetDateTime getTimestamp() {
         return timestamp;
     }
     /**
-     * The start time of the calibration. Detections generated after this time for this device will be georeferenced according to this calibration.
+     * The start time of the calibration. Detections generated after this time for this device will be geo-referenced according to this calibration.
      */
     public void setTimestamp(java.time.OffsetDateTime timestamp) {
         this.timestamp = timestamp;
@@ -103,7 +103,7 @@ public class DeviceCalibration implements java.io.Serializable {
         }
 
         /**
-         * The start time of the calibration. Detections generated after this time for this device will be georeferenced according to this calibration.
+         * The start time of the calibration. Detections generated after this time for this device will be geo-referenced according to this calibration.
          */
         public Builder setTimestamp(java.time.OffsetDateTime timestamp) {
             this.timestamp = timestamp;
