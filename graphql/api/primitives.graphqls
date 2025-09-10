@@ -8,6 +8,16 @@ enum MessageState {
     END
 }
 
+"""Indicates the state of a message from a `devices` subscription."""
+enum DeviceMessageState {
+    """A new device is created."""
+    CREATE
+    """A device is updated."""
+    UPDATE
+    """A device receives a new `lastHeartbeat`."""
+    HEARTBEAT
+}
+
 # Types of collision activities for Geofences and Zones
 """
 Indicates the type of [GeofenceEvent]({{Types.geofenceevent}}) or [ZoneEvent]({{Types.zoneevent}}) reported by a [Geofence]({{Types.geofence}}) or a [Zone]({{Types.zone}}).

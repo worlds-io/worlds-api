@@ -1,0 +1,11 @@
+extend type Subscription {
+    """
+    Subscribes to changes in any [`Device`]({{Types.device}}) based on the given filter.
+    """
+    devices(
+        """
+        Filter devices by unique identifier of the device, message state, etc.
+        """
+        filter: FilterDeviceMessageInput
+    ): DeviceMessage
+}
