@@ -73,7 +73,7 @@ input FilterDeviceMessageInput {
     """
     If provided, specified filters that work against the `state` of the `DeviceMessage`.
     """
-    state: FilterMessageStateInput
+    state: FilterDeviceMessageStateInput
     """
     If provided, a device must pass all filters in this list to match the current filter.
     """

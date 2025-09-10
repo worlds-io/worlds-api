@@ -35,7 +35,7 @@ type DeviceMessage {
     """The device."""
     message: Device!
     """The state of the device message."""
-    state: MessageState!
+    state: DeviceMessageState!
 }
 
 """

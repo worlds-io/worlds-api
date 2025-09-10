@@ -223,6 +223,25 @@ input FilterMessageStateInput {
 }
 
 """
+`FilterDeviceMessageStateInput` allows for filtering based on a [DeviceMessageState]({{Types.messagemessagestate}}) parameter. Only one field should be provided per filter object.
+Note that the `UPDATE` state alone will not include `CREATE` and `HEARTBEAT` messages.
+"""
+input FilterDeviceMessageStateInput {
+    """
+    If provided, the DeviceMessageState must be equal to the value provided to match the current filter.
+    """
+    eq: DeviceMessageState
+    """
+    If provided, the DeviceMessageState must not be equal to the value provided to match the current filter.
+    """
+    ne: DeviceMessageState
+    """
+    If provided, the DeviceMessageState must be present in the list provided to match the current filter.
+    """
+    in: [DeviceMessageState!]
+}
+
+"""
 `FilterEventValidationStatusInput` allows for filtering based on an event's validation status. Only one field should be provided per filter object.
 """
 input FilterEventValidationStatusInput {
