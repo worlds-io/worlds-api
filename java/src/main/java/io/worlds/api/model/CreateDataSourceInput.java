@@ -12,13 +12,15 @@ public class CreateDataSourceInput implements java.io.Serializable {
     private String name;
     @jakarta.validation.constraints.NotNull
     private DataSourceType type;
+    private java.util.List<String> labels;
 
     public CreateDataSourceInput() {
     }
 
-    public CreateDataSourceInput(String name, DataSourceType type) {
+    public CreateDataSourceInput(String name, DataSourceType type, java.util.List<String> labels) {
         this.name = name;
         this.type = type;
+        this.labels = labels;
     }
 
     public String getName() {
@@ -35,6 +37,13 @@ public class CreateDataSourceInput implements java.io.Serializable {
         this.type = type;
     }
 
+    public java.util.List<String> getLabels() {
+        return labels;
+    }
+    public void setLabels(java.util.List<String> labels) {
+        this.labels = labels;
+    }
+
 
 
     public static CreateDataSourceInput.Builder builder() {
@@ -45,6 +54,7 @@ public class CreateDataSourceInput implements java.io.Serializable {
 
         private String name;
         private DataSourceType type;
+        private java.util.List<String> labels;
 
         public Builder() {
         }
@@ -59,9 +69,14 @@ public class CreateDataSourceInput implements java.io.Serializable {
             return this;
         }
 
+        public Builder setLabels(java.util.List<String> labels) {
+            this.labels = labels;
+            return this;
+        }
+
 
         public CreateDataSourceInput build() {
-            return new CreateDataSourceInput(name, type);
+            return new CreateDataSourceInput(name, type, labels);
         }
 
     }

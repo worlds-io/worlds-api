@@ -12,14 +12,16 @@ public class UpdateDataSourceInput implements java.io.Serializable {
     private String id;
     private org.springframework.graphql.data.ArgumentValue<String> name = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<DataSourceType> type = org.springframework.graphql.data.ArgumentValue.omitted();
+    private java.util.List<String> labels;
 
     public UpdateDataSourceInput() {
     }
 
-    public UpdateDataSourceInput(String id, org.springframework.graphql.data.ArgumentValue<String> name, org.springframework.graphql.data.ArgumentValue<DataSourceType> type) {
+    public UpdateDataSourceInput(String id, org.springframework.graphql.data.ArgumentValue<String> name, org.springframework.graphql.data.ArgumentValue<DataSourceType> type, java.util.List<String> labels) {
         this.id = id;
         this.name = name;
         this.type = type;
+        this.labels = labels;
     }
 
     public String getId() {
@@ -43,6 +45,13 @@ public class UpdateDataSourceInput implements java.io.Serializable {
         this.type = type;
     }
 
+    public java.util.List<String> getLabels() {
+        return labels;
+    }
+    public void setLabels(java.util.List<String> labels) {
+        this.labels = labels;
+    }
+
 
 
     public static UpdateDataSourceInput.Builder builder() {
@@ -54,6 +63,7 @@ public class UpdateDataSourceInput implements java.io.Serializable {
         private String id;
         private org.springframework.graphql.data.ArgumentValue<String> name = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<DataSourceType> type = org.springframework.graphql.data.ArgumentValue.omitted();
+        private java.util.List<String> labels;
 
         public Builder() {
         }
@@ -73,9 +83,14 @@ public class UpdateDataSourceInput implements java.io.Serializable {
             return this;
         }
 
+        public Builder setLabels(java.util.List<String> labels) {
+            this.labels = labels;
+            return this;
+        }
+
 
         public UpdateDataSourceInput build() {
-            return new UpdateDataSourceInput(id, name, type);
+            return new UpdateDataSourceInput(id, name, type, labels);
         }
 
     }
