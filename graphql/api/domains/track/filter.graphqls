@@ -36,6 +36,10 @@ input FilterTrackInput {
     """
     dataSourceType: FilterStringInput
     """
+    If provided, specifies filters that work against the `labels` of the track's [`dataSource`]({{Types.dataSource}}).
+    """
+    dataSourceLabels: FilterStringListInput
+    """
     If provided, a detection activity must pass all filters in this list to match the current filter.
     """
     and: [FilterTrackInput!]
@@ -86,6 +90,10 @@ input FilterTrackMessageInput {
     If provided, specifies filters that work against the `type` of the track's [`dataSource`]({{Types.dataSource}}).
     """
     dataSourceType: FilterStringInput
+    """
+    If provided, specifies filters that work against the `labels` of the track's [`dataSource`]({{Types.dataSource}}).
+    """
+    dataSourceLabels: FilterStringListInput
     """
     Specifies filters that work against the [state]({{Types.messagestate}}) of the track message.
     """
