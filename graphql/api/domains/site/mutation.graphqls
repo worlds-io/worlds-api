@@ -1,0 +1,14 @@
+extend type Mutation {
+    """Creates a new Site."""
+    createSite(
+        """Arguments to create a new site."""
+        site: CreateSiteInput!
+    ): Site
+    """
+    Updates an existing Site.
+    """
+    updateSite(
+        """Arguments to update an existing site."""
+        site: UpdateSiteInput!
+    ): Site
+}

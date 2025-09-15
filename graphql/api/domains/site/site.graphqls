@@ -17,3 +17,29 @@ type Site {
     """The geofences that are associated with this site"""
     geofences: [Geofence!]!
 }
+
+"""
+Input type used to create a new [Site]({{Types.site}.
+"""
+input CreateSiteInput {
+    """The name of the site."""
+    name: String!
+    """The geographic location of the site"""
+    position: GeoJSONPointInput
+    """The geographic shape of the site"""
+    polygon: GeoJSONMultiPolygonInput
+}
+
+"""
+Input type used to update an existing [Site]({{Types.site}.
+"""
+input UpdateSiteInput {
+    """The unique identifier of the site."""
+    id: ID!
+    """The name of the site."""
+    name: String
+    """The geographic location of the site"""
+    position: GeoJSONPointInput
+    """The geographic shape of the site"""
+    polygon: GeoJSONMultiPolygonInput
+}
