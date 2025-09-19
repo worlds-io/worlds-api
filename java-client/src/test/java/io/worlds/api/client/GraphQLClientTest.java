@@ -37,8 +37,8 @@ public class GraphQLClientTest {
         objectMapper.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
 
         String url = System.getenv().getOrDefault("GRAPHQL_URL", "https://api.dev.eus.azure.worlds.io/graphql");
-        tokenId = System.getenv().getOrDefault("GRAPHQL_TOKEN_ID", "b7f8f6cb-cc70-44bb-a2fa-198ac84de047");
-        tokenValue = System.getenv().getOrDefault("GRAPHQL_TOKEN_VALUE", "B1voUznXadgXmFYxMdpb");
+        tokenId = System.getenv().getOrDefault("GRAPHQL_TOKEN_ID", "replace_me");
+        tokenValue = System.getenv().getOrDefault("GRAPHQL_TOKEN_VALUE", "replace_me");
         client = new WorldsGraphQLClient(url, tokenId, tokenValue, objectMapper);
     }
 
