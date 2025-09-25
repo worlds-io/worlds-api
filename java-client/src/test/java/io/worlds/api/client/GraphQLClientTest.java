@@ -86,7 +86,7 @@ public class GraphQLClientTest {
                 System.err.println("Failed to process subscription message: " + jpe.getMessage());
             }
         },
-                                            Event.class,
+        Event.class,
         err -> {
             System.err.println("Subscription error: " + err.getMessage());
         });

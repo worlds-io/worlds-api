@@ -10,6 +10,8 @@ import java.time.Duration;
 import java.util.function.Consumer;
 import javax.net.ssl.SSLException;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.Accessors;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.graphql.client.HttpGraphQlClient;
 import org.springframework.graphql.client.WebSocketGraphQlClient;
@@ -28,6 +30,8 @@ import java.util.Collections;
 
 @RequiredArgsConstructor
 @Slf4j
+@Accessors(fluent = true)
+@Setter
 public class WorldsGraphQLClient {
     protected static final String X_TOKEN_ID = "x-token-id";
     protected static final String X_TOKEN_VALUE = "x-token-value";
@@ -39,6 +43,8 @@ public class WorldsGraphQLClient {
     private final String apiTokenId;
     private final String apiTokenValue;
     private final ObjectMapper objectMapper;
+
+    private boolean disableCertValidation = false;
 
     public HttpGraphQlClient blockingClient() {
         return HttpGraphQlClient.builder(webClient()).build();
@@ -176,9 +182,11 @@ public class WorldsGraphQLClient {
         if (secure()) {
             httpClient.secure(sslContextSpec -> {
                 try {
-                    sslContextSpec.sslContext(SslContextBuilder.forClient()
-                                                               .trustManager(InsecureTrustManagerFactory.INSTANCE)
-                                                               .build());
+                    var sslContextBuilder = SslContextBuilder.forClient();
+                    if (disableCertValidation) {
+                        sslContextBuilder.trustManager(InsecureTrustManagerFactory.INSTANCE);
+                    }
+                    sslContextSpec.sslContext(sslContextBuilder.build());
                 } catch (SSLException e) {
                     throw new RuntimeException(e);
                 }
