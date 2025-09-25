@@ -77,7 +77,7 @@ jobs:
         working-directory: java
 
       - name: Maven (/java) (deploy)
-        if: steps.set-version-vars.outputs.VERSION_IS_RELEASE == 'true' || steps.set-version-vars.outputs.VERSION_IS_PRERELEASE == 'true'
+        # if: steps.set-version-vars.outputs.VERSION_IS_RELEASE == 'true' || steps.set-version-vars.outputs.VERSION_IS_PRERELEASE == 'true'
         run: mvn --batch-mode --no-transfer-progress -Drevision=${{ steps.version.outputs.version }} deploy
         working-directory: java
         env:
@@ -99,7 +99,7 @@ jobs:
         working-directory: java-client
 
       - name: Maven (/java-client) (deploy)
-        if: steps.set-version-vars.outputs.VERSION_IS_RELEASE == 'true' || steps.set-version-vars.outputs.VERSION_IS_PRERELEASE == 'true'
+        # if: steps.set-version-vars.outputs.VERSION_IS_RELEASE == 'true' || steps.set-version-vars.outputs.VERSION_IS_PRERELEASE == 'true'
         run: mvn --batch-mode --no-transfer-progress -Drevision=${{ steps.version.outputs.version }} deploy
         working-directory: java-client
         env:
