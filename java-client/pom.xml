@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.worlds</groupId>
-    <artifactId>java-client</artifactId>
+    <artifactId>worlds-api-java-client</artifactId>
     <name>worlds-api-java-client</name>
     <version>${revision}</version>
     <description>Java client for worlds-api</description>
@@ -102,4 +102,13 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/worlds-io/worlds-api</url>
+        </repository>
+    </distributionManagement>
+
 </project>
