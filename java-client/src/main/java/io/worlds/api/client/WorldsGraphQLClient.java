@@ -62,7 +62,7 @@ public class WorldsGraphQLClient {
     }
 
     public <T> Disposable subscribe(String subscriptionQuery, Consumer<T> onMessage, Class<T> type) {
-        return subscribe(subscriptionQuery, onMessage, type, err -> {throw new RuntimeException(err);}, null);
+        return subscribe(subscriptionQuery, onMessage, type, err -> {throw new RuntimeException("Subscription error", err);}, null);
     }
 
     /**
