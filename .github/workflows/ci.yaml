@@ -71,19 +71,20 @@ jobs:
           distribution: "temurin"
           cache: maven
 
-      - name: Maven (compile)
+      # Model classes (codegen from schema)
+      - name: Maven (/java) (compile)
         run: mvn --batch-mode --no-transfer-progress -Drevision=${{ steps.version.outputs.version }} compile
         working-directory: java
 
-      - name: Maven (deploy)
-        if: steps.set-version-vars.outputs.VERSION_IS_RELEASE == 'true' || steps.set-version-vars.outputs.VERSION_IS_PRERELEASE == 'true'
+      - name: Maven (/java) (deploy)
+        # if: steps.set-version-vars.outputs.VERSION_IS_RELEASE == 'true' || steps.set-version-vars.outputs.VERSION_IS_PRERELEASE == 'true'
         run: mvn --batch-mode --no-transfer-progress -Drevision=${{ steps.version.outputs.version }} deploy
         working-directory: java
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # https://github.com/advanced-security/maven-dependency-submission-action
-      - name: Dependency Submission
+      - name: Dependency Submission (/java)
         if: (github.event_name == 'pull_request' && github.base_ref == github.event.repository.default_branch) || (github.ref_name == github.event.repository.default_branch && github.ref_type == 'branch')
         uses: advanced-security/maven-dependency-submission-action@v4
         with:
@@ -91,3 +92,26 @@ jobs:
           ignore-maven-wrapper: true
           directory: ${{ github.workspace }}/java
         continue-on-error: true
+
+      # Java client
+      - name: Maven (/java-client) (compile)
+        run: mvn --batch-mode --no-transfer-progress -Drevision=${{ steps.version.outputs.version }} compile
+        working-directory: java-client
+
+      - name: Maven (/java-client) (deploy)
+        # if: steps.set-version-vars.outputs.VERSION_IS_RELEASE == 'true' || steps.set-version-vars.outputs.VERSION_IS_PRERELEASE == 'true'
+        run: mvn --batch-mode --no-transfer-progress -Drevision=${{ steps.version.outputs.version }} deploy
+        working-directory: java-client
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # https://github.com/advanced-security/maven-dependency-submission-action
+      - name: Dependency Submission (/java-client)
+        if: (github.event_name == 'pull_request' && github.base_ref == github.event.repository.default_branch) || (github.ref_name == github.event.repository.default_branch && github.ref_type == 'branch')
+        uses: advanced-security/maven-dependency-submission-action@v4
+        with:
+          maven-args: --no-transfer-progress -Drevision=${{ steps.version.outputs.version }} 
+          ignore-maven-wrapper: true
+          directory: ${{ github.workspace }}/java-client
+        continue-on-error: true
+
