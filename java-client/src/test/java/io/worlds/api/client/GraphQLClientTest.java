@@ -1,8 +1,6 @@
 package io.worlds.api.client;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import io.worlds.api.model.Event;
@@ -80,7 +78,7 @@ public class GraphQLClientTest {
         String query = "subscription { eventActivity(filter: {}) { id eventProducer { name } type subType startTime endTime } }";
         List<Event> messages = new ArrayList<>();
 
-        var subscription = client.subscribeWithOkHttp(query, msg -> {
+        var subscription = client.subscribe(query, msg -> {
             try {
                 System.out.println("Received subscription message: " + objectMapper.writeValueAsString(msg));
                 messages.add(msg);
@@ -88,7 +86,7 @@ public class GraphQLClientTest {
                 System.err.println("Failed to process subscription message: " + jpe.getMessage());
             }
         },
-        Event.class,
+                                            Event.class,
         err -> {
             System.err.println("Subscription error: " + err.getMessage());
         });
