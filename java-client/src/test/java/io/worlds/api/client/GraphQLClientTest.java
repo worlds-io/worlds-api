@@ -97,6 +97,6 @@ public class GraphQLClientTest {
             System.err.println("Sleep interrupted: " + e.getMessage());
         }
         Assertions.assertFalse(messages.isEmpty(), "Should receive at least one subscription message");
-        subscription.close();
+        subscription.dispose();
     }
 }
