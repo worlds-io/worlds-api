@@ -1,3 +1,11 @@
+/**
+ * WorldsGraphQLClient provides convenient access to GraphQL APIs over HTTP and WebSocket.
+ * <p>
+ * Supports authentication via custom headers and configurable SSL certificate validation.
+ * <p>
+ * <b>Security Note:</b> The {@code disableCertValidation} flag should only be enabled in development environments.
+ * In production, ensure certificate validation is enabled to prevent MITM attacks.
+ */
 package io.worlds.api.client;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -33,23 +41,44 @@ import java.util.Collections;
 @Accessors(fluent = true)
 @Setter
 public class WorldsGraphQLClient {
+    /** Header name for token ID authentication. */
     protected static final String X_TOKEN_ID = "x-token-id";
+    /** Header name for token value authentication. */
     protected static final String X_TOKEN_VALUE = "x-token-value";
 
+    /** Default timeout for GraphQL operations. */
     private static final Duration DEFAULT_TIMEOUT = Duration.ofSeconds(150);
+    /** Maximum memory for client responses. */
     protected static final int CLIENT_MAX_MEMORY_BYTES = 5 * 1024 * 1024;
 
+    /** Base API URL. */
     private final String apiUrl;
+    /** API token ID for authentication. */
     private final String apiTokenId;
+    /** API token value for authentication. */
     private final String apiTokenValue;
+    /** Jackson ObjectMapper for JSON serialization/deserialization. */
     private final ObjectMapper objectMapper;
 
+    /**
+     * If true, disables SSL certificate validation (insecure; for development only).
+     */
     private boolean disableCertValidation = false;
 
+    /**
+     * Creates a blocking HTTP GraphQL client.
+     *
+     * @return configured HttpGraphQlClient instance
+     */
     public HttpGraphQlClient blockingClient() {
         return HttpGraphQlClient.builder(webClient()).build();
     }
 
+    /**
+     * Creates a WebSocket GraphQL client with authentication headers.
+     *
+     * @return configured WebSocketGraphQlClient instance
+     */
     public WebSocketGraphQlClient webSocketClient() {
         WebSocketGraphQlClient wsClient = WebSocketGraphQlClient
                 .builder(URI.create(socketUrl()), new ReactorNettyWebSocketClient(httpClient()))
@@ -63,30 +92,56 @@ public class WorldsGraphQLClient {
         return wsClient;
     }
 
+    /**
+     * Subscribes to a GraphQL subscription and receives messages as JsonNode.
+     *
+     * @param subscriptionQuery GraphQL subscription query string
+     * @param onMessage         Consumer for received messages
+     * @return Disposable handle for the subscription
+     */
     public Disposable subscribe(String subscriptionQuery, Consumer<JsonNode> onMessage) {
         return subscribe(subscriptionQuery, onMessage, JsonNode.class);
     }
 
+    /**
+     * Subscribes to a GraphQL subscription and receives messages as the specified type.
+     *
+     * @param subscriptionQuery GraphQL subscription query string
+     * @param onMessage         Consumer for received messages
+     * @param type              Class of the message type
+     * @param <T>               Target type for deserialization
+     * @return Disposable handle for the subscription
+     */
     public <T> Disposable subscribe(String subscriptionQuery, Consumer<T> onMessage, Class<T> type) {
         return subscribe(subscriptionQuery, onMessage, type, err -> {throw new RuntimeException("Subscription error", err);}, null);
     }
 
     /**
-     * Generic OkHttp GraphQL subscription with automatic JSON conversion using Jackson.
+     * Subscribes to a GraphQL subscription with custom error handling.
      *
-     * @param subscriptionQuery The GraphQL subscription query string
-     * @param onMessage         Consumer for deserialized messages of type T
+     * @param subscriptionQuery GraphQL subscription query string
+     * @param onMessage         Consumer for received messages
+     * @param type              Class of the message type
      * @param onError           Consumer for errors
-     * @param type              Class of T for deserialization
      * @param <T>               Target type for deserialization
-     *
-     * @return Closeable subscription
+     * @return Disposable handle for the subscription
      */
     public <T> Disposable subscribe(String subscriptionQuery, Consumer<T> onMessage, Class<T> type,
                                     Consumer<Throwable> onError) {
         return subscribe(subscriptionQuery, onMessage, type, onError, null);
     }
 
+    /**
+     * Subscribes to a GraphQL subscription with custom error handling and timeout.
+     *
+     * @param subscriptionQuery GraphQL subscription query string
+     * @param onMessage         Consumer for received messages
+     * @param type              Class of the message type
+     * @param onError           Consumer for errors
+     * @param timeout           Subscription timeout duration (optional)
+     * @param <T>               Target type for deserialization
+     * @return Disposable handle for the subscription
+     */
     public <T> Disposable subscribe(String subscriptionQuery, Consumer<T> onMessage, Class<T> type,
                                     Consumer<Throwable> onError, Duration timeout) {
         WebSocketGraphQlClient wsClient = webSocketClient();
@@ -120,6 +175,11 @@ public class WorldsGraphQLClient {
                        }).subscribe();
     }
 
+    /**
+     * Builds a WebClient for HTTP GraphQL requests with authentication and optional SSL configuration.
+     *
+     * @return configured WebClient instance
+     */
     private WebClient webClient() {
         WebClient.Builder builder = WebClient.builder()
                 .exchangeStrategies(ExchangeStrategies.builder()
@@ -141,10 +201,20 @@ public class WorldsGraphQLClient {
         return builder.build();
     }
 
+    /**
+     * Determines if the API URL is secure (HTTPS).
+     *
+     * @return true if HTTPS, false otherwise
+     */
     private boolean secure() {
         return apiUrl.toLowerCase().startsWith("https");
     }
 
+    /**
+     * Returns the service URL for GraphQL requests.
+     *
+     * @return GraphQL endpoint URL
+     */
     private String svcUrl() {
         String svcUrl = apiUrl;
         if (!(svcUrl.contains("/graphql"))) {
@@ -153,6 +223,11 @@ public class WorldsGraphQLClient {
         return svcUrl;
     }
 
+    /**
+     * Returns the WebSocket URL for GraphQL subscriptions.
+     *
+     * @return WebSocket endpoint URL
+     */
     private String socketUrl() {
         String svcUrl = svcUrl();
         svcUrl = svcUrl.replaceFirst("api", "graphql");
@@ -162,6 +237,12 @@ public class WorldsGraphQLClient {
         return "ws://" + svcUrl;
     }
 
+    /**
+     * Checks if the given Throwable is a fatal HTTP error (502/503).
+     *
+     * @param throwable the error to check
+     * @return true if fatal error, false otherwise
+     */
     private boolean isFatalError(Throwable throwable) {
         if (throwable instanceof WebClientResponseException ex) {
             int statusCode = ex.getStatusCode().value();
@@ -170,6 +251,11 @@ public class WorldsGraphQLClient {
         return false;
     }
 
+    /**
+     * Builds authentication headers for API requests.
+     *
+     * @return HttpHeaders containing authentication information
+     */
     private HttpHeaders authHeaders() {
         HttpHeaders hdrs = new HttpHeaders();
         hdrs.put(X_TOKEN_ID, Collections.singletonList(apiTokenId));
@@ -177,6 +263,11 @@ public class WorldsGraphQLClient {
         return hdrs;
     }
 
+    /**
+     * Builds a Reactor Netty HttpClient with optional SSL certificate validation.
+     *
+     * @return configured HttpClient instance
+     */
     private HttpClient httpClient() {
         HttpClient httpClient = HttpClient.create();
         if (secure()) {
