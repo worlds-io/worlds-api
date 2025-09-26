@@ -20,6 +20,14 @@ input UploadImageInput {
     timestamp: DateTimeOffset
     """The image bytes as a base64 encoded string"""
     data: String!
+    """Optional list of ids for events to associate to the image."""
+    eventIds: [ID!]
+    """Optional list of ids for activity chronicles to associate to the image."""
+    activityChronicleIds: [ID!]
+    """Optional list of ids for event chronicles to associate to the image."""
+    eventChronicleIds: [ID!]
+    """Optional list of ids for summary chronicles to associate to the image."""
+    summaryChronicleIds: [ID!]
 }
 
 """
@@ -38,7 +46,7 @@ input CreateClipInput {
 An Image represents a stored image asset. It contains information about the datasource it belongs to and the URLs that can be used to access the image and its thumbnail.
 """
 type Image {
-    """The unique identifier of the iamge"""
+    """The unique identifier of the image"""
     id: ID!
     """
     When applicable, the unique identifier of the datasource or device that generated this image.
