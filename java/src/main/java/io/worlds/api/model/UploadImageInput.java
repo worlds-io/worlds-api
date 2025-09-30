@@ -13,15 +13,19 @@ public class UploadImageInput implements java.io.Serializable {
     private org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> timestamp = org.springframework.graphql.data.ArgumentValue.omitted();
     @jakarta.validation.constraints.NotNull
     private String data;
+    private java.util.List<String> eventIds;
+    private java.util.List<String> activityChronicleIds;
 
     public UploadImageInput() {
     }
 
-    public UploadImageInput(org.springframework.graphql.data.ArgumentValue<String> dataSourceId, org.springframework.graphql.data.ArgumentValue<String> fileName, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> timestamp, String data) {
+    public UploadImageInput(org.springframework.graphql.data.ArgumentValue<String> dataSourceId, org.springframework.graphql.data.ArgumentValue<String> fileName, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> timestamp, String data, java.util.List<String> eventIds, java.util.List<String> activityChronicleIds) {
         this.dataSourceId = dataSourceId;
         this.fileName = fileName;
         this.timestamp = timestamp;
         this.data = data;
+        this.eventIds = eventIds;
+        this.activityChronicleIds = activityChronicleIds;
     }
 
     public org.springframework.graphql.data.ArgumentValue<String> getDataSourceId() {
@@ -52,6 +56,20 @@ public class UploadImageInput implements java.io.Serializable {
         this.data = data;
     }
 
+    public java.util.List<String> getEventIds() {
+        return eventIds;
+    }
+    public void setEventIds(java.util.List<String> eventIds) {
+        this.eventIds = eventIds;
+    }
+
+    public java.util.List<String> getActivityChronicleIds() {
+        return activityChronicleIds;
+    }
+    public void setActivityChronicleIds(java.util.List<String> activityChronicleIds) {
+        this.activityChronicleIds = activityChronicleIds;
+    }
+
 
 
     public static UploadImageInput.Builder builder() {
@@ -64,6 +82,8 @@ public class UploadImageInput implements java.io.Serializable {
         private org.springframework.graphql.data.ArgumentValue<String> fileName = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> timestamp = org.springframework.graphql.data.ArgumentValue.omitted();
         private String data;
+        private java.util.List<String> eventIds;
+        private java.util.List<String> activityChronicleIds;
 
         public Builder() {
         }
@@ -88,9 +108,19 @@ public class UploadImageInput implements java.io.Serializable {
             return this;
         }
 
+        public Builder setEventIds(java.util.List<String> eventIds) {
+            this.eventIds = eventIds;
+            return this;
+        }
+
+        public Builder setActivityChronicleIds(java.util.List<String> activityChronicleIds) {
+            this.activityChronicleIds = activityChronicleIds;
+            return this;
+        }
+
 
         public UploadImageInput build() {
-            return new UploadImageInput(dataSourceId, fileName, timestamp, data);
+            return new UploadImageInput(dataSourceId, fileName, timestamp, data, eventIds, activityChronicleIds);
         }
 
     }

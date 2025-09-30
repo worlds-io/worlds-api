@@ -28,13 +28,13 @@ public class Image implements java.io.Serializable {
     }
 
     /**
-     * The unique identifier of the iamge
+     * The unique identifier of the image
      */
     public String getId() {
         return id;
     }
     /**
-     * The unique identifier of the iamge
+     * The unique identifier of the image
      */
     public void setId(String id) {
         this.id = id;
@@ -110,7 +110,7 @@ public class Image implements java.io.Serializable {
         }
 
         /**
-         * The unique identifier of the iamge
+         * The unique identifier of the image
          */
         public Builder setId(String id) {
             this.id = id;

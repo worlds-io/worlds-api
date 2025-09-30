@@ -180,8 +180,10 @@ input CreateEventInput {
     metadata: JSON
     """Requests to generate snapshots for this event"""
     snapshots: [CreateSnapshotInput!]
-    """Requests to upload images for this event. `eventIds` will default to this event."""
+    """Requests to upload images for this event."""
     uploads: [UploadImageInput!]
+    """IDs of existing images to associate to this event."""
+    imageIds: [ID!]
     """Requests to associate clips to this event"""
     clips: [CreateClipInput!]
     """
@@ -236,8 +238,16 @@ input UpdateEventInput {
     Therefore, snapshots will only be generated the first time that the `endTime` is specified for this event.
     """
     snapshots: [CreateSnapshotInput!]
-    """Requests to upload images for this event. `eventIds` will default to this event."""
+    """
+    Requests to upload images for this event.
+    """
     uploads: [UploadImageInput!]
+    """
+    IDs of existing images to associate to this event.
+    If this is provided, existing event images not included will be removed from the event,
+    and only `uploads` and `imageIds` from the most update request will be associated with the event.
+    """
+    imageIds: [ID!]
     """Requests to associate clips to this event"""
     clips: [CreateClipInput!]
     """

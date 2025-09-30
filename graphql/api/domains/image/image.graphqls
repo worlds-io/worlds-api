@@ -24,10 +24,6 @@ input UploadImageInput {
     eventIds: [ID!]
     """Optional list of ids for activity chronicles to associate to the image."""
     activityChronicleIds: [ID!]
-    """Optional list of ids for event chronicles to associate to the image."""
-    eventChronicleIds: [ID!]
-    """Optional list of ids for summary chronicles to associate to the image."""
-    summaryChronicleIds: [ID!]
 }
 
 """
