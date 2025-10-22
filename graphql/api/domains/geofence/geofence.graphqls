@@ -104,7 +104,7 @@ type GeofenceIntersectionMessage {
 }
 
 """
-A `GeofenceBounds` object represents the coordinates and boundaries of a [geofence](/references/objects/geofence/). See [About Geofences](/references/objects/geofence/#about-geofences) for more details.
+A `GeofenceBounds` object represents the coordinates and boundaries of a [geofence](/references/objects/geofence/).
 """
 type GeofenceBounds {
     """A GeoJSON polygon that represents the bounds of the geofence."""

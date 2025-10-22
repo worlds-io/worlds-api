@@ -24,7 +24,7 @@ type EventProducer {
 }
 
 """
-This input type is used to create a new custom [`EventProducer`]({{Types.eventProducer}}). See [About EventProducers](/reference/objects/eventProducer/#about-event-producersss) for more details.
+This input type is used to create a new custom [`EventProducer`]({{Types.eventProducer}}).
 """
 input EventProducerInput {
     id: ID
@@ -43,7 +43,7 @@ input EventProducerInput {
 }
 
 """
-This input type is used to update an existing [`EventProducer`]({{Types.eventProducer}}). See [About EventProducers](/reference/objects/eventProducer/#about-event-producersss) for more details.
+This input type is used to update an existing [`EventProducer`]({{Types.eventProducer}}).
 """
 input UpdateEventProducerInput {
     """The unique identifier for the event producer."""
