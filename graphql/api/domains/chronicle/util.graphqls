@@ -1,6 +1,6 @@
 """
 The paginated results of an [`chronicleProducers` query]({{Queries.chronicleproducers}}).
-See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type ChronicleProducerConnection @experimental {
     """The resulting collection of chronicle producer edges."""
@@ -11,7 +11,7 @@ type ChronicleProducerConnection @experimental {
 
 """
 The pairing of an [ChronicleProducer]({{Types.chronicleProducer}}) with its query cursor.
-See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type ChronicleProducerEdge @experimental {
     """

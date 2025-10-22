@@ -1,6 +1,6 @@
 """
 An `EventProducerConnection` is the paginated results of an [`eventProducers` query]({{Queries.eventproducers}}).
-See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type EventProducerConnection {
     """Pagination information for the resulting edges."""
@@ -11,7 +11,7 @@ type EventProducerConnection {
 
 """
 An event producer edge is the pairing of an [EventProducer]({{Types.eventProducer}}) with its query cursor.
-See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type EventProducerEdge {
     """
@@ -26,7 +26,7 @@ type EventProducerEdge {
 
 """
 An `EventConnection` is the paginated results of an [`events` query]({{Queries.events}}).
-See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type EventConnection {
     """Pagination information for the resulting edges."""
@@ -37,7 +37,7 @@ type EventConnection {
 
 """
 An event edge is the pairing of an [Event]({{Types.event}}) with its query cursor.
-See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type EventEdge {
     """Information about a particular [Event]({{Types.event}})."""

@@ -1,6 +1,6 @@
 """
 An `GeofenceConnection` is the paginated results of a [`geofences` query]({{Queries.geofences}}).
-See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type GeofenceConnection {
     """Pagination information for the resulting edges."""
@@ -11,7 +11,7 @@ type GeofenceConnection {
 
 """
 An geofence edge is the pairing of a [Geofence]({{Types.geofence}}) with its query cursor.
-See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type GeofenceEdge {
     """
