@@ -1,10 +1,10 @@
 extend type Mutation {
-    """Creates a new [Device]({{Types.device}})."""
+    """Creates a new Device."""
     createDevice(
         """Arguments to create a new device."""
         device: CreateDeviceInput!
     ): Device
-    """Updates an existing [Device]({{Types.device}})."""
+    """Updates an existing Device."""
     updateDevice(
         """Arguments to update an existing device."""
         device: UpdateDeviceInput!

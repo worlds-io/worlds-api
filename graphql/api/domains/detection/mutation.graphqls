@@ -1,10 +1,10 @@
 extend type Mutation {
-    """Creates a new [Detection]({{Types.detection}})."""
+    """Creates a new Detection."""
     createDetection(
         """Arguments to create a new detection."""
         detection: CreateDetectionInput!
     ): Detection
-    """Creates multiple new [Detection]({{Types.detection}})."""
+    """Creates multiple new Detections."""
     createDetections(
         """Arguments to create a list of detections."""
         detections: [CreateDetectionInput!]!
