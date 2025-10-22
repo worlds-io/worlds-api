@@ -1,5 +1,5 @@
 """
-A point of interest is a designated area within a Site, used to subdivide a location into meaningful sections. Each POI belongs to a single [Site]({{Types.site}}) and can contain multiple [Devices](/reference/object/device/).
+A point of interest is a designated area within a Site, used to subdivide a location into meaningful sections. Each POI belongs to a single [Site]({{Types.site}}) and can contain multiple [Devices]({{Types.device}}).
 """
 type PointOfInterest {
     """The unique identifier of the point of interest."""

@@ -17,7 +17,7 @@ enum DataSourceType {
 }
 
 """
-A data source is responsible for producing the videos, images and other sensor data that may eventually produce detections and tracks. For more details on detections, see [About Detections](/reference/objects/detection/#about-detections)
+A data source is responsible for producing the videos, images and other sensor data that may eventually produce detections and tracks. For more details on detections, see [About Detections]({{Types.detection}})
 """
 type DataSource {
     """The unique identifier of the data source."""

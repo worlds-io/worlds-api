@@ -82,11 +82,11 @@ input UpdateSensorInput {
 }
 
 """
-This input type is used to create new [`Measurement`]({{Types.measurement}}) for a sensor. See [About Sensors](/reference/objects/sensors/#about-sensors) for more details.
+This input type is used to create new [`Measurement`]({{Types.measurement}}) for a sensor. See [`Sensor`]({{Types.sensor}}) for more details.
 """
 input MeasurementInput {
     """
-    The unique identifier of the [Sensor](/refernece/objects/sensor/) that will own the measurement.
+    The unique identifier of the [Sensor]({{Types.sensor}}) that will own the measurement.
     """
     sensorId: ID!
     """The time at which the measurement was recorded."""
