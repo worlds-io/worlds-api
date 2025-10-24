@@ -1,5 +1,5 @@
 """
-Indicates the type of data that is outputted by a [`sensor`]({{Types.sensor}}).
+Indicates the type of data that is outputted by a [`sensor`]({{Types.Sensor}}).
 """
 enum SensorType {
     """Numeric data types, i.e integers, floats, and doubles."""
@@ -40,7 +40,7 @@ type Measurement {
 }
 
 """
-This input type is used to create a new [`Sensor`]({{Types.sensor}}).
+This input type is used to create a new [`Sensor`]({{Types.Sensor}}).
 """
 input SensorInput {
     """The name of the sensor."""
@@ -60,7 +60,7 @@ input SensorInput {
 }
 
 """
-This input type is used update an existing [`Sensor`]({{Types.sensor}}).
+This input type is used update an existing [`Sensor`]({{Types.Sensor}}).
 """
 input UpdateSensorInput {
     """The unique identifier of the sensor."""
@@ -82,11 +82,11 @@ input UpdateSensorInput {
 }
 
 """
-This input type is used to create new [`Measurement`]({{Types.measurement}}) for a sensor. See [`Sensor`]({{Types.sensor}}) for more details.
+This input type is used to create new [`Measurement`]({{Types.Measurement}}) for a sensor. See [`Sensor`]({{Types.Sensor}}) for more details.
 """
 input MeasurementInput {
     """
-    The unique identifier of the [Sensor]({{Types.sensor}}) that will own the measurement.
+    The unique identifier of the [Sensor]({{Types.Sensor}}) that will own the measurement.
     """
     sensorId: ID!
     """The time at which the measurement was recorded."""

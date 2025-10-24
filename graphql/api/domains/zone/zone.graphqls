@@ -28,15 +28,15 @@ type ZoneEvent {
     track: Track!
     """
     [`zoneEvents`]({{Queries.zoneevents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneintersections}}),
-    and `tag` will not be present on [`ZoneIntersection`]({{Types.zoneintersection}}).
-    Use [track's tag]({{Types.track}}) instead.
+    and `tag` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
+    Use [track's tag]({{Types.Track}}) instead.
 
     The class label of the object that triggered the zone event, i.e person, car, truck, etc.
     """
     tag: String! @deprecated(reason: "tag is deprecated and can instead be retrieved from the track.")
     """
     [`zoneEvents`]({{Queries.zoneevents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneintersections}}),
-    and `type` will not be present on [`ZoneIntersection`]({{Types.zoneintersection}}).
+    and `type` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
 
     The type of zone event, i.e ingress (an object entered the zone), dwell (an object remained in the zone), and egress.
     (an object exited the zone)
@@ -48,7 +48,7 @@ type ZoneEvent {
     endTime: DateTimeOffset
     """
     [`zoneEvents`]({{Queries.zoneevents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneintersections}}),
-    and `polygon` will not be present on [`ZoneIntersection`]({{Types.zoneintersection}}).
+    and `polygon` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
 
     The two-dimensional shape of the detection that triggered the event.
     """
@@ -74,7 +74,7 @@ type ZoneIntersectionMessage {
     """The zone intersection."""
     message: ZoneIntersection!
     """
-    The state of the intersection message. Within the message, the [`endTime`]({{Types.zoneintersection}}) will only be present on an [`END`]({{Types.messagestate}}) event.
+    The state of the intersection message. Within the message, the [`endTime`]({{Types.ZoneIntersection}}) will only be present on an [`END`]({{Types.MessageState}}) event.
     """
     state: MessageState!
 }

@@ -3,23 +3,23 @@ Indicates the field used for sorting an [`events` query]({{Queries.eventChronicl
 """
 enum EventChronicleSortField @experimental {
     """
-    Sort the resulting list by the [`eventChronicle`]({{Types.eventChronicle}})'s unique identifier.
+    Sort the resulting list by the [`eventChronicle`]({{Types.EventChronicle}})'s unique identifier.
     """
     ID
     """
-    Sort the resulting list by the [`eventChronicle`]({{Types.eventChronicle}})'s timestamp.
+    Sort the resulting list by the [`eventChronicle`]({{Types.EventChronicle}})'s timestamp.
     """
     TIMESTAMP
     """
-    Sort the resulting list by the [`eventChronicle`]({{Types.eventChronicle}})'s name.
+    Sort the resulting list by the [`eventChronicle`]({{Types.EventChronicle}})'s name.
     """
     NAME
     """
-    Sort the resulting list by the [`eventChronicle`]({{Types.eventChronicle}})'s priority.
+    Sort the resulting list by the [`eventChronicle`]({{Types.EventChronicle}})'s priority.
     """
     PRIORITY
     """
-    Sort the resulting list by the [`eventChronicle`]({{Types.eventChronicle}})'s status.
+    Sort the resulting list by the [`eventChronicle`]({{Types.EventChronicle}})'s status.
     """
     STATUS
 }

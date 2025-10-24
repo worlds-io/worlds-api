@@ -3,11 +3,11 @@ Indicates the field used for sorting an [`eventProducers` query]({{Queries.event
 """
 enum EventProducersSortField {
     """
-    Sort the resulting list by the [`EventProducer`](({{Types.eventProducer}}))'s unique identifier.
+    Sort the resulting list by the [`EventProducer`](({{Types.EventProducer}}))'s unique identifier.
     """
     ID
     """
-    Sort the resulting list by the [`EventProducer`](({{Types.eventProducer}}))'s name.
+    Sort the resulting list by the [`EventProducer`](({{Types.EventProducer}}))'s name.
     """
     EVENT_PRODUCER_NAME
 }
@@ -17,11 +17,11 @@ Indicates the field used for sorting an [`events` query]({{Queries.events}}).
 """
 enum EventsSortField {
     """
-    Sort the resulting list by the [`Event`](({{Types.event}}))'s unique identifier.
+    Sort the resulting list by the [`Event`](({{Types.Event}}))'s unique identifier.
     """
     ID
     """
-    Sort the resulting list by the [`Event`](({{Types.event}}))'s start time.
+    Sort the resulting list by the [`Event`](({{Types.Event}}))'s start time.
     """
     START_TIME
 }

@@ -10,11 +10,11 @@ type ActivityChronicleConnection @experimental {
 }
 
 """
-An activity edge is the pairing of an [Activity]({{Types.activity}}) with its query cursor.
+An activity edge is the pairing of an [Activity]({{Types.Activity}}) with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type ActivityChronicleEdge @experimental {
-    """Information about a particular [Activity]({{Types.activity}})."""
+    """Information about a particular [Activity]({{Types.Activity}})."""
     node: ActivityChronicle!
     """
     The cursor to use with the [Query `activities` field]({{Queries.activityChronicles}}) `after` argument.

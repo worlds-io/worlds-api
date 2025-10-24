@@ -10,11 +10,11 @@ type EventChronicleConnection @experimental {
 }
 
 """
-An event edge is the pairing of an [Event]({{Types.event}}) with its query cursor.
+An event edge is the pairing of an [Event]({{Types.Event}}) with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type EventChronicleEdge @experimental {
-    """Information about a particular [Event]({{Types.event}})."""
+    """Information about a particular [Event]({{Types.Event}})."""
     node: EventChronicle!
     """
     The cursor to use with the [Query `events` field]({{Queries.eventChronicles}}) `after` argument.

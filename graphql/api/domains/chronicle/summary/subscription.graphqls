@@ -1,50 +1,50 @@
 """
-FilterSummaryChronicleInput filters [SummaryChronicles]({{Types.summaryChronicle}}) based on criteria described below.
+FilterSummaryChronicleInput filters [SummaryChronicles]({{Types.SummaryChronicle}}) based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
 """
 input FilterSummaryChronicleInputSubscription @experimental {
     """
-    If provided, specifies filters that work against the `id` of the [`SummaryChronicle`]({{Types.summarychronicle}}).
+    If provided, specifies filters that work against the `id` of the [`SummaryChronicle`]({{Types.SummaryChronicle}}).
     """
     id: FilterIDInput
     """
-    If provided, specifies filters that work against the `name` of the [`SummaryChronicle`]({{Types.summarychronicle}}).
+    If provided, specifies filters that work against the `name` of the [`SummaryChronicle`]({{Types.SummaryChronicle}}).
     """
     name: FilterStringInput
     """
-    If provided, specifies filters that work against the `chronicleProducerId` of the [`SummaryChronicle`]({{Types.summarychronicle}}).
+    If provided, specifies filters that work against the `chronicleProducerId` of the [`SummaryChronicle`]({{Types.SummaryChronicle}}).
     """
     chronicleProducerId: FilterIDInput
     """
-    If provided, specifies filters that work against the `startTime` of the [`SummaryChronicle`]({{Types.summarychronicle}}).
+    If provided, specifies filters that work against the `startTime` of the [`SummaryChronicle`]({{Types.SummaryChronicle}}).
     """
     startTime: FilterDateTimeOffsetInput
     """
-    If provided, specifies filters that work against the `endTime` of the [`SummaryChronicle`]({{Types.summarychronicle}}).
+    If provided, specifies filters that work against the `endTime` of the [`SummaryChronicle`]({{Types.SummaryChronicle}}).
     """
     endTime: FilterDateTimeOffsetInput
     """
-    If provided, specifies filters that work against the `timezone` of the [`SummaryChronicle`]({{Types.summarychronicle}}).
+    If provided, specifies filters that work against the `timezone` of the [`SummaryChronicle`]({{Types.SummaryChronicle}}).
     """
     timezone: FilterStringInput
     """
-    If provided, specifies filters that work against the `priority` of the [`SummaryChronicle`]({{Types.summarychronicle}}).
+    If provided, specifies filters that work against the `priority` of the [`SummaryChronicle`]({{Types.SummaryChronicle}}).
     """
     priority: FilterStringInput
     """
-    If provided, specifies filters that work against the `status` of the [`SummaryChronicle`]({{Types.summarychronicle}}).
+    If provided, specifies filters that work against the `status` of the [`SummaryChronicle`]({{Types.SummaryChronicle}}).
     """
     status: FilterStringInput
     """
-    If provided, specifies filters that work against the `validation` of the [`SummaryChronicle`]({{Types.summarychronicle}}).
+    If provided, specifies filters that work against the `validation` of the [`SummaryChronicle`]({{Types.SummaryChronicle}}).
     """
     validation: FilterStringInput
     """
-    If provided, specifies filters that work against the `labels` of the [`SummaryChronicle`]({{Types.summarychronicle}}).
+    If provided, specifies filters that work against the `labels` of the [`SummaryChronicle`]({{Types.SummaryChronicle}}).
     """
     labels: FilterStringListInput
     """
-    If provided, specifies filters that work against the `locations` of the [`SummaryChronicle`]({{Types.summarychronicle}}).
+    If provided, specifies filters that work against the `locations` of the [`SummaryChronicle`]({{Types.SummaryChronicle}}).
     """
     locations: FilterStringListInput
     """
@@ -63,7 +63,7 @@ input FilterSummaryChronicleInputSubscription @experimental {
 
 extend type Subscription {
     """
-    Subscribes to changes in any [`Event`]({{Types.event}}) based on the given filter.
+    Subscribes to changes in any [`Event`]({{Types.Event}}) based on the given filter.
     """
     summaryChronicles(
         """

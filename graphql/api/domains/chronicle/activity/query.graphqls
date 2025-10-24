@@ -3,27 +3,27 @@ Indicates the field used for sorting an [`activities` query]({{Queries.activityC
 """
 enum ActivityChronicleSortField @experimental {
     """
-    Sort the resulting list by the [`activityChronicle`]({{Types.activityChronicle}})'s unique identifier.
+    Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s unique identifier.
     """
     ID
     """
-    Sort the resulting list by the [`activityChronicle`]({{Types.activityChronicle}})'s start time.
+    Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s start time.
     """
     START_TIME
     """
-    Sort the resulting list by the [`activityChronicle`]({{Types.activityChronicle}})'s end time.
+    Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s end time.
     """
     END_TIME
     """
-    Sort the resulting list by the [`activityChronicle`]({{Types.activityChronicle}})'s name.
+    Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s name.
     """
     NAME
     """
-    Sort the resulting list by the [`activityChronicle`]({{Types.activityChronicle}})'s priority.
+    Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s priority.
     """
     PRIORITY
     """
-    Sort the resulting list by the [`activityChronicle`]({{Types.activityChronicle}})'s status.
+    Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s status.
     """
     STATUS
 }

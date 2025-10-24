@@ -10,12 +10,12 @@ type DataSourceConnection {
 }
 
 """
-A data source edge is the pairing of a [Data Source]({{Types.datasource}}) with its query cursor.
+A data source edge is the pairing of a [Data Source]({{Types.DataSource}}) with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type DataSourceEdge {
     """
-    Information about a particular [Data Source]({{Types.datasource}}).
+    Information about a particular [Data Source]({{Types.DataSource}}).
     """
     node: DataSource
     """

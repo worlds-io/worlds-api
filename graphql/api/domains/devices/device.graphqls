@@ -1,5 +1,5 @@
 """
-A device represents a camera: a source of videos and images. These videos and images may then be processed to produce detections and tracks or to train models. For more details on detections, see [About Detections]({{Types.detection}}).
+A device represents a camera: a source of videos and images. These videos and images may then be processed to produce detections and tracks or to train models. For more details on detections, see [About Detections]({{Types.Detection}}).
 """
 type Device {
     """The unique identifier of the device."""
@@ -69,7 +69,7 @@ type DeviceCalibrationMarker {
 }
 
 """
-This input type is used to create a new [`Device`]({{Types.device}}).
+This input type is used to create a new [`Device`]({{Types.Device}}).
 """
 input CreateDeviceInput {
     """The unique identifier for the site that this device belongs to."""
@@ -89,7 +89,7 @@ input CreateDeviceInput {
 }
 
 """
-This input type is used to update an existing [`Device`]({{Types.device}}).
+This input type is used to update an existing [`Device`]({{Types.Device}}).
 """
 input UpdateDeviceInput {
     """The unique identifier for the event."""

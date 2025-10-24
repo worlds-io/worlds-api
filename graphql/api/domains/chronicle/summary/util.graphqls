@@ -10,11 +10,11 @@ type SummaryChronicleConnection @experimental {
 }
 
 """
-An summary edge is the pairing of an [Summary]({{Types.summary}}) with its query cursor.
+An summary edge is the pairing of an [Summary]({{Types.Summary}}) with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type SummaryChronicleEdge @experimental {
-    """Information about a particular [Summary]({{Types.summary}})."""
+    """Information about a particular [Summary]({{Types.Summary}})."""
     node: SummaryChronicle!
     """
     The cursor to use with the [Query `summaries` field]({{Queries.summaryChronicles}}) `after` argument.

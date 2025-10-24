@@ -7,7 +7,7 @@ type ZoneEventConnection {
 
 type ZoneEventEdge {
     """
-    Information about a particular [ZoneEvent]({{Types.zoneevent}}).
+    Information about a particular [ZoneEvent]({{Types.ZoneEvent}}).
     """
     node: ZoneEvent
     """
@@ -25,7 +25,7 @@ type ZoneIntersectionConnection {
 
 type ZoneIntersectionEdge {
     """
-    Information about a particular [ZoneIntersection]({{Types.zoneintersection}}).
+    Information about a particular [ZoneIntersection]({{Types.ZoneIntersection}}).
     """
     node: ZoneIntersection
     """
@@ -42,7 +42,7 @@ type ZoneConnection {
 }
 
 type ZoneEdge {
-    """Information about a particular [Zone]({{Types.zone}})."""
+    """Information about a particular [Zone]({{Types.Zone}})."""
     node: Zone
     """
     The cursor to use with the [Query `zones` field]({{Queries.zones}}) `after` argument.

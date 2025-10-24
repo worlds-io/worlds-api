@@ -3,11 +3,11 @@ Indicates the field used for sorting a [Detections query]({{Queries.detections}}
 """
 enum DetectionsSortField {
     """
-    Sort the resulting list by [detection time]({{Types.detection}}).
+    Sort the resulting list by [detection time]({{Types.Detection}}).
     """
     DETECTION_TIME
     """
-    Sort the resulting list by the corresponding Track's [unique identifier.]({{Types.detection}}).
+    Sort the resulting list by the corresponding Track's [unique identifier.]({{Types.Detection}}).
     """
     GLOBAL_TRACK_ID
 }

@@ -10,12 +10,12 @@ type EventProducerConnection {
 }
 
 """
-An event producer edge is the pairing of an [EventProducer]({{Types.eventProducer}}) with its query cursor.
+An event producer edge is the pairing of an [EventProducer]({{Types.EventProducer}}) with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type EventProducerEdge {
     """
-    Information about a particular [EventProducer]({{Types.eventproducer}}).
+    Information about a particular [EventProducer]({{Types.EventProducer}}).
     """
     node: EventProducer
     """
@@ -36,11 +36,11 @@ type EventConnection {
 }
 
 """
-An event edge is the pairing of an [Event]({{Types.event}}) with its query cursor.
+An event edge is the pairing of an [Event]({{Types.Event}}) with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type EventEdge {
-    """Information about a particular [Event]({{Types.event}})."""
+    """Information about a particular [Event]({{Types.Event}})."""
     node: Event
     """
     The cursor to use with the [Query `events` field]({{Queries.events}}) `after` argument.

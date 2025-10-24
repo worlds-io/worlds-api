@@ -1,5 +1,5 @@
 """
-A site represents a business location, such as an office building, a facility or a campus. Sites can be used to logically and geospatially group various objects and events that share a physical space, such as [Devices]({{Types.devices}}), [Geofences]({{Types.geofences}}).
+A site represents a business location, such as an office building, a facility or a campus. Sites can be used to logically and geospatially group various objects and events that share a physical space, such as [Devices]({{Types.Devices}}), [Geofences]({{Types.Geofences}}).
 """
 type Site {
     """The unique identifier of the site."""
@@ -19,7 +19,7 @@ type Site {
 }
 
 """
-Input type used to create a new [Site]({{Types.site}.
+Input type used to create a new [Site]({{Types.Site}.
 """
 input CreateSiteInput {
     """The name of the site."""
@@ -31,7 +31,7 @@ input CreateSiteInput {
 }
 
 """
-Input type used to update an existing [Site]({{Types.site}.
+Input type used to update an existing [Site]({{Types.Site}.
 """
 input UpdateSiteInput {
     """The unique identifier of the site."""

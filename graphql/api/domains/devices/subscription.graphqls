@@ -1,6 +1,6 @@
 extend type Subscription {
     """
-    Subscribes to changes in any [`Device`]({{Types.device}}) based on the given filter.
+    Subscribes to changes in any [`Device`]({{Types.Device}}) based on the given filter.
     """
     devices(
         """

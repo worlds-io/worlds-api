@@ -4,15 +4,15 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterGeofenceInput {
     """
-    If provided, specifies filters that work against the [unique id]({{Types.geofence}}) of the geofence.
+    If provided, specifies filters that work against the [unique id]({{Types.Geofence}}) of the geofence.
     """
     id: FilterIDInput
     """
-    If provided, specifies filters that work against the [name]({{Types.geofence}}) of the geofence.
+    If provided, specifies filters that work against the [name]({{Types.Geofence}}) of the geofence.
     """
     name: FilterStringInput
     """
-    If provided, specifies filters that work against the [active]({{Types.geofence}}) state of the geofence.
+    If provided, specifies filters that work against the [active]({{Types.Geofence}}) state of the geofence.
     """
     active: FilterBooleanInput
     """
@@ -35,11 +35,11 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterGeofenceEventInput {
     """
-    If provided, specifies filters that work against the [unique id]({{Types.geofence}}) of a geofence.
+    If provided, specifies filters that work against the [unique id]({{Types.Geofence}}) of a geofence.
     """
     geofenceId: FilterIDInput
     """
-    If provided, specifies filters that work against the [timestamp]({{Types.geofenceevent}}) associated with the geofence event.
+    If provided, specifies filters that work against the [timestamp]({{Types.GeofenceEvent}}) associated with the geofence event.
     """
     time: FilterDateTimeOffsetInput!
     """
@@ -62,11 +62,11 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterGeofenceIntersectionInput {
     """
-    If provided, specifies filters that work against the [unique id]({{Types.geofence}}) of a geofence.
+    If provided, specifies filters that work against the [unique id]({{Types.Geofence}}) of a geofence.
     """
     geofenceId: FilterIDInput
     """
-    Specifies filters that work against the [startTime]({{Types.geofenceintersection}}) associated with the geofence intersection.
+    Specifies filters that work against the [startTime]({{Types.GeofenceIntersection}}) associated with the geofence intersection.
     """
     time: FilterDateTimeOffsetInput!
     """
@@ -89,19 +89,19 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterGeofenceIntersectionMessageInput {
     """
-    If provided, specifies filters that work against the [unique id]({{Types.geofenceintersection}}) of the geofence collided with.
+    If provided, specifies filters that work against the [unique id]({{Types.GeofenceIntersection}}) of the geofence collided with.
     """
     geofenceId: FilterIDInput
     """
-    If provided, specifies case-insensitive filters that work against the [tag]({{Types.track}}) associated with the geofence intersection's [track]({{Types.geofenceintersection}}).
+    If provided, specifies case-insensitive filters that work against the [tag]({{Types.Track}}) associated with the geofence intersection's [track]({{Types.GeofenceIntersection}}).
     """
     tag: FilterStringInput
     """
-    Specifies filters that work against the [dataSource]({{Types.track}}) associated with the geofence intersection's [track]({{Types.geofenceintersection}}).
+    Specifies filters that work against the [dataSource]({{Types.Track}}) associated with the geofence intersection's [track]({{Types.GeofenceIntersection}}).
     """
     dataSourceId: FilterIDInput
     """
-    Specifies filters that work against the [state]({{Types.messagestate}}) of the geofence intersection message.
+    Specifies filters that work against the [state]({{Types.MessageState}}) of the geofence intersection message.
     """
     state: FilterMessageStateInput
     """

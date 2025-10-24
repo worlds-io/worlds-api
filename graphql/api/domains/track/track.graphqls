@@ -46,7 +46,7 @@ type TrackProperty {
 }
 
 """
-This type is used to create a new [`Detection`]({{Types.detection}}) when [creating]({{Types.createtrackinput}}) or [updating]({{Types.updatetrackinput}}) a [`Track`]({{Types.track}})
+This type is used to create a new [`Detection`]({{Types.Detection}}) when [creating]({{Types.CreateTrackInput}}) or [updating]({{Types.UpdateTrackInput}}) a [`Track`]({{Types.Track}})
 """
 input TrackDetectionInput {
     """The time at which the detection occurred."""
@@ -84,7 +84,7 @@ input TrackPropertyInput {
 }
 
 """
-This input type is used to create a new [`Track`]({{Types.track}}).
+This input type is used to create a new [`Track`]({{Types.Track}}).
 """
 input CreateTrackInput {
     """
@@ -92,7 +92,7 @@ input CreateTrackInput {
     """
     id: ID
     """
-    The unique identifier of the [`data source`]({{Types.datasource}}) that captured the Track.
+    The unique identifier of the [`data source`]({{Types.DataSource}}) that captured the Track.
     """
     dataSourceId: ID!
     """The class label of the tracked object, i.e person, car, truck, etc."""
@@ -114,7 +114,7 @@ input CreateTrackInput {
 }
 
 """
-This input type is used to update an existing [`Track`]({{Types.track}}).
+This input type is used to update an existing [`Track`]({{Types.Track}}).
 """
 input UpdateTrackInput {
     """The unique identifier of the Track."""

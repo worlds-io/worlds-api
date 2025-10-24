@@ -1,14 +1,14 @@
 """
-FilterSiteInput filters [sites]({{Types.site}}) based on criteria described below.
+FilterSiteInput filters [sites]({{Types.Site}}) based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
 """
 input FilterSiteInput {
     """
-    If provided, specifies filters that work against the [Site's unique id]({{Types.site}}).
+    If provided, specifies filters that work against the [Site's unique id]({{Types.Site}}).
     """
     id: FilterIDInput
     """
-    If provided, specifies filters that work against the [Site's name]({{Types.site}}).
+    If provided, specifies filters that work against the [Site's name]({{Types.Site}}).
     """
     name: FilterStringInput
     """

@@ -10,12 +10,12 @@ type GeofenceConnection {
 }
 
 """
-An geofence edge is the pairing of a [Geofence]({{Types.geofence}}) with its query cursor.
+An geofence edge is the pairing of a [Geofence]({{Types.Geofence}}) with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type GeofenceEdge {
     """
-    Information about a particular [Geofence]({{Types.geofence}}).
+    Information about a particular [Geofence]({{Types.Geofence}}).
     """
     node: Geofence
     """
@@ -33,7 +33,7 @@ type GeofenceEventConnection {
 
 type GeofenceEventEdge {
     """
-    Information about a particular [GeofenceEvent]({{Types.geofenceevent}}).
+    Information about a particular [GeofenceEvent]({{Types.GeofenceEvent}}).
     """
     node: GeofenceEvent
     """
@@ -51,7 +51,7 @@ type GeofenceIntersectionConnection {
 
 type GeofenceIntersectionEdge {
     """
-    Information about a particular [GeofenceIntersection]({{Types.geofenceintersection}}).
+    Information about a particular [GeofenceIntersection]({{Types.GeofenceIntersection}}).
     """
     node: GeofenceIntersection
     """

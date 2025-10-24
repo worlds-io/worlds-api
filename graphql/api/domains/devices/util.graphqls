@@ -10,11 +10,11 @@ type DeviceConnection {
 }
 
 """
-A device edge is the pairing of a [Device]({{Types.device}}) with its query cursor.
+A device edge is the pairing of a [Device]({{Types.Device}}) with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type DeviceEdge {
-    """Information about a particular [Device]({{Types.device}})."""
+    """Information about a particular [Device]({{Types.Device}})."""
     node: Device
     """
     The cursor to use with the [Query `devices` field]({{Queries.devices}}) `after` argument.

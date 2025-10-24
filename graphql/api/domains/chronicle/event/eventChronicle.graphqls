@@ -35,7 +35,7 @@ type EventChronicle @experimental {
 }
 
 """
-This input type is used to create a new [`EventChronicle`]({{Types.eventchronicle}}).
+This input type is used to create a new [`EventChronicle`]({{Types.EventChronicle}}).
 """
 input CreateEventChronicleInput @experimental {
     """The name of the event"""
@@ -65,7 +65,7 @@ input CreateEventChronicleInput @experimental {
 }
 
 """
-This input type is used to update an existing [`EventChronicle`]({{Types.eventchronicle}}).
+This input type is used to update an existing [`EventChronicle`]({{Types.EventChronicle}}).
 """
 input UpdateEventChronicleInput @experimental {
     """The unique identifier for the event."""
