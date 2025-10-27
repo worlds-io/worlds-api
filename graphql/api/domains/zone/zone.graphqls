@@ -27,7 +27,7 @@ type ZoneEvent {
     """The track associated with the object that triggered the zone event."""
     track: Track!
     """
-    [`zoneEvents`]({{Queries.zoneevents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneintersections}}),
+    [`zoneEvents`]({{Queries.zoneEvents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneIntersections}}),
     and `tag` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
     Use [track's tag]({{Types.Track}}) instead.
 
@@ -35,7 +35,7 @@ type ZoneEvent {
     """
     tag: String! @deprecated(reason: "tag is deprecated and can instead be retrieved from the track.")
     """
-    [`zoneEvents`]({{Queries.zoneevents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneintersections}}),
+    [`zoneEvents`]({{Queries.zoneEvents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneIntersections}}),
     and `type` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
 
     The type of zone event, i.e ingress (an object entered the zone), dwell (an object remained in the zone), and egress.
@@ -47,7 +47,7 @@ type ZoneEvent {
     """The time at which the event ended."""
     endTime: DateTimeOffset
     """
-    [`zoneEvents`]({{Queries.zoneevents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneintersections}}),
+    [`zoneEvents`]({{Queries.zoneEvents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneIntersections}}),
     and `polygon` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
 
     The two-dimensional shape of the detection that triggered the event.

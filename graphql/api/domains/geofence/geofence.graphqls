@@ -34,7 +34,7 @@ type GeofenceEvent {
     """The track indicated by the event."""
     track: Track!
     """
-    [`geofenceEvents`]({{Queries.zoneintersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceintersections}}),
+    [`geofenceEvents`]({{Queries.geofenceIntersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceIntersections}}),
     and `tag` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
     Use [track's tag]({{Types.Track}}) instead.
 
@@ -43,8 +43,8 @@ type GeofenceEvent {
     """
     tag: String! @deprecated(reason: "tag is deprecated and can instead be retrieved from the track.")
     """
-    [`geofenceEvents`]({{Queries.zoneintersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceintersections}}),
-    and `type` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).\
+    [`geofenceEvents`]({{Queries.geofenceIntersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceIntersections}}),
+    and `type` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
 
     The type of geofence event, i.e ingress (an object entered the geofence), dwell
     (an object remained in the geofence), and egress. (an object exited the
@@ -52,7 +52,7 @@ type GeofenceEvent {
     """
     type: ActivityType! @deprecated(reason: "geofenceEvent is deprecated in favor of geofenceIntersection, which does not use type.")
     """
-    [`geofenceEvents`]({{Queries.zoneintersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceintersections}}),
+    [`geofenceEvents`]({{Queries.geofenceIntersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceIntersections}}),
     and `position` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
 
     The GeoJSON point for the position of the track at the time of the geofence
@@ -60,7 +60,7 @@ type GeofenceEvent {
     """
     position: GeoJSONPoint! @deprecated(reason: "geofenceEvent is deprecated in favor of geofenceIntersection, which does not use position.")
     """
-    [`geofenceEvents`]({{Queries.zoneintersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceintersections}}),
+    [`geofenceEvents`]({{Queries.geofenceIntersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceIntersections}}),
     and `timestamp` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
     Use [`startTime`]({{Types.GeofenceIntersection}}) and [`endTime`]({{Types.GeofenceIntersection}}) instead.
 
@@ -68,7 +68,7 @@ type GeofenceEvent {
     """
     timestamp: DateTimeOffset! @deprecated(reason: "geofenceEvent is deprecated in favor of geofenceIntersection, which does not use type, using startTime and endTime instead.")
     """
-    [`geofenceEvents`]({{Queries.zoneintersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceintersections}}),
+    [`geofenceEvents`]({{Queries.geofenceIntersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceIntersections}}),
     and `metadata` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
 
     Any additional information about the event will be stored here.
@@ -95,7 +95,7 @@ type GeofenceIntersection {
 }
 
 type GeofenceIntersectionMessage {
-    """The zone intersection."""
+    """The geofence intersection."""
     message: GeofenceIntersection!
     """
     The state of the intersection message. Within the message, the [`endTime`]({{Types.GeofenceIntersection}}) will only be present on an [`END`]({{Types.MessageState}}) event.

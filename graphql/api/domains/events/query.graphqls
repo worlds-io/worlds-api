@@ -1,5 +1,5 @@
 """
-Indicates the field used for sorting an [`eventProducers` query]({{Queries.eventproducers}}).
+Indicates the field used for sorting an [`eventProducers` query]({{Queries.eventProducers}}).
 """
 enum EventProducersSortField {
     """

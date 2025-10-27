@@ -13,7 +13,7 @@ enum PointOfInterestSortField {
 }
 
 """
-PointOfInterestSort allows for sorting a [`pointsOfInterest` query]({{Queries.pointsofinterest}}) by field and direction.
+PointOfInterestSort allows for sorting a [`pointsOfInterest` query]({{Queries.pointsOfInterest}}) by field and direction.
 """
 input PointOfInterestSort {
     """

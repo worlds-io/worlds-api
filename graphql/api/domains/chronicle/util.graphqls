@@ -1,5 +1,5 @@
 """
-The paginated results of an [`chronicleProducers` query]({{Queries.chronicleproducers}}).
+The paginated results of an [`chronicleProducers` query]({{Queries.chronicleProducers}}).
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type ChronicleProducerConnection @experimental {

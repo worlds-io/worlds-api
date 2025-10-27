@@ -1,5 +1,5 @@
 """
-An `EventProducerConnection` is the paginated results of an [`eventProducers` query]({{Queries.eventproducers}}).
+An `EventProducerConnection` is the paginated results of an [`eventProducers` query]({{Queries.eventProducers}}).
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type EventProducerConnection {
@@ -19,7 +19,7 @@ type EventProducerEdge {
     """
     node: EventProducer
     """
-    The cursor to use with the [Query `eventProducers` field]({{Queries.eventproducers}}) `after` argument.
+    The cursor to use with the [Query `eventProducers` field]({{Queries.eventProducers}}) `after` argument.
     """
     cursor: String!
 }

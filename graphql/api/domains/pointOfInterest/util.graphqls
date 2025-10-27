@@ -15,7 +15,7 @@ type PointOfInterestEdge {
     """
     node: PointOfInterest
     """
-    The cursor to use with the [`pointsOfInterest` query]({{Queries.pointsofinterest}}) `after` argument.
+    The cursor to use with the [`pointsOfInterest` query]({{Queries.pointsOfInterest}}) `after` argument.
     """
     cursor: String!
 }

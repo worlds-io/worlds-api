@@ -11,7 +11,7 @@ type ZoneEventEdge {
     """
     node: ZoneEvent
     """
-    The cursor to use with the [Query `zoneEvents` field]({{Queries.zoneevents}}) `after` argument.
+    The cursor to use with the [Query `zoneEvents` field]({{Queries.zoneEvents}}) `after` argument.
     """
     cursor: String!
 }
@@ -29,7 +29,7 @@ type ZoneIntersectionEdge {
     """
     node: ZoneIntersection
     """
-    The cursor to use with the [Query `zoneIntersections` field]({{Queries.zoneintersections}}) `after` argument.
+    The cursor to use with the [Query `zoneIntersections` field]({{Queries.zoneIntersections}}) `after` argument.
     """
     cursor: String!
 }

@@ -37,7 +37,7 @@ type GeofenceEventEdge {
     """
     node: GeofenceEvent
     """
-    The cursor to use with the [Query `geofenceEvents` field]({{Queries.geofenceevents}}) `after` argument.
+    The cursor to use with the [Query `geofenceEvents` field]({{Queries.geofenceEvents}}) `after` argument.
     """
     cursor: String!
 }
@@ -55,7 +55,7 @@ type GeofenceIntersectionEdge {
     """
     node: GeofenceIntersection
     """
-    The cursor to use with the [Query `geofenceIntersections` field]({{Queries.geofenceintersections}}) `after` argument.
+    The cursor to use with the [Query `geofenceIntersections` field]({{Queries.geofenceIntersections}}) `after` argument.
     """
     cursor: String!
 }

@@ -1,5 +1,5 @@
 """
-Indicates the field used for sorting an [`events` query]({{Queries.eventChronicles}}).
+Indicates the field used for sorting an [`eventChronicles` query]({{Queries.eventChronicles}}).
 """
 enum EventChronicleSortField @experimental {
     """
@@ -25,11 +25,11 @@ enum EventChronicleSortField @experimental {
 }
 
 """
-Indicates the field used for sorting an [`eventProducers` query]({{Queries.eventProducers}}).
+Indicates the field used for sorting an [`eventChronicles` query]({{Queries.eventChronicles}}).
 """
 input EventChronicleSort @experimental {
     """
-    Any sortable field available to the EventProducersSortField. See the link to the
+    Any sortable field available to the EventChroniclesSortField. See the link to the
     type below for more details.
     """
     field: EventChronicleSortField!

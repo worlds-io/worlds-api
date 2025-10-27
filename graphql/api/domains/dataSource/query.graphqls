@@ -1,5 +1,5 @@
 """
-Indicates the field used for sorting a [Data Sources query]({{Queries.datasources}}).
+Indicates the field used for sorting a [`dataSources` query]({{Queries.dataSources}}).
 """
 enum DataSourceSortField {
     """Sort the resulting list in by its unique identifier."""
@@ -9,7 +9,7 @@ enum DataSourceSortField {
 }
 
 """
-DataSourceSort allows for sorting a [`dataSources` query]({{Queries.datasources}}) by field and direction.
+DataSourceSort allows for sorting a [`dataSources` query]({{Queries.dataSources}}) by field and direction.
 """
 input DataSourceSort {
     """

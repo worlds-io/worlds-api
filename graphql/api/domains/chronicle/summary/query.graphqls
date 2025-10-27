@@ -1,5 +1,5 @@
 """
-Indicates the field used for sorting an [`summaries` query]({{Queries.summaryChronicles}}).
+Indicates the field used for sorting an [`summaryChronicles` query]({{Queries.summaryChronicles}}).
 """
 enum SummaryChronicleSortField @experimental {
     """
@@ -27,11 +27,11 @@ enum SummaryChronicleSortField @experimental {
 }
 
 """
-Indicates the field used for sorting an [`summaryProducers` query]({{Queries.summaryproducers}}).
+Indicates the field used for sorting a [`summaryChronicles` query]({{Queries.summaryChronicles}}).
 """
 input SummaryChronicleSort @experimental {
     """
-    Any sortable field available to the SummaryProducersSortField. See the link to the
+    Any sortable field available to the SummaryChroniclesSortField. See the link to the
     type below for more details.
     """
     field: SummaryChronicleSortField!

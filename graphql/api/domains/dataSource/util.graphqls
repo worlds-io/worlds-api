@@ -1,5 +1,5 @@
 """
-A `DataSourceConnection` is the paginated results of a [`data sources` query]({{Queries.datasources}}).
+A `DataSourceConnection` is the paginated results of a [`data sources` query]({{Queries.dataSources}}).
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type DataSourceConnection {
@@ -19,7 +19,7 @@ type DataSourceEdge {
     """
     node: DataSource
     """
-    The cursor to use with the [`dataSources` query]({{Queries.datasources}}) `after` argument.
+    The cursor to use with the [`dataSources` query]({{Queries.dataSources}}) `after` argument.
     """
     cursor: String!
 }
