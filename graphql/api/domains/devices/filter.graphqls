@@ -4,27 +4,27 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterDeviceInput {
     """
-    If provided, specifies filters that work against the `id` of a [device]({{Types.device}}).
+    If provided, specifies filters that work against the `id` of a [device]({{Types.Device}}).
     """
     id: FilterIDInput
     """
-    If provided, specifies filters that work against the `uuid` of a [device]({{Types.device}}).
+    If provided, specifies filters that work against the `uuid` of a [device]({{Types.Device}}).
     """
     uuid: FilterIDInput
     """
-    If provided, specifies filters that work against the `name` of a [device]({{Types.device}}).
+    If provided, specifies filters that work against the `name` of a [device]({{Types.Device}}).
     """
     name: FilterStringInput
     """
-    If provided, specifies filters that work against the `externalId` of a [device]({{Types.device}}).
+    If provided, specifies filters that work against the `externalId` of a [device]({{Types.Device}}).
     """
     externalId: FilterStringInput
     """
-    If provided, specifies filters that work against the `address` of a [device]({{Types.device}}).
+    If provided, specifies filters that work against the `address` of a [device]({{Types.Device}}).
     """
     address: FilterStringInput
     """
-    If provided, specified filters that work against the `enabled` status of a [device]({{Types.device}}).
+    If provided, specified filters that work against the `enabled` status of a [device]({{Types.Device}}).
     """
     enabled: FilterBooleanInput
     """
@@ -47,27 +47,27 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterDeviceMessageInput {
     """
-    If provided, specifies filters that work against the `id` of a [device]({{Types.device}}).
+    If provided, specifies filters that work against the `id` of a [device]({{Types.Device}}).
     """
     id: FilterIDInput
     """
-    If provided, specifies filters that work against the `uuid` of a [device]({{Types.device}}).
+    If provided, specifies filters that work against the `uuid` of a [device]({{Types.Device}}).
     """
     uuid: FilterIDInput
     """
-    If provided, specifies filters that work against the `name` of a [device]({{Types.device}}).
+    If provided, specifies filters that work against the `name` of a [device]({{Types.Device}}).
     """
     name: FilterStringInput
     """
-    If provided, specifies filters that work against the `externalId` of a [device]({{Types.device}}).
+    If provided, specifies filters that work against the `externalId` of a [device]({{Types.Device}}).
     """
     externalId: FilterStringInput
     """
-    If provided, specifies filters that work against the `address` of a [device]({{Types.device}}).
+    If provided, specifies filters that work against the `address` of a [device]({{Types.Device}}).
     """
     address: FilterStringInput
     """
-    If provided, specified filters that work against the `enabled` status of a [device]({{Types.device}}).
+    If provided, specified filters that work against the `enabled` status of a [device]({{Types.Device}}).
     """
     enabled: FilterBooleanInput
     """

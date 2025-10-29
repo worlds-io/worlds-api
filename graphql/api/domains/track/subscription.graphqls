@@ -1,6 +1,6 @@
 extend type Subscription {
     """
-    Subscribes to changes in any [`Track`]({{Types.track}}) based on the given filter.
+    Subscribes to changes in any [`Track`]({{Types.Track}}) based on the given filter.
     """
     tracks(
         """

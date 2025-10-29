@@ -1,12 +1,12 @@
 extend type Mutation {
     """
-    Creates a new [Event Chronicle]({{Types.eventchronicle}}). This allows for the creation of custom events within the Worlds system.
+    Creates a new [Event Chronicle]({{Types.EventChronicle}}). This allows for the creation of custom events within the Worlds system.
     """
     createEventChronicle(
         """Arguments to create a new event chronicle."""
         eventChronicle: CreateEventChronicleInput!
     ): EventChronicle! @experimental
-    """Updates an existing [Event Chronicle]({{Types.eventchronicle}})."""
+    """Updates an existing [Event Chronicle]({{Types.EventChronicle}})."""
     updateEventChronicle(
         """Arguments to update an existing event chronicle."""
         eventChronicle: UpdateEventChronicleInput!

@@ -1,29 +1,29 @@
 """
-Indicates the field used for sorting an [`activities` query]({{Queries.activityChronicles}}).
+Indicates the field used for sorting an [`activityChronicles` query]({{Queries.activityChronicles}}).
 """
 enum ActivityChronicleSortField @experimental {
     """
-    Sort the resulting list by the [`activityChronicle`]({{Types.activityChronicle}})'s unique identifier.
+    Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s unique identifier.
     """
     ID
     """
-    Sort the resulting list by the [`activityChronicle`]({{Types.activityChronicle}})'s start time.
+    Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s start time.
     """
     START_TIME
     """
-    Sort the resulting list by the [`activityChronicle`]({{Types.activityChronicle}})'s end time.
+    Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s end time.
     """
     END_TIME
     """
-    Sort the resulting list by the [`activityChronicle`]({{Types.activityChronicle}})'s name.
+    Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s name.
     """
     NAME
     """
-    Sort the resulting list by the [`activityChronicle`]({{Types.activityChronicle}})'s priority.
+    Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s priority.
     """
     PRIORITY
     """
-    Sort the resulting list by the [`activityChronicle`]({{Types.activityChronicle}})'s status.
+    Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s status.
     """
     STATUS
 }
@@ -33,7 +33,7 @@ Indicates the field used for sorting an [`activityChronicles` query]({{Queries.a
 """
 input ActivityChronicleSort @experimental {
     """
-    Any sortable field available to the ActivityProducersSortField. See the link to the
+    Any sortable field available to the ActivityChroniclesSortField. See the link to the
     type below for more details.
     """
     field: ActivityChronicleSortField!

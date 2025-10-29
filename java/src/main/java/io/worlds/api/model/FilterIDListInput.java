@@ -1,6 +1,9 @@
 package io.worlds.api.model;
 
 
+/**
+ * `FilterIDListInput` allows for filtering based on a list of identifiers. Only one field should be provided per filter object.
+ */
 public class FilterIDListInput implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

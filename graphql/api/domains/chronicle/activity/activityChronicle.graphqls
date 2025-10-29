@@ -49,7 +49,7 @@ type ActivityChronicle @experimental {
 }
 
 """
-This input type is used to create a new [`ActivityChronicle`]({{Types.activitychronicle}}).
+This input type is used to create a new [`ActivityChronicle`]({{Types.ActivityChronicle}}).
 """
 input CreateActivityChronicleInput @experimental {
     """The chronicle producer that owns the activity."""
@@ -93,7 +93,7 @@ input CreateActivityChronicleInput @experimental {
 }
 
 """
-This input type is used to update an existing [`ActivityChronicle`]({{Types.activitychronicle}}).
+This input type is used to update an existing [`ActivityChronicle`]({{Types.ActivityChronicle}}).
 """
 input UpdateActivityChronicleInput @experimental {
     """The unique identifier of activity."""

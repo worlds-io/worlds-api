@@ -1,6 +1,6 @@
 """
-The paginated results of an [`chronicleProducers` query]({{Queries.chronicleproducers}}).
-See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+The paginated results of an [`chronicleProducers` query]({{Queries.chronicleProducers}}).
+See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type ChronicleProducerConnection @experimental {
     """The resulting collection of chronicle producer edges."""
@@ -10,12 +10,12 @@ type ChronicleProducerConnection @experimental {
 }
 
 """
-The pairing of an [ChronicleProducer]({{Types.chronicleProducer}}) with its query cursor.
-See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+The pairing of an [ChronicleProducer]({{Types.ChronicleProducer}}) with its query cursor.
+See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type ChronicleProducerEdge @experimental {
     """
-    Information about a particular [ChronicleProducer]({{Types.chronicleProducer}}).
+    Information about a particular [ChronicleProducer]({{Types.ChronicleProducer}}).
     """
     node: ChronicleProducer!
     """

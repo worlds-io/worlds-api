@@ -1,22 +1,22 @@
 """
-FilterSensorInput filters [sensors]({{Types.sensor}}) based on criteria described below.
+FilterSensorInput filters [sensors]({{Types.Sensor}}) based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
 """
 input FilterSensorInput {
     """
-    If provided, specifies filters that work against the [Sensor's unique id]({{Types.sensor}}).
+    If provided, specifies filters that work against the [Sensor's unique id]({{Types.Sensor}}).
     """
     id: FilterIDInput
     """
-    If provided, specifies filters that work against the [Sensor's name]({{Types.sensor}}).
+    If provided, specifies filters that work against the [Sensor's name]({{Types.Sensor}}).
     """
     name: FilterStringInput
     """
-    If provided, specifies filters that work against the [Sensor's type]({{Types.sensor}}).
+    If provided, specifies filters that work against the [Sensor's type]({{Types.Sensor}}).
     """
     type: FilterStringInput
     """
-    If provided, specifies filters that work against the [Sensor's position]({{Types.sensor}}).
+    If provided, specifies filters that work against the [Sensor's position]({{Types.Sensor}}).
     """
     position: FilterPointInput
     """
@@ -39,11 +39,11 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterMeasurementInput {
     """
-    If provided, specifies filters that work against the [unique id]({{Types.sensor}}) of the sensor that created a measurement.
+    If provided, specifies filters that work against the [unique id]({{Types.Sensor}}) of the sensor that created a measurement.
     """
     sensorId: FilterIDInput
     """
-    If provided, specifies filters that work against the [timestamp]({{Types.measurement}}) associated with the sensor measurement.
+    If provided, specifies filters that work against the [timestamp]({{Types.Measurement}}) associated with the sensor measurement.
     """
     time: FilterDateTimeOffsetInput!
     """
@@ -66,7 +66,7 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterMeasurementActivityInput {
     """
-    If provided, specifies filters that work against the [unique id]({{Types.sensor}}) of the sensor that created a measurement.
+    If provided, specifies filters that work against the [unique id]({{Types.Sensor}}) of the sensor that created a measurement.
     """
     sensorId: FilterIDInput
     """

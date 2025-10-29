@@ -5,15 +5,15 @@ Only one field should be provided per Filter object unless an operator
 """
 input FilterPointOfInterestInput {
     """
-    If provided, specifies filters that work against the [unique id]({{Types.pointofinterest}}) of a point of interest.
+    If provided, specifies filters that work against the [unique id]({{Types.PointOfInterest}}) of a point of interest.
     """
     id: FilterIDInput
     """
-    If provided, specifies filters that work against the [unique id]({{Types.pointofinterest}}) of the site the point of interest is associated with.
+    If provided, specifies filters that work against the [unique id]({{Types.PointOfInterest}}) of the site the point of interest is associated with.
     """
     siteId: FilterIDInput
     """
-    If provided, specifies filters that work against the [name]({{Types.pointofinterest}}) of a point of interest.
+    If provided, specifies filters that work against the [name]({{Types.PointOfInterest}}) of a point of interest.
     """
     name: FilterStringInput
     """

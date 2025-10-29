@@ -3,17 +3,17 @@ Indicates the field used for sorting a [`pointsOfInterest` query]({{Queries.poin
 """
 enum PointOfInterestSortField {
     """
-    Sort the resulting list by the [`Point of Interest`](({{Types.pointofinterest}}))'s unique identifier.
+    Sort the resulting list by the [`Point of Interest`](({{Types.PointOfInterest}}))'s unique identifier.
     """
     ID
     """
-    Sort the resulting list by the [`Point of Interest`](({{Types.pointofinterest}}))'s name.
+    Sort the resulting list by the [`Point of Interest`](({{Types.PointOfInterest}}))'s name.
     """
     NAME
 }
 
 """
-PointOfInterestSort allows for sorting a [`pointsOfInterest` query]({{Queries.pointsofinterest}}) by field and direction.
+PointOfInterestSort allows for sorting a [`pointsOfInterest` query]({{Queries.pointsOfInterest}}) by field and direction.
 """
 input PointOfInterestSort {
     """

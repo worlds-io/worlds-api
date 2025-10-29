@@ -13,7 +13,7 @@ type GeoJSONPoint {
     coordinates: [Float!]!
     """
     The coordinate reference system used for this geographical position. See
-    [`GeoJSONCRS`]({{Types.geojsoncrs}}) for more information.
+    [`GeoJSONCRS`]({{Types.GeoJSONCRS}}) for more information.
     """
     crs: GeoJSONCRS
 }
@@ -36,7 +36,7 @@ type GeoJSONPolygon {
     coordinates: [[[Float!]!]!]!
     """
     The coordinate reference system used for this  polygon. See
-    [`GeoJSONCRS`]({{Types.geojsoncrs}}) for more information.
+    [`GeoJSONCRS`]({{Types.GeoJSONCRS}}) for more information.
     """
     crs: GeoJSONCRS
 }
@@ -59,7 +59,7 @@ type GeoJSONMultiPolygon {
     coordinates: [[[[Float!]!]!]!]!
     """
     The coordinate reference system used for this multipolygon. See
-    [`GeoJSONCRS`]({{Types.geojsoncrs}}) for more information.
+    [`GeoJSONCRS`]({{Types.GeoJSONCRS}}) for more information.
     """
     crs: GeoJSONCRS
 }
@@ -107,7 +107,7 @@ type GeoJSONCRS {
 }
 
 """
-This type represents the input data needed to initialize a [GeoJSON point]({{Types.geojsonpoint}}).
+This type represents the input data needed to initialize a [GeoJSON point]({{Types.GeoJSONPoint}}).
 """
 input GeoJSONPointInput {
     """The type of the GeoJSON node. This must be "Point"."""
@@ -119,18 +119,18 @@ input GeoJSONPointInput {
     2. Latitude (in degrees)
     3. Altitude (in meters, optional, assumed to be sea-level if omitted)
     See
-    [`GeoJSONCRS`]({{Types.geojsoncrs}}) for more information.
+    [`GeoJSONCRS`]({{Types.GeoJSONCRS}}) for more information.
     """
     coordinates: [Float!]!
     """
     The coordinate reference system used for this geographical position. See
-    [`GeoJSONCRS`]({{Types.geojsoncrs}}) for more information.
+    [`GeoJSONCRS`]({{Types.GeoJSONCRS}}) for more information.
     """
     crs: GeoJSONCRSInput
 }
 
 """
-This type represents the input data needed to initialize a [GeoJSON polygon]({{Types.geojsonpolygon}}).
+This type represents the input data needed to initialize a [GeoJSON polygon]({{Types.GeoJSONPolygon}}).
 """
 input GeoJSONPolygonInput {
     """The type of the GeoJSON node. This defaults to and must be "Polygon"."""
@@ -141,18 +141,18 @@ input GeoJSONPolygonInput {
     ring.  Any subsequent elements represent interior rings (or holes).
     Each element consists of the points that make up the shape.
     See
-    [`GeoJSONCRS`]({{Types.geojsoncrs}}) for more information.
+    [`GeoJSONCRS`]({{Types.GeoJSONCRS}}) for more information.
     """
     coordinates: [[[Float!]!]!]!
     """
     The coordinate reference system used for this geographical position. See
-    [`GeoJSONCRS`]({{Types.geojsoncrs}}) for more information.
+    [`GeoJSONCRS`]({{Types.GeoJSONCRS}}) for more information.
     """
     crs: GeoJSONCRSInput
 }
 
 """
-This type represents the input data needed to initialize a [GeoJSON multipolygon]({{Types.geojsonmultipolygon}}).
+This type represents the input data needed to initialize a [GeoJSON multipolygon]({{Types.GeoJSONMultiPolygon}}).
 """
 input GeoJSONMultiPolygonInput {
     """
@@ -165,18 +165,18 @@ input GeoJSONMultiPolygonInput {
     ring.  Any subsequent elements represent interior rings (or holes).
     Each element consists of the points that make up the polygon.
     See
-    [`GeoJSONCRS`]({{Types.geojsoncrs}}) for more information.
+    [`GeoJSONCRS`]({{Types.GeoJSONCRS}}) for more information.
     """
     coordinates: [[[[Float!]!]!]!]!
     """
     The coordinate reference system used for thismultipolygon. See
-    [`GeoJSONCRS`]({{Types.geojsoncrs}}) for more information.
+    [`GeoJSONCRS`]({{Types.GeoJSONCRS}}) for more information.
     """
     crs: GeoJSONCRSInput
 }
 
 """
-This type represents the input data needed to initialize a [GeoJSON coordinate reference system]({{Types.geojsoncrs}}).
+This type represents the input data needed to initialize a [GeoJSON coordinate reference system]({{Types.GeoJSONCRS}}).
 """
 input GeoJSONCRSInput {
     """

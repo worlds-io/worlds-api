@@ -222,7 +222,7 @@ input FilterPointNearInput {
 }
 
 """
-`FilterMessageStateInput` allows for filtering based on a [MessageState]({{Types.messagestate}}) parameter. Only one field should be provided per filter object.
+`FilterMessageStateInput` allows for filtering based on a [MessageState]({{Types.MessageState}}) parameter. Only one field should be provided per filter object.
 Note that the `UPDATE` state will exclude `START` and `END` messages.
 """
 input FilterMessageStateInput {
@@ -241,7 +241,7 @@ input FilterMessageStateInput {
 }
 
 """
-`FilterDeviceMessageStateInput` allows for filtering based on a [DeviceMessageState]({{Types.messagemessagestate}}) parameter. Only one field should be provided per filter object.
+`FilterDeviceMessageStateInput` allows for filtering based on a [DeviceMessageState]({{Types.DeviceMessageState}}) parameter. Only one field should be provided per filter object.
 Note that the `UPDATE` state alone will not include `CREATE` and `HEARTBEAT` messages.
 """
 input FilterDeviceMessageStateInput {

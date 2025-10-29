@@ -1,11 +1,11 @@
 extend type Mutation {
-    """Creates a new [ChronicleProducer]({{Types.chronicleproducer}})."""
+    """Creates a new ChronicleProducer."""
     createChronicleProducer(
         """Arguments to create a new chronicle producer."""
         chronicleProducer: CreateChronicleProducerInput!
     ): ChronicleProducer! @experimental
     """
-    Updates an existing [ChronicleProducer]({{Types.chronicleproducer}}).
+    Updates an existing ChronicleProducer.
     """
     updateChronicleProducer(
         """Arguments to update an existing chronicle producer."""

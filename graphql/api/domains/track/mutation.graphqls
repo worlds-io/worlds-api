@@ -1,10 +1,10 @@
 extend type Mutation {
-    """Creates a new [Track]({{Types.track}})."""
+    """Creates a new Track."""
     createTrack(
         """Arguments to create a new track."""
         track: CreateTrackInput!
     ): Track
-    """Updates an existing track."""
+    """Updates an existing Track."""
     updateTrack(
         """Arguments to update an existing track."""
         track: UpdateTrackInput!

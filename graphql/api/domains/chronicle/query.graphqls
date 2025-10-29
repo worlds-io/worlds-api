@@ -3,11 +3,11 @@ Indicates the field used for sorting an [`chronicleProducers` query]({{Queries.c
 """
 enum ChronicleProducersSortField @experimental {
     """
-    Sort the resulting list by the [`ChronicleProducer`]({{Types.chronicleProducer}})'s unique identifier.
+    Sort the resulting list by the [`ChronicleProducer`]({{Types.ChronicleProducer}})'s unique identifier.
     """
     ID
     """
-    Sort the resulting list by the [`ChronicleProducer`]({{Types.chronicleProducer}})'s name.
+    Sort the resulting list by the [`ChronicleProducer`]({{Types.ChronicleProducer}})'s name.
     """
     NAME
 }
