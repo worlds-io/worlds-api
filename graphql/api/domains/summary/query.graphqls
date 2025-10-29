@@ -8,7 +8,7 @@ extend type Query {
         """Filter tracks based on their tags."""
         tags: FilterTagInput
         """
-        If provided, return [summary buckets]({{Types.trackssummarybucket}}) of this size.
+        If provided, return [summary buckets]({{Types.TracksSummaryBucket}}) of this size.
         """
         bucket: SummaryBucketSize
     ): TracksSummary
@@ -19,7 +19,7 @@ extend type Query {
         """End time for the summary."""
         endTime: DateTimeOffset!
         """
-        If provided, return [summary buckets]({{Types.eventssummarybucket}}) of this size.
+        If provided, return [summary buckets]({{Types.EventsSummaryBucket}}) of this size.
         """
         bucket: SummaryBucketSize
     ): EventsSummary

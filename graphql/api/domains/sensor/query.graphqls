@@ -3,11 +3,11 @@ Indicates the field used for sorting an [`sensors` query]({{Queries.sensors}}).
 """
 enum SensorsSortField {
     """
-    Sort the resulting list by the [`sensor`](({{Types.sensor}}))'s unique identifier.
+    Sort the resulting list by the [`sensor`](({{Types.Sensor}}))'s unique identifier.
     """
     ID
     """
-    Sort the resulting list by the [`sensor`](({{Types.sensor}}))'s name.
+    Sort the resulting list by the [`sensor`](({{Types.Sensor}}))'s name.
     """
     NAME
 }
@@ -30,11 +30,11 @@ Indicates the field used for sorting a [`measurements` query]({{Queries.measurem
 """
 enum MeasurementsSortField {
     """
-    Sort the resulting list by the [`Measurement`](({{Types.measurement}}))'s unique identifier.
+    Sort the resulting list by the [`Measurement`](({{Types.Measurement}}))'s unique identifier.
     """
     ID
     """
-    Sort the resulting list by the [`Measurement`](({{Types.measurement}}))'s timestamp.
+    Sort the resulting list by the [`Measurement`](({{Types.Measurement}}))'s timestamp.
     """
     TIMESTAMP
 }

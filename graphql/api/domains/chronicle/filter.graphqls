@@ -1,18 +1,18 @@
 """
-FilterChronicleProducerInput filters [ChronicleProducer]({{Types.chronicleproducer}}) based on criteria described below.
+FilterChronicleProducerInput filters [ChronicleProducer]({{Types.ChronicleProducer}}) based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
 """
 input FilterChronicleProducerInput @experimental {
     """
-    If provided, specifies filters that work against the [ChronicleProducer]({{Types.chronicleproducer}})'s unique id.
+    If provided, specifies filters that work against the [ChronicleProducer]({{Types.ChronicleProducer}})'s unique id.
     """
     id: FilterIDInput
     """
-    If provided, specifies filters that work against the [ChronicleProducer]({{Types.chronicleproducer}})'s name.
+    If provided, specifies filters that work against the [ChronicleProducer]({{Types.ChronicleProducer}})'s name.
     """
     name: FilterStringInput
     """
-    If provided, specifies filters that work against the [ChronicleProducer]({{Types.chronicleproducer}})'s active status.
+    If provided, specifies filters that work against the [ChronicleProducer]({{Types.ChronicleProducer}})'s active status.
     """
     active: FilterBooleanInput
     """

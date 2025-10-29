@@ -1,6 +1,6 @@
 """
 An `EventConnection` is the paginated results of an [`events` query]({{Queries.eventChronicles}}).
-See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type EventChronicleConnection @experimental {
     """Pagination information for the resulting edges."""
@@ -10,11 +10,11 @@ type EventChronicleConnection @experimental {
 }
 
 """
-An event edge is the pairing of an [Event]({{Types.event}}) with its query cursor.
-See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+An event edge is the pairing of an [Event]({{Types.Event}}) with its query cursor.
+See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type EventChronicleEdge @experimental {
-    """Information about a particular [Event]({{Types.event}})."""
+    """Information about a particular [Event]({{Types.Event}})."""
     node: EventChronicle!
     """
     The cursor to use with the [Query `events` field]({{Queries.eventChronicles}}) `after` argument.

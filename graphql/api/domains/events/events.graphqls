@@ -24,7 +24,7 @@ type EventProducer {
 }
 
 """
-This input type is used to create a new custom [`EventProducer`]({{Types.eventProducer}}). See [About EventProducers](/reference/objects/eventProducer/#about-event-producersss) for more details.
+This input type is used to create a new custom [`EventProducer`]({{Types.EventProducer}}).
 """
 input EventProducerInput {
     id: ID
@@ -43,7 +43,7 @@ input EventProducerInput {
 }
 
 """
-This input type is used to update an existing [`EventProducer`]({{Types.eventProducer}}). See [About EventProducers](/reference/objects/eventProducer/#about-event-producersss) for more details.
+This input type is used to update an existing [`EventProducer`]({{Types.EventProducer}}).
 """
 input UpdateEventProducerInput {
     """The unique identifier for the event producer."""
@@ -61,7 +61,7 @@ input UpdateEventProducerInput {
 }
 
 """
-An event represents a custom event, including its start time, location, and duration. For more details on event producers and events, see [About EventProducers](/reference/objects/eventproducer/#about-event-producers).
+An event represents a custom event, including its start time, location, and duration. For more details on event producers and events, see [`EventProducer`]({{Types.EventProducer}}).
 """
 type Event {
     """The unique identifier for the event."""
@@ -113,7 +113,7 @@ type Event {
 }
 
 """
-Event Properties contain additional details and related information for an event. For more details on event producers and events, see [About EventProducers](/reference/objects/eventproducer/#about-event-producers).
+Event Properties contain additional details and related information for an event. For more details on event producers and events, see [`EventProducer`]({{Types.EventProducer}}).
 """
 type EventProperties {
     """The tracks associated with the event."""
@@ -143,7 +143,7 @@ type EventValidation {
 }
 
 """
-This input type is used to create a new [`Event`]({{Types.event}}) for a custom event producer. See [About EventProducers](/reference/objects/eventProducer/#about-event-producers) for more details.
+This input type is used to create a new [`Event`]({{Types.Event}}) for a custom event producer. See [`EventProducer`]({{Types.EventProducer}}) for more details.
 """
 input CreateEventInput {
     """
@@ -151,7 +151,7 @@ input CreateEventInput {
     """
     id: ID
     """
-    The unique identifier of the [EventProducer]({{Types.eventproducer}}) that will own the event.
+    The unique identifier of the [EventProducer]({{Types.EventProducer}}) that will own the event.
     """
     eventProducerId: String!
     """
@@ -203,7 +203,7 @@ input CreateEventInput {
 }
 
 """
-This input type is used to update an existing [`Event`]({{Types.event}}) for a custom event producer. See [About EventProducers](/reference/objects/eventProducer/#about-event-producers) for more details.
+This input type is used to update an existing [`Event`]({{Types.Event}}) for a custom event producer. See [`EventProducer`]({{Types.EventProducer}}) for more details.
 """
 input UpdateEventInput {
     """The unique identifier for the event."""
@@ -267,7 +267,7 @@ input UpdateEventInput {
 }
 
 """
-This input type contains additional details and related information for an event. For more details on event producers and events, see [About EventProducers](/reference/objects/eventproducer/#about-event-producers).
+This input type contains additional details and related information for an event. For more details on event producers and events, see [`EventProducer`]({{Types.EventProducer}}).
 """
 input EventPropertiesInput {
     """The unique identifiers for the sites associated with the event."""
@@ -281,7 +281,7 @@ input EventPropertiesInput {
 }
 
 """
-Used in [EventValidationInput]({{Types.eventvalidationinput}}) to indicate whether an event is `VALID` or `INVALID`.
+Used in [EventValidationInput]({{Types.EventValidationInput}}) to indicate whether an event is `VALID` or `INVALID`.
 """
 enum EventValidationStatus {
     """The event is valid."""

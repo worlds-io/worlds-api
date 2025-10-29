@@ -1,50 +1,50 @@
 """
-FilterEventChronicleInput filters [EventChronicles]({{Types.eventChronicle}}) based on criteria described below.
+FilterEventChronicleInput filters [EventChronicles]({{Types.EventChronicle}}) based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
 """
 input FilterEventChronicleInput @experimental {
     """
-    If provided, specifies filters that work against the `id` of the [`EventChronicle`]({{Types.eventchronicle}}).
+    If provided, specifies filters that work against the `id` of the [`EventChronicle`]({{Types.EventChronicle}}).
     """
     id: FilterIDInput
     """
-    If provided, specifies filters that work against the `name` of the [`EventChronicle`]({{Types.eventchronicle}}).
+    If provided, specifies filters that work against the `name` of the [`EventChronicle`]({{Types.EventChronicle}}).
     """
     name: FilterStringInput
     """
-    If provided, specifies filters that work against the `chronicleProducer` ID of the [`EventChronicle`]({{Types.eventchronicle}}).
+    If provided, specifies filters that work against the `chronicleProducer` ID of the [`EventChronicle`]({{Types.EventChronicle}}).
     """
     chronicleProducerId: FilterIDInput
     """
-    If provided, specifies filters that work against the `timestamp` of the [`EventChronicle`]({{Types.eventchronicle}}).
+    If provided, specifies filters that work against the `timestamp` of the [`EventChronicle`]({{Types.EventChronicle}}).
     """
     timestamp: FilterDateTimeOffsetInput
     """
-    If provided, specifies filters that work against the `timezone` of the [`EventChronicle`]({{Types.eventchronicle}}).
+    If provided, specifies filters that work against the `timezone` of the [`EventChronicle`]({{Types.EventChronicle}}).
     """
     timezone: FilterStringInput
     """
-    If provided, specifies filters that work against the `priority` of the [`EventChronicle`]({{Types.eventchronicle}}).
+    If provided, specifies filters that work against the `priority` of the [`EventChronicle`]({{Types.EventChronicle}}).
     """
     priority: FilterStringInput
     """
-    If provided, specifies filters that work against the `status` of the [`EventChronicle`]({{Types.eventchronicle}}).
+    If provided, specifies filters that work against the `status` of the [`EventChronicle`]({{Types.EventChronicle}}).
     """
     status: FilterStringInput
     """
-    If provided, specifies filters that work against the `validation` of the [`EventChronicle`]({{Types.eventchronicle}}).
+    If provided, specifies filters that work against the `validation` of the [`EventChronicle`]({{Types.EventChronicle}}).
     """
     validation: FilterChronicleValidationStatusInput
     """
-    If provided, specifies filters that work against the `labels` of the [`EventChronicle`]({{Types.eventchronicle}}).
+    If provided, specifies filters that work against the `labels` of the [`EventChronicle`]({{Types.EventChronicle}}).
     """
     labels: FilterStringListInput
     """
-    If provided, specifies filters that work against the `locations` of the [`EventChronicle`]({{Types.eventchronicle}}).
+    If provided, specifies filters that work against the `locations` of the [`EventChronicle`]({{Types.EventChronicle}}).
     """
     locations: FilterStringListInput
     """
-    If provided, specifies filters that work against the `activityChronicles` IDs of the [`EventChronicle`]({{Types.eventchronicle}}).
+    If provided, specifies filters that work against the `activityChronicles` IDs of the [`EventChronicle`]({{Types.EventChronicle}}).
     """
     activityChronicleIds: FilterIDListInput
     """

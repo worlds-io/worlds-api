@@ -1,5 +1,5 @@
 """
-This input type is used to create a new [`Image`](/references/objects/image) for an event. See [About Events](/reference/objects/#about-events) for more details.
+This input type is used to create a new [`Image`]({{Types.Image}}) for an event. See [`Event`]({{Types.Event}}) for more details.
 """
 input CreateSnapshotInput {
     """The unique ID of the datasource or device that will take the snapshot"""
@@ -27,7 +27,7 @@ input UploadImageInput {
 }
 
 """
-This input type is used to create a new clip for an event. See [About Events](/reference/objects/#about-events) for more details.
+This input type is used to create a new clip for an event. See [`Event`]({{Types.Event}}) for more details.
 """
 input CreateClipInput {
     """The unique ID of the datasource or device of the clip"""

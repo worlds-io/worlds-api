@@ -2,9 +2,9 @@ extend type Mutation {
     clip(
         """Arguments to create a video clip from a data source."""
         input: CreateClipInput!
-        """Optional IDs for [events]({{Types.event}}) to associate with the clip."""
+        """Optional IDs for [events]({{Types.Event}}) to associate with the clip."""
         eventIds: [ID!]
-        """Optional IDs for [activity chronicles]({{Types.activityChronicle}}) to associate with the clip."""
+        """Optional IDs for [activity chronicles]({{Types.ActivityChronicle}}) to associate with the clip."""
         activityChronicleIds: [ID!]
     ): DataSourceClip
 }

@@ -1,5 +1,5 @@
 """
-A point of interest is a designated area within a Site, used to subdivide a location into meaningful sections. Each POI belongs to a single [Site]({{Types.site}}) and can contain multiple [Devices](/reference/object/device/).
+A point of interest is a designated area within a Site, used to subdivide a location into meaningful sections. Each POI belongs to a single [Site]({{Types.Site}}) and can contain multiple [Devices]({{Types.Device}}).
 """
 type PointOfInterest {
     """The unique identifier of the point of interest."""
@@ -19,11 +19,11 @@ type PointOfInterest {
 }
 
 """
-Fields to create a new [PointOfInterest]({{Types.pointofinterest}})
+Fields to create a new [PointOfInterest]({{Types.PointOfInterest}})
 """
 input CreatePointOfInterestInput {
     """
-    The ID of the [Site]({{Types.site}}) that the PointOfInterest belongs to
+    The ID of the [Site]({{Types.Site}}) that the PointOfInterest belongs to
     """
     siteId: ID!
     """The name of the PointOfInterest."""
@@ -35,13 +35,13 @@ input CreatePointOfInterestInput {
 }
 
 """
-Fields to update an existing [PointOfInterest]({{Types.pointofinterest}})
+Fields to update an existing [PointOfInterest]({{Types.PointOfInterest}})
 """
 input UpdatePointOfInterestInput {
     """The ID of the PointOfInterest that will be updated"""
     id: ID!
     """
-    The ID of the [Site]({{Types.site}}) that the PointOfInterest belongs to
+    The ID of the [Site]({{Types.Site}}) that the PointOfInterest belongs to
     """
     siteId: ID
     """The name of the PointOfInterest."""

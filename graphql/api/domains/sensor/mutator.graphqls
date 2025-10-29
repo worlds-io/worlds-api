@@ -1,16 +1,16 @@
 extend type Mutation {
-    """Creates a new [Sensor]({{Types.sensor}})."""
+    """Creates a new Sensor."""
     createSensor(
         """Arguments to create a new sensor."""
         sensor: SensorInput!
     ): Sensor
-    """Updates an existing [Sensor]({{Types.sensor}})."""
+    """Updates an existing Sensor."""
     updateSensor(
         """Arguments to update an existing sensor."""
         sensor: UpdateSensorInput!
     ): Sensor
     """
-    Creates a new [Measurement]({{Types.measurement}}) for a [Sensor]({{Types.sensor}}).
+    Creates a new Measurement for a [Sensor]({{Types.Sensor}}).
     """
     createMeasurement(
         """Arguments to create a new measurement."""
