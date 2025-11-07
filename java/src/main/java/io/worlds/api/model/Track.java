@@ -15,6 +15,8 @@ public class Track implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private java.time.OffsetDateTime startTime;
     private java.time.OffsetDateTime endTime;
+    @jakarta.validation.constraints.NotNull
+    private java.util.List<Detection> detections;
     private TrackProperties properties;
     private java.lang.Object metadata;
     private java.util.List<ZoneIntersection> zoneIntersections;
@@ -25,13 +27,14 @@ public class Track implements java.io.Serializable {
     public Track() {
     }
 
-    public Track(String id, DataSource dataSource, Video video, String tag, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, TrackProperties properties, java.lang.Object metadata, java.util.List<ZoneIntersection> zoneIntersections, java.util.List<GeofenceIntersection> geofenceIntersections, java.util.List<String> deviceIds) {
+    public Track(String id, DataSource dataSource, Video video, String tag, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, java.util.List<Detection> detections, TrackProperties properties, java.lang.Object metadata, java.util.List<ZoneIntersection> zoneIntersections, java.util.List<GeofenceIntersection> geofenceIntersections, java.util.List<String> deviceIds) {
         this.id = id;
         this.dataSource = dataSource;
         this.video = video;
         this.tag = tag;
         this.startTime = startTime;
         this.endTime = endTime;
+        this.detections = detections;
         this.properties = properties;
         this.metadata = metadata;
         this.zoneIntersections = zoneIntersections;
@@ -118,6 +121,19 @@ public class Track implements java.io.Serializable {
     }
 
     /**
+     * A collection of every Detection associated with the Track.
+     */
+    public java.util.List<Detection> getDetections() {
+        return detections;
+    }
+    /**
+     * A collection of every Detection associated with the Track.
+     */
+    public void setDetections(java.util.List<Detection> detections) {
+        this.detections = detections;
+    }
+
+    /**
      * The identifying and descriptive attributes of the Track
      */
     public TrackProperties getProperties() {
@@ -199,6 +215,7 @@ public class Track implements java.io.Serializable {
             && Objects.equals(tag, that.tag)
             && Objects.equals(startTime, that.startTime)
             && Objects.equals(endTime, that.endTime)
+            && Objects.equals(detections, that.detections)
             && Objects.equals(properties, that.properties)
             && Objects.equals(metadata, that.metadata)
             && Objects.equals(zoneIntersections, that.zoneIntersections)
@@ -208,7 +225,7 @@ public class Track implements java.io.Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, dataSource, video, tag, startTime, endTime, properties, metadata, zoneIntersections, geofenceIntersections, deviceIds);
+        return Objects.hash(id, dataSource, video, tag, startTime, endTime, detections, properties, metadata, zoneIntersections, geofenceIntersections, deviceIds);
     }
 
 
@@ -224,6 +241,7 @@ public class Track implements java.io.Serializable {
         private String tag;
         private java.time.OffsetDateTime startTime;
         private java.time.OffsetDateTime endTime;
+        private java.util.List<Detection> detections;
         private TrackProperties properties;
         private java.lang.Object metadata;
         private java.util.List<ZoneIntersection> zoneIntersections;
@@ -282,6 +300,14 @@ public class Track implements java.io.Serializable {
         }
 
         /**
+         * A collection of every Detection associated with the Track.
+         */
+        public Builder setDetections(java.util.List<Detection> detections) {
+            this.detections = detections;
+            return this;
+        }
+
+        /**
          * The identifying and descriptive attributes of the Track
          */
         public Builder setProperties(TrackProperties properties) {
@@ -324,7 +350,7 @@ public class Track implements java.io.Serializable {
 
 
         public Track build() {
-            return new Track(id, dataSource, video, tag, startTime, endTime, properties, metadata, zoneIntersections, geofenceIntersections, deviceIds);
+            return new Track(id, dataSource, video, tag, startTime, endTime, detections, properties, metadata, zoneIntersections, geofenceIntersections, deviceIds);
         }
 
     }
