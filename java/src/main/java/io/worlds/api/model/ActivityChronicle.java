@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * An activity chronicle represents behavior which occurs over a period of time.
@@ -353,6 +354,43 @@ public class ActivityChronicle implements java.io.Serializable {
         this.updatedAt = updatedAt;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final ActivityChronicle that = (ActivityChronicle) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(chronicleProducer, that.chronicleProducer)
+            && Objects.equals(name, that.name)
+            && Objects.equals(description, that.description)
+            && Objects.equals(startTime, that.startTime)
+            && Objects.equals(endTime, that.endTime)
+            && Objects.equals(timezone, that.timezone)
+            && Objects.equals(metadata, that.metadata)
+            && Objects.equals(validation, that.validation)
+            && Objects.equals(priority, that.priority)
+            && Objects.equals(status, that.status)
+            && Objects.equals(labels, that.labels)
+            && Objects.equals(locations, that.locations)
+            && Objects.equals(images, that.images)
+            && Objects.equals(dataSourceClips, that.dataSourceClips)
+            && Objects.equals(tracks, that.tracks)
+            && Objects.equals(sites, that.sites)
+            && Objects.equals(dataSources, that.dataSources)
+            && Objects.equals(tags, that.tags)
+            && Objects.equals(pointsOfInterest, that.pointsOfInterest)
+            && Objects.equals(createdAt, that.createdAt)
+            && Objects.equals(updatedAt, that.updatedAt);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, chronicleProducer, name, description, startTime, endTime, timezone, metadata, validation, priority, status, labels, locations, images, dataSourceClips, tracks, sites, dataSources, tags, pointsOfInterest, createdAt, updatedAt);
+    }
 
 
     public static ActivityChronicle.Builder builder() {

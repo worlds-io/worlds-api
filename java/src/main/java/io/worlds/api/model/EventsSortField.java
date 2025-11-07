@@ -7,12 +7,12 @@ public enum EventsSortField {
 
     /**
      * 
-Sort the resulting list by the [`Event`](({{Types.event}}))'s unique identifier.
+Sort the resulting list by the [`Event`](({{Types.Event}}))'s unique identifier.
      */
     ID("ID"),
     /**
      * 
-Sort the resulting list by the [`Event`](({{Types.event}}))'s start time.
+Sort the resulting list by the [`Event`](({{Types.Event}}))'s start time.
      */
     START_TIME("START_TIME");
 

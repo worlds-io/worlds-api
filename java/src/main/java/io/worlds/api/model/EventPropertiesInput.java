@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * This input type contains additional details and related information for an event. For more details on event producers and events, see [About EventProducers](/reference/objects/eventproducer/#about-event-producers).
+ * This input type contains additional details and related information for an event. For more details on event producers and events, see [`EventProducer`]({{Types.EventProducer}}).
  */
 public class EventPropertiesInput implements java.io.Serializable {
 
@@ -51,6 +52,25 @@ public class EventPropertiesInput implements java.io.Serializable {
         this.pointOfInterestIds = pointOfInterestIds;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final EventPropertiesInput that = (EventPropertiesInput) obj;
+        return Objects.equals(siteIds, that.siteIds)
+            && Objects.equals(dataSourceIds, that.dataSourceIds)
+            && Objects.equals(tags, that.tags)
+            && Objects.equals(pointOfInterestIds, that.pointOfInterestIds);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(siteIds, dataSourceIds, tags, pointOfInterestIds);
+    }
 
 
     public static EventPropertiesInput.Builder builder() {

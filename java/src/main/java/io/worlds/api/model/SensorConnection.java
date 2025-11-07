@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 public class SensorConnection implements java.io.Serializable {
 
@@ -44,6 +45,23 @@ public class SensorConnection implements java.io.Serializable {
         this.edges = edges;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final SensorConnection that = (SensorConnection) obj;
+        return Objects.equals(pageInfo, that.pageInfo)
+            && Objects.equals(edges, that.edges);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(pageInfo, edges);
+    }
 
 
     public static SensorConnection.Builder builder() {

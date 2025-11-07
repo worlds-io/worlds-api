@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * Event Properties contain additional details and related information for an event. For more details on event producers and events, see [About EventProducers](/reference/objects/eventproducer/#about-event-producers).
+ * Event Properties contain additional details and related information for an event. For more details on event producers and events, see [`EventProducer`]({{Types.EventProducer}}).
  */
 public class EventProperties implements java.io.Serializable {
 
@@ -90,6 +91,26 @@ public class EventProperties implements java.io.Serializable {
         this.pointsOfInterest = pointsOfInterest;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final EventProperties that = (EventProperties) obj;
+        return Objects.equals(tracks, that.tracks)
+            && Objects.equals(sites, that.sites)
+            && Objects.equals(dataSources, that.dataSources)
+            && Objects.equals(tags, that.tags)
+            && Objects.equals(pointsOfInterest, that.pointsOfInterest);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(tracks, sites, dataSources, tags, pointsOfInterest);
+    }
 
 
     public static EventProperties.Builder builder() {

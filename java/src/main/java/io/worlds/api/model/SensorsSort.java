@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * SensorsSort allows for sorting a [`sensors` query]({{Queries.sensors}}) by field and direction.
@@ -35,6 +36,23 @@ public class SensorsSort implements java.io.Serializable {
         this.direction = direction;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final SensorsSort that = (SensorsSort) obj;
+        return Objects.equals(field, that.field)
+            && Objects.equals(direction, that.direction);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(field, direction);
+    }
 
 
     public static SensorsSort.Builder builder() {

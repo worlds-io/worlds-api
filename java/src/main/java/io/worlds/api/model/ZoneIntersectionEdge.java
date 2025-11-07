@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 public class ZoneIntersectionEdge implements java.io.Serializable {
 
@@ -18,31 +19,48 @@ public class ZoneIntersectionEdge implements java.io.Serializable {
     }
 
     /**
-     * Information about a particular [ZoneIntersection]({{Types.zoneintersection}}).
+     * Information about a particular [ZoneIntersection]({{Types.ZoneIntersection}}).
      */
     public ZoneIntersection getNode() {
         return node;
     }
     /**
-     * Information about a particular [ZoneIntersection]({{Types.zoneintersection}}).
+     * Information about a particular [ZoneIntersection]({{Types.ZoneIntersection}}).
      */
     public void setNode(ZoneIntersection node) {
         this.node = node;
     }
 
     /**
-     * The cursor to use with the [Query `zoneIntersections` field]({{Queries.zoneintersections}}) `after` argument.
+     * The cursor to use with the [Query `zoneIntersections` field]({{Queries.zoneIntersections}}) `after` argument.
      */
     public String getCursor() {
         return cursor;
     }
     /**
-     * The cursor to use with the [Query `zoneIntersections` field]({{Queries.zoneintersections}}) `after` argument.
+     * The cursor to use with the [Query `zoneIntersections` field]({{Queries.zoneIntersections}}) `after` argument.
      */
     public void setCursor(String cursor) {
         this.cursor = cursor;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final ZoneIntersectionEdge that = (ZoneIntersectionEdge) obj;
+        return Objects.equals(node, that.node)
+            && Objects.equals(cursor, that.cursor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(node, cursor);
+    }
 
 
     public static ZoneIntersectionEdge.Builder builder() {
@@ -58,7 +76,7 @@ public class ZoneIntersectionEdge implements java.io.Serializable {
         }
 
         /**
-         * Information about a particular [ZoneIntersection]({{Types.zoneintersection}}).
+         * Information about a particular [ZoneIntersection]({{Types.ZoneIntersection}}).
          */
         public Builder setNode(ZoneIntersection node) {
             this.node = node;
@@ -66,7 +84,7 @@ public class ZoneIntersectionEdge implements java.io.Serializable {
         }
 
         /**
-         * The cursor to use with the [Query `zoneIntersections` field]({{Queries.zoneintersections}}) `after` argument.
+         * The cursor to use with the [Query `zoneIntersections` field]({{Queries.zoneIntersections}}) `after` argument.
          */
         public Builder setCursor(String cursor) {
             this.cursor = cursor;

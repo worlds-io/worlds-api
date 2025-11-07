@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 public class TrackMessage implements java.io.Serializable {
 
@@ -44,6 +45,23 @@ public class TrackMessage implements java.io.Serializable {
         this.state = state;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final TrackMessage that = (TrackMessage) obj;
+        return Objects.equals(message, that.message)
+            && Objects.equals(state, that.state);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(message, state);
+    }
 
 
     public static TrackMessage.Builder builder() {

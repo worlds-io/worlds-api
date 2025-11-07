@@ -1,9 +1,10 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * A `DataSourceConnection` is the paginated results of a [`data sources` query]({{Queries.datasources}}).
-See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+ * A `DataSourceConnection` is the paginated results of a [`data sources` query]({{Queries.dataSources}}).
+See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class DataSourceConnection implements java.io.Serializable {
 
@@ -48,6 +49,23 @@ public class DataSourceConnection implements java.io.Serializable {
         this.edges = edges;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final DataSourceConnection that = (DataSourceConnection) obj;
+        return Objects.equals(pageInfo, that.pageInfo)
+            && Objects.equals(edges, that.edges);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(pageInfo, edges);
+    }
 
 
     public static DataSourceConnection.Builder builder() {

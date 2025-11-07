@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * A site represents a business location, such as an office building, a facility or a campus. Sites can be used to logically and geospatially group various objects and events that share a physical space, such as [Devices]({{Types.devices}}), [Geofences]({{Types.geofences}}).
+ * A site represents a business location, such as an office building, a facility or a campus. Sites can be used to logically and geospatially group various objects and events that share a physical space, such as [Devices]({{Types.Devices}}), [Geofences]({{Types.Geofences}}).
  */
 public class Site implements java.io.Serializable {
 
@@ -125,6 +126,28 @@ public class Site implements java.io.Serializable {
         this.geofences = geofences;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final Site that = (Site) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(name, that.name)
+            && Objects.equals(position, that.position)
+            && Objects.equals(polygon, that.polygon)
+            && Objects.equals(devices, that.devices)
+            && Objects.equals(pointsOfInterest, that.pointsOfInterest)
+            && Objects.equals(geofences, that.geofences);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, position, polygon, devices, pointsOfInterest, geofences);
+    }
 
 
     public static Site.Builder builder() {

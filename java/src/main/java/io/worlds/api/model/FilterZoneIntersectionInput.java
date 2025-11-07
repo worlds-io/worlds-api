@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * `FilterZoneIntersectionInput` allows for filtering a zone intersection based on criteria described below.
@@ -80,6 +81,28 @@ public class FilterZoneIntersectionInput implements java.io.Serializable {
         this.not = not;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final FilterZoneIntersectionInput that = (FilterZoneIntersectionInput) obj;
+        return Objects.equals(zoneId, that.zoneId)
+            && Objects.equals(time, that.time)
+            && Objects.equals(tag, that.tag)
+            && Objects.equals(dataSourceId, that.dataSourceId)
+            && Objects.equals(and, that.and)
+            && Objects.equals(or, that.or)
+            && Objects.equals(not, that.not);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(zoneId, time, tag, dataSourceId, and, or, not);
+    }
 
 
     public static FilterZoneIntersectionInput.Builder builder() {

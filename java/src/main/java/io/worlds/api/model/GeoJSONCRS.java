@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * A [GeoJSON][geojson] coordinate reference system is a way to specify how the
@@ -54,6 +55,23 @@ public class GeoJSONCRS implements java.io.Serializable {
         this.properties = properties;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final GeoJSONCRS that = (GeoJSONCRS) obj;
+        return Objects.equals(type, that.type)
+            && Objects.equals(properties, that.properties);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, properties);
+    }
 
 
     public static GeoJSONCRS.Builder builder() {

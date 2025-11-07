@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * A message containing a `Device` from a `devices` subscription.
@@ -47,6 +48,23 @@ public class DeviceMessage implements java.io.Serializable {
         this.state = state;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final DeviceMessage that = (DeviceMessage) obj;
+        return Objects.equals(message, that.message)
+            && Objects.equals(state, that.state);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(message, state);
+    }
 
 
     public static DeviceMessage.Builder builder() {

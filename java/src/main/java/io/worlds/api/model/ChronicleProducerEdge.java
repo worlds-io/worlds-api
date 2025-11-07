@@ -1,9 +1,10 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * The pairing of an [ChronicleProducer]({{Types.chronicleProducer}}) with its query cursor.
-See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+ * The pairing of an [ChronicleProducer]({{Types.ChronicleProducer}}) with its query cursor.
+See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class ChronicleProducerEdge implements java.io.Serializable {
 
@@ -23,13 +24,13 @@ public class ChronicleProducerEdge implements java.io.Serializable {
     }
 
     /**
-     * Information about a particular [ChronicleProducer]({{Types.chronicleProducer}}).
+     * Information about a particular [ChronicleProducer]({{Types.ChronicleProducer}}).
      */
     public ChronicleProducer getNode() {
         return node;
     }
     /**
-     * Information about a particular [ChronicleProducer]({{Types.chronicleProducer}}).
+     * Information about a particular [ChronicleProducer]({{Types.ChronicleProducer}}).
      */
     public void setNode(ChronicleProducer node) {
         this.node = node;
@@ -48,6 +49,23 @@ public class ChronicleProducerEdge implements java.io.Serializable {
         this.cursor = cursor;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final ChronicleProducerEdge that = (ChronicleProducerEdge) obj;
+        return Objects.equals(node, that.node)
+            && Objects.equals(cursor, that.cursor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(node, cursor);
+    }
 
 
     public static ChronicleProducerEdge.Builder builder() {
@@ -63,7 +81,7 @@ public class ChronicleProducerEdge implements java.io.Serializable {
         }
 
         /**
-         * Information about a particular [ChronicleProducer]({{Types.chronicleProducer}}).
+         * Information about a particular [ChronicleProducer]({{Types.ChronicleProducer}}).
          */
         public Builder setNode(ChronicleProducer node) {
             this.node = node;

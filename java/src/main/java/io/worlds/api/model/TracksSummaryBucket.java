@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 public class TracksSummaryBucket implements java.io.Serializable {
 
@@ -34,31 +35,49 @@ public class TracksSummaryBucket implements java.io.Serializable {
     }
 
     /**
-     * The total number of [Tracks]({{Types.track}}) within the bucket.
+     * The total number of [Tracks]({{Types.Track}}) within the bucket.
      */
     public int getTotal() {
         return total;
     }
     /**
-     * The total number of [Tracks]({{Types.track}}) within the bucket.
+     * The total number of [Tracks]({{Types.Track}}) within the bucket.
      */
     public void setTotal(int total) {
         this.total = total;
     }
 
     /**
-     * The count of [Tracks]({{Types.track}}) for each [Tag]({{Types.tag}}) within the bucket.
+     * The count of [Tracks]({{Types.Track}}) for each [Tag]({{Types.Tag}}) within the bucket.
      */
     public java.util.List<TracksCountByTag> getCounts() {
         return counts;
     }
     /**
-     * The count of [Tracks]({{Types.track}}) for each [Tag]({{Types.tag}}) within the bucket.
+     * The count of [Tracks]({{Types.Track}}) for each [Tag]({{Types.Tag}}) within the bucket.
      */
     public void setCounts(java.util.List<TracksCountByTag> counts) {
         this.counts = counts;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final TracksSummaryBucket that = (TracksSummaryBucket) obj;
+        return Objects.equals(time, that.time)
+            && Objects.equals(total, that.total)
+            && Objects.equals(counts, that.counts);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(time, total, counts);
+    }
 
 
     public static TracksSummaryBucket.Builder builder() {
@@ -83,7 +102,7 @@ public class TracksSummaryBucket implements java.io.Serializable {
         }
 
         /**
-         * The total number of [Tracks]({{Types.track}}) within the bucket.
+         * The total number of [Tracks]({{Types.Track}}) within the bucket.
          */
         public Builder setTotal(int total) {
             this.total = total;
@@ -91,7 +110,7 @@ public class TracksSummaryBucket implements java.io.Serializable {
         }
 
         /**
-         * The count of [Tracks]({{Types.track}}) for each [Tag]({{Types.tag}}) within the bucket.
+         * The count of [Tracks]({{Types.Track}}) for each [Tag]({{Types.Tag}}) within the bucket.
          */
         public Builder setCounts(java.util.List<TracksCountByTag> counts) {
             this.counts = counts;

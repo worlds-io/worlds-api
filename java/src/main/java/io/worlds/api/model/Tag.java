@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * Tags are descriptive labels used to classify and group both detections and training data for models.
@@ -62,6 +63,24 @@ public class Tag implements java.io.Serializable {
         this.color = color;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final Tag that = (Tag) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(name, that.name)
+            && Objects.equals(color, that.color);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, color);
+    }
 
 
     public static Tag.Builder builder() {

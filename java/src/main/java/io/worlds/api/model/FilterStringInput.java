@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * `FilterStringInput` allows for filtering based on a string parameter. Only one field should be provided per filter object.
@@ -60,6 +61,26 @@ public class FilterStringInput implements java.io.Serializable {
         this.attributeExists = attributeExists;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final FilterStringInput that = (FilterStringInput) obj;
+        return Objects.equals(ne, that.ne)
+            && Objects.equals(eq, that.eq)
+            && Objects.equals(like, that.like)
+            && Objects.equals(in, that.in)
+            && Objects.equals(attributeExists, that.attributeExists);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(ne, eq, like, in, attributeExists);
+    }
 
 
     public static FilterStringInput.Builder builder() {

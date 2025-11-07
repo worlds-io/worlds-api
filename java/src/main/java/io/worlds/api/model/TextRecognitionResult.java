@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 public class TextRecognitionResult implements java.io.Serializable {
 
@@ -31,18 +32,35 @@ public class TextRecognitionResult implements java.io.Serializable {
     }
 
     /**
-     * The index of the region in the provided regions array that contains the text detection. Only applicable if `regions` was specified in the [original query]({{Types.textrecognitionoptionsinput}}}).
+     * The index of the region in the provided regions array that contains the text detection. Only applicable if `regions` was specified in the [original query]({{Types.TextRecognitionOptionsInput}}}).
      */
     public Integer getRegionIndex() {
         return regionIndex;
     }
     /**
-     * The index of the region in the provided regions array that contains the text detection. Only applicable if `regions` was specified in the [original query]({{Types.textrecognitionoptionsinput}}}).
+     * The index of the region in the provided regions array that contains the text detection. Only applicable if `regions` was specified in the [original query]({{Types.TextRecognitionOptionsInput}}}).
      */
     public void setRegionIndex(Integer regionIndex) {
         this.regionIndex = regionIndex;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final TextRecognitionResult that = (TextRecognitionResult) obj;
+        return Objects.equals(textDetection, that.textDetection)
+            && Objects.equals(regionIndex, that.regionIndex);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(textDetection, regionIndex);
+    }
 
 
     public static TextRecognitionResult.Builder builder() {
@@ -66,7 +84,7 @@ public class TextRecognitionResult implements java.io.Serializable {
         }
 
         /**
-         * The index of the region in the provided regions array that contains the text detection. Only applicable if `regions` was specified in the [original query]({{Types.textrecognitionoptionsinput}}}).
+         * The index of the region in the provided regions array that contains the text detection. Only applicable if `regions` was specified in the [original query]({{Types.TextRecognitionOptionsInput}}}).
          */
         public Builder setRegionIndex(Integer regionIndex) {
             this.regionIndex = regionIndex;

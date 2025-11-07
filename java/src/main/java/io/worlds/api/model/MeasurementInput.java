@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * This input type is used to create new [`Measurement`]({{Types.measurement}}) for a sensor. See [About Sensors](/reference/objects/sensors/#about-sensors) for more details.
+ * This input type is used to create new [`Measurement`]({{Types.Measurement}}) for a sensor. See [`Sensor`]({{Types.Sensor}}) for more details.
  */
 public class MeasurementInput implements java.io.Serializable {
 
@@ -45,6 +46,24 @@ public class MeasurementInput implements java.io.Serializable {
         this.value = value;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final MeasurementInput that = (MeasurementInput) obj;
+        return Objects.equals(sensorId, that.sensorId)
+            && Objects.equals(timestamp, that.timestamp)
+            && Objects.equals(value, that.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(sensorId, timestamp, value);
+    }
 
 
     public static MeasurementInput.Builder builder() {

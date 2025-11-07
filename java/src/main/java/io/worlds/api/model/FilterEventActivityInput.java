@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * FilterEventActivityInput filters [events]({{Types.event}}) based on criteria described below.
+ * FilterEventActivityInput filters [events]({{Types.Event}}) based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
  */
 public class FilterEventActivityInput implements java.io.Serializable {
@@ -88,6 +89,29 @@ public class FilterEventActivityInput implements java.io.Serializable {
         this.not = not;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final FilterEventActivityInput that = (FilterEventActivityInput) obj;
+        return Objects.equals(eventProducerId, that.eventProducerId)
+            && Objects.equals(type, that.type)
+            && Objects.equals(subType, that.subType)
+            && Objects.equals(draft, that.draft)
+            && Objects.equals(priority, that.priority)
+            && Objects.equals(and, that.and)
+            && Objects.equals(or, that.or)
+            && Objects.equals(not, that.not);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(eventProducerId, type, subType, draft, priority, and, or, not);
+    }
 
 
     public static FilterEventActivityInput.Builder builder() {

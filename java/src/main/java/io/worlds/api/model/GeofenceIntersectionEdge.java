@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 public class GeofenceIntersectionEdge implements java.io.Serializable {
 
@@ -18,31 +19,48 @@ public class GeofenceIntersectionEdge implements java.io.Serializable {
     }
 
     /**
-     * Information about a particular [GeofenceIntersection]({{Types.geofenceintersection}}).
+     * Information about a particular [GeofenceIntersection]({{Types.GeofenceIntersection}}).
      */
     public GeofenceIntersection getNode() {
         return node;
     }
     /**
-     * Information about a particular [GeofenceIntersection]({{Types.geofenceintersection}}).
+     * Information about a particular [GeofenceIntersection]({{Types.GeofenceIntersection}}).
      */
     public void setNode(GeofenceIntersection node) {
         this.node = node;
     }
 
     /**
-     * The cursor to use with the [Query `geofenceIntersections` field]({{Queries.geofenceintersections}}) `after` argument.
+     * The cursor to use with the [Query `geofenceIntersections` field]({{Queries.geofenceIntersections}}) `after` argument.
      */
     public String getCursor() {
         return cursor;
     }
     /**
-     * The cursor to use with the [Query `geofenceIntersections` field]({{Queries.geofenceintersections}}) `after` argument.
+     * The cursor to use with the [Query `geofenceIntersections` field]({{Queries.geofenceIntersections}}) `after` argument.
      */
     public void setCursor(String cursor) {
         this.cursor = cursor;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final GeofenceIntersectionEdge that = (GeofenceIntersectionEdge) obj;
+        return Objects.equals(node, that.node)
+            && Objects.equals(cursor, that.cursor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(node, cursor);
+    }
 
 
     public static GeofenceIntersectionEdge.Builder builder() {
@@ -58,7 +76,7 @@ public class GeofenceIntersectionEdge implements java.io.Serializable {
         }
 
         /**
-         * Information about a particular [GeofenceIntersection]({{Types.geofenceintersection}}).
+         * Information about a particular [GeofenceIntersection]({{Types.GeofenceIntersection}}).
          */
         public Builder setNode(GeofenceIntersection node) {
             this.node = node;
@@ -66,7 +84,7 @@ public class GeofenceIntersectionEdge implements java.io.Serializable {
         }
 
         /**
-         * The cursor to use with the [Query `geofenceIntersections` field]({{Queries.geofenceintersections}}) `after` argument.
+         * The cursor to use with the [Query `geofenceIntersections` field]({{Queries.geofenceIntersections}}) `after` argument.
          */
         public Builder setCursor(String cursor) {
             this.cursor = cursor;

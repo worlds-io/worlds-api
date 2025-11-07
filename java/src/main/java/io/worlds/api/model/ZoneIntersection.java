@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 public class ZoneIntersection implements java.io.Serializable {
 
@@ -91,6 +92,26 @@ public class ZoneIntersection implements java.io.Serializable {
         this.endTime = endTime;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final ZoneIntersection that = (ZoneIntersection) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(zone, that.zone)
+            && Objects.equals(track, that.track)
+            && Objects.equals(startTime, that.startTime)
+            && Objects.equals(endTime, that.endTime);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, zone, track, startTime, endTime);
+    }
 
 
     public static ZoneIntersection.Builder builder() {

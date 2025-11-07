@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * This input type is used to create a new clip for an event. See [About Events](/reference/objects/#about-events) for more details.
+ * This input type is used to create a new clip for an event. See [`Event`]({{Types.Event}}) for more details.
  */
 public class CreateClipInput implements java.io.Serializable {
 
@@ -45,6 +46,24 @@ public class CreateClipInput implements java.io.Serializable {
         this.endTime = endTime;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final CreateClipInput that = (CreateClipInput) obj;
+        return Objects.equals(dataSourceId, that.dataSourceId)
+            && Objects.equals(startTime, that.startTime)
+            && Objects.equals(endTime, that.endTime);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(dataSourceId, startTime, endTime);
+    }
 
 
     public static CreateClipInput.Builder builder() {

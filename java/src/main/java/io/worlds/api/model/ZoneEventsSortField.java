@@ -1,7 +1,7 @@
 package io.worlds.api.model;
 
 /**
- * Indicates the field used for sorting a [zoneEvents query]({{Queries.zoneevents}}).
+ * Indicates the field used for sorting a [zoneEvents query]({{Queries.zoneEvents}}).
  */
 public enum ZoneEventsSortField {
 

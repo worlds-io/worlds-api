@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * `FilterMeasurementActivityInput` allows for filtering measurement activity based on criteria described below.
@@ -52,6 +53,25 @@ public class FilterMeasurementActivityInput implements java.io.Serializable {
         this.not = not;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final FilterMeasurementActivityInput that = (FilterMeasurementActivityInput) obj;
+        return Objects.equals(sensorId, that.sensorId)
+            && Objects.equals(and, that.and)
+            && Objects.equals(or, that.or)
+            && Objects.equals(not, that.not);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(sensorId, and, or, not);
+    }
 
 
     public static FilterMeasurementActivityInput.Builder builder() {

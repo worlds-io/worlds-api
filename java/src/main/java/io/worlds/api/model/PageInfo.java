@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * Pagination info for any connection
@@ -75,6 +76,25 @@ public class PageInfo implements java.io.Serializable {
         this.endCursor = endCursor;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final PageInfo that = (PageInfo) obj;
+        return Objects.equals(hasNextPage, that.hasNextPage)
+            && Objects.equals(hasPreviousPage, that.hasPreviousPage)
+            && Objects.equals(startCursor, that.startCursor)
+            && Objects.equals(endCursor, that.endCursor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(hasNextPage, hasPreviousPage, startCursor, endCursor);
+    }
 
 
     public static PageInfo.Builder builder() {

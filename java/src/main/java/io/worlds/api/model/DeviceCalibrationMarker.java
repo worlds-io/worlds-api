@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * DeviceCalibrationMarker represents a reference point used in device calibration. Markers consist of a point in an image and their corresponding point in the real world.
@@ -79,6 +80,25 @@ public class DeviceCalibrationMarker implements java.io.Serializable {
         this.pixel = pixel;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final DeviceCalibrationMarker that = (DeviceCalibrationMarker) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(name, that.name)
+            && Objects.equals(position, that.position)
+            && Objects.equals(pixel, that.pixel);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, position, pixel);
+    }
 
 
     public static DeviceCalibrationMarker.Builder builder() {

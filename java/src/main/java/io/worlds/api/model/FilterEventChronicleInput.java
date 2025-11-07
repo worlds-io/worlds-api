@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * FilterEventChronicleInput filters [EventChronicles]({{Types.eventChronicle}}) based on criteria described below.
+ * FilterEventChronicleInput filters [EventChronicles]({{Types.EventChronicle}}) based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
  */
 public class FilterEventChronicleInput implements java.io.Serializable {
@@ -142,6 +143,35 @@ public class FilterEventChronicleInput implements java.io.Serializable {
         this.not = not;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final FilterEventChronicleInput that = (FilterEventChronicleInput) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(name, that.name)
+            && Objects.equals(chronicleProducerId, that.chronicleProducerId)
+            && Objects.equals(timestamp, that.timestamp)
+            && Objects.equals(timezone, that.timezone)
+            && Objects.equals(priority, that.priority)
+            && Objects.equals(status, that.status)
+            && Objects.equals(validation, that.validation)
+            && Objects.equals(labels, that.labels)
+            && Objects.equals(locations, that.locations)
+            && Objects.equals(activityChronicleIds, that.activityChronicleIds)
+            && Objects.equals(and, that.and)
+            && Objects.equals(or, that.or)
+            && Objects.equals(not, that.not);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, chronicleProducerId, timestamp, timezone, priority, status, validation, labels, locations, activityChronicleIds, and, or, not);
+    }
 
 
     public static FilterEventChronicleInput.Builder builder() {

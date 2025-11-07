@@ -1,9 +1,10 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * An measurement edge is the pairing of an [Measurement]({{Types.measurement}}) with its query cursor.
-See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+ * An measurement edge is the pairing of an [Measurement]({{Types.Measurement}}) with its query cursor.
+See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class MeasurementEdge implements java.io.Serializable {
 
@@ -47,6 +48,23 @@ public class MeasurementEdge implements java.io.Serializable {
         this.cursor = cursor;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final MeasurementEdge that = (MeasurementEdge) obj;
+        return Objects.equals(node, that.node)
+            && Objects.equals(cursor, that.cursor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(node, cursor);
+    }
 
 
     public static MeasurementEdge.Builder builder() {

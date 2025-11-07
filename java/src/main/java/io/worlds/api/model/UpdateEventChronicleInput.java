@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * This input type is used to update an existing [`EventChronicle`]({{Types.eventchronicle}}).
+ * This input type is used to update an existing [`EventChronicle`]({{Types.EventChronicle}}).
  */
 public class UpdateEventChronicleInput implements java.io.Serializable {
 
@@ -124,6 +125,33 @@ public class UpdateEventChronicleInput implements java.io.Serializable {
         this.activityChronicleIds = activityChronicleIds;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final UpdateEventChronicleInput that = (UpdateEventChronicleInput) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(name, that.name)
+            && Objects.equals(description, that.description)
+            && Objects.equals(timestamp, that.timestamp)
+            && Objects.equals(timezone, that.timezone)
+            && Objects.equals(metadata, that.metadata)
+            && Objects.equals(priority, that.priority)
+            && Objects.equals(status, that.status)
+            && Objects.equals(labels, that.labels)
+            && Objects.equals(locations, that.locations)
+            && Objects.equals(validation, that.validation)
+            && Objects.equals(activityChronicleIds, that.activityChronicleIds);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, description, timestamp, timezone, metadata, priority, status, labels, locations, validation, activityChronicleIds);
+    }
 
 
     public static UpdateEventChronicleInput.Builder builder() {

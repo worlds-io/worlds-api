@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * A [GeoJSON][geojson] polygon represents a region in the world. GeoJSON is a formal
@@ -57,19 +58,37 @@ For more information, see [Polygons in RFC 7946](https://datatracker.ietf.org/do
 
     /**
      * The coordinate reference system used for this  polygon. See
-[`GeoJSONCRS`]({{Types.geojsoncrs}}) for more information.
+[`GeoJSONCRS`]({{Types.GeoJSONCRS}}) for more information.
      */
     public GeoJSONCRS getCrs() {
         return crs;
     }
     /**
      * The coordinate reference system used for this  polygon. See
-[`GeoJSONCRS`]({{Types.geojsoncrs}}) for more information.
+[`GeoJSONCRS`]({{Types.GeoJSONCRS}}) for more information.
      */
     public void setCrs(GeoJSONCRS crs) {
         this.crs = crs;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final GeoJSONPolygon that = (GeoJSONPolygon) obj;
+        return Objects.equals(type, that.type)
+            && Objects.equals(coordinates, that.coordinates)
+            && Objects.equals(crs, that.crs);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, coordinates, crs);
+    }
 
 
     public static GeoJSONPolygon.Builder builder() {
@@ -106,7 +125,7 @@ For more information, see [Polygons in RFC 7946](https://datatracker.ietf.org/do
 
         /**
          * The coordinate reference system used for this  polygon. See
-[`GeoJSONCRS`]({{Types.geojsoncrs}}) for more information.
+[`GeoJSONCRS`]({{Types.GeoJSONCRS}}) for more information.
          */
         public Builder setCrs(GeoJSONCRS crs) {
             this.crs = crs;

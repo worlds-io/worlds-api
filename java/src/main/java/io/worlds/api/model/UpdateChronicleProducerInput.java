@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * This input type is used to update an existing [`ChronicleProducer`]({{Types.chronicleProducer}}).
+ * This input type is used to update an existing [`ChronicleProducer`]({{Types.ChronicleProducer}}).
  */
 public class UpdateChronicleProducerInput implements java.io.Serializable {
 
@@ -79,6 +80,28 @@ public class UpdateChronicleProducerInput implements java.io.Serializable {
         this.validationReasons = validationReasons;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final UpdateChronicleProducerInput that = (UpdateChronicleProducerInput) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(name, that.name)
+            && Objects.equals(description, that.description)
+            && Objects.equals(timezone, that.timezone)
+            && Objects.equals(active, that.active)
+            && Objects.equals(metadata, that.metadata)
+            && Objects.equals(validationReasons, that.validationReasons);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, description, timezone, active, metadata, validationReasons);
+    }
 
 
     public static UpdateChronicleProducerInput.Builder builder() {

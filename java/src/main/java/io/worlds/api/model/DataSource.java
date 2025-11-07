@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * A data source is responsible for producing the videos, images and other sensor data that may eventually produce detections and tracks. For more details on detections, see [About Detections](/reference/objects/detection/#about-detections)
+ * A data source is responsible for producing the videos, images and other sensor data that may eventually produce detections and tracks. For more details on detections, see [About Detections]({{Types.Detection}})
  */
 public class DataSource implements java.io.Serializable {
 
@@ -109,6 +110,27 @@ public class DataSource implements java.io.Serializable {
         this.labels = labels;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final DataSource that = (DataSource) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(name, that.name)
+            && Objects.equals(type, that.type)
+            && Objects.equals(device, that.device)
+            && Objects.equals(zones, that.zones)
+            && Objects.equals(labels, that.labels);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, type, device, zones, labels);
+    }
 
 
     public static DataSource.Builder builder() {

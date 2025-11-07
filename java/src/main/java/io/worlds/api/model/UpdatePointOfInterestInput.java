@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * Fields to update an existing [PointOfInterest]({{Types.pointofinterest}})
+ * Fields to update an existing [PointOfInterest]({{Types.PointOfInterest}})
  */
 public class UpdatePointOfInterestInput implements java.io.Serializable {
 
@@ -61,6 +62,26 @@ public class UpdatePointOfInterestInput implements java.io.Serializable {
         this.metadata = metadata;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final UpdatePointOfInterestInput that = (UpdatePointOfInterestInput) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(siteId, that.siteId)
+            && Objects.equals(name, that.name)
+            && Objects.equals(position, that.position)
+            && Objects.equals(metadata, that.metadata);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, siteId, name, position, metadata);
+    }
 
 
     public static UpdatePointOfInterestInput.Builder builder() {

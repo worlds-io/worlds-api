@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * A point of interest is a designated area within a Site, used to subdivide a location into meaningful sections. Each POI belongs to a single [Site]({{Types.site}}) and can contain multiple [Devices](/reference/object/device/).
+ * A point of interest is a designated area within a Site, used to subdivide a location into meaningful sections. Each POI belongs to a single [Site]({{Types.Site}}) and can contain multiple [Devices]({{Types.Device}}).
  */
 public class PointOfInterest implements java.io.Serializable {
 
@@ -126,6 +127,28 @@ public class PointOfInterest implements java.io.Serializable {
         this.metadata = metadata;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final PointOfInterest that = (PointOfInterest) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(site, that.site)
+            && Objects.equals(name, that.name)
+            && Objects.equals(position, that.position)
+            && Objects.equals(devices, that.devices)
+            && Objects.equals(geofences, that.geofences)
+            && Objects.equals(metadata, that.metadata);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, site, name, position, devices, geofences, metadata);
+    }
 
 
     public static PointOfInterest.Builder builder() {

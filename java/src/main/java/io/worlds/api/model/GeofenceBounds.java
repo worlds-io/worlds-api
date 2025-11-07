@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * A `GeofenceBounds` object represents the coordinates and boundaries of a [geofence](/references/objects/geofence/). See [About Geofences](/references/objects/geofence/#about-geofences) for more details.
+ * A `GeofenceBounds` object represents the coordinates and boundaries of a [`Geofence`]({{Types.Geofence}}).
  */
 public class GeofenceBounds implements java.io.Serializable {
 
@@ -46,6 +47,23 @@ public class GeofenceBounds implements java.io.Serializable {
         this.height = height;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final GeofenceBounds that = (GeofenceBounds) obj;
+        return Objects.equals(polygon, that.polygon)
+            && Objects.equals(height, that.height);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(polygon, height);
+    }
 
 
     public static GeofenceBounds.Builder builder() {

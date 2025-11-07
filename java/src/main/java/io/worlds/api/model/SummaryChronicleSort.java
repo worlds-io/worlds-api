@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * Indicates the field used for sorting an [`summaryProducers` query]({{Queries.summaryproducers}}).
+ * Indicates the field used for sorting a [`summaryChronicles` query]({{Queries.summaryChronicles}}).
  */
 public class SummaryChronicleSort implements java.io.Serializable {
 
@@ -35,6 +36,23 @@ public class SummaryChronicleSort implements java.io.Serializable {
         this.direction = direction;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final SummaryChronicleSort that = (SummaryChronicleSort) obj;
+        return Objects.equals(field, that.field)
+            && Objects.equals(direction, that.direction);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(field, direction);
+    }
 
 
     public static SummaryChronicleSort.Builder builder() {

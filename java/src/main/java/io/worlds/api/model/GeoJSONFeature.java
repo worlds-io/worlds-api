@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * A [GeoJSON][geojson] feature represents any spatially bounded thing.
@@ -62,6 +63,24 @@ public class GeoJSONFeature implements java.io.Serializable {
         this.properties = properties;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final GeoJSONFeature that = (GeoJSONFeature) obj;
+        return Objects.equals(type, that.type)
+            && Objects.equals(geometry, that.geometry)
+            && Objects.equals(properties, that.properties);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, geometry, properties);
+    }
 
 
     public static GeoJSONFeature.Builder builder() {

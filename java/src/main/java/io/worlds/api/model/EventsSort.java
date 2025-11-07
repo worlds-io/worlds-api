@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * EventsSort allows for sorting an event by a sort field and direction.
@@ -35,6 +36,23 @@ public class EventsSort implements java.io.Serializable {
         this.direction = direction;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final EventsSort that = (EventsSort) obj;
+        return Objects.equals(field, that.field)
+            && Objects.equals(direction, that.direction);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(field, direction);
+    }
 
 
     public static EventsSort.Builder builder() {

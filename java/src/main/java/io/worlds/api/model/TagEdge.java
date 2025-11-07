@@ -1,9 +1,10 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * A tag edge is the pairing of a [Tag]({{Types.tag}}) with its query cursor.
-See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+ * A tag edge is the pairing of a [Tag]({{Types.Tag}}) with its query cursor.
+See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class TagEdge implements java.io.Serializable {
 
@@ -22,13 +23,13 @@ public class TagEdge implements java.io.Serializable {
     }
 
     /**
-     * Information about a particular [Tag]({{Types.tag}}).
+     * Information about a particular [Tag]({{Types.Tag}}).
      */
     public Tag getNode() {
         return node;
     }
     /**
-     * Information about a particular [Tag]({{Types.tag}}).
+     * Information about a particular [Tag]({{Types.Tag}}).
      */
     public void setNode(Tag node) {
         this.node = node;
@@ -47,6 +48,23 @@ public class TagEdge implements java.io.Serializable {
         this.cursor = cursor;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final TagEdge that = (TagEdge) obj;
+        return Objects.equals(node, that.node)
+            && Objects.equals(cursor, that.cursor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(node, cursor);
+    }
 
 
     public static TagEdge.Builder builder() {
@@ -62,7 +80,7 @@ public class TagEdge implements java.io.Serializable {
         }
 
         /**
-         * Information about a particular [Tag]({{Types.tag}}).
+         * Information about a particular [Tag]({{Types.Tag}}).
          */
         public Builder setNode(Tag node) {
             this.node = node;

@@ -7,12 +7,12 @@ public enum DetectionsSortField {
 
     /**
      * 
-Sort the resulting list by [detection time]({{Types.detection}}).
+Sort the resulting list by [detection time]({{Types.Detection}}).
      */
     DETECTION_TIME("DETECTION_TIME"),
     /**
      * 
-Sort the resulting list by the corresponding Track's [unique identifier.]({{Types.detection}}).
+Sort the resulting list by the corresponding Track's [unique identifier.]({{Types.Detection}}).
      */
     GLOBAL_TRACK_ID("GLOBAL_TRACK_ID");
 

@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 public class ZoneIntersectionMessage implements java.io.Serializable {
 
@@ -32,18 +33,35 @@ public class ZoneIntersectionMessage implements java.io.Serializable {
     }
 
     /**
-     * The state of the intersection message. Within the message, the [`endTime`]({{Types.zoneintersection}}) will only be present on an [`END`]({{Types.messagestate}}) event.
+     * The state of the intersection message. Within the message, the [`endTime`]({{Types.ZoneIntersection}}) will only be present on an [`END`]({{Types.MessageState}}) event.
      */
     public MessageState getState() {
         return state;
     }
     /**
-     * The state of the intersection message. Within the message, the [`endTime`]({{Types.zoneintersection}}) will only be present on an [`END`]({{Types.messagestate}}) event.
+     * The state of the intersection message. Within the message, the [`endTime`]({{Types.ZoneIntersection}}) will only be present on an [`END`]({{Types.MessageState}}) event.
      */
     public void setState(MessageState state) {
         this.state = state;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final ZoneIntersectionMessage that = (ZoneIntersectionMessage) obj;
+        return Objects.equals(message, that.message)
+            && Objects.equals(state, that.state);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(message, state);
+    }
 
 
     public static ZoneIntersectionMessage.Builder builder() {
@@ -67,7 +85,7 @@ public class ZoneIntersectionMessage implements java.io.Serializable {
         }
 
         /**
-         * The state of the intersection message. Within the message, the [`endTime`]({{Types.zoneintersection}}) will only be present on an [`END`]({{Types.messagestate}}) event.
+         * The state of the intersection message. Within the message, the [`endTime`]({{Types.ZoneIntersection}}) will only be present on an [`END`]({{Types.MessageState}}) event.
          */
         public Builder setState(MessageState state) {
             this.state = state;

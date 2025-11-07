@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * This input type is used to update an existing [`ActivityChronicle`]({{Types.activitychronicle}}).
+ * This input type is used to update an existing [`ActivityChronicle`]({{Types.ActivityChronicle}}).
  */
 public class UpdateActivityChronicleInput implements java.io.Serializable {
 
@@ -187,6 +188,40 @@ public class UpdateActivityChronicleInput implements java.io.Serializable {
         this.pointOfInterestIds = pointOfInterestIds;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final UpdateActivityChronicleInput that = (UpdateActivityChronicleInput) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(name, that.name)
+            && Objects.equals(description, that.description)
+            && Objects.equals(startTime, that.startTime)
+            && Objects.equals(endTime, that.endTime)
+            && Objects.equals(timezone, that.timezone)
+            && Objects.equals(metadata, that.metadata)
+            && Objects.equals(priority, that.priority)
+            && Objects.equals(status, that.status)
+            && Objects.equals(labels, that.labels)
+            && Objects.equals(locations, that.locations)
+            && Objects.equals(validation, that.validation)
+            && Objects.equals(imageIds, that.imageIds)
+            && Objects.equals(clips, that.clips)
+            && Objects.equals(trackIds, that.trackIds)
+            && Objects.equals(siteIds, that.siteIds)
+            && Objects.equals(dataSourceIds, that.dataSourceIds)
+            && Objects.equals(tagIds, that.tagIds)
+            && Objects.equals(pointOfInterestIds, that.pointOfInterestIds);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, description, startTime, endTime, timezone, metadata, priority, status, labels, locations, validation, imageIds, clips, trackIds, siteIds, dataSourceIds, tagIds, pointOfInterestIds);
+    }
 
 
     public static UpdateActivityChronicleInput.Builder builder() {

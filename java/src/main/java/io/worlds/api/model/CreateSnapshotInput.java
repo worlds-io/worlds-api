@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * This input type is used to create a new [`Image`](/references/objects/image) for an event. See [About Events](/reference/objects/#about-events) for more details.
+ * This input type is used to create a new [`Image`]({{Types.Image}}) for an event. See [`Event`]({{Types.Event}}) for more details.
  */
 public class CreateSnapshotInput implements java.io.Serializable {
 
@@ -35,6 +36,23 @@ public class CreateSnapshotInput implements java.io.Serializable {
         this.timestamp = timestamp;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final CreateSnapshotInput that = (CreateSnapshotInput) obj;
+        return Objects.equals(dataSourceId, that.dataSourceId)
+            && Objects.equals(timestamp, that.timestamp);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(dataSourceId, timestamp);
+    }
 
 
     public static CreateSnapshotInput.Builder builder() {

@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 public class TrackProperties implements java.io.Serializable {
 
@@ -42,6 +43,23 @@ public class TrackProperties implements java.io.Serializable {
         this.attributes = attributes;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final TrackProperties that = (TrackProperties) obj;
+        return Objects.equals(identifier, that.identifier)
+            && Objects.equals(attributes, that.attributes);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(identifier, attributes);
+    }
 
 
     public static TrackProperties.Builder builder() {

@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * `FilterIntInput` allows for filtering based on an Int parameter. Only one field should be provided per filter object.
@@ -96,6 +97,30 @@ public class FilterIntInput implements java.io.Serializable {
         this.attributeExists = attributeExists;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final FilterIntInput that = (FilterIntInput) obj;
+        return Objects.equals(ne, that.ne)
+            && Objects.equals(eq, that.eq)
+            && Objects.equals(le, that.le)
+            && Objects.equals(lt, that.lt)
+            && Objects.equals(ge, that.ge)
+            && Objects.equals(gt, that.gt)
+            && Objects.equals(in, that.in)
+            && Objects.equals(between, that.between)
+            && Objects.equals(attributeExists, that.attributeExists);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(ne, eq, le, lt, ge, gt, in, between, attributeExists);
+    }
 
 
     public static FilterIntInput.Builder builder() {

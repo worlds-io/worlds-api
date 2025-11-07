@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * FilterSensorInput filters [sensors]({{Types.sensor}}) based on criteria described below.
+ * FilterSensorInput filters [sensors]({{Types.Sensor}}) based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
  */
 public class FilterSensorInput implements java.io.Serializable {
@@ -79,6 +80,28 @@ public class FilterSensorInput implements java.io.Serializable {
         this.not = not;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final FilterSensorInput that = (FilterSensorInput) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(name, that.name)
+            && Objects.equals(type, that.type)
+            && Objects.equals(position, that.position)
+            && Objects.equals(and, that.and)
+            && Objects.equals(or, that.or)
+            && Objects.equals(not, that.not);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, type, position, and, or, not);
+    }
 
 
     public static FilterSensorInput.Builder builder() {

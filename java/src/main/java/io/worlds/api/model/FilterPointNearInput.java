@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * FilterPointNearInput is used to filter records with positional arguments by proximity to the specified point
@@ -34,6 +35,23 @@ public class FilterPointNearInput implements java.io.Serializable {
         this.radius = radius;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final FilterPointNearInput that = (FilterPointNearInput) obj;
+        return Objects.equals(point, that.point)
+            && Objects.equals(radius, that.radius);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(point, radius);
+    }
 
 
     public static FilterPointNearInput.Builder builder() {

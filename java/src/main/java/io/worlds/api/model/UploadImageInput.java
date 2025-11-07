@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * This input type is used to upload an image to worlds.
@@ -70,6 +71,27 @@ public class UploadImageInput implements java.io.Serializable {
         this.activityChronicleIds = activityChronicleIds;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final UploadImageInput that = (UploadImageInput) obj;
+        return Objects.equals(dataSourceId, that.dataSourceId)
+            && Objects.equals(fileName, that.fileName)
+            && Objects.equals(timestamp, that.timestamp)
+            && Objects.equals(data, that.data)
+            && Objects.equals(eventIds, that.eventIds)
+            && Objects.equals(activityChronicleIds, that.activityChronicleIds);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(dataSourceId, fileName, timestamp, data, eventIds, activityChronicleIds);
+    }
 
 
     public static UploadImageInput.Builder builder() {

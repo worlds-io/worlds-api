@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 public class UpdateZoneInput implements java.io.Serializable {
 
@@ -58,6 +59,26 @@ public class UpdateZoneInput implements java.io.Serializable {
         this.active = active;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final UpdateZoneInput that = (UpdateZoneInput) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(dataSourceId, that.dataSourceId)
+            && Objects.equals(name, that.name)
+            && Objects.equals(polygon, that.polygon)
+            && Objects.equals(active, that.active);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, dataSourceId, name, polygon, active);
+    }
 
 
     public static UpdateZoneInput.Builder builder() {

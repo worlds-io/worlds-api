@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * `FilterGeofenceEventInput` allows for filtering a geofence event based on criteria described below.
@@ -62,6 +63,26 @@ public class FilterGeofenceEventInput implements java.io.Serializable {
         this.not = not;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final FilterGeofenceEventInput that = (FilterGeofenceEventInput) obj;
+        return Objects.equals(geofenceId, that.geofenceId)
+            && Objects.equals(time, that.time)
+            && Objects.equals(and, that.and)
+            && Objects.equals(or, that.or)
+            && Objects.equals(not, that.not);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(geofenceId, time, and, or, not);
+    }
 
 
     public static FilterGeofenceEventInput.Builder builder() {

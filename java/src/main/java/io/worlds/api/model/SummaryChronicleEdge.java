@@ -1,9 +1,10 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * An summary edge is the pairing of an [Summary]({{Types.summary}}) with its query cursor.
-See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+ * An summary edge is the pairing of an [Summary]({{Types.Summary}}) with its query cursor.
+See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class SummaryChronicleEdge implements java.io.Serializable {
 
@@ -23,13 +24,13 @@ public class SummaryChronicleEdge implements java.io.Serializable {
     }
 
     /**
-     * Information about a particular [Summary]({{Types.summary}}).
+     * Information about a particular [Summary]({{Types.Summary}}).
      */
     public SummaryChronicle getNode() {
         return node;
     }
     /**
-     * Information about a particular [Summary]({{Types.summary}}).
+     * Information about a particular [Summary]({{Types.Summary}}).
      */
     public void setNode(SummaryChronicle node) {
         this.node = node;
@@ -48,6 +49,23 @@ public class SummaryChronicleEdge implements java.io.Serializable {
         this.cursor = cursor;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final SummaryChronicleEdge that = (SummaryChronicleEdge) obj;
+        return Objects.equals(node, that.node)
+            && Objects.equals(cursor, that.cursor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(node, cursor);
+    }
 
 
     public static SummaryChronicleEdge.Builder builder() {
@@ -63,7 +81,7 @@ public class SummaryChronicleEdge implements java.io.Serializable {
         }
 
         /**
-         * Information about a particular [Summary]({{Types.summary}}).
+         * Information about a particular [Summary]({{Types.Summary}}).
          */
         public Builder setNode(SummaryChronicle node) {
             this.node = node;

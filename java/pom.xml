@@ -54,6 +54,7 @@
               <generateApis>false</generateApis>
               <modelValidationAnnotation>@jakarta.validation.constraints.NotNull</modelValidationAnnotation>
               <generateDataFetchingEnvironmentArgumentInApis>true</generateDataFetchingEnvironmentArgumentInApis>
+              <generateEqualsAndHashCode>true</generateEqualsAndHashCode>
               <useWrapperForNullableInputTypes>true</useWrapperForNullableInputTypes>
             </configuration>
           </execution>

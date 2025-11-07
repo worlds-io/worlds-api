@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 public class Zone implements java.io.Serializable {
 
@@ -139,6 +140,29 @@ public class Zone implements java.io.Serializable {
         this.deviceId = deviceId;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final Zone that = (Zone) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(dataSource, that.dataSource)
+            && Objects.equals(name, that.name)
+            && Objects.equals(polygon, that.polygon)
+            && Objects.equals(active, that.active)
+            && Objects.equals(createdAt, that.createdAt)
+            && Objects.equals(updatedAt, that.updatedAt)
+            && Objects.equals(deviceId, that.deviceId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, dataSource, name, polygon, active, createdAt, updatedAt, deviceId);
+    }
 
 
     public static Zone.Builder builder() {

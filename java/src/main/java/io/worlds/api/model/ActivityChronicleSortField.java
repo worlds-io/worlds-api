@@ -1,38 +1,38 @@
 package io.worlds.api.model;
 
 /**
- * Indicates the field used for sorting an [`activities` query]({{Queries.activityChronicles}}).
+ * Indicates the field used for sorting an [`activityChronicles` query]({{Queries.activityChronicles}}).
  */
 public enum ActivityChronicleSortField {
 
     /**
      * 
-Sort the resulting list by the [`activityChronicle`]({{Types.activityChronicle}})'s unique identifier.
+Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s unique identifier.
      */
     ID("ID"),
     /**
      * 
-Sort the resulting list by the [`activityChronicle`]({{Types.activityChronicle}})'s start time.
+Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s start time.
      */
     START_TIME("START_TIME"),
     /**
      * 
-Sort the resulting list by the [`activityChronicle`]({{Types.activityChronicle}})'s end time.
+Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s end time.
      */
     END_TIME("END_TIME"),
     /**
      * 
-Sort the resulting list by the [`activityChronicle`]({{Types.activityChronicle}})'s name.
+Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s name.
      */
     NAME("NAME"),
     /**
      * 
-Sort the resulting list by the [`activityChronicle`]({{Types.activityChronicle}})'s priority.
+Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s priority.
      */
     PRIORITY("PRIORITY"),
     /**
      * 
-Sort the resulting list by the [`activityChronicle`]({{Types.activityChronicle}})'s status.
+Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s status.
      */
     STATUS("STATUS");
 

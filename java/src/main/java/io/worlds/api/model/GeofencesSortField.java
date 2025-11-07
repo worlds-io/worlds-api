@@ -7,12 +7,12 @@ public enum GeofencesSortField {
 
     /**
      * 
-Sort the resulting list by the [`Geofence`](({{Types.geofence}}))'s unique identifier.
+Sort the resulting list by the [`Geofence`](({{Types.Geofence}}))'s unique identifier.
      */
     ID("ID"),
     /**
      * 
-Sort the resulting list by the [`Geofence`](({{Types.geofence}}))'s name.
+Sort the resulting list by the [`Geofence`](({{Types.Geofence}}))'s name.
      */
     NAME("NAME");
 

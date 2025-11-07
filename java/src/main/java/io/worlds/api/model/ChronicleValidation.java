@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * This input type indicates whether an chronicle is valid and contains additional information about the validation.
@@ -61,6 +62,24 @@ public class ChronicleValidation implements java.io.Serializable {
         this.details = details;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final ChronicleValidation that = (ChronicleValidation) obj;
+        return Objects.equals(status, that.status)
+            && Objects.equals(reason, that.reason)
+            && Objects.equals(details, that.details);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(status, reason, details);
+    }
 
 
     public static ChronicleValidation.Builder builder() {

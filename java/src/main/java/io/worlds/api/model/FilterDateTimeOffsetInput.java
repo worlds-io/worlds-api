@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * `FilterDateTimeOffsetInput` allows for filtering based on a DateTimeOffset parameter. Only one field should be provided per filter object.
@@ -42,6 +43,24 @@ public class FilterDateTimeOffsetInput implements java.io.Serializable {
         this.attributeExists = attributeExists;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final FilterDateTimeOffsetInput that = (FilterDateTimeOffsetInput) obj;
+        return Objects.equals(eq, that.eq)
+            && Objects.equals(between, that.between)
+            && Objects.equals(attributeExists, that.attributeExists);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(eq, between, attributeExists);
+    }
 
 
     public static FilterDateTimeOffsetInput.Builder builder() {

@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * An event chronicle represents an occurrence at a single point at time.
@@ -247,6 +248,36 @@ public class EventChronicle implements java.io.Serializable {
         this.updatedAt = updatedAt;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final EventChronicle that = (EventChronicle) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(chronicleProducer, that.chronicleProducer)
+            && Objects.equals(name, that.name)
+            && Objects.equals(description, that.description)
+            && Objects.equals(timestamp, that.timestamp)
+            && Objects.equals(timezone, that.timezone)
+            && Objects.equals(metadata, that.metadata)
+            && Objects.equals(validation, that.validation)
+            && Objects.equals(priority, that.priority)
+            && Objects.equals(status, that.status)
+            && Objects.equals(labels, that.labels)
+            && Objects.equals(locations, that.locations)
+            && Objects.equals(activityChronicles, that.activityChronicles)
+            && Objects.equals(createdAt, that.createdAt)
+            && Objects.equals(updatedAt, that.updatedAt);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, chronicleProducer, name, description, timestamp, timezone, metadata, validation, priority, status, labels, locations, activityChronicles, createdAt, updatedAt);
+    }
 
 
     public static EventChronicle.Builder builder() {

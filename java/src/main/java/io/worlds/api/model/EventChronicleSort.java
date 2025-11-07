@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * Indicates the field used for sorting an [`eventProducers` query]({{Queries.eventProducers}}).
+ * Indicates the field used for sorting an [`eventChronicles` query]({{Queries.eventChronicles}}).
  */
 public class EventChronicleSort implements java.io.Serializable {
 
@@ -35,6 +36,23 @@ public class EventChronicleSort implements java.io.Serializable {
         this.direction = direction;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final EventChronicleSort that = (EventChronicleSort) obj;
+        return Objects.equals(field, that.field)
+            && Objects.equals(direction, that.direction);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(field, direction);
+    }
 
 
     public static EventChronicleSort.Builder builder() {

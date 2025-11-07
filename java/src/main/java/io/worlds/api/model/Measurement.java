@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * A `Measurement` is the specific output of a sensor at a given time.
@@ -79,6 +80,25 @@ public class Measurement implements java.io.Serializable {
         this.value = value;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final Measurement that = (Measurement) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(sensor, that.sensor)
+            && Objects.equals(timestamp, that.timestamp)
+            && Objects.equals(value, that.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, sensor, timestamp, value);
+    }
 
 
     public static Measurement.Builder builder() {

@@ -1,9 +1,10 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * A site edge is the pairing of a [Site]({{Types.site}}) with its query cursor.
-See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+ * A site edge is the pairing of a [Site]({{Types.Site}}) with its query cursor.
+See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class SiteEdge implements java.io.Serializable {
 
@@ -22,13 +23,13 @@ public class SiteEdge implements java.io.Serializable {
     }
 
     /**
-     * Information about a particular [Site]({{Types.site}}).
+     * Information about a particular [Site]({{Types.Site}}).
      */
     public Site getNode() {
         return node;
     }
     /**
-     * Information about a particular [Site]({{Types.site}}).
+     * Information about a particular [Site]({{Types.Site}}).
      */
     public void setNode(Site node) {
         this.node = node;
@@ -47,6 +48,23 @@ public class SiteEdge implements java.io.Serializable {
         this.cursor = cursor;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final SiteEdge that = (SiteEdge) obj;
+        return Objects.equals(node, that.node)
+            && Objects.equals(cursor, that.cursor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(node, cursor);
+    }
 
 
     public static SiteEdge.Builder builder() {
@@ -62,7 +80,7 @@ public class SiteEdge implements java.io.Serializable {
         }
 
         /**
-         * Information about a particular [Site]({{Types.site}}).
+         * Information about a particular [Site]({{Types.Site}}).
          */
         public Builder setNode(Site node) {
             this.node = node;

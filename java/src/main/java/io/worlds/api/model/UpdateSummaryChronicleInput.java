@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * This input type is used to update an existing [`SummaryChronicle`]({{Types.summarychronicle}}).
+ * This input type is used to update an existing [`SummaryChronicle`]({{Types.SummaryChronicle}}).
  */
 public class UpdateSummaryChronicleInput implements java.io.Serializable {
 
@@ -142,6 +143,35 @@ public class UpdateSummaryChronicleInput implements java.io.Serializable {
         this.eventChronicleIds = eventChronicleIds;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final UpdateSummaryChronicleInput that = (UpdateSummaryChronicleInput) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(name, that.name)
+            && Objects.equals(description, that.description)
+            && Objects.equals(startTime, that.startTime)
+            && Objects.equals(endTime, that.endTime)
+            && Objects.equals(timezone, that.timezone)
+            && Objects.equals(metadata, that.metadata)
+            && Objects.equals(priority, that.priority)
+            && Objects.equals(status, that.status)
+            && Objects.equals(labels, that.labels)
+            && Objects.equals(locations, that.locations)
+            && Objects.equals(validation, that.validation)
+            && Objects.equals(activityChronicleIds, that.activityChronicleIds)
+            && Objects.equals(eventChronicleIds, that.eventChronicleIds);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, description, startTime, endTime, timezone, metadata, priority, status, labels, locations, validation, activityChronicleIds, eventChronicleIds);
+    }
 
 
     public static UpdateSummaryChronicleInput.Builder builder() {

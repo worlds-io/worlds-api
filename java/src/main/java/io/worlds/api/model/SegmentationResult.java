@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 public class SegmentationResult implements java.io.Serializable {
 
@@ -31,18 +32,35 @@ public class SegmentationResult implements java.io.Serializable {
     }
 
     /**
-     * The index of the region in the provided regions array that contains the segment. Only applicable if `regions` was specified in the [original query]({{Types.segmentationoptionsinput}}).
+     * The index of the region in the provided regions array that contains the segment. Only applicable if `regions` was specified in the [original query]({{Types.SegmentationOptionsInput}}).
      */
     public Integer getRegionIndex() {
         return regionIndex;
     }
     /**
-     * The index of the region in the provided regions array that contains the segment. Only applicable if `regions` was specified in the [original query]({{Types.segmentationoptionsinput}}).
+     * The index of the region in the provided regions array that contains the segment. Only applicable if `regions` was specified in the [original query]({{Types.SegmentationOptionsInput}}).
      */
     public void setRegionIndex(Integer regionIndex) {
         this.regionIndex = regionIndex;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final SegmentationResult that = (SegmentationResult) obj;
+        return Objects.equals(segment, that.segment)
+            && Objects.equals(regionIndex, that.regionIndex);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(segment, regionIndex);
+    }
 
 
     public static SegmentationResult.Builder builder() {
@@ -66,7 +84,7 @@ public class SegmentationResult implements java.io.Serializable {
         }
 
         /**
-         * The index of the region in the provided regions array that contains the segment. Only applicable if `regions` was specified in the [original query]({{Types.segmentationoptionsinput}}).
+         * The index of the region in the provided regions array that contains the segment. Only applicable if `regions` was specified in the [original query]({{Types.SegmentationOptionsInput}}).
          */
         public Builder setRegionIndex(Integer regionIndex) {
             this.regionIndex = regionIndex;

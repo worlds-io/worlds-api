@@ -1,9 +1,10 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * A device edge is the pairing of a [Device]({{Types.device}}) with its query cursor.
-See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+ * A device edge is the pairing of a [Device]({{Types.Device}}) with its query cursor.
+See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class DeviceEdge implements java.io.Serializable {
 
@@ -22,13 +23,13 @@ public class DeviceEdge implements java.io.Serializable {
     }
 
     /**
-     * Information about a particular [Device]({{Types.device}}).
+     * Information about a particular [Device]({{Types.Device}}).
      */
     public Device getNode() {
         return node;
     }
     /**
-     * Information about a particular [Device]({{Types.device}}).
+     * Information about a particular [Device]({{Types.Device}}).
      */
     public void setNode(Device node) {
         this.node = node;
@@ -47,6 +48,23 @@ public class DeviceEdge implements java.io.Serializable {
         this.cursor = cursor;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final DeviceEdge that = (DeviceEdge) obj;
+        return Objects.equals(node, that.node)
+            && Objects.equals(cursor, that.cursor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(node, cursor);
+    }
 
 
     public static DeviceEdge.Builder builder() {
@@ -62,7 +80,7 @@ public class DeviceEdge implements java.io.Serializable {
         }
 
         /**
-         * Information about a particular [Device]({{Types.device}}).
+         * Information about a particular [Device]({{Types.Device}}).
          */
         public Builder setNode(Device node) {
             this.node = node;

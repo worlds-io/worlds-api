@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 public class TextRecognitionResponse implements java.io.Serializable {
 
@@ -28,6 +29,22 @@ public class TextRecognitionResponse implements java.io.Serializable {
         this.results = results;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final TextRecognitionResponse that = (TextRecognitionResponse) obj;
+        return Objects.equals(results, that.results);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(results);
+    }
 
 
     public static TextRecognitionResponse.Builder builder() {

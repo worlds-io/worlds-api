@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * FilterChronicleProducerInput filters [ChronicleProducer]({{Types.chronicleproducer}}) based on criteria described below.
+ * FilterChronicleProducerInput filters [ChronicleProducer]({{Types.ChronicleProducer}}) based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
  */
 public class FilterChronicleProducerInput implements java.io.Serializable {
@@ -70,6 +71,27 @@ public class FilterChronicleProducerInput implements java.io.Serializable {
         this.not = not;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final FilterChronicleProducerInput that = (FilterChronicleProducerInput) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(name, that.name)
+            && Objects.equals(active, that.active)
+            && Objects.equals(and, that.and)
+            && Objects.equals(or, that.or)
+            && Objects.equals(not, that.not);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, active, and, or, not);
+    }
 
 
     public static FilterChronicleProducerInput.Builder builder() {

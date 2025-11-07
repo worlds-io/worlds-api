@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * A user is an object that represents an existing user in the database.
@@ -47,6 +48,23 @@ public class User implements java.io.Serializable {
         this.emailAddress = emailAddress;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final User that = (User) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(emailAddress, that.emailAddress);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, emailAddress);
+    }
 
 
     public static User.Builder builder() {

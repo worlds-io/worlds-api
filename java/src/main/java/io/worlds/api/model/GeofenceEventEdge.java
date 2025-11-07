@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 public class GeofenceEventEdge implements java.io.Serializable {
 
@@ -18,31 +19,48 @@ public class GeofenceEventEdge implements java.io.Serializable {
     }
 
     /**
-     * Information about a particular [GeofenceEvent]({{Types.geofenceevent}}).
+     * Information about a particular [GeofenceEvent]({{Types.GeofenceEvent}}).
      */
     public GeofenceEvent getNode() {
         return node;
     }
     /**
-     * Information about a particular [GeofenceEvent]({{Types.geofenceevent}}).
+     * Information about a particular [GeofenceEvent]({{Types.GeofenceEvent}}).
      */
     public void setNode(GeofenceEvent node) {
         this.node = node;
     }
 
     /**
-     * The cursor to use with the [Query `geofenceEvents` field]({{Queries.geofenceevents}}) `after` argument.
+     * The cursor to use with the [Query `geofenceEvents` field]({{Queries.geofenceEvents}}) `after` argument.
      */
     public String getCursor() {
         return cursor;
     }
     /**
-     * The cursor to use with the [Query `geofenceEvents` field]({{Queries.geofenceevents}}) `after` argument.
+     * The cursor to use with the [Query `geofenceEvents` field]({{Queries.geofenceEvents}}) `after` argument.
      */
     public void setCursor(String cursor) {
         this.cursor = cursor;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final GeofenceEventEdge that = (GeofenceEventEdge) obj;
+        return Objects.equals(node, that.node)
+            && Objects.equals(cursor, that.cursor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(node, cursor);
+    }
 
 
     public static GeofenceEventEdge.Builder builder() {
@@ -58,7 +76,7 @@ public class GeofenceEventEdge implements java.io.Serializable {
         }
 
         /**
-         * Information about a particular [GeofenceEvent]({{Types.geofenceevent}}).
+         * Information about a particular [GeofenceEvent]({{Types.GeofenceEvent}}).
          */
         public Builder setNode(GeofenceEvent node) {
             this.node = node;
@@ -66,7 +84,7 @@ public class GeofenceEventEdge implements java.io.Serializable {
         }
 
         /**
-         * The cursor to use with the [Query `geofenceEvents` field]({{Queries.geofenceevents}}) `after` argument.
+         * The cursor to use with the [Query `geofenceEvents` field]({{Queries.geofenceEvents}}) `after` argument.
          */
         public Builder setCursor(String cursor) {
             this.cursor = cursor;

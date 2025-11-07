@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * FilterPoinInput is used to filter records by their positional values
@@ -42,6 +43,24 @@ public class FilterPointInput implements java.io.Serializable {
         this.attributeExists = attributeExists;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final FilterPointInput that = (FilterPointInput) obj;
+        return Objects.equals(in, that.in)
+            && Objects.equals(near, that.near)
+            && Objects.equals(attributeExists, that.attributeExists);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(in, near, attributeExists);
+    }
 
 
     public static FilterPointInput.Builder builder() {

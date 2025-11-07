@@ -1,23 +1,23 @@
 package io.worlds.api.model;
 
 /**
- * Indicates the type of [GeofenceEvent]({{Types.geofenceevent}}) or [ZoneEvent]({{Types.zoneevent}}) reported by a [Geofence]({{Types.geofence}}) or a [Zone]({{Types.zone}}).
+ * Indicates the type of [GeofenceEvent]({{Types.GeofenceEvent}}) or [ZoneEvent]({{Types.ZoneEvent}}) reported by a [Geofence]({{Types.Geofence}}) or a [Zone]({{Types.Zone}}).
  */
 public enum ActivityType {
 
     /**
      * 
-A detection entering a [Geofence]({{Types.geofence}}) or a [Zone]({{Types.zone}}).
+A detection entering a [Geofence]({{Types.Geofence}}) or a [Zone]({{Types.Zone}}).
      */
     INGRESS("INGRESS"),
     /**
      * 
-A detection remaining inside a [Geofence]({{Types.geofence}}) or a [Zone]({{Types.zone}}).
+A detection remaining inside a [Geofence]({{Types.Geofence}}) or a [Zone]({{Types.Zone}}).
      */
     DWELL("DWELL"),
     /**
      * 
-A detection exiting a [Geofence]({{Types.geofence}}) or a [Zone]({{Types.zone}}).
+A detection exiting a [Geofence]({{Types.Geofence}}) or a [Zone]({{Types.Zone}}).
      */
     EGRESS("EGRESS");
 

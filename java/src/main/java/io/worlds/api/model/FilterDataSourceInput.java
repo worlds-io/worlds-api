@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * FilterDataSourceInput filters [DataSources]({{Types.datasource}}) based on criteria described below.
+ * FilterDataSourceInput filters [DataSources]({{Types.DataSource}}) based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
  */
 public class FilterDataSourceInput implements java.io.Serializable {
@@ -88,6 +89,29 @@ public class FilterDataSourceInput implements java.io.Serializable {
         this.not = not;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final FilterDataSourceInput that = (FilterDataSourceInput) obj;
+        return Objects.equals(type, that.type)
+            && Objects.equals(position, that.position)
+            && Objects.equals(id, that.id)
+            && Objects.equals(name, that.name)
+            && Objects.equals(labels, that.labels)
+            && Objects.equals(and, that.and)
+            && Objects.equals(or, that.or)
+            && Objects.equals(not, that.not);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, position, id, name, labels, and, or, not);
+    }
 
 
     public static FilterDataSourceInput.Builder builder() {

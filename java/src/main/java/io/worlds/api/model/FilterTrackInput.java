@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * `FilterTrackInput` allows for filtering a [`tracks` query]({{Queries.tracks}}) based on criteria described below.
@@ -137,6 +138,34 @@ public class FilterTrackInput implements java.io.Serializable {
         this.deviceId = deviceId;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final FilterTrackInput that = (FilterTrackInput) obj;
+        return Objects.equals(dataSourceId, that.dataSourceId)
+            && Objects.equals(time, that.time)
+            && Objects.equals(tag, that.tag)
+            && Objects.equals(position, that.position)
+            && Objects.equals(identifier, that.identifier)
+            && Objects.equals(attribute, that.attribute)
+            && Objects.equals(pointOfInterestId, that.pointOfInterestId)
+            && Objects.equals(dataSourceType, that.dataSourceType)
+            && Objects.equals(dataSourceLabels, that.dataSourceLabels)
+            && Objects.equals(and, that.and)
+            && Objects.equals(or, that.or)
+            && Objects.equals(not, that.not)
+            && Objects.equals(deviceId, that.deviceId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(dataSourceId, time, tag, position, identifier, attribute, pointOfInterestId, dataSourceType, dataSourceLabels, and, or, not, deviceId);
+    }
 
 
     public static FilterTrackInput.Builder builder() {

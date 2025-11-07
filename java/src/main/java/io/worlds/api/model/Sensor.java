@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 public class Sensor implements java.io.Serializable {
 
@@ -120,6 +121,28 @@ public class Sensor implements java.io.Serializable {
         this.metadata = metadata;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final Sensor that = (Sensor) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(name, that.name)
+            && Objects.equals(description, that.description)
+            && Objects.equals(type, that.type)
+            && Objects.equals(position, that.position)
+            && Objects.equals(address, that.address)
+            && Objects.equals(metadata, that.metadata);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, description, type, position, address, metadata);
+    }
 
 
     public static Sensor.Builder builder() {
