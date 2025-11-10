@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * FilterSummaryChronicleInput filters [SummaryChronicles]({{Types.summaryChronicle}}) based on criteria described below.
+ * FilterSummaryChronicleInput filters [SummaryChronicles]({{Types.SummaryChronicle}}) based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
  */
 public class FilterSummaryChronicleInput implements java.io.Serializable {
@@ -160,6 +161,37 @@ public class FilterSummaryChronicleInput implements java.io.Serializable {
         this.not = not;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final FilterSummaryChronicleInput that = (FilterSummaryChronicleInput) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(name, that.name)
+            && Objects.equals(chronicleProducerId, that.chronicleProducerId)
+            && Objects.equals(startTime, that.startTime)
+            && Objects.equals(endTime, that.endTime)
+            && Objects.equals(timezone, that.timezone)
+            && Objects.equals(priority, that.priority)
+            && Objects.equals(status, that.status)
+            && Objects.equals(validation, that.validation)
+            && Objects.equals(labels, that.labels)
+            && Objects.equals(locations, that.locations)
+            && Objects.equals(activityChronicleIds, that.activityChronicleIds)
+            && Objects.equals(eventChronicleIds, that.eventChronicleIds)
+            && Objects.equals(and, that.and)
+            && Objects.equals(or, that.or)
+            && Objects.equals(not, that.not);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, chronicleProducerId, startTime, endTime, timezone, priority, status, validation, labels, locations, activityChronicleIds, eventChronicleIds, and, or, not);
+    }
 
 
     public static FilterSummaryChronicleInput.Builder builder() {

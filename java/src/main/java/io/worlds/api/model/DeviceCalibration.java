@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * A device calibration determines how objects captured by in a video or image are geo-referenced into the real world.
@@ -78,6 +79,25 @@ public class DeviceCalibration implements java.io.Serializable {
         this.precomputeAt = precomputeAt;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final DeviceCalibration that = (DeviceCalibration) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(timestamp, that.timestamp)
+            && Objects.equals(markers, that.markers)
+            && Objects.equals(precomputeAt, that.precomputeAt);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, timestamp, markers, precomputeAt);
+    }
 
 
     public static DeviceCalibration.Builder builder() {

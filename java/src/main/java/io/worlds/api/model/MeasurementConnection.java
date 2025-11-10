@@ -1,9 +1,10 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * A `MeasurementConnection` is the paginated results of an [`measurements` query]({{Queries.measurements}}).
-See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class MeasurementConnection implements java.io.Serializable {
 
@@ -48,6 +49,23 @@ public class MeasurementConnection implements java.io.Serializable {
         this.edges = edges;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final MeasurementConnection that = (MeasurementConnection) obj;
+        return Objects.equals(pageInfo, that.pageInfo)
+            && Objects.equals(edges, that.edges);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(pageInfo, edges);
+    }
 
 
     public static MeasurementConnection.Builder builder() {

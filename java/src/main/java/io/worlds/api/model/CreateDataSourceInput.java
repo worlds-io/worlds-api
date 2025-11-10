@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * This type is used to create a new [`DataSource`]({{Types.datasource}})
+ * This type is used to create a new [`DataSource`]({{Types.DataSource}})
  */
 public class CreateDataSourceInput implements java.io.Serializable {
 
@@ -44,6 +45,24 @@ public class CreateDataSourceInput implements java.io.Serializable {
         this.labels = labels;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final CreateDataSourceInput that = (CreateDataSourceInput) obj;
+        return Objects.equals(name, that.name)
+            && Objects.equals(type, that.type)
+            && Objects.equals(labels, that.labels);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, type, labels);
+    }
 
 
     public static CreateDataSourceInput.Builder builder() {

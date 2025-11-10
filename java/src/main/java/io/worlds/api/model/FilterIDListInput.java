@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * `FilterIDListInput` allows for filtering based on a list of identifiers. Only one field should be provided per filter object.
@@ -33,6 +34,23 @@ public class FilterIDListInput implements java.io.Serializable {
         this.in = in;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final FilterIDListInput that = (FilterIDListInput) obj;
+        return Objects.equals(eq, that.eq)
+            && Objects.equals(in, that.in);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(eq, in);
+    }
 
 
     public static FilterIDListInput.Builder builder() {

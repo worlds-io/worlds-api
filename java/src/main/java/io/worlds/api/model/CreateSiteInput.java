@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * Input type used to create a new [Site]({{Types.site}.
+ * Input type used to create a new [Site]({{Types.Site}.
  */
 public class CreateSiteInput implements java.io.Serializable {
 
@@ -43,6 +44,24 @@ public class CreateSiteInput implements java.io.Serializable {
         this.polygon = polygon;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final CreateSiteInput that = (CreateSiteInput) obj;
+        return Objects.equals(name, that.name)
+            && Objects.equals(position, that.position)
+            && Objects.equals(polygon, that.polygon);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, position, polygon);
+    }
 
 
     public static CreateSiteInput.Builder builder() {

@@ -1,9 +1,10 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * An event producer edge is the pairing of an [EventProducer]({{Types.eventProducer}}) with its query cursor.
-See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+ * An event producer edge is the pairing of an [EventProducer]({{Types.EventProducer}}) with its query cursor.
+See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class EventProducerEdge implements java.io.Serializable {
 
@@ -22,31 +23,48 @@ public class EventProducerEdge implements java.io.Serializable {
     }
 
     /**
-     * Information about a particular [EventProducer]({{Types.eventproducer}}).
+     * Information about a particular [EventProducer]({{Types.EventProducer}}).
      */
     public EventProducer getNode() {
         return node;
     }
     /**
-     * Information about a particular [EventProducer]({{Types.eventproducer}}).
+     * Information about a particular [EventProducer]({{Types.EventProducer}}).
      */
     public void setNode(EventProducer node) {
         this.node = node;
     }
 
     /**
-     * The cursor to use with the [Query `eventProducers` field]({{Queries.eventproducers}}) `after` argument.
+     * The cursor to use with the [Query `eventProducers` field]({{Queries.eventProducers}}) `after` argument.
      */
     public String getCursor() {
         return cursor;
     }
     /**
-     * The cursor to use with the [Query `eventProducers` field]({{Queries.eventproducers}}) `after` argument.
+     * The cursor to use with the [Query `eventProducers` field]({{Queries.eventProducers}}) `after` argument.
      */
     public void setCursor(String cursor) {
         this.cursor = cursor;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final EventProducerEdge that = (EventProducerEdge) obj;
+        return Objects.equals(node, that.node)
+            && Objects.equals(cursor, that.cursor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(node, cursor);
+    }
 
 
     public static EventProducerEdge.Builder builder() {
@@ -62,7 +80,7 @@ public class EventProducerEdge implements java.io.Serializable {
         }
 
         /**
-         * Information about a particular [EventProducer]({{Types.eventproducer}}).
+         * Information about a particular [EventProducer]({{Types.EventProducer}}).
          */
         public Builder setNode(EventProducer node) {
             this.node = node;
@@ -70,7 +88,7 @@ public class EventProducerEdge implements java.io.Serializable {
         }
 
         /**
-         * The cursor to use with the [Query `eventProducers` field]({{Queries.eventproducers}}) `after` argument.
+         * The cursor to use with the [Query `eventProducers` field]({{Queries.eventProducers}}) `after` argument.
          */
         public Builder setCursor(String cursor) {
             this.cursor = cursor;

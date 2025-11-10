@@ -1,38 +1,38 @@
 package io.worlds.api.model;
 
 /**
- * Indicates the field used for sorting an [`summaries` query]({{Queries.summaryChronicles}}).
+ * Indicates the field used for sorting an [`summaryChronicles` query]({{Queries.summaryChronicles}}).
  */
 public enum SummaryChronicleSortField {
 
     /**
      * 
-Sort the resulting list by the [`summaryChronicle`]({{Types.summaryChronicle}})'s unique identifier.
+Sort the resulting list by the [`summaryChronicle`]({{Types.SummaryChronicle}})'s unique identifier.
      */
     ID("ID"),
     /**
      * 
-Sort the resulting list by the [`summaryChronicle`]({{Types.summaryChronicle}})'s start time.
+Sort the resulting list by the [`summaryChronicle`]({{Types.SummaryChronicle}})'s start time.
      */
     START_TIME("START_TIME"),
     /**
      * 
-Sort the resulting list by the [`summaryChronicle`]({{Types.summaryChronicle}})'s end time.
+Sort the resulting list by the [`summaryChronicle`]({{Types.SummaryChronicle}})'s end time.
      */
     END_TIME("END_TIME"),
     /**
      * 
-Sort the resulting list by the [`summaryChronicle`]({{Types.summaryChronicle}})'s name.
+Sort the resulting list by the [`summaryChronicle`]({{Types.SummaryChronicle}})'s name.
      */
     NAME("NAME"),
     /**
      * 
-Sort the resulting list by the [`summaryChronicle`]({{Types.summaryChronicle}})'s priority.
+Sort the resulting list by the [`summaryChronicle`]({{Types.SummaryChronicle}})'s priority.
      */
     PRIORITY("PRIORITY"),
     /**
      * 
-Sort the resulting list by the [`summaryChronicle`]({{Types.summaryChronicle}})'s status.
+Sort the resulting list by the [`summaryChronicle`]({{Types.SummaryChronicle}})'s status.
      */
     STATUS("STATUS");
 

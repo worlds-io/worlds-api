@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 public class EventsSummaryBucket implements java.io.Serializable {
 
@@ -31,18 +32,35 @@ public class EventsSummaryBucket implements java.io.Serializable {
     }
 
     /**
-     * The total number of [Events]({{Types.event}}) within the bucket.
+     * The total number of [Events]({{Types.Event}}) within the bucket.
      */
     public int getTotal() {
         return total;
     }
     /**
-     * The total number of [Events]({{Types.event}}) within the bucket.
+     * The total number of [Events]({{Types.Event}}) within the bucket.
      */
     public void setTotal(int total) {
         this.total = total;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final EventsSummaryBucket that = (EventsSummaryBucket) obj;
+        return Objects.equals(time, that.time)
+            && Objects.equals(total, that.total);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(time, total);
+    }
 
 
     public static EventsSummaryBucket.Builder builder() {
@@ -66,7 +84,7 @@ public class EventsSummaryBucket implements java.io.Serializable {
         }
 
         /**
-         * The total number of [Events]({{Types.event}}) within the bucket.
+         * The total number of [Events]({{Types.Event}}) within the bucket.
          */
         public Builder setTotal(int total) {
             this.total = total;

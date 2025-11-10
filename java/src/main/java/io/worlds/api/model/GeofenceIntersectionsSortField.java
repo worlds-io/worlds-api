@@ -1,18 +1,18 @@
 package io.worlds.api.model;
 
 /**
- * Indicates the field used for sorting a [`geofenceIntersections` query]({{Queries.geofenceintersections}}).
+ * Indicates the field used for sorting a [`geofenceIntersections` query]({{Queries.geofenceIntersections}}).
  */
 public enum GeofenceIntersectionsSortField {
 
     /**
      * 
-Sort the resulting list by the [`GeofenceIntersection`](({{Types.geofenceIntersection}}))'s unique identifier.
+Sort the resulting list by the [`GeofenceIntersection`](({{Types.GeofenceIntersection}}))'s unique identifier.
      */
     ID("ID"),
     /**
      * 
-Sort the resulting list by the [`GeofenceIntersection`](({{Types.geofenceIntersection}}))'s start time.
+Sort the resulting list by the [`GeofenceIntersection`](({{Types.GeofenceIntersection}}))'s start time.
      */
     START_TIME("START_TIME");
 

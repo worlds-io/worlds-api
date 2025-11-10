@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * This type is used to update an existing [`DataSource`]({{Types.datasource}})
+ * This type is used to update an existing [`DataSource`]({{Types.DataSource}})
  */
 public class UpdateDataSourceInput implements java.io.Serializable {
 
@@ -52,6 +53,25 @@ public class UpdateDataSourceInput implements java.io.Serializable {
         this.labels = labels;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final UpdateDataSourceInput that = (UpdateDataSourceInput) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(name, that.name)
+            && Objects.equals(type, that.type)
+            && Objects.equals(labels, that.labels);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, type, labels);
+    }
 
 
     public static UpdateDataSourceInput.Builder builder() {

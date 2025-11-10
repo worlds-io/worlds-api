@@ -1,9 +1,10 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * An geofence edge is the pairing of a [Geofence]({{Types.geofence}}) with its query cursor.
-See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+ * An geofence edge is the pairing of a [Geofence]({{Types.Geofence}}) with its query cursor.
+See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class GeofenceEdge implements java.io.Serializable {
 
@@ -22,13 +23,13 @@ public class GeofenceEdge implements java.io.Serializable {
     }
 
     /**
-     * Information about a particular [Geofence]({{Types.geofence}}).
+     * Information about a particular [Geofence]({{Types.Geofence}}).
      */
     public Geofence getNode() {
         return node;
     }
     /**
-     * Information about a particular [Geofence]({{Types.geofence}}).
+     * Information about a particular [Geofence]({{Types.Geofence}}).
      */
     public void setNode(Geofence node) {
         this.node = node;
@@ -47,6 +48,23 @@ public class GeofenceEdge implements java.io.Serializable {
         this.cursor = cursor;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final GeofenceEdge that = (GeofenceEdge) obj;
+        return Objects.equals(node, that.node)
+            && Objects.equals(cursor, that.cursor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(node, cursor);
+    }
 
 
     public static GeofenceEdge.Builder builder() {
@@ -62,7 +80,7 @@ public class GeofenceEdge implements java.io.Serializable {
         }
 
         /**
-         * Information about a particular [Geofence]({{Types.geofence}}).
+         * Information about a particular [Geofence]({{Types.Geofence}}).
          */
         public Builder setNode(Geofence node) {
             this.node = node;

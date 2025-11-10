@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * This input type is used to create a new custom [`EventProducer`]({{Types.eventProducer}}). See [About EventProducers](/reference/objects/eventProducer/#about-event-producersss) for more details.
+ * This input type is used to create a new custom [`EventProducer`]({{Types.EventProducer}}).
  */
 public class EventProducerInput implements java.io.Serializable {
 
@@ -70,6 +71,27 @@ public class EventProducerInput implements java.io.Serializable {
         this.metadata = metadata;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final EventProducerInput that = (EventProducerInput) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(name, that.name)
+            && Objects.equals(description, that.description)
+            && Objects.equals(timezone, that.timezone)
+            && Objects.equals(active, that.active)
+            && Objects.equals(metadata, that.metadata);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, description, timezone, active, metadata);
+    }
 
 
     public static EventProducerInput.Builder builder() {

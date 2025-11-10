@@ -1,9 +1,10 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * A `TagConnection` is the paginated result of a [`tags` query]({{Queries.tags}})
-See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class TagConnection implements java.io.Serializable {
 
@@ -48,6 +49,23 @@ public class TagConnection implements java.io.Serializable {
         this.edges = edges;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final TagConnection that = (TagConnection) obj;
+        return Objects.equals(pageInfo, that.pageInfo)
+            && Objects.equals(edges, that.edges);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(pageInfo, edges);
+    }
 
 
     public static TagConnection.Builder builder() {

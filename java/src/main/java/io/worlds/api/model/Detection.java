@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * Detections are the lowest level unit of computer vision primitive within Worlds.
@@ -136,26 +137,26 @@ public class Detection implements java.io.Serializable {
     }
 
     /**
-     * A list of [Zones]({{Types.zone}}) with which the detection intersects.
+     * A list of [Zones]({{Types.Zone}}) with which the detection intersects.
      */
     public java.util.List<Zone> getZones() {
         return zones;
     }
     /**
-     * A list of [Zones]({{Types.zone}}) with which the detection intersects.
+     * A list of [Zones]({{Types.Zone}}) with which the detection intersects.
      */
     public void setZones(java.util.List<Zone> zones) {
         this.zones = zones;
     }
 
     /**
-     * A list of [Geofences]({{Types.geofence}}) with which the detection intersects.
+     * A list of [Geofences]({{Types.Geofence}}) with which the detection intersects.
      */
     public java.util.List<Geofence> getGeofences() {
         return geofences;
     }
     /**
-     * A list of [Geofences]({{Types.geofence}}) with which the detection intersects.
+     * A list of [Geofences]({{Types.Geofence}}) with which the detection intersects.
      */
     public void setGeofences(java.util.List<Geofence> geofences) {
         this.geofences = geofences;
@@ -324,6 +325,39 @@ detection intersects.
         this.tag = tag;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final Detection that = (Detection) obj;
+        return Objects.equals(track, that.track)
+            && Objects.equals(timestamp, that.timestamp)
+            && Objects.equals(frame, that.frame)
+            && Objects.equals(polygon, that.polygon)
+            && Objects.equals(position, that.position)
+            && Objects.equals(zones, that.zones)
+            && Objects.equals(geofences, that.geofences)
+            && Objects.equals(metadata, that.metadata)
+            && Objects.equals(createdAt, that.createdAt)
+            && Objects.equals(updatedAt, that.updatedAt)
+            && Objects.equals(direction, that.direction)
+            && Objects.equals(geofenceIds, that.geofenceIds)
+            && Objects.equals(zoneIds, that.zoneIds)
+            && Objects.equals(zoneEvents, that.zoneEvents)
+            && Objects.equals(geofenceEvents, that.geofenceEvents)
+            && Objects.equals(globalTrackId, that.globalTrackId)
+            && Objects.equals(deviceId, that.deviceId)
+            && Objects.equals(tag, that.tag);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(track, timestamp, frame, polygon, position, zones, geofences, metadata, createdAt, updatedAt, direction, geofenceIds, zoneIds, zoneEvents, geofenceEvents, globalTrackId, deviceId, tag);
+    }
 
 
     public static Detection.Builder builder() {
@@ -395,7 +429,7 @@ detection intersects.
         }
 
         /**
-         * A list of [Zones]({{Types.zone}}) with which the detection intersects.
+         * A list of [Zones]({{Types.Zone}}) with which the detection intersects.
          */
         public Builder setZones(java.util.List<Zone> zones) {
             this.zones = zones;
@@ -403,7 +437,7 @@ detection intersects.
         }
 
         /**
-         * A list of [Geofences]({{Types.geofence}}) with which the detection intersects.
+         * A list of [Geofences]({{Types.Geofence}}) with which the detection intersects.
          */
         public Builder setGeofences(java.util.List<Geofence> geofences) {
             this.geofences = geofences;

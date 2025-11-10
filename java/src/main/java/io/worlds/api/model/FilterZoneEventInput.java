@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * `FilterZoneEventInput` allows for filtering a zone event based on criteria described below.
@@ -62,6 +63,26 @@ public class FilterZoneEventInput implements java.io.Serializable {
         this.not = not;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final FilterZoneEventInput that = (FilterZoneEventInput) obj;
+        return Objects.equals(zoneId, that.zoneId)
+            && Objects.equals(time, that.time)
+            && Objects.equals(and, that.and)
+            && Objects.equals(or, that.or)
+            && Objects.equals(not, that.not);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(zoneId, time, and, or, not);
+    }
 
 
     public static FilterZoneEventInput.Builder builder() {

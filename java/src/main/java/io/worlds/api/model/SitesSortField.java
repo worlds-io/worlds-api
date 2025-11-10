@@ -7,12 +7,12 @@ public enum SitesSortField {
 
     /**
      * 
-Sort the resulting list by the [`sites`](({{Types.site}}))'s unique identifier.
+Sort the resulting list by the [`sites`](({{Types.Site}}))'s unique identifier.
      */
     ID("ID"),
     /**
      * 
-Sort the resulting list by the [`sites`](({{Types.site}}))'s name.
+Sort the resulting list by the [`sites`](({{Types.Site}}))'s name.
      */
     NAME("NAME");
 

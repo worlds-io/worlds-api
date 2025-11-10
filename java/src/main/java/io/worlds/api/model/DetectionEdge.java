@@ -1,9 +1,10 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * A detection edge is the pairing of a [Detection]({{Types.detection}}) with its query cursor.
-See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+ * A detection edge is the pairing of a [Detection]({{Types.Detection}}) with its query cursor.
+See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class DetectionEdge implements java.io.Serializable {
 
@@ -22,13 +23,13 @@ public class DetectionEdge implements java.io.Serializable {
     }
 
     /**
-     * Information about a particular [Detection]({{Types.detection}}).
+     * Information about a particular [Detection]({{Types.Detection}}).
      */
     public Detection getNode() {
         return node;
     }
     /**
-     * Information about a particular [Detection]({{Types.detection}}).
+     * Information about a particular [Detection]({{Types.Detection}}).
      */
     public void setNode(Detection node) {
         this.node = node;
@@ -47,6 +48,23 @@ public class DetectionEdge implements java.io.Serializable {
         this.cursor = cursor;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final DetectionEdge that = (DetectionEdge) obj;
+        return Objects.equals(node, that.node)
+            && Objects.equals(cursor, that.cursor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(node, cursor);
+    }
 
 
     public static DetectionEdge.Builder builder() {
@@ -62,7 +80,7 @@ public class DetectionEdge implements java.io.Serializable {
         }
 
         /**
-         * Information about a particular [Detection]({{Types.detection}}).
+         * Information about a particular [Detection]({{Types.Detection}}).
          */
         public Builder setNode(Detection node) {
             this.node = node;

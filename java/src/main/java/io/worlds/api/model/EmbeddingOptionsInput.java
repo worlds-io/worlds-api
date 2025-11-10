@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 public class EmbeddingOptionsInput implements java.io.Serializable {
 
@@ -21,6 +22,22 @@ public class EmbeddingOptionsInput implements java.io.Serializable {
         this.regions = regions;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final EmbeddingOptionsInput that = (EmbeddingOptionsInput) obj;
+        return Objects.equals(regions, that.regions);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(regions);
+    }
 
 
     public static EmbeddingOptionsInput.Builder builder() {

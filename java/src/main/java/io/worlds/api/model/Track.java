@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 public class Track implements java.io.Serializable {
 
@@ -199,6 +200,33 @@ public class Track implements java.io.Serializable {
         this.deviceIds = deviceIds;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final Track that = (Track) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(dataSource, that.dataSource)
+            && Objects.equals(video, that.video)
+            && Objects.equals(tag, that.tag)
+            && Objects.equals(startTime, that.startTime)
+            && Objects.equals(endTime, that.endTime)
+            && Objects.equals(detections, that.detections)
+            && Objects.equals(properties, that.properties)
+            && Objects.equals(metadata, that.metadata)
+            && Objects.equals(zoneIntersections, that.zoneIntersections)
+            && Objects.equals(geofenceIntersections, that.geofenceIntersections)
+            && Objects.equals(deviceIds, that.deviceIds);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, dataSource, video, tag, startTime, endTime, detections, properties, metadata, zoneIntersections, geofenceIntersections, deviceIds);
+    }
 
 
     public static Track.Builder builder() {

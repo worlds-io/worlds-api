@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * `FilterChronicleValidationStatusInput` allows for filtering based on an chronicle's validation status. Only one field should be provided per filter object.
@@ -51,6 +52,25 @@ public class FilterChronicleValidationStatusInput implements java.io.Serializabl
         this.attributeExists = attributeExists;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final FilterChronicleValidationStatusInput that = (FilterChronicleValidationStatusInput) obj;
+        return Objects.equals(eq, that.eq)
+            && Objects.equals(ne, that.ne)
+            && Objects.equals(in, that.in)
+            && Objects.equals(attributeExists, that.attributeExists);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(eq, ne, in, attributeExists);
+    }
 
 
     public static FilterChronicleValidationStatusInput.Builder builder() {

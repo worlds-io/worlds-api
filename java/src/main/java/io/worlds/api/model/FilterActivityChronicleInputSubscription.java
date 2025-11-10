@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * FilterActivityChronicleInput filters [ActivityChronicles]({{Types.activityChronicle}}) based on criteria described below.
+ * FilterActivityChronicleInput filters [ActivityChronicles]({{Types.ActivityChronicle}}) based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
  */
 public class FilterActivityChronicleInputSubscription implements java.io.Serializable {
@@ -178,6 +179,39 @@ public class FilterActivityChronicleInputSubscription implements java.io.Seriali
         this.not = not;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final FilterActivityChronicleInputSubscription that = (FilterActivityChronicleInputSubscription) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(name, that.name)
+            && Objects.equals(startTime, that.startTime)
+            && Objects.equals(endTime, that.endTime)
+            && Objects.equals(timezone, that.timezone)
+            && Objects.equals(priority, that.priority)
+            && Objects.equals(status, that.status)
+            && Objects.equals(validation, that.validation)
+            && Objects.equals(labels, that.labels)
+            && Objects.equals(locations, that.locations)
+            && Objects.equals(chronicleProducerId, that.chronicleProducerId)
+            && Objects.equals(tagIds, that.tagIds)
+            && Objects.equals(siteIds, that.siteIds)
+            && Objects.equals(dataSourceIds, that.dataSourceIds)
+            && Objects.equals(pointOfInterestIds, that.pointOfInterestIds)
+            && Objects.equals(and, that.and)
+            && Objects.equals(or, that.or)
+            && Objects.equals(not, that.not);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, startTime, endTime, timezone, priority, status, validation, labels, locations, chronicleProducerId, tagIds, siteIds, dataSourceIds, pointOfInterestIds, and, or, not);
+    }
 
 
     public static FilterActivityChronicleInputSubscription.Builder builder() {

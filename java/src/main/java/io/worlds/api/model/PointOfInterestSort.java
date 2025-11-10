@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * PointOfInterestSort allows for sorting a [`pointsOfInterest` query]({{Queries.pointsofinterest}}) by field and direction.
+ * PointOfInterestSort allows for sorting a [`pointsOfInterest` query]({{Queries.pointsOfInterest}}) by field and direction.
  */
 public class PointOfInterestSort implements java.io.Serializable {
 
@@ -35,6 +36,23 @@ public class PointOfInterestSort implements java.io.Serializable {
         this.direction = direction;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final PointOfInterestSort that = (PointOfInterestSort) obj;
+        return Objects.equals(field, that.field)
+            && Objects.equals(direction, that.direction);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(field, direction);
+    }
 
 
     public static PointOfInterestSort.Builder builder() {

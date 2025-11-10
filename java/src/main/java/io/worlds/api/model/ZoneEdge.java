@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 public class ZoneEdge implements java.io.Serializable {
 
@@ -18,13 +19,13 @@ public class ZoneEdge implements java.io.Serializable {
     }
 
     /**
-     * Information about a particular [Zone]({{Types.zone}}).
+     * Information about a particular [Zone]({{Types.Zone}}).
      */
     public Zone getNode() {
         return node;
     }
     /**
-     * Information about a particular [Zone]({{Types.zone}}).
+     * Information about a particular [Zone]({{Types.Zone}}).
      */
     public void setNode(Zone node) {
         this.node = node;
@@ -43,6 +44,23 @@ public class ZoneEdge implements java.io.Serializable {
         this.cursor = cursor;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final ZoneEdge that = (ZoneEdge) obj;
+        return Objects.equals(node, that.node)
+            && Objects.equals(cursor, that.cursor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(node, cursor);
+    }
 
 
     public static ZoneEdge.Builder builder() {
@@ -58,7 +76,7 @@ public class ZoneEdge implements java.io.Serializable {
         }
 
         /**
-         * Information about a particular [Zone]({{Types.zone}}).
+         * Information about a particular [Zone]({{Types.Zone}}).
          */
         public Builder setNode(Zone node) {
             this.node = node;

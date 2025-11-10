@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * An Image represents a stored image asset. It contains information about the datasource it belongs to and the URLs that can be used to access the image and its thumbnail.
@@ -92,6 +93,26 @@ public class Image implements java.io.Serializable {
         this.thumbnailUrl = thumbnailUrl;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final Image that = (Image) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(dataSourceId, that.dataSourceId)
+            && Objects.equals(timestamp, that.timestamp)
+            && Objects.equals(url, that.url)
+            && Objects.equals(thumbnailUrl, that.thumbnailUrl);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, dataSourceId, timestamp, url, thumbnailUrl);
+    }
 
 
     public static Image.Builder builder() {

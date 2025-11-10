@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * FilterVideoInput filters [videos]({{Types.video}}) based on criteria described below.
+ * FilterVideoInput filters [videos]({{Types.Video}}) based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
  */
 public class FilterVideoInput implements java.io.Serializable {
@@ -80,6 +81,28 @@ public class FilterVideoInput implements java.io.Serializable {
         this.not = not;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final FilterVideoInput that = (FilterVideoInput) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(dataSourceId, that.dataSourceId)
+            && Objects.equals(startTime, that.startTime)
+            && Objects.equals(endTime, that.endTime)
+            && Objects.equals(and, that.and)
+            && Objects.equals(or, that.or)
+            && Objects.equals(not, that.not);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, dataSourceId, startTime, endTime, and, or, not);
+    }
 
 
     public static FilterVideoInput.Builder builder() {

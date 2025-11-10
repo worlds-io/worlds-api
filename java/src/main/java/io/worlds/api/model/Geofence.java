@@ -1,12 +1,13 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * A geofence is a user-defined region in world coordinates. When a
-[detection]({{Types.detection}}) occurs within a geofence, or a
-[track]({{Types.track}}) crosses the border of a geofence, a [geofence
-event]({{Types.geofenceevent}}) is created. Geofence events, along
-with [zone events]({{Types.zoneevent}}) are a key part of creating
+[detection]({{Types.Detection}}) occurs within a geofence, or a
+[track]({{Types.Track}}) crosses the border of a geofence, a [geofence
+event]({{Types.GeofenceEvent}}) is created. Geofence events, along
+with [zone events]({{Types.ZoneEvent}}) are a key part of creating
 custom business logic with Worlds.
  */
 public class Geofence implements java.io.Serializable {
@@ -85,6 +86,25 @@ will not produce events.
         this.active = active;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final Geofence that = (Geofence) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(name, that.name)
+            && Objects.equals(bounds, that.bounds)
+            && Objects.equals(active, that.active);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, bounds, active);
+    }
 
 
     public static Geofence.Builder builder() {

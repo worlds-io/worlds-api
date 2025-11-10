@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * This type is used to create a new [`Detection`]({{Types.detection}}) when [creating]({{Types.createtrackinput}}) or [updating]({{Types.updatetrackinput}}) a [`Track`]({{Types.track}})
+ * This type is used to create a new [`Detection`]({{Types.Detection}}) when [creating]({{Types.CreateTrackInput}}) or [updating]({{Types.UpdateTrackInput}}) a [`Track`]({{Types.Track}})
  */
 public class TrackDetectionInput implements java.io.Serializable {
 
@@ -61,6 +62,26 @@ public class TrackDetectionInput implements java.io.Serializable {
         this.metadata = metadata;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final TrackDetectionInput that = (TrackDetectionInput) obj;
+        return Objects.equals(timestamp, that.timestamp)
+            && Objects.equals(position, that.position)
+            && Objects.equals(polygon, that.polygon)
+            && Objects.equals(direction, that.direction)
+            && Objects.equals(metadata, that.metadata);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(timestamp, position, polygon, direction, metadata);
+    }
 
 
     public static TrackDetectionInput.Builder builder() {

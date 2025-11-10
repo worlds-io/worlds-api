@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * This type is used to create a new [`Detection`]({{Types.detection}})
+ * This type is used to create a new [`Detection`]({{Types.Detection}})
  */
 public class CreateDetectionInput implements java.io.Serializable {
 
@@ -71,6 +72,27 @@ public class CreateDetectionInput implements java.io.Serializable {
         this.metadata = metadata;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final CreateDetectionInput that = (CreateDetectionInput) obj;
+        return Objects.equals(trackId, that.trackId)
+            && Objects.equals(timestamp, that.timestamp)
+            && Objects.equals(position, that.position)
+            && Objects.equals(polygon, that.polygon)
+            && Objects.equals(direction, that.direction)
+            && Objects.equals(metadata, that.metadata);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(trackId, timestamp, position, polygon, direction, metadata);
+    }
 
 
     public static CreateDetectionInput.Builder builder() {

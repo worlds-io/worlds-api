@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * This type represents the input data needed to initialize a [GeoJSON point]({{Types.geojsonpoint}}).
+ * This type represents the input data needed to initialize a [GeoJSON point]({{Types.GeoJSONPoint}}).
  */
 public class GeoJSONPointInput implements java.io.Serializable {
 
@@ -43,6 +44,24 @@ public class GeoJSONPointInput implements java.io.Serializable {
         this.crs = crs;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final GeoJSONPointInput that = (GeoJSONPointInput) obj;
+        return Objects.equals(type, that.type)
+            && Objects.equals(coordinates, that.coordinates)
+            && Objects.equals(crs, that.crs);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, coordinates, crs);
+    }
 
 
     public static GeoJSONPointInput.Builder builder() {

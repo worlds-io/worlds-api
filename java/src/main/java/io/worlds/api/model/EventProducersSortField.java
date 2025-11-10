@@ -1,18 +1,18 @@
 package io.worlds.api.model;
 
 /**
- * Indicates the field used for sorting an [`eventProducers` query]({{Queries.eventproducers}}).
+ * Indicates the field used for sorting an [`eventProducers` query]({{Queries.eventProducers}}).
  */
 public enum EventProducersSortField {
 
     /**
      * 
-Sort the resulting list by the [`EventProducer`](({{Types.eventProducer}}))'s unique identifier.
+Sort the resulting list by the [`EventProducer`](({{Types.EventProducer}}))'s unique identifier.
      */
     ID("ID"),
     /**
      * 
-Sort the resulting list by the [`EventProducer`](({{Types.eventProducer}}))'s name.
+Sort the resulting list by the [`EventProducer`](({{Types.EventProducer}}))'s name.
      */
     EVENT_PRODUCER_NAME("EVENT_PRODUCER_NAME");
 

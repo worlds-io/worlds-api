@@ -1,7 +1,7 @@
 package io.worlds.api.model;
 
 /**
- * Indicates the field used for sorting a [zoneIntersections query]({{Queries.zoneintersections}}).
+ * Indicates the field used for sorting a [zoneIntersections query]({{Queries.zoneIntersections}}).
  */
 public enum ZoneIntersectionsSortField {
 

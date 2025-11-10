@@ -1,7 +1,7 @@
 package io.worlds.api.model;
 
 /**
- * Indicates the type of data that is outputted by a [`sensor`]({{Types.sensor}}).
+ * Indicates the type of data that is outputted by a [`sensor`]({{Types.Sensor}}).
  */
 public enum SensorType {
 

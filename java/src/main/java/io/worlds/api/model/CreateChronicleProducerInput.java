@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * This input type is used to create a new custom [`ChronicleProducer`]({{Types.chronicleProducer}}).
+ * This input type is used to create a new custom [`ChronicleProducer`]({{Types.ChronicleProducer}}).
  */
 public class CreateChronicleProducerInput implements java.io.Serializable {
 
@@ -70,6 +71,27 @@ public class CreateChronicleProducerInput implements java.io.Serializable {
         this.validationReasons = validationReasons;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final CreateChronicleProducerInput that = (CreateChronicleProducerInput) obj;
+        return Objects.equals(name, that.name)
+            && Objects.equals(description, that.description)
+            && Objects.equals(timezone, that.timezone)
+            && Objects.equals(active, that.active)
+            && Objects.equals(metadata, that.metadata)
+            && Objects.equals(validationReasons, that.validationReasons);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, description, timezone, active, metadata, validationReasons);
+    }
 
 
     public static CreateChronicleProducerInput.Builder builder() {

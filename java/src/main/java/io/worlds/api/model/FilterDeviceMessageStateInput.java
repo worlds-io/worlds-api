@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * `FilterDeviceMessageStateInput` allows for filtering based on a [DeviceMessageState]({{Types.messagemessagestate}}) parameter. Only one field should be provided per filter object.
+ * `FilterDeviceMessageStateInput` allows for filtering based on a [DeviceMessageState]({{Types.DeviceMessageState}}) parameter. Only one field should be provided per filter object.
 Note that the `UPDATE` state alone will not include `CREATE` and `HEARTBEAT` messages.
  */
 public class FilterDeviceMessageStateInput implements java.io.Serializable {
@@ -43,6 +44,24 @@ public class FilterDeviceMessageStateInput implements java.io.Serializable {
         this.in = in;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final FilterDeviceMessageStateInput that = (FilterDeviceMessageStateInput) obj;
+        return Objects.equals(eq, that.eq)
+            && Objects.equals(ne, that.ne)
+            && Objects.equals(in, that.in);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(eq, ne, in);
+    }
 
 
     public static FilterDeviceMessageStateInput.Builder builder() {

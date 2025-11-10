@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 public class EventsSummary implements java.io.Serializable {
 
@@ -17,33 +18,50 @@ public class EventsSummary implements java.io.Serializable {
     }
 
     /**
-     * The total number of [Events]({{Types.event}}) within the time range.
+     * The total number of [Events]({{Types.Event}}) within the time range.
      */
     public int getTotal() {
         return total;
     }
     /**
-     * The total number of [Events]({{Types.event}}) within the time range.
+     * The total number of [Events]({{Types.Event}}) within the time range.
      */
     public void setTotal(int total) {
         this.total = total;
     }
 
     /**
-     * A detailed summary of each [bucket]({{Types.summarybucketsize}}) within the time range.
-Summary buckets are only returned if `bucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventssummary}}).
+     * A detailed summary of each [bucket]({{Types.SummaryBucketSize}}) within the time range.
+Summary buckets are only returned if `bucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventsSummary}}).
      */
     public java.util.List<EventsSummaryBucket> getBuckets() {
         return buckets;
     }
     /**
-     * A detailed summary of each [bucket]({{Types.summarybucketsize}}) within the time range.
-Summary buckets are only returned if `bucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventssummary}}).
+     * A detailed summary of each [bucket]({{Types.SummaryBucketSize}}) within the time range.
+Summary buckets are only returned if `bucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventsSummary}}).
      */
     public void setBuckets(java.util.List<EventsSummaryBucket> buckets) {
         this.buckets = buckets;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final EventsSummary that = (EventsSummary) obj;
+        return Objects.equals(total, that.total)
+            && Objects.equals(buckets, that.buckets);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(total, buckets);
+    }
 
 
     public static EventsSummary.Builder builder() {
@@ -59,7 +77,7 @@ Summary buckets are only returned if `bucket` is provided as a query parameter t
         }
 
         /**
-         * The total number of [Events]({{Types.event}}) within the time range.
+         * The total number of [Events]({{Types.Event}}) within the time range.
          */
         public Builder setTotal(int total) {
             this.total = total;
@@ -67,8 +85,8 @@ Summary buckets are only returned if `bucket` is provided as a query parameter t
         }
 
         /**
-         * A detailed summary of each [bucket]({{Types.summarybucketsize}}) within the time range.
-Summary buckets are only returned if `bucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventssummary}}).
+         * A detailed summary of each [bucket]({{Types.SummaryBucketSize}}) within the time range.
+Summary buckets are only returned if `bucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventsSummary}}).
          */
         public Builder setBuckets(java.util.List<EventsSummaryBucket> buckets) {
             this.buckets = buckets;

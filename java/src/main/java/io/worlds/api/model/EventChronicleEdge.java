@@ -1,9 +1,10 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * An event edge is the pairing of an [Event]({{Types.event}}) with its query cursor.
-See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+ * An event edge is the pairing of an [Event]({{Types.Event}}) with its query cursor.
+See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class EventChronicleEdge implements java.io.Serializable {
 
@@ -23,13 +24,13 @@ public class EventChronicleEdge implements java.io.Serializable {
     }
 
     /**
-     * Information about a particular [Event]({{Types.event}}).
+     * Information about a particular [Event]({{Types.Event}}).
      */
     public EventChronicle getNode() {
         return node;
     }
     /**
-     * Information about a particular [Event]({{Types.event}}).
+     * Information about a particular [Event]({{Types.Event}}).
      */
     public void setNode(EventChronicle node) {
         this.node = node;
@@ -48,6 +49,23 @@ public class EventChronicleEdge implements java.io.Serializable {
         this.cursor = cursor;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final EventChronicleEdge that = (EventChronicleEdge) obj;
+        return Objects.equals(node, that.node)
+            && Objects.equals(cursor, that.cursor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(node, cursor);
+    }
 
 
     public static EventChronicleEdge.Builder builder() {
@@ -63,7 +81,7 @@ public class EventChronicleEdge implements java.io.Serializable {
         }
 
         /**
-         * Information about a particular [Event]({{Types.event}}).
+         * Information about a particular [Event]({{Types.Event}}).
          */
         public Builder setNode(EventChronicle node) {
             this.node = node;

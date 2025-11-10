@@ -1,9 +1,10 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * An `ActivityConnection` is the paginated results of an [`activities` query]({{Queries.activityChronicles}}).
-See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class ActivityChronicleConnection implements java.io.Serializable {
 
@@ -48,6 +49,23 @@ public class ActivityChronicleConnection implements java.io.Serializable {
         this.pageInfo = pageInfo;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final ActivityChronicleConnection that = (ActivityChronicleConnection) obj;
+        return Objects.equals(edges, that.edges)
+            && Objects.equals(pageInfo, that.pageInfo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(edges, pageInfo);
+    }
 
 
     public static ActivityChronicleConnection.Builder builder() {

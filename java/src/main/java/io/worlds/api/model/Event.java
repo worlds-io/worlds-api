@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * An event represents a custom event, including its start time, location, and duration. For more details on event producers and events, see [About EventProducers](/reference/objects/eventproducer/#about-event-producers).
+ * An event represents a custom event, including its start time, location, and duration. For more details on event producers and events, see [`EventProducer`]({{Types.EventProducer}}).
  */
 public class Event implements java.io.Serializable {
 
@@ -269,6 +270,37 @@ object structure.
         this.priority = priority;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final Event that = (Event) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(eventProducer, that.eventProducer)
+            && Objects.equals(type, that.type)
+            && Objects.equals(subType, that.subType)
+            && Objects.equals(startTime, that.startTime)
+            && Objects.equals(endTime, that.endTime)
+            && Objects.equals(position, that.position)
+            && Objects.equals(timezone, that.timezone)
+            && Objects.equals(metadata, that.metadata)
+            && Objects.equals(images, that.images)
+            && Objects.equals(videos, that.videos)
+            && Objects.equals(dataSourceClips, that.dataSourceClips)
+            && Objects.equals(properties, that.properties)
+            && Objects.equals(draft, that.draft)
+            && Objects.equals(validation, that.validation)
+            && Objects.equals(priority, that.priority);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, eventProducer, type, subType, startTime, endTime, position, timezone, metadata, images, videos, dataSourceClips, properties, draft, validation, priority);
+    }
 
 
     public static Event.Builder builder() {

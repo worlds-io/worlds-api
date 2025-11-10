@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * This input type is used update an existing [`Sensor`]({{Types.sensor}}).
+ * This input type is used update an existing [`Sensor`]({{Types.Sensor}}).
  */
 public class UpdateSensorInput implements java.io.Serializable {
 
@@ -79,6 +80,28 @@ public class UpdateSensorInput implements java.io.Serializable {
         this.metadata = metadata;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final UpdateSensorInput that = (UpdateSensorInput) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(name, that.name)
+            && Objects.equals(description, that.description)
+            && Objects.equals(type, that.type)
+            && Objects.equals(position, that.position)
+            && Objects.equals(address, that.address)
+            && Objects.equals(metadata, that.metadata);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, description, type, position, address, metadata);
+    }
 
 
     public static UpdateSensorInput.Builder builder() {

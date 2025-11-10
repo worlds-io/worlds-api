@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 public class ZoneEvent implements java.io.Serializable {
 
@@ -77,9 +78,9 @@ public class ZoneEvent implements java.io.Serializable {
     }
 
     /**
-     * [`zoneEvents`]({{Queries.zoneevents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneintersections}}),
-    and `tag` will not be present on [`ZoneIntersection`]({{Types.zoneintersection}}).
-    Use [track's tag]({{Types.track}}) instead.
+     * [`zoneEvents`]({{Queries.zoneEvents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneIntersections}}),
+    and `tag` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
+    Use [track's tag]({{Types.Track}}) instead.
 
     The class label of the object that triggered the zone event, i.e person, car, truck, etc.
      */
@@ -88,9 +89,9 @@ public class ZoneEvent implements java.io.Serializable {
         return tag;
     }
     /**
-     * [`zoneEvents`]({{Queries.zoneevents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneintersections}}),
-    and `tag` will not be present on [`ZoneIntersection`]({{Types.zoneintersection}}).
-    Use [track's tag]({{Types.track}}) instead.
+     * [`zoneEvents`]({{Queries.zoneEvents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneIntersections}}),
+    and `tag` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
+    Use [track's tag]({{Types.Track}}) instead.
 
     The class label of the object that triggered the zone event, i.e person, car, truck, etc.
      */
@@ -100,8 +101,8 @@ public class ZoneEvent implements java.io.Serializable {
     }
 
     /**
-     * [`zoneEvents`]({{Queries.zoneevents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneintersections}}),
-    and `type` will not be present on [`ZoneIntersection`]({{Types.zoneintersection}}).
+     * [`zoneEvents`]({{Queries.zoneEvents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneIntersections}}),
+    and `type` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
 
     The type of zone event, i.e ingress (an object entered the zone), dwell (an object remained in the zone), and egress.
     (an object exited the zone)
@@ -111,8 +112,8 @@ public class ZoneEvent implements java.io.Serializable {
         return type;
     }
     /**
-     * [`zoneEvents`]({{Queries.zoneevents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneintersections}}),
-    and `type` will not be present on [`ZoneIntersection`]({{Types.zoneintersection}}).
+     * [`zoneEvents`]({{Queries.zoneEvents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneIntersections}}),
+    and `type` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
 
     The type of zone event, i.e ingress (an object entered the zone), dwell (an object remained in the zone), and egress.
     (an object exited the zone)
@@ -149,8 +150,8 @@ public class ZoneEvent implements java.io.Serializable {
     }
 
     /**
-     * [`zoneEvents`]({{Queries.zoneevents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneintersections}}),
-    and `polygon` will not be present on [`ZoneIntersection`]({{Types.zoneintersection}}).
+     * [`zoneEvents`]({{Queries.zoneEvents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneIntersections}}),
+    and `polygon` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
 
     The two-dimensional shape of the detection that triggered the event.
      */
@@ -159,8 +160,8 @@ public class ZoneEvent implements java.io.Serializable {
         return polygon;
     }
     /**
-     * [`zoneEvents`]({{Queries.zoneevents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneintersections}}),
-    and `polygon` will not be present on [`ZoneIntersection`]({{Types.zoneintersection}}).
+     * [`zoneEvents`]({{Queries.zoneEvents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneIntersections}}),
+    and `polygon` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
 
     The two-dimensional shape of the detection that triggered the event.
      */
@@ -169,6 +170,29 @@ public class ZoneEvent implements java.io.Serializable {
         this.polygon = polygon;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final ZoneEvent that = (ZoneEvent) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(zone, that.zone)
+            && Objects.equals(track, that.track)
+            && Objects.equals(tag, that.tag)
+            && Objects.equals(type, that.type)
+            && Objects.equals(startTime, that.startTime)
+            && Objects.equals(endTime, that.endTime)
+            && Objects.equals(polygon, that.polygon);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, zone, track, tag, type, startTime, endTime, polygon);
+    }
 
 
     public static ZoneEvent.Builder builder() {
@@ -214,9 +238,9 @@ public class ZoneEvent implements java.io.Serializable {
         }
 
         /**
-         * [`zoneEvents`]({{Queries.zoneevents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneintersections}}),
-    and `tag` will not be present on [`ZoneIntersection`]({{Types.zoneintersection}}).
-    Use [track's tag]({{Types.track}}) instead.
+         * [`zoneEvents`]({{Queries.zoneEvents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneIntersections}}),
+    and `tag` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
+    Use [track's tag]({{Types.Track}}) instead.
 
     The class label of the object that triggered the zone event, i.e person, car, truck, etc.
          */
@@ -227,8 +251,8 @@ public class ZoneEvent implements java.io.Serializable {
         }
 
         /**
-         * [`zoneEvents`]({{Queries.zoneevents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneintersections}}),
-    and `type` will not be present on [`ZoneIntersection`]({{Types.zoneintersection}}).
+         * [`zoneEvents`]({{Queries.zoneEvents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneIntersections}}),
+    and `type` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
 
     The type of zone event, i.e ingress (an object entered the zone), dwell (an object remained in the zone), and egress.
     (an object exited the zone)
@@ -256,8 +280,8 @@ public class ZoneEvent implements java.io.Serializable {
         }
 
         /**
-         * [`zoneEvents`]({{Queries.zoneevents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneintersections}}),
-    and `polygon` will not be present on [`ZoneIntersection`]({{Types.zoneintersection}}).
+         * [`zoneEvents`]({{Queries.zoneEvents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneIntersections}}),
+    and `polygon` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
 
     The two-dimensional shape of the detection that triggered the event.
          */

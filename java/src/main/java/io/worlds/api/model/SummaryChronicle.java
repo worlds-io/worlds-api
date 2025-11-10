@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * A summary chronicle summarizes across a specific timeframe.  It can reference event and activity chronicles.
@@ -279,6 +280,38 @@ public class SummaryChronicle implements java.io.Serializable {
         this.updatedAt = updatedAt;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final SummaryChronicle that = (SummaryChronicle) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(name, that.name)
+            && Objects.equals(chronicleProducer, that.chronicleProducer)
+            && Objects.equals(description, that.description)
+            && Objects.equals(startTime, that.startTime)
+            && Objects.equals(endTime, that.endTime)
+            && Objects.equals(timezone, that.timezone)
+            && Objects.equals(metadata, that.metadata)
+            && Objects.equals(validation, that.validation)
+            && Objects.equals(priority, that.priority)
+            && Objects.equals(status, that.status)
+            && Objects.equals(labels, that.labels)
+            && Objects.equals(locations, that.locations)
+            && Objects.equals(activityChronicles, that.activityChronicles)
+            && Objects.equals(eventChronicles, that.eventChronicles)
+            && Objects.equals(createdAt, that.createdAt)
+            && Objects.equals(updatedAt, that.updatedAt);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, chronicleProducer, description, startTime, endTime, timezone, metadata, validation, priority, status, labels, locations, activityChronicles, eventChronicles, createdAt, updatedAt);
+    }
 
 
     public static SummaryChronicle.Builder builder() {

@@ -1,7 +1,7 @@
 package io.worlds.api.model;
 
 /**
- * Indicates the field used for sorting a [Data Sources query]({{Queries.datasources}}).
+ * Indicates the field used for sorting a [`dataSources` query]({{Queries.dataSources}}).
  */
 public enum DataSourceSortField {
 

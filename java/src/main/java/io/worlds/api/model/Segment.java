@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 public class Segment implements java.io.Serializable {
 
@@ -44,6 +45,23 @@ public class Segment implements java.io.Serializable {
         this.box = box;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final Segment that = (Segment) obj;
+        return Objects.equals(polygon, that.polygon)
+            && Objects.equals(box, that.box);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(polygon, box);
+    }
 
 
     public static Segment.Builder builder() {

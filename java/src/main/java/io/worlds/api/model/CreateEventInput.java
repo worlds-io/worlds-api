@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * This input type is used to create a new [`Event`]({{Types.event}}) for a custom event producer. See [About EventProducers](/reference/objects/eventProducer/#about-event-producers) for more details.
+ * This input type is used to create a new [`Event`]({{Types.Event}}) for a custom event producer. See [`EventProducer`]({{Types.EventProducer}}) for more details.
  */
 public class CreateEventInput implements java.io.Serializable {
 
@@ -180,6 +181,39 @@ public class CreateEventInput implements java.io.Serializable {
         this.priority = priority;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final CreateEventInput that = (CreateEventInput) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(eventProducerId, that.eventProducerId)
+            && Objects.equals(type, that.type)
+            && Objects.equals(subType, that.subType)
+            && Objects.equals(startTime, that.startTime)
+            && Objects.equals(endTime, that.endTime)
+            && Objects.equals(position, that.position)
+            && Objects.equals(timezone, that.timezone)
+            && Objects.equals(metadata, that.metadata)
+            && Objects.equals(snapshots, that.snapshots)
+            && Objects.equals(uploads, that.uploads)
+            && Objects.equals(imageIds, that.imageIds)
+            && Objects.equals(clips, that.clips)
+            && Objects.equals(trackIds, that.trackIds)
+            && Objects.equals(properties, that.properties)
+            && Objects.equals(draft, that.draft)
+            && Objects.equals(validation, that.validation)
+            && Objects.equals(priority, that.priority);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, eventProducerId, type, subType, startTime, endTime, position, timezone, metadata, snapshots, uploads, imageIds, clips, trackIds, properties, draft, validation, priority);
+    }
 
 
     public static CreateEventInput.Builder builder() {

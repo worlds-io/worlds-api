@@ -7,12 +7,12 @@ public enum SensorsSortField {
 
     /**
      * 
-Sort the resulting list by the [`sensor`](({{Types.sensor}}))'s unique identifier.
+Sort the resulting list by the [`sensor`](({{Types.Sensor}}))'s unique identifier.
      */
     ID("ID"),
     /**
      * 
-Sort the resulting list by the [`sensor`](({{Types.sensor}}))'s name.
+Sort the resulting list by the [`sensor`](({{Types.Sensor}}))'s name.
      */
     NAME("NAME");
 

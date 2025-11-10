@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * An event producer represents a custom process that detects and records events. Events
@@ -128,6 +129,28 @@ public class EventProducer implements java.io.Serializable {
         this.metadata = metadata;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final EventProducer that = (EventProducer) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(name, that.name)
+            && Objects.equals(description, that.description)
+            && Objects.equals(timezone, that.timezone)
+            && Objects.equals(active, that.active)
+            && Objects.equals(invalidReasons, that.invalidReasons)
+            && Objects.equals(metadata, that.metadata);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, description, timezone, active, invalidReasons, metadata);
+    }
 
 
     public static EventProducer.Builder builder() {

@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 public class EmbeddingResult implements java.io.Serializable {
 
@@ -30,18 +31,35 @@ public class EmbeddingResult implements java.io.Serializable {
     }
 
     /**
-     * The index of the region in the provided regions array that contains the embedding. Only applicable if `regions` was specified in the [original query]({{Types.embeddingoptionsinput}}).
+     * The index of the region in the provided regions array that contains the embedding. Only applicable if `regions` was specified in the [original query]({{Types.EmbeddingOptionsInput}}).
      */
     public Integer getRegionIndex() {
         return regionIndex;
     }
     /**
-     * The index of the region in the provided regions array that contains the embedding. Only applicable if `regions` was specified in the [original query]({{Types.embeddingoptionsinput}}).
+     * The index of the region in the provided regions array that contains the embedding. Only applicable if `regions` was specified in the [original query]({{Types.EmbeddingOptionsInput}}).
      */
     public void setRegionIndex(Integer regionIndex) {
         this.regionIndex = regionIndex;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final EmbeddingResult that = (EmbeddingResult) obj;
+        return Objects.equals(embedding, that.embedding)
+            && Objects.equals(regionIndex, that.regionIndex);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(embedding, regionIndex);
+    }
 
 
     public static EmbeddingResult.Builder builder() {
@@ -65,7 +83,7 @@ public class EmbeddingResult implements java.io.Serializable {
         }
 
         /**
-         * The index of the region in the provided regions array that contains the embedding. Only applicable if `regions` was specified in the [original query]({{Types.embeddingoptionsinput}}).
+         * The index of the region in the provided regions array that contains the embedding. Only applicable if `regions` was specified in the [original query]({{Types.EmbeddingOptionsInput}}).
          */
         public Builder setRegionIndex(Integer regionIndex) {
             this.regionIndex = regionIndex;

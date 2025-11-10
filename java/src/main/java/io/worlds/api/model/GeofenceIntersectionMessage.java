@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 public class GeofenceIntersectionMessage implements java.io.Serializable {
 
@@ -19,31 +20,48 @@ public class GeofenceIntersectionMessage implements java.io.Serializable {
     }
 
     /**
-     * The zone intersection.
+     * The geofence intersection.
      */
     public GeofenceIntersection getMessage() {
         return message;
     }
     /**
-     * The zone intersection.
+     * The geofence intersection.
      */
     public void setMessage(GeofenceIntersection message) {
         this.message = message;
     }
 
     /**
-     * The state of the intersection message. Within the message, the [`endTime`]({{Types.geofenceIntersection}}) will only be present on an [`END`]({{Types.messagestate}}) event.
+     * The state of the intersection message. Within the message, the [`endTime`]({{Types.GeofenceIntersection}}) will only be present on an [`END`]({{Types.MessageState}}) event.
      */
     public MessageState getState() {
         return state;
     }
     /**
-     * The state of the intersection message. Within the message, the [`endTime`]({{Types.geofenceIntersection}}) will only be present on an [`END`]({{Types.messagestate}}) event.
+     * The state of the intersection message. Within the message, the [`endTime`]({{Types.GeofenceIntersection}}) will only be present on an [`END`]({{Types.MessageState}}) event.
      */
     public void setState(MessageState state) {
         this.state = state;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final GeofenceIntersectionMessage that = (GeofenceIntersectionMessage) obj;
+        return Objects.equals(message, that.message)
+            && Objects.equals(state, that.state);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(message, state);
+    }
 
 
     public static GeofenceIntersectionMessage.Builder builder() {
@@ -59,7 +77,7 @@ public class GeofenceIntersectionMessage implements java.io.Serializable {
         }
 
         /**
-         * The zone intersection.
+         * The geofence intersection.
          */
         public Builder setMessage(GeofenceIntersection message) {
             this.message = message;
@@ -67,7 +85,7 @@ public class GeofenceIntersectionMessage implements java.io.Serializable {
         }
 
         /**
-         * The state of the intersection message. Within the message, the [`endTime`]({{Types.geofenceIntersection}}) will only be present on an [`END`]({{Types.messagestate}}) event.
+         * The state of the intersection message. Within the message, the [`endTime`]({{Types.GeofenceIntersection}}) will only be present on an [`END`]({{Types.MessageState}}) event.
          */
         public Builder setState(MessageState state) {
             this.state = state;

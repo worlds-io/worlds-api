@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * `FilterTrackPropertyInput` allows for filtering a [`tracks` query]({{Queries.tracks}}) based on criteria described below
@@ -33,6 +34,23 @@ public class FilterTrackPropertyInput implements java.io.Serializable {
         this.value = value;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final FilterTrackPropertyInput that = (FilterTrackPropertyInput) obj;
+        return Objects.equals(type, that.type)
+            && Objects.equals(value, that.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, value);
+    }
 
 
     public static FilterTrackPropertyInput.Builder builder() {

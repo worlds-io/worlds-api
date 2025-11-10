@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * A device represents a camera: a source of videos and images. These videos and images may then be processed to produce detections and tracks or to train models. For more details on detections, see [About Detections](/reference/objects/detection/#about-detections)
+ * A device represents a camera: a source of videos and images. These videos and images may then be processed to produce detections and tracks or to train models. For more details on detections, see [About Detections]({{Types.Detection}}).
  */
 public class Device implements java.io.Serializable {
 
@@ -214,6 +215,34 @@ public class Device implements java.io.Serializable {
         this.lastHeartbeat = lastHeartbeat;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final Device that = (Device) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(uuid, that.uuid)
+            && Objects.equals(externalId, that.externalId)
+            && Objects.equals(name, that.name)
+            && Objects.equals(enabled, that.enabled)
+            && Objects.equals(address, that.address)
+            && Objects.equals(frameRate, that.frameRate)
+            && Objects.equals(position, that.position)
+            && Objects.equals(dataSource, that.dataSource)
+            && Objects.equals(site, that.site)
+            && Objects.equals(calibrations, that.calibrations)
+            && Objects.equals(pointOfInterest, that.pointOfInterest)
+            && Objects.equals(lastHeartbeat, that.lastHeartbeat);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, uuid, externalId, name, enabled, address, frameRate, position, dataSource, site, calibrations, pointOfInterest, lastHeartbeat);
+    }
 
 
     public static Device.Builder builder() {

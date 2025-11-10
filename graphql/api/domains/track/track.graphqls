@@ -14,7 +14,14 @@ type Track {
     """
     endTime: DateTimeOffset
     """A collection of every Detection associated with the Track."""
-    detections: [Detection!]!
+    detections(
+        """Filter detections based on the time period, etc."""
+        filter: FilterTrackDetectionInput
+        """Returns the first _n_ elements from the list."""
+        first: Int
+        """The field and direction by which to sort the results"""
+        sort: [DetectionsSort!]! = [{field: DETECTION_TIME, direction: ASC}, {field: GLOBAL_TRACK_ID, direction: ASC}]
+    ): [Detection!]!
     """The identifying and descriptive attributes of the Track"""
     properties: TrackProperties
     """Arbitrary information about the Track."""

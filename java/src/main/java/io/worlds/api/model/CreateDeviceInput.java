@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * This input type is used to create a new [`Device`]({{Types.device}}).
+ * This input type is used to create a new [`Device`]({{Types.Device}}).
  */
 public class CreateDeviceInput implements java.io.Serializable {
 
@@ -79,6 +80,28 @@ public class CreateDeviceInput implements java.io.Serializable {
         this.enabled = enabled;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final CreateDeviceInput that = (CreateDeviceInput) obj;
+        return Objects.equals(siteId, that.siteId)
+            && Objects.equals(pointOfInterestId, that.pointOfInterestId)
+            && Objects.equals(externalId, that.externalId)
+            && Objects.equals(name, that.name)
+            && Objects.equals(address, that.address)
+            && Objects.equals(position, that.position)
+            && Objects.equals(enabled, that.enabled);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(siteId, pointOfInterestId, externalId, name, address, position, enabled);
+    }
 
 
     public static CreateDeviceInput.Builder builder() {

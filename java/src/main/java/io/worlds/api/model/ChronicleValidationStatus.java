@@ -1,7 +1,7 @@
 package io.worlds.api.model;
 
 /**
- * Used in [ChronicleValidationInput]({{Types.chroniclevalidationinput}}) to indicate whether an chronicle is `VALID` or `INVALID`.
+ * Used in [ChronicleValidationInput]({{Types.ChronicleValidationInput}}) to indicate whether an chronicle is `VALID` or `INVALID`.
  */
 public enum ChronicleValidationStatus {
 

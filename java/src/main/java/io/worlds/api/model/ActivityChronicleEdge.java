@@ -1,9 +1,10 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * An activity edge is the pairing of an [Activity]({{Types.activity}}) with its query cursor.
-See [about queries](/reference/query/#about-queries) for details on how "connection" and "edge" types are used with pagination.
+ * An activity edge is the pairing of an [Activity]({{Types.Activity}}) with its query cursor.
+See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class ActivityChronicleEdge implements java.io.Serializable {
 
@@ -23,13 +24,13 @@ public class ActivityChronicleEdge implements java.io.Serializable {
     }
 
     /**
-     * Information about a particular [Activity]({{Types.activity}}).
+     * Information about a particular [Activity]({{Types.Activity}}).
      */
     public ActivityChronicle getNode() {
         return node;
     }
     /**
-     * Information about a particular [Activity]({{Types.activity}}).
+     * Information about a particular [Activity]({{Types.Activity}}).
      */
     public void setNode(ActivityChronicle node) {
         this.node = node;
@@ -48,6 +49,23 @@ public class ActivityChronicleEdge implements java.io.Serializable {
         this.cursor = cursor;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final ActivityChronicleEdge that = (ActivityChronicleEdge) obj;
+        return Objects.equals(node, that.node)
+            && Objects.equals(cursor, that.cursor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(node, cursor);
+    }
 
 
     public static ActivityChronicleEdge.Builder builder() {
@@ -63,7 +81,7 @@ public class ActivityChronicleEdge implements java.io.Serializable {
         }
 
         /**
-         * Information about a particular [Activity]({{Types.activity}}).
+         * Information about a particular [Activity]({{Types.Activity}}).
          */
         public Builder setNode(ActivityChronicle node) {
             this.node = node;

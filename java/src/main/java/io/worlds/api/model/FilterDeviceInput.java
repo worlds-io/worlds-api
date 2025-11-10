@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * FilterDeviceInput allows for filtering devices based on criteria described below.
@@ -97,6 +98,30 @@ public class FilterDeviceInput implements java.io.Serializable {
         this.not = not;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final FilterDeviceInput that = (FilterDeviceInput) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(uuid, that.uuid)
+            && Objects.equals(name, that.name)
+            && Objects.equals(externalId, that.externalId)
+            && Objects.equals(address, that.address)
+            && Objects.equals(enabled, that.enabled)
+            && Objects.equals(and, that.and)
+            && Objects.equals(or, that.or)
+            && Objects.equals(not, that.not);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, uuid, name, externalId, address, enabled, and, or, not);
+    }
 
 
     public static FilterDeviceInput.Builder builder() {

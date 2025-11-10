@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * FilterDetectionInput allows for filtering a detection based on criteria described below.
@@ -119,6 +120,32 @@ public class FilterDetectionInput implements java.io.Serializable {
         this.deviceId = deviceId;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final FilterDetectionInput that = (FilterDetectionInput) obj;
+        return Objects.equals(dataSourceId, that.dataSourceId)
+            && Objects.equals(trackId, that.trackId)
+            && Objects.equals(zoneId, that.zoneId)
+            && Objects.equals(geofenceId, that.geofenceId)
+            && Objects.equals(tag, that.tag)
+            && Objects.equals(time, that.time)
+            && Objects.equals(position, that.position)
+            && Objects.equals(and, that.and)
+            && Objects.equals(or, that.or)
+            && Objects.equals(not, that.not)
+            && Objects.equals(deviceId, that.deviceId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(dataSourceId, trackId, zoneId, geofenceId, tag, time, position, and, or, not, deviceId);
+    }
 
 
     public static FilterDetectionInput.Builder builder() {

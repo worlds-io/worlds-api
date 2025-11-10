@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * This input type is used to create a new [`Track`]({{Types.track}}).
+ * This input type is used to create a new [`Track`]({{Types.Track}}).
  */
 public class CreateTrackInput implements java.io.Serializable {
 
@@ -91,6 +92,29 @@ public class CreateTrackInput implements java.io.Serializable {
         this.metadata = metadata;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final CreateTrackInput that = (CreateTrackInput) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(dataSourceId, that.dataSourceId)
+            && Objects.equals(tag, that.tag)
+            && Objects.equals(startTime, that.startTime)
+            && Objects.equals(endTime, that.endTime)
+            && Objects.equals(detections, that.detections)
+            && Objects.equals(properties, that.properties)
+            && Objects.equals(metadata, that.metadata);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, dataSourceId, tag, startTime, endTime, detections, properties, metadata);
+    }
 
 
     public static CreateTrackInput.Builder builder() {

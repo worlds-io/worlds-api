@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 public class TextDetection implements java.io.Serializable {
 
@@ -74,6 +75,25 @@ public class TextDetection implements java.io.Serializable {
         this.textConfidence = textConfidence;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final TextDetection that = (TextDetection) obj;
+        return Objects.equals(polygon, that.polygon)
+            && Objects.equals(detectionConfidence, that.detectionConfidence)
+            && Objects.equals(text, that.text)
+            && Objects.equals(textConfidence, that.textConfidence);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(polygon, detectionConfidence, text, textConfidence);
+    }
 
 
     public static TextDetection.Builder builder() {

@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * A video represents a video from a data source, including its start and end time.
@@ -184,6 +185,32 @@ public class Video implements java.io.Serializable {
         this.createdBy = createdBy;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final Video that = (Video) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(dataSource, that.dataSource)
+            && Objects.equals(startTime, that.startTime)
+            && Objects.equals(endTime, that.endTime)
+            && Objects.equals(url, that.url)
+            && Objects.equals(thumbnailUrl, that.thumbnailUrl)
+            && Objects.equals(displayName, that.displayName)
+            && Objects.equals(resolutionHeight, that.resolutionHeight)
+            && Objects.equals(resolutionWidth, that.resolutionWidth)
+            && Objects.equals(frameRate, that.frameRate)
+            && Objects.equals(createdBy, that.createdBy);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, dataSource, startTime, endTime, url, thumbnailUrl, displayName, resolutionHeight, resolutionWidth, frameRate, createdBy);
+    }
 
 
     public static Video.Builder builder() {

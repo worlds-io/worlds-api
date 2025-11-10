@@ -1,8 +1,9 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
- * Fields to create a new [PointOfInterest]({{Types.pointofinterest}})
+ * Fields to create a new [PointOfInterest]({{Types.PointOfInterest}})
  */
 public class CreatePointOfInterestInput implements java.io.Serializable {
 
@@ -54,6 +55,25 @@ public class CreatePointOfInterestInput implements java.io.Serializable {
         this.metadata = metadata;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final CreatePointOfInterestInput that = (CreatePointOfInterestInput) obj;
+        return Objects.equals(siteId, that.siteId)
+            && Objects.equals(name, that.name)
+            && Objects.equals(position, that.position)
+            && Objects.equals(metadata, that.metadata);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(siteId, name, position, metadata);
+    }
 
 
     public static CreatePointOfInterestInput.Builder builder() {

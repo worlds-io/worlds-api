@@ -1,5 +1,6 @@
 package io.worlds.api.model;
 
+import java.util.Objects;
 
 /**
  * A data source clip represents a video from a data source, bounded by a start and end time.
@@ -125,6 +126,28 @@ public class DataSourceClip implements java.io.Serializable {
         this.displayName = displayName;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final DataSourceClip that = (DataSourceClip) obj;
+        return Objects.equals(id, that.id)
+            && Objects.equals(dataSource, that.dataSource)
+            && Objects.equals(startTime, that.startTime)
+            && Objects.equals(endTime, that.endTime)
+            && Objects.equals(url, that.url)
+            && Objects.equals(thumbnailUrl, that.thumbnailUrl)
+            && Objects.equals(displayName, that.displayName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, dataSource, startTime, endTime, url, thumbnailUrl, displayName);
+    }
 
 
     public static DataSourceClip.Builder builder() {
