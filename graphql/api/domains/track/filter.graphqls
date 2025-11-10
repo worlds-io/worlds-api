@@ -4,6 +4,10 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterTrackInput {
     """
+    If provided, specifies filters that work against the unique id of the track.
+    """
+    id: FilterIDInput
+    """
     If provided, specifies filters that work against the [unique id]({{Types.DataSource}}) of the data source that initiated the track.
     """
     dataSourceId: FilterIDInput
@@ -62,6 +66,10 @@ input FilterTrackInput {
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below
 """
 input FilterTrackMessageInput {
+    """
+    If provided, specifies filters that work against the unique id of the track.
+    """
+    id: FilterIDInput
     """
     If provided, specifies filters that work against the [unique id]({{Types.DataSource}}) of the data source that initiated the track.
     """
