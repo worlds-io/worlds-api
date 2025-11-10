@@ -15,8 +15,8 @@ type Track {
     endTime: DateTimeOffset
     """A collection of every Detection associated with the Track."""
     detections(
-        """Filter detections based on the originating device, time period, etc."""
-        filter: FilterDetectionInput
+        """Filter detections based on the time period, etc."""
+        filter: FilterTrackDetectionInput
         """Returns the first _n_ elements from the list."""
         first: Int
         """The field and direction by which to sort the results"""
