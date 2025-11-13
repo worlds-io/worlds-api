@@ -11,6 +11,12 @@ type Geofence {
     id: ID!
     """The display name of the geofence."""
     name: String!
+    """Human-readable labels describing this geofence."""
+    labels: [String!]!
+    """The site that the geofence belongs to."""
+    site: Site
+    """The point of interest that the geofence belongs to."""
+    pointOfInterest: PointOfInterest
     """An object that represents the bounds of the geofence."""
     bounds: GeofenceBounds!
     """
@@ -18,6 +24,55 @@ type Geofence {
     will not produce events.
     """
     active: Boolean!
+}
+
+"""
+Fields to create a new Geofence.
+"""
+input CreateGeofenceInput {
+    """The display name of the geofence."""
+    name: String!
+    """Human-readable labels describing this geofence."""
+    labels: [String!]
+    """The identifier of the site that the geofence belongs to."""
+    siteId: ID!
+    """The identifier of the point of interest that the geofence belongs to.  If provided, the point of interest must belong to the geofence's site."""
+    pointOfInterestId: ID
+    """An object that represents the bounds of the geofence."""
+    bounds: GeofenceBoundsInput!
+    """
+    True if the geofence is active, otherwise false. Geofences that are not active
+    will not produce events.
+    """
+    active: Boolean!
+}
+
+"""
+Fields to update an existing Geofence.
+"""
+input UpdateGeofenceInput {
+    """The unique identifier of the geofence."""
+    id: ID!
+    """The display name of the geofence."""
+    name: String
+    """Human-readable labels describing this geofence."""
+    labels: [String!]
+    """The identifier of the site that the geofence belongs to."""
+    siteId: ID
+    """The identifier of the point of interest that the geofence belongs to.  If provided, the point of interest must belong to the geofence's site."""
+    pointOfInterestId: ID
+    """An object that represents the bounds of the geofence."""
+    bounds: GeofenceBoundsInput
+    """
+    True if the geofence is active, otherwise false. Geofences that are not active
+    will not produce events.
+    """
+    active: Boolean
+}
+
+input GeofenceBoundsInput {
+    """A GeoJSON polygon that represents the bounds of the geofence."""
+    polygon: GeoJSONPolygonInput!
 }
 
 """

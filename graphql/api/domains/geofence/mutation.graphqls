@@ -1,0 +1,14 @@
+extend type Mutation {
+    """Creates a new Geofence."""
+    createGeofence(
+        """Arguments to create a new geofence."""
+        geofence: CreateGeofenceInput!
+    ): Geofence
+    """
+    Updates an existing Geofence.
+    """
+    updateGeofence(
+        """Arguments to update an existing geofence."""
+        geofence: UpdateGeofenceInput!
+    ): Geofence
+}
