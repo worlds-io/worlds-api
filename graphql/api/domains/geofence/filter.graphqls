@@ -1,20 +1,32 @@
 """
-`FilterGeofenceInput` allows for filtering a geofence based on criteria described below.
+`FilterGeofenceInput` allows for filtering a [geofence]({{Types.Geofence}}) based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below
 """
 input FilterGeofenceInput {
     """
-    If provided, specifies filters that work against the [unique id]({{Types.Geofence}}) of the geofence.
+    If provided, specifies filters that work against the unique id of the geofence.
     """
     id: FilterIDInput
     """
-    If provided, specifies filters that work against the [name]({{Types.Geofence}}) of the geofence.
+    If provided, specifies filters that work against the name of the geofence.
     """
     name: FilterStringInput
     """
-    If provided, specifies filters that work against the [active]({{Types.Geofence}}) state of the geofence.
+    If provided, specifies filters that work against the active state of the geofence.
     """
     active: FilterBooleanInput
+    """
+    If provided, specifies filters that work against the unique id of the geofence's site.
+    """
+    siteId: FilterIDInput
+    """
+    If provided, specifies filters that work against the unique id of the geofence's point of interest.
+    """
+    pointOfInterestId: FilterIDInput
+    """
+    If provided, specifies filters that work against the labels of the geofence.
+    """
+    labels: FilterStringListInput
     """
     If provided, a geofence must pass all filters in this list to match the current filter.
     """
