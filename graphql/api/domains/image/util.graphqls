@@ -1,0 +1,25 @@
+"""
+A `ImageConnection` is the paginated results of a [`images` query]({{Queries.images}}).
+See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
+"""
+type ImageConnection {
+    """Pagination information for the resulting edges."""
+    pageInfo: PageInfo!
+    """The resulting collection of detection edges."""
+    edges: [ImageEdge]!
+}
+
+"""
+A image edge is the pairing of a [Image]({{Types.Image}}) with its query cursor.
+See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
+"""
+type ImageEdge {
+    """
+    Information about a particular [Image]({{Types.Image}}).
+    """
+    node: Image
+    """
+    The cursor to use with the [`images` query]({{Queries.images}}) `after` argument.
+    """
+    cursor: String!
+}
