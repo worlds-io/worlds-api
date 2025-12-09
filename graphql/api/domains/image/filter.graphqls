@@ -1,0 +1,30 @@
+"""
+FilterImageInput allows for filtering images based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below
+"""
+input FilterImageInput {
+    """
+    If provided, specifies filters that work against the `id` of an image.
+    """
+    id: FilterIDInput
+    """
+    If provided, specifies filters that work against the `id` of the image's data source.
+    """
+    dataSourceId: FilterIDInput
+    """
+    If provided, specifies filters that work against the `timestamp` of the image.
+    """
+    timestamp: FilterDateTimeOffsetInput
+    """
+    If provided, a device must pass all filters in this list to match the current filter.
+    """
+    and: [FilterImageInput!]
+    """
+    If provided, a device must pass at least one of the filters in this list to match the current filter.
+    """
+    or: [FilterImageInput!]
+    """
+    If provided, a device may not match this filter to match the current filter.
+    """
+    not: FilterImageInput
+}

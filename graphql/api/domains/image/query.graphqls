@@ -1,3 +1,28 @@
+"""
+Indicates the field used for sorting an [`images` query]({{Queries.images}}).
+"""
+enum ImagesSortField {
+    """Sort the resulting list in by its unique identifier."""
+    ID
+    """Sort the resulting list in by the image's data source identifiers."""
+    DATA_SOURCE_ID
+    """Sort the resulting list by the timestamp."""
+    TIMESTAMP
+}
+
+"""
+ImagesSort allows for sorting an [`images` query]({{Queries.images}}) by field and direction.
+"""
+input ImagesSort {
+    """
+    Any sortable field available to the `ImageSort`. See the link to the type below
+    for more details.
+    """
+    field: ImagesSortField!
+    """Sort direction. See the link to the type below for more details."""
+    direction: SortDirection!
+}
+
 extend type Query {
     """
     Retrieve the URL for a screenshot from the given device at a particular timestamp.
@@ -15,4 +40,20 @@ extend type Query {
         """Arguments for retrieving an image (A Data Source ID and a Timestamp)."""
         input: CreateSnapshotInput!
     ): Image
+    """Retrieve a created or uploaded image by its `id`."""
+    image(
+        """The unique identifier of the image."""
+        id: ID!
+    ): Image
+    """Retrieve created and uploaded images."""
+    images(
+        """Filter images by data source id, timestamp, etc."""
+        filter: FilterImageInput
+        """Returns the first _n_ elements from the list."""
+        first: Int! = 20
+        """Returns the elements in the list that come after the specified cursor."""
+        after: String
+        """The field and direction by which to sort the results"""
+        sort: [ImagesSort!]! = [{field: TIMESTAMP, direction: ASC}, {field: ID, direction: ASC}]
+    ): ImageConnection
 }
