@@ -6,11 +6,11 @@ package io.worlds.api.model;
 public enum SummaryBucketSize {
 
     /**
-     * Bucket by minutes.
+     * Bucket by minutes.  Not valid on summaries longer than 1 day.
      */
     MINUTES("MINUTES"),
     /**
-     * Bucket by hours.
+     * Bucket by hours.  Not valid on summaries longer than 7 days.
      */
     HOURS("HOURS"),
     /**
