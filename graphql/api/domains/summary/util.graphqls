@@ -1,8 +1,8 @@
 """Indicates the time bucket size for a summary query."""
 enum SummaryBucketSize {
-    """Bucket by minutes."""
+    """Bucket by minutes.  Not valid on summaries longer than 1 day."""
     MINUTES
-    """Bucket by hours."""
+    """Bucket by hours.  Not valid on summaries longer than 7 days."""
     HOURS
     """Bucket by days."""
     DAYS
