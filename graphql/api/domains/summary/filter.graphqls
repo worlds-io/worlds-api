@@ -1,0 +1,101 @@
+"""
+`FilterTracksSummaryInput` allows for filtering the tracks summarized by a [`tracksSummary` query]({{Queries.tracksSummary}}) based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below
+"""
+input FilterTracksSummaryInput {
+    """
+    If provided, specifies filters that work against the unique id of the track.
+    """
+    id: FilterIDInput
+    """
+    If provided, specifies filters that work against the [unique id]({{Types.DataSource}}) of the data source that initiated the track.
+    """
+    dataSourceId: FilterIDInput
+    """
+    If provided, specifies case-insensitive filters that work against the [tag]({{Types.Track}}) of a track
+    """
+    tag: FilterStringInput
+    """
+    If provided, specifies filters that work against the [positions]({{Types.Detection}}) of the track's detections
+    """
+    position: FilterPointInput
+    """
+    If provided, specifies filters that work against the [identifier]({{Types.TrackProperties}}) of the track
+    """
+    identifier: FilterTrackPropertyInput
+    """
+    If provided, specifies filters that work against the [attributes]({{Types.TrackProperties}}) of the track
+    """
+    attribute: FilterTrackPropertyInput
+    """
+    If provided, specifies filters that work against the [unique identifier of the point of interest]({{Types.Site}}) of the track's data source.
+    """
+    pointOfInterestId: FilterIDInput
+    """
+    If provided, specifies filters that work against the `type` of the track's [`dataSource`]({{Types.DataSource}}).
+    """
+    dataSourceType: FilterStringInput
+    """
+    If provided, specifies filters that work against the `labels` of the track's [`dataSource`]({{Types.DataSource}}).
+    """
+    dataSourceLabels: FilterStringListInput
+    """
+    If provided, a detection activity must pass all filters in this list to match the current filter.
+    """
+    and: [FilterTrackInput!]
+    """
+    If provided, a detection activity must pass at least one of the filters in this list to match the current filter.
+    """
+    or: [FilterTrackInput!]
+    """
+    If provided, a detection activity may not match this filter to match the current filter.
+    """
+    not: FilterTrackInput
+    """
+    If provided, specifies filters that work against the [unique id]({{Types.Detection}}) of the device that initiated the track.
+    """
+    deviceId: FilterIDInput @deprecated(reason: "`deviceId` is deprecated. Use `dataSourceId` instead")
+}
+
+"""
+FilterEventsSummaryInput filters events summarized by an [eventsSummary]({{Types.EventSummary}}) based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
+"""
+input FilterEventsSummaryInput {
+    """
+    If provided, specifies filters that work against the [EventProducer's unique id]({{Types.EventProducer}}) of the event producer owning the event.
+    """
+    eventProducerId: FilterIDInput
+    """
+    If provided, specifies filters that work against the [type]({{Types.Event}}) of the [`Event`]({{Types.Event}}).
+    """
+    type: FilterStringInput
+    """
+    If provided, specifies filters that work against the [subType]({{Types.Event}}) of the [`Event`]({{Types.Event}}).
+    """
+    subType: FilterStringInput
+    """
+    If provided, specifies filters that work against the [draft status]({{Types.Event}}) of the [`Event`]({{Types.Event}}).
+    """
+    draft: FilterBooleanInput
+    """
+    If provided, specifies filters that work against the [priority]({{Types.Event}}) of the [`Event`]({{Types.Event}}).
+    """
+    priority: FilterStringInput
+    """
+    If provided, specifies filters that work against the [validation status]({{Types.EventValidation}}) of the [`Event`]({{Types.Event}}).
+    """
+    validation: FilterEventValidationStatusInput
+    """
+    If provided, an event must pass all filters in this list to match the current filter.
+    """
+    and: [FilterEventInput!]
+    """
+    If provided, an event must pass at least one of the filters in this list to match the current filter.
+    """
+    or: [FilterEventInput!]
+    """
+    If provided, an event may not match this filter to match the current filter.
+    """
+    not: FilterEventInput
+}
