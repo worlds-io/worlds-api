@@ -12,7 +12,11 @@ public enum SummaryBucketSize {
     /**
      * Bucket by hours.
      */
-    HOURS("HOURS");
+    HOURS("HOURS"),
+    /**
+     * Bucket by days.
+     */
+    DAYS("DAYS");
 
     private final String graphqlName;
 

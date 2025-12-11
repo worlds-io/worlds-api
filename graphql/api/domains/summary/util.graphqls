@@ -4,4 +4,6 @@ enum SummaryBucketSize {
     MINUTES
     """Bucket by hours."""
     HOURS
+    """Bucket by days."""
+    DAYS
 }
