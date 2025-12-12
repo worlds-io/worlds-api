@@ -24,5 +24,9 @@ extend type Query {
         If provided, return [summary buckets]({{Types.EventsSummaryBucket}}) of this size.
         """
         bucket: SummaryBucketSize
+        """
+        If provided, group the summary buckets by the provided grouping types.
+        """
+        buckets: [EventsSummaryBucketType!]
     ): EventsSummary
 }

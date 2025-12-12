@@ -1,9 +1,42 @@
 """Indicates the time bucket size for a summary query."""
 enum SummaryBucketSize {
     """Bucket by minutes.  Not valid on summaries longer than 1 day."""
+    """Bucket by minutes.  Only one time bucket type should be provided."""
     MINUTES
     """Bucket by hours.  Not valid on summaries longer than 7 days."""
+    """Bucket by hours.  Only one time bucket type should be provided."""
     HOURS
     """Bucket by days."""
     DAYS
+}
+
+"""Indicates the bucket to group events by in an eventsSummary query."""
+enum EventsSummaryBucketField {
+    """Bucket by the event's type"""
+    TYPE
+    """Bucket by the event's subType"""
+    SUB_TYPE
+    """Bucket by the event's eventProducer Id"""
+    EVENT_PRODUCER_ID
+}
+
+
+
+type EventsSummaryBucketType {
+    size: SummaryBucketSize
+    fields: [EventsSummaryBucketField!]
+# TODO: Possibly:
+# metadata: [MetadataSummaryBucketField!]
+}
+
+"""The grouping key for an EventsSummaryBucket.  Fields bucketed on will be present.  All other fields will be null."""
+type EventsSummaryBucketKey {
+    time: DateTimeOffset
+    timeStep: SummaryBucketSize
+    type: String
+    subType: String
+    eventProducerId: ID
+# If metadata:
+# would only include the grouped fields
+# metadata: JSON
 }
