@@ -1,7 +1,7 @@
 package io.worlds.api.model;
 
 /**
- * Indicates the field used for sorting a [`images` query]({{Queries.images}}).
+ * Indicates the field used for sorting an [`images` query]({{Queries.images}}).
  */
 public enum ImagesSortField {
 
