@@ -6,11 +6,11 @@ package io.worlds.api.model;
 public enum SummaryBucketSize {
 
     /**
-     * Bucket by minutes.
+     * Bucket by minutes.  Only one time bucket type should be provided.
      */
     MINUTES("MINUTES"),
     /**
-     * Bucket by hours.
+     * Bucket by hours.  Only one time bucket type should be provided.
      */
     HOURS("HOURS");
 

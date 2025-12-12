@@ -50,7 +50,9 @@ type EventsSummary {
 
 type EventsSummaryBucket {
     """The start time of the bucket."""
-    time: DateTimeOffset!
+    time: DateTimeOffset! @deprecated(reason: "Use key.time instead.")
+    """The key of the bucket."""
+    key: EventsSummaryBucketKey
     """
     The total number of [Events]({{Types.Event}}) within the bucket.
     """
