@@ -10,18 +10,15 @@ public enum DataSourceType {
      */
     FOLDER("FOLDER"),
     /**
-     * 
-A data source that corresponds to a [Device]({{Types.Device}}) that is generating video.
+     * A data source that corresponds to a [Device]({{Types.Device}}) that is generating video.
      */
     VIDEO_DEVICE("VIDEO_DEVICE"),
     /**
-     * 
-A data source that corresponds to a [Device]({{Types.Device}}) that is generating images.
+     * A data source that corresponds to a [Device]({{Types.Device}}) that is generating images.
      */
     IMAGE_DEVICE("IMAGE_DEVICE"),
     /**
-     * 
-A data source that directly produces [Tracks]({{Types.Track}}) and [detections]({{Types.Detection}})
+     * A data source that directly produces [Tracks]({{Types.Track}}) and [detections]({{Types.Detection}})
      */
     GEOPOSITION("GEOPOSITION");
 

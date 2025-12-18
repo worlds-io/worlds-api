@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * ImageSort allows for sorting a [`images` query]({{Queries.images}}) by field and direction.
+ * ImagesSort allows for sorting an [`images` query]({{Queries.images}}) by field and direction.
  */
 public class ImagesSort implements java.io.Serializable {
 
