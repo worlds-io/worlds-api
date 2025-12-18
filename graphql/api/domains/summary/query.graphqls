@@ -7,8 +7,6 @@ extend type Query {
         endTime: DateTimeOffset!
         """If provided, filter tracks based on their tags."""
         tags: FilterTagInput
-        """If provided, only summarize tracks matching the filter."""
-        filter: FilterTracksSummaryInput
         """
         If provided, return [summary buckets]({{Types.TracksSummaryBucket}}) of this size.
         """
