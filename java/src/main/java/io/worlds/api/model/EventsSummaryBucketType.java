@@ -6,21 +6,21 @@ public class EventsSummaryBucketType implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private SummaryBucketSize size;
+    private org.springframework.graphql.data.ArgumentValue<SummaryBucketSize> size = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<EventsSummaryBucketField> fields;
 
     public EventsSummaryBucketType() {
     }
 
-    public EventsSummaryBucketType(SummaryBucketSize size, java.util.List<EventsSummaryBucketField> fields) {
+    public EventsSummaryBucketType(org.springframework.graphql.data.ArgumentValue<SummaryBucketSize> size, java.util.List<EventsSummaryBucketField> fields) {
         this.size = size;
         this.fields = fields;
     }
 
-    public SummaryBucketSize getSize() {
+    public org.springframework.graphql.data.ArgumentValue<SummaryBucketSize> getSize() {
         return size;
     }
-    public void setSize(SummaryBucketSize size) {
+    public void setSize(org.springframework.graphql.data.ArgumentValue<SummaryBucketSize> size) {
         this.size = size;
     }
 
@@ -56,13 +56,13 @@ public class EventsSummaryBucketType implements java.io.Serializable {
 
     public static class Builder {
 
-        private SummaryBucketSize size;
+        private org.springframework.graphql.data.ArgumentValue<SummaryBucketSize> size = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<EventsSummaryBucketField> fields;
 
         public Builder() {
         }
 
-        public Builder setSize(SummaryBucketSize size) {
+        public Builder setSize(org.springframework.graphql.data.ArgumentValue<SummaryBucketSize> size) {
             this.size = size;
             return this;
         }

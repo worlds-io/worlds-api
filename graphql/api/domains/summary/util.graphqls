@@ -1,10 +1,8 @@
 """Indicates the time bucket size for a summary query."""
 enum SummaryBucketSize {
     """Bucket by minutes.  Not valid on summaries longer than 1 day."""
-    """Bucket by minutes.  Only one time bucket type should be provided."""
     MINUTES
     """Bucket by hours.  Not valid on summaries longer than 7 days."""
-    """Bucket by hours.  Only one time bucket type should be provided."""
     HOURS
     """Bucket by days."""
     DAYS
@@ -22,7 +20,7 @@ enum EventsSummaryBucketField {
 
 
 
-type EventsSummaryBucketType {
+input EventsSummaryBucketType {
     size: SummaryBucketSize
     fields: [EventsSummaryBucketField!]
 # TODO: Possibly:
