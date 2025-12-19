@@ -5,7 +5,7 @@ extend type Query {
         startTime: DateTimeOffset!
         """End time for the summary."""
         endTime: DateTimeOffset!
-        """Filter tracks based on their tags."""
+        """If provided, filter tracks based on their tags."""
         tags: FilterTagInput
         """
         If provided, return [summary buckets]({{Types.TracksSummaryBucket}}) of this size.
@@ -18,6 +18,8 @@ extend type Query {
         startTime: DateTimeOffset!
         """End time for the summary."""
         endTime: DateTimeOffset!
+        """If provided, only summarize events matching the filter."""
+        filter: FilterEventsSummaryInput
         """
         If provided, return [summary buckets]({{Types.EventsSummaryBucket}}) of this size.
         """

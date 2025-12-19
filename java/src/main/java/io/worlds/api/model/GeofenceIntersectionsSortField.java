@@ -6,13 +6,11 @@ package io.worlds.api.model;
 public enum GeofenceIntersectionsSortField {
 
     /**
-     * 
-Sort the resulting list by the [`GeofenceIntersection`](({{Types.GeofenceIntersection}}))'s unique identifier.
+     * Sort the resulting list by the [`GeofenceIntersection`](({{Types.GeofenceIntersection}}))'s unique identifier.
      */
     ID("ID"),
     /**
-     * 
-Sort the resulting list by the [`GeofenceIntersection`](({{Types.GeofenceIntersection}}))'s start time.
+     * Sort the resulting list by the [`GeofenceIntersection`](({{Types.GeofenceIntersection}}))'s start time.
      */
     START_TIME("START_TIME");
 

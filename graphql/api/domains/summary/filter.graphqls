@@ -1,0 +1,42 @@
+"""
+FilterEventsSummaryInput filters events summarized by an [eventsSummary]({{Types.EventSummary}}) based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
+"""
+input FilterEventsSummaryInput {
+    """
+    If provided, specifies filters that work against the [EventProducer's unique id]({{Types.EventProducer}}) of the event producer owning the event.
+    """
+    eventProducerId: FilterIDInput
+    """
+    If provided, specifies filters that work against the [type]({{Types.Event}}) of the [`Event`]({{Types.Event}}).
+    """
+    type: FilterStringInput
+    """
+    If provided, specifies filters that work against the [subType]({{Types.Event}}) of the [`Event`]({{Types.Event}}).
+    """
+    subType: FilterStringInput
+    """
+    If provided, specifies filters that work against the [draft status]({{Types.Event}}) of the [`Event`]({{Types.Event}}).
+    """
+    draft: FilterBooleanInput
+    """
+    If provided, specifies filters that work against the [priority]({{Types.Event}}) of the [`Event`]({{Types.Event}}).
+    """
+    priority: FilterStringInput
+    """
+    If provided, specifies filters that work against the [validation status]({{Types.EventValidation}}) of the [`Event`]({{Types.Event}}).
+    """
+    validation: FilterEventValidationStatusInput
+    """
+    If provided, an event must pass all filters in this list to match the current filter.
+    """
+    and: [FilterEventInput!]
+    """
+    If provided, an event must pass at least one of the filters in this list to match the current filter.
+    """
+    or: [FilterEventInput!]
+    """
+    If provided, an event may not match this filter to match the current filter.
+    """
+    not: FilterEventInput
+}
