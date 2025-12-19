@@ -45,6 +45,10 @@ type EventsSummary {
     """
     total: Int!
     """
+    Summary statistics for all events within the summary's time range and filters.
+    """
+    summaryStatistics: EventsSummaryStatistics!
+    """
     A detailed summary of each [bucket]({{Types.SummaryBucketSize}}) within the time range.
     Summary buckets are only returned if `bucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventsSummary}}).
     """
@@ -63,4 +67,9 @@ type EventsSummaryBucket {
     The total number of [Events]({{Types.Event}}) within the bucket.
     """
     total: Int!
+
+    """
+    Summary statistics for all events within the bucket.
+    """
+    summaryStatistics: EventsSummaryStatistics!
 }
