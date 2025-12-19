@@ -47,9 +47,12 @@ type EventsSummaryBucketKey {
 """
 Summary statistics for a `DateTimeDuration` input type.
 """
-type DateTimeDurationSummaryStatistic {
+type DateTimeDurationSummaryStatistics {
+    """The minimum duration in the group."""
     min: DateTimeDuration!
+    """The average duration in the group."""
     average: DateTimeDuration!
+    """The maximum duration in the group."""
     max: DateTimeDuration!
 }
 
@@ -58,5 +61,5 @@ Summary statistics for event fields, to be read from an `eventsSummary` or its b
 """
 type EventsSummaryStatistics {
     """Summary statistics from the events' durations.  Does not include unfinished events.  Will be null if no events are finished."""
-    duration: DateTimeDurationSummaryStatistic
+    duration: DateTimeDurationSummaryStatistics
 }
