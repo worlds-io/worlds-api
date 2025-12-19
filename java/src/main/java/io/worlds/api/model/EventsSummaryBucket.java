@@ -2,33 +2,54 @@ package io.worlds.api.model;
 
 import java.util.Objects;
 
+/**
+ * Summary information for events across a time range inside a given `EventsSummaryBucketType`.  Includes total count and the bucketed field values.
+ */
 public class EventsSummaryBucket implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @Deprecated
     @jakarta.validation.constraints.NotNull
     private java.time.OffsetDateTime time;
+    private EventsSummaryBucketKey key;
     private int total;
 
     public EventsSummaryBucket() {
     }
 
-    public EventsSummaryBucket(java.time.OffsetDateTime time, int total) {
+    public EventsSummaryBucket(java.time.OffsetDateTime time, EventsSummaryBucketKey key, int total) {
         this.time = time;
+        this.key = key;
         this.total = total;
     }
 
     /**
      * The start time of the bucket.
      */
+    @Deprecated
     public java.time.OffsetDateTime getTime() {
         return time;
     }
     /**
      * The start time of the bucket.
      */
+    @Deprecated
     public void setTime(java.time.OffsetDateTime time) {
         this.time = time;
+    }
+
+    /**
+     * The key of the bucket.
+     */
+    public EventsSummaryBucketKey getKey() {
+        return key;
+    }
+    /**
+     * The key of the bucket.
+     */
+    public void setKey(EventsSummaryBucketKey key) {
+        this.key = key;
     }
 
     /**
@@ -54,12 +75,13 @@ public class EventsSummaryBucket implements java.io.Serializable {
         }
         final EventsSummaryBucket that = (EventsSummaryBucket) obj;
         return Objects.equals(time, that.time)
+            && Objects.equals(key, that.key)
             && Objects.equals(total, that.total);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(time, total);
+        return Objects.hash(time, key, total);
     }
 
 
@@ -70,6 +92,7 @@ public class EventsSummaryBucket implements java.io.Serializable {
     public static class Builder {
 
         private java.time.OffsetDateTime time;
+        private EventsSummaryBucketKey key;
         private int total;
 
         public Builder() {
@@ -78,8 +101,17 @@ public class EventsSummaryBucket implements java.io.Serializable {
         /**
          * The start time of the bucket.
          */
+        @Deprecated
         public Builder setTime(java.time.OffsetDateTime time) {
             this.time = time;
+            return this;
+        }
+
+        /**
+         * The key of the bucket.
+         */
+        public Builder setKey(EventsSummaryBucketKey key) {
+            this.key = key;
             return this;
         }
 
@@ -93,7 +125,7 @@ public class EventsSummaryBucket implements java.io.Serializable {
 
 
         public EventsSummaryBucket build() {
-            return new EventsSummaryBucket(time, total);
+            return new EventsSummaryBucket(time, key, total);
         }
 
     }

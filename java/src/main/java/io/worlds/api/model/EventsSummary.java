@@ -2,6 +2,9 @@ package io.worlds.api.model;
 
 import java.util.Objects;
 
+/**
+ * Summary information for events across a time range.  Includes total count and counts by buckets.
+ */
 public class EventsSummary implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

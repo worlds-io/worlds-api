@@ -7,3 +7,37 @@ enum SummaryBucketSize {
     """Bucket by days."""
     DAYS
 }
+
+"""Indicates the bucket to group events by in an eventsSummary query."""
+enum EventsSummaryBucketField {
+    """Bucket by the event's type"""
+    TYPE
+    """Bucket by the event's subType"""
+    SUB_TYPE
+    """Bucket by the event's eventProducer Id"""
+    EVENT_PRODUCER_ID
+}
+
+"""
+Input to indicate which field(s) to group events by in an `eventsSummary` query.
+Any combination of up to three distinct fields may be provided.
+If multiple fields are provided, the buckets will be sorted by time, then fields.
+"""
+input EventsSummaryBucketType {
+    """If provided, group the summary buckets by time buckets of the provided size."""
+    size: SummaryBucketSize
+    """If provided, group the summary buckets by the values of the provided fields."""
+    fields: [EventsSummaryBucketField!]
+}
+
+"""The grouping key for an EventsSummaryBucket.  Fields bucketed on will be present.  All other fields will be null."""
+type EventsSummaryBucketKey {
+    """The start time of the summary bucket."""
+    time: DateTimeOffset
+    """The `type` of the events in the summary bucket."""
+    type: String
+    """The `subType` of the events in the summary bucket."""
+    subType: String
+    """The `id` of the EventProducer of the events in the summary bucket."""
+    eventProducerId: ID
+}
