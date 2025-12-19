@@ -41,3 +41,22 @@ type EventsSummaryBucketKey {
     """The `id` of the EventProducer of the events in the summary bucket."""
     eventProducerId: ID
 }
+
+## Summary statistics
+
+"""
+Summary statistics for a `DateTimeDuration` input type.
+"""
+type DateTimeDurationSummaryStatistic {
+    min: DateTimeDuration!
+    average: DateTimeDuration!
+    max: DateTimeDuration!
+}
+
+"""
+Summary statistics for event fields, to be read from an `eventsSummary` or its buckets.
+"""
+type EventsSummaryStatistics {
+    """Summary statistics from the events' durations.  Does not include unfinished events.  Will be null if no events are finished."""
+    duration: DateTimeDurationSummaryStatistic
+}
