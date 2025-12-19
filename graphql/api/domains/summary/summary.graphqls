@@ -36,6 +36,9 @@ type TracksSummaryBucket {
     counts: [TracksCountByTag!]!
 }
 
+"""
+Summary information for events across a time range.  Includes total count and counts by buckets.
+"""
 type EventsSummary {
     """
     The total number of [Events]({{Types.Event}}) within the time range.
@@ -48,6 +51,9 @@ type EventsSummary {
     buckets: [EventsSummaryBucket!]
 }
 
+"""
+Summary information for events across a time range inside a given `EventsSummaryBucketType`.  Includes total count and the bucketed field values.
+"""
 type EventsSummaryBucket {
     """The start time of the bucket."""
     time: DateTimeOffset! @deprecated(reason: "Use key.time instead.")

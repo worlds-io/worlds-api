@@ -2,6 +2,11 @@ package io.worlds.api.model;
 
 import java.util.Objects;
 
+/**
+ * Input to indicate which field(s) to group events by in an `eventsSummary` query.
+Any combination of up to three distinct fields may be provided.
+If multiple fields are provided, the buckets will be sorted by time, then fields.
+ */
 public class EventsSummaryBucketType implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;

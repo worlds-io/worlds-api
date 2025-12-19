@@ -10,7 +10,6 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 
     private java.time.OffsetDateTime time;
-    private SummaryBucketSize timeStep;
     private String type;
     private String subType;
     private String eventProducerId;
@@ -18,45 +17,61 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
     public EventsSummaryBucketKey() {
     }
 
-    public EventsSummaryBucketKey(java.time.OffsetDateTime time, SummaryBucketSize timeStep, String type, String subType, String eventProducerId) {
+    public EventsSummaryBucketKey(java.time.OffsetDateTime time, String type, String subType, String eventProducerId) {
         this.time = time;
-        this.timeStep = timeStep;
         this.type = type;
         this.subType = subType;
         this.eventProducerId = eventProducerId;
     }
 
+    /**
+     * The start time of the summary bucket.
+     */
     public java.time.OffsetDateTime getTime() {
         return time;
     }
+    /**
+     * The start time of the summary bucket.
+     */
     public void setTime(java.time.OffsetDateTime time) {
         this.time = time;
     }
 
-    public SummaryBucketSize getTimeStep() {
-        return timeStep;
-    }
-    public void setTimeStep(SummaryBucketSize timeStep) {
-        this.timeStep = timeStep;
-    }
-
+    /**
+     * The `type` of the events in the summary bucket.
+     */
     public String getType() {
         return type;
     }
+    /**
+     * The `type` of the events in the summary bucket.
+     */
     public void setType(String type) {
         this.type = type;
     }
 
+    /**
+     * The `subType` of the events in the summary bucket.
+     */
     public String getSubType() {
         return subType;
     }
+    /**
+     * The `subType` of the events in the summary bucket.
+     */
     public void setSubType(String subType) {
         this.subType = subType;
     }
 
+    /**
+     * The `id` of the EventProducer of the events in the summary bucket.
+     */
     public String getEventProducerId() {
         return eventProducerId;
     }
+    /**
+     * The `id` of the EventProducer of the events in the summary bucket.
+     */
     public void setEventProducerId(String eventProducerId) {
         this.eventProducerId = eventProducerId;
     }
@@ -71,7 +86,6 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
         }
         final EventsSummaryBucketKey that = (EventsSummaryBucketKey) obj;
         return Objects.equals(time, that.time)
-            && Objects.equals(timeStep, that.timeStep)
             && Objects.equals(type, that.type)
             && Objects.equals(subType, that.subType)
             && Objects.equals(eventProducerId, that.eventProducerId);
@@ -79,7 +93,7 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(time, timeStep, type, subType, eventProducerId);
+        return Objects.hash(time, type, subType, eventProducerId);
     }
 
 
@@ -90,7 +104,6 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
     public static class Builder {
 
         private java.time.OffsetDateTime time;
-        private SummaryBucketSize timeStep;
         private String type;
         private String subType;
         private String eventProducerId;
@@ -98,26 +111,33 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
         public Builder() {
         }
 
+        /**
+         * The start time of the summary bucket.
+         */
         public Builder setTime(java.time.OffsetDateTime time) {
             this.time = time;
             return this;
         }
 
-        public Builder setTimeStep(SummaryBucketSize timeStep) {
-            this.timeStep = timeStep;
-            return this;
-        }
-
+        /**
+         * The `type` of the events in the summary bucket.
+         */
         public Builder setType(String type) {
             this.type = type;
             return this;
         }
 
+        /**
+         * The `subType` of the events in the summary bucket.
+         */
         public Builder setSubType(String subType) {
             this.subType = subType;
             return this;
         }
 
+        /**
+         * The `id` of the EventProducer of the events in the summary bucket.
+         */
         public Builder setEventProducerId(String eventProducerId) {
             this.eventProducerId = eventProducerId;
             return this;
@@ -125,7 +145,7 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
 
 
         public EventsSummaryBucketKey build() {
-            return new EventsSummaryBucketKey(time, timeStep, type, subType, eventProducerId);
+            return new EventsSummaryBucketKey(time, type, subType, eventProducerId);
         }
 
     }
