@@ -1,0 +1,11 @@
+"""The single track from a `searchTrackImages` query."""
+type SearchTrackImageResponse {
+    """The track matching the search query."""
+    track: Track!
+}
+
+"""The response from a `searchTrackImages` query."""
+type SearchTrackImagesResponse {
+    """The tracks matching the search query."""
+    tracks: [SearchTrackImageResponse]!
+}
