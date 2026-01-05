@@ -8,6 +8,8 @@ extend type Query {
         Defaults to false.
         """
         searchImage: Boolean = false
+        """If provided, only search for tracks from the given collection."""
+        collectionId: ID
         """If provided, only search for tracks from the given point of interest."""
         pointOfInterestId: ID
         """If provided, only search for tracks from the given data source."""
