@@ -10,13 +10,16 @@ public class EventsSummary implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 
     private int total;
+    @jakarta.validation.constraints.NotNull
+    private EventsSummaryStatistics summaryStatistics;
     private java.util.List<EventsSummaryBucket> buckets;
 
     public EventsSummary() {
     }
 
-    public EventsSummary(int total, java.util.List<EventsSummaryBucket> buckets) {
+    public EventsSummary(int total, EventsSummaryStatistics summaryStatistics, java.util.List<EventsSummaryBucket> buckets) {
         this.total = total;
+        this.summaryStatistics = summaryStatistics;
         this.buckets = buckets;
     }
 
@@ -31,6 +34,19 @@ public class EventsSummary implements java.io.Serializable {
      */
     public void setTotal(int total) {
         this.total = total;
+    }
+
+    /**
+     * Summary statistics for all events within the summary's time range and filters.
+     */
+    public EventsSummaryStatistics getSummaryStatistics() {
+        return summaryStatistics;
+    }
+    /**
+     * Summary statistics for all events within the summary's time range and filters.
+     */
+    public void setSummaryStatistics(EventsSummaryStatistics summaryStatistics) {
+        this.summaryStatistics = summaryStatistics;
     }
 
     /**
@@ -58,12 +74,13 @@ Summary buckets are only returned if `bucket` is provided as a query parameter t
         }
         final EventsSummary that = (EventsSummary) obj;
         return Objects.equals(total, that.total)
+            && Objects.equals(summaryStatistics, that.summaryStatistics)
             && Objects.equals(buckets, that.buckets);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, buckets);
+        return Objects.hash(total, summaryStatistics, buckets);
     }
 
 
@@ -74,6 +91,7 @@ Summary buckets are only returned if `bucket` is provided as a query parameter t
     public static class Builder {
 
         private int total;
+        private EventsSummaryStatistics summaryStatistics;
         private java.util.List<EventsSummaryBucket> buckets;
 
         public Builder() {
@@ -88,6 +106,14 @@ Summary buckets are only returned if `bucket` is provided as a query parameter t
         }
 
         /**
+         * Summary statistics for all events within the summary's time range and filters.
+         */
+        public Builder setSummaryStatistics(EventsSummaryStatistics summaryStatistics) {
+            this.summaryStatistics = summaryStatistics;
+            return this;
+        }
+
+        /**
          * A detailed summary of each [bucket]({{Types.SummaryBucketSize}}) within the time range.
 Summary buckets are only returned if `bucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventsSummary}}).
          */
@@ -98,7 +124,7 @@ Summary buckets are only returned if `bucket` is provided as a query parameter t
 
 
         public EventsSummary build() {
-            return new EventsSummary(total, buckets);
+            return new EventsSummary(total, summaryStatistics, buckets);
         }
 
     }
