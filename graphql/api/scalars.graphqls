@@ -5,6 +5,12 @@ This is specified by [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601).
 scalar DateTimeOffset
 
 """
+A duration between two DateTimeOffsets.
+This is specified by [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601#Durations).
+"""
+scalar DateTimeDuration
+
+"""
 Arbitrary data in JSON format. Commonly used for metadata added by custom processes.
 See [JSON](https://www.json.org/json-en.html) and the
 [ECMA-404](https://ecma-international.org/publications-and-standards/standards/ecma-404/) standard.

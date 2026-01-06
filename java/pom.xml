@@ -49,6 +49,7 @@
               <addGeneratedAnnotation>false</addGeneratedAnnotation>
               <customTypesMapping>
                 <DateTimeOffset>java.time.OffsetDateTime</DateTimeOffset>
+                <DateTimeDuration>java.time.Duration</DateTimeDuration>
                 <JSON>java.lang.Object</JSON>
               </customTypesMapping>
               <generateApis>false</generateApis>

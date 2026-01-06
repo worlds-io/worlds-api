@@ -36,11 +36,18 @@ type TracksSummaryBucket {
     counts: [TracksCountByTag!]!
 }
 
+"""
+Summary information for events across a time range.  Includes total count and counts by buckets.
+"""
 type EventsSummary {
     """
     The total number of [Events]({{Types.Event}}) within the time range.
     """
     total: Int!
+    """
+    Summary statistics for all events within the summary's time range and filters.
+    """
+    summaryStatistics: EventsSummaryStatistics!
     """
     A detailed summary of each [bucket]({{Types.SummaryBucketSize}}) within the time range.
     Summary buckets are only returned if `bucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventsSummary}}).
@@ -48,11 +55,21 @@ type EventsSummary {
     buckets: [EventsSummaryBucket!]
 }
 
+"""
+Summary information for events across a time range inside a given `EventsSummaryBucketType`.  Includes total count and the bucketed field values.
+"""
 type EventsSummaryBucket {
     """The start time of the bucket."""
-    time: DateTimeOffset!
+    time: DateTimeOffset! @deprecated(reason: "Use key.time instead.")
+    """The key of the bucket."""
+    key: EventsSummaryBucketKey
     """
     The total number of [Events]({{Types.Event}}) within the bucket.
     """
     total: Int!
+
+    """
+    Summary statistics for all events within the bucket.
+    """
+    summaryStatistics: EventsSummaryStatistics!
 }
