@@ -23,6 +23,10 @@ extend type Query {
         """
         If provided, return [summary buckets]({{Types.EventsSummaryBucket}}) of this size.
         """
-        bucket: SummaryBucketSize
+        bucket: SummaryBucketSize @deprecated(reason: "Grouping by `buckets` is deprecated in favor of grouping by `eventsBucket`.  Use `eventsBucket.size` to group events by a `SummaryBucketSize`.")
+        """
+        If provided, group the summary buckets by the provided grouping types.
+        """
+        eventsBucket: EventsSummaryBucketType
     ): EventsSummary
 }
