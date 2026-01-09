@@ -1,0 +1,28 @@
+extend type Query {
+    """Search for tracks whose images match a text description."""
+    searchTrackImages(
+        """The text description to search against."""
+        searchText: String!
+        """
+        If true, the searchText will refer to the entire image, rather than just the track.
+        Defaults to false.
+        """
+        searchImage: Boolean! = false
+        """If provided, only search for tracks from the given collection."""
+        collectionId: ID
+        """If provided, only search for tracks from the given point of interest."""
+        pointOfInterestId: ID
+        """If provided, only search for tracks from the given data source."""
+        dataSourceIds: [ID!]
+        """If provided, only search for tracks after the given start time."""
+        startTime: DateTimeOffset
+        """If provided, only search for tracks before the given end time."""
+        endTime: DateTimeOffset
+        """If provided, only search for tracks from matching one of the given tags."""
+        includeTagIds: [ID!]
+        """If provided, do not return tracks matching the given tags."""
+        excludeTagIds: [ID!]
+        """Returns the first _n_ entries from the search."""
+        first: Int! = 20
+    ): SearchTrackImagesResponse
+}
