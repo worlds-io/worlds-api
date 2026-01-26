@@ -25,4 +25,17 @@ extend type Query {
         """Returns the first _n_ entries from the search."""
         first: Int! = 20
     ): SearchTrackImagesResponse
+    """Search for entities matching a text description."""
+    unifiedSearch(
+        """The text description to search against."""
+        searchText: String!
+        """Optional filter against entity types.  If provided, only entities whose types match the filter will be returned."""
+        entityTypes: FilterUnifiedSearchEntityTypeInput
+        """Optional threshold in the range [0, 1].  If provided, only objects with a greater similarity score will be returned"""
+        similarityThreshold: Float
+        """Optional site id.  If provided, only return entities from the given site."""
+        siteId: Int
+        """Returns the first _n_ entries from the search."""
+        first: Int! = 20
+    ): SearchTrackImagesResponse
 }

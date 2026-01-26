@@ -1,0 +1,25 @@
+"""A possible entity type of a `unifiedSearch` query."""
+enum UnifiedSearchEntityType {
+    SITE
+    POINT_OF_INTEREST
+    DATA_SOURCE
+    TAG
+}
+
+"""
+`FilterUnifiedSearchEntityTypeInput` allows for filtering the type of on a [UnifiedSearchEntityType]({{Types.UnifiedSearchEntityType}}) parameter. Only one field should be provided per filter object.
+"""
+input FilterUnifiedSearchEntityTypeInput {
+    """
+    If provided, the UnifiedSearchEntityType must be equal to the value provided to match the filter.
+    """
+    eq: MessageState
+    """
+    If provided, the UnifiedSearchEntityType must not be equal to the value provided to match the filter.
+    """
+    ne: MessageState
+    """
+    If provided, the UnifiedSearchEntityType must be present in the list provided to match the filter.
+    """
+    in: [MessageState!]
+}
