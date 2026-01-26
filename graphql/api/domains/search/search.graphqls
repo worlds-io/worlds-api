@@ -23,6 +23,8 @@ type UnifiedSearchResponseEntry {
     entity: UnifiedSearchNameResponseEntity!
     """The cosine similarity of the entity to the query string, in the range [0, 1]."""
     similarityScore: Float!
+    """A textual description of the entity"""
+    embedding: String!
     """A textual description of the entity's site and point of interest."""
     context: String!
 }
