@@ -13,13 +13,13 @@ input FilterUnifiedSearchEntityTypeInput {
     """
     If provided, the UnifiedSearchEntityType must be equal to the value provided to match the filter.
     """
-    eq: MessageState
+    eq: UnifiedSearchEntityType
     """
     If provided, the UnifiedSearchEntityType must not be equal to the value provided to match the filter.
     """
-    ne: MessageState
+    ne: UnifiedSearchEntityType
     """
     If provided, the UnifiedSearchEntityType must be present in the list provided to match the filter.
     """
-    in: [MessageState!]
+    in: [UnifiedSearchEntityType!]
 }
