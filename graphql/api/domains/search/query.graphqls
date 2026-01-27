@@ -34,7 +34,7 @@ extend type Query {
         """Optional threshold in the range [0, 1].  If provided, only objects with a greater similarity score will be returned"""
         similarityThreshold: Float
         """Optional site id.  If provided, only return entities from the given site."""
-        siteId: Int
+        siteId: ID
         """Returns the first _n_ entries from the search."""
         first: Int! = 20
     ): UnifiedSearchResponse
