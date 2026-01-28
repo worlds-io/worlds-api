@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * A point of interest is a designated area within a Site, used to subdivide a location into meaningful sections. Each POI belongs to a single [Site]({{Types.Site}}) and can contain multiple [Devices]({{Types.Device}}).
  */
-public class PointOfInterest implements java.io.Serializable {
+public class PointOfInterest implements java.io.Serializable, UnifiedSearchNameResponseEntity {
 
     private static final long serialVersionUID = 1L;
 

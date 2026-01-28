@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * A data source is responsible for producing the videos, images and other sensor data that may eventually produce detections and tracks. For more details on detections, see [About Detections]({{Types.Detection}})
  */
-public class DataSource implements java.io.Serializable {
+public class DataSource implements java.io.Serializable, UnifiedSearchNameResponseEntity {
 
     private static final long serialVersionUID = 1L;
 

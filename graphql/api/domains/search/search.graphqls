@@ -9,3 +9,26 @@ type SearchTrackImagesResponse {
     """The tracks matching the search query."""
     tracks: [SearchTrackImageResponse]!
 }
+
+"""A possible response entity from a `unifiedSearch` query."""
+union UnifiedSearchNameResponseEntity =
+    Site
+    | PointOfInterest
+    | DataSource
+    | Tag
+
+"""A single entity from a `unifiedSearch` query, along with additional information specific to the entity."""
+type UnifiedSearchResponseEntry {
+    """The entity matching the query."""
+    entity: UnifiedSearchNameResponseEntity!
+    """The cosine similarity of the entity to the query string, in the range [0, 1]."""
+    similarityScore: Float!
+    """A textual description of the entity, plus parent information if relevant."""
+    context: String!
+}
+
+"""The response from a `unifiedSearch` query."""
+type UnifiedSearchResponse {
+    """The entities matching the search query."""
+    entities: [UnifiedSearchResponseEntry]!
+}
