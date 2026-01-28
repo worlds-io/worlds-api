@@ -79,10 +79,10 @@ public class ZoneEvent implements java.io.Serializable {
 
     /**
      * [`zoneEvents`]({{Queries.zoneEvents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneIntersections}}),
-and `tag` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
-Use [track's tag]({{Types.Track}}) instead.
+    and `tag` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
+    Use [track's tag]({{Types.Track}}) instead.
 
-The class label of the object that triggered the zone event, i.e person, car, truck, etc.
+    The class label of the object that triggered the zone event, i.e person, car, truck, etc.
      */
     @Deprecated
     public String getTag() {
@@ -90,10 +90,10 @@ The class label of the object that triggered the zone event, i.e person, car, tr
     }
     /**
      * [`zoneEvents`]({{Queries.zoneEvents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneIntersections}}),
-and `tag` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
-Use [track's tag]({{Types.Track}}) instead.
+    and `tag` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
+    Use [track's tag]({{Types.Track}}) instead.
 
-The class label of the object that triggered the zone event, i.e person, car, truck, etc.
+    The class label of the object that triggered the zone event, i.e person, car, truck, etc.
      */
     @Deprecated
     public void setTag(String tag) {
@@ -102,10 +102,10 @@ The class label of the object that triggered the zone event, i.e person, car, tr
 
     /**
      * [`zoneEvents`]({{Queries.zoneEvents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneIntersections}}),
-and `type` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
+    and `type` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
 
-The type of zone event, i.e ingress (an object entered the zone), dwell (an object remained in the zone), and egress.
-(an object exited the zone)
+    The type of zone event, i.e ingress (an object entered the zone), dwell (an object remained in the zone), and egress.
+    (an object exited the zone)
      */
     @Deprecated
     public ActivityType getType() {
@@ -113,10 +113,10 @@ The type of zone event, i.e ingress (an object entered the zone), dwell (an obje
     }
     /**
      * [`zoneEvents`]({{Queries.zoneEvents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneIntersections}}),
-and `type` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
+    and `type` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
 
-The type of zone event, i.e ingress (an object entered the zone), dwell (an object remained in the zone), and egress.
-(an object exited the zone)
+    The type of zone event, i.e ingress (an object entered the zone), dwell (an object remained in the zone), and egress.
+    (an object exited the zone)
      */
     @Deprecated
     public void setType(ActivityType type) {
@@ -151,9 +151,9 @@ The type of zone event, i.e ingress (an object entered the zone), dwell (an obje
 
     /**
      * [`zoneEvents`]({{Queries.zoneEvents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneIntersections}}),
-and `polygon` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
+    and `polygon` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
 
-The two-dimensional shape of the detection that triggered the event.
+    The two-dimensional shape of the detection that triggered the event.
      */
     @Deprecated
     public GeoJSONMultiPolygon getPolygon() {
@@ -161,9 +161,9 @@ The two-dimensional shape of the detection that triggered the event.
     }
     /**
      * [`zoneEvents`]({{Queries.zoneEvents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneIntersections}}),
-and `polygon` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
+    and `polygon` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
 
-The two-dimensional shape of the detection that triggered the event.
+    The two-dimensional shape of the detection that triggered the event.
      */
     @Deprecated
     public void setPolygon(GeoJSONMultiPolygon polygon) {
@@ -239,10 +239,10 @@ The two-dimensional shape of the detection that triggered the event.
 
         /**
          * [`zoneEvents`]({{Queries.zoneEvents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneIntersections}}),
-and `tag` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
-Use [track's tag]({{Types.Track}}) instead.
+    and `tag` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
+    Use [track's tag]({{Types.Track}}) instead.
 
-The class label of the object that triggered the zone event, i.e person, car, truck, etc.
+    The class label of the object that triggered the zone event, i.e person, car, truck, etc.
          */
         @Deprecated
         public Builder setTag(String tag) {
@@ -252,10 +252,10 @@ The class label of the object that triggered the zone event, i.e person, car, tr
 
         /**
          * [`zoneEvents`]({{Queries.zoneEvents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneIntersections}}),
-and `type` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
+    and `type` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
 
-The type of zone event, i.e ingress (an object entered the zone), dwell (an object remained in the zone), and egress.
-(an object exited the zone)
+    The type of zone event, i.e ingress (an object entered the zone), dwell (an object remained in the zone), and egress.
+    (an object exited the zone)
          */
         @Deprecated
         public Builder setType(ActivityType type) {
@@ -281,9 +281,9 @@ The type of zone event, i.e ingress (an object entered the zone), dwell (an obje
 
         /**
          * [`zoneEvents`]({{Queries.zoneEvents}}) is deprecated in favor of [`zoneIntersections`]({{Queries.zoneIntersections}}),
-and `polygon` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
+    and `polygon` will not be present on [`ZoneIntersection`]({{Types.ZoneIntersection}}).
 
-The two-dimensional shape of the detection that triggered the event.
+    The two-dimensional shape of the detection that triggered the event.
          */
         @Deprecated
         public Builder setPolygon(GeoJSONMultiPolygon polygon) {

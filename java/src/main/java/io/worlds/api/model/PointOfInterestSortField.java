@@ -6,11 +6,13 @@ package io.worlds.api.model;
 public enum PointOfInterestSortField {
 
     /**
-     * Sort the resulting list by the [`Point of Interest`](({{Types.PointOfInterest}}))'s unique identifier.
+     * 
+Sort the resulting list by the [`Point of Interest`](({{Types.PointOfInterest}}))'s unique identifier.
      */
     ID("ID"),
     /**
-     * Sort the resulting list by the [`Point of Interest`](({{Types.PointOfInterest}}))'s name.
+     * 
+Sort the resulting list by the [`Point of Interest`](({{Types.PointOfInterest}}))'s name.
      */
     NAME("NAME");
 

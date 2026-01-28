@@ -6,11 +6,13 @@ package io.worlds.api.model;
 public enum GeofencesSortField {
 
     /**
-     * Sort the resulting list by the [`Geofence`](({{Types.Geofence}}))'s unique identifier.
+     * 
+Sort the resulting list by the [`Geofence`](({{Types.Geofence}}))'s unique identifier.
      */
     ID("ID"),
     /**
-     * Sort the resulting list by the [`Geofence`](({{Types.Geofence}}))'s name.
+     * 
+Sort the resulting list by the [`Geofence`](({{Types.Geofence}}))'s name.
      */
     NAME("NAME");
 

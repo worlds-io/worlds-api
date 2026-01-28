@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * Tags are descriptive labels used to classify and group both detections and training data for models.
  */
-public class Tag implements java.io.Serializable {
+public class Tag implements java.io.Serializable, UnifiedSearchNameResponseEntity {
 
     private static final long serialVersionUID = 1L;
 

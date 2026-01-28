@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * A site represents a business location, such as an office building, a facility or a campus. Sites can be used to logically and geospatially group various objects and events that share a physical space, such as [Devices]({{Types.Devices}}), [Geofences]({{Types.Geofences}}).
  */
-public class Site implements java.io.Serializable {
+public class Site implements java.io.Serializable, UnifiedSearchNameResponseEntity {
 
     private static final long serialVersionUID = 1L;
 

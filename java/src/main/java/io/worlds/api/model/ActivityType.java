@@ -6,15 +6,18 @@ package io.worlds.api.model;
 public enum ActivityType {
 
     /**
-     * A detection entering a [Geofence]({{Types.Geofence}}) or a [Zone]({{Types.Zone}}).
+     * 
+A detection entering a [Geofence]({{Types.Geofence}}) or a [Zone]({{Types.Zone}}).
      */
     INGRESS("INGRESS"),
     /**
-     * A detection remaining inside a [Geofence]({{Types.Geofence}}) or a [Zone]({{Types.Zone}}).
+     * 
+A detection remaining inside a [Geofence]({{Types.Geofence}}) or a [Zone]({{Types.Zone}}).
      */
     DWELL("DWELL"),
     /**
-     * A detection exiting a [Geofence]({{Types.Geofence}}) or a [Zone]({{Types.Zone}}).
+     * 
+A detection exiting a [Geofence]({{Types.Geofence}}) or a [Zone]({{Types.Zone}}).
      */
     EGRESS("EGRESS");
 

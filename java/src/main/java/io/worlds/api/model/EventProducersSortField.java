@@ -6,11 +6,13 @@ package io.worlds.api.model;
 public enum EventProducersSortField {
 
     /**
-     * Sort the resulting list by the [`EventProducer`](({{Types.EventProducer}}))'s unique identifier.
+     * 
+Sort the resulting list by the [`EventProducer`](({{Types.EventProducer}}))'s unique identifier.
      */
     ID("ID"),
     /**
-     * Sort the resulting list by the [`EventProducer`](({{Types.EventProducer}}))'s name.
+     * 
+Sort the resulting list by the [`EventProducer`](({{Types.EventProducer}}))'s name.
      */
     EVENT_PRODUCER_NAME("EVENT_PRODUCER_NAME");
 

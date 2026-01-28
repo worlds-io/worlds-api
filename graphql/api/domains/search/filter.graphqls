@@ -1,5 +1,5 @@
 """A possible entity type of a `unifiedSearch` query."""
-enum UnifiedSearchEntityType {
+    enum UnifiedSearchEntityType {
     SITE
     POINT_OF_INTEREST
     DATA_SOURCE
