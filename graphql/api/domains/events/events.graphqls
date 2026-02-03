@@ -1,4 +1,9 @@
 """
+A dot-separated string representing the path to a JSON metadata field.
+"""
+scalar MetadataPath
+
+"""
 An event producer represents a custom process that detects and records events. Events
 created by an event producer can represent a wide variety of time-based activities to be
 used by your application's specific needs that aren't expressed natively through

@@ -18,6 +18,47 @@ enum EventsSummaryBucketField {
     EVENT_PRODUCER_ID
 }
 
+input IntegerStepBucketInput {
+    step: Int!
+    offset: Int! = 0
+}
+
+input IntegerBucketField @oneOf {
+    distinct: Boolean
+    step: Int
+}
+
+input FloatStepBucketInput {
+    step: Float!
+    offset: Float! = 0
+}
+
+input FloatBucketField @oneOf {
+    step: Float
+}
+
+input StringBucketField @oneOf {
+    distinct: Boolean
+}
+
+input BooleanBucketField @oneOf {
+    distinct: Boolean
+}
+
+# TODO: probably need some logic to prevent user querying too many buckets.
+# e.g. distinct on a float
+input MetadataBucketMode @oneOf {
+    integer: IntegerBucketField
+    float: FloatBucketField
+    string: StringBucketField
+    boolean: BooleanBucketField
+}
+
+input MetadataBucketField {
+    path: MetadataPath!
+    mode: MetadataBucketMode!
+}
+
 """
 Input to indicate which field(s) to group events by in an `eventsSummary` query.
 Any combination of up to three distinct fields may be provided.
@@ -28,6 +69,8 @@ input EventsSummaryBucketType {
     size: SummaryBucketSize
     """If provided, group the summary buckets by the values of the provided fields."""
     fields: [EventsSummaryBucketField!]
+    """If provided, group the summary buckets by the values of the provided metadata fields."""
+    metadata: [MetadataBucketField!]
 }
 
 """The grouping key for an EventsSummaryBucket.  Fields bucketed on will be present.  All other fields will be null."""
@@ -45,7 +88,7 @@ type EventsSummaryBucketKey {
 ## Summary statistics
 
 """
-Summary statistics for a `DateTimeDuration` input type.
+Summary statistics for a `DateTimeDuration` field.
 """
 type DateTimeDurationSummaryStatistics {
     """The minimum duration in the group."""
@@ -57,9 +100,74 @@ type DateTimeDurationSummaryStatistics {
 }
 
 """
+Summary statistics for an `Integer` field.
+"""
+type IntegerSummaryStatistics {
+    """The average value of the group."""
+    average: Float!
+    """The minimum value of the group."""
+    min: Int!
+    """The first quartile of the group."""
+    q1: Int!
+    """The median value of the group."""
+    median: Int!
+    """The third quartile of the group."""
+    q3: Int!
+    """The maximum value in the group."""
+    max: Int!
+    """The sum of all values in the group."""
+    sum: Int!
+    """The number of distinct values in the group."""
+    distinct_count: Int!
+}
+
+"""
+Summary statistics for a `Float` field.
+"""
+type FloatSummaryStatistics {
+    """The average value of the group."""
+    average: Float!
+    """The minimum value of the group."""
+    min: Float!
+    """The first quartile of the group."""
+    q1: Float!
+    """The median value of the group."""
+    median: Float!
+    """The third quartile of the group."""
+    q3: Float!
+    """The maximum value in the group."""
+    max: Float!
+    """The sum of all values in the group."""
+    sum: Float!
+}
+
+"""
+Summary statistics for an `Integer` field.
+"""
+type StringSummaryStatistics {
+    """The number of distinct values in the group."""
+    distinct_count: Int!
+}
+
+"""
+Summary statistics for a `Boolean` field.
+"""
+type BooleanSummaryStatistics {
+    """The number of true values in the group."""
+    true_count: Int!
+    """The number of true values in the group."""
+    false_count: Int!
+}
+
+"""
 Summary statistics for event fields, to be read from an `eventsSummary` or its buckets.
 """
 type EventsSummaryStatistics {
     """Summary statistics from the events' durations.  Does not include unfinished events.  Will be null if no events are finished."""
     duration: DateTimeDurationSummaryStatistics
+    priority: StringSummaryStatistics
+
+    integerMetadataStatistics(path: MetadataPath!): IntegerSummaryStatistics
+    floatMetadataStatistics(path: MetadataPath!): FloatSummaryStatistics
+    stringMetadataStatistics(path: MetadataPath!): StringSummaryStatistics
 }

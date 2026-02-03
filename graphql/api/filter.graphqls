@@ -194,7 +194,7 @@ input FilterBooleanInput {
     attributeExists: Boolean
 }
 
-"""FilterPoinInput is used to filter records by their positional values"""
+"""FilterPointInput is used to filter records by their positional values"""
 input FilterPointInput {
     """
     If provided, returns records with positions that are inside the specified polygon
@@ -279,4 +279,23 @@ input FilterEventValidationStatusInput {
     If provided and true, the filter will pass only if the event has a validation status. If provided and false, the filter will pass only if there is no validation status.
     """
     attributeExists: Boolean
+}
+
+
+input FilterMetadataValueInput @oneOf {
+    integer: FilterIntInput
+    float: FilterFloatInput
+    boolean: FilterBooleanInput
+    string: FilterStringInput
+}
+
+"""
+`FilterMetadataInput` allows for filtering based on user-defined metadata fields.
+"""
+input FilterMetadataInput {
+    """
+    The path to the metadata field on which to filter.  If no data exists at the path, it will be treated as a null value.
+    """
+    path: MetadataPath!
+    filter: FilterMetadataValueInput!
 }
