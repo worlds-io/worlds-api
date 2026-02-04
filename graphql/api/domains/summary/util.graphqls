@@ -25,7 +25,7 @@ input IntegerStepBucketInput {
 
 input IntegerBucketField @oneOf {
     distinct: Boolean
-    step: Int
+    step: IntegerStepBucketInput
 }
 
 input FloatStepBucketInput {
@@ -34,7 +34,7 @@ input FloatStepBucketInput {
 }
 
 input FloatBucketField @oneOf {
-    step: Float
+    step: FloatStepBucketInput
 }
 
 input StringBucketField @oneOf {
@@ -46,7 +46,7 @@ input BooleanBucketField @oneOf {
 }
 
 # TODO: probably need some logic to prevent user querying too many buckets.
-# e.g. distinct on a float
+# pre-query to find number of distinct buckets and error if too much?
 input MetadataBucketMode @oneOf {
     integer: IntegerBucketField
     float: FloatBucketField
@@ -83,6 +83,8 @@ type EventsSummaryBucketKey {
     subType: String
     """The `id` of the EventProducer of the events in the summary bucket."""
     eventProducerId: ID
+    """The grouped metadata values of the events in the summary bucket."""
+    metadata: JSON
 }
 
 ## Summary statistics
