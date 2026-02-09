@@ -12,6 +12,8 @@ public class SearchTrackImageResponse implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private Track track;
     @jakarta.validation.constraints.NotNull
+    private DataSource dataSource;
+    @jakarta.validation.constraints.NotNull
     private Detection detection;
     @jakarta.validation.constraints.NotNull
     private java.time.OffsetDateTime timestamp;
@@ -20,8 +22,9 @@ public class SearchTrackImageResponse implements java.io.Serializable {
     public SearchTrackImageResponse() {
     }
 
-    public SearchTrackImageResponse(Track track, Detection detection, java.time.OffsetDateTime timestamp, double confidence) {
+    public SearchTrackImageResponse(Track track, DataSource dataSource, Detection detection, java.time.OffsetDateTime timestamp, double confidence) {
         this.track = track;
+        this.dataSource = dataSource;
         this.detection = detection;
         this.timestamp = timestamp;
         this.confidence = confidence;
@@ -38,6 +41,19 @@ public class SearchTrackImageResponse implements java.io.Serializable {
      */
     public void setTrack(Track track) {
         this.track = track;
+    }
+
+    /**
+     * The data source which captured the track.
+     */
+    public DataSource getDataSource() {
+        return dataSource;
+    }
+    /**
+     * The data source which captured the track.
+     */
+    public void setDataSource(DataSource dataSource) {
+        this.dataSource = dataSource;
     }
 
     /**
@@ -89,6 +105,7 @@ public class SearchTrackImageResponse implements java.io.Serializable {
         }
         final SearchTrackImageResponse that = (SearchTrackImageResponse) obj;
         return Objects.equals(track, that.track)
+            && Objects.equals(dataSource, that.dataSource)
             && Objects.equals(detection, that.detection)
             && Objects.equals(timestamp, that.timestamp)
             && Objects.equals(confidence, that.confidence);
@@ -96,7 +113,7 @@ public class SearchTrackImageResponse implements java.io.Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(track, detection, timestamp, confidence);
+        return Objects.hash(track, dataSource, detection, timestamp, confidence);
     }
 
 
@@ -107,6 +124,7 @@ public class SearchTrackImageResponse implements java.io.Serializable {
     public static class Builder {
 
         private Track track;
+        private DataSource dataSource;
         private Detection detection;
         private java.time.OffsetDateTime timestamp;
         private double confidence;
@@ -119,6 +137,14 @@ public class SearchTrackImageResponse implements java.io.Serializable {
          */
         public Builder setTrack(Track track) {
             this.track = track;
+            return this;
+        }
+
+        /**
+         * The data source which captured the track.
+         */
+        public Builder setDataSource(DataSource dataSource) {
+            this.dataSource = dataSource;
             return this;
         }
 
@@ -148,7 +174,7 @@ public class SearchTrackImageResponse implements java.io.Serializable {
 
 
         public SearchTrackImageResponse build() {
-            return new SearchTrackImageResponse(track, detection, timestamp, confidence);
+            return new SearchTrackImageResponse(track, dataSource, detection, timestamp, confidence);
         }
 
     }

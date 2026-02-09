@@ -2,6 +2,8 @@
 type SearchTrackImageResponse {
     """The track matching the search query."""
     track: Track!
+    """The data source which captured the track."""
+    dataSource: DataSource!
     """The detection at which the track best matched the search query."""
     detection: Detection!
     """The timestamp at which the track best matched the search query."""
