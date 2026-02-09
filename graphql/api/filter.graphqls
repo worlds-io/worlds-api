@@ -194,7 +194,7 @@ input FilterBooleanInput {
     attributeExists: Boolean
 }
 
-"""FilterPoinInput is used to filter records by their positional values"""
+"""FilterPointInput is used to filter records by their positional values"""
 input FilterPointInput {
     """
     If provided, returns records with positions that are inside the specified polygon
@@ -279,4 +279,34 @@ input FilterEventValidationStatusInput {
     If provided and true, the filter will pass only if the event has a validation status. If provided and false, the filter will pass only if there is no validation status.
     """
     attributeExists: Boolean
+}
+
+"""
+A filter for a JSON value.  The value will be cast to the relevant type if present.
+"""
+input FilterJSONFieldMode @oneOf {
+    """An integer filter for the JSON value."""
+    integer: FilterIntInput
+    """An float filter for the JSON value."""
+    float: FilterFloatInput
+    """An boolean filter for the JSON value."""
+    boolean: FilterBooleanInput
+    """An string filter for the JSON value."""
+    string: FilterStringInput
+}
+
+"""
+`FilterJSONFieldInput` allows for filtering based on user-defined metadata fields.
+"""
+input FilterJSONFieldInput {
+    """
+    The path to the metadata field on which to filter.
+    Entries in the list may be either field keys (strings) or array indexes (integers).
+    If no data exists at the path, it will be treated as a null value.
+    """
+    path: [String]!
+    """
+    The filter for the value found at the provided path.
+    """
+    filter: FilterJSONFieldMode!
 }

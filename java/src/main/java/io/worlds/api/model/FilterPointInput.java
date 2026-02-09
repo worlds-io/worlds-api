@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * FilterPoinInput is used to filter records by their positional values
+ * FilterPointInput is used to filter records by their positional values
  */
 public class FilterPointInput implements java.io.Serializable {
 
