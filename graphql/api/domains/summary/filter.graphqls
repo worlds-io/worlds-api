@@ -30,7 +30,7 @@ input FilterEventsSummaryInput {
     """
     If provided, specifies filters that work against the user-defined event metadata.
     """
-    metadata: FilterJSONFieldInput
+    metadata: FilterJSONFieldStringInput
     """
     If provided, an event must pass all filters in this list to match the current filter.
     """
