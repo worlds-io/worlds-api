@@ -11,12 +11,20 @@ public class SearchTrackImageResponse implements java.io.Serializable {
 
     @jakarta.validation.constraints.NotNull
     private Track track;
+    @jakarta.validation.constraints.NotNull
+    private Detection detection;
+    @jakarta.validation.constraints.NotNull
+    private java.time.OffsetDateTime timestamp;
+    private double confidence;
 
     public SearchTrackImageResponse() {
     }
 
-    public SearchTrackImageResponse(Track track) {
+    public SearchTrackImageResponse(Track track, Detection detection, java.time.OffsetDateTime timestamp, double confidence) {
         this.track = track;
+        this.detection = detection;
+        this.timestamp = timestamp;
+        this.confidence = confidence;
     }
 
     /**
@@ -32,6 +40,45 @@ public class SearchTrackImageResponse implements java.io.Serializable {
         this.track = track;
     }
 
+    /**
+     * The detection at which the track best matched the search query.
+     */
+    public Detection getDetection() {
+        return detection;
+    }
+    /**
+     * The detection at which the track best matched the search query.
+     */
+    public void setDetection(Detection detection) {
+        this.detection = detection;
+    }
+
+    /**
+     * The timestamp at which the track best matched the search query.
+     */
+    public java.time.OffsetDateTime getTimestamp() {
+        return timestamp;
+    }
+    /**
+     * The timestamp at which the track best matched the search query.
+     */
+    public void setTimestamp(java.time.OffsetDateTime timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    /**
+     * The confidence score of the track to the query string, in the range [0, 1].
+     */
+    public double getConfidence() {
+        return confidence;
+    }
+    /**
+     * The confidence score of the track to the query string, in the range [0, 1].
+     */
+    public void setConfidence(double confidence) {
+        this.confidence = confidence;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -41,12 +88,15 @@ public class SearchTrackImageResponse implements java.io.Serializable {
             return false;
         }
         final SearchTrackImageResponse that = (SearchTrackImageResponse) obj;
-        return Objects.equals(track, that.track);
+        return Objects.equals(track, that.track)
+            && Objects.equals(detection, that.detection)
+            && Objects.equals(timestamp, that.timestamp)
+            && Objects.equals(confidence, that.confidence);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(track);
+        return Objects.hash(track, detection, timestamp, confidence);
     }
 
 
@@ -57,6 +107,9 @@ public class SearchTrackImageResponse implements java.io.Serializable {
     public static class Builder {
 
         private Track track;
+        private Detection detection;
+        private java.time.OffsetDateTime timestamp;
+        private double confidence;
 
         public Builder() {
         }
@@ -69,9 +122,33 @@ public class SearchTrackImageResponse implements java.io.Serializable {
             return this;
         }
 
+        /**
+         * The detection at which the track best matched the search query.
+         */
+        public Builder setDetection(Detection detection) {
+            this.detection = detection;
+            return this;
+        }
+
+        /**
+         * The timestamp at which the track best matched the search query.
+         */
+        public Builder setTimestamp(java.time.OffsetDateTime timestamp) {
+            this.timestamp = timestamp;
+            return this;
+        }
+
+        /**
+         * The confidence score of the track to the query string, in the range [0, 1].
+         */
+        public Builder setConfidence(double confidence) {
+            this.confidence = confidence;
+            return this;
+        }
+
 
         public SearchTrackImageResponse build() {
-            return new SearchTrackImageResponse(track);
+            return new SearchTrackImageResponse(track, detection, timestamp, confidence);
         }
 
     }

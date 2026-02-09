@@ -2,6 +2,12 @@
 type SearchTrackImageResponse {
     """The track matching the search query."""
     track: Track!
+    """The detection at which the track best matched the search query."""
+    detection: Detection!
+    """The timestamp at which the track best matched the search query."""
+    timestamp: DateTimeOffset!
+    """The confidence score of the track to the query string, in the range [0, 1]."""
+    confidence: Float!
 }
 
 """The response from a `searchTrackImages` query."""
