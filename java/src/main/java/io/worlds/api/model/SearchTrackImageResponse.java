@@ -11,12 +11,23 @@ public class SearchTrackImageResponse implements java.io.Serializable {
 
     @jakarta.validation.constraints.NotNull
     private Track track;
+    @jakarta.validation.constraints.NotNull
+    private DataSource dataSource;
+    @jakarta.validation.constraints.NotNull
+    private String trackBoxId;
+    @jakarta.validation.constraints.NotNull
+    private java.time.OffsetDateTime timestamp;
+    private double confidence;
 
     public SearchTrackImageResponse() {
     }
 
-    public SearchTrackImageResponse(Track track) {
+    public SearchTrackImageResponse(Track track, DataSource dataSource, String trackBoxId, java.time.OffsetDateTime timestamp, double confidence) {
         this.track = track;
+        this.dataSource = dataSource;
+        this.trackBoxId = trackBoxId;
+        this.timestamp = timestamp;
+        this.confidence = confidence;
     }
 
     /**
@@ -32,6 +43,58 @@ public class SearchTrackImageResponse implements java.io.Serializable {
         this.track = track;
     }
 
+    /**
+     * The data source which captured the track.
+     */
+    public DataSource getDataSource() {
+        return dataSource;
+    }
+    /**
+     * The data source which captured the track.
+     */
+    public void setDataSource(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
+
+    /**
+     * A unique identifier representing the point in time that that the track was captured.
+     */
+    public String getTrackBoxId() {
+        return trackBoxId;
+    }
+    /**
+     * A unique identifier representing the point in time that that the track was captured.
+     */
+    public void setTrackBoxId(String trackBoxId) {
+        this.trackBoxId = trackBoxId;
+    }
+
+    /**
+     * The timestamp at which the track best matched the search query.
+     */
+    public java.time.OffsetDateTime getTimestamp() {
+        return timestamp;
+    }
+    /**
+     * The timestamp at which the track best matched the search query.
+     */
+    public void setTimestamp(java.time.OffsetDateTime timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    /**
+     * The confidence score of the track to the query string, with greater values indicating higher confidence.
+     */
+    public double getConfidence() {
+        return confidence;
+    }
+    /**
+     * The confidence score of the track to the query string, with greater values indicating higher confidence.
+     */
+    public void setConfidence(double confidence) {
+        this.confidence = confidence;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -41,12 +104,16 @@ public class SearchTrackImageResponse implements java.io.Serializable {
             return false;
         }
         final SearchTrackImageResponse that = (SearchTrackImageResponse) obj;
-        return Objects.equals(track, that.track);
+        return Objects.equals(track, that.track)
+            && Objects.equals(dataSource, that.dataSource)
+            && Objects.equals(trackBoxId, that.trackBoxId)
+            && Objects.equals(timestamp, that.timestamp)
+            && Objects.equals(confidence, that.confidence);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(track);
+        return Objects.hash(track, dataSource, trackBoxId, timestamp, confidence);
     }
 
 
@@ -57,6 +124,10 @@ public class SearchTrackImageResponse implements java.io.Serializable {
     public static class Builder {
 
         private Track track;
+        private DataSource dataSource;
+        private String trackBoxId;
+        private java.time.OffsetDateTime timestamp;
+        private double confidence;
 
         public Builder() {
         }
@@ -69,9 +140,41 @@ public class SearchTrackImageResponse implements java.io.Serializable {
             return this;
         }
 
+        /**
+         * The data source which captured the track.
+         */
+        public Builder setDataSource(DataSource dataSource) {
+            this.dataSource = dataSource;
+            return this;
+        }
+
+        /**
+         * A unique identifier representing the point in time that that the track was captured.
+         */
+        public Builder setTrackBoxId(String trackBoxId) {
+            this.trackBoxId = trackBoxId;
+            return this;
+        }
+
+        /**
+         * The timestamp at which the track best matched the search query.
+         */
+        public Builder setTimestamp(java.time.OffsetDateTime timestamp) {
+            this.timestamp = timestamp;
+            return this;
+        }
+
+        /**
+         * The confidence score of the track to the query string, with greater values indicating higher confidence.
+         */
+        public Builder setConfidence(double confidence) {
+            this.confidence = confidence;
+            return this;
+        }
+
 
         public SearchTrackImageResponse build() {
-            return new SearchTrackImageResponse(track);
+            return new SearchTrackImageResponse(track, dataSource, trackBoxId, timestamp, confidence);
         }
 
     }

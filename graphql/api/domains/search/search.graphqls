@@ -2,6 +2,14 @@
 type SearchTrackImageResponse {
     """The track matching the search query."""
     track: Track!
+    """The data source which captured the track."""
+    dataSource: DataSource!
+    """A unique identifier representing the point in time that that the track was captured."""
+    trackBoxId: ID!
+    """The timestamp at which the track best matched the search query."""
+    timestamp: DateTimeOffset!
+    """The confidence score of the track to the query string, with greater values indicating higher confidence."""
+    confidence: Float!
 }
 
 """The response from a `searchTrackImages` query."""
