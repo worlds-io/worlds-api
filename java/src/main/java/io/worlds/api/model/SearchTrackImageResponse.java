@@ -14,7 +14,7 @@ public class SearchTrackImageResponse implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private DataSource dataSource;
     @jakarta.validation.constraints.NotNull
-    private Detection detection;
+    private String trackBoxId;
     @jakarta.validation.constraints.NotNull
     private java.time.OffsetDateTime timestamp;
     private double confidence;
@@ -22,10 +22,10 @@ public class SearchTrackImageResponse implements java.io.Serializable {
     public SearchTrackImageResponse() {
     }
 
-    public SearchTrackImageResponse(Track track, DataSource dataSource, Detection detection, java.time.OffsetDateTime timestamp, double confidence) {
+    public SearchTrackImageResponse(Track track, DataSource dataSource, String trackBoxId, java.time.OffsetDateTime timestamp, double confidence) {
         this.track = track;
         this.dataSource = dataSource;
-        this.detection = detection;
+        this.trackBoxId = trackBoxId;
         this.timestamp = timestamp;
         this.confidence = confidence;
     }
@@ -57,16 +57,16 @@ public class SearchTrackImageResponse implements java.io.Serializable {
     }
 
     /**
-     * The detection at which the track best matched the search query.
+     * A unique identifier representing the point in time that that the track was captured.
      */
-    public Detection getDetection() {
-        return detection;
+    public String getTrackBoxId() {
+        return trackBoxId;
     }
     /**
-     * The detection at which the track best matched the search query.
+     * A unique identifier representing the point in time that that the track was captured.
      */
-    public void setDetection(Detection detection) {
-        this.detection = detection;
+    public void setTrackBoxId(String trackBoxId) {
+        this.trackBoxId = trackBoxId;
     }
 
     /**
@@ -83,13 +83,13 @@ public class SearchTrackImageResponse implements java.io.Serializable {
     }
 
     /**
-     * The confidence score of the track to the query string, in the range [0, 1].
+     * The confidence score of the track to the query string, with greater values indicating higher confidence.
      */
     public double getConfidence() {
         return confidence;
     }
     /**
-     * The confidence score of the track to the query string, in the range [0, 1].
+     * The confidence score of the track to the query string, with greater values indicating higher confidence.
      */
     public void setConfidence(double confidence) {
         this.confidence = confidence;
@@ -106,14 +106,14 @@ public class SearchTrackImageResponse implements java.io.Serializable {
         final SearchTrackImageResponse that = (SearchTrackImageResponse) obj;
         return Objects.equals(track, that.track)
             && Objects.equals(dataSource, that.dataSource)
-            && Objects.equals(detection, that.detection)
+            && Objects.equals(trackBoxId, that.trackBoxId)
             && Objects.equals(timestamp, that.timestamp)
             && Objects.equals(confidence, that.confidence);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(track, dataSource, detection, timestamp, confidence);
+        return Objects.hash(track, dataSource, trackBoxId, timestamp, confidence);
     }
 
 
@@ -125,7 +125,7 @@ public class SearchTrackImageResponse implements java.io.Serializable {
 
         private Track track;
         private DataSource dataSource;
-        private Detection detection;
+        private String trackBoxId;
         private java.time.OffsetDateTime timestamp;
         private double confidence;
 
@@ -149,10 +149,10 @@ public class SearchTrackImageResponse implements java.io.Serializable {
         }
 
         /**
-         * The detection at which the track best matched the search query.
+         * A unique identifier representing the point in time that that the track was captured.
          */
-        public Builder setDetection(Detection detection) {
-            this.detection = detection;
+        public Builder setTrackBoxId(String trackBoxId) {
+            this.trackBoxId = trackBoxId;
             return this;
         }
 
@@ -165,7 +165,7 @@ public class SearchTrackImageResponse implements java.io.Serializable {
         }
 
         /**
-         * The confidence score of the track to the query string, in the range [0, 1].
+         * The confidence score of the track to the query string, with greater values indicating higher confidence.
          */
         public Builder setConfidence(double confidence) {
             this.confidence = confidence;
@@ -174,7 +174,7 @@ public class SearchTrackImageResponse implements java.io.Serializable {
 
 
         public SearchTrackImageResponse build() {
-            return new SearchTrackImageResponse(track, dataSource, detection, timestamp, confidence);
+            return new SearchTrackImageResponse(track, dataSource, trackBoxId, timestamp, confidence);
         }
 
     }
