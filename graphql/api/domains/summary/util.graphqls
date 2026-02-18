@@ -8,6 +8,19 @@ enum SummaryBucketSize {
     DAYS
 }
 
+"""
+Request to bucket by string data at a specified JSON path.
+If no data exists at the path, it will be treated as null.
+"""
+input JSONFieldStringBucket {
+    """
+    The path to the metadata field on which to bucket.
+    Entries in the list may be either field keys (strings) or array indexes (integers).
+    If no data exists at the path, it will be treated as a null value.
+    """
+    path: [String!]!
+}
+
 """Indicates the bucket to group events by in an eventsSummary query."""
 enum EventsSummaryBucketField {
     """Bucket by the event's type"""
@@ -28,6 +41,20 @@ input EventsSummaryBucketType {
     size: SummaryBucketSize
     """If provided, group the summary buckets by the values of the provided fields."""
     fields: [EventsSummaryBucketField!]
+    """If provided, group the summary buckets by the values of the provided metadata fields."""
+    metadata: [JSONFieldStringBucket!]
+}
+
+"""
+A bucket key for a JSON string value.
+"""
+type JSONFieldBucketKey {
+    """
+    The path to the bucketed metadata field.
+    """
+    path: [String!]!
+    """The string value of the path."""
+    string: String
 }
 
 """The grouping key for an EventsSummaryBucket.  Fields bucketed on will be present.  All other fields will be null."""
@@ -40,6 +67,8 @@ type EventsSummaryBucketKey {
     subType: String
     """The `id` of the EventProducer of the events in the summary bucket."""
     eventProducerId: ID
+    """If provided, group the summary buckets by the values of the provided metadata fields."""
+    metadata: [JSONFieldBucketKey!]
 }
 
 ## Summary statistics

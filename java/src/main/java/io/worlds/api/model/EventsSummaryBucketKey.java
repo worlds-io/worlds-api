@@ -13,15 +13,17 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
     private String type;
     private String subType;
     private String eventProducerId;
+    private java.util.List<JSONFieldBucketKey> metadata;
 
     public EventsSummaryBucketKey() {
     }
 
-    public EventsSummaryBucketKey(java.time.OffsetDateTime time, String type, String subType, String eventProducerId) {
+    public EventsSummaryBucketKey(java.time.OffsetDateTime time, String type, String subType, String eventProducerId, java.util.List<JSONFieldBucketKey> metadata) {
         this.time = time;
         this.type = type;
         this.subType = subType;
         this.eventProducerId = eventProducerId;
+        this.metadata = metadata;
     }
 
     /**
@@ -76,6 +78,19 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
         this.eventProducerId = eventProducerId;
     }
 
+    /**
+     * If provided, group the summary buckets by the values of the provided metadata fields.
+     */
+    public java.util.List<JSONFieldBucketKey> getMetadata() {
+        return metadata;
+    }
+    /**
+     * If provided, group the summary buckets by the values of the provided metadata fields.
+     */
+    public void setMetadata(java.util.List<JSONFieldBucketKey> metadata) {
+        this.metadata = metadata;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -88,12 +103,13 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
         return Objects.equals(time, that.time)
             && Objects.equals(type, that.type)
             && Objects.equals(subType, that.subType)
-            && Objects.equals(eventProducerId, that.eventProducerId);
+            && Objects.equals(eventProducerId, that.eventProducerId)
+            && Objects.equals(metadata, that.metadata);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(time, type, subType, eventProducerId);
+        return Objects.hash(time, type, subType, eventProducerId, metadata);
     }
 
 
@@ -107,6 +123,7 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
         private String type;
         private String subType;
         private String eventProducerId;
+        private java.util.List<JSONFieldBucketKey> metadata;
 
         public Builder() {
         }
@@ -143,9 +160,17 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
             return this;
         }
 
+        /**
+         * If provided, group the summary buckets by the values of the provided metadata fields.
+         */
+        public Builder setMetadata(java.util.List<JSONFieldBucketKey> metadata) {
+            this.metadata = metadata;
+            return this;
+        }
+
 
         public EventsSummaryBucketKey build() {
-            return new EventsSummaryBucketKey(time, type, subType, eventProducerId);
+            return new EventsSummaryBucketKey(time, type, subType, eventProducerId, metadata);
         }
 
     }
