@@ -29,4 +29,17 @@ extend type Query {
         """
         eventsBucket: EventsSummaryBucketType
     ): EventsSummary
+    """Summarizes videos over a time range."""
+    videosSummary(
+        """Start time for the summary."""
+        startTime: DateTimeOffset!
+        """End time for the summary."""
+        endTime: DateTimeOffset!
+        """If provided, only summarize videos matching the filter."""
+        filter: FilterVideosSummaryInput
+        """
+        If provided, group the summary buckets by the provided grouping types.
+        """
+        videosBucket: VideosSummaryBucketType
+    ): VideosSummary
 }

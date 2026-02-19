@@ -73,3 +73,39 @@ type EventsSummaryBucket {
     """
     summaryStatistics: EventsSummaryStatistics!
 }
+
+"""
+Summary information for videos across a time range.  Includes total count and counts by buckets.
+"""
+type VideosSummary {
+    """
+    The total number of [Videos]({{Types.Video}}) within the time range.
+    """
+    total: Int!
+    """
+    Summary statistics for all videos within the summary's time range and filters.
+    """
+    summaryStatistics: VideosSummaryStatistics!
+    """
+    A detailed summary of each [bucket]({{Types.SummaryBucketSize}}) within the time range.
+    Summary buckets are only returned if `bucket` is provided as a query parameter to [`videosSummary`]({{Queries.videosSummary}}).
+    """
+    buckets: [VideosSummaryBucket!]
+}
+
+"""
+Summary information for videos across a time range inside a given `VideosSummaryBucketType`.  Includes total count and the bucketed field values.
+"""
+type VideosSummaryBucket {
+    """The key of the bucket."""
+    key: VideosSummaryBucketKey
+    """
+    The total number of [Videos]({{Types.Video}}) within the bucket.
+    """
+    total: Int!
+
+    """
+    Summary statistics for all videos within the bucket.
+    """
+    summaryStatistics: VideosSummaryStatistics!
+}
