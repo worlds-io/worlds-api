@@ -44,3 +44,27 @@ input FilterEventsSummaryInput {
     """
     not: FilterEventInput
 }
+
+
+"""
+FilterVideosSummaryInput filters summarized by a `videosSummary` based on criteria described below.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
+"""
+input FilterVideosSummaryInput {
+    """
+    If provided, specifies filters that work against the unique ID of the [`data source`]({{Types.DataSource}}) that produced the video.
+    """
+    dataSourceId: FilterIDInput
+    """
+    If provided, an event must pass all filters in this list to match the current filter.
+    """
+    and: [FilterVideoInput!]
+    """
+    If provided, an event must pass at least one of the filters in this list to match the current filter.
+    """
+    or: [FilterVideoInput!]
+    """
+    If provided, an event may not match this filter to match the current filter.
+    """
+    not: FilterVideoInput
+}

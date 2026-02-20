@@ -47,6 +47,22 @@ input EventsSummaryBucketType {
     metadata: [JSONFieldStringBucket!]
 }
 
+"""Indicates the bucket to group videos by in an videosSummary query."""
+enum VideosSummaryBucketField {
+    """Bucket by the video's data source Id"""
+    DATA_SOURCE_ID
+}
+
+"""
+Input to indicate which field(s) to group videos by in an `videosSummary` query.
+Any combination of up to three distinct fields may be provided.
+If multiple fields are provided, the buckets will be sorted by time, then fields.
+"""
+input VideosSummaryBucketType {
+    """If provided, group the summary buckets by the values of the provided fields."""
+    fields: [VideosSummaryBucketField!]
+}
+
 """
 A bucket key for a JSON string value.
 """
@@ -75,6 +91,12 @@ type EventsSummaryBucketKey {
     metadata: [JSONFieldBucketKey!]
 }
 
+"""The grouping key for an VideosSummaryBucket.  Fields bucketed on will be present.  All other fields will be null."""
+type VideosSummaryBucketKey {
+    """The `id` of the DataSource of the videos in the summary bucket."""
+    dataSourceId: ID
+}
+
 ## Summary statistics
 
 """
@@ -94,5 +116,13 @@ Summary statistics for event fields, to be read from an `eventsSummary` or its b
 """
 type EventsSummaryStatistics {
     """Summary statistics from the events' durations.  Does not include unfinished events.  Will be null if no events are finished."""
+    duration: DateTimeDurationSummaryStatistics
+}
+
+"""
+Summary statistics for video fields, to be read from an `videosSummary` or its buckets.
+"""
+type VideosSummaryStatistics {
+    """Summary statistics from the videos' durations."""
     duration: DateTimeDurationSummaryStatistics
 }
