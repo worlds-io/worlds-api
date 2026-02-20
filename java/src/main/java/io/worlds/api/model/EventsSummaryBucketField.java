@@ -16,7 +16,11 @@ public enum EventsSummaryBucketField {
     /**
      * Bucket by the event's eventProducer Id
      */
-    EVENT_PRODUCER_ID("EVENT_PRODUCER_ID");
+    EVENT_PRODUCER_ID("EVENT_PRODUCER_ID"),
+    /**
+     * Bucket by the event's priority
+     */
+    PRIORITY("PRIORITY");
 
     private final String graphqlName;
 

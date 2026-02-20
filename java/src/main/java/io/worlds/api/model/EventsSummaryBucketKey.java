@@ -13,16 +13,18 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
     private String type;
     private String subType;
     private String eventProducerId;
+    private String priority;
     private java.util.List<JSONFieldBucketKey> metadata;
 
     public EventsSummaryBucketKey() {
     }
 
-    public EventsSummaryBucketKey(java.time.OffsetDateTime time, String type, String subType, String eventProducerId, java.util.List<JSONFieldBucketKey> metadata) {
+    public EventsSummaryBucketKey(java.time.OffsetDateTime time, String type, String subType, String eventProducerId, String priority, java.util.List<JSONFieldBucketKey> metadata) {
         this.time = time;
         this.type = type;
         this.subType = subType;
         this.eventProducerId = eventProducerId;
+        this.priority = priority;
         this.metadata = metadata;
     }
 
@@ -79,6 +81,19 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
     }
 
     /**
+     * The `priority` of the events in the summary bucket.
+     */
+    public String getPriority() {
+        return priority;
+    }
+    /**
+     * The `priority` of the events in the summary bucket.
+     */
+    public void setPriority(String priority) {
+        this.priority = priority;
+    }
+
+    /**
      * If provided, group the summary buckets by the values of the provided metadata fields.
      */
     public java.util.List<JSONFieldBucketKey> getMetadata() {
@@ -104,12 +119,13 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
             && Objects.equals(type, that.type)
             && Objects.equals(subType, that.subType)
             && Objects.equals(eventProducerId, that.eventProducerId)
+            && Objects.equals(priority, that.priority)
             && Objects.equals(metadata, that.metadata);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(time, type, subType, eventProducerId, metadata);
+        return Objects.hash(time, type, subType, eventProducerId, priority, metadata);
     }
 
 
@@ -123,6 +139,7 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
         private String type;
         private String subType;
         private String eventProducerId;
+        private String priority;
         private java.util.List<JSONFieldBucketKey> metadata;
 
         public Builder() {
@@ -161,6 +178,14 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
         }
 
         /**
+         * The `priority` of the events in the summary bucket.
+         */
+        public Builder setPriority(String priority) {
+            this.priority = priority;
+            return this;
+        }
+
+        /**
          * If provided, group the summary buckets by the values of the provided metadata fields.
          */
         public Builder setMetadata(java.util.List<JSONFieldBucketKey> metadata) {
@@ -170,7 +195,7 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
 
 
         public EventsSummaryBucketKey build() {
-            return new EventsSummaryBucketKey(time, type, subType, eventProducerId, metadata);
+            return new EventsSummaryBucketKey(time, type, subType, eventProducerId, priority, metadata);
         }
 
     }

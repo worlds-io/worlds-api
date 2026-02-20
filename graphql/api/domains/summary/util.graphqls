@@ -29,6 +29,8 @@ enum EventsSummaryBucketField {
     SUB_TYPE
     """Bucket by the event's eventProducer Id"""
     EVENT_PRODUCER_ID
+    """Bucket by the event's priority"""
+    PRIORITY
 }
 
 """
@@ -83,6 +85,8 @@ type EventsSummaryBucketKey {
     subType: String
     """The `id` of the EventProducer of the events in the summary bucket."""
     eventProducerId: ID
+    """The `priority` of the events in the summary bucket."""
+    priority: String
     """If provided, group the summary buckets by the values of the provided metadata fields."""
     metadata: [JSONFieldBucketKey!]
 }
