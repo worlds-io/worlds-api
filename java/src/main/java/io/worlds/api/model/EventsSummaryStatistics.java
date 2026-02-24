@@ -10,12 +10,14 @@ public class EventsSummaryStatistics implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 
     private DateTimeDurationSummaryStatistics duration;
+    private TimeRangeCounts counts;
 
     public EventsSummaryStatistics() {
     }
 
-    public EventsSummaryStatistics(DateTimeDurationSummaryStatistics duration) {
+    public EventsSummaryStatistics(DateTimeDurationSummaryStatistics duration, TimeRangeCounts counts) {
         this.duration = duration;
+        this.counts = counts;
     }
 
     /**
@@ -31,6 +33,19 @@ public class EventsSummaryStatistics implements java.io.Serializable {
         this.duration = duration;
     }
 
+    /**
+     * Counts of events that started or ended within the summary group.
+     */
+    public TimeRangeCounts getCounts() {
+        return counts;
+    }
+    /**
+     * Counts of events that started or ended within the summary group.
+     */
+    public void setCounts(TimeRangeCounts counts) {
+        this.counts = counts;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -40,12 +55,13 @@ public class EventsSummaryStatistics implements java.io.Serializable {
             return false;
         }
         final EventsSummaryStatistics that = (EventsSummaryStatistics) obj;
-        return Objects.equals(duration, that.duration);
+        return Objects.equals(duration, that.duration)
+            && Objects.equals(counts, that.counts);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(duration);
+        return Objects.hash(duration, counts);
     }
 
 
@@ -56,6 +72,7 @@ public class EventsSummaryStatistics implements java.io.Serializable {
     public static class Builder {
 
         private DateTimeDurationSummaryStatistics duration;
+        private TimeRangeCounts counts;
 
         public Builder() {
         }
@@ -68,9 +85,17 @@ public class EventsSummaryStatistics implements java.io.Serializable {
             return this;
         }
 
+        /**
+         * Counts of events that started or ended within the summary group.
+         */
+        public Builder setCounts(TimeRangeCounts counts) {
+            this.counts = counts;
+            return this;
+        }
+
 
         public EventsSummaryStatistics build() {
-            return new EventsSummaryStatistics(duration);
+            return new EventsSummaryStatistics(duration, counts);
         }
 
     }

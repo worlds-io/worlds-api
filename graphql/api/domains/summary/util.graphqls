@@ -112,11 +112,23 @@ type DateTimeDurationSummaryStatistics {
 }
 
 """
+Counts for objects that take place over a time range.
+"""
+type TimeRangeCounts {
+    """The minimum duration in the group."""
+    startedCount: Int!
+    """The average duration in the group."""
+    endedCount: Int!
+}
+
+"""
 Summary statistics for event fields, to be read from an `eventsSummary` or its buckets.
 """
 type EventsSummaryStatistics {
     """Summary statistics from the events' durations.  Does not include unfinished events.  Will be null if no events are finished."""
     duration: DateTimeDurationSummaryStatistics
+    """Counts of events that started or ended within the summary group."""
+    counts: TimeRangeCounts
 }
 
 """
