@@ -21,6 +21,30 @@ input JSONFieldStringBucket {
     path: [String!]!
 }
 
+"""Indicates the bucket to group tracks by in an tracksSummary query."""
+enum TracksSummaryBucketField {
+    """Bucket by the track's type"""
+    TAG
+    """Bucket by the track's dataSource id"""
+    DATA_SOURCE_ID
+    """Bucket by the site of the track's dataSource"""
+    DATA_SOURCE_SITE
+    """Bucket by the point of interest of the track's dataSource"""
+    DATA_SOURCE_POINT_OF_INTEREST
+}
+
+"""
+Input to indicate which field(s) to group tracks by in an `tracksSummary` query.
+Any combination of up to three distinct fields may be provided.
+If multiple fields are provided, the buckets will be sorted by time, then fields.
+"""
+input TracksSummaryBucketType {
+    """If provided, group the summary buckets by time buckets of the provided size."""
+    size: SummaryBucketSize
+    """If provided, group the summary buckets by the values of the provided fields."""
+    fields: [TracksSummaryBucketField!]
+}
+
 """Indicates the bucket to group events by in an eventsSummary query."""
 enum EventsSummaryBucketField {
     """Bucket by the event's type"""
@@ -89,6 +113,20 @@ type EventsSummaryBucketKey {
     priority: String
     """If provided, group the summary buckets by the values of the provided metadata fields."""
     metadata: [JSONFieldBucketKey!]
+}
+
+"""The grouping key for an TracksSummaryBucket.  Fields bucketed on will be present.  All other fields will be null."""
+type TracksSummaryBucketKey {
+    """The start time of the summary bucket."""
+    time: DateTimeOffset
+    """The tracks' tags."""
+    tag: Tag
+    """The data source which produced the tracks."""
+    dataSource: DataSource
+    """The site for data sources which produced the tracks."""
+    dataSourceSite: Site
+    """The point of interest for data sources which produced the tracks."""
+    dataSourcePointOfInterest: Site
 }
 
 """The grouping key for an VideosSummaryBucket.  Fields bucketed on will be present.  All other fields will be null."""
