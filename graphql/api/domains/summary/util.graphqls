@@ -94,7 +94,9 @@ type EventsSummaryBucketKey {
 """The grouping key for an VideosSummaryBucket.  Fields bucketed on will be present.  All other fields will be null."""
 type VideosSummaryBucketKey {
     """The `id` of the DataSource of the videos in the summary bucket."""
-    dataSourceId: ID
+    dataSourceId: ID @deprecated(reason: "Use dataSource.id instead")
+    """The DataSource of the videos in the summary bucket."""
+    dataSource: DataSource
 }
 
 ## Summary statistics
