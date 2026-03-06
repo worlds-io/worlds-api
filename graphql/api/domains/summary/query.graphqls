@@ -6,11 +6,17 @@ extend type Query {
         """End time for the summary."""
         endTime: DateTimeOffset!
         """If provided, filter tracks based on their tags."""
-        tags: FilterTagInput
+        tags: FilterTagInput @deprecated(reason: "Use `filter.tag` instead.")
+        """If provided, only summarize events matching the filter."""
+        filter: FilterTracksSummaryInput
         """
         If provided, return [summary buckets]({{Types.TracksSummaryBucket}}) of this size.
         """
-        bucket: SummaryBucketSize
+        bucket: SummaryBucketSize @deprecated(reason: "Bucket by `tracksBucket.size` instead.")
+        """
+        If provided, group the summary buckets by the provided grouping types.
+        """
+        tracksBucket: TracksSummaryBucketType
     ): TracksSummary
     """Summarizes events over a time range."""
     eventsSummary(

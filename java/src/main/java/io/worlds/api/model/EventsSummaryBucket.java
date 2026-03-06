@@ -12,6 +12,7 @@ public class EventsSummaryBucket implements java.io.Serializable {
     @Deprecated
     @jakarta.validation.constraints.NotNull
     private java.time.OffsetDateTime time;
+    @jakarta.validation.constraints.NotNull
     private EventsSummaryBucketKey key;
     private int total;
     @jakarta.validation.constraints.NotNull

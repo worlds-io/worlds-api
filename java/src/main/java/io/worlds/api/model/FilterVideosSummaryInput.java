@@ -11,14 +11,14 @@ public class FilterVideosSummaryInput implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 
     private org.springframework.graphql.data.ArgumentValue<FilterIDInput> dataSourceId = org.springframework.graphql.data.ArgumentValue.omitted();
-    private java.util.List<FilterVideoInput> and;
-    private java.util.List<FilterVideoInput> or;
-    private org.springframework.graphql.data.ArgumentValue<FilterVideoInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
+    private java.util.List<FilterVideosSummaryInput> and;
+    private java.util.List<FilterVideosSummaryInput> or;
+    private org.springframework.graphql.data.ArgumentValue<FilterVideosSummaryInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
 
     public FilterVideosSummaryInput() {
     }
 
-    public FilterVideosSummaryInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> dataSourceId, java.util.List<FilterVideoInput> and, java.util.List<FilterVideoInput> or, org.springframework.graphql.data.ArgumentValue<FilterVideoInput> not) {
+    public FilterVideosSummaryInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> dataSourceId, java.util.List<FilterVideosSummaryInput> and, java.util.List<FilterVideosSummaryInput> or, org.springframework.graphql.data.ArgumentValue<FilterVideosSummaryInput> not) {
         this.dataSourceId = dataSourceId;
         this.and = and;
         this.or = or;
@@ -32,24 +32,24 @@ public class FilterVideosSummaryInput implements java.io.Serializable {
         this.dataSourceId = dataSourceId;
     }
 
-    public java.util.List<FilterVideoInput> getAnd() {
+    public java.util.List<FilterVideosSummaryInput> getAnd() {
         return and;
     }
-    public void setAnd(java.util.List<FilterVideoInput> and) {
+    public void setAnd(java.util.List<FilterVideosSummaryInput> and) {
         this.and = and;
     }
 
-    public java.util.List<FilterVideoInput> getOr() {
+    public java.util.List<FilterVideosSummaryInput> getOr() {
         return or;
     }
-    public void setOr(java.util.List<FilterVideoInput> or) {
+    public void setOr(java.util.List<FilterVideosSummaryInput> or) {
         this.or = or;
     }
 
-    public org.springframework.graphql.data.ArgumentValue<FilterVideoInput> getNot() {
+    public org.springframework.graphql.data.ArgumentValue<FilterVideosSummaryInput> getNot() {
         return not;
     }
-    public void setNot(org.springframework.graphql.data.ArgumentValue<FilterVideoInput> not) {
+    public void setNot(org.springframework.graphql.data.ArgumentValue<FilterVideosSummaryInput> not) {
         this.not = not;
     }
 
@@ -81,9 +81,9 @@ public class FilterVideosSummaryInput implements java.io.Serializable {
     public static class Builder {
 
         private org.springframework.graphql.data.ArgumentValue<FilterIDInput> dataSourceId = org.springframework.graphql.data.ArgumentValue.omitted();
-        private java.util.List<FilterVideoInput> and;
-        private java.util.List<FilterVideoInput> or;
-        private org.springframework.graphql.data.ArgumentValue<FilterVideoInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
+        private java.util.List<FilterVideosSummaryInput> and;
+        private java.util.List<FilterVideosSummaryInput> or;
+        private org.springframework.graphql.data.ArgumentValue<FilterVideosSummaryInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
 
         public Builder() {
         }
@@ -93,17 +93,17 @@ public class FilterVideosSummaryInput implements java.io.Serializable {
             return this;
         }
 
-        public Builder setAnd(java.util.List<FilterVideoInput> and) {
+        public Builder setAnd(java.util.List<FilterVideosSummaryInput> and) {
             this.and = and;
             return this;
         }
 
-        public Builder setOr(java.util.List<FilterVideoInput> or) {
+        public Builder setOr(java.util.List<FilterVideosSummaryInput> or) {
             this.or = or;
             return this;
         }
 
-        public Builder setNot(org.springframework.graphql.data.ArgumentValue<FilterVideoInput> not) {
+        public Builder setNot(org.springframework.graphql.data.ArgumentValue<FilterVideosSummaryInput> not) {
             this.not = not;
             return this;
         }

@@ -7,6 +7,7 @@ public class TracksSummary implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 
     private int total;
+    @Deprecated
     @jakarta.validation.constraints.NotNull
     private java.util.List<TracksCountByTag> totalsByTag;
     private java.util.List<TracksSummaryBucket> buckets;
@@ -36,12 +37,14 @@ public class TracksSummary implements java.io.Serializable {
     /**
      * The count of [Tracks]({{Types.Track}}) for each [Tag]({{Types.Tag}}) within the time range.
      */
+    @Deprecated
     public java.util.List<TracksCountByTag> getTotalsByTag() {
         return totalsByTag;
     }
     /**
      * The count of [Tracks]({{Types.Track}}) for each [Tag]({{Types.Tag}}) within the time range.
      */
+    @Deprecated
     public void setTotalsByTag(java.util.List<TracksCountByTag> totalsByTag) {
         this.totalsByTag = totalsByTag;
     }
@@ -105,6 +108,7 @@ Summary buckets are only returned if `bucket` is provided as a query parameter t
         /**
          * The count of [Tracks]({{Types.Track}}) for each [Tag]({{Types.Tag}}) within the time range.
          */
+        @Deprecated
         public Builder setTotalsByTag(java.util.List<TracksCountByTag> totalsByTag) {
             this.totalsByTag = totalsByTag;
             return this;
