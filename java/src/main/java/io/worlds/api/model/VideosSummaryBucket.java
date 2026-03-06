@@ -9,6 +9,7 @@ public class VideosSummaryBucket implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @jakarta.validation.constraints.NotNull
     private VideosSummaryBucketKey key;
     private int total;
     @jakarta.validation.constraints.NotNull
