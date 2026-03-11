@@ -108,7 +108,7 @@ type EventsSummaryBucketKey {
     """The `subType` of the events in the summary bucket."""
     subType: String
     """The `id` of the EventProducer of the events in the summary bucket."""
-    eventProducerId: ID
+    eventProducerId: ID @deprecated(reason: "Use eventProducer.id instead")
     """The EventProducer of the events in the summary bucket."""
     eventProducer: EventProducer
     """The `priority` of the events in the summary bucket."""
