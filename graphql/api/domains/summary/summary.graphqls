@@ -96,6 +96,61 @@ type VideosSummary {
 }
 
 """
+Summary information for activity chronicles across a time range.  Includes total count and counts by buckets.
+"""
+type ActivityChronicleSummary {
+    """
+    The total number of activity chronicles within the time range.
+    """
+    total: Int!
+    """
+    Summary statistics for all activity chronicles within the summary's time range and filters.
+    """
+    summaryStatistics: ActivityChronicleSummaryStatistics!
+    """
+    A detailed summary of each bucket within the time range.
+    Summary buckets are only returned if `activityChronicleBucket` is provided as a query parameter to `activityChronicleSummary`.
+    """
+    buckets: [ActivityChronicleSummaryBucket!]
+}
+
+"""
+Summary information for activity chronicles across a time range inside a given `ActivityChronicleSummaryBucketType`.  Includes total count and the bucketed field values.
+"""
+type ActivityChronicleSummaryBucket {
+    """The key of the bucket."""
+    key: ActivityChronicleSummaryBucketKey!
+    """
+    The total number of activity chronicles within the bucket.
+    """
+    total: Int!
+    """
+    Summary statistics for all activity chronicles within the bucket.
+    """
+    summaryStatistics: ActivityChronicleSummaryStatistics!
+}
+
+"""
+Summary statistics for activity chronicle fields, to be read from an `activityChronicleSummary` or its buckets.
+"""
+type ActivityChronicleSummaryStatistics {
+    """Summary statistics from the activity chronicles' durations.  Does not include unfinished activities.  Will be null if no activities are finished."""
+    duration: DateTimeDurationSummaryStatistics
+}
+
+"""The grouping key for an ActivityChronicleSummaryBucket.  Fields bucketed on will be present.  All other fields will be null."""
+type ActivityChronicleSummaryBucketKey {
+    """The start time of the summary bucket."""
+    time: DateTimeOffset
+    """The `priority` of the activity chronicles in the summary bucket."""
+    priority: String
+    """The `status` of the activity chronicles in the summary bucket."""
+    status: String
+    """The `id` of the ChronicleProducer of the activity chronicles in the summary bucket."""
+    chronicleProducerId: ID
+}
+
+"""
 Summary information for videos across a time range inside a given `VideosSummaryBucketType`.  Includes total count and the bucketed field values.
 """
 type VideosSummaryBucket {
