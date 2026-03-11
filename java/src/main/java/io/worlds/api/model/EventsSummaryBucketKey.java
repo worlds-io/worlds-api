@@ -13,19 +13,19 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
     private String type;
     private String subType;
     private String eventProducerId;
-    private String eventProducerName;
+    private EventProducer eventProducer;
     private String priority;
     private java.util.List<JSONFieldBucketKey> metadata;
 
     public EventsSummaryBucketKey() {
     }
 
-    public EventsSummaryBucketKey(java.time.OffsetDateTime time, String type, String subType, String eventProducerId, String eventProducerName, String priority, java.util.List<JSONFieldBucketKey> metadata) {
+    public EventsSummaryBucketKey(java.time.OffsetDateTime time, String type, String subType, String eventProducerId, EventProducer eventProducer, String priority, java.util.List<JSONFieldBucketKey> metadata) {
         this.time = time;
         this.type = type;
         this.subType = subType;
         this.eventProducerId = eventProducerId;
-        this.eventProducerName = eventProducerName;
+        this.eventProducer = eventProducer;
         this.priority = priority;
         this.metadata = metadata;
     }
@@ -83,16 +83,16 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
     }
 
     /**
-     * The name of the EventProducer of the events in the summary bucket.
+     * The EventProducer of the events in the summary bucket.
      */
-    public String getEventProducerName() {
-        return eventProducerName;
+    public EventProducer getEventProducer() {
+        return eventProducer;
     }
     /**
-     * The name of the EventProducer of the events in the summary bucket.
+     * The EventProducer of the events in the summary bucket.
      */
-    public void setEventProducerName(String eventProducerName) {
-        this.eventProducerName = eventProducerName;
+    public void setEventProducer(EventProducer eventProducer) {
+        this.eventProducer = eventProducer;
     }
 
     /**
@@ -134,14 +134,14 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
             && Objects.equals(type, that.type)
             && Objects.equals(subType, that.subType)
             && Objects.equals(eventProducerId, that.eventProducerId)
-            && Objects.equals(eventProducerName, that.eventProducerName)
+            && Objects.equals(eventProducer, that.eventProducer)
             && Objects.equals(priority, that.priority)
             && Objects.equals(metadata, that.metadata);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(time, type, subType, eventProducerId, eventProducerName, priority, metadata);
+        return Objects.hash(time, type, subType, eventProducerId, eventProducer, priority, metadata);
     }
 
 
@@ -155,7 +155,7 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
         private String type;
         private String subType;
         private String eventProducerId;
-        private String eventProducerName;
+        private EventProducer eventProducer;
         private String priority;
         private java.util.List<JSONFieldBucketKey> metadata;
 
@@ -195,10 +195,10 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
         }
 
         /**
-         * The name of the EventProducer of the events in the summary bucket.
+         * The EventProducer of the events in the summary bucket.
          */
-        public Builder setEventProducerName(String eventProducerName) {
-            this.eventProducerName = eventProducerName;
+        public Builder setEventProducer(EventProducer eventProducer) {
+            this.eventProducer = eventProducer;
             return this;
         }
 
@@ -220,7 +220,7 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
 
 
         public EventsSummaryBucketKey build() {
-            return new EventsSummaryBucketKey(time, type, subType, eventProducerId, eventProducerName, priority, metadata);
+            return new EventsSummaryBucketKey(time, type, subType, eventProducerId, eventProducer, priority, metadata);
         }
 
     }
