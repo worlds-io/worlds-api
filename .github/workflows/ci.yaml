@@ -59,7 +59,7 @@ jobs:
       # https://github.com/PaulHatch/semantic-version
       - name: Version
         id: version
-        uses: paulhatch/semantic-version@v5.4.0
+        uses: paulhatch/semantic-version@v6.0.1
         with:
           version_format: ${{ steps.set-version-vars.outputs.VERSION_FORMAT }}
           search_commit_body: true
