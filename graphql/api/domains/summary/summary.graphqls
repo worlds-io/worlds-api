@@ -146,8 +146,8 @@ type ActivityChronicleSummaryBucketKey {
     priority: String
     """The `status` of the activity chronicles in the summary bucket."""
     status: String
-    """The `id` of the ChronicleProducer of the activity chronicles in the summary bucket."""
-    chronicleProducerId: ID
+    """The ChronicleProducer of the activity chronicles in the summary bucket."""
+    chronicleProducer: ChronicleProducer
 }
 
 """

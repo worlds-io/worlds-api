@@ -12,16 +12,16 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
     private java.time.OffsetDateTime time;
     private String priority;
     private String status;
-    private String chronicleProducerId;
+    private ChronicleProducer chronicleProducer;
 
     public ActivityChronicleSummaryBucketKey() {
     }
 
-    public ActivityChronicleSummaryBucketKey(java.time.OffsetDateTime time, String priority, String status, String chronicleProducerId) {
+    public ActivityChronicleSummaryBucketKey(java.time.OffsetDateTime time, String priority, String status, ChronicleProducer chronicleProducer) {
         this.time = time;
         this.priority = priority;
         this.status = status;
-        this.chronicleProducerId = chronicleProducerId;
+        this.chronicleProducer = chronicleProducer;
     }
 
     /**
@@ -64,16 +64,16 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
     }
 
     /**
-     * The `id` of the ChronicleProducer of the activity chronicles in the summary bucket.
+     * The ChronicleProducer of the activity chronicles in the summary bucket.
      */
-    public String getChronicleProducerId() {
-        return chronicleProducerId;
+    public ChronicleProducer getChronicleProducer() {
+        return chronicleProducer;
     }
     /**
-     * The `id` of the ChronicleProducer of the activity chronicles in the summary bucket.
+     * The ChronicleProducer of the activity chronicles in the summary bucket.
      */
-    public void setChronicleProducerId(String chronicleProducerId) {
-        this.chronicleProducerId = chronicleProducerId;
+    public void setChronicleProducer(ChronicleProducer chronicleProducer) {
+        this.chronicleProducer = chronicleProducer;
     }
 
     @Override
@@ -88,12 +88,12 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
         return Objects.equals(time, that.time)
             && Objects.equals(priority, that.priority)
             && Objects.equals(status, that.status)
-            && Objects.equals(chronicleProducerId, that.chronicleProducerId);
+            && Objects.equals(chronicleProducer, that.chronicleProducer);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(time, priority, status, chronicleProducerId);
+        return Objects.hash(time, priority, status, chronicleProducer);
     }
 
 
@@ -106,7 +106,7 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
         private java.time.OffsetDateTime time;
         private String priority;
         private String status;
-        private String chronicleProducerId;
+        private ChronicleProducer chronicleProducer;
 
         public Builder() {
         }
@@ -136,16 +136,16 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
         }
 
         /**
-         * The `id` of the ChronicleProducer of the activity chronicles in the summary bucket.
+         * The ChronicleProducer of the activity chronicles in the summary bucket.
          */
-        public Builder setChronicleProducerId(String chronicleProducerId) {
-            this.chronicleProducerId = chronicleProducerId;
+        public Builder setChronicleProducer(ChronicleProducer chronicleProducer) {
+            this.chronicleProducer = chronicleProducer;
             return this;
         }
 
 
         public ActivityChronicleSummaryBucketKey build() {
-            return new ActivityChronicleSummaryBucketKey(time, priority, status, chronicleProducerId);
+            return new ActivityChronicleSummaryBucketKey(time, priority, status, chronicleProducer);
         }
 
     }

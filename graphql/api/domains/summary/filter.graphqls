@@ -75,6 +75,10 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterActivityChronicleSummaryInput {
     """
+    If provided, specifies filters that work against the name of the activity.
+    """
+    name: FilterStringInput
+    """
     If provided, specifies filters that work against the chronicle producer ID of the activity.
     """
     chronicleProducerId: FilterIDInput
