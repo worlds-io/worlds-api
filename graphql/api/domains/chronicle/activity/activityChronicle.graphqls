@@ -24,6 +24,8 @@ type ActivityChronicle @experimental {
     priority: String
     """User-defined status of the activity."""
     status: String
+    """A GeoJSON point that represents the location of the activity in the world."""
+    position: GeoJSONPoint
     """Human-readable labels describing the activity."""
     labels: [String!]
     """Human-readable locations describing the activity."""
