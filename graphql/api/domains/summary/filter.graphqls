@@ -95,6 +95,18 @@ input FilterActivityChronicleSummaryInput {
     """
     status: FilterStringInput
     """
+    If provided, specifies filters that work against the validation status of the activity.
+    """
+    validationStatus: FilterChronicleValidationStatusInput
+    """
+    If provided, specifies filters that work against the approval status of the activity.
+    """
+    approvalStatus: FilterStringInput
+    """
+    If provided, specifies filters that work against the user-defined activity metadata.
+    """
+    metadata: FilterJSONFieldStringInput
+    """
     If provided, an activity must pass all filters in this list to match the current filter.
     """
     and: [FilterActivityChronicleSummaryInput!]

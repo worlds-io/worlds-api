@@ -15,6 +15,9 @@ public class FilterActivityChronicleSummaryInput implements java.io.Serializable
     private org.springframework.graphql.data.ArgumentValue<FilterIDListInput> siteIds = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterStringInput> priority = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterStringInput> status = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<FilterChronicleValidationStatusInput> validationStatus = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<FilterStringInput> approvalStatus = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<FilterJSONFieldStringInput> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<FilterActivityChronicleSummaryInput> and;
     private java.util.List<FilterActivityChronicleSummaryInput> or;
     private org.springframework.graphql.data.ArgumentValue<FilterActivityChronicleSummaryInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -22,12 +25,15 @@ public class FilterActivityChronicleSummaryInput implements java.io.Serializable
     public FilterActivityChronicleSummaryInput() {
     }
 
-    public FilterActivityChronicleSummaryInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> chronicleProducerId, org.springframework.graphql.data.ArgumentValue<FilterIDListInput> dataSourceIds, org.springframework.graphql.data.ArgumentValue<FilterIDListInput> siteIds, org.springframework.graphql.data.ArgumentValue<FilterStringInput> priority, org.springframework.graphql.data.ArgumentValue<FilterStringInput> status, java.util.List<FilterActivityChronicleSummaryInput> and, java.util.List<FilterActivityChronicleSummaryInput> or, org.springframework.graphql.data.ArgumentValue<FilterActivityChronicleSummaryInput> not) {
+    public FilterActivityChronicleSummaryInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> chronicleProducerId, org.springframework.graphql.data.ArgumentValue<FilterIDListInput> dataSourceIds, org.springframework.graphql.data.ArgumentValue<FilterIDListInput> siteIds, org.springframework.graphql.data.ArgumentValue<FilterStringInput> priority, org.springframework.graphql.data.ArgumentValue<FilterStringInput> status, org.springframework.graphql.data.ArgumentValue<FilterChronicleValidationStatusInput> validationStatus, org.springframework.graphql.data.ArgumentValue<FilterStringInput> approvalStatus, org.springframework.graphql.data.ArgumentValue<FilterJSONFieldStringInput> metadata, java.util.List<FilterActivityChronicleSummaryInput> and, java.util.List<FilterActivityChronicleSummaryInput> or, org.springframework.graphql.data.ArgumentValue<FilterActivityChronicleSummaryInput> not) {
         this.chronicleProducerId = chronicleProducerId;
         this.dataSourceIds = dataSourceIds;
         this.siteIds = siteIds;
         this.priority = priority;
         this.status = status;
+        this.validationStatus = validationStatus;
+        this.approvalStatus = approvalStatus;
+        this.metadata = metadata;
         this.and = and;
         this.or = or;
         this.not = not;
@@ -68,6 +74,27 @@ public class FilterActivityChronicleSummaryInput implements java.io.Serializable
         this.status = status;
     }
 
+    public org.springframework.graphql.data.ArgumentValue<FilterChronicleValidationStatusInput> getValidationStatus() {
+        return validationStatus;
+    }
+    public void setValidationStatus(org.springframework.graphql.data.ArgumentValue<FilterChronicleValidationStatusInput> validationStatus) {
+        this.validationStatus = validationStatus;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<FilterStringInput> getApprovalStatus() {
+        return approvalStatus;
+    }
+    public void setApprovalStatus(org.springframework.graphql.data.ArgumentValue<FilterStringInput> approvalStatus) {
+        this.approvalStatus = approvalStatus;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<FilterJSONFieldStringInput> getMetadata() {
+        return metadata;
+    }
+    public void setMetadata(org.springframework.graphql.data.ArgumentValue<FilterJSONFieldStringInput> metadata) {
+        this.metadata = metadata;
+    }
+
     public java.util.List<FilterActivityChronicleSummaryInput> getAnd() {
         return and;
     }
@@ -103,6 +130,9 @@ public class FilterActivityChronicleSummaryInput implements java.io.Serializable
             && Objects.equals(siteIds, that.siteIds)
             && Objects.equals(priority, that.priority)
             && Objects.equals(status, that.status)
+            && Objects.equals(validationStatus, that.validationStatus)
+            && Objects.equals(approvalStatus, that.approvalStatus)
+            && Objects.equals(metadata, that.metadata)
             && Objects.equals(and, that.and)
             && Objects.equals(or, that.or)
             && Objects.equals(not, that.not);
@@ -110,7 +140,7 @@ public class FilterActivityChronicleSummaryInput implements java.io.Serializable
 
     @Override
     public int hashCode() {
-        return Objects.hash(chronicleProducerId, dataSourceIds, siteIds, priority, status, and, or, not);
+        return Objects.hash(chronicleProducerId, dataSourceIds, siteIds, priority, status, validationStatus, approvalStatus, metadata, and, or, not);
     }
 
 
@@ -125,6 +155,9 @@ public class FilterActivityChronicleSummaryInput implements java.io.Serializable
         private org.springframework.graphql.data.ArgumentValue<FilterIDListInput> siteIds = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterStringInput> priority = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterStringInput> status = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<FilterChronicleValidationStatusInput> validationStatus = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<FilterStringInput> approvalStatus = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<FilterJSONFieldStringInput> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<FilterActivityChronicleSummaryInput> and;
         private java.util.List<FilterActivityChronicleSummaryInput> or;
         private org.springframework.graphql.data.ArgumentValue<FilterActivityChronicleSummaryInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -157,6 +190,21 @@ public class FilterActivityChronicleSummaryInput implements java.io.Serializable
             return this;
         }
 
+        public Builder setValidationStatus(org.springframework.graphql.data.ArgumentValue<FilterChronicleValidationStatusInput> validationStatus) {
+            this.validationStatus = validationStatus;
+            return this;
+        }
+
+        public Builder setApprovalStatus(org.springframework.graphql.data.ArgumentValue<FilterStringInput> approvalStatus) {
+            this.approvalStatus = approvalStatus;
+            return this;
+        }
+
+        public Builder setMetadata(org.springframework.graphql.data.ArgumentValue<FilterJSONFieldStringInput> metadata) {
+            this.metadata = metadata;
+            return this;
+        }
+
         public Builder setAnd(java.util.List<FilterActivityChronicleSummaryInput> and) {
             this.and = and;
             return this;
@@ -174,7 +222,7 @@ public class FilterActivityChronicleSummaryInput implements java.io.Serializable
 
 
         public FilterActivityChronicleSummaryInput build() {
-            return new FilterActivityChronicleSummaryInput(chronicleProducerId, dataSourceIds, siteIds, priority, status, and, or, not);
+            return new FilterActivityChronicleSummaryInput(chronicleProducerId, dataSourceIds, siteIds, priority, status, validationStatus, approvalStatus, metadata, and, or, not);
         }
 
     }
