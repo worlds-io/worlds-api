@@ -87,6 +87,28 @@ input VideosSummaryBucketType {
     fields: [VideosSummaryBucketField!]
 }
 
+"""Indicates the bucket to group activity chronicles by in an activityChronicleSummary query."""
+enum ActivityChronicleSummaryBucketField {
+    """Bucket by the activity chronicle's priority"""
+    PRIORITY
+    """Bucket by the activity chronicle's status"""
+    STATUS
+    """Bucket by the activity chronicle's chronicle producer Id"""
+    CHRONICLE_PRODUCER_ID
+}
+
+"""
+Input to indicate which field(s) to group activity chronicles by in an `activityChronicleSummary` query.
+Any combination of up to three distinct fields may be provided.
+If multiple fields are provided, the buckets will be sorted by time, then fields.
+"""
+input ActivityChronicleSummaryBucketType {
+    """If provided, group the summary buckets by time buckets of the provided size."""
+    size: SummaryBucketSize
+    """If provided, group the summary buckets by the values of the provided fields."""
+    fields: [ActivityChronicleSummaryBucketField!]
+}
+
 """
 A bucket key for a JSON string value.
 """
