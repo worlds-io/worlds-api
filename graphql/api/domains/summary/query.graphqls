@@ -48,4 +48,17 @@ extend type Query {
         """
         videosBucket: VideosSummaryBucketType
     ): VideosSummary
+    """Summarizes activity chronicles over a time range."""
+    activityChronicleSummary(
+        """Start time for the summary."""
+        startTime: DateTimeOffset!
+        """End time for the summary."""
+        endTime: DateTimeOffset!
+        """If provided, only summarize activity chronicles matching the filter."""
+        filter: FilterActivityChronicleSummaryInput
+        """
+        If provided, group the summary buckets by the provided grouping types.
+        """
+        activityChronicleBucket: ActivityChronicleSummaryBucketType
+    ): ActivityChronicleSummary
 }
