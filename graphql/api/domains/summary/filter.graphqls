@@ -1,4 +1,27 @@
 """
+`FilterTracksSummaryInput` allows for filtering a tracks summarized by a `tracksSummary` query based on criteria described below.
+If multiple filters are provided, all must pass.
+"""
+input FilterTracksSummaryInput {
+    """
+    If provided, specifies case-insensitive filters that work against the [tag]({{Types.Track}}) of a track
+    """
+    tag: FilterTagInput
+    """
+    If provided, specifies filters that work against the data source that initiated the track.
+    """
+    dataSource: FilterDataSourceInput
+    """
+    If provided, specifies filters that work against the site at which the track was captured.
+    """
+    site: FilterSiteInput
+    """
+    If provided, specifies filters that work against the site at which the track was captured.
+    """
+    pointOfInterest: FilterPointOfInterestInput
+}
+
+"""
 FilterEventsSummaryInput filters events summarized by an [eventsSummary]({{Types.EventSummary}}) based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
 """
@@ -34,15 +57,15 @@ input FilterEventsSummaryInput {
     """
     If provided, an event must pass all filters in this list to match the current filter.
     """
-    and: [FilterEventInput!]
+    and: [FilterEventsSummaryInput!]
     """
     If provided, an event must pass at least one of the filters in this list to match the current filter.
     """
-    or: [FilterEventInput!]
+    or: [FilterEventsSummaryInput!]
     """
     If provided, an event may not match this filter to match the current filter.
     """
-    not: FilterEventInput
+    not: FilterEventsSummaryInput
 }
 
 
@@ -58,13 +81,13 @@ input FilterVideosSummaryInput {
     """
     If provided, an event must pass all filters in this list to match the current filter.
     """
-    and: [FilterVideoInput!]
+    and: [FilterVideosSummaryInput!]
     """
     If provided, an event must pass at least one of the filters in this list to match the current filter.
     """
-    or: [FilterVideoInput!]
+    or: [FilterVideosSummaryInput!]
     """
     If provided, an event may not match this filter to match the current filter.
     """
-    not: FilterVideoInput
+    not: FilterVideosSummaryInput
 }

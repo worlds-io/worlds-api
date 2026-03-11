@@ -6,17 +6,22 @@ public class TracksSummaryBucket implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @Deprecated
     @jakarta.validation.constraints.NotNull
     private java.time.OffsetDateTime time;
+    @jakarta.validation.constraints.NotNull
+    private TracksSummaryBucketKey key;
     private int total;
+    @Deprecated
     @jakarta.validation.constraints.NotNull
     private java.util.List<TracksCountByTag> counts;
 
     public TracksSummaryBucket() {
     }
 
-    public TracksSummaryBucket(java.time.OffsetDateTime time, int total, java.util.List<TracksCountByTag> counts) {
+    public TracksSummaryBucket(java.time.OffsetDateTime time, TracksSummaryBucketKey key, int total, java.util.List<TracksCountByTag> counts) {
         this.time = time;
+        this.key = key;
         this.total = total;
         this.counts = counts;
     }
@@ -24,14 +29,29 @@ public class TracksSummaryBucket implements java.io.Serializable {
     /**
      * The start time of the bucket.
      */
+    @Deprecated
     public java.time.OffsetDateTime getTime() {
         return time;
     }
     /**
      * The start time of the bucket.
      */
+    @Deprecated
     public void setTime(java.time.OffsetDateTime time) {
         this.time = time;
+    }
+
+    /**
+     * The key of the bucket.
+     */
+    public TracksSummaryBucketKey getKey() {
+        return key;
+    }
+    /**
+     * The key of the bucket.
+     */
+    public void setKey(TracksSummaryBucketKey key) {
+        this.key = key;
     }
 
     /**
@@ -50,12 +70,14 @@ public class TracksSummaryBucket implements java.io.Serializable {
     /**
      * The count of [Tracks]({{Types.Track}}) for each [Tag]({{Types.Tag}}) within the bucket.
      */
+    @Deprecated
     public java.util.List<TracksCountByTag> getCounts() {
         return counts;
     }
     /**
      * The count of [Tracks]({{Types.Track}}) for each [Tag]({{Types.Tag}}) within the bucket.
      */
+    @Deprecated
     public void setCounts(java.util.List<TracksCountByTag> counts) {
         this.counts = counts;
     }
@@ -70,13 +92,14 @@ public class TracksSummaryBucket implements java.io.Serializable {
         }
         final TracksSummaryBucket that = (TracksSummaryBucket) obj;
         return Objects.equals(time, that.time)
+            && Objects.equals(key, that.key)
             && Objects.equals(total, that.total)
             && Objects.equals(counts, that.counts);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(time, total, counts);
+        return Objects.hash(time, key, total, counts);
     }
 
 
@@ -87,6 +110,7 @@ public class TracksSummaryBucket implements java.io.Serializable {
     public static class Builder {
 
         private java.time.OffsetDateTime time;
+        private TracksSummaryBucketKey key;
         private int total;
         private java.util.List<TracksCountByTag> counts;
 
@@ -96,8 +120,17 @@ public class TracksSummaryBucket implements java.io.Serializable {
         /**
          * The start time of the bucket.
          */
+        @Deprecated
         public Builder setTime(java.time.OffsetDateTime time) {
             this.time = time;
+            return this;
+        }
+
+        /**
+         * The key of the bucket.
+         */
+        public Builder setKey(TracksSummaryBucketKey key) {
+            this.key = key;
             return this;
         }
 
@@ -112,6 +145,7 @@ public class TracksSummaryBucket implements java.io.Serializable {
         /**
          * The count of [Tracks]({{Types.Track}}) for each [Tag]({{Types.Tag}}) within the bucket.
          */
+        @Deprecated
         public Builder setCounts(java.util.List<TracksCountByTag> counts) {
             this.counts = counts;
             return this;
@@ -119,7 +153,7 @@ public class TracksSummaryBucket implements java.io.Serializable {
 
 
         public TracksSummaryBucket build() {
-            return new TracksSummaryBucket(time, total, counts);
+            return new TracksSummaryBucket(time, key, total, counts);
         }
 
     }

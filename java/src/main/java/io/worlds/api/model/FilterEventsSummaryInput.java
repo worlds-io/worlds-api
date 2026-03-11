@@ -17,14 +17,14 @@ public class FilterEventsSummaryInput implements java.io.Serializable {
     private org.springframework.graphql.data.ArgumentValue<FilterStringInput> priority = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterEventValidationStatusInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterJSONFieldStringInput> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
-    private java.util.List<FilterEventInput> and;
-    private java.util.List<FilterEventInput> or;
-    private org.springframework.graphql.data.ArgumentValue<FilterEventInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
+    private java.util.List<FilterEventsSummaryInput> and;
+    private java.util.List<FilterEventsSummaryInput> or;
+    private org.springframework.graphql.data.ArgumentValue<FilterEventsSummaryInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
 
     public FilterEventsSummaryInput() {
     }
 
-    public FilterEventsSummaryInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> eventProducerId, org.springframework.graphql.data.ArgumentValue<FilterStringInput> type, org.springframework.graphql.data.ArgumentValue<FilterStringInput> subType, org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> draft, org.springframework.graphql.data.ArgumentValue<FilterStringInput> priority, org.springframework.graphql.data.ArgumentValue<FilterEventValidationStatusInput> validation, org.springframework.graphql.data.ArgumentValue<FilterJSONFieldStringInput> metadata, java.util.List<FilterEventInput> and, java.util.List<FilterEventInput> or, org.springframework.graphql.data.ArgumentValue<FilterEventInput> not) {
+    public FilterEventsSummaryInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> eventProducerId, org.springframework.graphql.data.ArgumentValue<FilterStringInput> type, org.springframework.graphql.data.ArgumentValue<FilterStringInput> subType, org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> draft, org.springframework.graphql.data.ArgumentValue<FilterStringInput> priority, org.springframework.graphql.data.ArgumentValue<FilterEventValidationStatusInput> validation, org.springframework.graphql.data.ArgumentValue<FilterJSONFieldStringInput> metadata, java.util.List<FilterEventsSummaryInput> and, java.util.List<FilterEventsSummaryInput> or, org.springframework.graphql.data.ArgumentValue<FilterEventsSummaryInput> not) {
         this.eventProducerId = eventProducerId;
         this.type = type;
         this.subType = subType;
@@ -86,24 +86,24 @@ public class FilterEventsSummaryInput implements java.io.Serializable {
         this.metadata = metadata;
     }
 
-    public java.util.List<FilterEventInput> getAnd() {
+    public java.util.List<FilterEventsSummaryInput> getAnd() {
         return and;
     }
-    public void setAnd(java.util.List<FilterEventInput> and) {
+    public void setAnd(java.util.List<FilterEventsSummaryInput> and) {
         this.and = and;
     }
 
-    public java.util.List<FilterEventInput> getOr() {
+    public java.util.List<FilterEventsSummaryInput> getOr() {
         return or;
     }
-    public void setOr(java.util.List<FilterEventInput> or) {
+    public void setOr(java.util.List<FilterEventsSummaryInput> or) {
         this.or = or;
     }
 
-    public org.springframework.graphql.data.ArgumentValue<FilterEventInput> getNot() {
+    public org.springframework.graphql.data.ArgumentValue<FilterEventsSummaryInput> getNot() {
         return not;
     }
-    public void setNot(org.springframework.graphql.data.ArgumentValue<FilterEventInput> not) {
+    public void setNot(org.springframework.graphql.data.ArgumentValue<FilterEventsSummaryInput> not) {
         this.not = not;
     }
 
@@ -147,9 +147,9 @@ public class FilterEventsSummaryInput implements java.io.Serializable {
         private org.springframework.graphql.data.ArgumentValue<FilterStringInput> priority = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterEventValidationStatusInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterJSONFieldStringInput> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
-        private java.util.List<FilterEventInput> and;
-        private java.util.List<FilterEventInput> or;
-        private org.springframework.graphql.data.ArgumentValue<FilterEventInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
+        private java.util.List<FilterEventsSummaryInput> and;
+        private java.util.List<FilterEventsSummaryInput> or;
+        private org.springframework.graphql.data.ArgumentValue<FilterEventsSummaryInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
 
         public Builder() {
         }
@@ -189,17 +189,17 @@ public class FilterEventsSummaryInput implements java.io.Serializable {
             return this;
         }
 
-        public Builder setAnd(java.util.List<FilterEventInput> and) {
+        public Builder setAnd(java.util.List<FilterEventsSummaryInput> and) {
             this.and = and;
             return this;
         }
 
-        public Builder setOr(java.util.List<FilterEventInput> or) {
+        public Builder setOr(java.util.List<FilterEventsSummaryInput> or) {
             this.or = or;
             return this;
         }
 
-        public Builder setNot(org.springframework.graphql.data.ArgumentValue<FilterEventInput> not) {
+        public Builder setNot(org.springframework.graphql.data.ArgumentValue<FilterEventsSummaryInput> not) {
             this.not = not;
             return this;
         }

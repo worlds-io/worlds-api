@@ -6,7 +6,7 @@ type TracksSummary {
     """
     The count of [Tracks]({{Types.Track}}) for each [Tag]({{Types.Tag}}) within the time range.
     """
-    totalsByTag: [TracksCountByTag!]!
+    totalsByTag: [TracksCountByTag!]! @deprecated(reason: "To retrieve per-tag counts, group by the `TAG` field, either alone or in combination with a time bucket.  Counts will return as empty if a `tracksBucket` or `filter` is used.")
     """
     A detailed summary of each [bucket]({{Types.SummaryBucketSize}}) within the time range.
     Summary buckets are only returned if `bucket` is provided as a query parameter to [`tracksSummary`]({{Queries.tracksSummary}}).
@@ -25,7 +25,9 @@ type TracksCountByTag {
 
 type TracksSummaryBucket {
     """The start time of the bucket."""
-    time: DateTimeOffset!
+    time: DateTimeOffset! @deprecated(reason: "Use key.time instead.")
+    """The key of the bucket."""
+    key: TracksSummaryBucketKey!
     """
     The total number of [Tracks]({{Types.Track}}) within the bucket.
     """
@@ -33,7 +35,7 @@ type TracksSummaryBucket {
     """
     The count of [Tracks]({{Types.Track}}) for each [Tag]({{Types.Tag}}) within the bucket.
     """
-    counts: [TracksCountByTag!]!
+    counts: [TracksCountByTag!]! @deprecated(reason: "To retrieve per-tag counts, group by the `TAG` field, either alone or in combination with a time bucket.  Counts will return as empty if a tracksBucket is used.")
 }
 
 """
@@ -62,7 +64,7 @@ type EventsSummaryBucket {
     """The start time of the bucket."""
     time: DateTimeOffset! @deprecated(reason: "Use key.time instead.")
     """The key of the bucket."""
-    key: EventsSummaryBucketKey
+    key: EventsSummaryBucketKey!
     """
     The total number of [Events]({{Types.Event}}) within the bucket.
     """
@@ -98,7 +100,7 @@ Summary information for videos across a time range inside a given `VideosSummary
 """
 type VideosSummaryBucket {
     """The key of the bucket."""
-    key: VideosSummaryBucketKey
+    key: VideosSummaryBucketKey!
     """
     The total number of [Videos]({{Types.Video}}) within the bucket.
     """
