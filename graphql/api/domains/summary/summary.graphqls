@@ -168,6 +168,49 @@ type VideosSummaryBucket {
 }
 
 """
+Summary information for zone intersections across a time range.  Includes total count and counts by buckets.
+"""
+type ZoneIntersectionSummary {
+    """
+    The total number of zone intersections within the time range.
+    """
+    total: Int!
+    """
+    Summary statistics for all zone intersections within the summary's time range and filters.
+    """
+    summaryStatistics: ZoneIntersectionSummaryStatistics!
+    """
+    A detailed summary of each bucket within the time range.
+    Summary buckets are only returned if `zoneIntersectionBucket` is provided as a query parameter to `zoneIntersectionSummary`.
+    """
+    buckets: [ZoneIntersectionSummaryBucket!]
+}
+
+"""
+Summary information for zone intersections across a time range inside a given `ZoneIntersectionSummaryBucketType`.  Includes total count and the bucketed field values.
+"""
+type ZoneIntersectionSummaryBucket {
+    """The key of the bucket."""
+    key: ZoneIntersectionSummaryBucketKey!
+    """
+    The total number of zone intersections within the bucket.
+    """
+    total: Int!
+    """
+    Summary statistics for all zone intersections within the bucket.
+    """
+    summaryStatistics: ZoneIntersectionSummaryStatistics!
+}
+
+"""
+Summary statistics for zone intersection fields, to be read from a `zoneIntersectionSummary` or its buckets.
+"""
+type ZoneIntersectionSummaryStatistics {
+    """Summary statistics from the zone intersections' durations.  Does not include unfinished intersections.  Will be null if no intersections are finished."""
+    duration: DateTimeDurationSummaryStatistics
+}
+
+"""
 Summary information for devices across a time range.  Includes total count and counts by buckets.
 """
 type DeviceSummary {

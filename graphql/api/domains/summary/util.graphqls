@@ -109,6 +109,40 @@ input ActivityChronicleSummaryBucketType {
     fields: [ActivityChronicleSummaryBucketField!]
 }
 
+"""Indicates the bucket to group zone intersections by in a zoneIntersectionSummary query."""
+enum ZoneIntersectionSummaryBucketField {
+    """Bucket by the zone's name"""
+    ZONE_NAME
+    """Bucket by the zone intersection's tag"""
+    TAG
+    """Bucket by the zone intersection's data source Id"""
+    DATA_SOURCE_ID
+}
+
+"""
+Input to indicate which field(s) to group zone intersections by in a `zoneIntersectionSummary` query.
+Any combination of up to three distinct fields may be provided.
+If multiple fields are provided, the buckets will be sorted by time, then fields.
+"""
+input ZoneIntersectionSummaryBucketType {
+    """If provided, group the summary buckets by time buckets of the provided size."""
+    size: SummaryBucketSize
+    """If provided, group the summary buckets by the values of the provided fields."""
+    fields: [ZoneIntersectionSummaryBucketField!]
+}
+
+"""The grouping key for a ZoneIntersectionSummaryBucket.  Fields bucketed on will be present.  All other fields will be null."""
+type ZoneIntersectionSummaryBucketKey {
+    """The start time of the summary bucket."""
+    time: DateTimeOffset
+    """The zone name of the zone intersections in the summary bucket."""
+    zoneName: String
+    """The tag of the zone intersections in the summary bucket."""
+    tag: Tag
+    """The data source of the zone intersections in the summary bucket."""
+    dataSource: DataSource
+}
+
 """Indicates the bucket to group devices by in a deviceSummary query."""
 enum DeviceSummaryBucketField {
     """Bucket by the device's site Id"""

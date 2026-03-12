@@ -6,27 +6,33 @@ package io.worlds.api.model;
 public enum ActivityChronicleSortField {
 
     /**
-     * Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s unique identifier.
+     * 
+Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s unique identifier.
      */
     ID("ID"),
     /**
-     * Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s start time.
+     * 
+Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s start time.
      */
     START_TIME("START_TIME"),
     /**
-     * Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s end time.
+     * 
+Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s end time.
      */
     END_TIME("END_TIME"),
     /**
-     * Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s name.
+     * 
+Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s name.
      */
     NAME("NAME"),
     /**
-     * Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s priority.
+     * 
+Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s priority.
      */
     PRIORITY("PRIORITY"),
     /**
-     * Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s status.
+     * 
+Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s status.
      */
     STATUS("STATUS");
 
