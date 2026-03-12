@@ -55,6 +55,10 @@ enum EventsSummaryBucketField {
     EVENT_PRODUCER_ID
     """Bucket by the event's priority"""
     PRIORITY
+    """Bucket by the event's draft status"""
+    DRAFT
+    """Bucket by the event's validation status"""
+    VALIDATION_STATUS
 }
 
 """
@@ -95,6 +99,14 @@ enum ActivityChronicleSummaryBucketField {
     STATUS
     """Bucket by the activity chronicle's chronicle producer Id"""
     CHRONICLE_PRODUCER_ID
+    """Bucket by the activity chronicle's site"""
+    SITE
+    """Bucket by the activity chronicle's data source"""
+    DATA_SOURCE_ID
+    """Bucket by the activity chronicle's validation status"""
+    VALIDATION_STATUS
+    """Bucket by the activity chronicle's approval status"""
+    APPROVAL_STATUS
 }
 
 """
@@ -107,6 +119,8 @@ input ActivityChronicleSummaryBucketType {
     size: SummaryBucketSize
     """If provided, group the summary buckets by the values of the provided fields."""
     fields: [ActivityChronicleSummaryBucketField!]
+    """If provided, group the summary buckets by the values of the provided metadata fields."""
+    metadata: [JSONFieldStringBucket!]
 }
 
 """
@@ -135,6 +149,10 @@ type EventsSummaryBucketKey {
     eventProducer: EventProducer
     """The `priority` of the events in the summary bucket."""
     priority: String
+    """The `draft` status of the events in the summary bucket."""
+    draft: Boolean
+    """The `validationStatus` of the events in the summary bucket."""
+    validationStatus: String
     """If provided, group the summary buckets by the values of the provided metadata fields."""
     metadata: [JSONFieldBucketKey!]
 }
