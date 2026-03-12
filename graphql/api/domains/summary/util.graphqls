@@ -97,12 +97,12 @@ enum ActivityChronicleSummaryBucketField {
     PRIORITY
     """Bucket by the activity chronicle's status"""
     STATUS
-    """Bucket by the activity chronicle's chronicle producer Id"""
-    CHRONICLE_PRODUCER_ID
+    """Bucket by the activity chronicle's chronicle producer"""
+    CHRONICLE_PRODUCER
     """Bucket by the activity chronicle's site"""
     SITE
     """Bucket by the activity chronicle's data source"""
-    DATA_SOURCE_ID
+    DATA_SOURCE
     """Bucket by the activity chronicle's validation status"""
     VALIDATION_STATUS
     """Bucket by the activity chronicle's approval status"""
@@ -129,8 +129,8 @@ enum ZoneIntersectionSummaryBucketField {
     ZONE_NAME
     """Bucket by the zone intersection's tag"""
     TAG
-    """Bucket by the zone intersection's data source Id"""
-    DATA_SOURCE_ID
+    """Bucket by the zone intersection's data source"""
+    DATA_SOURCE
 }
 
 """
@@ -159,10 +159,10 @@ type ZoneIntersectionSummaryBucketKey {
 
 """Indicates the bucket to group devices by in a deviceSummary query."""
 enum DeviceSummaryBucketField {
-    """Bucket by the device's site Id"""
-    SITE_ID
-    """Bucket by the device's point of interest Id"""
-    POINT_OF_INTEREST_ID
+    """Bucket by the device's site"""
+    SITE
+    """Bucket by the device's point of interest"""
+    POINT_OF_INTEREST
 }
 
 """
