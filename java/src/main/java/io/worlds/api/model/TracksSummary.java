@@ -7,6 +7,8 @@ public class TracksSummary implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 
     private int total;
+    private int startedCount;
+    private int endedCount;
     @Deprecated
     @jakarta.validation.constraints.NotNull
     private java.util.List<TracksCountByTag> totalsByTag;
@@ -15,8 +17,10 @@ public class TracksSummary implements java.io.Serializable {
     public TracksSummary() {
     }
 
-    public TracksSummary(int total, java.util.List<TracksCountByTag> totalsByTag, java.util.List<TracksSummaryBucket> buckets) {
+    public TracksSummary(int total, int startedCount, int endedCount, java.util.List<TracksCountByTag> totalsByTag, java.util.List<TracksSummaryBucket> buckets) {
         this.total = total;
+        this.startedCount = startedCount;
+        this.endedCount = endedCount;
         this.totalsByTag = totalsByTag;
         this.buckets = buckets;
     }
@@ -32,6 +36,32 @@ public class TracksSummary implements java.io.Serializable {
      */
     public void setTotal(int total) {
         this.total = total;
+    }
+
+    /**
+     * The number of tracks which started within the time range.
+     */
+    public int getStartedCount() {
+        return startedCount;
+    }
+    /**
+     * The number of tracks which started within the time range.
+     */
+    public void setStartedCount(int startedCount) {
+        this.startedCount = startedCount;
+    }
+
+    /**
+     * The number of tracks which ended within the time range.
+     */
+    public int getEndedCount() {
+        return endedCount;
+    }
+    /**
+     * The number of tracks which ended within the time range.
+     */
+    public void setEndedCount(int endedCount) {
+        this.endedCount = endedCount;
     }
 
     /**
@@ -74,13 +104,15 @@ Summary buckets are only returned if `bucket` is provided as a query parameter t
         }
         final TracksSummary that = (TracksSummary) obj;
         return Objects.equals(total, that.total)
+            && Objects.equals(startedCount, that.startedCount)
+            && Objects.equals(endedCount, that.endedCount)
             && Objects.equals(totalsByTag, that.totalsByTag)
             && Objects.equals(buckets, that.buckets);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, totalsByTag, buckets);
+        return Objects.hash(total, startedCount, endedCount, totalsByTag, buckets);
     }
 
 
@@ -91,6 +123,8 @@ Summary buckets are only returned if `bucket` is provided as a query parameter t
     public static class Builder {
 
         private int total;
+        private int startedCount;
+        private int endedCount;
         private java.util.List<TracksCountByTag> totalsByTag;
         private java.util.List<TracksSummaryBucket> buckets;
 
@@ -102,6 +136,22 @@ Summary buckets are only returned if `bucket` is provided as a query parameter t
          */
         public Builder setTotal(int total) {
             this.total = total;
+            return this;
+        }
+
+        /**
+         * The number of tracks which started within the time range.
+         */
+        public Builder setStartedCount(int startedCount) {
+            this.startedCount = startedCount;
+            return this;
+        }
+
+        /**
+         * The number of tracks which ended within the time range.
+         */
+        public Builder setEndedCount(int endedCount) {
+            this.endedCount = endedCount;
             return this;
         }
 
@@ -125,7 +175,7 @@ Summary buckets are only returned if `bucket` is provided as a query parameter t
 
 
         public TracksSummary build() {
-            return new TracksSummary(total, totalsByTag, buckets);
+            return new TracksSummary(total, startedCount, endedCount, totalsByTag, buckets);
         }
 
     }

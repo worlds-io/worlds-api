@@ -6,13 +6,13 @@ package io.worlds.api.model;
 public enum DeviceSummaryBucketField {
 
     /**
-     * Bucket by the device's site Id
+     * Bucket by the device's site
      */
-    SITE_ID("SITE_ID"),
+    SITE("SITE"),
     /**
-     * Bucket by the device's point of interest Id
+     * Bucket by the device's point of interest
      */
-    POINT_OF_INTEREST_ID("POINT_OF_INTEREST_ID");
+    POINT_OF_INTEREST("POINT_OF_INTEREST");
 
     private final String graphqlName;
 

@@ -12,15 +12,19 @@ public class ZoneIntersectionSummaryBucket implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private ZoneIntersectionSummaryBucketKey key;
     private int total;
+    private int startedCount;
+    private int endedCount;
     @jakarta.validation.constraints.NotNull
     private ZoneIntersectionSummaryStatistics summaryStatistics;
 
     public ZoneIntersectionSummaryBucket() {
     }
 
-    public ZoneIntersectionSummaryBucket(ZoneIntersectionSummaryBucketKey key, int total, ZoneIntersectionSummaryStatistics summaryStatistics) {
+    public ZoneIntersectionSummaryBucket(ZoneIntersectionSummaryBucketKey key, int total, int startedCount, int endedCount, ZoneIntersectionSummaryStatistics summaryStatistics) {
         this.key = key;
         this.total = total;
+        this.startedCount = startedCount;
+        this.endedCount = endedCount;
         this.summaryStatistics = summaryStatistics;
     }
 
@@ -51,6 +55,32 @@ public class ZoneIntersectionSummaryBucket implements java.io.Serializable {
     }
 
     /**
+     * The number of zone intersections which started within the bucket.
+     */
+    public int getStartedCount() {
+        return startedCount;
+    }
+    /**
+     * The number of zone intersections which started within the bucket.
+     */
+    public void setStartedCount(int startedCount) {
+        this.startedCount = startedCount;
+    }
+
+    /**
+     * The number of zone intersections which ended within the bucket.
+     */
+    public int getEndedCount() {
+        return endedCount;
+    }
+    /**
+     * The number of zone intersections which ended within the bucket.
+     */
+    public void setEndedCount(int endedCount) {
+        this.endedCount = endedCount;
+    }
+
+    /**
      * Summary statistics for all zone intersections within the bucket.
      */
     public ZoneIntersectionSummaryStatistics getSummaryStatistics() {
@@ -74,12 +104,14 @@ public class ZoneIntersectionSummaryBucket implements java.io.Serializable {
         final ZoneIntersectionSummaryBucket that = (ZoneIntersectionSummaryBucket) obj;
         return Objects.equals(key, that.key)
             && Objects.equals(total, that.total)
+            && Objects.equals(startedCount, that.startedCount)
+            && Objects.equals(endedCount, that.endedCount)
             && Objects.equals(summaryStatistics, that.summaryStatistics);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(key, total, summaryStatistics);
+        return Objects.hash(key, total, startedCount, endedCount, summaryStatistics);
     }
 
 
@@ -91,6 +123,8 @@ public class ZoneIntersectionSummaryBucket implements java.io.Serializable {
 
         private ZoneIntersectionSummaryBucketKey key;
         private int total;
+        private int startedCount;
+        private int endedCount;
         private ZoneIntersectionSummaryStatistics summaryStatistics;
 
         public Builder() {
@@ -113,6 +147,22 @@ public class ZoneIntersectionSummaryBucket implements java.io.Serializable {
         }
 
         /**
+         * The number of zone intersections which started within the bucket.
+         */
+        public Builder setStartedCount(int startedCount) {
+            this.startedCount = startedCount;
+            return this;
+        }
+
+        /**
+         * The number of zone intersections which ended within the bucket.
+         */
+        public Builder setEndedCount(int endedCount) {
+            this.endedCount = endedCount;
+            return this;
+        }
+
+        /**
          * Summary statistics for all zone intersections within the bucket.
          */
         public Builder setSummaryStatistics(ZoneIntersectionSummaryStatistics summaryStatistics) {
@@ -122,7 +172,7 @@ public class ZoneIntersectionSummaryBucket implements java.io.Serializable {
 
 
         public ZoneIntersectionSummaryBucket build() {
-            return new ZoneIntersectionSummaryBucket(key, total, summaryStatistics);
+            return new ZoneIntersectionSummaryBucket(key, total, startedCount, endedCount, summaryStatistics);
         }
 
     }
