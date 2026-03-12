@@ -166,3 +166,30 @@ type VideosSummaryBucket {
     """
     summaryStatistics: VideosSummaryStatistics!
 }
+
+"""
+Summary information for devices across a time range.  Includes total count and counts by buckets.
+"""
+type DeviceSummary {
+    """
+    The total number of devices within the time range.
+    """
+    total: Int!
+    """
+    A detailed summary of each bucket within the time range.
+    Summary buckets are only returned if `deviceBucket` is provided as a query parameter to `deviceSummary`.
+    """
+    buckets: [DeviceSummaryBucket!]
+}
+
+"""
+Summary information for devices across a time range inside a given `DeviceSummaryBucketType`.  Includes total count and the bucketed field values.
+"""
+type DeviceSummaryBucket {
+    """The key of the bucket."""
+    key: DeviceSummaryBucketKey!
+    """
+    The total number of devices within the bucket.
+    """
+    total: Int!
+}
