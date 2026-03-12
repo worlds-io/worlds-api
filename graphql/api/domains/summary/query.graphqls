@@ -74,4 +74,17 @@ extend type Query {
         """
         zoneIntersectionBucket: ZoneIntersectionSummaryBucketType
     ): ZoneIntersectionSummary
+    """Summarizes devices over a time range."""
+    deviceSummary(
+        """Start time for the summary."""
+        startTime: DateTimeOffset!
+        """End time for the summary."""
+        endTime: DateTimeOffset!
+        """If provided, only summarize devices matching the filter."""
+        filter: FilterDeviceSummaryInput
+        """
+        If provided, group the summary buckets by the provided grouping types.
+        """
+        deviceBucket: DeviceSummaryBucketType
+    ): DeviceSummary
 }

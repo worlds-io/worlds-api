@@ -143,6 +143,36 @@ type ZoneIntersectionSummaryBucketKey {
     dataSource: DataSource
 }
 
+"""Indicates the bucket to group devices by in a deviceSummary query."""
+enum DeviceSummaryBucketField {
+    """Bucket by the device's site Id"""
+    SITE_ID
+    """Bucket by the device's point of interest Id"""
+    POINT_OF_INTEREST_ID
+}
+
+"""
+Input to indicate which field(s) to group devices by in a `deviceSummary` query.
+Any combination of up to three distinct fields may be provided.
+If multiple fields are provided, the buckets will be sorted by time, then fields.
+"""
+input DeviceSummaryBucketType {
+    """If provided, group the summary buckets by time buckets of the provided size."""
+    size: SummaryBucketSize
+    """If provided, group the summary buckets by the values of the provided fields."""
+    fields: [DeviceSummaryBucketField!]
+}
+
+"""The grouping key for a DeviceSummaryBucket.  Fields bucketed on will be present.  All other fields will be null."""
+type DeviceSummaryBucketKey {
+    """The start time of the summary bucket."""
+    time: DateTimeOffset
+    """The site of the devices in the summary bucket."""
+    site: Site
+    """The point of interest of the devices in the summary bucket."""
+    pointOfInterest: PointOfInterest
+}
+
 """
 A bucket key for a JSON string value.
 """
