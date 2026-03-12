@@ -55,6 +55,10 @@ enum EventsSummaryBucketField {
     EVENT_PRODUCER_ID
     """Bucket by the event's priority"""
     PRIORITY
+    """Bucket by the event's draft status"""
+    DRAFT
+    """Bucket by the event's validation status"""
+    VALIDATION_STATUS
 }
 
 """
@@ -93,8 +97,16 @@ enum ActivityChronicleSummaryBucketField {
     PRIORITY
     """Bucket by the activity chronicle's status"""
     STATUS
-    """Bucket by the activity chronicle's chronicle producer Id"""
-    CHRONICLE_PRODUCER_ID
+    """Bucket by the activity chronicle's chronicle producer"""
+    CHRONICLE_PRODUCER
+    """Bucket by the activity chronicle's site"""
+    SITE
+    """Bucket by the activity chronicle's data source"""
+    DATA_SOURCE
+    """Bucket by the activity chronicle's validation status"""
+    VALIDATION_STATUS
+    """Bucket by the activity chronicle's approval status"""
+    APPROVAL_STATUS
 }
 
 """
@@ -107,6 +119,8 @@ input ActivityChronicleSummaryBucketType {
     size: SummaryBucketSize
     """If provided, group the summary buckets by the values of the provided fields."""
     fields: [ActivityChronicleSummaryBucketField!]
+    """If provided, group the summary buckets by the values of the provided metadata fields."""
+    metadata: [JSONFieldStringBucket!]
 }
 
 """Indicates the bucket to group zone intersections by in a zoneIntersectionSummary query."""
@@ -115,8 +129,8 @@ enum ZoneIntersectionSummaryBucketField {
     ZONE_NAME
     """Bucket by the zone intersection's tag"""
     TAG
-    """Bucket by the zone intersection's data source Id"""
-    DATA_SOURCE_ID
+    """Bucket by the zone intersection's data source"""
+    DATA_SOURCE
 }
 
 """
@@ -145,10 +159,10 @@ type ZoneIntersectionSummaryBucketKey {
 
 """Indicates the bucket to group devices by in a deviceSummary query."""
 enum DeviceSummaryBucketField {
-    """Bucket by the device's site Id"""
-    SITE_ID
-    """Bucket by the device's point of interest Id"""
-    POINT_OF_INTEREST_ID
+    """Bucket by the device's site"""
+    SITE
+    """Bucket by the device's point of interest"""
+    POINT_OF_INTEREST
 }
 
 """
@@ -199,6 +213,10 @@ type EventsSummaryBucketKey {
     eventProducer: EventProducer
     """The `priority` of the events in the summary bucket."""
     priority: String
+    """The `draft` status of the events in the summary bucket."""
+    draft: Boolean
+    """The `validationStatus` of the events in the summary bucket."""
+    validationStatus: String
     """If provided, group the summary buckets by the values of the provided metadata fields."""
     metadata: [JSONFieldBucketKey!]
 }

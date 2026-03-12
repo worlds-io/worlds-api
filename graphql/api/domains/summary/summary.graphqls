@@ -148,6 +148,16 @@ type ActivityChronicleSummaryBucketKey {
     status: String
     """The ChronicleProducer of the activity chronicles in the summary bucket."""
     chronicleProducer: ChronicleProducer
+    """The Site of the activity chronicles in the summary bucket."""
+    site: Site
+    """The DataSource of the activity chronicles in the summary bucket."""
+    dataSource: DataSource
+    """The `validationStatus` of the activity chronicles in the summary bucket."""
+    validationStatus: String
+    """The `approvalStatus` of the activity chronicles in the summary bucket."""
+    approvalStatus: String
+    """The metadata values of the activity chronicles in the summary bucket."""
+    metadata: [JSONFieldBucketKey!]
 }
 
 """
