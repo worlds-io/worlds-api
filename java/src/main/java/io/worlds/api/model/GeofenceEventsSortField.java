@@ -6,11 +6,13 @@ package io.worlds.api.model;
 public enum GeofenceEventsSortField {
 
     /**
-     * Sort the resulting list by the [`GeofenceEvent`](({{Types.GeofenceEvent}}))'s unique identifier.
+     * 
+Sort the resulting list by the [`GeofenceEvent`](({{Types.GeofenceEvent}}))'s unique identifier.
      */
     ID("ID"),
     /**
-     * Sort the resulting list by the [`GeofenceEvent`](({{Types.GeofenceEvent}}))'s timestamp.
+     * 
+Sort the resulting list by the [`GeofenceEvent`](({{Types.GeofenceEvent}}))'s timestamp.
      */
     OCCURRED("OCCURRED");
 

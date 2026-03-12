@@ -125,6 +125,64 @@ input FilterActivityChronicleSummaryInput {
 }
 
 """
+FilterZoneIntersectionSummaryInput filters zone intersections summarized by a `zoneIntersectionSummary` query.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
+"""
+input FilterZoneIntersectionSummaryInput {
+    """
+    If provided, specifies filters that work against the zone ID of the zone intersection.
+    """
+    zoneId: FilterIDInput
+    """
+    If provided, specifies filters that work against the class ID of the zone intersection.
+    """
+    classId: FilterIDInput
+    """
+    If provided, specifies filters that work against the data source ID of the zone intersection.
+    """
+    dataSourceId: FilterIDInput
+    """
+    If provided, a zone intersection must pass all filters in this list to match the current filter.
+    """
+    and: [FilterZoneIntersectionSummaryInput!]
+    """
+    If provided, a zone intersection must pass at least one of the filters in this list to match the current filter.
+    """
+    or: [FilterZoneIntersectionSummaryInput!]
+    """
+    If provided, a zone intersection may not match this filter to match the current filter.
+    """
+    not: FilterZoneIntersectionSummaryInput
+}
+
+"""
+FilterDeviceSummaryInput filters devices summarized by a `deviceSummary` query.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
+"""
+input FilterDeviceSummaryInput {
+    """
+    If provided, specifies filters that work against the site ID of the device.
+    """
+    siteId: FilterIDInput
+    """
+    If provided, specifies filters that work against the point of interest ID of the device.
+    """
+    pointOfInterestId: FilterIDInput
+    """
+    If provided, a device must pass all filters in this list to match the current filter.
+    """
+    and: [FilterDeviceSummaryInput!]
+    """
+    If provided, a device must pass at least one of the filters in this list to match the current filter.
+    """
+    or: [FilterDeviceSummaryInput!]
+    """
+    If provided, a device may not match this filter to match the current filter.
+    """
+    not: FilterDeviceSummaryInput
+}
+
+"""
 FilterVideosSummaryInput filters summarized by a `videosSummary` based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
 """

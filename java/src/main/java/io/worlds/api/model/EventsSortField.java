@@ -6,11 +6,13 @@ package io.worlds.api.model;
 public enum EventsSortField {
 
     /**
-     * Sort the resulting list by the [`Event`](({{Types.Event}}))'s unique identifier.
+     * 
+Sort the resulting list by the [`Event`](({{Types.Event}}))'s unique identifier.
      */
     ID("ID"),
     /**
-     * Sort the resulting list by the [`Event`](({{Types.Event}}))'s start time.
+     * 
+Sort the resulting list by the [`Event`](({{Types.Event}}))'s start time.
      */
     START_TIME("START_TIME");
 

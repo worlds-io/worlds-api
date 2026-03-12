@@ -6,11 +6,13 @@ package io.worlds.api.model;
 public enum ChronicleProducersSortField {
 
     /**
-     * Sort the resulting list by the [`ChronicleProducer`]({{Types.ChronicleProducer}})'s unique identifier.
+     * 
+Sort the resulting list by the [`ChronicleProducer`]({{Types.ChronicleProducer}})'s unique identifier.
      */
     ID("ID"),
     /**
-     * Sort the resulting list by the [`ChronicleProducer`]({{Types.ChronicleProducer}})'s name.
+     * 
+Sort the resulting list by the [`ChronicleProducer`]({{Types.ChronicleProducer}})'s name.
      */
     NAME("NAME");
 
