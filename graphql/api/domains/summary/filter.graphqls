@@ -125,6 +125,33 @@ input FilterActivityChronicleSummaryInput {
 }
 
 """
+FilterDeviceSummaryInput filters devices summarized by a `deviceSummary` query.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
+"""
+input FilterDeviceSummaryInput {
+    """
+    If provided, specifies filters that work against the site ID of the device.
+    """
+    siteId: FilterIDInput
+    """
+    If provided, specifies filters that work against the point of interest ID of the device.
+    """
+    pointOfInterestId: FilterIDInput
+    """
+    If provided, a device must pass all filters in this list to match the current filter.
+    """
+    and: [FilterDeviceSummaryInput!]
+    """
+    If provided, a device must pass at least one of the filters in this list to match the current filter.
+    """
+    or: [FilterDeviceSummaryInput!]
+    """
+    If provided, a device may not match this filter to match the current filter.
+    """
+    not: FilterDeviceSummaryInput
+}
+
+"""
 FilterVideosSummaryInput filters summarized by a `videosSummary` based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
 """
