@@ -61,4 +61,17 @@ extend type Query {
         """
         activityChronicleBucket: ActivityChronicleSummaryBucketType
     ): ActivityChronicleSummary
+    """Summarizes zone intersections over a time range."""
+    zoneIntersectionSummary(
+        """Start time for the summary."""
+        startTime: DateTimeOffset!
+        """End time for the summary."""
+        endTime: DateTimeOffset!
+        """If provided, only summarize zone intersections matching the filter."""
+        filter: FilterZoneIntersectionSummaryInput
+        """
+        If provided, group the summary buckets by the provided grouping types.
+        """
+        zoneIntersectionBucket: ZoneIntersectionSummaryBucketType
+    ): ZoneIntersectionSummary
 }

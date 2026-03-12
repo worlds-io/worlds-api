@@ -88,11 +88,11 @@ public class GeofenceEvent implements java.io.Serializable {
 
     /**
      * [`geofenceEvents`]({{Queries.geofenceIntersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceIntersections}}),
-and `tag` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
-Use [track's tag]({{Types.Track}}) instead.
+    and `tag` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
+    Use [track's tag]({{Types.Track}}) instead.
 
-The class label of the object that triggered the geofence event, i.e person,
-car, truck, etc.
+    The class label of the object that triggered the geofence event, i.e person,
+    car, truck, etc.
      */
     @Deprecated
     public String getTag() {
@@ -100,11 +100,11 @@ car, truck, etc.
     }
     /**
      * [`geofenceEvents`]({{Queries.geofenceIntersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceIntersections}}),
-and `tag` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
-Use [track's tag]({{Types.Track}}) instead.
+    and `tag` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
+    Use [track's tag]({{Types.Track}}) instead.
 
-The class label of the object that triggered the geofence event, i.e person,
-car, truck, etc.
+    The class label of the object that triggered the geofence event, i.e person,
+    car, truck, etc.
      */
     @Deprecated
     public void setTag(String tag) {
@@ -113,11 +113,11 @@ car, truck, etc.
 
     /**
      * [`geofenceEvents`]({{Queries.geofenceIntersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceIntersections}}),
-and `type` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
+    and `type` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
 
-The type of geofence event, i.e ingress (an object entered the geofence), dwell
-(an object remained in the geofence), and egress. (an object exited the
-geofence)
+    The type of geofence event, i.e ingress (an object entered the geofence), dwell
+    (an object remained in the geofence), and egress. (an object exited the
+    geofence)
      */
     @Deprecated
     public ActivityType getType() {
@@ -125,11 +125,11 @@ geofence)
     }
     /**
      * [`geofenceEvents`]({{Queries.geofenceIntersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceIntersections}}),
-and `type` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
+    and `type` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
 
-The type of geofence event, i.e ingress (an object entered the geofence), dwell
-(an object remained in the geofence), and egress. (an object exited the
-geofence)
+    The type of geofence event, i.e ingress (an object entered the geofence), dwell
+    (an object remained in the geofence), and egress. (an object exited the
+    geofence)
      */
     @Deprecated
     public void setType(ActivityType type) {
@@ -138,10 +138,10 @@ geofence)
 
     /**
      * [`geofenceEvents`]({{Queries.geofenceIntersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceIntersections}}),
-and `position` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
+    and `position` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
 
-The GeoJSON point for the position of the track at the time of the geofence
-event.
+    The GeoJSON point for the position of the track at the time of the geofence
+    event.
      */
     @Deprecated
     public GeoJSONPoint getPosition() {
@@ -149,10 +149,10 @@ event.
     }
     /**
      * [`geofenceEvents`]({{Queries.geofenceIntersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceIntersections}}),
-and `position` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
+    and `position` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
 
-The GeoJSON point for the position of the track at the time of the geofence
-event.
+    The GeoJSON point for the position of the track at the time of the geofence
+    event.
      */
     @Deprecated
     public void setPosition(GeoJSONPoint position) {
@@ -161,10 +161,10 @@ event.
 
     /**
      * [`geofenceEvents`]({{Queries.geofenceIntersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceIntersections}}),
-and `timestamp` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
-Use [`startTime`]({{Types.GeofenceIntersection}}) and [`endTime`]({{Types.GeofenceIntersection}}) instead.
+    and `timestamp` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
+    Use [`startTime`]({{Types.GeofenceIntersection}}) and [`endTime`]({{Types.GeofenceIntersection}}) instead.
 
-The timestamp at which the event occurred.
+    The timestamp at which the event occurred.
      */
     @Deprecated
     public java.time.OffsetDateTime getTimestamp() {
@@ -172,10 +172,10 @@ The timestamp at which the event occurred.
     }
     /**
      * [`geofenceEvents`]({{Queries.geofenceIntersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceIntersections}}),
-and `timestamp` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
-Use [`startTime`]({{Types.GeofenceIntersection}}) and [`endTime`]({{Types.GeofenceIntersection}}) instead.
+    and `timestamp` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
+    Use [`startTime`]({{Types.GeofenceIntersection}}) and [`endTime`]({{Types.GeofenceIntersection}}) instead.
 
-The timestamp at which the event occurred.
+    The timestamp at which the event occurred.
      */
     @Deprecated
     public void setTimestamp(java.time.OffsetDateTime timestamp) {
@@ -184,9 +184,9 @@ The timestamp at which the event occurred.
 
     /**
      * [`geofenceEvents`]({{Queries.geofenceIntersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceIntersections}}),
-and `metadata` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
+    and `metadata` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
 
-Any additional information about the event will be stored here.
+    Any additional information about the event will be stored here.
      */
     @Deprecated
     public java.lang.Object getMetadata() {
@@ -194,9 +194,9 @@ Any additional information about the event will be stored here.
     }
     /**
      * [`geofenceEvents`]({{Queries.geofenceIntersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceIntersections}}),
-and `metadata` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
+    and `metadata` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
 
-Any additional information about the event will be stored here.
+    Any additional information about the event will be stored here.
      */
     @Deprecated
     public void setMetadata(java.lang.Object metadata) {
@@ -272,11 +272,11 @@ Any additional information about the event will be stored here.
 
         /**
          * [`geofenceEvents`]({{Queries.geofenceIntersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceIntersections}}),
-and `tag` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
-Use [track's tag]({{Types.Track}}) instead.
+    and `tag` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
+    Use [track's tag]({{Types.Track}}) instead.
 
-The class label of the object that triggered the geofence event, i.e person,
-car, truck, etc.
+    The class label of the object that triggered the geofence event, i.e person,
+    car, truck, etc.
          */
         @Deprecated
         public Builder setTag(String tag) {
@@ -286,11 +286,11 @@ car, truck, etc.
 
         /**
          * [`geofenceEvents`]({{Queries.geofenceIntersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceIntersections}}),
-and `type` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
+    and `type` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
 
-The type of geofence event, i.e ingress (an object entered the geofence), dwell
-(an object remained in the geofence), and egress. (an object exited the
-geofence)
+    The type of geofence event, i.e ingress (an object entered the geofence), dwell
+    (an object remained in the geofence), and egress. (an object exited the
+    geofence)
          */
         @Deprecated
         public Builder setType(ActivityType type) {
@@ -300,10 +300,10 @@ geofence)
 
         /**
          * [`geofenceEvents`]({{Queries.geofenceIntersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceIntersections}}),
-and `position` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
+    and `position` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
 
-The GeoJSON point for the position of the track at the time of the geofence
-event.
+    The GeoJSON point for the position of the track at the time of the geofence
+    event.
          */
         @Deprecated
         public Builder setPosition(GeoJSONPoint position) {
@@ -313,10 +313,10 @@ event.
 
         /**
          * [`geofenceEvents`]({{Queries.geofenceIntersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceIntersections}}),
-and `timestamp` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
-Use [`startTime`]({{Types.GeofenceIntersection}}) and [`endTime`]({{Types.GeofenceIntersection}}) instead.
+    and `timestamp` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
+    Use [`startTime`]({{Types.GeofenceIntersection}}) and [`endTime`]({{Types.GeofenceIntersection}}) instead.
 
-The timestamp at which the event occurred.
+    The timestamp at which the event occurred.
          */
         @Deprecated
         public Builder setTimestamp(java.time.OffsetDateTime timestamp) {
@@ -326,9 +326,9 @@ The timestamp at which the event occurred.
 
         /**
          * [`geofenceEvents`]({{Queries.geofenceIntersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceIntersections}}),
-and `metadata` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
+    and `metadata` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
 
-Any additional information about the event will be stored here.
+    Any additional information about the event will be stored here.
          */
         @Deprecated
         public Builder setMetadata(java.lang.Object metadata) {
