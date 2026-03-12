@@ -10,9 +10,9 @@ public enum ZoneIntersectionSummaryBucketField {
      */
     ZONE_NAME("ZONE_NAME"),
     /**
-     * Bucket by the zone intersection's class Id
+     * Bucket by the zone intersection's tag
      */
-    CLASS_ID("CLASS_ID"),
+    TAG("TAG"),
     /**
      * Bucket by the zone intersection's data source Id
      */

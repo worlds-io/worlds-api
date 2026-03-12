@@ -11,16 +11,16 @@ public class ZoneIntersectionSummaryBucketKey implements java.io.Serializable {
 
     private java.time.OffsetDateTime time;
     private String zoneName;
-    private Tag Class;
+    private Tag tag;
     private DataSource dataSource;
 
     public ZoneIntersectionSummaryBucketKey() {
     }
 
-    public ZoneIntersectionSummaryBucketKey(java.time.OffsetDateTime time, String zoneName, Tag Class, DataSource dataSource) {
+    public ZoneIntersectionSummaryBucketKey(java.time.OffsetDateTime time, String zoneName, Tag tag, DataSource dataSource) {
         this.time = time;
         this.zoneName = zoneName;
-        this.Class = Class;
+        this.tag = tag;
         this.dataSource = dataSource;
     }
 
@@ -51,16 +51,16 @@ public class ZoneIntersectionSummaryBucketKey implements java.io.Serializable {
     }
 
     /**
-     * The class of the zone intersections in the summary bucket.
+     * The tag of the zone intersections in the summary bucket.
      */
-    public Tag GetClass() {
-        return Class;
+    public Tag getTag() {
+        return tag;
     }
     /**
-     * The class of the zone intersections in the summary bucket.
+     * The tag of the zone intersections in the summary bucket.
      */
-    public void setClass(Tag Class) {
-        this.Class = Class;
+    public void setTag(Tag tag) {
+        this.tag = tag;
     }
 
     /**
@@ -87,13 +87,13 @@ public class ZoneIntersectionSummaryBucketKey implements java.io.Serializable {
         final ZoneIntersectionSummaryBucketKey that = (ZoneIntersectionSummaryBucketKey) obj;
         return Objects.equals(time, that.time)
             && Objects.equals(zoneName, that.zoneName)
-            && Objects.equals(Class, that.Class)
+            && Objects.equals(tag, that.tag)
             && Objects.equals(dataSource, that.dataSource);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(time, zoneName, Class, dataSource);
+        return Objects.hash(time, zoneName, tag, dataSource);
     }
 
 
@@ -105,7 +105,7 @@ public class ZoneIntersectionSummaryBucketKey implements java.io.Serializable {
 
         private java.time.OffsetDateTime time;
         private String zoneName;
-        private Tag Class;
+        private Tag tag;
         private DataSource dataSource;
 
         public Builder() {
@@ -128,10 +128,10 @@ public class ZoneIntersectionSummaryBucketKey implements java.io.Serializable {
         }
 
         /**
-         * The class of the zone intersections in the summary bucket.
+         * The tag of the zone intersections in the summary bucket.
          */
-        public Builder setClass(Tag Class) {
-            this.Class = Class;
+        public Builder setTag(Tag tag) {
+            this.tag = tag;
             return this;
         }
 
@@ -145,7 +145,7 @@ public class ZoneIntersectionSummaryBucketKey implements java.io.Serializable {
 
 
         public ZoneIntersectionSummaryBucketKey build() {
-            return new ZoneIntersectionSummaryBucketKey(time, zoneName, Class, dataSource);
+            return new ZoneIntersectionSummaryBucketKey(time, zoneName, tag, dataSource);
         }
 
     }

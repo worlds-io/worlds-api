@@ -113,8 +113,8 @@ input ActivityChronicleSummaryBucketType {
 enum ZoneIntersectionSummaryBucketField {
     """Bucket by the zone's name"""
     ZONE_NAME
-    """Bucket by the zone intersection's class Id"""
-    CLASS_ID
+    """Bucket by the zone intersection's tag"""
+    TAG
     """Bucket by the zone intersection's data source Id"""
     DATA_SOURCE_ID
 }
@@ -137,8 +137,8 @@ type ZoneIntersectionSummaryBucketKey {
     time: DateTimeOffset
     """The zone name of the zone intersections in the summary bucket."""
     zoneName: String
-    """The class of the zone intersections in the summary bucket."""
-    class: Tag
+    """The tag of the zone intersections in the summary bucket."""
+    tag: Tag
     """The data source of the zone intersections in the summary bucket."""
     dataSource: DataSource
 }
