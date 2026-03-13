@@ -82,6 +82,11 @@ type EventsSummary {
     Summary buckets are only returned if `bucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventsSummary}}).
     """
     buckets: [EventsSummaryBucket!]
+    """
+    The distinct top-level keys found in the `metadata` field across all matching events.
+    Useful for discovering available metadata keys that can be used for metadata bucketing.
+    """
+    metadataKeys: [String!]
 }
 
 """
@@ -163,6 +168,11 @@ type ActivityChronicleSummary {
     Summary buckets are only returned if `activityChronicleBucket` is provided as a query parameter to `activityChronicleSummary`.
     """
     buckets: [ActivityChronicleSummaryBucket!]
+    """
+    The distinct top-level keys found in the `metadata` field across all matching activity chronicles.
+    Useful for discovering available metadata keys that can be used for metadata bucketing.
+    """
+    metadataKeys: [String!]
 }
 
 """

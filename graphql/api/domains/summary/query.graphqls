@@ -34,6 +34,11 @@ extend type Query {
         If provided, group the summary buckets by the provided grouping types.
         """
         eventsBucket: EventsSummaryBucketType
+        """
+        If provided, return metadata keys at this JSON path instead of root-level keys.
+        Useful for drilling down into nested metadata objects.
+        """
+        metadataKeysPath: [String!]
     ): EventsSummary
     """Summarizes videos over a time range."""
     videosSummary(
@@ -60,6 +65,11 @@ extend type Query {
         If provided, group the summary buckets by the provided grouping types.
         """
         activityChronicleBucket: ActivityChronicleSummaryBucketType
+        """
+        If provided, return metadata keys at this JSON path instead of root-level keys.
+        Useful for drilling down into nested metadata objects.
+        """
+        metadataKeysPath: [String!]
     ): ActivityChronicleSummary
     """Summarizes zone intersections over a time range."""
     zoneIntersectionSummary(
