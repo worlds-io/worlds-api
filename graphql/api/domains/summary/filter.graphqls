@@ -188,6 +188,37 @@ input FilterDeviceSummaryInput {
 }
 
 """
+`FilterDetectionsSummaryInput` allows for filtering detections summarized by a `detectionsSummary` query based on criteria described below.
+If multiple filters are provided, all must pass.
+"""
+input FilterDetectionsSummaryInput {
+    """
+    If provided, specifies case-insensitive filters that work against the tag of a detection.
+    """
+    tag: FilterTagInput
+    """
+    If provided, specifies filters that work against the data source that produced the detection.
+    """
+    dataSource: FilterDataSourceInput
+    """
+    If provided, specifies filters that work against the site at which the detection was captured.
+    """
+    site: FilterSiteInput
+    """
+    If provided, a detection must pass all filters in this list to match the current filter.
+    """
+    and: [FilterDetectionsSummaryInput!]
+    """
+    If provided, a detection must pass at least one of the filters in this list to match the current filter.
+    """
+    or: [FilterDetectionsSummaryInput!]
+    """
+    If provided, a detection may not match this filter to match the current filter.
+    """
+    not: FilterDetectionsSummaryInput
+}
+
+"""
 FilterVideosSummaryInput filters summarized by a `videosSummary` based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
 """

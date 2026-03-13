@@ -305,6 +305,33 @@ type ZoneIntersectionSummaryStatistics {
 }
 
 """
+Summary information for detections across a time range.  Includes total count and counts by buckets.
+"""
+type DetectionsSummary {
+    """
+    The total number of detections within the time range.
+    """
+    total: Int!
+    """
+    A detailed summary of each bucket within the time range.
+    Summary buckets are only returned if `detectionsBucket` is provided as a query parameter to `detectionsSummary`.
+    """
+    buckets: [DetectionsSummaryBucket!]
+}
+
+"""
+Summary information for detections across a time range inside a given `DetectionsSummaryBucketType`.  Includes total count and the bucketed field values.
+"""
+type DetectionsSummaryBucket {
+    """The key of the bucket."""
+    key: DetectionsSummaryBucketKey!
+    """
+    The total number of detections within the bucket.
+    """
+    total: Int!
+}
+
+"""
 Summary information for devices across a time range.  Includes total count and counts by buckets.
 """
 type DeviceSummary {
