@@ -13,14 +13,16 @@ public class ActivityChronicleSummary implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private ActivityChronicleSummaryStatistics summaryStatistics;
     private java.util.List<ActivityChronicleSummaryBucket> buckets;
+    private java.util.List<String> metadataKeys;
 
     public ActivityChronicleSummary() {
     }
 
-    public ActivityChronicleSummary(int total, ActivityChronicleSummaryStatistics summaryStatistics, java.util.List<ActivityChronicleSummaryBucket> buckets) {
+    public ActivityChronicleSummary(int total, ActivityChronicleSummaryStatistics summaryStatistics, java.util.List<ActivityChronicleSummaryBucket> buckets, java.util.List<String> metadataKeys) {
         this.total = total;
         this.summaryStatistics = summaryStatistics;
         this.buckets = buckets;
+        this.metadataKeys = metadataKeys;
     }
 
     /**
@@ -64,6 +66,21 @@ Summary buckets are only returned if `activityChronicleBucket` is provided as a 
         this.buckets = buckets;
     }
 
+    /**
+     * The distinct top-level keys found in the `metadata` field across all matching activity chronicles.
+Useful for discovering available metadata keys that can be used for metadata bucketing.
+     */
+    public java.util.List<String> getMetadataKeys() {
+        return metadataKeys;
+    }
+    /**
+     * The distinct top-level keys found in the `metadata` field across all matching activity chronicles.
+Useful for discovering available metadata keys that can be used for metadata bucketing.
+     */
+    public void setMetadataKeys(java.util.List<String> metadataKeys) {
+        this.metadataKeys = metadataKeys;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -75,12 +92,13 @@ Summary buckets are only returned if `activityChronicleBucket` is provided as a 
         final ActivityChronicleSummary that = (ActivityChronicleSummary) obj;
         return Objects.equals(total, that.total)
             && Objects.equals(summaryStatistics, that.summaryStatistics)
-            && Objects.equals(buckets, that.buckets);
+            && Objects.equals(buckets, that.buckets)
+            && Objects.equals(metadataKeys, that.metadataKeys);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, summaryStatistics, buckets);
+        return Objects.hash(total, summaryStatistics, buckets, metadataKeys);
     }
 
 
@@ -93,6 +111,7 @@ Summary buckets are only returned if `activityChronicleBucket` is provided as a 
         private int total;
         private ActivityChronicleSummaryStatistics summaryStatistics;
         private java.util.List<ActivityChronicleSummaryBucket> buckets;
+        private java.util.List<String> metadataKeys;
 
         public Builder() {
         }
@@ -122,9 +141,18 @@ Summary buckets are only returned if `activityChronicleBucket` is provided as a 
             return this;
         }
 
+        /**
+         * The distinct top-level keys found in the `metadata` field across all matching activity chronicles.
+Useful for discovering available metadata keys that can be used for metadata bucketing.
+         */
+        public Builder setMetadataKeys(java.util.List<String> metadataKeys) {
+            this.metadataKeys = metadataKeys;
+            return this;
+        }
+
 
         public ActivityChronicleSummary build() {
-            return new ActivityChronicleSummary(total, summaryStatistics, buckets);
+            return new ActivityChronicleSummary(total, summaryStatistics, buckets, metadataKeys);
         }
 
     }
