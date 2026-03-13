@@ -12,6 +12,8 @@ public class TracksSummaryBucket implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private TracksSummaryBucketKey key;
     private int total;
+    private int startedCount;
+    private int endedCount;
     @Deprecated
     @jakarta.validation.constraints.NotNull
     private java.util.List<TracksCountByTag> counts;
@@ -19,10 +21,12 @@ public class TracksSummaryBucket implements java.io.Serializable {
     public TracksSummaryBucket() {
     }
 
-    public TracksSummaryBucket(java.time.OffsetDateTime time, TracksSummaryBucketKey key, int total, java.util.List<TracksCountByTag> counts) {
+    public TracksSummaryBucket(java.time.OffsetDateTime time, TracksSummaryBucketKey key, int total, int startedCount, int endedCount, java.util.List<TracksCountByTag> counts) {
         this.time = time;
         this.key = key;
         this.total = total;
+        this.startedCount = startedCount;
+        this.endedCount = endedCount;
         this.counts = counts;
     }
 
@@ -55,16 +59,42 @@ public class TracksSummaryBucket implements java.io.Serializable {
     }
 
     /**
-     * The total number of [Tracks]({{Types.Track}}) within the bucket.
+     * The total number of tracks within the bucket.
      */
     public int getTotal() {
         return total;
     }
     /**
-     * The total number of [Tracks]({{Types.Track}}) within the bucket.
+     * The total number of tracks within the bucket.
      */
     public void setTotal(int total) {
         this.total = total;
+    }
+
+    /**
+     * The number of tracks which started within the bucket.
+     */
+    public int getStartedCount() {
+        return startedCount;
+    }
+    /**
+     * The number of tracks which started within the bucket.
+     */
+    public void setStartedCount(int startedCount) {
+        this.startedCount = startedCount;
+    }
+
+    /**
+     * The number of tracks which ended within the bucket.
+     */
+    public int getEndedCount() {
+        return endedCount;
+    }
+    /**
+     * The number of tracks which ended within the bucket.
+     */
+    public void setEndedCount(int endedCount) {
+        this.endedCount = endedCount;
     }
 
     /**
@@ -94,12 +124,14 @@ public class TracksSummaryBucket implements java.io.Serializable {
         return Objects.equals(time, that.time)
             && Objects.equals(key, that.key)
             && Objects.equals(total, that.total)
+            && Objects.equals(startedCount, that.startedCount)
+            && Objects.equals(endedCount, that.endedCount)
             && Objects.equals(counts, that.counts);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(time, key, total, counts);
+        return Objects.hash(time, key, total, startedCount, endedCount, counts);
     }
 
 
@@ -112,6 +144,8 @@ public class TracksSummaryBucket implements java.io.Serializable {
         private java.time.OffsetDateTime time;
         private TracksSummaryBucketKey key;
         private int total;
+        private int startedCount;
+        private int endedCount;
         private java.util.List<TracksCountByTag> counts;
 
         public Builder() {
@@ -135,10 +169,26 @@ public class TracksSummaryBucket implements java.io.Serializable {
         }
 
         /**
-         * The total number of [Tracks]({{Types.Track}}) within the bucket.
+         * The total number of tracks within the bucket.
          */
         public Builder setTotal(int total) {
             this.total = total;
+            return this;
+        }
+
+        /**
+         * The number of tracks which started within the bucket.
+         */
+        public Builder setStartedCount(int startedCount) {
+            this.startedCount = startedCount;
+            return this;
+        }
+
+        /**
+         * The number of tracks which ended within the bucket.
+         */
+        public Builder setEndedCount(int endedCount) {
+            this.endedCount = endedCount;
             return this;
         }
 
@@ -153,7 +203,7 @@ public class TracksSummaryBucket implements java.io.Serializable {
 
 
         public TracksSummaryBucket build() {
-            return new TracksSummaryBucket(time, key, total, counts);
+            return new TracksSummaryBucket(time, key, total, startedCount, endedCount, counts);
         }
 
     }

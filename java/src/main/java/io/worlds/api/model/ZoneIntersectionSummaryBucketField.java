@@ -14,9 +14,9 @@ public enum ZoneIntersectionSummaryBucketField {
      */
     TAG("TAG"),
     /**
-     * Bucket by the zone intersection's data source Id
+     * Bucket by the zone intersection's data source
      */
-    DATA_SOURCE_ID("DATA_SOURCE_ID");
+    DATA_SOURCE("DATA_SOURCE");
 
     private final String graphqlName;
 

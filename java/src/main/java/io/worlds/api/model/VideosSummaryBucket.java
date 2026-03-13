@@ -12,15 +12,19 @@ public class VideosSummaryBucket implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private VideosSummaryBucketKey key;
     private int total;
+    private int startedCount;
+    private int endedCount;
     @jakarta.validation.constraints.NotNull
     private VideosSummaryStatistics summaryStatistics;
 
     public VideosSummaryBucket() {
     }
 
-    public VideosSummaryBucket(VideosSummaryBucketKey key, int total, VideosSummaryStatistics summaryStatistics) {
+    public VideosSummaryBucket(VideosSummaryBucketKey key, int total, int startedCount, int endedCount, VideosSummaryStatistics summaryStatistics) {
         this.key = key;
         this.total = total;
+        this.startedCount = startedCount;
+        this.endedCount = endedCount;
         this.summaryStatistics = summaryStatistics;
     }
 
@@ -51,6 +55,32 @@ public class VideosSummaryBucket implements java.io.Serializable {
     }
 
     /**
+     * The number of videos which started in the bucket.
+     */
+    public int getStartedCount() {
+        return startedCount;
+    }
+    /**
+     * The number of videos which started in the bucket.
+     */
+    public void setStartedCount(int startedCount) {
+        this.startedCount = startedCount;
+    }
+
+    /**
+     * The number of videos which ended in the bucket.
+     */
+    public int getEndedCount() {
+        return endedCount;
+    }
+    /**
+     * The number of videos which ended in the bucket.
+     */
+    public void setEndedCount(int endedCount) {
+        this.endedCount = endedCount;
+    }
+
+    /**
      * Summary statistics for all videos within the bucket.
      */
     public VideosSummaryStatistics getSummaryStatistics() {
@@ -74,12 +104,14 @@ public class VideosSummaryBucket implements java.io.Serializable {
         final VideosSummaryBucket that = (VideosSummaryBucket) obj;
         return Objects.equals(key, that.key)
             && Objects.equals(total, that.total)
+            && Objects.equals(startedCount, that.startedCount)
+            && Objects.equals(endedCount, that.endedCount)
             && Objects.equals(summaryStatistics, that.summaryStatistics);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(key, total, summaryStatistics);
+        return Objects.hash(key, total, startedCount, endedCount, summaryStatistics);
     }
 
 
@@ -91,6 +123,8 @@ public class VideosSummaryBucket implements java.io.Serializable {
 
         private VideosSummaryBucketKey key;
         private int total;
+        private int startedCount;
+        private int endedCount;
         private VideosSummaryStatistics summaryStatistics;
 
         public Builder() {
@@ -113,6 +147,22 @@ public class VideosSummaryBucket implements java.io.Serializable {
         }
 
         /**
+         * The number of videos which started in the bucket.
+         */
+        public Builder setStartedCount(int startedCount) {
+            this.startedCount = startedCount;
+            return this;
+        }
+
+        /**
+         * The number of videos which ended in the bucket.
+         */
+        public Builder setEndedCount(int endedCount) {
+            this.endedCount = endedCount;
+            return this;
+        }
+
+        /**
          * Summary statistics for all videos within the bucket.
          */
         public Builder setSummaryStatistics(VideosSummaryStatistics summaryStatistics) {
@@ -122,7 +172,7 @@ public class VideosSummaryBucket implements java.io.Serializable {
 
 
         public VideosSummaryBucket build() {
-            return new VideosSummaryBucket(key, total, summaryStatistics);
+            return new VideosSummaryBucket(key, total, startedCount, endedCount, summaryStatistics);
         }
 
     }
