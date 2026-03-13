@@ -157,6 +157,40 @@ type ZoneIntersectionSummaryBucketKey {
     dataSource: DataSource
 }
 
+"""Indicates the bucket to group detections by in a detectionsSummary query."""
+enum DetectionsSummaryBucketField {
+    """Bucket by the detection's tag"""
+    TAG
+    """Bucket by the detection's data source id"""
+    DATA_SOURCE_ID
+    """Bucket by the site of the detection"""
+    SITE
+}
+
+"""
+Input to indicate which field(s) to group detections by in a `detectionsSummary` query.
+Any combination of up to three distinct fields may be provided.
+If multiple fields are provided, the buckets will be sorted by time, then fields.
+"""
+input DetectionsSummaryBucketType {
+    """If provided, group the summary buckets by time buckets of the provided size."""
+    size: SummaryBucketSize
+    """If provided, group the summary buckets by the values of the provided fields."""
+    fields: [DetectionsSummaryBucketField!]
+}
+
+"""The grouping key for a DetectionsSummaryBucket.  Fields bucketed on will be present.  All other fields will be null."""
+type DetectionsSummaryBucketKey {
+    """The start time of the summary bucket."""
+    time: DateTimeOffset
+    """The detection's tag."""
+    tag: Tag
+    """The data source which produced the detections."""
+    dataSource: DataSource
+    """The site at which the detections were captured."""
+    site: Site
+}
+
 """Indicates the bucket to group devices by in a deviceSummary query."""
 enum DeviceSummaryBucketField {
     """Bucket by the device's site"""
