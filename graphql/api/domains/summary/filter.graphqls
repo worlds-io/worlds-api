@@ -75,6 +75,11 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterActivityChronicleSummaryInput {
     """
+    If provided, specifies filters that work against the start time of the activity chronicle.
+    Useful for avoiding double-counting chronicles that span multiple time buckets.
+    """
+    startTime: FilterDateTimeOffsetInput
+    """
     If provided, specifies filters that work against the name of the activity.
     """
     name: FilterStringInput
