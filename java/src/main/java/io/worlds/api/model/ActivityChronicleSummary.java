@@ -10,6 +10,8 @@ public class ActivityChronicleSummary implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 
     private int total;
+    private int startedCount;
+    private int endedCount;
     @jakarta.validation.constraints.NotNull
     private ActivityChronicleSummaryStatistics summaryStatistics;
     private java.util.List<ActivityChronicleSummaryBucket> buckets;
@@ -18,8 +20,10 @@ public class ActivityChronicleSummary implements java.io.Serializable {
     public ActivityChronicleSummary() {
     }
 
-    public ActivityChronicleSummary(int total, ActivityChronicleSummaryStatistics summaryStatistics, java.util.List<ActivityChronicleSummaryBucket> buckets, java.util.List<String> metadataKeys) {
+    public ActivityChronicleSummary(int total, int startedCount, int endedCount, ActivityChronicleSummaryStatistics summaryStatistics, java.util.List<ActivityChronicleSummaryBucket> buckets, java.util.List<String> metadataKeys) {
         this.total = total;
+        this.startedCount = startedCount;
+        this.endedCount = endedCount;
         this.summaryStatistics = summaryStatistics;
         this.buckets = buckets;
         this.metadataKeys = metadataKeys;
@@ -36,6 +40,32 @@ public class ActivityChronicleSummary implements java.io.Serializable {
      */
     public void setTotal(int total) {
         this.total = total;
+    }
+
+    /**
+     * The number of activity chronicles which started in the time range.
+     */
+    public int getStartedCount() {
+        return startedCount;
+    }
+    /**
+     * The number of activity chronicles which started in the time range.
+     */
+    public void setStartedCount(int startedCount) {
+        this.startedCount = startedCount;
+    }
+
+    /**
+     * The number of activity chronicles which ended in the time range.
+     */
+    public int getEndedCount() {
+        return endedCount;
+    }
+    /**
+     * The number of activity chronicles which ended in the time range.
+     */
+    public void setEndedCount(int endedCount) {
+        this.endedCount = endedCount;
     }
 
     /**
@@ -91,6 +121,8 @@ Useful for discovering available metadata keys that can be used for metadata buc
         }
         final ActivityChronicleSummary that = (ActivityChronicleSummary) obj;
         return Objects.equals(total, that.total)
+            && Objects.equals(startedCount, that.startedCount)
+            && Objects.equals(endedCount, that.endedCount)
             && Objects.equals(summaryStatistics, that.summaryStatistics)
             && Objects.equals(buckets, that.buckets)
             && Objects.equals(metadataKeys, that.metadataKeys);
@@ -98,7 +130,7 @@ Useful for discovering available metadata keys that can be used for metadata buc
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, summaryStatistics, buckets, metadataKeys);
+        return Objects.hash(total, startedCount, endedCount, summaryStatistics, buckets, metadataKeys);
     }
 
 
@@ -109,6 +141,8 @@ Useful for discovering available metadata keys that can be used for metadata buc
     public static class Builder {
 
         private int total;
+        private int startedCount;
+        private int endedCount;
         private ActivityChronicleSummaryStatistics summaryStatistics;
         private java.util.List<ActivityChronicleSummaryBucket> buckets;
         private java.util.List<String> metadataKeys;
@@ -121,6 +155,22 @@ Useful for discovering available metadata keys that can be used for metadata buc
          */
         public Builder setTotal(int total) {
             this.total = total;
+            return this;
+        }
+
+        /**
+         * The number of activity chronicles which started in the time range.
+         */
+        public Builder setStartedCount(int startedCount) {
+            this.startedCount = startedCount;
+            return this;
+        }
+
+        /**
+         * The number of activity chronicles which ended in the time range.
+         */
+        public Builder setEndedCount(int endedCount) {
+            this.endedCount = endedCount;
             return this;
         }
 
@@ -152,7 +202,7 @@ Useful for discovering available metadata keys that can be used for metadata buc
 
 
         public ActivityChronicleSummary build() {
-            return new ActivityChronicleSummary(total, summaryStatistics, buckets, metadataKeys);
+            return new ActivityChronicleSummary(total, startedCount, endedCount, summaryStatistics, buckets, metadataKeys);
         }
 
     }

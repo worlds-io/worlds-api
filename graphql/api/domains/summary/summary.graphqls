@@ -4,6 +4,15 @@ type TracksSummary {
     """
     total: Int!
     """
+    The number of tracks which started within the time range.
+    """
+    startedCount: Int!
+    """
+    The number of tracks which ended within the time range.
+    """
+    endedCount: Int!
+
+    """
     The count of [Tracks]({{Types.Track}}) for each [Tag]({{Types.Tag}}) within the time range.
     """
     totalsByTag: [TracksCountByTag!]! @deprecated(reason: "To retrieve per-tag counts, group by the `TAG` field, either alone or in combination with a time bucket.  Counts will return as empty if a `tracksBucket` or `filter` is used.")
@@ -29,9 +38,18 @@ type TracksSummaryBucket {
     """The key of the bucket."""
     key: TracksSummaryBucketKey!
     """
-    The total number of [Tracks]({{Types.Track}}) within the bucket.
+    The total number of tracks within the bucket.
     """
     total: Int!
+    """
+    The number of tracks which started within the bucket.
+    """
+    startedCount: Int!
+    """
+    The number of tracks which ended within the bucket.
+    """
+    endedCount: Int!
+
     """
     The count of [Tracks]({{Types.Track}}) for each [Tag]({{Types.Tag}}) within the bucket.
     """
@@ -46,6 +64,15 @@ type EventsSummary {
     The total number of [Events]({{Types.Event}}) within the time range.
     """
     total: Int!
+    """
+    The number of events which started within the time range.
+    """
+    startedCount: Int!
+    """
+    The number of events which ended within the time range.
+    """
+    endedCount: Int!
+
     """
     Summary statistics for all events within the summary's time range and filters.
     """
@@ -74,6 +101,14 @@ type EventsSummaryBucket {
     The total number of [Events]({{Types.Event}}) within the bucket.
     """
     total: Int!
+    """
+    The number of events which started within the bucket.
+    """
+    startedCount: Int!
+    """
+    The number of events which ended within the bucket.
+    """
+    endedCount: Int!
 
     """
     Summary statistics for all events within the bucket.
@@ -89,6 +124,14 @@ type VideosSummary {
     The total number of [Videos]({{Types.Video}}) within the time range.
     """
     total: Int!
+    """
+    The number of videos which started in the time range.
+    """
+    startedCount: Int!
+    """
+    The number of videos which ended in the time range.
+    """
+    endedCount: Int!
     """
     Summary statistics for all videos within the summary's time range and filters.
     """
@@ -108,6 +151,14 @@ type ActivityChronicleSummary {
     The total number of activity chronicles within the time range.
     """
     total: Int!
+    """
+    The number of activity chronicles which started in the time range.
+    """
+    startedCount: Int!
+    """
+    The number of activity chronicles which ended in the time range.
+    """
+    endedCount: Int!
     """
     Summary statistics for all activity chronicles within the summary's time range and filters.
     """
@@ -134,6 +185,14 @@ type ActivityChronicleSummaryBucket {
     The total number of activity chronicles within the bucket.
     """
     total: Int!
+    """
+    The number of activity chronicles which started in the bucket.
+    """
+    startedCount: Int!
+    """
+    The number of activity chronicles which ended in the bucket.
+    """
+    endedCount: Int!
     """
     Summary statistics for all activity chronicles within the bucket.
     """
@@ -180,6 +239,14 @@ type VideosSummaryBucket {
     The total number of [Videos]({{Types.Video}}) within the bucket.
     """
     total: Int!
+    """
+    The number of videos which started in the bucket.
+    """
+    startedCount: Int!
+    """
+    The number of videos which ended in the bucket.
+    """
+    endedCount: Int!
 
     """
     Summary statistics for all videos within the bucket.
@@ -195,6 +262,15 @@ type ZoneIntersectionSummary {
     The total number of zone intersections within the time range.
     """
     total: Int!
+    """
+    The number of zone intersections which started within the time range.
+    """
+    startedCount: Int!
+    """
+    The number of zone intersections which ended within the time range.
+    """
+    endedCount: Int!
+
     """
     Summary statistics for all zone intersections within the summary's time range and filters.
     """
@@ -216,6 +292,14 @@ type ZoneIntersectionSummaryBucket {
     The total number of zone intersections within the bucket.
     """
     total: Int!
+    """
+    The number of zone intersections which started within the bucket.
+    """
+    startedCount: Int!
+    """
+    The number of zone intersections which ended within the bucket.
+    """
+    endedCount: Int!
     """
     Summary statistics for all zone intersections within the bucket.
     """

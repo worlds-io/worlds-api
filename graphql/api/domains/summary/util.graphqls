@@ -246,7 +246,7 @@ type VideosSummaryBucketKey {
 ## Summary statistics
 
 """
-Summary statistics for a `DateTimeDuration` input type.
+Summary statistics for a `DateTimeDuration` type.
 """
 type DateTimeDurationSummaryStatistics {
     """The minimum duration in the group."""

@@ -16,18 +16,22 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
     private String eventProducerId;
     private EventProducer eventProducer;
     private String priority;
+    private Boolean draft;
+    private String validationStatus;
     private java.util.List<JSONFieldBucketKey> metadata;
 
     public EventsSummaryBucketKey() {
     }
 
-    public EventsSummaryBucketKey(java.time.OffsetDateTime time, String type, String subType, String eventProducerId, EventProducer eventProducer, String priority, java.util.List<JSONFieldBucketKey> metadata) {
+    public EventsSummaryBucketKey(java.time.OffsetDateTime time, String type, String subType, String eventProducerId, EventProducer eventProducer, String priority, Boolean draft, String validationStatus, java.util.List<JSONFieldBucketKey> metadata) {
         this.time = time;
         this.type = type;
         this.subType = subType;
         this.eventProducerId = eventProducerId;
         this.eventProducer = eventProducer;
         this.priority = priority;
+        this.draft = draft;
+        this.validationStatus = validationStatus;
         this.metadata = metadata;
     }
 
@@ -112,6 +116,32 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
     }
 
     /**
+     * The `draft` status of the events in the summary bucket.
+     */
+    public Boolean getDraft() {
+        return draft;
+    }
+    /**
+     * The `draft` status of the events in the summary bucket.
+     */
+    public void setDraft(Boolean draft) {
+        this.draft = draft;
+    }
+
+    /**
+     * The `validationStatus` of the events in the summary bucket.
+     */
+    public String getValidationStatus() {
+        return validationStatus;
+    }
+    /**
+     * The `validationStatus` of the events in the summary bucket.
+     */
+    public void setValidationStatus(String validationStatus) {
+        this.validationStatus = validationStatus;
+    }
+
+    /**
      * If provided, group the summary buckets by the values of the provided metadata fields.
      */
     public java.util.List<JSONFieldBucketKey> getMetadata() {
@@ -139,12 +169,14 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
             && Objects.equals(eventProducerId, that.eventProducerId)
             && Objects.equals(eventProducer, that.eventProducer)
             && Objects.equals(priority, that.priority)
+            && Objects.equals(draft, that.draft)
+            && Objects.equals(validationStatus, that.validationStatus)
             && Objects.equals(metadata, that.metadata);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(time, type, subType, eventProducerId, eventProducer, priority, metadata);
+        return Objects.hash(time, type, subType, eventProducerId, eventProducer, priority, draft, validationStatus, metadata);
     }
 
 
@@ -160,6 +192,8 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
         private String eventProducerId;
         private EventProducer eventProducer;
         private String priority;
+        private Boolean draft;
+        private String validationStatus;
         private java.util.List<JSONFieldBucketKey> metadata;
 
         public Builder() {
@@ -215,6 +249,22 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
         }
 
         /**
+         * The `draft` status of the events in the summary bucket.
+         */
+        public Builder setDraft(Boolean draft) {
+            this.draft = draft;
+            return this;
+        }
+
+        /**
+         * The `validationStatus` of the events in the summary bucket.
+         */
+        public Builder setValidationStatus(String validationStatus) {
+            this.validationStatus = validationStatus;
+            return this;
+        }
+
+        /**
          * If provided, group the summary buckets by the values of the provided metadata fields.
          */
         public Builder setMetadata(java.util.List<JSONFieldBucketKey> metadata) {
@@ -224,7 +274,7 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
 
 
         public EventsSummaryBucketKey build() {
-            return new EventsSummaryBucketKey(time, type, subType, eventProducerId, eventProducer, priority, metadata);
+            return new EventsSummaryBucketKey(time, type, subType, eventProducerId, eventProducer, priority, draft, validationStatus, metadata);
         }
 
     }

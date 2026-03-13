@@ -13,15 +13,25 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
     private String priority;
     private String status;
     private ChronicleProducer chronicleProducer;
+    private Site site;
+    private DataSource dataSource;
+    private String validationStatus;
+    private String approvalStatus;
+    private java.util.List<JSONFieldBucketKey> metadata;
 
     public ActivityChronicleSummaryBucketKey() {
     }
 
-    public ActivityChronicleSummaryBucketKey(java.time.OffsetDateTime time, String priority, String status, ChronicleProducer chronicleProducer) {
+    public ActivityChronicleSummaryBucketKey(java.time.OffsetDateTime time, String priority, String status, ChronicleProducer chronicleProducer, Site site, DataSource dataSource, String validationStatus, String approvalStatus, java.util.List<JSONFieldBucketKey> metadata) {
         this.time = time;
         this.priority = priority;
         this.status = status;
         this.chronicleProducer = chronicleProducer;
+        this.site = site;
+        this.dataSource = dataSource;
+        this.validationStatus = validationStatus;
+        this.approvalStatus = approvalStatus;
+        this.metadata = metadata;
     }
 
     /**
@@ -76,6 +86,71 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
         this.chronicleProducer = chronicleProducer;
     }
 
+    /**
+     * The Site of the activity chronicles in the summary bucket.
+     */
+    public Site getSite() {
+        return site;
+    }
+    /**
+     * The Site of the activity chronicles in the summary bucket.
+     */
+    public void setSite(Site site) {
+        this.site = site;
+    }
+
+    /**
+     * The DataSource of the activity chronicles in the summary bucket.
+     */
+    public DataSource getDataSource() {
+        return dataSource;
+    }
+    /**
+     * The DataSource of the activity chronicles in the summary bucket.
+     */
+    public void setDataSource(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
+
+    /**
+     * The `validationStatus` of the activity chronicles in the summary bucket.
+     */
+    public String getValidationStatus() {
+        return validationStatus;
+    }
+    /**
+     * The `validationStatus` of the activity chronicles in the summary bucket.
+     */
+    public void setValidationStatus(String validationStatus) {
+        this.validationStatus = validationStatus;
+    }
+
+    /**
+     * The `approvalStatus` of the activity chronicles in the summary bucket.
+     */
+    public String getApprovalStatus() {
+        return approvalStatus;
+    }
+    /**
+     * The `approvalStatus` of the activity chronicles in the summary bucket.
+     */
+    public void setApprovalStatus(String approvalStatus) {
+        this.approvalStatus = approvalStatus;
+    }
+
+    /**
+     * The metadata values of the activity chronicles in the summary bucket.
+     */
+    public java.util.List<JSONFieldBucketKey> getMetadata() {
+        return metadata;
+    }
+    /**
+     * The metadata values of the activity chronicles in the summary bucket.
+     */
+    public void setMetadata(java.util.List<JSONFieldBucketKey> metadata) {
+        this.metadata = metadata;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -88,12 +163,17 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
         return Objects.equals(time, that.time)
             && Objects.equals(priority, that.priority)
             && Objects.equals(status, that.status)
-            && Objects.equals(chronicleProducer, that.chronicleProducer);
+            && Objects.equals(chronicleProducer, that.chronicleProducer)
+            && Objects.equals(site, that.site)
+            && Objects.equals(dataSource, that.dataSource)
+            && Objects.equals(validationStatus, that.validationStatus)
+            && Objects.equals(approvalStatus, that.approvalStatus)
+            && Objects.equals(metadata, that.metadata);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(time, priority, status, chronicleProducer);
+        return Objects.hash(time, priority, status, chronicleProducer, site, dataSource, validationStatus, approvalStatus, metadata);
     }
 
 
@@ -107,6 +187,11 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
         private String priority;
         private String status;
         private ChronicleProducer chronicleProducer;
+        private Site site;
+        private DataSource dataSource;
+        private String validationStatus;
+        private String approvalStatus;
+        private java.util.List<JSONFieldBucketKey> metadata;
 
         public Builder() {
         }
@@ -143,9 +228,49 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
             return this;
         }
 
+        /**
+         * The Site of the activity chronicles in the summary bucket.
+         */
+        public Builder setSite(Site site) {
+            this.site = site;
+            return this;
+        }
+
+        /**
+         * The DataSource of the activity chronicles in the summary bucket.
+         */
+        public Builder setDataSource(DataSource dataSource) {
+            this.dataSource = dataSource;
+            return this;
+        }
+
+        /**
+         * The `validationStatus` of the activity chronicles in the summary bucket.
+         */
+        public Builder setValidationStatus(String validationStatus) {
+            this.validationStatus = validationStatus;
+            return this;
+        }
+
+        /**
+         * The `approvalStatus` of the activity chronicles in the summary bucket.
+         */
+        public Builder setApprovalStatus(String approvalStatus) {
+            this.approvalStatus = approvalStatus;
+            return this;
+        }
+
+        /**
+         * The metadata values of the activity chronicles in the summary bucket.
+         */
+        public Builder setMetadata(java.util.List<JSONFieldBucketKey> metadata) {
+            this.metadata = metadata;
+            return this;
+        }
+
 
         public ActivityChronicleSummaryBucketKey build() {
-            return new ActivityChronicleSummaryBucketKey(time, priority, status, chronicleProducer);
+            return new ActivityChronicleSummaryBucketKey(time, priority, status, chronicleProducer, site, dataSource, validationStatus, approvalStatus, metadata);
         }
 
     }
