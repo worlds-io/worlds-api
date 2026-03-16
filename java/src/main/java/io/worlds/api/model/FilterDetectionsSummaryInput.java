@@ -13,20 +13,14 @@ public class FilterDetectionsSummaryInput implements java.io.Serializable {
     private org.springframework.graphql.data.ArgumentValue<FilterTagInput> tag = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterDataSourceInput> dataSource = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterSiteInput> site = org.springframework.graphql.data.ArgumentValue.omitted();
-    private java.util.List<FilterDetectionsSummaryInput> and;
-    private java.util.List<FilterDetectionsSummaryInput> or;
-    private org.springframework.graphql.data.ArgumentValue<FilterDetectionsSummaryInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
 
     public FilterDetectionsSummaryInput() {
     }
 
-    public FilterDetectionsSummaryInput(org.springframework.graphql.data.ArgumentValue<FilterTagInput> tag, org.springframework.graphql.data.ArgumentValue<FilterDataSourceInput> dataSource, org.springframework.graphql.data.ArgumentValue<FilterSiteInput> site, java.util.List<FilterDetectionsSummaryInput> and, java.util.List<FilterDetectionsSummaryInput> or, org.springframework.graphql.data.ArgumentValue<FilterDetectionsSummaryInput> not) {
+    public FilterDetectionsSummaryInput(org.springframework.graphql.data.ArgumentValue<FilterTagInput> tag, org.springframework.graphql.data.ArgumentValue<FilterDataSourceInput> dataSource, org.springframework.graphql.data.ArgumentValue<FilterSiteInput> site) {
         this.tag = tag;
         this.dataSource = dataSource;
         this.site = site;
-        this.and = and;
-        this.or = or;
-        this.not = not;
     }
 
     public org.springframework.graphql.data.ArgumentValue<FilterTagInput> getTag() {
@@ -50,27 +44,6 @@ public class FilterDetectionsSummaryInput implements java.io.Serializable {
         this.site = site;
     }
 
-    public java.util.List<FilterDetectionsSummaryInput> getAnd() {
-        return and;
-    }
-    public void setAnd(java.util.List<FilterDetectionsSummaryInput> and) {
-        this.and = and;
-    }
-
-    public java.util.List<FilterDetectionsSummaryInput> getOr() {
-        return or;
-    }
-    public void setOr(java.util.List<FilterDetectionsSummaryInput> or) {
-        this.or = or;
-    }
-
-    public org.springframework.graphql.data.ArgumentValue<FilterDetectionsSummaryInput> getNot() {
-        return not;
-    }
-    public void setNot(org.springframework.graphql.data.ArgumentValue<FilterDetectionsSummaryInput> not) {
-        this.not = not;
-    }
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -82,15 +55,12 @@ public class FilterDetectionsSummaryInput implements java.io.Serializable {
         final FilterDetectionsSummaryInput that = (FilterDetectionsSummaryInput) obj;
         return Objects.equals(tag, that.tag)
             && Objects.equals(dataSource, that.dataSource)
-            && Objects.equals(site, that.site)
-            && Objects.equals(and, that.and)
-            && Objects.equals(or, that.or)
-            && Objects.equals(not, that.not);
+            && Objects.equals(site, that.site);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tag, dataSource, site, and, or, not);
+        return Objects.hash(tag, dataSource, site);
     }
 
 
@@ -103,9 +73,6 @@ public class FilterDetectionsSummaryInput implements java.io.Serializable {
         private org.springframework.graphql.data.ArgumentValue<FilterTagInput> tag = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterDataSourceInput> dataSource = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterSiteInput> site = org.springframework.graphql.data.ArgumentValue.omitted();
-        private java.util.List<FilterDetectionsSummaryInput> and;
-        private java.util.List<FilterDetectionsSummaryInput> or;
-        private org.springframework.graphql.data.ArgumentValue<FilterDetectionsSummaryInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
 
         public Builder() {
         }
@@ -125,24 +92,9 @@ public class FilterDetectionsSummaryInput implements java.io.Serializable {
             return this;
         }
 
-        public Builder setAnd(java.util.List<FilterDetectionsSummaryInput> and) {
-            this.and = and;
-            return this;
-        }
-
-        public Builder setOr(java.util.List<FilterDetectionsSummaryInput> or) {
-            this.or = or;
-            return this;
-        }
-
-        public Builder setNot(org.springframework.graphql.data.ArgumentValue<FilterDetectionsSummaryInput> not) {
-            this.not = not;
-            return this;
-        }
-
 
         public FilterDetectionsSummaryInput build() {
-            return new FilterDetectionsSummaryInput(tag, dataSource, site, and, or, not);
+            return new FilterDetectionsSummaryInput(tag, dataSource, site);
         }
 
     }
