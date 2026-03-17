@@ -6,13 +6,11 @@ package io.worlds.api.model;
 public enum SensorsSortField {
 
     /**
-     * 
-Sort the resulting list by the [`sensor`](({{Types.Sensor}}))'s unique identifier.
+     * Sort the resulting list by the [`sensor`](({{Types.Sensor}}))'s unique identifier.
      */
     ID("ID"),
     /**
-     * 
-Sort the resulting list by the [`sensor`](({{Types.Sensor}}))'s name.
+     * Sort the resulting list by the [`sensor`](({{Types.Sensor}}))'s name.
      */
     NAME("NAME");
 

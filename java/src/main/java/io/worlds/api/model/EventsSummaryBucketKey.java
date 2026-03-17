@@ -12,6 +12,7 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
     private java.time.OffsetDateTime time;
     private String type;
     private String subType;
+    @Deprecated
     private String eventProducerId;
     private EventProducer eventProducer;
     private String priority;
@@ -72,12 +73,14 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
     /**
      * The `id` of the EventProducer of the events in the summary bucket.
      */
+    @Deprecated
     public String getEventProducerId() {
         return eventProducerId;
     }
     /**
      * The `id` of the EventProducer of the events in the summary bucket.
      */
+    @Deprecated
     public void setEventProducerId(String eventProducerId) {
         this.eventProducerId = eventProducerId;
     }
@@ -189,6 +192,7 @@ public class EventsSummaryBucketKey implements java.io.Serializable {
         /**
          * The `id` of the EventProducer of the events in the summary bucket.
          */
+        @Deprecated
         public Builder setEventProducerId(String eventProducerId) {
             this.eventProducerId = eventProducerId;
             return this;
