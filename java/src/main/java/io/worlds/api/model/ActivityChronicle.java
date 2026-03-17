@@ -24,6 +24,7 @@ public class ActivityChronicle implements java.io.Serializable {
     private ChronicleValidation validation;
     private String priority;
     private String status;
+    private GeoJSONPoint position;
     private java.util.List<String> labels;
     private java.util.List<String> locations;
     @jakarta.validation.constraints.NotNull
@@ -43,7 +44,7 @@ public class ActivityChronicle implements java.io.Serializable {
     public ActivityChronicle() {
     }
 
-    public ActivityChronicle(String id, ChronicleProducer chronicleProducer, String name, String description, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, String timezone, java.lang.Object metadata, ChronicleValidation validation, String priority, String status, java.util.List<String> labels, java.util.List<String> locations, java.util.List<Image> images, java.util.List<DataSourceClip> dataSourceClips, java.util.List<Track> tracks, java.util.List<Site> sites, java.util.List<DataSource> dataSources, java.util.List<Tag> tags, java.util.List<PointOfInterest> pointsOfInterest, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt) {
+    public ActivityChronicle(String id, ChronicleProducer chronicleProducer, String name, String description, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, String timezone, java.lang.Object metadata, ChronicleValidation validation, String priority, String status, GeoJSONPoint position, java.util.List<String> labels, java.util.List<String> locations, java.util.List<Image> images, java.util.List<DataSourceClip> dataSourceClips, java.util.List<Track> tracks, java.util.List<Site> sites, java.util.List<DataSource> dataSources, java.util.List<Tag> tags, java.util.List<PointOfInterest> pointsOfInterest, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt) {
         this.id = id;
         this.chronicleProducer = chronicleProducer;
         this.name = name;
@@ -55,6 +56,7 @@ public class ActivityChronicle implements java.io.Serializable {
         this.validation = validation;
         this.priority = priority;
         this.status = status;
+        this.position = position;
         this.labels = labels;
         this.locations = locations;
         this.images = images;
@@ -209,6 +211,19 @@ public class ActivityChronicle implements java.io.Serializable {
      */
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    /**
+     * A GeoJSON point that represents the location of the activity in the world.
+     */
+    public GeoJSONPoint getPosition() {
+        return position;
+    }
+    /**
+     * A GeoJSON point that represents the location of the activity in the world.
+     */
+    public void setPosition(GeoJSONPoint position) {
+        this.position = position;
     }
 
     /**
@@ -374,6 +389,7 @@ public class ActivityChronicle implements java.io.Serializable {
             && Objects.equals(validation, that.validation)
             && Objects.equals(priority, that.priority)
             && Objects.equals(status, that.status)
+            && Objects.equals(position, that.position)
             && Objects.equals(labels, that.labels)
             && Objects.equals(locations, that.locations)
             && Objects.equals(images, that.images)
@@ -389,7 +405,7 @@ public class ActivityChronicle implements java.io.Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, chronicleProducer, name, description, startTime, endTime, timezone, metadata, validation, priority, status, labels, locations, images, dataSourceClips, tracks, sites, dataSources, tags, pointsOfInterest, createdAt, updatedAt);
+        return Objects.hash(id, chronicleProducer, name, description, startTime, endTime, timezone, metadata, validation, priority, status, position, labels, locations, images, dataSourceClips, tracks, sites, dataSources, tags, pointsOfInterest, createdAt, updatedAt);
     }
 
 
@@ -410,6 +426,7 @@ public class ActivityChronicle implements java.io.Serializable {
         private ChronicleValidation validation;
         private String priority;
         private String status;
+        private GeoJSONPoint position;
         private java.util.List<String> labels;
         private java.util.List<String> locations;
         private java.util.List<Image> images;
@@ -514,6 +531,14 @@ public class ActivityChronicle implements java.io.Serializable {
         }
 
         /**
+         * A GeoJSON point that represents the location of the activity in the world.
+         */
+        public Builder setPosition(GeoJSONPoint position) {
+            this.position = position;
+            return this;
+        }
+
+        /**
          * Human-readable labels describing the activity.
          */
         public Builder setLabels(java.util.List<String> labels) {
@@ -603,7 +628,7 @@ public class ActivityChronicle implements java.io.Serializable {
 
 
         public ActivityChronicle build() {
-            return new ActivityChronicle(id, chronicleProducer, name, description, startTime, endTime, timezone, metadata, validation, priority, status, labels, locations, images, dataSourceClips, tracks, sites, dataSources, tags, pointsOfInterest, createdAt, updatedAt);
+            return new ActivityChronicle(id, chronicleProducer, name, description, startTime, endTime, timezone, metadata, validation, priority, status, position, labels, locations, images, dataSourceClips, tracks, sites, dataSources, tags, pointsOfInterest, createdAt, updatedAt);
         }
 
     }

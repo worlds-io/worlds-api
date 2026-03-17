@@ -34,6 +34,11 @@ extend type Query {
         If provided, group the summary buckets by the provided grouping types.
         """
         eventsBucket: EventsSummaryBucketType
+        """
+        If provided, return metadata keys at this JSON path instead of root-level keys.
+        Useful for drilling down into nested metadata objects.
+        """
+        metadataKeysPath: [String!]
     ): EventsSummary
     """Summarizes videos over a time range."""
     videosSummary(
@@ -60,5 +65,36 @@ extend type Query {
         If provided, group the summary buckets by the provided grouping types.
         """
         activityChronicleBucket: ActivityChronicleSummaryBucketType
+        """
+        If provided, return metadata keys at this JSON path instead of root-level keys.
+        Useful for drilling down into nested metadata objects.
+        """
+        metadataKeysPath: [String!]
     ): ActivityChronicleSummary
+    """Summarizes zone intersections over a time range."""
+    zoneIntersectionSummary(
+        """Start time for the summary."""
+        startTime: DateTimeOffset!
+        """End time for the summary."""
+        endTime: DateTimeOffset!
+        """If provided, only summarize zone intersections matching the filter."""
+        filter: FilterZoneIntersectionSummaryInput
+        """
+        If provided, group the summary buckets by the provided grouping types.
+        """
+        zoneIntersectionBucket: ZoneIntersectionSummaryBucketType
+    ): ZoneIntersectionSummary
+    """Summarizes devices over a time range."""
+    deviceSummary(
+        """Start time for the summary."""
+        startTime: DateTimeOffset!
+        """End time for the summary."""
+        endTime: DateTimeOffset!
+        """If provided, only summarize devices matching the filter."""
+        filter: FilterDeviceSummaryInput
+        """
+        If provided, group the summary buckets by the provided grouping types.
+        """
+        deviceBucket: DeviceSummaryBucketType
+    ): DeviceSummary
 }

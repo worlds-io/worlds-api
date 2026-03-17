@@ -15,16 +15,20 @@ public class EventsSummaryBucket implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private EventsSummaryBucketKey key;
     private int total;
+    private int startedCount;
+    private int endedCount;
     @jakarta.validation.constraints.NotNull
     private EventsSummaryStatistics summaryStatistics;
 
     public EventsSummaryBucket() {
     }
 
-    public EventsSummaryBucket(java.time.OffsetDateTime time, EventsSummaryBucketKey key, int total, EventsSummaryStatistics summaryStatistics) {
+    public EventsSummaryBucket(java.time.OffsetDateTime time, EventsSummaryBucketKey key, int total, int startedCount, int endedCount, EventsSummaryStatistics summaryStatistics) {
         this.time = time;
         this.key = key;
         this.total = total;
+        this.startedCount = startedCount;
+        this.endedCount = endedCount;
         this.summaryStatistics = summaryStatistics;
     }
 
@@ -70,6 +74,32 @@ public class EventsSummaryBucket implements java.io.Serializable {
     }
 
     /**
+     * The number of events which started within the bucket.
+     */
+    public int getStartedCount() {
+        return startedCount;
+    }
+    /**
+     * The number of events which started within the bucket.
+     */
+    public void setStartedCount(int startedCount) {
+        this.startedCount = startedCount;
+    }
+
+    /**
+     * The number of events which ended within the bucket.
+     */
+    public int getEndedCount() {
+        return endedCount;
+    }
+    /**
+     * The number of events which ended within the bucket.
+     */
+    public void setEndedCount(int endedCount) {
+        this.endedCount = endedCount;
+    }
+
+    /**
      * Summary statistics for all events within the bucket.
      */
     public EventsSummaryStatistics getSummaryStatistics() {
@@ -94,12 +124,14 @@ public class EventsSummaryBucket implements java.io.Serializable {
         return Objects.equals(time, that.time)
             && Objects.equals(key, that.key)
             && Objects.equals(total, that.total)
+            && Objects.equals(startedCount, that.startedCount)
+            && Objects.equals(endedCount, that.endedCount)
             && Objects.equals(summaryStatistics, that.summaryStatistics);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(time, key, total, summaryStatistics);
+        return Objects.hash(time, key, total, startedCount, endedCount, summaryStatistics);
     }
 
 
@@ -112,6 +144,8 @@ public class EventsSummaryBucket implements java.io.Serializable {
         private java.time.OffsetDateTime time;
         private EventsSummaryBucketKey key;
         private int total;
+        private int startedCount;
+        private int endedCount;
         private EventsSummaryStatistics summaryStatistics;
 
         public Builder() {
@@ -143,6 +177,22 @@ public class EventsSummaryBucket implements java.io.Serializable {
         }
 
         /**
+         * The number of events which started within the bucket.
+         */
+        public Builder setStartedCount(int startedCount) {
+            this.startedCount = startedCount;
+            return this;
+        }
+
+        /**
+         * The number of events which ended within the bucket.
+         */
+        public Builder setEndedCount(int endedCount) {
+            this.endedCount = endedCount;
+            return this;
+        }
+
+        /**
          * Summary statistics for all events within the bucket.
          */
         public Builder setSummaryStatistics(EventsSummaryStatistics summaryStatistics) {
@@ -152,7 +202,7 @@ public class EventsSummaryBucket implements java.io.Serializable {
 
 
         public EventsSummaryBucket build() {
-            return new EventsSummaryBucket(time, key, total, summaryStatistics);
+            return new EventsSummaryBucket(time, key, total, startedCount, endedCount, summaryStatistics);
         }
 
     }

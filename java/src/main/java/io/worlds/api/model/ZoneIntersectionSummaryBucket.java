@@ -3,24 +3,24 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * Summary information for videos across a time range inside a given `VideosSummaryBucketType`.  Includes total count and the bucketed field values.
+ * Summary information for zone intersections across a time range inside a given `ZoneIntersectionSummaryBucketType`.  Includes total count and the bucketed field values.
  */
-public class VideosSummaryBucket implements java.io.Serializable {
+public class ZoneIntersectionSummaryBucket implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @jakarta.validation.constraints.NotNull
-    private VideosSummaryBucketKey key;
+    private ZoneIntersectionSummaryBucketKey key;
     private int total;
     private int startedCount;
     private int endedCount;
     @jakarta.validation.constraints.NotNull
-    private VideosSummaryStatistics summaryStatistics;
+    private ZoneIntersectionSummaryStatistics summaryStatistics;
 
-    public VideosSummaryBucket() {
+    public ZoneIntersectionSummaryBucket() {
     }
 
-    public VideosSummaryBucket(VideosSummaryBucketKey key, int total, int startedCount, int endedCount, VideosSummaryStatistics summaryStatistics) {
+    public ZoneIntersectionSummaryBucket(ZoneIntersectionSummaryBucketKey key, int total, int startedCount, int endedCount, ZoneIntersectionSummaryStatistics summaryStatistics) {
         this.key = key;
         this.total = total;
         this.startedCount = startedCount;
@@ -31,65 +31,65 @@ public class VideosSummaryBucket implements java.io.Serializable {
     /**
      * The key of the bucket.
      */
-    public VideosSummaryBucketKey getKey() {
+    public ZoneIntersectionSummaryBucketKey getKey() {
         return key;
     }
     /**
      * The key of the bucket.
      */
-    public void setKey(VideosSummaryBucketKey key) {
+    public void setKey(ZoneIntersectionSummaryBucketKey key) {
         this.key = key;
     }
 
     /**
-     * The total number of [Videos]({{Types.Video}}) within the bucket.
+     * The total number of zone intersections within the bucket.
      */
     public int getTotal() {
         return total;
     }
     /**
-     * The total number of [Videos]({{Types.Video}}) within the bucket.
+     * The total number of zone intersections within the bucket.
      */
     public void setTotal(int total) {
         this.total = total;
     }
 
     /**
-     * The number of videos which started in the bucket.
+     * The number of zone intersections which started within the bucket.
      */
     public int getStartedCount() {
         return startedCount;
     }
     /**
-     * The number of videos which started in the bucket.
+     * The number of zone intersections which started within the bucket.
      */
     public void setStartedCount(int startedCount) {
         this.startedCount = startedCount;
     }
 
     /**
-     * The number of videos which ended in the bucket.
+     * The number of zone intersections which ended within the bucket.
      */
     public int getEndedCount() {
         return endedCount;
     }
     /**
-     * The number of videos which ended in the bucket.
+     * The number of zone intersections which ended within the bucket.
      */
     public void setEndedCount(int endedCount) {
         this.endedCount = endedCount;
     }
 
     /**
-     * Summary statistics for all videos within the bucket.
+     * Summary statistics for all zone intersections within the bucket.
      */
-    public VideosSummaryStatistics getSummaryStatistics() {
+    public ZoneIntersectionSummaryStatistics getSummaryStatistics() {
         return summaryStatistics;
     }
     /**
-     * Summary statistics for all videos within the bucket.
+     * Summary statistics for all zone intersections within the bucket.
      */
-    public void setSummaryStatistics(VideosSummaryStatistics summaryStatistics) {
+    public void setSummaryStatistics(ZoneIntersectionSummaryStatistics summaryStatistics) {
         this.summaryStatistics = summaryStatistics;
     }
 
@@ -101,7 +101,7 @@ public class VideosSummaryBucket implements java.io.Serializable {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        final VideosSummaryBucket that = (VideosSummaryBucket) obj;
+        final ZoneIntersectionSummaryBucket that = (ZoneIntersectionSummaryBucket) obj;
         return Objects.equals(key, that.key)
             && Objects.equals(total, that.total)
             && Objects.equals(startedCount, that.startedCount)
@@ -115,17 +115,17 @@ public class VideosSummaryBucket implements java.io.Serializable {
     }
 
 
-    public static VideosSummaryBucket.Builder builder() {
-        return new VideosSummaryBucket.Builder();
+    public static ZoneIntersectionSummaryBucket.Builder builder() {
+        return new ZoneIntersectionSummaryBucket.Builder();
     }
 
     public static class Builder {
 
-        private VideosSummaryBucketKey key;
+        private ZoneIntersectionSummaryBucketKey key;
         private int total;
         private int startedCount;
         private int endedCount;
-        private VideosSummaryStatistics summaryStatistics;
+        private ZoneIntersectionSummaryStatistics summaryStatistics;
 
         public Builder() {
         }
@@ -133,13 +133,13 @@ public class VideosSummaryBucket implements java.io.Serializable {
         /**
          * The key of the bucket.
          */
-        public Builder setKey(VideosSummaryBucketKey key) {
+        public Builder setKey(ZoneIntersectionSummaryBucketKey key) {
             this.key = key;
             return this;
         }
 
         /**
-         * The total number of [Videos]({{Types.Video}}) within the bucket.
+         * The total number of zone intersections within the bucket.
          */
         public Builder setTotal(int total) {
             this.total = total;
@@ -147,7 +147,7 @@ public class VideosSummaryBucket implements java.io.Serializable {
         }
 
         /**
-         * The number of videos which started in the bucket.
+         * The number of zone intersections which started within the bucket.
          */
         public Builder setStartedCount(int startedCount) {
             this.startedCount = startedCount;
@@ -155,7 +155,7 @@ public class VideosSummaryBucket implements java.io.Serializable {
         }
 
         /**
-         * The number of videos which ended in the bucket.
+         * The number of zone intersections which ended within the bucket.
          */
         public Builder setEndedCount(int endedCount) {
             this.endedCount = endedCount;
@@ -163,16 +163,16 @@ public class VideosSummaryBucket implements java.io.Serializable {
         }
 
         /**
-         * Summary statistics for all videos within the bucket.
+         * Summary statistics for all zone intersections within the bucket.
          */
-        public Builder setSummaryStatistics(VideosSummaryStatistics summaryStatistics) {
+        public Builder setSummaryStatistics(ZoneIntersectionSummaryStatistics summaryStatistics) {
             this.summaryStatistics = summaryStatistics;
             return this;
         }
 
 
-        public VideosSummaryBucket build() {
-            return new VideosSummaryBucket(key, total, startedCount, endedCount, summaryStatistics);
+        public ZoneIntersectionSummaryBucket build() {
+            return new ZoneIntersectionSummaryBucket(key, total, startedCount, endedCount, summaryStatistics);
         }
 
     }

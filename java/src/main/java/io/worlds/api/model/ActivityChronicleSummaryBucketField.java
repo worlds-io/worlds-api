@@ -14,9 +14,25 @@ public enum ActivityChronicleSummaryBucketField {
      */
     STATUS("STATUS"),
     /**
-     * Bucket by the activity chronicle's chronicle producer Id
+     * Bucket by the activity chronicle's chronicle producer
      */
-    CHRONICLE_PRODUCER_ID("CHRONICLE_PRODUCER_ID");
+    CHRONICLE_PRODUCER("CHRONICLE_PRODUCER"),
+    /**
+     * Bucket by the activity chronicle's site
+     */
+    SITE("SITE"),
+    /**
+     * Bucket by the activity chronicle's data source
+     */
+    DATA_SOURCE("DATA_SOURCE"),
+    /**
+     * Bucket by the activity chronicle's validation status
+     */
+    VALIDATION_STATUS("VALIDATION_STATUS"),
+    /**
+     * Bucket by the activity chronicle's approval status
+     */
+    APPROVAL_STATUS("APPROVAL_STATUS");
 
     private final String graphqlName;
 

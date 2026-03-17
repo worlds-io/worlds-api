@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * Summary statistics for a `DateTimeDuration` input type.
+ * Summary statistics for a `DateTimeDuration` type.
  */
 public class DateTimeDurationSummaryStatistics implements java.io.Serializable {
 

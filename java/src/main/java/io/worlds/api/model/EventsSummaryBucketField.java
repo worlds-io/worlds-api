@@ -20,7 +20,15 @@ public enum EventsSummaryBucketField {
     /**
      * Bucket by the event's priority
      */
-    PRIORITY("PRIORITY");
+    PRIORITY("PRIORITY"),
+    /**
+     * Bucket by the event's draft status
+     */
+    DRAFT("DRAFT"),
+    /**
+     * Bucket by the event's validation status
+     */
+    VALIDATION_STATUS("VALIDATION_STATUS");
 
     private final String graphqlName;
 

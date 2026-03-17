@@ -10,17 +10,23 @@ public class ActivityChronicleSummary implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 
     private int total;
+    private int startedCount;
+    private int endedCount;
     @jakarta.validation.constraints.NotNull
     private ActivityChronicleSummaryStatistics summaryStatistics;
     private java.util.List<ActivityChronicleSummaryBucket> buckets;
+    private java.util.List<String> metadataKeys;
 
     public ActivityChronicleSummary() {
     }
 
-    public ActivityChronicleSummary(int total, ActivityChronicleSummaryStatistics summaryStatistics, java.util.List<ActivityChronicleSummaryBucket> buckets) {
+    public ActivityChronicleSummary(int total, int startedCount, int endedCount, ActivityChronicleSummaryStatistics summaryStatistics, java.util.List<ActivityChronicleSummaryBucket> buckets, java.util.List<String> metadataKeys) {
         this.total = total;
+        this.startedCount = startedCount;
+        this.endedCount = endedCount;
         this.summaryStatistics = summaryStatistics;
         this.buckets = buckets;
+        this.metadataKeys = metadataKeys;
     }
 
     /**
@@ -34,6 +40,32 @@ public class ActivityChronicleSummary implements java.io.Serializable {
      */
     public void setTotal(int total) {
         this.total = total;
+    }
+
+    /**
+     * The number of activity chronicles which started in the time range.
+     */
+    public int getStartedCount() {
+        return startedCount;
+    }
+    /**
+     * The number of activity chronicles which started in the time range.
+     */
+    public void setStartedCount(int startedCount) {
+        this.startedCount = startedCount;
+    }
+
+    /**
+     * The number of activity chronicles which ended in the time range.
+     */
+    public int getEndedCount() {
+        return endedCount;
+    }
+    /**
+     * The number of activity chronicles which ended in the time range.
+     */
+    public void setEndedCount(int endedCount) {
+        this.endedCount = endedCount;
     }
 
     /**
@@ -64,6 +96,21 @@ Summary buckets are only returned if `activityChronicleBucket` is provided as a 
         this.buckets = buckets;
     }
 
+    /**
+     * The distinct top-level keys found in the `metadata` field across all matching activity chronicles.
+Useful for discovering available metadata keys that can be used for metadata bucketing.
+     */
+    public java.util.List<String> getMetadataKeys() {
+        return metadataKeys;
+    }
+    /**
+     * The distinct top-level keys found in the `metadata` field across all matching activity chronicles.
+Useful for discovering available metadata keys that can be used for metadata bucketing.
+     */
+    public void setMetadataKeys(java.util.List<String> metadataKeys) {
+        this.metadataKeys = metadataKeys;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -74,13 +121,16 @@ Summary buckets are only returned if `activityChronicleBucket` is provided as a 
         }
         final ActivityChronicleSummary that = (ActivityChronicleSummary) obj;
         return Objects.equals(total, that.total)
+            && Objects.equals(startedCount, that.startedCount)
+            && Objects.equals(endedCount, that.endedCount)
             && Objects.equals(summaryStatistics, that.summaryStatistics)
-            && Objects.equals(buckets, that.buckets);
+            && Objects.equals(buckets, that.buckets)
+            && Objects.equals(metadataKeys, that.metadataKeys);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, summaryStatistics, buckets);
+        return Objects.hash(total, startedCount, endedCount, summaryStatistics, buckets, metadataKeys);
     }
 
 
@@ -91,8 +141,11 @@ Summary buckets are only returned if `activityChronicleBucket` is provided as a 
     public static class Builder {
 
         private int total;
+        private int startedCount;
+        private int endedCount;
         private ActivityChronicleSummaryStatistics summaryStatistics;
         private java.util.List<ActivityChronicleSummaryBucket> buckets;
+        private java.util.List<String> metadataKeys;
 
         public Builder() {
         }
@@ -102,6 +155,22 @@ Summary buckets are only returned if `activityChronicleBucket` is provided as a 
          */
         public Builder setTotal(int total) {
             this.total = total;
+            return this;
+        }
+
+        /**
+         * The number of activity chronicles which started in the time range.
+         */
+        public Builder setStartedCount(int startedCount) {
+            this.startedCount = startedCount;
+            return this;
+        }
+
+        /**
+         * The number of activity chronicles which ended in the time range.
+         */
+        public Builder setEndedCount(int endedCount) {
+            this.endedCount = endedCount;
             return this;
         }
 
@@ -122,9 +191,18 @@ Summary buckets are only returned if `activityChronicleBucket` is provided as a 
             return this;
         }
 
+        /**
+         * The distinct top-level keys found in the `metadata` field across all matching activity chronicles.
+Useful for discovering available metadata keys that can be used for metadata bucketing.
+         */
+        public Builder setMetadataKeys(java.util.List<String> metadataKeys) {
+            this.metadataKeys = metadataKeys;
+            return this;
+        }
+
 
         public ActivityChronicleSummary build() {
-            return new ActivityChronicleSummary(total, summaryStatistics, buckets);
+            return new ActivityChronicleSummary(total, startedCount, endedCount, summaryStatistics, buckets, metadataKeys);
         }
 
     }
