@@ -12,14 +12,16 @@ public class EventsSummaryBucketType implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 
     private org.springframework.graphql.data.ArgumentValue<SummaryBucketSize> size = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<BucketingStrategy> bucketingStrategy = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<EventsSummaryBucketField> fields;
     private java.util.List<JSONFieldStringBucket> metadata;
 
     public EventsSummaryBucketType() {
     }
 
-    public EventsSummaryBucketType(org.springframework.graphql.data.ArgumentValue<SummaryBucketSize> size, java.util.List<EventsSummaryBucketField> fields, java.util.List<JSONFieldStringBucket> metadata) {
+    public EventsSummaryBucketType(org.springframework.graphql.data.ArgumentValue<SummaryBucketSize> size, org.springframework.graphql.data.ArgumentValue<BucketingStrategy> bucketingStrategy, java.util.List<EventsSummaryBucketField> fields, java.util.List<JSONFieldStringBucket> metadata) {
         this.size = size;
+        this.bucketingStrategy = bucketingStrategy;
         this.fields = fields;
         this.metadata = metadata;
     }
@@ -29,6 +31,13 @@ public class EventsSummaryBucketType implements java.io.Serializable {
     }
     public void setSize(org.springframework.graphql.data.ArgumentValue<SummaryBucketSize> size) {
         this.size = size;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<BucketingStrategy> getBucketingStrategy() {
+        return bucketingStrategy;
+    }
+    public void setBucketingStrategy(org.springframework.graphql.data.ArgumentValue<BucketingStrategy> bucketingStrategy) {
+        this.bucketingStrategy = bucketingStrategy;
     }
 
     public java.util.List<EventsSummaryBucketField> getFields() {
@@ -55,13 +64,14 @@ public class EventsSummaryBucketType implements java.io.Serializable {
         }
         final EventsSummaryBucketType that = (EventsSummaryBucketType) obj;
         return Objects.equals(size, that.size)
+            && Objects.equals(bucketingStrategy, that.bucketingStrategy)
             && Objects.equals(fields, that.fields)
             && Objects.equals(metadata, that.metadata);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(size, fields, metadata);
+        return Objects.hash(size, bucketingStrategy, fields, metadata);
     }
 
 
@@ -72,6 +82,7 @@ public class EventsSummaryBucketType implements java.io.Serializable {
     public static class Builder {
 
         private org.springframework.graphql.data.ArgumentValue<SummaryBucketSize> size = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<BucketingStrategy> bucketingStrategy = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<EventsSummaryBucketField> fields;
         private java.util.List<JSONFieldStringBucket> metadata;
 
@@ -80,6 +91,11 @@ public class EventsSummaryBucketType implements java.io.Serializable {
 
         public Builder setSize(org.springframework.graphql.data.ArgumentValue<SummaryBucketSize> size) {
             this.size = size;
+            return this;
+        }
+
+        public Builder setBucketingStrategy(org.springframework.graphql.data.ArgumentValue<BucketingStrategy> bucketingStrategy) {
+            this.bucketingStrategy = bucketingStrategy;
             return this;
         }
 
@@ -95,7 +111,7 @@ public class EventsSummaryBucketType implements java.io.Serializable {
 
 
         public EventsSummaryBucketType build() {
-            return new EventsSummaryBucketType(size, fields, metadata);
+            return new EventsSummaryBucketType(size, bucketingStrategy, fields, metadata);
         }
 
     }
