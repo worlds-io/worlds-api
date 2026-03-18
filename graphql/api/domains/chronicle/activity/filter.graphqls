@@ -36,6 +36,10 @@ input FilterActivityChronicleInput @experimental {
     """
     validation: FilterChronicleValidationStatusInput
     """
+    If provided, specifies filters that work against the position of the [`ActivityChronicle`]({{Types.ActivityChronicle}}).
+    """
+    position: FilterPointInput
+    """
     If provided, specifies filters that work against the `labels` of the [`ActivityChronicle`]({{Types.ActivityChronicle}}).
     """
     labels: FilterStringListInput
