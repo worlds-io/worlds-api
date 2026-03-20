@@ -211,6 +211,8 @@ type ActivityChronicleSummaryStatistics {
 type ActivityChronicleSummaryBucketKey {
     """The start time of the summary bucket."""
     time: DateTimeOffset
+    """The name of the activity chronicles in the summary bucket."""
+    name: String
     """The `priority` of the activity chronicles in the summary bucket."""
     priority: String
     """The `status` of the activity chronicles in the summary bucket."""
@@ -221,6 +223,8 @@ type ActivityChronicleSummaryBucketKey {
     site: Site
     """The DataSource of the activity chronicles in the summary bucket."""
     dataSource: DataSource
+    """The label of the activity chronicles in the summary bucket."""
+    label: String
     """The `validationStatus` of the activity chronicles in the summary bucket."""
     validationStatus: String
     """The `approvalStatus` of the activity chronicles in the summary bucket."""

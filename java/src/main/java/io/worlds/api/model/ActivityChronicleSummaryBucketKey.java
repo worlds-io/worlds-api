@@ -10,11 +10,13 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 
     private java.time.OffsetDateTime time;
+    private String name;
     private String priority;
     private String status;
     private ChronicleProducer chronicleProducer;
     private Site site;
     private DataSource dataSource;
+    private String label;
     private String validationStatus;
     private String approvalStatus;
     private java.util.List<JSONFieldBucketKey> metadata;
@@ -22,13 +24,15 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
     public ActivityChronicleSummaryBucketKey() {
     }
 
-    public ActivityChronicleSummaryBucketKey(java.time.OffsetDateTime time, String priority, String status, ChronicleProducer chronicleProducer, Site site, DataSource dataSource, String validationStatus, String approvalStatus, java.util.List<JSONFieldBucketKey> metadata) {
+    public ActivityChronicleSummaryBucketKey(java.time.OffsetDateTime time, String name, String priority, String status, ChronicleProducer chronicleProducer, Site site, DataSource dataSource, String label, String validationStatus, String approvalStatus, java.util.List<JSONFieldBucketKey> metadata) {
         this.time = time;
+        this.name = name;
         this.priority = priority;
         this.status = status;
         this.chronicleProducer = chronicleProducer;
         this.site = site;
         this.dataSource = dataSource;
+        this.label = label;
         this.validationStatus = validationStatus;
         this.approvalStatus = approvalStatus;
         this.metadata = metadata;
@@ -45,6 +49,19 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
      */
     public void setTime(java.time.OffsetDateTime time) {
         this.time = time;
+    }
+
+    /**
+     * The name of the activity chronicles in the summary bucket.
+     */
+    public String getName() {
+        return name;
+    }
+    /**
+     * The name of the activity chronicles in the summary bucket.
+     */
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**
@@ -113,6 +130,19 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
     }
 
     /**
+     * The label of the activity chronicles in the summary bucket.
+     */
+    public String getLabel() {
+        return label;
+    }
+    /**
+     * The label of the activity chronicles in the summary bucket.
+     */
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    /**
      * The `validationStatus` of the activity chronicles in the summary bucket.
      */
     public String getValidationStatus() {
@@ -161,11 +191,13 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
         }
         final ActivityChronicleSummaryBucketKey that = (ActivityChronicleSummaryBucketKey) obj;
         return Objects.equals(time, that.time)
+            && Objects.equals(name, that.name)
             && Objects.equals(priority, that.priority)
             && Objects.equals(status, that.status)
             && Objects.equals(chronicleProducer, that.chronicleProducer)
             && Objects.equals(site, that.site)
             && Objects.equals(dataSource, that.dataSource)
+            && Objects.equals(label, that.label)
             && Objects.equals(validationStatus, that.validationStatus)
             && Objects.equals(approvalStatus, that.approvalStatus)
             && Objects.equals(metadata, that.metadata);
@@ -173,7 +205,7 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(time, priority, status, chronicleProducer, site, dataSource, validationStatus, approvalStatus, metadata);
+        return Objects.hash(time, name, priority, status, chronicleProducer, site, dataSource, label, validationStatus, approvalStatus, metadata);
     }
 
 
@@ -184,11 +216,13 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
     public static class Builder {
 
         private java.time.OffsetDateTime time;
+        private String name;
         private String priority;
         private String status;
         private ChronicleProducer chronicleProducer;
         private Site site;
         private DataSource dataSource;
+        private String label;
         private String validationStatus;
         private String approvalStatus;
         private java.util.List<JSONFieldBucketKey> metadata;
@@ -201,6 +235,14 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
          */
         public Builder setTime(java.time.OffsetDateTime time) {
             this.time = time;
+            return this;
+        }
+
+        /**
+         * The name of the activity chronicles in the summary bucket.
+         */
+        public Builder setName(String name) {
+            this.name = name;
             return this;
         }
 
@@ -245,6 +287,14 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
         }
 
         /**
+         * The label of the activity chronicles in the summary bucket.
+         */
+        public Builder setLabel(String label) {
+            this.label = label;
+            return this;
+        }
+
+        /**
          * The `validationStatus` of the activity chronicles in the summary bucket.
          */
         public Builder setValidationStatus(String validationStatus) {
@@ -270,7 +320,7 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
 
 
         public ActivityChronicleSummaryBucketKey build() {
-            return new ActivityChronicleSummaryBucketKey(time, priority, status, chronicleProducer, site, dataSource, validationStatus, approvalStatus, metadata);
+            return new ActivityChronicleSummaryBucketKey(time, name, priority, status, chronicleProducer, site, dataSource, label, validationStatus, approvalStatus, metadata);
         }
 
     }

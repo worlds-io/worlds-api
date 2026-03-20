@@ -96,6 +96,10 @@ input FilterActivityChronicleSummaryInput {
     """
     siteIds: FilterIDListInput
     """
+    If provided, specifies filters that work against the labels of the activity.
+    """
+    labels: FilterStringListInput
+    """
     If provided, specifies filters that work against the priority of the activity.
     """
     priority: FilterStringInput
