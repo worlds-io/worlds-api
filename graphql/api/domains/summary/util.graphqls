@@ -18,6 +18,16 @@ enum SummaryBucketSize {
     DAYS
 }
 
+"""Indicates how to bucket objects.  In buckets, `total` count will differ by the bucketing strategy."""
+enum BucketingStrategy {
+    """Bucket into all buckets where the object was active.  With this strategy, an object may be present in multiple time buckets."""
+    ACTIVE
+    """Bucket into the bucket where the object ended. `total` will be equal to `startedCount`. `endedCount` will return as 0."""
+    STARTED
+    """Bucket into the bucket where the object ended. `total` will be equal to `endedCount`. `startedCount` will return as 0."""
+    ENDED
+}
+
 """
 Request to bucket by string data at a specified JSON path.
 If no data exists at the path, it will be treated as null.
@@ -51,6 +61,8 @@ If multiple fields are provided, the buckets will be sorted by time, then fields
 input TracksSummaryBucketType {
     """If provided, group the summary buckets by time buckets of the provided size."""
     size: SummaryBucketSize
+    """How to bucket tracks.  Defaults to `ACTIVE`."""
+    bucketingStrategy: BucketingStrategy
     """If provided, group the summary buckets by the values of the provided fields."""
     fields: [TracksSummaryBucketField!]
 }
@@ -79,6 +91,8 @@ If multiple fields are provided, the buckets will be sorted by time, then fields
 input EventsSummaryBucketType {
     """If provided, group the summary buckets by time buckets of the provided size."""
     size: SummaryBucketSize
+    """How to bucket event summaries.  Defaults to `ACTIVE`."""
+    bucketingStrategy: BucketingStrategy
     """If provided, group the summary buckets by the values of the provided fields."""
     fields: [EventsSummaryBucketField!]
     """If provided, group the summary buckets by the values of the provided metadata fields."""
@@ -127,6 +141,8 @@ If multiple fields are provided, the buckets will be sorted by time, then fields
 input ActivityChronicleSummaryBucketType {
     """If provided, group the summary buckets by time buckets of the provided size."""
     size: SummaryBucketSize
+    """How to bucket activity chronicles.  Defaults to `ACTIVE`."""
+    bucketingStrategy: BucketingStrategy
     """If provided, group the summary buckets by the values of the provided fields."""
     fields: [ActivityChronicleSummaryBucketField!]
     """If provided, group the summary buckets by the values of the provided metadata fields."""
@@ -151,6 +167,8 @@ If multiple fields are provided, the buckets will be sorted by time, then fields
 input ZoneIntersectionSummaryBucketType {
     """If provided, group the summary buckets by time buckets of the provided size."""
     size: SummaryBucketSize
+    """How to bucket zone intersections.  Defaults to `ACTIVE`."""
+    bucketingStrategy: BucketingStrategy
     """If provided, group the summary buckets by the values of the provided fields."""
     fields: [ZoneIntersectionSummaryBucketField!]
 }
