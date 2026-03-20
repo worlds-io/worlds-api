@@ -52,13 +52,13 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
     }
 
     /**
-     * The label of the activity chronicles in the summary bucket.
+     * The name of the activity chronicles in the summary bucket.
      */
     public String getName() {
         return name;
     }
     /**
-     * The label of the activity chronicles in the summary bucket.
+     * The name of the activity chronicles in the summary bucket.
      */
     public void setName(String name) {
         this.name = name;
@@ -239,7 +239,7 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
         }
 
         /**
-         * The label of the activity chronicles in the summary bucket.
+         * The name of the activity chronicles in the summary bucket.
          */
         public Builder setName(String name) {
             this.name = name;
