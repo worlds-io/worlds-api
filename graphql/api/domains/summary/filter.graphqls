@@ -84,6 +84,10 @@ input FilterActivityChronicleSummaryInput {
     """
     name: FilterStringInput
     """
+    If provided, specifies filters that work against the description of the activity.
+    """
+    description: FilterStringInput
+    """
     If provided, specifies filters that work against the chronicle producer ID of the activity.
     """
     chronicleProducerId: FilterIDInput

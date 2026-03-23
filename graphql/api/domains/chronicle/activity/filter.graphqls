@@ -12,6 +12,10 @@ input FilterActivityChronicleInput @experimental {
     """
     name: FilterStringInput
     """
+    If provided, specifies filters that work against the `description` of the [`ActivityChronicle`]({{Types.ActivityChronicle}}).
+    """
+    description: FilterStringInput
+    """
     If provided, specifies filters that work against the `startTime` of the [`ActivityChronicle`]({{Types.ActivityChronicle}}).
     """
     startTime: FilterDateTimeOffsetInput

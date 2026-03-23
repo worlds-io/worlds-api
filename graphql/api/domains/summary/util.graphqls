@@ -119,6 +119,8 @@ input VideosSummaryBucketType {
 enum ActivityChronicleSummaryBucketField {
     """Bucket by the activity chronicle's name"""
     NAME
+    """Bucket by the activity chronicle's description"""
+    DESCRIPTION
     """Bucket by the activity chronicle's priority"""
     PRIORITY
     """Bucket by the activity chronicle's status"""
