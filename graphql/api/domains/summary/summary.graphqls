@@ -213,6 +213,8 @@ type ActivityChronicleSummaryBucketKey {
     time: DateTimeOffset
     """The name of the activity chronicles in the summary bucket."""
     name: String
+    """The description of the activity chronicles in the summary bucket."""
+    description: String
     """The `priority` of the activity chronicles in the summary bucket."""
     priority: String
     """The `status` of the activity chronicles in the summary bucket."""

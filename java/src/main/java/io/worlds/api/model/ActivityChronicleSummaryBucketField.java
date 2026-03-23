@@ -10,6 +10,10 @@ public enum ActivityChronicleSummaryBucketField {
      */
     NAME("NAME"),
     /**
+     * Bucket by the activity chronicle's description
+     */
+    DESCRIPTION("DESCRIPTION"),
+    /**
      * Bucket by the activity chronicle's priority
      */
     PRIORITY("PRIORITY"),

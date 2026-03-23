@@ -11,6 +11,7 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
 
     private java.time.OffsetDateTime time;
     private String name;
+    private String description;
     private String priority;
     private String status;
     private ChronicleProducer chronicleProducer;
@@ -24,9 +25,10 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
     public ActivityChronicleSummaryBucketKey() {
     }
 
-    public ActivityChronicleSummaryBucketKey(java.time.OffsetDateTime time, String name, String priority, String status, ChronicleProducer chronicleProducer, Site site, DataSource dataSource, String label, String validationStatus, String approvalStatus, java.util.List<JSONFieldBucketKey> metadata) {
+    public ActivityChronicleSummaryBucketKey(java.time.OffsetDateTime time, String name, String description, String priority, String status, ChronicleProducer chronicleProducer, Site site, DataSource dataSource, String label, String validationStatus, String approvalStatus, java.util.List<JSONFieldBucketKey> metadata) {
         this.time = time;
         this.name = name;
+        this.description = description;
         this.priority = priority;
         this.status = status;
         this.chronicleProducer = chronicleProducer;
@@ -62,6 +64,19 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
      */
     public void setName(String name) {
         this.name = name;
+    }
+
+    /**
+     * The description of the activity chronicles in the summary bucket.
+     */
+    public String getDescription() {
+        return description;
+    }
+    /**
+     * The description of the activity chronicles in the summary bucket.
+     */
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     /**
@@ -192,6 +207,7 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
         final ActivityChronicleSummaryBucketKey that = (ActivityChronicleSummaryBucketKey) obj;
         return Objects.equals(time, that.time)
             && Objects.equals(name, that.name)
+            && Objects.equals(description, that.description)
             && Objects.equals(priority, that.priority)
             && Objects.equals(status, that.status)
             && Objects.equals(chronicleProducer, that.chronicleProducer)
@@ -205,7 +221,7 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(time, name, priority, status, chronicleProducer, site, dataSource, label, validationStatus, approvalStatus, metadata);
+        return Objects.hash(time, name, description, priority, status, chronicleProducer, site, dataSource, label, validationStatus, approvalStatus, metadata);
     }
 
 
@@ -217,6 +233,7 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
 
         private java.time.OffsetDateTime time;
         private String name;
+        private String description;
         private String priority;
         private String status;
         private ChronicleProducer chronicleProducer;
@@ -243,6 +260,14 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
          */
         public Builder setName(String name) {
             this.name = name;
+            return this;
+        }
+
+        /**
+         * The description of the activity chronicles in the summary bucket.
+         */
+        public Builder setDescription(String description) {
+            this.description = description;
             return this;
         }
 
@@ -320,7 +345,7 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
 
 
         public ActivityChronicleSummaryBucketKey build() {
-            return new ActivityChronicleSummaryBucketKey(time, name, priority, status, chronicleProducer, site, dataSource, label, validationStatus, approvalStatus, metadata);
+            return new ActivityChronicleSummaryBucketKey(time, name, description, priority, status, chronicleProducer, site, dataSource, label, validationStatus, approvalStatus, metadata);
         }
 
     }
