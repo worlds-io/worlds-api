@@ -2,7 +2,7 @@
 FilterActivityChronicleInput filters [ActivityChronicles]({{Types.ActivityChronicle}}) based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
 """
-input FilterActivityChronicleInput @experimental {
+input FilterActivityChronicleInput {
     """
     If provided, specifies filters that work against the `id` of the [`ActivityChronicle`]({{Types.ActivityChronicle}}).
     """

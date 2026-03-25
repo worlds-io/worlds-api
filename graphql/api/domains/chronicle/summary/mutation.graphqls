@@ -5,10 +5,10 @@ extend type Mutation {
     createSummaryChronicle(
         """Arguments to create a new summary chronicle."""
         summaryChronicle: CreateSummaryChronicleInput!
-    ): SummaryChronicle! @experimental
+    ): SummaryChronicle!
     """Updates an existing [Summary Chronicle]({{Types.SummaryChronicle}})."""
     updateSummaryChronicle(
         """Arguments to update an existing summary chronicle."""
         summaryChronicle: UpdateSummaryChronicleInput!
-    ): SummaryChronicle! @experimental
+    ): SummaryChronicle!
 }

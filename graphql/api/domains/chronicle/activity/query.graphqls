@@ -1,7 +1,7 @@
 """
 Indicates the field used for sorting an [`activityChronicles` query]({{Queries.activityChronicles}}).
 """
-enum ActivityChronicleSortField @experimental {
+enum ActivityChronicleSortField {
     """
     Sort the resulting list by the [`activityChronicle`]({{Types.ActivityChronicle}})'s unique identifier.
     """
@@ -31,7 +31,7 @@ enum ActivityChronicleSortField @experimental {
 """
 Indicates the field used for sorting an [`activityChronicles` query]({{Queries.activityChronicles}}).
 """
-input ActivityChronicleSort @experimental {
+input ActivityChronicleSort {
     """
     Any sortable field available to the ActivityChroniclesSortField. See the link to the
     type below for more details.
@@ -46,7 +46,7 @@ extend type Query {
     activityChronicle(
         """The activity's unique identifier."""
         id: ID!
-    ): ActivityChronicle @experimental
+    ): ActivityChronicle
     """Search for activities based on a set of filters."""
     activityChronicles(
         """Filter activities by unique identifier, type, time, etc."""
@@ -57,5 +57,5 @@ extend type Query {
         after: String,
         """The field and direction by which to sort the results"""
         sort: [ActivityChronicleSort!]! = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]
-    ): ActivityChronicleConnection @experimental
+    ): ActivityChronicleConnection
 }

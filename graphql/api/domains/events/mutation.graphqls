@@ -3,24 +3,24 @@ extend type Mutation {
     createEventProducer(
         """Arguments to create a new event producer."""
         eventProducer: EventProducerInput!
-    ): EventProducer
+    ): EventProducer @deprecated(reason: "Use the Chronicles API instead. See `createChronicleProducer` mutation.")
     """
     Updates an existing EventProducer.
     """
     updateEventProducer(
         """Arguments to update an existing event producer."""
         eventProducer: UpdateEventProducerInput!
-    ): EventProducer
+    ): EventProducer @deprecated(reason: "Use the Chronicles API instead. See `updateChronicleProducer` mutation.")
     """
     Creates a new Event. This allows for the creation of custom events within the Worlds system.
     """
     createEvent(
         """Arguments to create a new event."""
         event: CreateEventInput!
-    ): Event
+    ): Event @deprecated(reason: "Use the Chronicles API instead. See `createActivityChronicle`, `createEventChronicle`, or `createSummaryChronicle` mutations.")
     """Updates an existing Event."""
     updateEvent(
         """Arguments to update an existing event."""
         event: UpdateEventInput!
-    ): Event
+    ): Event @deprecated(reason: "Use the Chronicles API instead. See `updateActivityChronicle`, `updateEventChronicle`, or `updateSummaryChronicle` mutations.")
 }

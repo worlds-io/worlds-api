@@ -7,5 +7,5 @@ extend type Subscription {
         Filter events by unique identifier of the event producer or type of event, etc.
         """
         filter: FilterEventActivityInput
-    ): Event
+    ): Event @deprecated(reason: "Use the Chronicles API instead. See `activityChronicles`, `eventChronicles`, or `summaryChronicles` subscriptions.")
 }

@@ -1,7 +1,7 @@
 """
 Indicates the field used for sorting an [`eventChronicles` query]({{Queries.eventChronicles}}).
 """
-enum EventChronicleSortField @experimental {
+enum EventChronicleSortField {
     """
     Sort the resulting list by the [`eventChronicle`]({{Types.EventChronicle}})'s unique identifier.
     """
@@ -27,7 +27,7 @@ enum EventChronicleSortField @experimental {
 """
 Indicates the field used for sorting an [`eventChronicles` query]({{Queries.eventChronicles}}).
 """
-input EventChronicleSort @experimental {
+input EventChronicleSort {
     """
     Any sortable field available to the EventChroniclesSortField. See the link to the
     type below for more details.
@@ -42,7 +42,7 @@ extend type Query {
     eventChronicle(
         """The event's unique identifier."""
         id: ID!
-    ): EventChronicle @experimental
+    ): EventChronicle
     """Search for events based on a set of filters."""
     eventChronicles(
         """Filter events by unique identifier, type, time, etc."""
@@ -53,5 +53,5 @@ extend type Query {
         after: String,
         """The field and direction by which to sort the results"""
         sort: [EventChronicleSort!]! = [{field: TIMESTAMP, direction: ASC}, {field: ID, direction: ASC}]
-    ): EventChronicleConnection @experimental
+    ): EventChronicleConnection
 }

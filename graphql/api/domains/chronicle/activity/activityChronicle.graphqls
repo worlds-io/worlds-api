@@ -1,7 +1,7 @@
 """
 An activity chronicle represents behavior which occurs over a period of time.
 """
-type ActivityChronicle @experimental {
+type ActivityChronicle {
     """The unique identifier for the activity."""
     id: ID!
     """The chronicle producer that created the activity."""
@@ -53,7 +53,7 @@ type ActivityChronicle @experimental {
 """
 This input type is used to create a new [`ActivityChronicle`]({{Types.ActivityChronicle}}).
 """
-input CreateActivityChronicleInput @experimental {
+input CreateActivityChronicleInput {
     """The chronicle producer that owns the activity."""
     name: String!
     """The name of the activity"""
@@ -99,7 +99,7 @@ input CreateActivityChronicleInput @experimental {
 """
 This input type is used to update an existing [`ActivityChronicle`]({{Types.ActivityChronicle}}).
 """
-input UpdateActivityChronicleInput @experimental {
+input UpdateActivityChronicleInput {
     """The unique identifier of activity."""
     id: ID!
     """The name of the activity"""

@@ -3,12 +3,12 @@ extend type Mutation {
     createChronicleProducer(
         """Arguments to create a new chronicle producer."""
         chronicleProducer: CreateChronicleProducerInput!
-    ): ChronicleProducer! @experimental
+    ): ChronicleProducer!
     """
     Updates an existing ChronicleProducer.
     """
     updateChronicleProducer(
         """Arguments to update an existing chronicle producer."""
         chronicleProducer: UpdateChronicleProducerInput!
-    ): ChronicleProducer! @experimental
+    ): ChronicleProducer!
 }
