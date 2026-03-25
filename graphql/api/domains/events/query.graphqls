@@ -55,7 +55,7 @@ extend type Query {
     eventProducer(
         """The event producer's unique identifier."""
         id: ID!
-    ): EventProducer
+    ): EventProducer @deprecated(reason: "Use the Chronicles API instead. See `chronicleProducer` query.")
     """Search for event producers based on a set of filters."""
     eventProducers(
         """Filter event producers by unique identifier or name"""
@@ -66,12 +66,12 @@ extend type Query {
         after: String
         """The field and direction by which to sort the results"""
         sort: [EventProducersSort!]! = [{field: EVENT_PRODUCER_NAME, direction: ASC}, {field: ID, direction: ASC}]
-    ): EventProducerConnection
+    ): EventProducerConnection @deprecated(reason: "Use the Chronicles API instead. See `chronicleProducers` query.")
     """Look up an event by its unique identifier."""
     event(
         """The event's unique identifier."""
         id: ID!
-    ): Event
+    ): Event @deprecated(reason: "Use the Chronicles API instead. See `activityChronicle`, `eventChronicle`, or `summaryChronicle` queries.")
     """Search for events based on a set of filters."""
     events(
         """Filter events by unique identifier, type, time, etc."""
@@ -82,5 +82,5 @@ extend type Query {
         after: String
         """The field and direction by which to sort the results"""
         sort: [EventsSort!]! = [{field: START_TIME, direction: ASC}, {field: ID, direction: ASC}]
-    ): EventConnection
+    ): EventConnection @deprecated(reason: "Use the Chronicles API instead. See `activityChronicles`, `eventChronicles`, or `summaryChronicles` queries.")
 }

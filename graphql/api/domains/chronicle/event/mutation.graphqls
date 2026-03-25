@@ -5,10 +5,10 @@ extend type Mutation {
     createEventChronicle(
         """Arguments to create a new event chronicle."""
         eventChronicle: CreateEventChronicleInput!
-    ): EventChronicle! @experimental
+    ): EventChronicle!
     """Updates an existing [Event Chronicle]({{Types.EventChronicle}})."""
     updateEventChronicle(
         """Arguments to update an existing event chronicle."""
         eventChronicle: UpdateEventChronicleInput!
-    ): EventChronicle! @experimental
+    ): EventChronicle!
 }

@@ -1,7 +1,7 @@
 """
 Indicates the field used for sorting an [`chronicleProducers` query]({{Queries.chronicleProducers}}).
 """
-enum ChronicleProducersSortField @experimental {
+enum ChronicleProducersSortField {
     """
     Sort the resulting list by the [`ChronicleProducer`]({{Types.ChronicleProducer}})'s unique identifier.
     """
@@ -15,7 +15,7 @@ enum ChronicleProducersSortField @experimental {
 """
 ChronicleProducersSort allows for sorting an chronicle producer by a sort field and direction.
 """
-input ChronicleProducersSort @experimental {
+input ChronicleProducersSort {
     """
     Any sortable field available to the ChronicleProducersSortField. See the link to the
     type below for more details.
@@ -30,7 +30,7 @@ extend type Query {
     chronicleProducer(
         """The chronicle producer's unique identifier."""
         id: ID!
-    ): ChronicleProducer @experimental
+    ): ChronicleProducer
     """Search for chronicle producers based on a set of filters."""
     chronicleProducers(
         """Filter chronicle producers by unique identifier or name"""
@@ -41,5 +41,5 @@ extend type Query {
         after: String,
         """The field and direction by which to sort the results"""
         sort: [ChronicleProducersSort!]! = [{field: NAME, direction: ASC}, {field: ID, direction: ASC}]
-    ): ChronicleProducerConnection @experimental
+    ): ChronicleProducerConnection
 }

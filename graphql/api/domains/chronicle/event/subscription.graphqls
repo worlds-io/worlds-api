@@ -2,7 +2,7 @@
 FilterEventChronicleInput filters [EventChronicles]({{Types.EventChronicle}}) based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
 """
-input FilterEventChronicleInputSubscription @experimental {
+input FilterEventChronicleInputSubscription {
     """
     If provided, specifies filters that work against the `id` of the [`EventChronicle`]({{Types.EventChronicle}}).
     """
@@ -66,5 +66,5 @@ extend type Subscription {
         Filter events by unique identifier of the event producer or type of event, etc.
         """
         filter: FilterEventChronicleInputSubscription
-    ): EventChronicle! @experimental
+    ): EventChronicle!
 }

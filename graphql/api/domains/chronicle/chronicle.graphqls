@@ -1,7 +1,7 @@
 """
 Used in [ChronicleValidationInput]({{Types.ChronicleValidationInput}}) to indicate whether an chronicle is `VALID` or `INVALID`.
 """
-enum ChronicleValidationStatus @experimental {
+enum ChronicleValidationStatus {
     """The chronicle is valid."""
     VALID
     """The chronicle is invalid."""
@@ -11,7 +11,7 @@ enum ChronicleValidationStatus @experimental {
 """
 This input type indicates whether an chronicle is valid and contains additional information about the validation.
 """
-type ChronicleValidation @experimental {
+type ChronicleValidation {
     """Whether the chronicle is `VALID` or `INVALID`."""
     status: ChronicleValidationStatus!
     """
@@ -30,7 +30,7 @@ detections and geofences. For instance, an chronicle producer could track detect
 hazards and people, creating an event chronicle for each case where a person was too close
 to a hazard without personal protective equipment.
 """
-type ChronicleProducer @experimental {
+type ChronicleProducer {
     """The unique identifier for the chronicle producer."""
     id: ID!
     """The name of the chronicle producer."""
@@ -50,7 +50,7 @@ type ChronicleProducer @experimental {
 """
 This input type is used to create a new custom [`ChronicleProducer`]({{Types.ChronicleProducer}}).
 """
-input CreateChronicleProducerInput @experimental {
+input CreateChronicleProducerInput {
     """The name of the chronicle producer."""
     name: String!
     """The text description of the chronicle producer."""
@@ -70,7 +70,7 @@ input CreateChronicleProducerInput @experimental {
 """
 This input type is used to update an existing [`ChronicleProducer`]({{Types.ChronicleProducer}}).
 """
-input UpdateChronicleProducerInput @experimental {
+input UpdateChronicleProducerInput {
     """The unique identifier for the chronicle producer."""
     id: ID!
     """The name of the chronicle producer."""
@@ -90,7 +90,7 @@ input UpdateChronicleProducerInput @experimental {
 """
 This input type indicates whether an chronicle is valid and contains additional information about the validation.
 """
-input ChronicleValidationInput @experimental {
+input ChronicleValidationInput {
     """Whether the chronicle is `VALID` or `INVALID`."""
     status: ChronicleValidationStatus!
     """

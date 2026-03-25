@@ -1,7 +1,7 @@
 """
 An event chronicle represents an occurrence at a single point at time.
 """
-type EventChronicle @experimental {
+type EventChronicle {
     """The unique identifier for the event."""
     id: ID!
     """The chronicle producer that created the event."""
@@ -37,7 +37,7 @@ type EventChronicle @experimental {
 """
 This input type is used to create a new [`EventChronicle`]({{Types.EventChronicle}}).
 """
-input CreateEventChronicleInput @experimental {
+input CreateEventChronicleInput {
     """The name of the event"""
     name: String!
     """The event producer that owns the event."""
@@ -67,7 +67,7 @@ input CreateEventChronicleInput @experimental {
 """
 This input type is used to update an existing [`EventChronicle`]({{Types.EventChronicle}}).
 """
-input UpdateEventChronicleInput @experimental {
+input UpdateEventChronicleInput {
     """The unique identifier for the event."""
     id: ID!
     """The name of the event"""
