@@ -35,7 +35,7 @@ type ActivityChronicle {
     """Clips associated with the activity."""
     dataSourceClips: [DataSourceClip!]!
     """Tracks associated with the activity."""
-    tracks: [Track!]
+    tracks: [Track!] @experimental(reason: "trackIds cannot yet be directly associated to activityChronicles.  Use metadata if specific track information is required.")
     """Sites associated with the activity."""
     sites: [Site!]
     """Data Sources associated with the activity."""
@@ -85,7 +85,7 @@ input CreateActivityChronicleInput {
     """Requests to create clips associated with the activity."""
     clips: [CreateClipInput!]
     """IDs for tracks to associate with the activity."""
-    trackIds: [ID!]
+    trackIds: [ID!] @experimental(reason: "trackIds cannot yet be directly associated to activityChronicles.  Use metadata if specific track information is required.")
     """IDs for sites to associate with the activity."""
     siteIds: [ID!]
     """IDs for data sources to associate with the activity."""
@@ -131,7 +131,7 @@ input UpdateActivityChronicleInput {
     """Requests to create clips associated with the activity."""
     clips: [CreateClipInput!]
     """IDs for tracks to associate with the activity."""
-    trackIds: [ID!]
+    trackIds: [ID!] @experimental(reason: "trackIds cannot yet be directly associated to activityChronicles.  Use metadata if specific track information is required.")
     """IDs for sites to associate with the activity."""
     siteIds: [ID!]
     """IDs for data sources to associate with the activity."""
