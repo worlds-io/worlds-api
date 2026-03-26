@@ -6,6 +6,8 @@ type Site {
     id: ID!
     """The name of the site."""
     name: String!
+    """The IANA timezone identifier for this site (e.g. 'America/New_York', 'Europe/London', 'UTC')."""
+    timezone: String!
     """The geographic location of the site"""
     position: GeoJSONPoint
     """The geographic shape of the site"""
@@ -24,6 +26,8 @@ Input type used to create a new [Site]({{Types.Site}.
 input CreateSiteInput {
     """The name of the site."""
     name: String!
+    """The IANA timezone identifier for this site (e.g. 'America/New_York'). Defaults to 'UTC' if not provided."""
+    timezone: String
     """The geographic location of the site"""
     position: GeoJSONPointInput
     """The geographic shape of the site"""
@@ -38,6 +42,8 @@ input UpdateSiteInput {
     id: ID!
     """The name of the site."""
     name: String
+    """The IANA timezone identifier for this site (e.g. 'America/New_York')."""
+    timezone: String
     """The geographic location of the site"""
     position: GeoJSONPointInput
     """The geographic shape of the site"""
