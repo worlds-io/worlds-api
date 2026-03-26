@@ -6,7 +6,7 @@ type Site {
     id: ID!
     """The name of the site."""
     name: String!
-    """The IANA timezone identifier for this site (e.g. 'America/New_York', 'Europe/London', 'UTC')."""
+    """The IANA timezone identifier for this site (e.g. 'America/New_York', 'UTC')."""
     timezone: String!
     """The geographic location of the site"""
     position: GeoJSONPoint
