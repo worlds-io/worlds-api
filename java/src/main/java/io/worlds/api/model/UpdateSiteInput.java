@@ -12,15 +12,17 @@ public class UpdateSiteInput implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private String id;
     private org.springframework.graphql.data.ArgumentValue<String> name = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<String> timezone = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<GeoJSONMultiPolygonInput> polygon = org.springframework.graphql.data.ArgumentValue.omitted();
 
     public UpdateSiteInput() {
     }
 
-    public UpdateSiteInput(String id, org.springframework.graphql.data.ArgumentValue<String> name, org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position, org.springframework.graphql.data.ArgumentValue<GeoJSONMultiPolygonInput> polygon) {
+    public UpdateSiteInput(String id, org.springframework.graphql.data.ArgumentValue<String> name, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position, org.springframework.graphql.data.ArgumentValue<GeoJSONMultiPolygonInput> polygon) {
         this.id = id;
         this.name = name;
+        this.timezone = timezone;
         this.position = position;
         this.polygon = polygon;
     }
@@ -37,6 +39,13 @@ public class UpdateSiteInput implements java.io.Serializable {
     }
     public void setName(org.springframework.graphql.data.ArgumentValue<String> name) {
         this.name = name;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<String> getTimezone() {
+        return timezone;
+    }
+    public void setTimezone(org.springframework.graphql.data.ArgumentValue<String> timezone) {
+        this.timezone = timezone;
     }
 
     public org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> getPosition() {
@@ -64,13 +73,14 @@ public class UpdateSiteInput implements java.io.Serializable {
         final UpdateSiteInput that = (UpdateSiteInput) obj;
         return Objects.equals(id, that.id)
             && Objects.equals(name, that.name)
+            && Objects.equals(timezone, that.timezone)
             && Objects.equals(position, that.position)
             && Objects.equals(polygon, that.polygon);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, position, polygon);
+        return Objects.hash(id, name, timezone, position, polygon);
     }
 
 
@@ -82,6 +92,7 @@ public class UpdateSiteInput implements java.io.Serializable {
 
         private String id;
         private org.springframework.graphql.data.ArgumentValue<String> name = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<String> timezone = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<GeoJSONMultiPolygonInput> polygon = org.springframework.graphql.data.ArgumentValue.omitted();
 
@@ -98,6 +109,11 @@ public class UpdateSiteInput implements java.io.Serializable {
             return this;
         }
 
+        public Builder setTimezone(org.springframework.graphql.data.ArgumentValue<String> timezone) {
+            this.timezone = timezone;
+            return this;
+        }
+
         public Builder setPosition(org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position) {
             this.position = position;
             return this;
@@ -110,7 +126,7 @@ public class UpdateSiteInput implements java.io.Serializable {
 
 
         public UpdateSiteInput build() {
-            return new UpdateSiteInput(id, name, position, polygon);
+            return new UpdateSiteInput(id, name, timezone, position, polygon);
         }
 
     }
