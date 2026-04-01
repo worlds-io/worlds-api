@@ -65,13 +65,13 @@ public class Site implements java.io.Serializable, UnifiedSearchNameResponseEnti
     }
 
     /**
-     * The IANA timezone identifier for this site (e.g. 'America/New_York', 'Europe/London', 'UTC').
+     * The IANA timezone identifier for this site (e.g. 'America/New_York', 'UTC').
      */
     public String getTimezone() {
         return timezone;
     }
     /**
-     * The IANA timezone identifier for this site (e.g. 'America/New_York', 'Europe/London', 'UTC').
+     * The IANA timezone identifier for this site (e.g. 'America/New_York', 'UTC').
      */
     public void setTimezone(String timezone) {
         this.timezone = timezone;
@@ -202,7 +202,7 @@ public class Site implements java.io.Serializable, UnifiedSearchNameResponseEnti
         }
 
         /**
-         * The IANA timezone identifier for this site (e.g. 'America/New_York', 'Europe/London', 'UTC').
+         * The IANA timezone identifier for this site (e.g. 'America/New_York', 'UTC').
          */
         public Builder setTimezone(String timezone) {
             this.timezone = timezone;

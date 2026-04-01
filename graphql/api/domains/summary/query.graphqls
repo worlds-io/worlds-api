@@ -13,6 +13,8 @@ extend type Query {
         If provided, return [summary buckets]({{Types.TracksSummaryBucket}}) of this size.
         """
         bucket: SummaryBucketSize @deprecated(reason: "Bucket by `tracksBucket.size` instead.")
+        """How to bucket tracks.  Defaults to `ACTIVE`."""
+        bucketingStrategy: BucketingStrategy! = ACTIVE
         """
         If provided, group the summary buckets by the provided grouping types.
         """
@@ -30,6 +32,8 @@ extend type Query {
         If provided, return [summary buckets]({{Types.EventsSummaryBucket}}) of this size.
         """
         bucket: SummaryBucketSize @deprecated(reason: "Grouping by `buckets` is deprecated in favor of grouping by `eventsBucket`.  Use `eventsBucket.size` to group events by a `SummaryBucketSize`.")
+        """How to bucket events.  Defaults to `ACTIVE`."""
+        bucketingStrategy: BucketingStrategy! = ACTIVE
         """
         If provided, group the summary buckets by the provided grouping types.
         """
@@ -48,6 +52,8 @@ extend type Query {
         endTime: DateTimeOffset!
         """If provided, only summarize videos matching the filter."""
         filter: FilterVideosSummaryInput
+        """How to bucket videos.  Defaults to `ACTIVE`."""
+        bucketingStrategy: BucketingStrategy! = ACTIVE
         """
         If provided, group the summary buckets by the provided grouping types.
         """
@@ -61,6 +67,8 @@ extend type Query {
         endTime: DateTimeOffset!
         """If provided, only summarize activity chronicles matching the filter."""
         filter: FilterActivityChronicleSummaryInput
+        """How to bucket activity chronicles.  Defaults to `ACTIVE`."""
+        bucketingStrategy: BucketingStrategy! = ACTIVE
         """
         If provided, group the summary buckets by the provided grouping types.
         """
@@ -79,6 +87,8 @@ extend type Query {
         endTime: DateTimeOffset!
         """If provided, only summarize zone intersections matching the filter."""
         filter: FilterZoneIntersectionSummaryInput
+        """How to bucket zone intersections.  Defaults to `ACTIVE`."""
+        bucketingStrategy: BucketingStrategy! = ACTIVE
         """
         If provided, group the summary buckets by the provided grouping types.
         """
