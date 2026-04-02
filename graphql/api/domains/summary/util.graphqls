@@ -62,7 +62,7 @@ input TracksSummaryBucketType {
     """If provided, group the summary buckets by time buckets of the provided size."""
     size: SummaryBucketSize
     """How to bucket tracks.  Defaults to `ACTIVE`."""
-    bucketingStrategy: BucketingStrategy
+    bucketingStrategy: BucketingStrategy @deprecated(reason: "bucketingStrategy is deprecated on TracksSummaryBucketType.  Instead, use the query parameter for bucketingStrategy to specify for both top-level and bucketed results.  If this field is provided, it will overwrite the query parameter.")
     """If provided, group the summary buckets by the values of the provided fields."""
     fields: [TracksSummaryBucketField!]
 }
@@ -92,7 +92,7 @@ input EventsSummaryBucketType {
     """If provided, group the summary buckets by time buckets of the provided size."""
     size: SummaryBucketSize
     """How to bucket event summaries.  Defaults to `ACTIVE`."""
-    bucketingStrategy: BucketingStrategy
+    bucketingStrategy: BucketingStrategy @deprecated(reason: "bucketingStrategy is deprecated on EventsSummaryBucketType.  Instead, use the query parameter for bucketingStrategy to specify for both top-level and bucketed results.  If this field is provided, it will overwrite the query parameter.")
     """If provided, group the summary buckets by the values of the provided fields."""
     fields: [EventsSummaryBucketField!]
     """If provided, group the summary buckets by the values of the provided metadata fields."""
@@ -148,7 +148,7 @@ input ActivityChronicleSummaryBucketType {
     """If provided, group the summary buckets by time buckets of the provided size."""
     size: SummaryBucketSize
     """How to bucket activity chronicles.  Defaults to `ACTIVE`."""
-    bucketingStrategy: BucketingStrategy
+    bucketingStrategy: BucketingStrategy @deprecated(reason: "bucketingStrategy is deprecated on ActivityChronicleSummaryBucketType.  Instead, use the query parameter for bucketingStrategy to specify for both top-level and bucketed results.  If this field is provided, it will overwrite the query parameter.")
     """If provided, group the summary buckets by the values of the provided fields."""
     fields: [ActivityChronicleSummaryBucketField!]
     """If provided, group the summary buckets by the values of the provided metadata fields."""
@@ -174,7 +174,7 @@ input ZoneIntersectionSummaryBucketType {
     """If provided, group the summary buckets by time buckets of the provided size."""
     size: SummaryBucketSize
     """How to bucket zone intersections.  Defaults to `ACTIVE`."""
-    bucketingStrategy: BucketingStrategy
+    bucketingStrategy: BucketingStrategy @deprecated(reason: "bucketingStrategy is deprecated on ZoneIntersectionSummaryBucketType.  Instead, use the query parameter for bucketingStrategy to specify for both top-level and bucketed results.  If this field is provided, it will overwrite the query parameter.")
     """If provided, group the summary buckets by the values of the provided fields."""
     fields: [ZoneIntersectionSummaryBucketField!]
 }
