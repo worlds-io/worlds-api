@@ -8,9 +8,9 @@
  */
 package io.worlds.api.client;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.JsonNode;
+import tools.jackson.databind.ObjectMapper;
 import io.netty.handler.ssl.SslContextBuilder;
 import io.netty.handler.ssl.util.InsecureTrustManagerFactory;
 import java.net.URI;
@@ -157,7 +157,7 @@ public class WorldsGraphQLClient {
                                    onError.accept(new RuntimeException("Received null data in subscription response"));
                                    return;
                                }
-                               var contentField = dataNode.fieldNames().next();
+                               var contentField = dataNode.propertyNames().iterator().next();
                                if (contentField == null) {
                                    onError.accept(new RuntimeException("No content field found in subscription data"));
                                    return;
@@ -169,7 +169,7 @@ public class WorldsGraphQLClient {
                                }
                                T value = objectMapper.treeToValue(contentNode, type);
                                onMessage.accept(value);
-                           } catch (JsonProcessingException jpe) {
+                           } catch (JacksonException jpe) {
                                onError.accept(jpe);
                            }
                        }).subscribe();
