@@ -20,12 +20,13 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
     private String label;
     private String validationStatus;
     private String approvalStatus;
+    private GeoJSONPoint position;
     private java.util.List<JSONFieldBucketKey> metadata;
 
     public ActivityChronicleSummaryBucketKey() {
     }
 
-    public ActivityChronicleSummaryBucketKey(java.time.OffsetDateTime time, String name, String description, String priority, String status, ChronicleProducer chronicleProducer, Site site, DataSource dataSource, String label, String validationStatus, String approvalStatus, java.util.List<JSONFieldBucketKey> metadata) {
+    public ActivityChronicleSummaryBucketKey(java.time.OffsetDateTime time, String name, String description, String priority, String status, ChronicleProducer chronicleProducer, Site site, DataSource dataSource, String label, String validationStatus, String approvalStatus, GeoJSONPoint position, java.util.List<JSONFieldBucketKey> metadata) {
         this.time = time;
         this.name = name;
         this.description = description;
@@ -37,6 +38,7 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
         this.label = label;
         this.validationStatus = validationStatus;
         this.approvalStatus = approvalStatus;
+        this.position = position;
         this.metadata = metadata;
     }
 
@@ -184,6 +186,19 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
     }
 
     /**
+     * The approximate centroid of the H3 cell for position-bucketed results.
+     */
+    public GeoJSONPoint getPosition() {
+        return position;
+    }
+    /**
+     * The approximate centroid of the H3 cell for position-bucketed results.
+     */
+    public void setPosition(GeoJSONPoint position) {
+        this.position = position;
+    }
+
+    /**
      * The metadata values of the activity chronicles in the summary bucket.
      */
     public java.util.List<JSONFieldBucketKey> getMetadata() {
@@ -216,12 +231,13 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
             && Objects.equals(label, that.label)
             && Objects.equals(validationStatus, that.validationStatus)
             && Objects.equals(approvalStatus, that.approvalStatus)
+            && Objects.equals(position, that.position)
             && Objects.equals(metadata, that.metadata);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(time, name, description, priority, status, chronicleProducer, site, dataSource, label, validationStatus, approvalStatus, metadata);
+        return Objects.hash(time, name, description, priority, status, chronicleProducer, site, dataSource, label, validationStatus, approvalStatus, position, metadata);
     }
 
 
@@ -242,6 +258,7 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
         private String label;
         private String validationStatus;
         private String approvalStatus;
+        private GeoJSONPoint position;
         private java.util.List<JSONFieldBucketKey> metadata;
 
         public Builder() {
@@ -336,6 +353,14 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
         }
 
         /**
+         * The approximate centroid of the H3 cell for position-bucketed results.
+         */
+        public Builder setPosition(GeoJSONPoint position) {
+            this.position = position;
+            return this;
+        }
+
+        /**
          * The metadata values of the activity chronicles in the summary bucket.
          */
         public Builder setMetadata(java.util.List<JSONFieldBucketKey> metadata) {
@@ -345,7 +370,7 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
 
 
         public ActivityChronicleSummaryBucketKey build() {
-            return new ActivityChronicleSummaryBucketKey(time, name, description, priority, status, chronicleProducer, site, dataSource, label, validationStatus, approvalStatus, metadata);
+            return new ActivityChronicleSummaryBucketKey(time, name, description, priority, status, chronicleProducer, site, dataSource, label, validationStatus, approvalStatus, position, metadata);
         }
 
     }

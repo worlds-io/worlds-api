@@ -15,15 +15,17 @@ public class ActivityChronicleSummaryBucketType implements java.io.Serializable 
     @Deprecated
     private org.springframework.graphql.data.ArgumentValue<BucketingStrategy> bucketingStrategy = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<ActivityChronicleSummaryBucketField> fields;
+    private org.springframework.graphql.data.ArgumentValue<PositionBucketPrecision> position = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<JSONFieldStringBucket> metadata;
 
     public ActivityChronicleSummaryBucketType() {
     }
 
-    public ActivityChronicleSummaryBucketType(org.springframework.graphql.data.ArgumentValue<SummaryBucketSize> size, org.springframework.graphql.data.ArgumentValue<BucketingStrategy> bucketingStrategy, java.util.List<ActivityChronicleSummaryBucketField> fields, java.util.List<JSONFieldStringBucket> metadata) {
+    public ActivityChronicleSummaryBucketType(org.springframework.graphql.data.ArgumentValue<SummaryBucketSize> size, org.springframework.graphql.data.ArgumentValue<BucketingStrategy> bucketingStrategy, java.util.List<ActivityChronicleSummaryBucketField> fields, org.springframework.graphql.data.ArgumentValue<PositionBucketPrecision> position, java.util.List<JSONFieldStringBucket> metadata) {
         this.size = size;
         this.bucketingStrategy = bucketingStrategy;
         this.fields = fields;
+        this.position = position;
         this.metadata = metadata;
     }
 
@@ -50,6 +52,13 @@ public class ActivityChronicleSummaryBucketType implements java.io.Serializable 
         this.fields = fields;
     }
 
+    public org.springframework.graphql.data.ArgumentValue<PositionBucketPrecision> getPosition() {
+        return position;
+    }
+    public void setPosition(org.springframework.graphql.data.ArgumentValue<PositionBucketPrecision> position) {
+        this.position = position;
+    }
+
     public java.util.List<JSONFieldStringBucket> getMetadata() {
         return metadata;
     }
@@ -69,12 +78,13 @@ public class ActivityChronicleSummaryBucketType implements java.io.Serializable 
         return Objects.equals(size, that.size)
             && Objects.equals(bucketingStrategy, that.bucketingStrategy)
             && Objects.equals(fields, that.fields)
+            && Objects.equals(position, that.position)
             && Objects.equals(metadata, that.metadata);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(size, bucketingStrategy, fields, metadata);
+        return Objects.hash(size, bucketingStrategy, fields, position, metadata);
     }
 
 
@@ -87,6 +97,7 @@ public class ActivityChronicleSummaryBucketType implements java.io.Serializable 
         private org.springframework.graphql.data.ArgumentValue<SummaryBucketSize> size = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<BucketingStrategy> bucketingStrategy = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<ActivityChronicleSummaryBucketField> fields;
+        private org.springframework.graphql.data.ArgumentValue<PositionBucketPrecision> position = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<JSONFieldStringBucket> metadata;
 
         public Builder() {
@@ -108,6 +119,11 @@ public class ActivityChronicleSummaryBucketType implements java.io.Serializable 
             return this;
         }
 
+        public Builder setPosition(org.springframework.graphql.data.ArgumentValue<PositionBucketPrecision> position) {
+            this.position = position;
+            return this;
+        }
+
         public Builder setMetadata(java.util.List<JSONFieldStringBucket> metadata) {
             this.metadata = metadata;
             return this;
@@ -115,7 +131,7 @@ public class ActivityChronicleSummaryBucketType implements java.io.Serializable 
 
 
         public ActivityChronicleSummaryBucketType build() {
-            return new ActivityChronicleSummaryBucketType(size, bucketingStrategy, fields, metadata);
+            return new ActivityChronicleSummaryBucketType(size, bucketingStrategy, fields, position, metadata);
         }
 
     }

@@ -139,6 +139,43 @@ enum ActivityChronicleSummaryBucketField {
     APPROVAL_STATUS
 }
 
+### TODO: Some of these can probably be omitted.  Possibly move to more descriptive names.
+"""Indicates the H3 resolution level for position bucketing. Higher resolutions produce smaller, more precise cells."""
+enum PositionBucketPrecision {
+    """H3 resolution 0 (~4,357 km² average cell area)"""
+    RESOLUTION_0
+    """H3 resolution 1 (~609 km²)"""
+    RESOLUTION_1
+    """H3 resolution 2 (~87 km²)"""
+    RESOLUTION_2
+    """H3 resolution 3 (~12 km²)"""
+    RESOLUTION_3
+    """H3 resolution 4 (~1.77 km²)"""
+    RESOLUTION_4
+    """H3 resolution 5 (~0.253 km²)"""
+    RESOLUTION_5
+    """H3 resolution 6 (~0.036 km²)"""
+    RESOLUTION_6
+    """H3 resolution 7 (~0.005 km²)"""
+    RESOLUTION_7
+    """H3 resolution 8 (~0.00074 km²)"""
+    RESOLUTION_8
+    """H3 resolution 9 (~0.000105 km²)"""
+    RESOLUTION_9
+    """H3 resolution 10"""
+    RESOLUTION_10
+    """H3 resolution 11"""
+    RESOLUTION_11
+    """H3 resolution 12"""
+    RESOLUTION_12
+    """H3 resolution 13"""
+    RESOLUTION_13
+    """H3 resolution 14"""
+    RESOLUTION_14
+    """H3 resolution 15 (finest resolution)"""
+    RESOLUTION_15
+}
+
 """
 Input to indicate which field(s) to group activity chronicles by in an `activityChronicleSummary` query.
 Any combination of up to three distinct fields may be provided.
@@ -151,6 +188,8 @@ input ActivityChronicleSummaryBucketType {
     bucketingStrategy: BucketingStrategy @deprecated(reason: "bucketingStrategy is deprecated on ActivityChronicleSummaryBucketType.  Instead, use the query parameter for bucketingStrategy to specify for both top-level and bucketed results.  If this field is provided, it will overwrite the query parameter.")
     """If provided, group the summary buckets by the values of the provided fields."""
     fields: [ActivityChronicleSummaryBucketField!]
+    """If provided, group the summary buckets by position at the specified H3 resolution. Activities without a position will be grouped under a null key."""
+    position: PositionBucketPrecision
     """If provided, group the summary buckets by the values of the provided metadata fields."""
     metadata: [JSONFieldStringBucket!]
 }

@@ -231,6 +231,8 @@ type ActivityChronicleSummaryBucketKey {
     validationStatus: String
     """The `approvalStatus` of the activity chronicles in the summary bucket."""
     approvalStatus: String
+    """The approximate centroid of the H3 cell for position-bucketed results."""
+    position: GeoJSONPoint
     """The metadata values of the activity chronicles in the summary bucket."""
     metadata: [JSONFieldBucketKey!]
 }
