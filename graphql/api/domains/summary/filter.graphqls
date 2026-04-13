@@ -120,6 +120,10 @@ input FilterActivityChronicleSummaryInput {
     """
     approvalStatus: FilterStringInput
     """
+    If provided, specifies filters that work against the position of the activity.
+    """
+    position: FilterPointInput
+    """
     If provided, specifies filters that work against the user-defined activity metadata.
     """
     metadata: FilterJSONFieldStringInput

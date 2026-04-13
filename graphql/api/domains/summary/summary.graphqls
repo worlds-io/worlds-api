@@ -231,6 +231,8 @@ type ActivityChronicleSummaryBucketKey {
     validationStatus: String
     """The `approvalStatus` of the activity chronicles in the summary bucket."""
     approvalStatus: String
+    """The H3 cell for position-bucketed results."""
+    position: H3Cell
     """The metadata values of the activity chronicles in the summary bucket."""
     metadata: [JSONFieldBucketKey!]
 }
