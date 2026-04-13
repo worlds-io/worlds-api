@@ -20,13 +20,13 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
     private String label;
     private String validationStatus;
     private String approvalStatus;
-    private GeoJSONPoint position;
+    private H3Cell position;
     private java.util.List<JSONFieldBucketKey> metadata;
 
     public ActivityChronicleSummaryBucketKey() {
     }
 
-    public ActivityChronicleSummaryBucketKey(java.time.OffsetDateTime time, String name, String description, String priority, String status, ChronicleProducer chronicleProducer, Site site, DataSource dataSource, String label, String validationStatus, String approvalStatus, GeoJSONPoint position, java.util.List<JSONFieldBucketKey> metadata) {
+    public ActivityChronicleSummaryBucketKey(java.time.OffsetDateTime time, String name, String description, String priority, String status, ChronicleProducer chronicleProducer, Site site, DataSource dataSource, String label, String validationStatus, String approvalStatus, H3Cell position, java.util.List<JSONFieldBucketKey> metadata) {
         this.time = time;
         this.name = name;
         this.description = description;
@@ -186,15 +186,15 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
     }
 
     /**
-     * The approximate centroid of the H3 cell for position-bucketed results.
+     * The H3 cell for position-bucketed results.
      */
-    public GeoJSONPoint getPosition() {
+    public H3Cell getPosition() {
         return position;
     }
     /**
-     * The approximate centroid of the H3 cell for position-bucketed results.
+     * The H3 cell for position-bucketed results.
      */
-    public void setPosition(GeoJSONPoint position) {
+    public void setPosition(H3Cell position) {
         this.position = position;
     }
 
@@ -258,7 +258,7 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
         private String label;
         private String validationStatus;
         private String approvalStatus;
-        private GeoJSONPoint position;
+        private H3Cell position;
         private java.util.List<JSONFieldBucketKey> metadata;
 
         public Builder() {
@@ -353,9 +353,9 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
         }
 
         /**
-         * The approximate centroid of the H3 cell for position-bucketed results.
+         * The H3 cell for position-bucketed results.
          */
-        public Builder setPosition(GeoJSONPoint position) {
+        public Builder setPosition(H3Cell position) {
             this.position = position;
             return this;
         }
