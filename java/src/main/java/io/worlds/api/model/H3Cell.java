@@ -22,13 +22,13 @@ public class H3Cell implements java.io.Serializable {
     }
 
     /**
-     * The canonical string index of the cell.  See [the H3 docs](https://h3geo.org/docs/library/index/cell).
+     * The canonical string index of the cell.  Can be used with H3 libraries for additional information on the cell's shape, size, and position.  See [the H3 docs](https://h3geo.org/docs/library/index/cell) for more information.
      */
     public String getIndex() {
         return index;
     }
     /**
-     * The canonical string index of the cell.  See [the H3 docs](https://h3geo.org/docs/library/index/cell).
+     * The canonical string index of the cell.  Can be used with H3 libraries for additional information on the cell's shape, size, and position.  See [the H3 docs](https://h3geo.org/docs/library/index/cell) for more information.
      */
     public void setIndex(String index) {
         this.index = index;
@@ -79,7 +79,7 @@ public class H3Cell implements java.io.Serializable {
         }
 
         /**
-         * The canonical string index of the cell.  See [the H3 docs](https://h3geo.org/docs/library/index/cell).
+         * The canonical string index of the cell.  Can be used with H3 libraries for additional information on the cell's shape, size, and position.  See [the H3 docs](https://h3geo.org/docs/library/index/cell) for more information.
          */
         public Builder setIndex(String index) {
             this.index = index;

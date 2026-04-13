@@ -111,7 +111,7 @@ A `H3Cell` represents a geographical area, useful for grouping nearby points.  R
 """
 type H3Cell {
     """
-    The canonical string index of the cell.  See [the H3 docs](https://h3geo.org/docs/library/index/cell).
+    The canonical string index of the cell.  Can be used with H3 libraries for additional information on the cell's shape, size, and position.  See [the H3 docs](https://h3geo.org/docs/library/index/cell) for more information.
     """
     index: String!
     """
