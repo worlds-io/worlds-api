@@ -148,7 +148,7 @@ Refer to [the H3 docs](https://h3geo.org/docs/core-library/restable) for more de
 enum PositionBucketPrecision {
     """H3 resolution 0 (~4.3 million km² average cell area)"""
     RESOLUTION_0
-    """Extra-large-scale resolution,  ~4.3 million km² per cell. Alias for `RESOLUTION_0`"""
+    """Extra-large-scale resolution, ~4.3 million km² per cell. Alias for `RESOLUTION_0`"""
     CONTINENTAL
     """H3 resolution 1 (~600,000 km²)"""
     RESOLUTION_1

@@ -13,7 +13,7 @@ public enum PositionBucketPrecision {
      */
     RESOLUTION_0("RESOLUTION_0"),
     /**
-     * Extra-large-scale resolution,  ~4.3 million km² per cell. Alias for `RESOLUTION_0`
+     * Extra-large-scale resolution, ~4.3 million km² per cell. Alias for `RESOLUTION_0`
      */
     CONTINENTAL("CONTINENTAL"),
     /**
