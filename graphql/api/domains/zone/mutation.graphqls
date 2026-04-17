@@ -9,4 +9,9 @@ extend type Mutation {
         """Arguments to update an existing zone."""
         zone: UpdateZoneInput!
     ): Zone
+    """Deletes an existing Zone."""
+    deleteZone(
+        """The unique identifier of the zone to delete."""
+        id: ID!
+    ): Zone
 }
