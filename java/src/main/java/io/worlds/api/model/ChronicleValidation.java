@@ -13,14 +13,16 @@ public class ChronicleValidation implements java.io.Serializable {
     private ChronicleValidationStatus status;
     private String reason;
     private String details;
+    private User validatedBy;
 
     public ChronicleValidation() {
     }
 
-    public ChronicleValidation(ChronicleValidationStatus status, String reason, String details) {
+    public ChronicleValidation(ChronicleValidationStatus status, String reason, String details, User validatedBy) {
         this.status = status;
         this.reason = reason;
         this.details = details;
+        this.validatedBy = validatedBy;
     }
 
     /**
@@ -62,6 +64,19 @@ public class ChronicleValidation implements java.io.Serializable {
         this.details = details;
     }
 
+    /**
+     * The user which last validated the event, if any.
+     */
+    public User getValidatedBy() {
+        return validatedBy;
+    }
+    /**
+     * The user which last validated the event, if any.
+     */
+    public void setValidatedBy(User validatedBy) {
+        this.validatedBy = validatedBy;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -73,12 +88,13 @@ public class ChronicleValidation implements java.io.Serializable {
         final ChronicleValidation that = (ChronicleValidation) obj;
         return Objects.equals(status, that.status)
             && Objects.equals(reason, that.reason)
-            && Objects.equals(details, that.details);
+            && Objects.equals(details, that.details)
+            && Objects.equals(validatedBy, that.validatedBy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, reason, details);
+        return Objects.hash(status, reason, details, validatedBy);
     }
 
 
@@ -91,6 +107,7 @@ public class ChronicleValidation implements java.io.Serializable {
         private ChronicleValidationStatus status;
         private String reason;
         private String details;
+        private User validatedBy;
 
         public Builder() {
         }
@@ -119,9 +136,17 @@ public class ChronicleValidation implements java.io.Serializable {
             return this;
         }
 
+        /**
+         * The user which last validated the event, if any.
+         */
+        public Builder setValidatedBy(User validatedBy) {
+            this.validatedBy = validatedBy;
+            return this;
+        }
+
 
         public ChronicleValidation build() {
-            return new ChronicleValidation(status, reason, details);
+            return new ChronicleValidation(status, reason, details, validatedBy);
         }
 
     }
