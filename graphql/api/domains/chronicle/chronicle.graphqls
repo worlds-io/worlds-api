@@ -20,6 +20,8 @@ type ChronicleValidation {
     reason: String
     """Additional details for the chronicle's validation status."""
     details: String
+    """The user which last validated the event, if any."""
+    validatedBy: User
 }
 
 """

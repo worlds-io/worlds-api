@@ -73,13 +73,13 @@ public enum PositionBucketPrecision {
      */
     RESOLUTION_11("RESOLUTION_11"),
     /**
-     * Small-scale resolution, ~2,000 m² per cell. Alias for `RESOLUTION_11`
-     */
-    BUILDING("BUILDING"),
-    /**
      * H3 resolution 12 (~300 m²)
      */
     RESOLUTION_12("RESOLUTION_12"),
+    /**
+     * Small-scale resolution, ~300 m² per cell. Alias for `RESOLUTION_12`
+     */
+    BUILDING("BUILDING"),
     /**
      * H3 resolution 13 (~40 m²)
      */
