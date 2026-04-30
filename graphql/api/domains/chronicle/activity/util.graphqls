@@ -7,6 +7,8 @@ type ActivityChronicleConnection {
     edges: [ActivityChronicleEdge!]!
     """The resulting collection of activity edges."""
     pageInfo: PageInfo!
+    """The total count of activities matching the query, across all pages."""
+    totalCount: Int!
 }
 
 """

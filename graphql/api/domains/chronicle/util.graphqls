@@ -7,6 +7,8 @@ type ChronicleProducerConnection {
     edges: [ChronicleProducerEdge!]!
     """Pagination information for the resulting edges."""
     pageInfo: PageInfo!
+    """The total count of chronicle producers matching the query, across all pages."""
+    totalCount: Int!
 }
 
 """

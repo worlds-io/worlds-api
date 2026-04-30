@@ -7,6 +7,8 @@ type EventChronicleConnection {
     edges: [EventChronicleEdge!]!
     """The resulting collection of event edges."""
     pageInfo: PageInfo!
+    """The total count of events matching the query, across all pages."""
+    totalCount: Int!
 }
 
 """
