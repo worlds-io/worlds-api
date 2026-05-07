@@ -14,13 +14,15 @@ public class SummaryChronicleConnection implements java.io.Serializable {
     private java.util.List<SummaryChronicleEdge> edges;
     @jakarta.validation.constraints.NotNull
     private PageInfo pageInfo;
+    private int totalCount;
 
     public SummaryChronicleConnection() {
     }
 
-    public SummaryChronicleConnection(java.util.List<SummaryChronicleEdge> edges, PageInfo pageInfo) {
+    public SummaryChronicleConnection(java.util.List<SummaryChronicleEdge> edges, PageInfo pageInfo, int totalCount) {
         this.edges = edges;
         this.pageInfo = pageInfo;
+        this.totalCount = totalCount;
     }
 
     /**
@@ -49,6 +51,19 @@ public class SummaryChronicleConnection implements java.io.Serializable {
         this.pageInfo = pageInfo;
     }
 
+    /**
+     * The total count of summaries matching the query, across all pages.
+     */
+    public int getTotalCount() {
+        return totalCount;
+    }
+    /**
+     * The total count of summaries matching the query, across all pages.
+     */
+    public void setTotalCount(int totalCount) {
+        this.totalCount = totalCount;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -59,12 +74,13 @@ public class SummaryChronicleConnection implements java.io.Serializable {
         }
         final SummaryChronicleConnection that = (SummaryChronicleConnection) obj;
         return Objects.equals(edges, that.edges)
-            && Objects.equals(pageInfo, that.pageInfo);
+            && Objects.equals(pageInfo, that.pageInfo)
+            && Objects.equals(totalCount, that.totalCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(edges, pageInfo);
+        return Objects.hash(edges, pageInfo, totalCount);
     }
 
 
@@ -76,6 +92,7 @@ public class SummaryChronicleConnection implements java.io.Serializable {
 
         private java.util.List<SummaryChronicleEdge> edges;
         private PageInfo pageInfo;
+        private int totalCount;
 
         public Builder() {
         }
@@ -96,9 +113,17 @@ public class SummaryChronicleConnection implements java.io.Serializable {
             return this;
         }
 
+        /**
+         * The total count of summaries matching the query, across all pages.
+         */
+        public Builder setTotalCount(int totalCount) {
+            this.totalCount = totalCount;
+            return this;
+        }
+
 
         public SummaryChronicleConnection build() {
-            return new SummaryChronicleConnection(edges, pageInfo);
+            return new SummaryChronicleConnection(edges, pageInfo, totalCount);
         }
 
     }
