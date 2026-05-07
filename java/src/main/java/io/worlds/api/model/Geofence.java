@@ -4,10 +4,8 @@ import java.util.Objects;
 
 /**
  * A geofence is a user-defined region in world coordinates. When a
-[detection]({{Types.Detection}}) occurs within a geofence, or a
 [track]({{Types.Track}}) crosses the border of a geofence, a [geofence
-event]({{Types.GeofenceEvent}}) is created. Geofence events, along
-with [zone events]({{Types.ZoneEvent}}) are a key part of creating
+intersection]({{Types.GeofenceIntersection}}) is created. Geofence intersections are a key part of creating
 custom business logic with Worlds.
  */
 public class Geofence implements java.io.Serializable {
