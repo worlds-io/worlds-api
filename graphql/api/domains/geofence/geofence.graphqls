@@ -1,9 +1,7 @@
 """
 A geofence is a user-defined region in world coordinates. When a
-[detection]({{Types.Detection}}) occurs within a geofence, or a
 [track]({{Types.Track}}) crosses the border of a geofence, a [geofence
-event]({{Types.GeofenceEvent}}) is created. Geofence events, along
-with [zone events]({{Types.ZoneEvent}}) are a key part of creating
+intersection]({{Types.GeofenceIntersection}}) is created. Geofence intersections are a key part of creating
 custom business logic with Worlds.
 """
 type Geofence {
@@ -73,62 +71,6 @@ input UpdateGeofenceInput {
 input GeofenceBoundsInput {
     """A GeoJSON polygon that represents the bounds of the geofence."""
     polygon: GeoJSONPolygonInput!
-}
-
-"""
-A geofence event is a point-in-time representation of an interaction between a
-[track]({{Types.Track}}) and a
-[geofence]({{Types.Geofence}}). The event represents the track either
-entering, leaving, or remaining within the geofence.
-"""
-type GeofenceEvent {
-    """The unique identifier of the geofence event."""
-    id: ID!
-    """The geofence indicated by the event."""
-    geofence: Geofence!
-    """The track indicated by the event."""
-    track: Track!
-    """
-    [`geofenceEvents`]({{Queries.geofenceIntersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceIntersections}}),
-    and `tag` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
-    Use [track's tag]({{Types.Track}}) instead.
-
-    The class label of the object that triggered the geofence event, i.e person,
-    car, truck, etc.
-    """
-    tag: String! @deprecated(reason: "tag is deprecated and can instead be retrieved from the track.")
-    """
-    [`geofenceEvents`]({{Queries.geofenceIntersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceIntersections}}),
-    and `type` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
-
-    The type of geofence event, i.e ingress (an object entered the geofence), dwell
-    (an object remained in the geofence), and egress. (an object exited the
-    geofence)
-    """
-    type: ActivityType! @deprecated(reason: "geofenceEvent is deprecated in favor of geofenceIntersection, which does not use type.")
-    """
-    [`geofenceEvents`]({{Queries.geofenceIntersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceIntersections}}),
-    and `position` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
-
-    The GeoJSON point for the position of the track at the time of the geofence
-    event.
-    """
-    position: GeoJSONPoint! @deprecated(reason: "geofenceEvent is deprecated in favor of geofenceIntersection, which does not use position.")
-    """
-    [`geofenceEvents`]({{Queries.geofenceIntersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceIntersections}}),
-    and `timestamp` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
-    Use [`startTime`]({{Types.GeofenceIntersection}}) and [`endTime`]({{Types.GeofenceIntersection}}) instead.
-
-    The timestamp at which the event occurred.
-    """
-    timestamp: DateTimeOffset! @deprecated(reason: "geofenceEvent is deprecated in favor of geofenceIntersection, which does not use type, using startTime and endTime instead.")
-    """
-    [`geofenceEvents`]({{Queries.geofenceIntersections}}) is deprecated in favor of [`geofenceIntersections`]({{Queries.geofenceIntersections}}),
-    and `metadata` will not be present on [`GeofenceIntersection`]({{Types.GeofenceIntersection}}).
-
-    Any additional information about the event will be stored here.
-    """
-    metadata: JSON @deprecated(reason: "geofenceEvent is deprecated in favor of geofenceIntersection, which does not use metadata.")
 }
 
 """

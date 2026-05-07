@@ -42,33 +42,6 @@ input FilterZoneInput {
 }
 
 """
-`FilterZoneEventInput` allows for filtering a zone event based on criteria described below.
-Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
-"""
-input FilterZoneEventInput {
-    """
-    If provided, specifies filters that work against the [unique id]({{Types.ZoneEvent}}) of a zone event.
-    """
-    zoneId: FilterIDInput
-    """
-    If provided, specifies filters that work against the [timestamp]({{Types.ZoneEvent}}) associated with the zone event.
-    """
-    time: FilterDateTimeOffsetInput!
-    """
-    If provided, a detection activity must pass all filters in this list to match the current filter.
-    """
-    and: [FilterZoneEventInput!]
-    """
-    If provided, a detection activity must pass at least one of the filters in this list to match the current filter.
-    """
-    or: [FilterZoneEventInput!]
-    """
-    If provided, a detection activity may not match this filter to match the current filter.
-    """
-    not: FilterZoneEventInput
-}
-
-"""
 `FilterZoneIntersectionInput` allows for filtering a zone intersection based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
 """
