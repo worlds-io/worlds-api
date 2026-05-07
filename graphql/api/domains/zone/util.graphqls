@@ -1,21 +1,3 @@
-type ZoneEventConnection {
-    """Pagination information for the resulting edges."""
-    pageInfo: PageInfo!
-    """The resulting collection of zone events edges."""
-    edges: [ZoneEventEdge]!
-}
-
-type ZoneEventEdge {
-    """
-    Information about a particular [ZoneEvent]({{Types.ZoneEvent}}).
-    """
-    node: ZoneEvent
-    """
-    The cursor to use with the [Query `zoneEvents` field]({{Queries.zoneEvents}}) `after` argument.
-    """
-    cursor: String!
-}
-
 type ZoneIntersectionConnection {
     """Pagination information for the resulting edges."""
     pageInfo: PageInfo!
