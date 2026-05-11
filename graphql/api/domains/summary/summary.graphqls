@@ -21,6 +21,30 @@ type TracksSummary {
     Summary buckets are only returned if `bucket` is provided as a query parameter to [`tracksSummary`]({{Queries.tracksSummary}}).
     """
     buckets: [TracksSummaryBucket!]
+    """
+    The bucket(s) with the greatest `total` across the parent's buckets.  Empty if no `tracksBucket`
+    was provided.  All tied buckets are returned per group.
+    """
+    highestTotalBuckets(
+        """
+        Dimensions to keep distinct when finding the max.  Must align with the query's `tracksBucket`:
+        `groupBy.fields` must be a subset of `tracksBucket.fields`, and `groupBy.size` must equal
+        `tracksBucket.size` if set.  If null, returns the single bucket with the greatest total
+        across all buckets (plus any ties).
+        """
+        groupBy: TracksSummaryBucketType
+    ): [TracksHighestTotalBucket!]!
+}
+
+"""
+A bucket selected as having the greatest `total` within its group, returned from
+[`TracksSummary.highestTotalBuckets`]({{Types.TracksSummary}}).
+"""
+type TracksHighestTotalBucket {
+    """The key of the winning bucket.  Only fields included in `groupBy` are populated; others are null."""
+    key: TracksSummaryBucketKey!
+    """The total number of [Tracks]({{Types.Track}}) in the winning bucket."""
+    total: Int!
 }
 
 type TracksCountByTag {
