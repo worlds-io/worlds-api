@@ -3,6 +3,8 @@ type ZoneIntersectionConnection {
     pageInfo: PageInfo!
     """The resulting collection of zone intersections edges."""
     edges: [ZoneIntersectionEdge]!
+    """The total count of zone intersections matching the query, across all pages."""
+    totalCount: Int!
 }
 
 type ZoneIntersectionEdge {
@@ -21,6 +23,8 @@ type ZoneConnection {
     pageInfo: PageInfo!
     """The resulting collection of zone edges."""
     edges: [ZoneEdge]!
+    """The total count of zones matching the query, across all pages."""
+    totalCount: Int!
 }
 
 type ZoneEdge {

@@ -3,6 +3,8 @@ type SensorConnection {
     pageInfo: PageInfo!
     """The resulting collection of sensor edges."""
     edges: [SensorEdge]!
+    """The total count of sensors matching the query, across all pages."""
+    totalCount: Int!
 }
 
 """
@@ -27,6 +29,8 @@ type MeasurementConnection {
     pageInfo: PageInfo!
     """The resulting collection of measurement edges."""
     edges: [MeasurementEdge]!
+    """The total count of measurements matching the query, across all pages."""
+    totalCount: Int!
 }
 
 """

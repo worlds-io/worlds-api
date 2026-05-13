@@ -7,6 +7,8 @@ type VideoConnection {
     pageInfo: PageInfo!
     """The resulting collection of Video edges."""
     edges: [VideoEdge]!
+    """The total count of videos matching the query, across all pages."""
+    totalCount: Int!
 }
 
 """

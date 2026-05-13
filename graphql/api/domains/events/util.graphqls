@@ -7,6 +7,8 @@ type EventProducerConnection {
     pageInfo: PageInfo!
     """The resulting collection of event producer edges."""
     edges: [EventProducerEdge]!
+    """The total count of event producers matching the query, across all pages."""
+    totalCount: Int!
 }
 
 """
@@ -33,6 +35,8 @@ type EventConnection {
     pageInfo: PageInfo!
     """The resulting collection of event edges."""
     edges: [EventEdge]!
+    """The total count of events matching the query, across all pages."""
+    totalCount: Int!
 }
 
 """
