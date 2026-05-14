@@ -3,6 +3,8 @@ type PointOfInterestConnection {
     pageInfo: PageInfo!
     """The resulting collection of site edges."""
     edges: [PointOfInterestEdge]!
+    """The total count of points of interest matching the query, across all pages."""
+    totalCount: Int!
 }
 
 """

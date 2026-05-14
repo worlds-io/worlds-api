@@ -10,13 +10,15 @@ public class PointOfInterestConnection implements java.io.Serializable {
     private PageInfo pageInfo;
     @jakarta.validation.constraints.NotNull
     private java.util.List<PointOfInterestEdge> edges;
+    private int totalCount;
 
     public PointOfInterestConnection() {
     }
 
-    public PointOfInterestConnection(PageInfo pageInfo, java.util.List<PointOfInterestEdge> edges) {
+    public PointOfInterestConnection(PageInfo pageInfo, java.util.List<PointOfInterestEdge> edges, int totalCount) {
         this.pageInfo = pageInfo;
         this.edges = edges;
+        this.totalCount = totalCount;
     }
 
     /**
@@ -45,6 +47,19 @@ public class PointOfInterestConnection implements java.io.Serializable {
         this.edges = edges;
     }
 
+    /**
+     * The total count of points of interest matching the query, across all pages.
+     */
+    public int getTotalCount() {
+        return totalCount;
+    }
+    /**
+     * The total count of points of interest matching the query, across all pages.
+     */
+    public void setTotalCount(int totalCount) {
+        this.totalCount = totalCount;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -55,12 +70,13 @@ public class PointOfInterestConnection implements java.io.Serializable {
         }
         final PointOfInterestConnection that = (PointOfInterestConnection) obj;
         return Objects.equals(pageInfo, that.pageInfo)
-            && Objects.equals(edges, that.edges);
+            && Objects.equals(edges, that.edges)
+            && Objects.equals(totalCount, that.totalCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(pageInfo, edges);
+        return Objects.hash(pageInfo, edges, totalCount);
     }
 
 
@@ -72,6 +88,7 @@ public class PointOfInterestConnection implements java.io.Serializable {
 
         private PageInfo pageInfo;
         private java.util.List<PointOfInterestEdge> edges;
+        private int totalCount;
 
         public Builder() {
         }
@@ -92,9 +109,17 @@ public class PointOfInterestConnection implements java.io.Serializable {
             return this;
         }
 
+        /**
+         * The total count of points of interest matching the query, across all pages.
+         */
+        public Builder setTotalCount(int totalCount) {
+            this.totalCount = totalCount;
+            return this;
+        }
+
 
         public PointOfInterestConnection build() {
-            return new PointOfInterestConnection(pageInfo, edges);
+            return new PointOfInterestConnection(pageInfo, edges, totalCount);
         }
 
     }

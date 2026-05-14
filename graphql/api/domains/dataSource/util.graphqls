@@ -7,6 +7,8 @@ type DataSourceConnection {
     pageInfo: PageInfo!
     """The resulting collection of detection edges."""
     edges: [DataSourceEdge]!
+    """The total count of data sources matching the query, across all pages."""
+    totalCount: Int!
 }
 
 """

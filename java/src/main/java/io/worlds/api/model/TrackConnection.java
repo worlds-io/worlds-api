@@ -10,13 +10,15 @@ public class TrackConnection implements java.io.Serializable {
     private PageInfo pageInfo;
     @jakarta.validation.constraints.NotNull
     private java.util.List<TrackEdge> edges;
+    private int totalCount;
 
     public TrackConnection() {
     }
 
-    public TrackConnection(PageInfo pageInfo, java.util.List<TrackEdge> edges) {
+    public TrackConnection(PageInfo pageInfo, java.util.List<TrackEdge> edges, int totalCount) {
         this.pageInfo = pageInfo;
         this.edges = edges;
+        this.totalCount = totalCount;
     }
 
     /**
@@ -45,6 +47,19 @@ public class TrackConnection implements java.io.Serializable {
         this.edges = edges;
     }
 
+    /**
+     * The total count of tracks matching the query, across all pages.
+     */
+    public int getTotalCount() {
+        return totalCount;
+    }
+    /**
+     * The total count of tracks matching the query, across all pages.
+     */
+    public void setTotalCount(int totalCount) {
+        this.totalCount = totalCount;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -55,12 +70,13 @@ public class TrackConnection implements java.io.Serializable {
         }
         final TrackConnection that = (TrackConnection) obj;
         return Objects.equals(pageInfo, that.pageInfo)
-            && Objects.equals(edges, that.edges);
+            && Objects.equals(edges, that.edges)
+            && Objects.equals(totalCount, that.totalCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(pageInfo, edges);
+        return Objects.hash(pageInfo, edges, totalCount);
     }
 
 
@@ -72,6 +88,7 @@ public class TrackConnection implements java.io.Serializable {
 
         private PageInfo pageInfo;
         private java.util.List<TrackEdge> edges;
+        private int totalCount;
 
         public Builder() {
         }
@@ -92,9 +109,17 @@ public class TrackConnection implements java.io.Serializable {
             return this;
         }
 
+        /**
+         * The total count of tracks matching the query, across all pages.
+         */
+        public Builder setTotalCount(int totalCount) {
+            this.totalCount = totalCount;
+            return this;
+        }
+
 
         public TrackConnection build() {
-            return new TrackConnection(pageInfo, edges);
+            return new TrackConnection(pageInfo, edges, totalCount);
         }
 
     }

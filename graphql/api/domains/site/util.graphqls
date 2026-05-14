@@ -3,6 +3,8 @@ type SiteConnection {
     pageInfo: PageInfo!
     """The resulting collection of site edges."""
     edges: [SiteEdge]!
+    """The total count of sites matching the query, across all pages."""
+    totalCount: Int!
 }
 
 """

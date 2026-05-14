@@ -7,6 +7,8 @@ type GeofenceConnection {
     pageInfo: PageInfo!
     """The resulting collection of geofence edges."""
     edges: [GeofenceEdge]!
+    """The total count of geofences matching the query, across all pages."""
+    totalCount: Int!
 }
 
 """
@@ -29,6 +31,8 @@ type GeofenceIntersectionConnection {
     pageInfo: PageInfo!
     """The resulting collection of geofence intersections edges."""
     edges: [GeofenceIntersectionEdge]!
+    """The total count of geofence intersections matching the query, across all pages."""
+    totalCount: Int!
 }
 
 type GeofenceIntersectionEdge {

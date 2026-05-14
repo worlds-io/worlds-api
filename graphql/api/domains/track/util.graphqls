@@ -3,6 +3,8 @@ type TrackConnection {
     pageInfo: PageInfo!
     """The resulting collection of track edges."""
     edges: [TrackEdge]!
+    """The total count of tracks matching the query, across all pages."""
+    totalCount: Int!
 }
 
 type TrackEdge {

@@ -10,13 +10,15 @@ public class ZoneIntersectionConnection implements java.io.Serializable {
     private PageInfo pageInfo;
     @jakarta.validation.constraints.NotNull
     private java.util.List<ZoneIntersectionEdge> edges;
+    private int totalCount;
 
     public ZoneIntersectionConnection() {
     }
 
-    public ZoneIntersectionConnection(PageInfo pageInfo, java.util.List<ZoneIntersectionEdge> edges) {
+    public ZoneIntersectionConnection(PageInfo pageInfo, java.util.List<ZoneIntersectionEdge> edges, int totalCount) {
         this.pageInfo = pageInfo;
         this.edges = edges;
+        this.totalCount = totalCount;
     }
 
     /**
@@ -45,6 +47,19 @@ public class ZoneIntersectionConnection implements java.io.Serializable {
         this.edges = edges;
     }
 
+    /**
+     * The total count of zone intersections matching the query, across all pages.
+     */
+    public int getTotalCount() {
+        return totalCount;
+    }
+    /**
+     * The total count of zone intersections matching the query, across all pages.
+     */
+    public void setTotalCount(int totalCount) {
+        this.totalCount = totalCount;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -55,12 +70,13 @@ public class ZoneIntersectionConnection implements java.io.Serializable {
         }
         final ZoneIntersectionConnection that = (ZoneIntersectionConnection) obj;
         return Objects.equals(pageInfo, that.pageInfo)
-            && Objects.equals(edges, that.edges);
+            && Objects.equals(edges, that.edges)
+            && Objects.equals(totalCount, that.totalCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(pageInfo, edges);
+        return Objects.hash(pageInfo, edges, totalCount);
     }
 
 
@@ -72,6 +88,7 @@ public class ZoneIntersectionConnection implements java.io.Serializable {
 
         private PageInfo pageInfo;
         private java.util.List<ZoneIntersectionEdge> edges;
+        private int totalCount;
 
         public Builder() {
         }
@@ -92,9 +109,17 @@ public class ZoneIntersectionConnection implements java.io.Serializable {
             return this;
         }
 
+        /**
+         * The total count of zone intersections matching the query, across all pages.
+         */
+        public Builder setTotalCount(int totalCount) {
+            this.totalCount = totalCount;
+            return this;
+        }
+
 
         public ZoneIntersectionConnection build() {
-            return new ZoneIntersectionConnection(pageInfo, edges);
+            return new ZoneIntersectionConnection(pageInfo, edges, totalCount);
         }
 
     }
