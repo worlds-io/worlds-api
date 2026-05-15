@@ -16,6 +16,7 @@ public class FilterDeviceInput implements java.io.Serializable {
     private org.springframework.graphql.data.ArgumentValue<FilterStringInput> externalId = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterStringInput> address = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> enabled = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<FilterSiteInput> site = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<FilterDeviceInput> and;
     private java.util.List<FilterDeviceInput> or;
     private org.springframework.graphql.data.ArgumentValue<FilterDeviceInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -23,13 +24,14 @@ public class FilterDeviceInput implements java.io.Serializable {
     public FilterDeviceInput() {
     }
 
-    public FilterDeviceInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> id, org.springframework.graphql.data.ArgumentValue<FilterIDInput> uuid, org.springframework.graphql.data.ArgumentValue<FilterStringInput> name, org.springframework.graphql.data.ArgumentValue<FilterStringInput> externalId, org.springframework.graphql.data.ArgumentValue<FilterStringInput> address, org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> enabled, java.util.List<FilterDeviceInput> and, java.util.List<FilterDeviceInput> or, org.springframework.graphql.data.ArgumentValue<FilterDeviceInput> not) {
+    public FilterDeviceInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> id, org.springframework.graphql.data.ArgumentValue<FilterIDInput> uuid, org.springframework.graphql.data.ArgumentValue<FilterStringInput> name, org.springframework.graphql.data.ArgumentValue<FilterStringInput> externalId, org.springframework.graphql.data.ArgumentValue<FilterStringInput> address, org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> enabled, org.springframework.graphql.data.ArgumentValue<FilterSiteInput> site, java.util.List<FilterDeviceInput> and, java.util.List<FilterDeviceInput> or, org.springframework.graphql.data.ArgumentValue<FilterDeviceInput> not) {
         this.id = id;
         this.uuid = uuid;
         this.name = name;
         this.externalId = externalId;
         this.address = address;
         this.enabled = enabled;
+        this.site = site;
         this.and = and;
         this.or = or;
         this.not = not;
@@ -77,6 +79,13 @@ public class FilterDeviceInput implements java.io.Serializable {
         this.enabled = enabled;
     }
 
+    public org.springframework.graphql.data.ArgumentValue<FilterSiteInput> getSite() {
+        return site;
+    }
+    public void setSite(org.springframework.graphql.data.ArgumentValue<FilterSiteInput> site) {
+        this.site = site;
+    }
+
     public java.util.List<FilterDeviceInput> getAnd() {
         return and;
     }
@@ -113,6 +122,7 @@ public class FilterDeviceInput implements java.io.Serializable {
             && Objects.equals(externalId, that.externalId)
             && Objects.equals(address, that.address)
             && Objects.equals(enabled, that.enabled)
+            && Objects.equals(site, that.site)
             && Objects.equals(and, that.and)
             && Objects.equals(or, that.or)
             && Objects.equals(not, that.not);
@@ -120,7 +130,7 @@ public class FilterDeviceInput implements java.io.Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, uuid, name, externalId, address, enabled, and, or, not);
+        return Objects.hash(id, uuid, name, externalId, address, enabled, site, and, or, not);
     }
 
 
@@ -136,6 +146,7 @@ public class FilterDeviceInput implements java.io.Serializable {
         private org.springframework.graphql.data.ArgumentValue<FilterStringInput> externalId = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterStringInput> address = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> enabled = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<FilterSiteInput> site = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<FilterDeviceInput> and;
         private java.util.List<FilterDeviceInput> or;
         private org.springframework.graphql.data.ArgumentValue<FilterDeviceInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -173,6 +184,11 @@ public class FilterDeviceInput implements java.io.Serializable {
             return this;
         }
 
+        public Builder setSite(org.springframework.graphql.data.ArgumentValue<FilterSiteInput> site) {
+            this.site = site;
+            return this;
+        }
+
         public Builder setAnd(java.util.List<FilterDeviceInput> and) {
             this.and = and;
             return this;
@@ -190,7 +206,7 @@ public class FilterDeviceInput implements java.io.Serializable {
 
 
         public FilterDeviceInput build() {
-            return new FilterDeviceInput(id, uuid, name, externalId, address, enabled, and, or, not);
+            return new FilterDeviceInput(id, uuid, name, externalId, address, enabled, site, and, or, not);
         }
 
     }

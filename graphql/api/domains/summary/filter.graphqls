@@ -182,6 +182,10 @@ input FilterDeviceSummaryInput {
     """
     siteId: FilterIDInput
     """
+    If provided, specifies filters that work against the device's site.
+    """
+    site: FilterSiteInput
+    """
     If provided, specifies filters that work against the point of interest ID of the device.
     """
     pointOfInterestId: FilterIDInput
