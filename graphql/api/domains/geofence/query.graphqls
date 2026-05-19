@@ -26,33 +26,6 @@ input GeofencesSort {
 }
 
 """
-Indicates the field used for sorting a [`geofenceEvents` query]({{Queries.geofenceEvents}}).
-"""
-enum GeofenceEventsSortField {
-    """
-    Sort the resulting list by the [`GeofenceEvent`](({{Types.GeofenceEvent}}))'s unique identifier.
-    """
-    ID
-    """
-    Sort the resulting list by the [`GeofenceEvent`](({{Types.GeofenceEvent}}))'s timestamp.
-    """
-    OCCURRED
-}
-
-"""
-GeofenceEventsSort allows for sorting geofence events by a sort field and direction.
-"""
-input GeofenceEventsSort {
-    """
-    Any sortable field available to the GeofenceEventsSortField. See the link to the
-    type below for more details.
-    """
-    field: GeofenceEventsSortField!
-    """Sort direction. See the link to the type below for more details."""
-    direction: SortDirection!
-}
-
-"""
 Indicates the field used for sorting a [`geofenceIntersections` query]({{Queries.geofenceIntersections}}).
 """
 enum GeofenceIntersectionsSortField {
@@ -98,20 +71,7 @@ extend type Query {
         """The field and direction by which to sort the results"""
         sort: [GeofencesSort!]! = [{field: NAME, direction: ASC}, {field: ID, direction: ASC}]
     ): GeofenceConnection
-    """
-    Find events for a geofence based on a set of filters.
-    """
-    geofenceEvents(
-        """Filter geofence events based on the geofence id, time period, etc."""
-        filter: FilterGeofenceEventInput!
-        """Returns the first _n_ elements from the list."""
-        first: Int! = 20
-        """Returns the elements in the list that come after the specified cursor."""
-        after: String
-        """The field and direction by which to sort the results"""
-        sort: [GeofenceEventsSort!]! = [{field: OCCURRED, direction: ASC}, {field: ID, direction: ASC}]
-    ): GeofenceEventConnection @deprecated(reason: "`geofenceEvents` is deprecated. Use `geofenceIntersections` instead")
-    """Find events for a geofence based on a set of filters."""
+    """Find intersections for a geofence based on a set of filters."""
     geofenceIntersections(
         """
         Filter geofence intersections based on the geofence id, time period, etc.

@@ -34,12 +34,6 @@ public class Detection implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private java.util.List<String> zoneIds;
     @Deprecated
-    @jakarta.validation.constraints.NotNull
-    private java.util.List<ZoneEvent> zoneEvents;
-    @Deprecated
-    @jakarta.validation.constraints.NotNull
-    private java.util.List<GeofenceEvent> geofenceEvents;
-    @Deprecated
     private String globalTrackId;
     @Deprecated
     private String deviceId;
@@ -50,7 +44,7 @@ public class Detection implements java.io.Serializable {
     public Detection() {
     }
 
-    public Detection(Track track, java.time.OffsetDateTime timestamp, Frame frame, GeoJSONPolygon polygon, GeoJSONPoint position, java.util.List<Zone> zones, java.util.List<Geofence> geofences, java.lang.Object metadata, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt, Double direction, java.util.List<String> geofenceIds, java.util.List<String> zoneIds, java.util.List<ZoneEvent> zoneEvents, java.util.List<GeofenceEvent> geofenceEvents, String globalTrackId, String deviceId, String tag) {
+    public Detection(Track track, java.time.OffsetDateTime timestamp, Frame frame, GeoJSONPolygon polygon, GeoJSONPoint position, java.util.List<Zone> zones, java.util.List<Geofence> geofences, java.lang.Object metadata, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt, Double direction, java.util.List<String> geofenceIds, java.util.List<String> zoneIds, String globalTrackId, String deviceId, String tag) {
         this.track = track;
         this.timestamp = timestamp;
         this.frame = frame;
@@ -64,8 +58,6 @@ public class Detection implements java.io.Serializable {
         this.direction = direction;
         this.geofenceIds = geofenceIds;
         this.zoneIds = zoneIds;
-        this.zoneEvents = zoneEvents;
-        this.geofenceEvents = geofenceEvents;
         this.globalTrackId = globalTrackId;
         this.deviceId = deviceId;
         this.tag = tag;
@@ -251,36 +243,6 @@ detection intersects.
     }
 
     /**
-     * A list of zone events related to this detection.
-     */
-    @Deprecated
-    public java.util.List<ZoneEvent> getZoneEvents() {
-        return zoneEvents;
-    }
-    /**
-     * A list of zone events related to this detection.
-     */
-    @Deprecated
-    public void setZoneEvents(java.util.List<ZoneEvent> zoneEvents) {
-        this.zoneEvents = zoneEvents;
-    }
-
-    /**
-     * A list of geofence events related to this detection.
-     */
-    @Deprecated
-    public java.util.List<GeofenceEvent> getGeofenceEvents() {
-        return geofenceEvents;
-    }
-    /**
-     * A list of geofence events related to this detection.
-     */
-    @Deprecated
-    public void setGeofenceEvents(java.util.List<GeofenceEvent> geofenceEvents) {
-        this.geofenceEvents = geofenceEvents;
-    }
-
-    /**
      * The global track id that governs the detection, if any.
      */
     @Deprecated
@@ -347,8 +309,6 @@ detection intersects.
             && Objects.equals(direction, that.direction)
             && Objects.equals(geofenceIds, that.geofenceIds)
             && Objects.equals(zoneIds, that.zoneIds)
-            && Objects.equals(zoneEvents, that.zoneEvents)
-            && Objects.equals(geofenceEvents, that.geofenceEvents)
             && Objects.equals(globalTrackId, that.globalTrackId)
             && Objects.equals(deviceId, that.deviceId)
             && Objects.equals(tag, that.tag);
@@ -356,7 +316,7 @@ detection intersects.
 
     @Override
     public int hashCode() {
-        return Objects.hash(track, timestamp, frame, polygon, position, zones, geofences, metadata, createdAt, updatedAt, direction, geofenceIds, zoneIds, zoneEvents, geofenceEvents, globalTrackId, deviceId, tag);
+        return Objects.hash(track, timestamp, frame, polygon, position, zones, geofences, metadata, createdAt, updatedAt, direction, geofenceIds, zoneIds, globalTrackId, deviceId, tag);
     }
 
 
@@ -379,8 +339,6 @@ detection intersects.
         private Double direction;
         private java.util.List<String> geofenceIds;
         private java.util.List<String> zoneIds;
-        private java.util.List<ZoneEvent> zoneEvents;
-        private java.util.List<GeofenceEvent> geofenceEvents;
         private String globalTrackId;
         private String deviceId;
         private String tag;
@@ -498,24 +456,6 @@ detection intersects.
         }
 
         /**
-         * A list of zone events related to this detection.
-         */
-        @Deprecated
-        public Builder setZoneEvents(java.util.List<ZoneEvent> zoneEvents) {
-            this.zoneEvents = zoneEvents;
-            return this;
-        }
-
-        /**
-         * A list of geofence events related to this detection.
-         */
-        @Deprecated
-        public Builder setGeofenceEvents(java.util.List<GeofenceEvent> geofenceEvents) {
-            this.geofenceEvents = geofenceEvents;
-            return this;
-        }
-
-        /**
          * The global track id that governs the detection, if any.
          */
         @Deprecated
@@ -544,7 +484,7 @@ detection intersects.
 
 
         public Detection build() {
-            return new Detection(track, timestamp, frame, polygon, position, zones, geofences, metadata, createdAt, updatedAt, direction, geofenceIds, zoneIds, zoneEvents, geofenceEvents, globalTrackId, deviceId, tag);
+            return new Detection(track, timestamp, frame, polygon, position, zones, geofences, metadata, createdAt, updatedAt, direction, geofenceIds, zoneIds, globalTrackId, deviceId, tag);
         }
 
     }

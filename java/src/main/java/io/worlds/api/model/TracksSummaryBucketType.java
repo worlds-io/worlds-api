@@ -12,13 +12,16 @@ public class TracksSummaryBucketType implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 
     private org.springframework.graphql.data.ArgumentValue<SummaryBucketSize> size = org.springframework.graphql.data.ArgumentValue.omitted();
+    @Deprecated
+    private org.springframework.graphql.data.ArgumentValue<BucketingStrategy> bucketingStrategy = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<TracksSummaryBucketField> fields;
 
     public TracksSummaryBucketType() {
     }
 
-    public TracksSummaryBucketType(org.springframework.graphql.data.ArgumentValue<SummaryBucketSize> size, java.util.List<TracksSummaryBucketField> fields) {
+    public TracksSummaryBucketType(org.springframework.graphql.data.ArgumentValue<SummaryBucketSize> size, org.springframework.graphql.data.ArgumentValue<BucketingStrategy> bucketingStrategy, java.util.List<TracksSummaryBucketField> fields) {
         this.size = size;
+        this.bucketingStrategy = bucketingStrategy;
         this.fields = fields;
     }
 
@@ -27,6 +30,15 @@ public class TracksSummaryBucketType implements java.io.Serializable {
     }
     public void setSize(org.springframework.graphql.data.ArgumentValue<SummaryBucketSize> size) {
         this.size = size;
+    }
+
+    @Deprecated
+    public org.springframework.graphql.data.ArgumentValue<BucketingStrategy> getBucketingStrategy() {
+        return bucketingStrategy;
+    }
+    @Deprecated
+    public void setBucketingStrategy(org.springframework.graphql.data.ArgumentValue<BucketingStrategy> bucketingStrategy) {
+        this.bucketingStrategy = bucketingStrategy;
     }
 
     public java.util.List<TracksSummaryBucketField> getFields() {
@@ -46,12 +58,13 @@ public class TracksSummaryBucketType implements java.io.Serializable {
         }
         final TracksSummaryBucketType that = (TracksSummaryBucketType) obj;
         return Objects.equals(size, that.size)
+            && Objects.equals(bucketingStrategy, that.bucketingStrategy)
             && Objects.equals(fields, that.fields);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(size, fields);
+        return Objects.hash(size, bucketingStrategy, fields);
     }
 
 
@@ -62,6 +75,7 @@ public class TracksSummaryBucketType implements java.io.Serializable {
     public static class Builder {
 
         private org.springframework.graphql.data.ArgumentValue<SummaryBucketSize> size = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<BucketingStrategy> bucketingStrategy = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<TracksSummaryBucketField> fields;
 
         public Builder() {
@@ -72,6 +86,12 @@ public class TracksSummaryBucketType implements java.io.Serializable {
             return this;
         }
 
+        @Deprecated
+        public Builder setBucketingStrategy(org.springframework.graphql.data.ArgumentValue<BucketingStrategy> bucketingStrategy) {
+            this.bucketingStrategy = bucketingStrategy;
+            return this;
+        }
+
         public Builder setFields(java.util.List<TracksSummaryBucketField> fields) {
             this.fields = fields;
             return this;
@@ -79,7 +99,7 @@ public class TracksSummaryBucketType implements java.io.Serializable {
 
 
         public TracksSummaryBucketType build() {
-            return new TracksSummaryBucketType(size, fields);
+            return new TracksSummaryBucketType(size, bucketingStrategy, fields);
         }
 
     }

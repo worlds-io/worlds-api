@@ -2,10 +2,30 @@
 enum SummaryBucketSize {
     """Bucket by minutes.  Not valid on summaries longer than 1 day."""
     MINUTES
+    """Bucket by groups of 10 minutes.  Not valid on summaries longer than 1 day."""
+    MINUTES_10
+    """Bucket by groups of 12 minutes.  Not valid on summaries longer than 1 day."""
+    MINUTES_12
+    """Bucket by groups of 15 minutes.  Not valid on summaries longer than 1 day."""
+    MINUTES_15
+    """Bucket by groups of 20 minutes.  Not valid on summaries longer than 1 day."""
+    MINUTES_20
+    """Bucket by groups of 30 minutes.  Not valid on summaries longer than 1 day."""
+    MINUTES_30
     """Bucket by hours.  Not valid on summaries longer than 7 days."""
     HOURS
     """Bucket by days."""
     DAYS
+}
+
+"""Indicates how to bucket objects.  In buckets, `total` count will differ by the bucketing strategy."""
+enum BucketingStrategy {
+    """Bucket into all buckets where the object was active.  With this strategy, an object may be present in multiple time buckets."""
+    ACTIVE
+    """Bucket into the bucket where the object ended. `total` will be equal to `startedCount`. `endedCount` will return as 0."""
+    STARTED
+    """Bucket into the bucket where the object ended. `total` will be equal to `endedCount`. `startedCount` will return as 0."""
+    ENDED
 }
 
 """
@@ -41,6 +61,8 @@ If multiple fields are provided, the buckets will be sorted by time, then fields
 input TracksSummaryBucketType {
     """If provided, group the summary buckets by time buckets of the provided size."""
     size: SummaryBucketSize
+    """How to bucket tracks.  Defaults to `ACTIVE`."""
+    bucketingStrategy: BucketingStrategy @deprecated(reason: "bucketingStrategy is deprecated on TracksSummaryBucketType.  Instead, use the query parameter for bucketingStrategy to specify for both top-level and bucketed results.  If this field is provided, it will overwrite the query parameter.")
     """If provided, group the summary buckets by the values of the provided fields."""
     fields: [TracksSummaryBucketField!]
 }
@@ -69,6 +91,8 @@ If multiple fields are provided, the buckets will be sorted by time, then fields
 input EventsSummaryBucketType {
     """If provided, group the summary buckets by time buckets of the provided size."""
     size: SummaryBucketSize
+    """How to bucket event summaries.  Defaults to `ACTIVE`."""
+    bucketingStrategy: BucketingStrategy @deprecated(reason: "bucketingStrategy is deprecated on EventsSummaryBucketType.  Instead, use the query parameter for bucketingStrategy to specify for both top-level and bucketed results.  If this field is provided, it will overwrite the query parameter.")
     """If provided, group the summary buckets by the values of the provided fields."""
     fields: [EventsSummaryBucketField!]
     """If provided, group the summary buckets by the values of the provided metadata fields."""
@@ -93,20 +117,77 @@ input VideosSummaryBucketType {
 
 """Indicates the bucket to group activity chronicles by in an activityChronicleSummary query."""
 enum ActivityChronicleSummaryBucketField {
+    """Bucket by the activity chronicle's name"""
+    NAME
+    """Bucket by the activity chronicle's description"""
+    DESCRIPTION
     """Bucket by the activity chronicle's priority"""
     PRIORITY
     """Bucket by the activity chronicle's status"""
     STATUS
     """Bucket by the activity chronicle's chronicle producer"""
     CHRONICLE_PRODUCER
-    """Bucket by the activity chronicle's site"""
+    """Bucket by the activity chronicle's sites. An activity can have multiple sites, so one activity may be counted in multiple buckets."""
     SITE
-    """Bucket by the activity chronicle's data source"""
+    """Bucket by the activity chronicle's data sources. An activity can have multiple data sources, so one activity may be counted in multiple buckets."""
     DATA_SOURCE
+    """Bucket by the activity chronicle's labels. An activity can have multiple labels, so one activity may be counted in multiple buckets."""
+    LABEL
     """Bucket by the activity chronicle's validation status"""
     VALIDATION_STATUS
     """Bucket by the activity chronicle's approval status"""
     APPROVAL_STATUS
+}
+
+"""
+Indicates the resolution level for position bucketing. Higher resolutions produce smaller cells.
+Options will either be a H3 resolution (`RESOLUTION_0` through `RESOLUTION_15`), or a semantic name referring to one of the H3 resolutions.
+On average, the area of a cell divides by 7 at each new resolution.
+Refer to [the H3 docs](https://h3geo.org/docs/core-library/restable) for more detailed statistics on resolution.
+"""
+enum PositionBucketPrecision {
+    """H3 resolution 0 (~4.3 million km² average cell area)"""
+    RESOLUTION_0
+    """Extra-large-scale resolution, ~4.3 million km² per cell. Alias for `RESOLUTION_0`"""
+    CONTINENTAL
+    """H3 resolution 1 (~600,000 km²)"""
+    RESOLUTION_1
+    """H3 resolution 2 (~87,000 km²)"""
+    RESOLUTION_2
+    """H3 resolution 3 (~12,000 km²)"""
+    RESOLUTION_3
+    """H3 resolution 4 (~1,770 km²)"""
+    RESOLUTION_4
+    """Large-scale resolution, ~1,700 km² per cell. Alias for `RESOLUTION_5`"""
+    REGIONAL
+    """H3 resolution 5 (~253 km²)"""
+    RESOLUTION_5
+    """H3 resolution 6 (~36 km²)"""
+    RESOLUTION_6
+    """H3 resolution 7 (~5 km²)"""
+    RESOLUTION_7
+    """Medium-scale resolution, ~5 km² per cell. Alias for `RESOLUTION_7`"""
+    DISTRICT
+    """H3 resolution 8 (~0.7 km²)"""
+    RESOLUTION_8
+    """H3 resolution 9 (~0.1 km² or ~100,000 m²)"""
+    RESOLUTION_9
+    """Small-scale resolution, ~100,000 m² per cell. Alias for `RESOLUTION_9`"""
+    NEIGHBORHOOD
+    """H3 resolution 10 (~15,000 m²)"""
+    RESOLUTION_10
+    """H3 resolution 11 (~2,000 m²)"""
+    RESOLUTION_11
+    """H3 resolution 12 (~300 m²)"""
+    RESOLUTION_12
+    """Small-scale resolution, ~300 m² per cell. Alias for `RESOLUTION_12`"""
+    BUILDING
+    """H3 resolution 13 (~40 m²)"""
+    RESOLUTION_13
+    """H3 resolution 14 (~6 m²)"""
+    RESOLUTION_14
+    """H3 resolution 15 (~0.9 m²)"""
+    RESOLUTION_15
 }
 
 """
@@ -117,8 +198,12 @@ If multiple fields are provided, the buckets will be sorted by time, then fields
 input ActivityChronicleSummaryBucketType {
     """If provided, group the summary buckets by time buckets of the provided size."""
     size: SummaryBucketSize
+    """How to bucket activity chronicles.  Defaults to `ACTIVE`."""
+    bucketingStrategy: BucketingStrategy @deprecated(reason: "bucketingStrategy is deprecated on ActivityChronicleSummaryBucketType.  Instead, use the query parameter for bucketingStrategy to specify for both top-level and bucketed results.  If this field is provided, it will overwrite the query parameter.")
     """If provided, group the summary buckets by the values of the provided fields."""
     fields: [ActivityChronicleSummaryBucketField!]
+    """If provided, group the summary buckets by position at the specified H3 resolution. Activities without a position will be grouped under a null key."""
+    position: PositionBucketPrecision
     """If provided, group the summary buckets by the values of the provided metadata fields."""
     metadata: [JSONFieldStringBucket!]
 }
@@ -141,6 +226,8 @@ If multiple fields are provided, the buckets will be sorted by time, then fields
 input ZoneIntersectionSummaryBucketType {
     """If provided, group the summary buckets by time buckets of the provided size."""
     size: SummaryBucketSize
+    """How to bucket zone intersections.  Defaults to `ACTIVE`."""
+    bucketingStrategy: BucketingStrategy @deprecated(reason: "bucketingStrategy is deprecated on ZoneIntersectionSummaryBucketType.  Instead, use the query parameter for bucketingStrategy to specify for both top-level and bucketed results.  If this field is provided, it will overwrite the query parameter.")
     """If provided, group the summary buckets by the values of the provided fields."""
     fields: [ZoneIntersectionSummaryBucketField!]
 }

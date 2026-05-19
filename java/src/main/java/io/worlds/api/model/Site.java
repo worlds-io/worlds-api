@@ -13,6 +13,8 @@ public class Site implements java.io.Serializable, UnifiedSearchNameResponseEnti
     private String id;
     @jakarta.validation.constraints.NotNull
     private String name;
+    @jakarta.validation.constraints.NotNull
+    private String timezone;
     private GeoJSONPoint position;
     private GeoJSONMultiPolygon polygon;
     @jakarta.validation.constraints.NotNull
@@ -25,9 +27,10 @@ public class Site implements java.io.Serializable, UnifiedSearchNameResponseEnti
     public Site() {
     }
 
-    public Site(String id, String name, GeoJSONPoint position, GeoJSONMultiPolygon polygon, java.util.List<Device> devices, java.util.List<PointOfInterest> pointsOfInterest, java.util.List<Geofence> geofences) {
+    public Site(String id, String name, String timezone, GeoJSONPoint position, GeoJSONMultiPolygon polygon, java.util.List<Device> devices, java.util.List<PointOfInterest> pointsOfInterest, java.util.List<Geofence> geofences) {
         this.id = id;
         this.name = name;
+        this.timezone = timezone;
         this.position = position;
         this.polygon = polygon;
         this.devices = devices;
@@ -59,6 +62,19 @@ public class Site implements java.io.Serializable, UnifiedSearchNameResponseEnti
      */
     public void setName(String name) {
         this.name = name;
+    }
+
+    /**
+     * The IANA timezone identifier for this site (e.g. 'America/New_York', 'UTC').
+     */
+    public String getTimezone() {
+        return timezone;
+    }
+    /**
+     * The IANA timezone identifier for this site (e.g. 'America/New_York', 'UTC').
+     */
+    public void setTimezone(String timezone) {
+        this.timezone = timezone;
     }
 
     /**
@@ -137,6 +153,7 @@ public class Site implements java.io.Serializable, UnifiedSearchNameResponseEnti
         final Site that = (Site) obj;
         return Objects.equals(id, that.id)
             && Objects.equals(name, that.name)
+            && Objects.equals(timezone, that.timezone)
             && Objects.equals(position, that.position)
             && Objects.equals(polygon, that.polygon)
             && Objects.equals(devices, that.devices)
@@ -146,7 +163,7 @@ public class Site implements java.io.Serializable, UnifiedSearchNameResponseEnti
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, position, polygon, devices, pointsOfInterest, geofences);
+        return Objects.hash(id, name, timezone, position, polygon, devices, pointsOfInterest, geofences);
     }
 
 
@@ -158,6 +175,7 @@ public class Site implements java.io.Serializable, UnifiedSearchNameResponseEnti
 
         private String id;
         private String name;
+        private String timezone;
         private GeoJSONPoint position;
         private GeoJSONMultiPolygon polygon;
         private java.util.List<Device> devices;
@@ -180,6 +198,14 @@ public class Site implements java.io.Serializable, UnifiedSearchNameResponseEnti
          */
         public Builder setName(String name) {
             this.name = name;
+            return this;
+        }
+
+        /**
+         * The IANA timezone identifier for this site (e.g. 'America/New_York', 'UTC').
+         */
+        public Builder setTimezone(String timezone) {
+            this.timezone = timezone;
             return this;
         }
 
@@ -225,7 +251,7 @@ public class Site implements java.io.Serializable, UnifiedSearchNameResponseEnti
 
 
         public Site build() {
-            return new Site(id, name, position, polygon, devices, pointsOfInterest, geofences);
+            return new Site(id, name, timezone, position, polygon, devices, pointsOfInterest, geofences);
         }
 
     }

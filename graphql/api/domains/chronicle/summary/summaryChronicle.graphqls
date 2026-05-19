@@ -1,7 +1,7 @@
 """
 A summary chronicle summarizes across a specific timeframe.  It can reference event and activity chronicles.
 """
-type SummaryChronicle @experimental {
+type SummaryChronicle {
     """The unique identifier for the summary."""
     id: ID!
     """The name of the summary"""
@@ -41,7 +41,7 @@ type SummaryChronicle @experimental {
 """
 This input type is used to create a new [`SummaryChronicle`]({{Types.SummaryChronicle}}).
 """
-input CreateSummaryChronicleInput @experimental {
+input CreateSummaryChronicleInput {
     """The name of the summary"""
     name: String!
     """The summary producer that owns the summary."""
@@ -75,7 +75,7 @@ input CreateSummaryChronicleInput @experimental {
 """
 This input type is used to update an existing [`SummaryChronicle`]({{Types.SummaryChronicle}}).
 """
-input UpdateSummaryChronicleInput @experimental {
+input UpdateSummaryChronicleInput {
     """The unique identifier for the summary."""
     id: ID!
     """The name of the summary"""

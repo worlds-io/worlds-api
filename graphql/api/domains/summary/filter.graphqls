@@ -84,6 +84,10 @@ input FilterActivityChronicleSummaryInput {
     """
     name: FilterStringInput
     """
+    If provided, specifies filters that work against the description of the activity.
+    """
+    description: FilterStringInput
+    """
     If provided, specifies filters that work against the chronicle producer ID of the activity.
     """
     chronicleProducerId: FilterIDInput
@@ -95,6 +99,10 @@ input FilterActivityChronicleSummaryInput {
     If provided, specifies filters that work against the site IDs associated with the activity.
     """
     siteIds: FilterIDListInput
+    """
+    If provided, specifies filters that work against the labels of the activity.
+    """
+    labels: FilterStringListInput
     """
     If provided, specifies filters that work against the priority of the activity.
     """
@@ -111,6 +119,10 @@ input FilterActivityChronicleSummaryInput {
     If provided, specifies filters that work against the approval status of the activity.
     """
     approvalStatus: FilterStringInput
+    """
+    If provided, specifies filters that work against the position of the activity.
+    """
+    position: FilterPointInput
     """
     If provided, specifies filters that work against the user-defined activity metadata.
     """
@@ -169,6 +181,10 @@ input FilterDeviceSummaryInput {
     If provided, specifies filters that work against the site ID of the device.
     """
     siteId: FilterIDInput
+    """
+    If provided, specifies filters that work against the device's site.
+    """
+    site: FilterSiteInput
     """
     If provided, specifies filters that work against the point of interest ID of the device.
     """

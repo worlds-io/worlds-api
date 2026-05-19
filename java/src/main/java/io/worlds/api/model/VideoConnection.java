@@ -14,13 +14,15 @@ public class VideoConnection implements java.io.Serializable {
     private PageInfo pageInfo;
     @jakarta.validation.constraints.NotNull
     private java.util.List<VideoEdge> edges;
+    private int totalCount;
 
     public VideoConnection() {
     }
 
-    public VideoConnection(PageInfo pageInfo, java.util.List<VideoEdge> edges) {
+    public VideoConnection(PageInfo pageInfo, java.util.List<VideoEdge> edges, int totalCount) {
         this.pageInfo = pageInfo;
         this.edges = edges;
+        this.totalCount = totalCount;
     }
 
     /**
@@ -49,6 +51,19 @@ public class VideoConnection implements java.io.Serializable {
         this.edges = edges;
     }
 
+    /**
+     * The total count of videos matching the query, across all pages.
+     */
+    public int getTotalCount() {
+        return totalCount;
+    }
+    /**
+     * The total count of videos matching the query, across all pages.
+     */
+    public void setTotalCount(int totalCount) {
+        this.totalCount = totalCount;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -59,12 +74,13 @@ public class VideoConnection implements java.io.Serializable {
         }
         final VideoConnection that = (VideoConnection) obj;
         return Objects.equals(pageInfo, that.pageInfo)
-            && Objects.equals(edges, that.edges);
+            && Objects.equals(edges, that.edges)
+            && Objects.equals(totalCount, that.totalCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(pageInfo, edges);
+        return Objects.hash(pageInfo, edges, totalCount);
     }
 
 
@@ -76,6 +92,7 @@ public class VideoConnection implements java.io.Serializable {
 
         private PageInfo pageInfo;
         private java.util.List<VideoEdge> edges;
+        private int totalCount;
 
         public Builder() {
         }
@@ -96,9 +113,17 @@ public class VideoConnection implements java.io.Serializable {
             return this;
         }
 
+        /**
+         * The total count of videos matching the query, across all pages.
+         */
+        public Builder setTotalCount(int totalCount) {
+            this.totalCount = totalCount;
+            return this;
+        }
+
 
         public VideoConnection build() {
-            return new VideoConnection(pageInfo, edges);
+            return new VideoConnection(pageInfo, edges, totalCount);
         }
 
     }

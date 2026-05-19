@@ -12,15 +12,20 @@ public class ActivityChronicleSummaryBucketType implements java.io.Serializable 
     private static final long serialVersionUID = 1L;
 
     private org.springframework.graphql.data.ArgumentValue<SummaryBucketSize> size = org.springframework.graphql.data.ArgumentValue.omitted();
+    @Deprecated
+    private org.springframework.graphql.data.ArgumentValue<BucketingStrategy> bucketingStrategy = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<ActivityChronicleSummaryBucketField> fields;
+    private org.springframework.graphql.data.ArgumentValue<PositionBucketPrecision> position = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<JSONFieldStringBucket> metadata;
 
     public ActivityChronicleSummaryBucketType() {
     }
 
-    public ActivityChronicleSummaryBucketType(org.springframework.graphql.data.ArgumentValue<SummaryBucketSize> size, java.util.List<ActivityChronicleSummaryBucketField> fields, java.util.List<JSONFieldStringBucket> metadata) {
+    public ActivityChronicleSummaryBucketType(org.springframework.graphql.data.ArgumentValue<SummaryBucketSize> size, org.springframework.graphql.data.ArgumentValue<BucketingStrategy> bucketingStrategy, java.util.List<ActivityChronicleSummaryBucketField> fields, org.springframework.graphql.data.ArgumentValue<PositionBucketPrecision> position, java.util.List<JSONFieldStringBucket> metadata) {
         this.size = size;
+        this.bucketingStrategy = bucketingStrategy;
         this.fields = fields;
+        this.position = position;
         this.metadata = metadata;
     }
 
@@ -31,11 +36,27 @@ public class ActivityChronicleSummaryBucketType implements java.io.Serializable 
         this.size = size;
     }
 
+    @Deprecated
+    public org.springframework.graphql.data.ArgumentValue<BucketingStrategy> getBucketingStrategy() {
+        return bucketingStrategy;
+    }
+    @Deprecated
+    public void setBucketingStrategy(org.springframework.graphql.data.ArgumentValue<BucketingStrategy> bucketingStrategy) {
+        this.bucketingStrategy = bucketingStrategy;
+    }
+
     public java.util.List<ActivityChronicleSummaryBucketField> getFields() {
         return fields;
     }
     public void setFields(java.util.List<ActivityChronicleSummaryBucketField> fields) {
         this.fields = fields;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<PositionBucketPrecision> getPosition() {
+        return position;
+    }
+    public void setPosition(org.springframework.graphql.data.ArgumentValue<PositionBucketPrecision> position) {
+        this.position = position;
     }
 
     public java.util.List<JSONFieldStringBucket> getMetadata() {
@@ -55,13 +76,15 @@ public class ActivityChronicleSummaryBucketType implements java.io.Serializable 
         }
         final ActivityChronicleSummaryBucketType that = (ActivityChronicleSummaryBucketType) obj;
         return Objects.equals(size, that.size)
+            && Objects.equals(bucketingStrategy, that.bucketingStrategy)
             && Objects.equals(fields, that.fields)
+            && Objects.equals(position, that.position)
             && Objects.equals(metadata, that.metadata);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(size, fields, metadata);
+        return Objects.hash(size, bucketingStrategy, fields, position, metadata);
     }
 
 
@@ -72,7 +95,9 @@ public class ActivityChronicleSummaryBucketType implements java.io.Serializable 
     public static class Builder {
 
         private org.springframework.graphql.data.ArgumentValue<SummaryBucketSize> size = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<BucketingStrategy> bucketingStrategy = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<ActivityChronicleSummaryBucketField> fields;
+        private org.springframework.graphql.data.ArgumentValue<PositionBucketPrecision> position = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<JSONFieldStringBucket> metadata;
 
         public Builder() {
@@ -83,8 +108,19 @@ public class ActivityChronicleSummaryBucketType implements java.io.Serializable 
             return this;
         }
 
+        @Deprecated
+        public Builder setBucketingStrategy(org.springframework.graphql.data.ArgumentValue<BucketingStrategy> bucketingStrategy) {
+            this.bucketingStrategy = bucketingStrategy;
+            return this;
+        }
+
         public Builder setFields(java.util.List<ActivityChronicleSummaryBucketField> fields) {
             this.fields = fields;
+            return this;
+        }
+
+        public Builder setPosition(org.springframework.graphql.data.ArgumentValue<PositionBucketPrecision> position) {
+            this.position = position;
             return this;
         }
 
@@ -95,7 +131,7 @@ public class ActivityChronicleSummaryBucketType implements java.io.Serializable 
 
 
         public ActivityChronicleSummaryBucketType build() {
-            return new ActivityChronicleSummaryBucketType(size, fields, metadata);
+            return new ActivityChronicleSummaryBucketType(size, bucketingStrategy, fields, position, metadata);
         }
 
     }

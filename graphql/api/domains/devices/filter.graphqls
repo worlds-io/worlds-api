@@ -28,6 +28,10 @@ input FilterDeviceInput {
     """
     enabled: FilterBooleanInput
     """
+    If provided, specifies filters that work against the device's site.
+    """
+    site: FilterSiteInput
+    """
     If provided, a device must pass all filters in this list to match the current filter.
     """
     and: [FilterDeviceInput!]

@@ -7,6 +7,8 @@ type ImageConnection {
     pageInfo: PageInfo!
     """The resulting collection of detection edges."""
     edges: [ImageEdge]!
+    """The total count of images matching the query, across all pages."""
+    totalCount: Int!
 }
 
 """

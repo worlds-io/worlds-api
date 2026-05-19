@@ -48,10 +48,6 @@ type Detection {
     detection intersects.
     """
     zoneIds: [ID!]! @deprecated(reason: "`zoneIds` is deprecated. Use `zones.id` instead")
-    """A list of zone events related to this detection."""
-    zoneEvents: [ZoneEvent!]! @deprecated(reason: "`zoneEvents` is deprecated. Use `track.zoneEvents` instead")
-    """A list of geofence events related to this detection."""
-    geofenceEvents: [GeofenceEvent!]! @deprecated(reason: "`geofenceEvents` is deprecated. Use `track.geofenceEvents` instead")
     """
     The global track id that governs the detection, if any.
     """

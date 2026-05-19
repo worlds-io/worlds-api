@@ -14,13 +14,15 @@ public class ImageConnection implements java.io.Serializable {
     private PageInfo pageInfo;
     @jakarta.validation.constraints.NotNull
     private java.util.List<ImageEdge> edges;
+    private int totalCount;
 
     public ImageConnection() {
     }
 
-    public ImageConnection(PageInfo pageInfo, java.util.List<ImageEdge> edges) {
+    public ImageConnection(PageInfo pageInfo, java.util.List<ImageEdge> edges, int totalCount) {
         this.pageInfo = pageInfo;
         this.edges = edges;
+        this.totalCount = totalCount;
     }
 
     /**
@@ -49,6 +51,19 @@ public class ImageConnection implements java.io.Serializable {
         this.edges = edges;
     }
 
+    /**
+     * The total count of images matching the query, across all pages.
+     */
+    public int getTotalCount() {
+        return totalCount;
+    }
+    /**
+     * The total count of images matching the query, across all pages.
+     */
+    public void setTotalCount(int totalCount) {
+        this.totalCount = totalCount;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -59,12 +74,13 @@ public class ImageConnection implements java.io.Serializable {
         }
         final ImageConnection that = (ImageConnection) obj;
         return Objects.equals(pageInfo, that.pageInfo)
-            && Objects.equals(edges, that.edges);
+            && Objects.equals(edges, that.edges)
+            && Objects.equals(totalCount, that.totalCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(pageInfo, edges);
+        return Objects.hash(pageInfo, edges, totalCount);
     }
 
 
@@ -76,6 +92,7 @@ public class ImageConnection implements java.io.Serializable {
 
         private PageInfo pageInfo;
         private java.util.List<ImageEdge> edges;
+        private int totalCount;
 
         public Builder() {
         }
@@ -96,9 +113,17 @@ public class ImageConnection implements java.io.Serializable {
             return this;
         }
 
+        /**
+         * The total count of images matching the query, across all pages.
+         */
+        public Builder setTotalCount(int totalCount) {
+            this.totalCount = totalCount;
+            return this;
+        }
+
 
         public ImageConnection build() {
-            return new ImageConnection(pageInfo, edges);
+            return new ImageConnection(pageInfo, edges, totalCount);
         }
 
     }

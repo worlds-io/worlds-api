@@ -10,13 +10,15 @@ public class SensorConnection implements java.io.Serializable {
     private PageInfo pageInfo;
     @jakarta.validation.constraints.NotNull
     private java.util.List<SensorEdge> edges;
+    private int totalCount;
 
     public SensorConnection() {
     }
 
-    public SensorConnection(PageInfo pageInfo, java.util.List<SensorEdge> edges) {
+    public SensorConnection(PageInfo pageInfo, java.util.List<SensorEdge> edges, int totalCount) {
         this.pageInfo = pageInfo;
         this.edges = edges;
+        this.totalCount = totalCount;
     }
 
     /**
@@ -45,6 +47,19 @@ public class SensorConnection implements java.io.Serializable {
         this.edges = edges;
     }
 
+    /**
+     * The total count of sensors matching the query, across all pages.
+     */
+    public int getTotalCount() {
+        return totalCount;
+    }
+    /**
+     * The total count of sensors matching the query, across all pages.
+     */
+    public void setTotalCount(int totalCount) {
+        this.totalCount = totalCount;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -55,12 +70,13 @@ public class SensorConnection implements java.io.Serializable {
         }
         final SensorConnection that = (SensorConnection) obj;
         return Objects.equals(pageInfo, that.pageInfo)
-            && Objects.equals(edges, that.edges);
+            && Objects.equals(edges, that.edges)
+            && Objects.equals(totalCount, that.totalCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(pageInfo, edges);
+        return Objects.hash(pageInfo, edges, totalCount);
     }
 
 
@@ -72,6 +88,7 @@ public class SensorConnection implements java.io.Serializable {
 
         private PageInfo pageInfo;
         private java.util.List<SensorEdge> edges;
+        private int totalCount;
 
         public Builder() {
         }
@@ -92,9 +109,17 @@ public class SensorConnection implements java.io.Serializable {
             return this;
         }
 
+        /**
+         * The total count of sensors matching the query, across all pages.
+         */
+        public Builder setTotalCount(int totalCount) {
+            this.totalCount = totalCount;
+            return this;
+        }
+
 
         public SensorConnection build() {
-            return new SensorConnection(pageInfo, edges);
+            return new SensorConnection(pageInfo, edges, totalCount);
         }
 
     }

@@ -11,6 +11,7 @@ public class FilterDeviceSummaryInput implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 
     private org.springframework.graphql.data.ArgumentValue<FilterIDInput> siteId = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<FilterSiteInput> site = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterIDInput> pointOfInterestId = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<FilterDeviceSummaryInput> and;
     private java.util.List<FilterDeviceSummaryInput> or;
@@ -19,8 +20,9 @@ public class FilterDeviceSummaryInput implements java.io.Serializable {
     public FilterDeviceSummaryInput() {
     }
 
-    public FilterDeviceSummaryInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> siteId, org.springframework.graphql.data.ArgumentValue<FilterIDInput> pointOfInterestId, java.util.List<FilterDeviceSummaryInput> and, java.util.List<FilterDeviceSummaryInput> or, org.springframework.graphql.data.ArgumentValue<FilterDeviceSummaryInput> not) {
+    public FilterDeviceSummaryInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> siteId, org.springframework.graphql.data.ArgumentValue<FilterSiteInput> site, org.springframework.graphql.data.ArgumentValue<FilterIDInput> pointOfInterestId, java.util.List<FilterDeviceSummaryInput> and, java.util.List<FilterDeviceSummaryInput> or, org.springframework.graphql.data.ArgumentValue<FilterDeviceSummaryInput> not) {
         this.siteId = siteId;
+        this.site = site;
         this.pointOfInterestId = pointOfInterestId;
         this.and = and;
         this.or = or;
@@ -32,6 +34,13 @@ public class FilterDeviceSummaryInput implements java.io.Serializable {
     }
     public void setSiteId(org.springframework.graphql.data.ArgumentValue<FilterIDInput> siteId) {
         this.siteId = siteId;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<FilterSiteInput> getSite() {
+        return site;
+    }
+    public void setSite(org.springframework.graphql.data.ArgumentValue<FilterSiteInput> site) {
+        this.site = site;
     }
 
     public org.springframework.graphql.data.ArgumentValue<FilterIDInput> getPointOfInterestId() {
@@ -72,6 +81,7 @@ public class FilterDeviceSummaryInput implements java.io.Serializable {
         }
         final FilterDeviceSummaryInput that = (FilterDeviceSummaryInput) obj;
         return Objects.equals(siteId, that.siteId)
+            && Objects.equals(site, that.site)
             && Objects.equals(pointOfInterestId, that.pointOfInterestId)
             && Objects.equals(and, that.and)
             && Objects.equals(or, that.or)
@@ -80,7 +90,7 @@ public class FilterDeviceSummaryInput implements java.io.Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(siteId, pointOfInterestId, and, or, not);
+        return Objects.hash(siteId, site, pointOfInterestId, and, or, not);
     }
 
 
@@ -91,6 +101,7 @@ public class FilterDeviceSummaryInput implements java.io.Serializable {
     public static class Builder {
 
         private org.springframework.graphql.data.ArgumentValue<FilterIDInput> siteId = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<FilterSiteInput> site = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterIDInput> pointOfInterestId = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<FilterDeviceSummaryInput> and;
         private java.util.List<FilterDeviceSummaryInput> or;
@@ -101,6 +112,11 @@ public class FilterDeviceSummaryInput implements java.io.Serializable {
 
         public Builder setSiteId(org.springframework.graphql.data.ArgumentValue<FilterIDInput> siteId) {
             this.siteId = siteId;
+            return this;
+        }
+
+        public Builder setSite(org.springframework.graphql.data.ArgumentValue<FilterSiteInput> site) {
+            this.site = site;
             return this;
         }
 
@@ -126,7 +142,7 @@ public class FilterDeviceSummaryInput implements java.io.Serializable {
 
 
         public FilterDeviceSummaryInput build() {
-            return new FilterDeviceSummaryInput(siteId, pointOfInterestId, and, or, not);
+            return new FilterDeviceSummaryInput(siteId, site, pointOfInterestId, and, or, not);
         }
 
     }

@@ -1,8 +1,8 @@
 package io.worlds.api.client;
 
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import tools.jackson.databind.DeserializationFeature;
+import tools.jackson.databind.ObjectMapper;
+import tools.jackson.databind.json.JsonMapper;
 import io.worlds.api.model.Event;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,13 +26,13 @@ public class GraphQLClientTest {
     private WorldsGraphQLClient client;
     private String tokenId;
     private String tokenValue;
-    private ObjectMapper objectMapper = new ObjectMapper();
+    private ObjectMapper objectMapper = JsonMapper.builder()
+            .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
+            .enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY)
+            .build();
 
     @BeforeAll
     void setup() {
-        objectMapper.registerModule(new JavaTimeModule());
-        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        objectMapper.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
 
         String url = System.getenv().getOrDefault("GRAPHQL_URL", "https://api.dev.eus.azure.worlds.io/graphql");
         tokenId = System.getenv().getOrDefault("GRAPHQL_TOKEN_ID", "replace_me");

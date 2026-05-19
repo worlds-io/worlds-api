@@ -14,13 +14,15 @@ public class ChronicleProducerConnection implements java.io.Serializable {
     private java.util.List<ChronicleProducerEdge> edges;
     @jakarta.validation.constraints.NotNull
     private PageInfo pageInfo;
+    private int totalCount;
 
     public ChronicleProducerConnection() {
     }
 
-    public ChronicleProducerConnection(java.util.List<ChronicleProducerEdge> edges, PageInfo pageInfo) {
+    public ChronicleProducerConnection(java.util.List<ChronicleProducerEdge> edges, PageInfo pageInfo, int totalCount) {
         this.edges = edges;
         this.pageInfo = pageInfo;
+        this.totalCount = totalCount;
     }
 
     /**
@@ -49,6 +51,19 @@ public class ChronicleProducerConnection implements java.io.Serializable {
         this.pageInfo = pageInfo;
     }
 
+    /**
+     * The total count of chronicle producers matching the query, across all pages.
+     */
+    public int getTotalCount() {
+        return totalCount;
+    }
+    /**
+     * The total count of chronicle producers matching the query, across all pages.
+     */
+    public void setTotalCount(int totalCount) {
+        this.totalCount = totalCount;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -59,12 +74,13 @@ public class ChronicleProducerConnection implements java.io.Serializable {
         }
         final ChronicleProducerConnection that = (ChronicleProducerConnection) obj;
         return Objects.equals(edges, that.edges)
-            && Objects.equals(pageInfo, that.pageInfo);
+            && Objects.equals(pageInfo, that.pageInfo)
+            && Objects.equals(totalCount, that.totalCount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(edges, pageInfo);
+        return Objects.hash(edges, pageInfo, totalCount);
     }
 
 
@@ -76,6 +92,7 @@ public class ChronicleProducerConnection implements java.io.Serializable {
 
         private java.util.List<ChronicleProducerEdge> edges;
         private PageInfo pageInfo;
+        private int totalCount;
 
         public Builder() {
         }
@@ -96,9 +113,17 @@ public class ChronicleProducerConnection implements java.io.Serializable {
             return this;
         }
 
+        /**
+         * The total count of chronicle producers matching the query, across all pages.
+         */
+        public Builder setTotalCount(int totalCount) {
+            this.totalCount = totalCount;
+            return this;
+        }
+
 
         public ChronicleProducerConnection build() {
-            return new ChronicleProducerConnection(edges, pageInfo);
+            return new ChronicleProducerConnection(edges, pageInfo, totalCount);
         }
 
     }

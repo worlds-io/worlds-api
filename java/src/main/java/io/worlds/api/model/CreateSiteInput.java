@@ -11,14 +11,16 @@ public class CreateSiteInput implements java.io.Serializable {
 
     @jakarta.validation.constraints.NotNull
     private String name;
+    private org.springframework.graphql.data.ArgumentValue<String> timezone = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<GeoJSONMultiPolygonInput> polygon = org.springframework.graphql.data.ArgumentValue.omitted();
 
     public CreateSiteInput() {
     }
 
-    public CreateSiteInput(String name, org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position, org.springframework.graphql.data.ArgumentValue<GeoJSONMultiPolygonInput> polygon) {
+    public CreateSiteInput(String name, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position, org.springframework.graphql.data.ArgumentValue<GeoJSONMultiPolygonInput> polygon) {
         this.name = name;
+        this.timezone = timezone;
         this.position = position;
         this.polygon = polygon;
     }
@@ -28,6 +30,13 @@ public class CreateSiteInput implements java.io.Serializable {
     }
     public void setName(String name) {
         this.name = name;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<String> getTimezone() {
+        return timezone;
+    }
+    public void setTimezone(org.springframework.graphql.data.ArgumentValue<String> timezone) {
+        this.timezone = timezone;
     }
 
     public org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> getPosition() {
@@ -54,13 +63,14 @@ public class CreateSiteInput implements java.io.Serializable {
         }
         final CreateSiteInput that = (CreateSiteInput) obj;
         return Objects.equals(name, that.name)
+            && Objects.equals(timezone, that.timezone)
             && Objects.equals(position, that.position)
             && Objects.equals(polygon, that.polygon);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, position, polygon);
+        return Objects.hash(name, timezone, position, polygon);
     }
 
 
@@ -71,6 +81,7 @@ public class CreateSiteInput implements java.io.Serializable {
     public static class Builder {
 
         private String name;
+        private org.springframework.graphql.data.ArgumentValue<String> timezone = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<GeoJSONMultiPolygonInput> polygon = org.springframework.graphql.data.ArgumentValue.omitted();
 
@@ -79,6 +90,11 @@ public class CreateSiteInput implements java.io.Serializable {
 
         public Builder setName(String name) {
             this.name = name;
+            return this;
+        }
+
+        public Builder setTimezone(org.springframework.graphql.data.ArgumentValue<String> timezone) {
+            this.timezone = timezone;
             return this;
         }
 
@@ -94,7 +110,7 @@ public class CreateSiteInput implements java.io.Serializable {
 
 
         public CreateSiteInput build() {
-            return new CreateSiteInput(name, position, polygon);
+            return new CreateSiteInput(name, timezone, position, polygon);
         }
 
     }

@@ -42,33 +42,6 @@ input FilterGeofenceInput {
 }
 
 """
-`FilterGeofenceEventInput` allows for filtering a geofence event based on criteria described below.
-Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below
-"""
-input FilterGeofenceEventInput {
-    """
-    If provided, specifies filters that work against the [unique id]({{Types.Geofence}}) of a geofence.
-    """
-    geofenceId: FilterIDInput
-    """
-    If provided, specifies filters that work against the [timestamp]({{Types.GeofenceEvent}}) associated with the geofence event.
-    """
-    time: FilterDateTimeOffsetInput!
-    """
-    If provided, a geofence event must pass all filters in this list to match the current filter.
-    """
-    and: [FilterGeofenceEventInput!]
-    """
-    If provided, a geofence event must pass at least one of the filters in this list to match the current filter.
-    """
-    or: [FilterGeofenceEventInput!]
-    """
-    If provided, a geofence event may not match this filter to match the current filter.
-    """
-    not: FilterGeofenceEventInput
-}
-
-"""
 `FilterGeofenceIntersectionInput` allows for filtering a geofence intersection based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below
 """

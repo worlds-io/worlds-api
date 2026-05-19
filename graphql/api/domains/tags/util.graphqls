@@ -7,6 +7,8 @@ type TagConnection {
     pageInfo: PageInfo!
     """The resulting collection of Tag edges."""
     edges: [TagEdge]!
+    """The total count of tags matching the query, across all pages."""
+    totalCount: Int!
 }
 
 """
