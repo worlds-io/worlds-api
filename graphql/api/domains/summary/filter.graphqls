@@ -220,6 +220,18 @@ input FilterDetectionsSummaryInput {
     If provided, specifies filters that work against the site at which the detection was captured.
     """
     site: FilterSiteInput
+    """
+    If provided, a detection must pass all filters in this list to match the current filter.
+    """
+    and: [FilterDetectionsSummaryInput!]
+    """
+    If provided, a detection must pass at least one of the filters in this list to match the current filter.
+    """
+    or: [FilterDetectionsSummaryInput!]
+    """
+    If provided, a detection may not match this filter to match the current filter.
+    """
+    not: FilterDetectionsSummaryInput
 }
 
 """
