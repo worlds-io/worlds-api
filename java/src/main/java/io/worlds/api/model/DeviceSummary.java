@@ -11,13 +11,16 @@ public class DeviceSummary implements java.io.Serializable {
 
     private int total;
     private java.util.List<DeviceSummaryBucket> buckets;
+    @jakarta.validation.constraints.NotNull
+    private java.util.List<DeviceHighestTotalBucket> highestTotalBuckets;
 
     public DeviceSummary() {
     }
 
-    public DeviceSummary(int total, java.util.List<DeviceSummaryBucket> buckets) {
+    public DeviceSummary(int total, java.util.List<DeviceSummaryBucket> buckets, java.util.List<DeviceHighestTotalBucket> highestTotalBuckets) {
         this.total = total;
         this.buckets = buckets;
+        this.highestTotalBuckets = highestTotalBuckets;
     }
 
     /**
@@ -48,6 +51,21 @@ Summary buckets are only returned if `deviceBucket` is provided as a query param
         this.buckets = buckets;
     }
 
+    /**
+     * The bucket(s) with the greatest `total` across the parent's buckets.  Empty if no `deviceBucket`
+was provided.  All tied buckets are returned per group.
+     */
+    public java.util.List<DeviceHighestTotalBucket> getHighestTotalBuckets() {
+        return highestTotalBuckets;
+    }
+    /**
+     * The bucket(s) with the greatest `total` across the parent's buckets.  Empty if no `deviceBucket`
+was provided.  All tied buckets are returned per group.
+     */
+    public void setHighestTotalBuckets(java.util.List<DeviceHighestTotalBucket> highestTotalBuckets) {
+        this.highestTotalBuckets = highestTotalBuckets;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -58,12 +76,13 @@ Summary buckets are only returned if `deviceBucket` is provided as a query param
         }
         final DeviceSummary that = (DeviceSummary) obj;
         return Objects.equals(total, that.total)
-            && Objects.equals(buckets, that.buckets);
+            && Objects.equals(buckets, that.buckets)
+            && Objects.equals(highestTotalBuckets, that.highestTotalBuckets);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, buckets);
+        return Objects.hash(total, buckets, highestTotalBuckets);
     }
 
 
@@ -75,6 +94,7 @@ Summary buckets are only returned if `deviceBucket` is provided as a query param
 
         private int total;
         private java.util.List<DeviceSummaryBucket> buckets;
+        private java.util.List<DeviceHighestTotalBucket> highestTotalBuckets;
 
         public Builder() {
         }
@@ -96,9 +116,18 @@ Summary buckets are only returned if `deviceBucket` is provided as a query param
             return this;
         }
 
+        /**
+         * The bucket(s) with the greatest `total` across the parent's buckets.  Empty if no `deviceBucket`
+was provided.  All tied buckets are returned per group.
+         */
+        public Builder setHighestTotalBuckets(java.util.List<DeviceHighestTotalBucket> highestTotalBuckets) {
+            this.highestTotalBuckets = highestTotalBuckets;
+            return this;
+        }
+
 
         public DeviceSummary build() {
-            return new DeviceSummary(total, buckets);
+            return new DeviceSummary(total, buckets, highestTotalBuckets);
         }
 
     }

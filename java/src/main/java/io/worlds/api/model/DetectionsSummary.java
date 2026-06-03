@@ -11,13 +11,16 @@ public class DetectionsSummary implements java.io.Serializable {
 
     private int total;
     private java.util.List<DetectionsSummaryBucket> buckets;
+    @jakarta.validation.constraints.NotNull
+    private java.util.List<DetectionsHighestTotalBucket> highestTotalBuckets;
 
     public DetectionsSummary() {
     }
 
-    public DetectionsSummary(int total, java.util.List<DetectionsSummaryBucket> buckets) {
+    public DetectionsSummary(int total, java.util.List<DetectionsSummaryBucket> buckets, java.util.List<DetectionsHighestTotalBucket> highestTotalBuckets) {
         this.total = total;
         this.buckets = buckets;
+        this.highestTotalBuckets = highestTotalBuckets;
     }
 
     /**
@@ -48,6 +51,21 @@ Summary buckets are only returned if `detectionsBucket` is provided as a query p
         this.buckets = buckets;
     }
 
+    /**
+     * The bucket(s) with the greatest `total` across the parent's buckets.  Empty if no `detectionsBucket`
+was provided.  All tied buckets are returned per group.
+     */
+    public java.util.List<DetectionsHighestTotalBucket> getHighestTotalBuckets() {
+        return highestTotalBuckets;
+    }
+    /**
+     * The bucket(s) with the greatest `total` across the parent's buckets.  Empty if no `detectionsBucket`
+was provided.  All tied buckets are returned per group.
+     */
+    public void setHighestTotalBuckets(java.util.List<DetectionsHighestTotalBucket> highestTotalBuckets) {
+        this.highestTotalBuckets = highestTotalBuckets;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -58,12 +76,13 @@ Summary buckets are only returned if `detectionsBucket` is provided as a query p
         }
         final DetectionsSummary that = (DetectionsSummary) obj;
         return Objects.equals(total, that.total)
-            && Objects.equals(buckets, that.buckets);
+            && Objects.equals(buckets, that.buckets)
+            && Objects.equals(highestTotalBuckets, that.highestTotalBuckets);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, buckets);
+        return Objects.hash(total, buckets, highestTotalBuckets);
     }
 
 
@@ -75,6 +94,7 @@ Summary buckets are only returned if `detectionsBucket` is provided as a query p
 
         private int total;
         private java.util.List<DetectionsSummaryBucket> buckets;
+        private java.util.List<DetectionsHighestTotalBucket> highestTotalBuckets;
 
         public Builder() {
         }
@@ -96,9 +116,18 @@ Summary buckets are only returned if `detectionsBucket` is provided as a query p
             return this;
         }
 
+        /**
+         * The bucket(s) with the greatest `total` across the parent's buckets.  Empty if no `detectionsBucket`
+was provided.  All tied buckets are returned per group.
+         */
+        public Builder setHighestTotalBuckets(java.util.List<DetectionsHighestTotalBucket> highestTotalBuckets) {
+            this.highestTotalBuckets = highestTotalBuckets;
+            return this;
+        }
+
 
         public DetectionsSummary build() {
-            return new DetectionsSummary(total, buckets);
+            return new DetectionsSummary(total, buckets, highestTotalBuckets);
         }
 
     }

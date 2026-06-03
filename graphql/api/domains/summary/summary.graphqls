@@ -18,9 +18,33 @@ type TracksSummary {
     totalsByTag: [TracksCountByTag!]! @deprecated(reason: "To retrieve per-tag counts, group by the `TAG` field, either alone or in combination with a time bucket.  Counts will return as empty if a `tracksBucket` or `filter` is used.")
     """
     A detailed summary of each [bucket]({{Types.SummaryBucketSize}}) within the time range.
-    Summary buckets are only returned if `bucket` is provided as a query parameter to [`tracksSummary`]({{Queries.tracksSummary}}).
+    Summary buckets are only returned if `tracksBucket` is provided as a query parameter to [`tracksSummary`]({{Queries.tracksSummary}}).
     """
     buckets: [TracksSummaryBucket!]
+    """
+    The bucket(s) with the greatest `total` across the parent's buckets.  Empty if no `tracksBucket`
+    was provided.  All tied buckets are returned per group.
+    """
+    highestTotalBuckets(
+        """
+        Dimensions to keep distinct when finding the max.  Must align with the query's `tracksBucket`:
+        `groupBy.fields` must be a subset of `tracksBucket.fields`, and `groupBy.size` must equal
+        `tracksBucket.size` if set.  If null, returns the single bucket with the greatest total
+        across all buckets (plus any ties).
+        """
+        groupBy: TracksSummaryBucketType
+    ): [TracksHighestTotalBucket!]!
+}
+
+"""
+A bucket selected as having the greatest `total` within its group, returned from
+[`TracksSummary.highestTotalBuckets`]({{Types.TracksSummary}}).
+"""
+type TracksHighestTotalBucket {
+    """The key of the winning bucket.  Only fields included in `groupBy` are populated; others are null."""
+    key: TracksSummaryBucketKey!
+    """The total number of [Tracks]({{Types.Track}}) in the winning bucket."""
+    total: Int!
 }
 
 type TracksCountByTag {
@@ -79,14 +103,38 @@ type EventsSummary {
     summaryStatistics: EventsSummaryStatistics!
     """
     A detailed summary of each [bucket]({{Types.SummaryBucketSize}}) within the time range.
-    Summary buckets are only returned if `bucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventsSummary}}).
+    Summary buckets are only returned if `eventsBucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventsSummary}}).
     """
     buckets: [EventsSummaryBucket!]
+    """
+    The bucket(s) with the greatest `total` across the parent's buckets.  Empty if no `eventsBucket`
+    was provided.  All tied buckets are returned per group.
+    """
+    highestTotalBuckets(
+        """
+        Dimensions to keep distinct when finding the max.  Must align with the query's `eventsBucket`:
+        `groupBy.fields` must be a subset of `eventsBucket.fields`, and `groupBy.size` must equal
+        `eventsBucket.size` if set.  If null, returns the single bucket with the greatest total
+        across all buckets (plus any ties).
+        """
+        groupBy: EventsSummaryBucketType
+    ): [EventsHighestTotalBucket!]!
     """
     The distinct top-level keys found in the `metadata` field across all matching events.
     Useful for discovering available metadata keys that can be used for metadata bucketing.
     """
     metadataKeys: [String!]
+}
+
+"""
+A bucket selected as having the greatest `total` within its group, returned from
+[`EventsSummary.highestTotalBuckets`]({{Types.EventsSummary}}).
+"""
+type EventsHighestTotalBucket {
+    """The key of the winning bucket.  Only fields included in `groupBy` are populated; others are null."""
+    key: EventsSummaryBucketKey!
+    """The total number of [Events]({{Types.Event}}) in the winning bucket."""
+    total: Int!
 }
 
 """
@@ -138,9 +186,33 @@ type VideosSummary {
     summaryStatistics: VideosSummaryStatistics!
     """
     A detailed summary of each [bucket]({{Types.SummaryBucketSize}}) within the time range.
-    Summary buckets are only returned if `bucket` is provided as a query parameter to [`videosSummary`]({{Queries.videosSummary}}).
+    Summary buckets are only returned if `videosBucket` is provided as a query parameter to [`videosSummary`]({{Queries.videosSummary}}).
     """
     buckets: [VideosSummaryBucket!]
+    """
+    The bucket(s) with the greatest `total` across the parent's buckets.  Empty if no `videosBucket`
+    was provided.  All tied buckets are returned per group.
+    """
+    highestTotalBuckets(
+        """
+        Dimensions to keep distinct when finding the max.  Must align with the query's `videosBucket`:
+        `groupBy.fields` must be a subset of `videosBucket.fields`
+        If null, returns the single bucket with the greatest total
+        across all buckets (plus any ties).
+        """
+        groupBy: VideosSummaryBucketType
+    ): [VideosHighestTotalBucket!]!
+}
+
+"""
+A bucket selected as having the greatest `total` within its group, returned from
+[`VideosSummary.highestTotalBuckets`]({{Types.VideosSummary}}).
+"""
+type VideosHighestTotalBucket {
+    """The key of the winning bucket.  Only fields included in `groupBy` are populated; others are null."""
+    key: VideosSummaryBucketKey!
+    """The total number of [Videos]({{Types.Video}}) in the winning bucket."""
+    total: Int!
 }
 
 """
@@ -169,10 +241,34 @@ type ActivityChronicleSummary {
     """
     buckets: [ActivityChronicleSummaryBucket!]
     """
+    The bucket(s) with the greatest `total` across the parent's buckets.  Empty if no `activityChronicleBucket`
+    was provided.  All tied buckets are returned per group.
+    """
+    highestTotalBuckets(
+        """
+        Dimensions to keep distinct when finding the max.  Must align with the query's `activityChronicleBucket`:
+        `groupBy.fields` must be a subset of `activityChronicleBucket.fields`, and `groupBy.size` must equal
+        `activityChronicleBucket.size` if set.  If null, returns the single bucket with the greatest total
+        across all buckets (plus any ties).
+        """
+        groupBy: ActivityChronicleSummaryBucketType
+    ): [ActivityChronicleHighestTotalBucket!]!
+    """
     The distinct top-level keys found in the `metadata` field across all matching activity chronicles.
     Useful for discovering available metadata keys that can be used for metadata bucketing.
     """
     metadataKeys: [String!]
+}
+
+"""
+A bucket selected as having the greatest `total` within its group, returned from
+[`ActivityChronicleSummary.highestTotalBuckets`]({{Types.ActivityChronicleSummary}}).
+"""
+type ActivityChronicleHighestTotalBucket {
+    """The key of the winning bucket.  Only fields included in `groupBy` are populated; others are null."""
+    key: ActivityChronicleSummaryBucketKey!
+    """The total number of activity chronicles in the winning bucket."""
+    total: Int!
 }
 
 """
@@ -288,6 +384,30 @@ type ZoneIntersectionSummary {
     Summary buckets are only returned if `zoneIntersectionBucket` is provided as a query parameter to `zoneIntersectionSummary`.
     """
     buckets: [ZoneIntersectionSummaryBucket!]
+    """
+    The bucket(s) with the greatest `total` across the parent's buckets.  Empty if no `zoneIntersectionBucket`
+    was provided.  All tied buckets are returned per group.
+    """
+    highestTotalBuckets(
+        """
+        Dimensions to keep distinct when finding the max.  Must align with the query's `zoneIntersectionBucket`:
+        `groupBy.fields` must be a subset of `zoneIntersectionBucket.fields`, and `groupBy.size` must equal
+        `zoneIntersectionBucket.size` if set.  If null, returns the single bucket with the greatest total
+        across all buckets (plus any ties).
+        """
+        groupBy: ZoneIntersectionSummaryBucketType
+    ): [ZoneIntersectionHighestTotalBucket!]!
+}
+
+"""
+A bucket selected as having the greatest `total` within its group, returned from
+[`ZoneIntersectionSummary.highestTotalBuckets`]({{Types.ZoneIntersectionSummary}}).
+"""
+type ZoneIntersectionHighestTotalBucket {
+    """The key of the winning bucket.  Only fields included in `groupBy` are populated; others are null."""
+    key: ZoneIntersectionSummaryBucketKey!
+    """The total number of zone intersections in the winning bucket."""
+    total: Int!
 }
 
 """
@@ -335,6 +455,30 @@ type DetectionsSummary {
     Summary buckets are only returned if `detectionsBucket` is provided as a query parameter to `detectionsSummary`.
     """
     buckets: [DetectionsSummaryBucket!]
+    """
+    The bucket(s) with the greatest `total` across the parent's buckets.  Empty if no `detectionsBucket`
+    was provided.  All tied buckets are returned per group.
+    """
+    highestTotalBuckets(
+        """
+        Dimensions to keep distinct when finding the max.  Must align with the query's `detectionsBucket`:
+        `groupBy.fields` must be a subset of `detectionsBucket.fields`, and `groupBy.size` must equal
+        `detectionsBucket.size` if set.  If null, returns the single bucket with the greatest total
+        across all buckets (plus any ties).
+        """
+        groupBy: DetectionsSummaryBucketType
+    ): [DetectionsHighestTotalBucket!]!
+}
+
+"""
+A bucket selected as having the greatest `total` within its group, returned from
+[`DetectionsSummary.highestTotalBuckets`]({{Types.DetectionsSummary}}).
+"""
+type DetectionsHighestTotalBucket {
+    """The key of the winning bucket.  Only fields included in `groupBy` are populated; others are null."""
+    key: DetectionsSummaryBucketKey!
+    """The total number of detections in the winning bucket."""
+    total: Int!
 }
 
 """
@@ -362,6 +506,30 @@ type DeviceSummary {
     Summary buckets are only returned if `deviceBucket` is provided as a query parameter to `deviceSummary`.
     """
     buckets: [DeviceSummaryBucket!]
+    """
+    The bucket(s) with the greatest `total` across the parent's buckets.  Empty if no `deviceBucket`
+    was provided.  All tied buckets are returned per group.
+    """
+    highestTotalBuckets(
+        """
+        Dimensions to keep distinct when finding the max.  Must align with the query's `deviceBucket`:
+        `groupBy.fields` must be a subset of `deviceBucket.fields`, and `groupBy.size` must equal
+        `deviceBucket.size` if set.  If null, returns the single bucket with the greatest total
+        across all buckets (plus any ties).
+        """
+        groupBy: DeviceSummaryBucketType
+    ): [DeviceHighestTotalBucket!]!
+}
+
+"""
+A bucket selected as having the greatest `total` within its group, returned from
+[`DeviceSummary.highestTotalBuckets`]({{Types.DeviceSummary}}).
+"""
+type DeviceHighestTotalBucket {
+    """The key of the winning bucket.  Only fields included in `groupBy` are populated; others are null."""
+    key: DeviceSummaryBucketKey!
+    """The total number of devices in the winning bucket."""
+    total: Int!
 }
 
 """

@@ -15,17 +15,20 @@ public class ActivityChronicleSummary implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private ActivityChronicleSummaryStatistics summaryStatistics;
     private java.util.List<ActivityChronicleSummaryBucket> buckets;
+    @jakarta.validation.constraints.NotNull
+    private java.util.List<ActivityChronicleHighestTotalBucket> highestTotalBuckets;
     private java.util.List<String> metadataKeys;
 
     public ActivityChronicleSummary() {
     }
 
-    public ActivityChronicleSummary(int total, int startedCount, int endedCount, ActivityChronicleSummaryStatistics summaryStatistics, java.util.List<ActivityChronicleSummaryBucket> buckets, java.util.List<String> metadataKeys) {
+    public ActivityChronicleSummary(int total, int startedCount, int endedCount, ActivityChronicleSummaryStatistics summaryStatistics, java.util.List<ActivityChronicleSummaryBucket> buckets, java.util.List<ActivityChronicleHighestTotalBucket> highestTotalBuckets, java.util.List<String> metadataKeys) {
         this.total = total;
         this.startedCount = startedCount;
         this.endedCount = endedCount;
         this.summaryStatistics = summaryStatistics;
         this.buckets = buckets;
+        this.highestTotalBuckets = highestTotalBuckets;
         this.metadataKeys = metadataKeys;
     }
 
@@ -97,6 +100,21 @@ Summary buckets are only returned if `activityChronicleBucket` is provided as a 
     }
 
     /**
+     * The bucket(s) with the greatest `total` across the parent's buckets.  Empty if no `activityChronicleBucket`
+was provided.  All tied buckets are returned per group.
+     */
+    public java.util.List<ActivityChronicleHighestTotalBucket> getHighestTotalBuckets() {
+        return highestTotalBuckets;
+    }
+    /**
+     * The bucket(s) with the greatest `total` across the parent's buckets.  Empty if no `activityChronicleBucket`
+was provided.  All tied buckets are returned per group.
+     */
+    public void setHighestTotalBuckets(java.util.List<ActivityChronicleHighestTotalBucket> highestTotalBuckets) {
+        this.highestTotalBuckets = highestTotalBuckets;
+    }
+
+    /**
      * The distinct top-level keys found in the `metadata` field across all matching activity chronicles.
 Useful for discovering available metadata keys that can be used for metadata bucketing.
      */
@@ -125,12 +143,13 @@ Useful for discovering available metadata keys that can be used for metadata buc
             && Objects.equals(endedCount, that.endedCount)
             && Objects.equals(summaryStatistics, that.summaryStatistics)
             && Objects.equals(buckets, that.buckets)
+            && Objects.equals(highestTotalBuckets, that.highestTotalBuckets)
             && Objects.equals(metadataKeys, that.metadataKeys);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, startedCount, endedCount, summaryStatistics, buckets, metadataKeys);
+        return Objects.hash(total, startedCount, endedCount, summaryStatistics, buckets, highestTotalBuckets, metadataKeys);
     }
 
 
@@ -145,6 +164,7 @@ Useful for discovering available metadata keys that can be used for metadata buc
         private int endedCount;
         private ActivityChronicleSummaryStatistics summaryStatistics;
         private java.util.List<ActivityChronicleSummaryBucket> buckets;
+        private java.util.List<ActivityChronicleHighestTotalBucket> highestTotalBuckets;
         private java.util.List<String> metadataKeys;
 
         public Builder() {
@@ -192,6 +212,15 @@ Summary buckets are only returned if `activityChronicleBucket` is provided as a 
         }
 
         /**
+         * The bucket(s) with the greatest `total` across the parent's buckets.  Empty if no `activityChronicleBucket`
+was provided.  All tied buckets are returned per group.
+         */
+        public Builder setHighestTotalBuckets(java.util.List<ActivityChronicleHighestTotalBucket> highestTotalBuckets) {
+            this.highestTotalBuckets = highestTotalBuckets;
+            return this;
+        }
+
+        /**
          * The distinct top-level keys found in the `metadata` field across all matching activity chronicles.
 Useful for discovering available metadata keys that can be used for metadata bucketing.
          */
@@ -202,7 +231,7 @@ Useful for discovering available metadata keys that can be used for metadata buc
 
 
         public ActivityChronicleSummary build() {
-            return new ActivityChronicleSummary(total, startedCount, endedCount, summaryStatistics, buckets, metadataKeys);
+            return new ActivityChronicleSummary(total, startedCount, endedCount, summaryStatistics, buckets, highestTotalBuckets, metadataKeys);
         }
 
     }
