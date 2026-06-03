@@ -15,16 +15,19 @@ public class ZoneIntersectionSummary implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private ZoneIntersectionSummaryStatistics summaryStatistics;
     private java.util.List<ZoneIntersectionSummaryBucket> buckets;
+    @jakarta.validation.constraints.NotNull
+    private java.util.List<ZoneIntersectionHighestTotalBucket> highestTotalBuckets;
 
     public ZoneIntersectionSummary() {
     }
 
-    public ZoneIntersectionSummary(int total, int startedCount, int endedCount, ZoneIntersectionSummaryStatistics summaryStatistics, java.util.List<ZoneIntersectionSummaryBucket> buckets) {
+    public ZoneIntersectionSummary(int total, int startedCount, int endedCount, ZoneIntersectionSummaryStatistics summaryStatistics, java.util.List<ZoneIntersectionSummaryBucket> buckets, java.util.List<ZoneIntersectionHighestTotalBucket> highestTotalBuckets) {
         this.total = total;
         this.startedCount = startedCount;
         this.endedCount = endedCount;
         this.summaryStatistics = summaryStatistics;
         this.buckets = buckets;
+        this.highestTotalBuckets = highestTotalBuckets;
     }
 
     /**
@@ -94,6 +97,21 @@ Summary buckets are only returned if `zoneIntersectionBucket` is provided as a q
         this.buckets = buckets;
     }
 
+    /**
+     * The bucket(s) with the greatest `total` across the parent's buckets.  Empty if no `zoneIntersectionBucket`
+was provided.  All tied buckets are returned per group.
+     */
+    public java.util.List<ZoneIntersectionHighestTotalBucket> getHighestTotalBuckets() {
+        return highestTotalBuckets;
+    }
+    /**
+     * The bucket(s) with the greatest `total` across the parent's buckets.  Empty if no `zoneIntersectionBucket`
+was provided.  All tied buckets are returned per group.
+     */
+    public void setHighestTotalBuckets(java.util.List<ZoneIntersectionHighestTotalBucket> highestTotalBuckets) {
+        this.highestTotalBuckets = highestTotalBuckets;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -107,12 +125,13 @@ Summary buckets are only returned if `zoneIntersectionBucket` is provided as a q
             && Objects.equals(startedCount, that.startedCount)
             && Objects.equals(endedCount, that.endedCount)
             && Objects.equals(summaryStatistics, that.summaryStatistics)
-            && Objects.equals(buckets, that.buckets);
+            && Objects.equals(buckets, that.buckets)
+            && Objects.equals(highestTotalBuckets, that.highestTotalBuckets);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, startedCount, endedCount, summaryStatistics, buckets);
+        return Objects.hash(total, startedCount, endedCount, summaryStatistics, buckets, highestTotalBuckets);
     }
 
 
@@ -127,6 +146,7 @@ Summary buckets are only returned if `zoneIntersectionBucket` is provided as a q
         private int endedCount;
         private ZoneIntersectionSummaryStatistics summaryStatistics;
         private java.util.List<ZoneIntersectionSummaryBucket> buckets;
+        private java.util.List<ZoneIntersectionHighestTotalBucket> highestTotalBuckets;
 
         public Builder() {
         }
@@ -172,9 +192,18 @@ Summary buckets are only returned if `zoneIntersectionBucket` is provided as a q
             return this;
         }
 
+        /**
+         * The bucket(s) with the greatest `total` across the parent's buckets.  Empty if no `zoneIntersectionBucket`
+was provided.  All tied buckets are returned per group.
+         */
+        public Builder setHighestTotalBuckets(java.util.List<ZoneIntersectionHighestTotalBucket> highestTotalBuckets) {
+            this.highestTotalBuckets = highestTotalBuckets;
+            return this;
+        }
+
 
         public ZoneIntersectionSummary build() {
-            return new ZoneIntersectionSummary(total, startedCount, endedCount, summaryStatistics, buckets);
+            return new ZoneIntersectionSummary(total, startedCount, endedCount, summaryStatistics, buckets, highestTotalBuckets);
         }
 
     }

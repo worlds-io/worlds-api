@@ -15,16 +15,19 @@ public class VideosSummary implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private VideosSummaryStatistics summaryStatistics;
     private java.util.List<VideosSummaryBucket> buckets;
+    @jakarta.validation.constraints.NotNull
+    private java.util.List<VideosHighestTotalBucket> highestTotalBuckets;
 
     public VideosSummary() {
     }
 
-    public VideosSummary(int total, int startedCount, int endedCount, VideosSummaryStatistics summaryStatistics, java.util.List<VideosSummaryBucket> buckets) {
+    public VideosSummary(int total, int startedCount, int endedCount, VideosSummaryStatistics summaryStatistics, java.util.List<VideosSummaryBucket> buckets, java.util.List<VideosHighestTotalBucket> highestTotalBuckets) {
         this.total = total;
         this.startedCount = startedCount;
         this.endedCount = endedCount;
         this.summaryStatistics = summaryStatistics;
         this.buckets = buckets;
+        this.highestTotalBuckets = highestTotalBuckets;
     }
 
     /**
@@ -94,6 +97,21 @@ Summary buckets are only returned if `bucket` is provided as a query parameter t
         this.buckets = buckets;
     }
 
+    /**
+     * The bucket(s) with the greatest `total` across the parent's buckets.  Empty if no `videosBucket`
+was provided.  All tied buckets are returned per group.
+     */
+    public java.util.List<VideosHighestTotalBucket> getHighestTotalBuckets() {
+        return highestTotalBuckets;
+    }
+    /**
+     * The bucket(s) with the greatest `total` across the parent's buckets.  Empty if no `videosBucket`
+was provided.  All tied buckets are returned per group.
+     */
+    public void setHighestTotalBuckets(java.util.List<VideosHighestTotalBucket> highestTotalBuckets) {
+        this.highestTotalBuckets = highestTotalBuckets;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -107,12 +125,13 @@ Summary buckets are only returned if `bucket` is provided as a query parameter t
             && Objects.equals(startedCount, that.startedCount)
             && Objects.equals(endedCount, that.endedCount)
             && Objects.equals(summaryStatistics, that.summaryStatistics)
-            && Objects.equals(buckets, that.buckets);
+            && Objects.equals(buckets, that.buckets)
+            && Objects.equals(highestTotalBuckets, that.highestTotalBuckets);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, startedCount, endedCount, summaryStatistics, buckets);
+        return Objects.hash(total, startedCount, endedCount, summaryStatistics, buckets, highestTotalBuckets);
     }
 
 
@@ -127,6 +146,7 @@ Summary buckets are only returned if `bucket` is provided as a query parameter t
         private int endedCount;
         private VideosSummaryStatistics summaryStatistics;
         private java.util.List<VideosSummaryBucket> buckets;
+        private java.util.List<VideosHighestTotalBucket> highestTotalBuckets;
 
         public Builder() {
         }
@@ -172,9 +192,18 @@ Summary buckets are only returned if `bucket` is provided as a query parameter t
             return this;
         }
 
+        /**
+         * The bucket(s) with the greatest `total` across the parent's buckets.  Empty if no `videosBucket`
+was provided.  All tied buckets are returned per group.
+         */
+        public Builder setHighestTotalBuckets(java.util.List<VideosHighestTotalBucket> highestTotalBuckets) {
+            this.highestTotalBuckets = highestTotalBuckets;
+            return this;
+        }
+
 
         public VideosSummary build() {
-            return new VideosSummary(total, startedCount, endedCount, summaryStatistics, buckets);
+            return new VideosSummary(total, startedCount, endedCount, summaryStatistics, buckets, highestTotalBuckets);
         }
 
     }
