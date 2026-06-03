@@ -196,8 +196,8 @@ type VideosSummary {
     highestTotalBuckets(
         """
         Dimensions to keep distinct when finding the max.  Must align with the query's `videosBucket`:
-        `groupBy.fields` must be a subset of `videosBucket.fields`, and `groupBy.size` must equal
-        `videosBucket.size` if set.  If null, returns the single bucket with the greatest total
+        `groupBy.fields` must be a subset of `videosBucket.fields`
+        If null, returns the single bucket with the greatest total
         across all buckets (plus any ties).
         """
         groupBy: VideosSummaryBucketType
