@@ -86,14 +86,14 @@ public class EventsSummary implements java.io.Serializable {
 
     /**
      * A detailed summary of each [bucket]({{Types.SummaryBucketSize}}) within the time range.
-Summary buckets are only returned if `bucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventsSummary}}).
+Summary buckets are only returned if `eventsBucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventsSummary}}).
      */
     public java.util.List<EventsSummaryBucket> getBuckets() {
         return buckets;
     }
     /**
      * A detailed summary of each [bucket]({{Types.SummaryBucketSize}}) within the time range.
-Summary buckets are only returned if `bucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventsSummary}}).
+Summary buckets are only returned if `eventsBucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventsSummary}}).
      */
     public void setBuckets(java.util.List<EventsSummaryBucket> buckets) {
         this.buckets = buckets;
@@ -204,7 +204,7 @@ Useful for discovering available metadata keys that can be used for metadata buc
 
         /**
          * A detailed summary of each [bucket]({{Types.SummaryBucketSize}}) within the time range.
-Summary buckets are only returned if `bucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventsSummary}}).
+Summary buckets are only returned if `eventsBucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventsSummary}}).
          */
         public Builder setBuckets(java.util.List<EventsSummaryBucket> buckets) {
             this.buckets = buckets;

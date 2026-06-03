@@ -84,14 +84,14 @@ public class TracksSummary implements java.io.Serializable {
 
     /**
      * A detailed summary of each [bucket]({{Types.SummaryBucketSize}}) within the time range.
-Summary buckets are only returned if `bucket` is provided as a query parameter to [`tracksSummary`]({{Queries.tracksSummary}}).
+Summary buckets are only returned if `tracksBucket` is provided as a query parameter to [`tracksSummary`]({{Queries.tracksSummary}}).
      */
     public java.util.List<TracksSummaryBucket> getBuckets() {
         return buckets;
     }
     /**
      * A detailed summary of each [bucket]({{Types.SummaryBucketSize}}) within the time range.
-Summary buckets are only returned if `bucket` is provided as a query parameter to [`tracksSummary`]({{Queries.tracksSummary}}).
+Summary buckets are only returned if `tracksBucket` is provided as a query parameter to [`tracksSummary`]({{Queries.tracksSummary}}).
      */
     public void setBuckets(java.util.List<TracksSummaryBucket> buckets) {
         this.buckets = buckets;
@@ -186,7 +186,7 @@ was provided.  All tied buckets are returned per group.
 
         /**
          * A detailed summary of each [bucket]({{Types.SummaryBucketSize}}) within the time range.
-Summary buckets are only returned if `bucket` is provided as a query parameter to [`tracksSummary`]({{Queries.tracksSummary}}).
+Summary buckets are only returned if `tracksBucket` is provided as a query parameter to [`tracksSummary`]({{Queries.tracksSummary}}).
          */
         public Builder setBuckets(java.util.List<TracksSummaryBucket> buckets) {
             this.buckets = buckets;
