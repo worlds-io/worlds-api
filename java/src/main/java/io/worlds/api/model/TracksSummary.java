@@ -13,16 +13,19 @@ public class TracksSummary implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private java.util.List<TracksCountByTag> totalsByTag;
     private java.util.List<TracksSummaryBucket> buckets;
+    @jakarta.validation.constraints.NotNull
+    private java.util.List<TracksHighestTotalBucket> highestTotalBuckets;
 
     public TracksSummary() {
     }
 
-    public TracksSummary(int total, int startedCount, int endedCount, java.util.List<TracksCountByTag> totalsByTag, java.util.List<TracksSummaryBucket> buckets) {
+    public TracksSummary(int total, int startedCount, int endedCount, java.util.List<TracksCountByTag> totalsByTag, java.util.List<TracksSummaryBucket> buckets, java.util.List<TracksHighestTotalBucket> highestTotalBuckets) {
         this.total = total;
         this.startedCount = startedCount;
         this.endedCount = endedCount;
         this.totalsByTag = totalsByTag;
         this.buckets = buckets;
+        this.highestTotalBuckets = highestTotalBuckets;
     }
 
     /**
@@ -81,17 +84,32 @@ public class TracksSummary implements java.io.Serializable {
 
     /**
      * A detailed summary of each [bucket]({{Types.SummaryBucketSize}}) within the time range.
-Summary buckets are only returned if `bucket` is provided as a query parameter to [`tracksSummary`]({{Queries.tracksSummary}}).
+Summary buckets are only returned if `tracksBucket` is provided as a query parameter to [`tracksSummary`]({{Queries.tracksSummary}}).
      */
     public java.util.List<TracksSummaryBucket> getBuckets() {
         return buckets;
     }
     /**
      * A detailed summary of each [bucket]({{Types.SummaryBucketSize}}) within the time range.
-Summary buckets are only returned if `bucket` is provided as a query parameter to [`tracksSummary`]({{Queries.tracksSummary}}).
+Summary buckets are only returned if `tracksBucket` is provided as a query parameter to [`tracksSummary`]({{Queries.tracksSummary}}).
      */
     public void setBuckets(java.util.List<TracksSummaryBucket> buckets) {
         this.buckets = buckets;
+    }
+
+    /**
+     * The bucket(s) with the greatest `total` across the parent's buckets.  Empty if no `tracksBucket`
+was provided.  All tied buckets are returned per group.
+     */
+    public java.util.List<TracksHighestTotalBucket> getHighestTotalBuckets() {
+        return highestTotalBuckets;
+    }
+    /**
+     * The bucket(s) with the greatest `total` across the parent's buckets.  Empty if no `tracksBucket`
+was provided.  All tied buckets are returned per group.
+     */
+    public void setHighestTotalBuckets(java.util.List<TracksHighestTotalBucket> highestTotalBuckets) {
+        this.highestTotalBuckets = highestTotalBuckets;
     }
 
     @Override
@@ -107,12 +125,13 @@ Summary buckets are only returned if `bucket` is provided as a query parameter t
             && Objects.equals(startedCount, that.startedCount)
             && Objects.equals(endedCount, that.endedCount)
             && Objects.equals(totalsByTag, that.totalsByTag)
-            && Objects.equals(buckets, that.buckets);
+            && Objects.equals(buckets, that.buckets)
+            && Objects.equals(highestTotalBuckets, that.highestTotalBuckets);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, startedCount, endedCount, totalsByTag, buckets);
+        return Objects.hash(total, startedCount, endedCount, totalsByTag, buckets, highestTotalBuckets);
     }
 
 
@@ -127,6 +146,7 @@ Summary buckets are only returned if `bucket` is provided as a query parameter t
         private int endedCount;
         private java.util.List<TracksCountByTag> totalsByTag;
         private java.util.List<TracksSummaryBucket> buckets;
+        private java.util.List<TracksHighestTotalBucket> highestTotalBuckets;
 
         public Builder() {
         }
@@ -166,16 +186,25 @@ Summary buckets are only returned if `bucket` is provided as a query parameter t
 
         /**
          * A detailed summary of each [bucket]({{Types.SummaryBucketSize}}) within the time range.
-Summary buckets are only returned if `bucket` is provided as a query parameter to [`tracksSummary`]({{Queries.tracksSummary}}).
+Summary buckets are only returned if `tracksBucket` is provided as a query parameter to [`tracksSummary`]({{Queries.tracksSummary}}).
          */
         public Builder setBuckets(java.util.List<TracksSummaryBucket> buckets) {
             this.buckets = buckets;
             return this;
         }
 
+        /**
+         * The bucket(s) with the greatest `total` across the parent's buckets.  Empty if no `tracksBucket`
+was provided.  All tied buckets are returned per group.
+         */
+        public Builder setHighestTotalBuckets(java.util.List<TracksHighestTotalBucket> highestTotalBuckets) {
+            this.highestTotalBuckets = highestTotalBuckets;
+            return this;
+        }
+
 
         public TracksSummary build() {
-            return new TracksSummary(total, startedCount, endedCount, totalsByTag, buckets);
+            return new TracksSummary(total, startedCount, endedCount, totalsByTag, buckets, highestTotalBuckets);
         }
 
     }

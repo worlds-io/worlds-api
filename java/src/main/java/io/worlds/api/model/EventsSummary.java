@@ -15,17 +15,20 @@ public class EventsSummary implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private EventsSummaryStatistics summaryStatistics;
     private java.util.List<EventsSummaryBucket> buckets;
+    @jakarta.validation.constraints.NotNull
+    private java.util.List<EventsHighestTotalBucket> highestTotalBuckets;
     private java.util.List<String> metadataKeys;
 
     public EventsSummary() {
     }
 
-    public EventsSummary(int total, int startedCount, int endedCount, EventsSummaryStatistics summaryStatistics, java.util.List<EventsSummaryBucket> buckets, java.util.List<String> metadataKeys) {
+    public EventsSummary(int total, int startedCount, int endedCount, EventsSummaryStatistics summaryStatistics, java.util.List<EventsSummaryBucket> buckets, java.util.List<EventsHighestTotalBucket> highestTotalBuckets, java.util.List<String> metadataKeys) {
         this.total = total;
         this.startedCount = startedCount;
         this.endedCount = endedCount;
         this.summaryStatistics = summaryStatistics;
         this.buckets = buckets;
+        this.highestTotalBuckets = highestTotalBuckets;
         this.metadataKeys = metadataKeys;
     }
 
@@ -83,17 +86,32 @@ public class EventsSummary implements java.io.Serializable {
 
     /**
      * A detailed summary of each [bucket]({{Types.SummaryBucketSize}}) within the time range.
-Summary buckets are only returned if `bucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventsSummary}}).
+Summary buckets are only returned if `eventsBucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventsSummary}}).
      */
     public java.util.List<EventsSummaryBucket> getBuckets() {
         return buckets;
     }
     /**
      * A detailed summary of each [bucket]({{Types.SummaryBucketSize}}) within the time range.
-Summary buckets are only returned if `bucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventsSummary}}).
+Summary buckets are only returned if `eventsBucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventsSummary}}).
      */
     public void setBuckets(java.util.List<EventsSummaryBucket> buckets) {
         this.buckets = buckets;
+    }
+
+    /**
+     * The bucket(s) with the greatest `total` across the parent's buckets.  Empty if no `eventsBucket`
+was provided.  All tied buckets are returned per group.
+     */
+    public java.util.List<EventsHighestTotalBucket> getHighestTotalBuckets() {
+        return highestTotalBuckets;
+    }
+    /**
+     * The bucket(s) with the greatest `total` across the parent's buckets.  Empty if no `eventsBucket`
+was provided.  All tied buckets are returned per group.
+     */
+    public void setHighestTotalBuckets(java.util.List<EventsHighestTotalBucket> highestTotalBuckets) {
+        this.highestTotalBuckets = highestTotalBuckets;
     }
 
     /**
@@ -125,12 +143,13 @@ Useful for discovering available metadata keys that can be used for metadata buc
             && Objects.equals(endedCount, that.endedCount)
             && Objects.equals(summaryStatistics, that.summaryStatistics)
             && Objects.equals(buckets, that.buckets)
+            && Objects.equals(highestTotalBuckets, that.highestTotalBuckets)
             && Objects.equals(metadataKeys, that.metadataKeys);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, startedCount, endedCount, summaryStatistics, buckets, metadataKeys);
+        return Objects.hash(total, startedCount, endedCount, summaryStatistics, buckets, highestTotalBuckets, metadataKeys);
     }
 
 
@@ -145,6 +164,7 @@ Useful for discovering available metadata keys that can be used for metadata buc
         private int endedCount;
         private EventsSummaryStatistics summaryStatistics;
         private java.util.List<EventsSummaryBucket> buckets;
+        private java.util.List<EventsHighestTotalBucket> highestTotalBuckets;
         private java.util.List<String> metadataKeys;
 
         public Builder() {
@@ -184,10 +204,19 @@ Useful for discovering available metadata keys that can be used for metadata buc
 
         /**
          * A detailed summary of each [bucket]({{Types.SummaryBucketSize}}) within the time range.
-Summary buckets are only returned if `bucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventsSummary}}).
+Summary buckets are only returned if `eventsBucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventsSummary}}).
          */
         public Builder setBuckets(java.util.List<EventsSummaryBucket> buckets) {
             this.buckets = buckets;
+            return this;
+        }
+
+        /**
+         * The bucket(s) with the greatest `total` across the parent's buckets.  Empty if no `eventsBucket`
+was provided.  All tied buckets are returned per group.
+         */
+        public Builder setHighestTotalBuckets(java.util.List<EventsHighestTotalBucket> highestTotalBuckets) {
+            this.highestTotalBuckets = highestTotalBuckets;
             return this;
         }
 
@@ -202,7 +231,7 @@ Useful for discovering available metadata keys that can be used for metadata buc
 
 
         public EventsSummary build() {
-            return new EventsSummary(total, startedCount, endedCount, summaryStatistics, buckets, metadataKeys);
+            return new EventsSummary(total, startedCount, endedCount, summaryStatistics, buckets, highestTotalBuckets, metadataKeys);
         }
 
     }
