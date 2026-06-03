@@ -353,7 +353,7 @@ type TracksSummaryBucketKey {
     """The site for data sources which produced the tracks."""
     dataSourceSite: Site
     """The point of interest for data sources which produced the tracks."""
-    dataSourcePointOfInterest: Site
+    dataSourcePointOfInterest: PointOfInterest
 }
 
 """The grouping key for an VideosSummaryBucket.  Fields bucketed on will be present.  All other fields will be null."""

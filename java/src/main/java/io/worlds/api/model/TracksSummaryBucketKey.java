@@ -13,12 +13,12 @@ public class TracksSummaryBucketKey implements java.io.Serializable {
     private Tag tag;
     private DataSource dataSource;
     private Site dataSourceSite;
-    private Site dataSourcePointOfInterest;
+    private PointOfInterest dataSourcePointOfInterest;
 
     public TracksSummaryBucketKey() {
     }
 
-    public TracksSummaryBucketKey(java.time.OffsetDateTime time, Tag tag, DataSource dataSource, Site dataSourceSite, Site dataSourcePointOfInterest) {
+    public TracksSummaryBucketKey(java.time.OffsetDateTime time, Tag tag, DataSource dataSource, Site dataSourceSite, PointOfInterest dataSourcePointOfInterest) {
         this.time = time;
         this.tag = tag;
         this.dataSource = dataSource;
@@ -81,13 +81,13 @@ public class TracksSummaryBucketKey implements java.io.Serializable {
     /**
      * The point of interest for data sources which produced the tracks.
      */
-    public Site getDataSourcePointOfInterest() {
+    public PointOfInterest getDataSourcePointOfInterest() {
         return dataSourcePointOfInterest;
     }
     /**
      * The point of interest for data sources which produced the tracks.
      */
-    public void setDataSourcePointOfInterest(Site dataSourcePointOfInterest) {
+    public void setDataSourcePointOfInterest(PointOfInterest dataSourcePointOfInterest) {
         this.dataSourcePointOfInterest = dataSourcePointOfInterest;
     }
 
@@ -123,7 +123,7 @@ public class TracksSummaryBucketKey implements java.io.Serializable {
         private Tag tag;
         private DataSource dataSource;
         private Site dataSourceSite;
-        private Site dataSourcePointOfInterest;
+        private PointOfInterest dataSourcePointOfInterest;
 
         public Builder() {
         }
@@ -163,7 +163,7 @@ public class TracksSummaryBucketKey implements java.io.Serializable {
         /**
          * The point of interest for data sources which produced the tracks.
          */
-        public Builder setDataSourcePointOfInterest(Site dataSourcePointOfInterest) {
+        public Builder setDataSourcePointOfInterest(PointOfInterest dataSourcePointOfInterest) {
             this.dataSourcePointOfInterest = dataSourcePointOfInterest;
             return this;
         }
