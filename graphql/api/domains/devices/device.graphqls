@@ -22,6 +22,8 @@ type Device {
     dataSource: DataSource
     """The site that this device belongs to"""
     site: Site
+    """The unique identifier of the transcoder associated with this device."""
+    transcoderId: ID
     """The list of calibrations for the device"""
     calibrations: [DeviceCalibration!]!
     """The point of interest the device belongs to"""
@@ -76,6 +78,8 @@ input CreateDeviceInput {
     siteId: ID
     """The unique identifier for the point of interest the device belongs to."""
     pointOfInterestId: ID
+    """The unique identifier of the transcoder associated with this device."""
+    transcoderId: ID
     """An identifier that the device may use outside of Worlds."""
     externalId: ID
     """The name of the device."""
@@ -98,6 +102,8 @@ input UpdateDeviceInput {
     siteId: ID
     """The unique identifier for the point of interest the device belongs to."""
     pointOfInterestId: ID
+    """The unique identifier of the transcoder associated with this device."""
+    transcoderId: ID
     """An identifier that the device may use outside of Worlds."""
     externalId: ID
     """The name of the device."""

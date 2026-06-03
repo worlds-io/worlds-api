@@ -22,6 +22,7 @@ public class Device implements java.io.Serializable {
     private GeoJSONPoint position;
     private DataSource dataSource;
     private Site site;
+    private String transcoderId;
     @jakarta.validation.constraints.NotNull
     private java.util.List<DeviceCalibration> calibrations;
     private PointOfInterest pointOfInterest;
@@ -30,7 +31,7 @@ public class Device implements java.io.Serializable {
     public Device() {
     }
 
-    public Device(String id, String uuid, String externalId, String name, boolean enabled, String address, Double frameRate, GeoJSONPoint position, DataSource dataSource, Site site, java.util.List<DeviceCalibration> calibrations, PointOfInterest pointOfInterest, java.time.OffsetDateTime lastHeartbeat) {
+    public Device(String id, String uuid, String externalId, String name, boolean enabled, String address, Double frameRate, GeoJSONPoint position, DataSource dataSource, Site site, String transcoderId, java.util.List<DeviceCalibration> calibrations, PointOfInterest pointOfInterest, java.time.OffsetDateTime lastHeartbeat) {
         this.id = id;
         this.uuid = uuid;
         this.externalId = externalId;
@@ -41,6 +42,7 @@ public class Device implements java.io.Serializable {
         this.position = position;
         this.dataSource = dataSource;
         this.site = site;
+        this.transcoderId = transcoderId;
         this.calibrations = calibrations;
         this.pointOfInterest = pointOfInterest;
         this.lastHeartbeat = lastHeartbeat;
@@ -177,6 +179,19 @@ public class Device implements java.io.Serializable {
     }
 
     /**
+     * The unique identifier of the transcoder associated with this device.
+     */
+    public String getTranscoderId() {
+        return transcoderId;
+    }
+    /**
+     * The unique identifier of the transcoder associated with this device.
+     */
+    public void setTranscoderId(String transcoderId) {
+        this.transcoderId = transcoderId;
+    }
+
+    /**
      * The list of calibrations for the device
      */
     public java.util.List<DeviceCalibration> getCalibrations() {
@@ -234,6 +249,7 @@ public class Device implements java.io.Serializable {
             && Objects.equals(position, that.position)
             && Objects.equals(dataSource, that.dataSource)
             && Objects.equals(site, that.site)
+            && Objects.equals(transcoderId, that.transcoderId)
             && Objects.equals(calibrations, that.calibrations)
             && Objects.equals(pointOfInterest, that.pointOfInterest)
             && Objects.equals(lastHeartbeat, that.lastHeartbeat);
@@ -241,7 +257,7 @@ public class Device implements java.io.Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, uuid, externalId, name, enabled, address, frameRate, position, dataSource, site, calibrations, pointOfInterest, lastHeartbeat);
+        return Objects.hash(id, uuid, externalId, name, enabled, address, frameRate, position, dataSource, site, transcoderId, calibrations, pointOfInterest, lastHeartbeat);
     }
 
 
@@ -261,6 +277,7 @@ public class Device implements java.io.Serializable {
         private GeoJSONPoint position;
         private DataSource dataSource;
         private Site site;
+        private String transcoderId;
         private java.util.List<DeviceCalibration> calibrations;
         private PointOfInterest pointOfInterest;
         private java.time.OffsetDateTime lastHeartbeat;
@@ -349,6 +366,14 @@ public class Device implements java.io.Serializable {
         }
 
         /**
+         * The unique identifier of the transcoder associated with this device.
+         */
+        public Builder setTranscoderId(String transcoderId) {
+            this.transcoderId = transcoderId;
+            return this;
+        }
+
+        /**
          * The list of calibrations for the device
          */
         public Builder setCalibrations(java.util.List<DeviceCalibration> calibrations) {
@@ -374,7 +399,7 @@ public class Device implements java.io.Serializable {
 
 
         public Device build() {
-            return new Device(id, uuid, externalId, name, enabled, address, frameRate, position, dataSource, site, calibrations, pointOfInterest, lastHeartbeat);
+            return new Device(id, uuid, externalId, name, enabled, address, frameRate, position, dataSource, site, transcoderId, calibrations, pointOfInterest, lastHeartbeat);
         }
 
     }

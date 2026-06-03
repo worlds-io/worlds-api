@@ -11,6 +11,7 @@ public class CreateDeviceInput implements java.io.Serializable {
 
     private org.springframework.graphql.data.ArgumentValue<String> siteId = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<String> pointOfInterestId = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<String> transcoderId = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<String> externalId = org.springframework.graphql.data.ArgumentValue.omitted();
     @jakarta.validation.constraints.NotNull
     private String name;
@@ -21,9 +22,10 @@ public class CreateDeviceInput implements java.io.Serializable {
     public CreateDeviceInput() {
     }
 
-    public CreateDeviceInput(org.springframework.graphql.data.ArgumentValue<String> siteId, org.springframework.graphql.data.ArgumentValue<String> pointOfInterestId, org.springframework.graphql.data.ArgumentValue<String> externalId, String name, org.springframework.graphql.data.ArgumentValue<String> address, org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position, boolean enabled) {
+    public CreateDeviceInput(org.springframework.graphql.data.ArgumentValue<String> siteId, org.springframework.graphql.data.ArgumentValue<String> pointOfInterestId, org.springframework.graphql.data.ArgumentValue<String> transcoderId, org.springframework.graphql.data.ArgumentValue<String> externalId, String name, org.springframework.graphql.data.ArgumentValue<String> address, org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position, boolean enabled) {
         this.siteId = siteId;
         this.pointOfInterestId = pointOfInterestId;
+        this.transcoderId = transcoderId;
         this.externalId = externalId;
         this.name = name;
         this.address = address;
@@ -43,6 +45,13 @@ public class CreateDeviceInput implements java.io.Serializable {
     }
     public void setPointOfInterestId(org.springframework.graphql.data.ArgumentValue<String> pointOfInterestId) {
         this.pointOfInterestId = pointOfInterestId;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<String> getTranscoderId() {
+        return transcoderId;
+    }
+    public void setTranscoderId(org.springframework.graphql.data.ArgumentValue<String> transcoderId) {
+        this.transcoderId = transcoderId;
     }
 
     public org.springframework.graphql.data.ArgumentValue<String> getExternalId() {
@@ -91,6 +100,7 @@ public class CreateDeviceInput implements java.io.Serializable {
         final CreateDeviceInput that = (CreateDeviceInput) obj;
         return Objects.equals(siteId, that.siteId)
             && Objects.equals(pointOfInterestId, that.pointOfInterestId)
+            && Objects.equals(transcoderId, that.transcoderId)
             && Objects.equals(externalId, that.externalId)
             && Objects.equals(name, that.name)
             && Objects.equals(address, that.address)
@@ -100,7 +110,7 @@ public class CreateDeviceInput implements java.io.Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(siteId, pointOfInterestId, externalId, name, address, position, enabled);
+        return Objects.hash(siteId, pointOfInterestId, transcoderId, externalId, name, address, position, enabled);
     }
 
 
@@ -112,6 +122,7 @@ public class CreateDeviceInput implements java.io.Serializable {
 
         private org.springframework.graphql.data.ArgumentValue<String> siteId = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<String> pointOfInterestId = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<String> transcoderId = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<String> externalId = org.springframework.graphql.data.ArgumentValue.omitted();
         private String name;
         private org.springframework.graphql.data.ArgumentValue<String> address = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -128,6 +139,11 @@ public class CreateDeviceInput implements java.io.Serializable {
 
         public Builder setPointOfInterestId(org.springframework.graphql.data.ArgumentValue<String> pointOfInterestId) {
             this.pointOfInterestId = pointOfInterestId;
+            return this;
+        }
+
+        public Builder setTranscoderId(org.springframework.graphql.data.ArgumentValue<String> transcoderId) {
+            this.transcoderId = transcoderId;
             return this;
         }
 
@@ -158,7 +174,7 @@ public class CreateDeviceInput implements java.io.Serializable {
 
 
         public CreateDeviceInput build() {
-            return new CreateDeviceInput(siteId, pointOfInterestId, externalId, name, address, position, enabled);
+            return new CreateDeviceInput(siteId, pointOfInterestId, transcoderId, externalId, name, address, position, enabled);
         }
 
     }
