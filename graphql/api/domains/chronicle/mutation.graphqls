@@ -11,4 +11,9 @@ extend type Mutation {
         """Arguments to update an existing chronicle producer."""
         chronicleProducer: UpdateChronicleProducerInput!
     ): ChronicleProducer!
+    """Deletes an existing ChronicleProducer."""
+    deleteChronicleProducer(
+        """The unique identifier of the chronicle producer to delete."""
+        id: ID!
+    ): ChronicleProducer
 }

@@ -11,4 +11,9 @@ extend type Mutation {
         """Arguments to update an existing summary chronicle."""
         summaryChronicle: UpdateSummaryChronicleInput!
     ): SummaryChronicle!
+    """Deletes an existing [Summary Chronicle]({{Types.SummaryChronicle}})."""
+    deleteSummaryChronicle(
+        """The unique identifier of the summary chronicle to delete."""
+        id: ID!
+    ): SummaryChronicle
 }

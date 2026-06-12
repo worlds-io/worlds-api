@@ -11,4 +11,9 @@ extend type Mutation {
         """Arguments to update an existing event chronicle."""
         eventChronicle: UpdateEventChronicleInput!
     ): EventChronicle!
+    """Deletes an existing [Event Chronicle]({{Types.EventChronicle}})."""
+    deleteEventChronicle(
+        """The unique identifier of the event chronicle to delete."""
+        id: ID!
+    ): EventChronicle
 }
