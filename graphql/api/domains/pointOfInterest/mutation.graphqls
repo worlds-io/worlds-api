@@ -11,4 +11,9 @@ extend type Mutation {
         """Arguments to update an existing point of interest."""
         pointOfInterest: UpdatePointOfInterestInput!
     ): PointOfInterest
+    """Deletes an existing PointOfInterest."""
+    deletePointOfInterest(
+        """The unique identifier of the point of interest to delete."""
+        id: ID!
+    ): PointOfInterest
 }
