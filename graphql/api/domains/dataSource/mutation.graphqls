@@ -9,4 +9,9 @@ extend type Mutation {
         """Arguments to update an existing data source."""
         dataSource: UpdateDataSourceInput!
     ): DataSource
+    """Deletes an existing DataSource."""
+    deleteDataSource(
+        """The unique identifier of the data source to delete."""
+        id: ID!
+    ): DataSource
 }
