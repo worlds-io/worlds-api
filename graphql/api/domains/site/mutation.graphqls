@@ -11,4 +11,9 @@ extend type Mutation {
         """Arguments to update an existing site."""
         site: UpdateSiteInput!
     ): Site
+    """Deletes an existing Site."""
+    deleteSite(
+        """The unique identifier of the site to delete."""
+        id: ID!
+    ): Site
 }

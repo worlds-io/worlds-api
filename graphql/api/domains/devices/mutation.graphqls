@@ -9,4 +9,9 @@ extend type Mutation {
         """Arguments to update an existing device."""
         device: UpdateDeviceInput!
     ): Device
+    """Deletes an existing Device."""
+    deleteDevice(
+        """The unique identifier of the device to delete."""
+        id: ID!
+    ): Device
 }
