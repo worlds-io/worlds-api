@@ -16,4 +16,9 @@ extend type Mutation {
         """The unique identifier of the activity chronicle to delete."""
         id: ID!
     ): ActivityChronicle
+    """Deletes existing activity chronicles."""
+    deleteActivityChronicles(
+        """The unique identifiers of the activity chronicles to delete."""
+        id: [ID]!
+    ): [ActivityChronicle]
 }
