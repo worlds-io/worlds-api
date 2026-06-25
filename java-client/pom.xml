@@ -17,16 +17,18 @@
     <dependencyManagement>
         <dependencies>
             <!--
-              Override Netty to 4.2.13.Final to close 12 Dependabot alerts (high/medium/low):
-              HTTP request smuggling, decompression bomb DoS, QPACK unbounded allocation,
-              epoll DoS, DNS codec bypass, HTTP/3 codec, handler-proxy, and more.
+              Override Netty to 4.2.15.Final to close Dependabot alerts (high/medium) across
+              netty-handler, netty-resolver-dns, netty-codec-http/http2/http3, netty-codec-classes-quic,
+              and netty-transport-native-epoll: HTTP request smuggling, decompression bomb DoS, QPACK
+              unbounded allocation, epoll DoS, DNS codec bypass, HTTP/3 codec, and more (the 4.2.15.Final
+              fixes plus the earlier 12 fixed in 4.2.13.Final).
               reactor-netty-http 1.3.5 ships netty 4.2.12.Final.
-              Remove when reactor-netty-http ships netty >= 4.2.13.Final.
+              Remove when reactor-netty-http ships netty >= 4.2.15.Final.
             -->
             <dependency>
                 <groupId>io.netty</groupId>
                 <artifactId>netty-bom</artifactId>
-                <version>4.2.13.Final</version>
+                <version>4.2.15.Final</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -62,7 +64,7 @@
         <dependency>
             <groupId>tools.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>3.1.2</version>
+            <version>3.1.4</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
