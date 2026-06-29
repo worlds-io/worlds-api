@@ -11,4 +11,9 @@ extend type Mutation {
         """Arguments to update an existing geofence."""
         geofence: UpdateGeofenceInput!
     ): Geofence
+    """Deletes an existing Geofence."""
+    deleteGeofence(
+        """The unique identifier of the geofence to delete."""
+        id: ID!
+    ): Geofence
 }
