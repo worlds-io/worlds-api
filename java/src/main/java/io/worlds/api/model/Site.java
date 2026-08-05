@@ -15,6 +15,7 @@ public class Site implements java.io.Serializable, UnifiedSearchNameResponseEnti
     private String name;
     @jakarta.validation.constraints.NotNull
     private String timezone;
+    @jakarta.validation.constraints.NotNull
     private GeoJSONPoint position;
     private GeoJSONMultiPolygon polygon;
     @jakarta.validation.constraints.NotNull
