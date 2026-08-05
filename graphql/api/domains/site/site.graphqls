@@ -9,7 +9,7 @@ type Site {
     """The IANA timezone identifier for this site (e.g. 'America/New_York', 'UTC')."""
     timezone: String!
     """The geographic location of the site"""
-    position: GeoJSONPoint
+    position: GeoJSONPoint!
     """The geographic shape of the site"""
     polygon: GeoJSONMultiPolygon
     """The devices that are associated with the site"""
@@ -29,7 +29,7 @@ input CreateSiteInput {
     """The IANA timezone identifier for this site (e.g. 'America/New_York'). Defaults to 'UTC' if not provided."""
     timezone: String
     """The geographic location of the site"""
-    position: GeoJSONPointInput
+    position: GeoJSONPointInput!
     """The geographic shape of the site"""
     polygon: GeoJSONMultiPolygonInput
 }

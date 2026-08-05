@@ -12,13 +12,14 @@ public class CreateSiteInput implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private String name;
     private org.springframework.graphql.data.ArgumentValue<String> timezone = org.springframework.graphql.data.ArgumentValue.omitted();
-    private org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position = org.springframework.graphql.data.ArgumentValue.omitted();
+    @jakarta.validation.constraints.NotNull
+    private GeoJSONPointInput position;
     private org.springframework.graphql.data.ArgumentValue<GeoJSONMultiPolygonInput> polygon = org.springframework.graphql.data.ArgumentValue.omitted();
 
     public CreateSiteInput() {
     }
 
-    public CreateSiteInput(String name, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position, org.springframework.graphql.data.ArgumentValue<GeoJSONMultiPolygonInput> polygon) {
+    public CreateSiteInput(String name, org.springframework.graphql.data.ArgumentValue<String> timezone, GeoJSONPointInput position, org.springframework.graphql.data.ArgumentValue<GeoJSONMultiPolygonInput> polygon) {
         this.name = name;
         this.timezone = timezone;
         this.position = position;
@@ -39,10 +40,10 @@ public class CreateSiteInput implements java.io.Serializable {
         this.timezone = timezone;
     }
 
-    public org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> getPosition() {
+    public GeoJSONPointInput getPosition() {
         return position;
     }
-    public void setPosition(org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position) {
+    public void setPosition(GeoJSONPointInput position) {
         this.position = position;
     }
 
@@ -82,7 +83,7 @@ public class CreateSiteInput implements java.io.Serializable {
 
         private String name;
         private org.springframework.graphql.data.ArgumentValue<String> timezone = org.springframework.graphql.data.ArgumentValue.omitted();
-        private org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position = org.springframework.graphql.data.ArgumentValue.omitted();
+        private GeoJSONPointInput position;
         private org.springframework.graphql.data.ArgumentValue<GeoJSONMultiPolygonInput> polygon = org.springframework.graphql.data.ArgumentValue.omitted();
 
         public Builder() {
@@ -98,7 +99,7 @@ public class CreateSiteInput implements java.io.Serializable {
             return this;
         }
 
-        public Builder setPosition(org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position) {
+        public Builder setPosition(GeoJSONPointInput position) {
             this.position = position;
             return this;
         }
