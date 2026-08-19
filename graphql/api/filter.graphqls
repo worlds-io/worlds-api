@@ -176,6 +176,71 @@ input FilterDateTimeOffsetInput {
 }
 
 """
+`TimeRangeInput` describes a period of time as a closed interval. Either bound may be omitted to leave that
+side of the interval unbounded — a null `start` means "since the beginning of time" and a null `end` means
+"until the end of time".
+"""
+input TimeRangeInput {
+    """
+    The inclusive start of the period. If omitted or null, the period is unbounded in the past.
+    """
+    start: DateTimeOffset
+    """
+    The inclusive end of the period. If omitted or null, the period is unbounded in the future.
+    """
+    end: DateTimeOffset
+}
+
+"""
+`FilterTimeRangeInput` allows for filtering time-bounded objects — those that span a period rather than
+occurring at an instant — by the relationship between the object's own period and a given period. Exactly
+one field must be provided per filter object.
+
+An object whose period has not ended yet is treated as running until the end of time, which is why
+`endingWithin` and `before` never match one.
+"""
+input FilterTimeRangeInput @oneOf {
+    """
+    If provided, the object's period must fully contain the given period to match the filter.
+    """
+    containing: TimeRangeInput
+    """
+    If provided, the object's period must fall entirely inside the given period to match the filter.
+    An object that has not ended matches only when the given period is itself unbounded in the future.
+    """
+    containedBy: TimeRangeInput
+    """
+    If provided, the object's period must overlap the given period to match the filter. Periods that
+    merely touch at an endpoint do overlap.
+    """
+    intersecting: TimeRangeInput
+    """
+    If provided, the start of the object's period must fall within the given period to match the filter.
+    The object's end is ignored, so objects that have not ended are matched on equal footing.
+    """
+    startingWithin: TimeRangeInput
+    """
+    If provided, the end of the object's period must fall within the given period to match the filter.
+    An object that has not ended never matches.
+    """
+    endingWithin: TimeRangeInput
+    """
+    If provided, the object's period must include the given instant to match the filter. An object whose
+    period starts or ends exactly at the instant does include it.
+    """
+    containingInstant: DateTimeOffset
+    """
+    If provided, the object's period must have ended before the given instant to match the filter.
+    An object that has not ended never matches.
+    """
+    before: DateTimeOffset
+    """
+    If provided, the object's period must start after the given instant to match the filter.
+    """
+    after: DateTimeOffset
+}
+
+"""
 `FilterBooleanInput` allows for filtering based on a Boolean parameter. Only one field should be provided per filter object.
 """
 input FilterBooleanInput {

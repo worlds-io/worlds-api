@@ -24,6 +24,12 @@ input FilterActivityChronicleInput {
     """
     endTime: FilterDateTimeOffsetInput
     """
+    If provided, specifies filters that work against the period the [`ActivityChronicle`]({{Types.ActivityChronicle}})
+    spans, from its `startTime` to its `endTime`. An activity that has not ended is treated as running until
+    the end of time.
+    """
+    timeRange: FilterTimeRangeInput
+    """
     If provided, specifies filters that work against the `timezone` of the [`ActivityChronicle`]({{Types.ActivityChronicle}}).
     """
     timezone: FilterStringInput
