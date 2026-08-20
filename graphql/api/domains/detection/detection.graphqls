@@ -5,6 +5,8 @@ additional data associated with it, including its position, track, and
 interactions with zones and geofences.
 """
 type Detection {
+    """The unique identifier for the detection."""
+    id: ID!
     """The track that is associated with the detection."""
     track: Track!
     """The time at which the detection occurred."""
