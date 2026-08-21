@@ -46,6 +46,10 @@ input FilterTrackInput {
     """
     siteId: FilterIDInput
     """
+    If provided, specifies filters that work against the [unique identifier of the model]({{Types.Track}}) that produced the track.
+    """
+    modelId: FilterIDInput
+    """
     If provided, specifies filters that work against the `type` of the track's [`dataSource`]({{Types.DataSource}}).
     """
     dataSourceType: FilterStringInput
@@ -108,6 +112,10 @@ input FilterTrackMessageInput {
     If provided, specifies filters that work against the [unique identifier of the site]({{Types.Site}}) that the track's data source belongs to.
     """
     siteId: FilterIDInput
+    """
+    If provided, specifies filters that work against the [unique identifier of the model]({{Types.Track}}) that produced the track.
+    """
+    modelId: FilterIDInput
     """
     If provided, specifies filters that work against the `type` of the track's [`dataSource`]({{Types.DataSource}}).
     """
