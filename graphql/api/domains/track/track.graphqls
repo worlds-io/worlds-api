@@ -5,6 +5,8 @@ type Track {
     dataSource: DataSource
     """The video that this detection was captured in"""
     video: Video
+    """The unique identifier of the model that produced the Track."""
+    modelId: ID
     """The class label of the tracked object, i.e person, car, truck, etc."""
     tag: String!
     """The time of the first detection of the tracked object."""

@@ -10,6 +10,7 @@ public class Track implements java.io.Serializable {
     private String id;
     private DataSource dataSource;
     private Video video;
+    private String modelId;
     @jakarta.validation.constraints.NotNull
     private String tag;
     @jakarta.validation.constraints.NotNull
@@ -27,10 +28,11 @@ public class Track implements java.io.Serializable {
     public Track() {
     }
 
-    public Track(String id, DataSource dataSource, Video video, String tag, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, java.util.List<Detection> detections, TrackProperties properties, java.lang.Object metadata, java.util.List<ZoneIntersection> zoneIntersections, java.util.List<GeofenceIntersection> geofenceIntersections, java.util.List<String> deviceIds) {
+    public Track(String id, DataSource dataSource, Video video, String modelId, String tag, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, java.util.List<Detection> detections, TrackProperties properties, java.lang.Object metadata, java.util.List<ZoneIntersection> zoneIntersections, java.util.List<GeofenceIntersection> geofenceIntersections, java.util.List<String> deviceIds) {
         this.id = id;
         this.dataSource = dataSource;
         this.video = video;
+        this.modelId = modelId;
         this.tag = tag;
         this.startTime = startTime;
         this.endTime = endTime;
@@ -79,6 +81,19 @@ public class Track implements java.io.Serializable {
      */
     public void setVideo(Video video) {
         this.video = video;
+    }
+
+    /**
+     * The unique identifier of the model that produced the Track.
+     */
+    public String getModelId() {
+        return modelId;
+    }
+    /**
+     * The unique identifier of the model that produced the Track.
+     */
+    public void setModelId(String modelId) {
+        this.modelId = modelId;
     }
 
     /**
@@ -212,6 +227,7 @@ public class Track implements java.io.Serializable {
         return Objects.equals(id, that.id)
             && Objects.equals(dataSource, that.dataSource)
             && Objects.equals(video, that.video)
+            && Objects.equals(modelId, that.modelId)
             && Objects.equals(tag, that.tag)
             && Objects.equals(startTime, that.startTime)
             && Objects.equals(endTime, that.endTime)
@@ -225,7 +241,7 @@ public class Track implements java.io.Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, dataSource, video, tag, startTime, endTime, detections, properties, metadata, zoneIntersections, geofenceIntersections, deviceIds);
+        return Objects.hash(id, dataSource, video, modelId, tag, startTime, endTime, detections, properties, metadata, zoneIntersections, geofenceIntersections, deviceIds);
     }
 
 
@@ -238,6 +254,7 @@ public class Track implements java.io.Serializable {
         private String id;
         private DataSource dataSource;
         private Video video;
+        private String modelId;
         private String tag;
         private java.time.OffsetDateTime startTime;
         private java.time.OffsetDateTime endTime;
@@ -272,6 +289,14 @@ public class Track implements java.io.Serializable {
          */
         public Builder setVideo(Video video) {
             this.video = video;
+            return this;
+        }
+
+        /**
+         * The unique identifier of the model that produced the Track.
+         */
+        public Builder setModelId(String modelId) {
+            this.modelId = modelId;
             return this;
         }
 
@@ -350,7 +375,7 @@ public class Track implements java.io.Serializable {
 
 
         public Track build() {
-            return new Track(id, dataSource, video, tag, startTime, endTime, detections, properties, metadata, zoneIntersections, geofenceIntersections, deviceIds);
+            return new Track(id, dataSource, video, modelId, tag, startTime, endTime, detections, properties, metadata, zoneIntersections, geofenceIntersections, deviceIds);
         }
 
     }
