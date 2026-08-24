@@ -16,6 +16,7 @@ public class Track implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private java.time.OffsetDateTime startTime;
     private java.time.OffsetDateTime endTime;
+    private boolean isFinished;
     @jakarta.validation.constraints.NotNull
     private java.util.List<Detection> detections;
     private TrackProperties properties;
@@ -28,7 +29,7 @@ public class Track implements java.io.Serializable {
     public Track() {
     }
 
-    public Track(String id, DataSource dataSource, Video video, String modelId, String tag, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, java.util.List<Detection> detections, TrackProperties properties, java.lang.Object metadata, java.util.List<ZoneIntersection> zoneIntersections, java.util.List<GeofenceIntersection> geofenceIntersections, java.util.List<String> deviceIds) {
+    public Track(String id, DataSource dataSource, Video video, String modelId, String tag, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, boolean isFinished, java.util.List<Detection> detections, TrackProperties properties, java.lang.Object metadata, java.util.List<ZoneIntersection> zoneIntersections, java.util.List<GeofenceIntersection> geofenceIntersections, java.util.List<String> deviceIds) {
         this.id = id;
         this.dataSource = dataSource;
         this.video = video;
@@ -36,6 +37,7 @@ public class Track implements java.io.Serializable {
         this.tag = tag;
         this.startTime = startTime;
         this.endTime = endTime;
+        this.isFinished = isFinished;
         this.detections = detections;
         this.properties = properties;
         this.metadata = metadata;
@@ -136,6 +138,21 @@ public class Track implements java.io.Serializable {
     }
 
     /**
+     * Whether the Track has finished. `true` once the track has an [`endTime`]({{Types.Track}}),
+`false` while it is still being tracked.
+     */
+    public boolean getIsFinished() {
+        return isFinished;
+    }
+    /**
+     * Whether the Track has finished. `true` once the track has an [`endTime`]({{Types.Track}}),
+`false` while it is still being tracked.
+     */
+    public void setIsFinished(boolean isFinished) {
+        this.isFinished = isFinished;
+    }
+
+    /**
      * A collection of every Detection associated with the Track.
      */
     public java.util.List<Detection> getDetections() {
@@ -231,6 +248,7 @@ public class Track implements java.io.Serializable {
             && Objects.equals(tag, that.tag)
             && Objects.equals(startTime, that.startTime)
             && Objects.equals(endTime, that.endTime)
+            && Objects.equals(isFinished, that.isFinished)
             && Objects.equals(detections, that.detections)
             && Objects.equals(properties, that.properties)
             && Objects.equals(metadata, that.metadata)
@@ -241,7 +259,7 @@ public class Track implements java.io.Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, dataSource, video, modelId, tag, startTime, endTime, detections, properties, metadata, zoneIntersections, geofenceIntersections, deviceIds);
+        return Objects.hash(id, dataSource, video, modelId, tag, startTime, endTime, isFinished, detections, properties, metadata, zoneIntersections, geofenceIntersections, deviceIds);
     }
 
 
@@ -258,6 +276,7 @@ public class Track implements java.io.Serializable {
         private String tag;
         private java.time.OffsetDateTime startTime;
         private java.time.OffsetDateTime endTime;
+        private boolean isFinished;
         private java.util.List<Detection> detections;
         private TrackProperties properties;
         private java.lang.Object metadata;
@@ -325,6 +344,15 @@ public class Track implements java.io.Serializable {
         }
 
         /**
+         * Whether the Track has finished. `true` once the track has an [`endTime`]({{Types.Track}}),
+`false` while it is still being tracked.
+         */
+        public Builder setIsFinished(boolean isFinished) {
+            this.isFinished = isFinished;
+            return this;
+        }
+
+        /**
          * A collection of every Detection associated with the Track.
          */
         public Builder setDetections(java.util.List<Detection> detections) {
@@ -375,7 +403,7 @@ public class Track implements java.io.Serializable {
 
 
         public Track build() {
-            return new Track(id, dataSource, video, modelId, tag, startTime, endTime, detections, properties, metadata, zoneIntersections, geofenceIntersections, deviceIds);
+            return new Track(id, dataSource, video, modelId, tag, startTime, endTime, isFinished, detections, properties, metadata, zoneIntersections, geofenceIntersections, deviceIds);
         }
 
     }
