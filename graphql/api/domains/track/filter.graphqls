@@ -22,6 +22,10 @@ input FilterTrackInput {
     """
     timeRange: FilterTimeRangeInput
     """
+    If provided, specifies filters that work against whether the track [has finished]({{Types.Track}}).
+    """
+    finished: FilterBooleanInput
+    """
     If provided, specifies case-insensitive filters that work against the [tag]({{Types.Track}}) of a track
     """
     tag: FilterStringInput

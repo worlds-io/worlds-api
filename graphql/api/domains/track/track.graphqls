@@ -15,6 +15,10 @@ type Track {
     The time of the last detection of the tracked object, or null if it is still being tracked.
     """
     endTime: DateTimeOffset
+    """
+    Whether the Track has finished. `true` once the track has an [`endTime`]({{Types.Track}}).
+    """
+    finished: Boolean!
     """A collection of every Detection associated with the Track."""
     detections(
         """Filter detections based on the time period, etc."""
