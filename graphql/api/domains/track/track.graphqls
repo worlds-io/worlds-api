@@ -16,8 +16,7 @@ type Track {
     """
     endTime: DateTimeOffset
     """
-    Whether the Track has finished. `true` once the track has an [`endTime`]({{Types.Track}}),
-    `false` while it is still being tracked.
+    Whether the Track has finished. `true` once the track has an [`endTime`]({{Types.Track}}).
     """
     isFinished: Boolean!
     """A collection of every Detection associated with the Track."""

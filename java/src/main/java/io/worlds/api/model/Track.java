@@ -138,15 +138,13 @@ public class Track implements java.io.Serializable {
     }
 
     /**
-     * Whether the Track has finished. `true` once the track has an [`endTime`]({{Types.Track}}),
-`false` while it is still being tracked.
+     * Whether the Track has finished. `true` once the track has an [`endTime`]({{Types.Track}}).
      */
     public boolean getIsFinished() {
         return isFinished;
     }
     /**
-     * Whether the Track has finished. `true` once the track has an [`endTime`]({{Types.Track}}),
-`false` while it is still being tracked.
+     * Whether the Track has finished. `true` once the track has an [`endTime`]({{Types.Track}}).
      */
     public void setIsFinished(boolean isFinished) {
         this.isFinished = isFinished;
@@ -344,8 +342,7 @@ public class Track implements java.io.Serializable {
         }
 
         /**
-         * Whether the Track has finished. `true` once the track has an [`endTime`]({{Types.Track}}),
-`false` while it is still being tracked.
+         * Whether the Track has finished. `true` once the track has an [`endTime`]({{Types.Track}}).
          */
         public Builder setIsFinished(boolean isFinished) {
             this.isFinished = isFinished;
