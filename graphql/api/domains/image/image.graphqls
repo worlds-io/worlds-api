@@ -8,6 +8,15 @@ input CreateSnapshotInput {
     timestamp: DateTimeOffset!
 }
 
+"""
+This input type is used to create a snapshot [`Image`]({{Types.Image}}) for a frame identified by
+its global frame ID.
+"""
+input CreateSnapshotForFrameInput {
+    """The global ID of the frame."""
+    frameId: ID!
+}
+
 """This input type is used to upload an image to worlds."""
 input UploadImageInput {
     """
