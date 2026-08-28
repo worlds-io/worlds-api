@@ -10,7 +10,7 @@ public enum DetectionsSortField {
      */
     DETECTION_TIME("DETECTION_TIME"),
     /**
-     * Sort the resulting list by the corresponding Track's [unique identifier.]({{Types.Detection}}).
+     * Sort the resulting list by the corresponding Track's [unique identifier.]({{Types.Track}}).
      */
     TRACK_ID("TRACK_ID"),
     /**
