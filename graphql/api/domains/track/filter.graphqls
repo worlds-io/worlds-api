@@ -14,7 +14,17 @@ input FilterTrackInput {
     """
     If provided, specifies filters that work against the [time]({{Types.Track}}) associated with the start time of a track.
     """
-    time: FilterDateTimeOffsetInput!
+    time: FilterDateTimeOffsetInput
+    """
+    If provided, specifies filters that work against the period a track spans, from its
+    [`startTime`]({{Types.Track}}) to its [`endTime`]({{Types.Track}}). A track that is still being tracked
+    has no end time and is treated as running until the end of time.
+    """
+    timeRange: FilterTimeRangeInput
+    """
+    If provided, specifies filters that work against whether the track [has finished]({{Types.Track}}).
+    """
+    finished: FilterBooleanInput
     """
     If provided, specifies case-insensitive filters that work against the [tag]({{Types.Track}}) of a track
     """
@@ -39,6 +49,10 @@ input FilterTrackInput {
     If provided, specifies filters that work against the [unique identifier of the site]({{Types.Site}}) that the track's data source belongs to.
     """
     siteId: FilterIDInput
+    """
+    If provided, specifies filters that work against the [unique identifier of the model]({{Types.Track}}) that produced the track.
+    """
+    modelId: FilterIDInput
     """
     If provided, specifies filters that work against the `type` of the track's [`dataSource`]({{Types.DataSource}}).
     """
@@ -102,6 +116,10 @@ input FilterTrackMessageInput {
     If provided, specifies filters that work against the [unique identifier of the site]({{Types.Site}}) that the track's data source belongs to.
     """
     siteId: FilterIDInput
+    """
+    If provided, specifies filters that work against the [unique identifier of the model]({{Types.Track}}) that produced the track.
+    """
+    modelId: FilterIDInput
     """
     If provided, specifies filters that work against the `type` of the track's [`dataSource`]({{Types.DataSource}}).
     """

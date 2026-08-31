@@ -13,6 +13,8 @@ public class Detection implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 
     @jakarta.validation.constraints.NotNull
+    private String id;
+    @jakarta.validation.constraints.NotNull
     private Track track;
     @jakarta.validation.constraints.NotNull
     private java.time.OffsetDateTime timestamp;
@@ -44,7 +46,8 @@ public class Detection implements java.io.Serializable {
     public Detection() {
     }
 
-    public Detection(Track track, java.time.OffsetDateTime timestamp, Frame frame, GeoJSONPolygon polygon, GeoJSONPoint position, java.util.List<Zone> zones, java.util.List<Geofence> geofences, java.lang.Object metadata, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt, Double direction, java.util.List<String> geofenceIds, java.util.List<String> zoneIds, String globalTrackId, String deviceId, String tag) {
+    public Detection(String id, Track track, java.time.OffsetDateTime timestamp, Frame frame, GeoJSONPolygon polygon, GeoJSONPoint position, java.util.List<Zone> zones, java.util.List<Geofence> geofences, java.lang.Object metadata, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt, Double direction, java.util.List<String> geofenceIds, java.util.List<String> zoneIds, String globalTrackId, String deviceId, String tag) {
+        this.id = id;
         this.track = track;
         this.timestamp = timestamp;
         this.frame = frame;
@@ -61,6 +64,19 @@ public class Detection implements java.io.Serializable {
         this.globalTrackId = globalTrackId;
         this.deviceId = deviceId;
         this.tag = tag;
+    }
+
+    /**
+     * The unique identifier for the detection.
+     */
+    public String getId() {
+        return id;
+    }
+    /**
+     * The unique identifier for the detection.
+     */
+    public void setId(String id) {
+        this.id = id;
     }
 
     /**
@@ -296,7 +312,8 @@ detection intersects.
             return false;
         }
         final Detection that = (Detection) obj;
-        return Objects.equals(track, that.track)
+        return Objects.equals(id, that.id)
+            && Objects.equals(track, that.track)
             && Objects.equals(timestamp, that.timestamp)
             && Objects.equals(frame, that.frame)
             && Objects.equals(polygon, that.polygon)
@@ -316,7 +333,7 @@ detection intersects.
 
     @Override
     public int hashCode() {
-        return Objects.hash(track, timestamp, frame, polygon, position, zones, geofences, metadata, createdAt, updatedAt, direction, geofenceIds, zoneIds, globalTrackId, deviceId, tag);
+        return Objects.hash(id, track, timestamp, frame, polygon, position, zones, geofences, metadata, createdAt, updatedAt, direction, geofenceIds, zoneIds, globalTrackId, deviceId, tag);
     }
 
 
@@ -326,6 +343,7 @@ detection intersects.
 
     public static class Builder {
 
+        private String id;
         private Track track;
         private java.time.OffsetDateTime timestamp;
         private Frame frame;
@@ -344,6 +362,14 @@ detection intersects.
         private String tag;
 
         public Builder() {
+        }
+
+        /**
+         * The unique identifier for the detection.
+         */
+        public Builder setId(String id) {
+            this.id = id;
+            return this;
         }
 
         /**
@@ -484,7 +510,7 @@ detection intersects.
 
 
         public Detection build() {
-            return new Detection(track, timestamp, frame, polygon, position, zones, geofences, metadata, createdAt, updatedAt, direction, geofenceIds, zoneIds, globalTrackId, deviceId, tag);
+            return new Detection(id, track, timestamp, frame, polygon, position, zones, geofences, metadata, createdAt, updatedAt, direction, geofenceIds, zoneIds, globalTrackId, deviceId, tag);
         }
 
     }
