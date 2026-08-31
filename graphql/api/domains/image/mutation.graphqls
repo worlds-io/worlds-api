@@ -4,4 +4,12 @@ extend type Mutation {
         """Arguments to upload an image."""
         image: UploadImageInput!
     ): Image
+    """
+    Creates a snapshot [`Image`]({{Types.Image}}) for the frame identified by the given global
+    frame ID.
+    """
+    createSnapshotForFrame(
+        """Arguments to create a snapshot for a frame."""
+        snapshot: CreateSnapshotForFrameInput!
+    ): Image!
 }
