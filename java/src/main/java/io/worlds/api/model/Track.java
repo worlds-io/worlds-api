@@ -10,11 +10,13 @@ public class Track implements java.io.Serializable {
     private String id;
     private DataSource dataSource;
     private Video video;
+    private String modelId;
     @jakarta.validation.constraints.NotNull
     private String tag;
     @jakarta.validation.constraints.NotNull
     private java.time.OffsetDateTime startTime;
     private java.time.OffsetDateTime endTime;
+    private boolean finished;
     @jakarta.validation.constraints.NotNull
     private java.util.List<Detection> detections;
     private TrackProperties properties;
@@ -27,13 +29,15 @@ public class Track implements java.io.Serializable {
     public Track() {
     }
 
-    public Track(String id, DataSource dataSource, Video video, String tag, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, java.util.List<Detection> detections, TrackProperties properties, java.lang.Object metadata, java.util.List<ZoneIntersection> zoneIntersections, java.util.List<GeofenceIntersection> geofenceIntersections, java.util.List<String> deviceIds) {
+    public Track(String id, DataSource dataSource, Video video, String modelId, String tag, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, boolean finished, java.util.List<Detection> detections, TrackProperties properties, java.lang.Object metadata, java.util.List<ZoneIntersection> zoneIntersections, java.util.List<GeofenceIntersection> geofenceIntersections, java.util.List<String> deviceIds) {
         this.id = id;
         this.dataSource = dataSource;
         this.video = video;
+        this.modelId = modelId;
         this.tag = tag;
         this.startTime = startTime;
         this.endTime = endTime;
+        this.finished = finished;
         this.detections = detections;
         this.properties = properties;
         this.metadata = metadata;
@@ -82,6 +86,19 @@ public class Track implements java.io.Serializable {
     }
 
     /**
+     * The unique identifier of the model that produced the Track.
+     */
+    public String getModelId() {
+        return modelId;
+    }
+    /**
+     * The unique identifier of the model that produced the Track.
+     */
+    public void setModelId(String modelId) {
+        this.modelId = modelId;
+    }
+
+    /**
      * The class label of the tracked object, i.e person, car, truck, etc.
      */
     public String getTag() {
@@ -118,6 +135,19 @@ public class Track implements java.io.Serializable {
      */
     public void setEndTime(java.time.OffsetDateTime endTime) {
         this.endTime = endTime;
+    }
+
+    /**
+     * Whether the Track has finished. `true` once the track has an [`endTime`]({{Types.Track}}).
+     */
+    public boolean getFinished() {
+        return finished;
+    }
+    /**
+     * Whether the Track has finished. `true` once the track has an [`endTime`]({{Types.Track}}).
+     */
+    public void setFinished(boolean finished) {
+        this.finished = finished;
     }
 
     /**
@@ -212,9 +242,11 @@ public class Track implements java.io.Serializable {
         return Objects.equals(id, that.id)
             && Objects.equals(dataSource, that.dataSource)
             && Objects.equals(video, that.video)
+            && Objects.equals(modelId, that.modelId)
             && Objects.equals(tag, that.tag)
             && Objects.equals(startTime, that.startTime)
             && Objects.equals(endTime, that.endTime)
+            && Objects.equals(finished, that.finished)
             && Objects.equals(detections, that.detections)
             && Objects.equals(properties, that.properties)
             && Objects.equals(metadata, that.metadata)
@@ -225,7 +257,7 @@ public class Track implements java.io.Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, dataSource, video, tag, startTime, endTime, detections, properties, metadata, zoneIntersections, geofenceIntersections, deviceIds);
+        return Objects.hash(id, dataSource, video, modelId, tag, startTime, endTime, finished, detections, properties, metadata, zoneIntersections, geofenceIntersections, deviceIds);
     }
 
 
@@ -238,9 +270,11 @@ public class Track implements java.io.Serializable {
         private String id;
         private DataSource dataSource;
         private Video video;
+        private String modelId;
         private String tag;
         private java.time.OffsetDateTime startTime;
         private java.time.OffsetDateTime endTime;
+        private boolean finished;
         private java.util.List<Detection> detections;
         private TrackProperties properties;
         private java.lang.Object metadata;
@@ -276,6 +310,14 @@ public class Track implements java.io.Serializable {
         }
 
         /**
+         * The unique identifier of the model that produced the Track.
+         */
+        public Builder setModelId(String modelId) {
+            this.modelId = modelId;
+            return this;
+        }
+
+        /**
          * The class label of the tracked object, i.e person, car, truck, etc.
          */
         public Builder setTag(String tag) {
@@ -296,6 +338,14 @@ public class Track implements java.io.Serializable {
          */
         public Builder setEndTime(java.time.OffsetDateTime endTime) {
             this.endTime = endTime;
+            return this;
+        }
+
+        /**
+         * Whether the Track has finished. `true` once the track has an [`endTime`]({{Types.Track}}).
+         */
+        public Builder setFinished(boolean finished) {
+            this.finished = finished;
             return this;
         }
 
@@ -350,7 +400,7 @@ public class Track implements java.io.Serializable {
 
 
         public Track build() {
-            return new Track(id, dataSource, video, tag, startTime, endTime, detections, properties, metadata, zoneIntersections, geofenceIntersections, deviceIds);
+            return new Track(id, dataSource, video, modelId, tag, startTime, endTime, finished, detections, properties, metadata, zoneIntersections, geofenceIntersections, deviceIds);
         }
 
     }

@@ -5,6 +5,8 @@ type Track {
     dataSource: DataSource
     """The video that this detection was captured in"""
     video: Video
+    """The unique identifier of the model that produced the Track."""
+    modelId: ID
     """The class label of the tracked object, i.e person, car, truck, etc."""
     tag: String!
     """The time of the first detection of the tracked object."""
@@ -13,6 +15,10 @@ type Track {
     The time of the last detection of the tracked object, or null if it is still being tracked.
     """
     endTime: DateTimeOffset
+    """
+    Whether the Track has finished. `true` once the track has an [`endTime`]({{Types.Track}}).
+    """
+    finished: Boolean!
     """A collection of every Detection associated with the Track."""
     detections(
         """Filter detections based on the time period, etc."""
@@ -20,7 +26,7 @@ type Track {
         """Returns the first _n_ elements from the list."""
         first: Int
         """The field and direction by which to sort the results"""
-        sort: [DetectionsSort!]! = [{field: DETECTION_TIME, direction: ASC}, {field: GLOBAL_TRACK_ID, direction: ASC}]
+        sort: [DetectionsSort!]! = [{field: DETECTION_TIME, direction: ASC}, {field: TRACK_ID, direction: ASC}]
     ): [Detection!]!
     """The identifying and descriptive attributes of the Track"""
     properties: TrackProperties
