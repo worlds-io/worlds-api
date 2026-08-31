@@ -26,7 +26,7 @@ type Track {
         """Returns the first _n_ elements from the list."""
         first: Int
         """The field and direction by which to sort the results"""
-        sort: [DetectionsSort!]! = [{field: DETECTION_TIME, direction: ASC}, {field: GLOBAL_TRACK_ID, direction: ASC}]
+        sort: [DetectionsSort!]! = [{field: DETECTION_TIME, direction: ASC}, {field: TRACK_ID, direction: ASC}]
     ): [Detection!]!
     """The identifying and descriptive attributes of the Track"""
     properties: TrackProperties

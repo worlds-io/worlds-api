@@ -10,8 +10,13 @@ public enum DetectionsSortField {
      */
     DETECTION_TIME("DETECTION_TIME"),
     /**
+     * Sort the resulting list by the corresponding Track's [unique identifier.]({{Types.Track}}).
+     */
+    TRACK_ID("TRACK_ID"),
+    /**
      * Sort the resulting list by the corresponding Track's [unique identifier.]({{Types.Detection}}).
      */
+    @Deprecated
     GLOBAL_TRACK_ID("GLOBAL_TRACK_ID");
 
     private final String graphqlName;
