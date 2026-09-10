@@ -1,0 +1,36 @@
+extend type Mutation {
+    """Creates a new SiteFacility."""
+    createSiteFacility(
+        """Arguments to create a new facility."""
+        facility: CreateSiteFacilityInput!
+    ): SiteFacility
+    """
+    Updates an existing SiteFacility.
+    """
+    updateSiteFacility(
+        """Arguments to update an existing facility."""
+        facility: UpdateSiteFacilityInput!
+    ): SiteFacility
+    """Deletes an existing SiteFacility, along with all of its layers."""
+    deleteSiteFacility(
+        """The unique identifier of the facility to delete."""
+        id: ID!
+    ): SiteFacility
+    """Creates a new SiteFacilityLayer. The layer has no image until one is uploaded."""
+    createSiteFacilityLayer(
+        """Arguments to create a new layer."""
+        layer: CreateSiteFacilityLayerInput!
+    ): SiteFacilityLayer
+    """
+    Updates an existing SiteFacilityLayer.
+    """
+    updateSiteFacilityLayer(
+        """Arguments to update an existing layer."""
+        layer: UpdateSiteFacilityLayerInput!
+    ): SiteFacilityLayer
+    """Deletes an existing SiteFacilityLayer, along with its image."""
+    deleteSiteFacilityLayer(
+        """The unique identifier of the layer to delete."""
+        id: ID!
+    ): SiteFacilityLayer
+}
