@@ -1,0 +1,9 @@
+extend type Query {
+    """
+    Look up a single [SiteFacility]({{Types.SiteFacility}}) by its unique identifier.
+    """
+    siteFacility(
+        """The facility's unique identifier."""
+        id: ID!
+    ): SiteFacility
+}

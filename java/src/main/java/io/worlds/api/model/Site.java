@@ -23,11 +23,13 @@ public class Site implements java.io.Serializable, UnifiedSearchNameResponseEnti
     private java.util.List<PointOfInterest> pointsOfInterest;
     @jakarta.validation.constraints.NotNull
     private java.util.List<Geofence> geofences;
+    @jakarta.validation.constraints.NotNull
+    private java.util.List<SiteFacility> facilities;
 
     public Site() {
     }
 
-    public Site(String id, String name, String timezone, GeoJSONPoint position, GeoJSONMultiPolygon polygon, java.util.List<Device> devices, java.util.List<PointOfInterest> pointsOfInterest, java.util.List<Geofence> geofences) {
+    public Site(String id, String name, String timezone, GeoJSONPoint position, GeoJSONMultiPolygon polygon, java.util.List<Device> devices, java.util.List<PointOfInterest> pointsOfInterest, java.util.List<Geofence> geofences, java.util.List<SiteFacility> facilities) {
         this.id = id;
         this.name = name;
         this.timezone = timezone;
@@ -36,6 +38,7 @@ public class Site implements java.io.Serializable, UnifiedSearchNameResponseEnti
         this.devices = devices;
         this.pointsOfInterest = pointsOfInterest;
         this.geofences = geofences;
+        this.facilities = facilities;
     }
 
     /**
@@ -142,6 +145,19 @@ public class Site implements java.io.Serializable, UnifiedSearchNameResponseEnti
         this.geofences = geofences;
     }
 
+    /**
+     * The facilities that are associated with this site
+     */
+    public java.util.List<SiteFacility> getFacilities() {
+        return facilities;
+    }
+    /**
+     * The facilities that are associated with this site
+     */
+    public void setFacilities(java.util.List<SiteFacility> facilities) {
+        this.facilities = facilities;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -158,12 +174,13 @@ public class Site implements java.io.Serializable, UnifiedSearchNameResponseEnti
             && Objects.equals(polygon, that.polygon)
             && Objects.equals(devices, that.devices)
             && Objects.equals(pointsOfInterest, that.pointsOfInterest)
-            && Objects.equals(geofences, that.geofences);
+            && Objects.equals(geofences, that.geofences)
+            && Objects.equals(facilities, that.facilities);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, timezone, position, polygon, devices, pointsOfInterest, geofences);
+        return Objects.hash(id, name, timezone, position, polygon, devices, pointsOfInterest, geofences, facilities);
     }
 
 
@@ -181,6 +198,7 @@ public class Site implements java.io.Serializable, UnifiedSearchNameResponseEnti
         private java.util.List<Device> devices;
         private java.util.List<PointOfInterest> pointsOfInterest;
         private java.util.List<Geofence> geofences;
+        private java.util.List<SiteFacility> facilities;
 
         public Builder() {
         }
@@ -249,9 +267,17 @@ public class Site implements java.io.Serializable, UnifiedSearchNameResponseEnti
             return this;
         }
 
+        /**
+         * The facilities that are associated with this site
+         */
+        public Builder setFacilities(java.util.List<SiteFacility> facilities) {
+            this.facilities = facilities;
+            return this;
+        }
+
 
         public Site build() {
-            return new Site(id, name, timezone, position, polygon, devices, pointsOfInterest, geofences);
+            return new Site(id, name, timezone, position, polygon, devices, pointsOfInterest, geofences, facilities);
         }
 
     }
