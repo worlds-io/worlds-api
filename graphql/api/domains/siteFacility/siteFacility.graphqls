@@ -1,0 +1,35 @@
+"""
+A facility is a structure within a [Site]({{Types.Site}}).
+A facility owns one or more [SiteFacilityLayers]({{Types.SiteFacilityLayer}}), each a georeferenced
+image that can be drawn over the site's map.
+"""
+type SiteFacility {
+    """The unique identifier of the facility."""
+    id: ID!
+    """The name of the facility. Unique within its site."""
+    name: String!
+    """The site that the facility belongs to."""
+    site: Site!
+    """The image layers that make up this facility."""
+    layers: [SiteFacilityLayer!]!
+    """Additional metadata associated with the facility. This may represent any JSON object structure."""
+    metadata: JSON
+}
+
+"""
+A georeferenced image layer belonging to a [SiteFacility]({{Types.SiteFacility}}).
+"""
+type SiteFacilityLayer {
+    """The unique identifier of the layer."""
+    id: ID!
+    """The name of the layer. Unique within its facility, case-insensitively."""
+    name: String!
+    """The facility that the layer belongs to."""
+    facility: SiteFacility!
+    """The URL of the layer image. Short-lived. Null until an image has been uploaded for the layer."""
+    imageUrl: String
+    """The geographic bounds that the layer image is stretched to."""
+    imageBounds: GeoJSONPolygon
+    """Additional metadata associated with the layer. This may represent any JSON object structure."""
+    metadata: JSON
+}
