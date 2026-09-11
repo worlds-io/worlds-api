@@ -16,7 +16,7 @@ extend type Mutation {
         """The unique identifier of the facility to delete."""
         id: ID!
     ): SiteFacility
-    """Creates a new SiteFacilityLayer. The layer has no image until one is uploaded."""
+    """Creates a new SiteFacilityLayer."""
     createSiteFacilityLayer(
         """Arguments to create a new layer."""
         layer: CreateSiteFacilityLayerInput!
@@ -28,7 +28,7 @@ extend type Mutation {
         """Arguments to update an existing layer."""
         layer: UpdateSiteFacilityLayerInput!
     ): SiteFacilityLayer
-    """Deletes an existing SiteFacilityLayer, along with its image."""
+    """Deletes an existing SiteFacilityLayer."""
     deleteSiteFacilityLayer(
         """The unique identifier of the layer to delete."""
         id: ID!

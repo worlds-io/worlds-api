@@ -48,14 +48,14 @@ input CreateSiteFacilityInput {
 
 """
 Fields to update an existing [SiteFacility]({{Types.SiteFacility}}).
-Omitted fields are left unchanged. A facility cannot be moved to another site.
+A facility cannot be moved to another site.
 """
 input UpdateSiteFacilityInput {
     """The unique identifier of the facility."""
     id: ID!
     """The name of the facility. Must be unique within its site, case-insensitively."""
     name: String
-    """Additional metadata associated with the facility. Null clears the metadata."""
+    """Additional metadata associated with the facility."""
     metadata: JSON
 }
 
@@ -76,15 +76,14 @@ input CreateSiteFacilityLayerInput {
 
 """
 Fields to update an existing [SiteFacilityLayer]({{Types.SiteFacilityLayer}}).
-Omitted fields are left unchanged. The layer image is not affected.
 """
 input UpdateSiteFacilityLayerInput {
     """The unique identifier of the layer."""
     id: ID!
     """The name of the layer. Must be unique within its facility, case-insensitively."""
     name: String
-    """The geographic bounds that the layer image is stretched to. Null clears the bounds."""
+    """The geographic bounds that the layer image is stretched to."""
     imageBounds: GeoJSONPolygonInput
-    """Additional metadata associated with the layer. Null clears the metadata."""
+    """Additional metadata associated with the layer."""
     metadata: JSON
 }

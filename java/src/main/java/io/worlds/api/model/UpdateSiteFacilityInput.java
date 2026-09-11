@@ -4,7 +4,7 @@ import java.util.Objects;
 
 /**
  * Fields to update an existing [SiteFacility]({{Types.SiteFacility}}).
-Omitted fields are left unchanged. A facility cannot be moved to another site.
+A facility cannot be moved to another site.
  */
 public class UpdateSiteFacilityInput implements java.io.Serializable {
 

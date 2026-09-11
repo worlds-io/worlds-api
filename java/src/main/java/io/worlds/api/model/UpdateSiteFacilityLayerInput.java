@@ -4,7 +4,6 @@ import java.util.Objects;
 
 /**
  * Fields to update an existing [SiteFacilityLayer]({{Types.SiteFacilityLayer}}).
-Omitted fields are left unchanged. The layer image is not affected.
  */
 public class UpdateSiteFacilityLayerInput implements java.io.Serializable {
 
