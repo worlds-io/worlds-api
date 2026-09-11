@@ -43,6 +43,11 @@ input FilterVideoInput {
     """
     endTime: FilterDateTimeOffsetInput
     """
+    If provided, specifies filters that work against whether the video's footage
+    [has been synced to the hub]({{Types.Video}}).
+    """
+    cloudAvailable: FilterBooleanInput
+    """
     If provided, an event must pass all filters in this list to match the current filter.
     """
     and: [FilterVideoInput!]

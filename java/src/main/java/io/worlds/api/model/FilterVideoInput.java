@@ -15,6 +15,7 @@ public class FilterVideoInput implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private FilterDateTimeOffsetInput startTime;
     private org.springframework.graphql.data.ArgumentValue<FilterDateTimeOffsetInput> endTime = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> cloudAvailable = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<FilterVideoInput> and;
     private java.util.List<FilterVideoInput> or;
     private org.springframework.graphql.data.ArgumentValue<FilterVideoInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -22,11 +23,12 @@ public class FilterVideoInput implements java.io.Serializable {
     public FilterVideoInput() {
     }
 
-    public FilterVideoInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> id, org.springframework.graphql.data.ArgumentValue<FilterIDInput> dataSourceId, FilterDateTimeOffsetInput startTime, org.springframework.graphql.data.ArgumentValue<FilterDateTimeOffsetInput> endTime, java.util.List<FilterVideoInput> and, java.util.List<FilterVideoInput> or, org.springframework.graphql.data.ArgumentValue<FilterVideoInput> not) {
+    public FilterVideoInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> id, org.springframework.graphql.data.ArgumentValue<FilterIDInput> dataSourceId, FilterDateTimeOffsetInput startTime, org.springframework.graphql.data.ArgumentValue<FilterDateTimeOffsetInput> endTime, org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> cloudAvailable, java.util.List<FilterVideoInput> and, java.util.List<FilterVideoInput> or, org.springframework.graphql.data.ArgumentValue<FilterVideoInput> not) {
         this.id = id;
         this.dataSourceId = dataSourceId;
         this.startTime = startTime;
         this.endTime = endTime;
+        this.cloudAvailable = cloudAvailable;
         this.and = and;
         this.or = or;
         this.not = not;
@@ -58,6 +60,13 @@ public class FilterVideoInput implements java.io.Serializable {
     }
     public void setEndTime(org.springframework.graphql.data.ArgumentValue<FilterDateTimeOffsetInput> endTime) {
         this.endTime = endTime;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> getCloudAvailable() {
+        return cloudAvailable;
+    }
+    public void setCloudAvailable(org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> cloudAvailable) {
+        this.cloudAvailable = cloudAvailable;
     }
 
     public java.util.List<FilterVideoInput> getAnd() {
@@ -94,6 +103,7 @@ public class FilterVideoInput implements java.io.Serializable {
             && Objects.equals(dataSourceId, that.dataSourceId)
             && Objects.equals(startTime, that.startTime)
             && Objects.equals(endTime, that.endTime)
+            && Objects.equals(cloudAvailable, that.cloudAvailable)
             && Objects.equals(and, that.and)
             && Objects.equals(or, that.or)
             && Objects.equals(not, that.not);
@@ -101,7 +111,7 @@ public class FilterVideoInput implements java.io.Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, dataSourceId, startTime, endTime, and, or, not);
+        return Objects.hash(id, dataSourceId, startTime, endTime, cloudAvailable, and, or, not);
     }
 
 
@@ -115,6 +125,7 @@ public class FilterVideoInput implements java.io.Serializable {
         private org.springframework.graphql.data.ArgumentValue<FilterIDInput> dataSourceId = org.springframework.graphql.data.ArgumentValue.omitted();
         private FilterDateTimeOffsetInput startTime;
         private org.springframework.graphql.data.ArgumentValue<FilterDateTimeOffsetInput> endTime = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> cloudAvailable = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<FilterVideoInput> and;
         private java.util.List<FilterVideoInput> or;
         private org.springframework.graphql.data.ArgumentValue<FilterVideoInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -142,6 +153,11 @@ public class FilterVideoInput implements java.io.Serializable {
             return this;
         }
 
+        public Builder setCloudAvailable(org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> cloudAvailable) {
+            this.cloudAvailable = cloudAvailable;
+            return this;
+        }
+
         public Builder setAnd(java.util.List<FilterVideoInput> and) {
             this.and = and;
             return this;
@@ -159,7 +175,7 @@ public class FilterVideoInput implements java.io.Serializable {
 
 
         public FilterVideoInput build() {
-            return new FilterVideoInput(id, dataSourceId, startTime, endTime, and, or, not);
+            return new FilterVideoInput(id, dataSourceId, startTime, endTime, cloudAvailable, and, or, not);
         }
 
     }

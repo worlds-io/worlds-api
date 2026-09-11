@@ -12,6 +12,8 @@ type Video {
     The time at which the video ended. If not provided, the video is still ongoing.
     """
     endTime: DateTimeOffset
+    """Whether the video's footage has been synced to the hub. `false` while it is still edge-only."""
+    cloudAvailable: Boolean!
     """The signed URL to be used to stream the video."""
     url: String!
     """The signed URL to be used to retrieve the video thumbnail."""
