@@ -18,6 +18,8 @@ public class FilterEventInput implements java.io.Serializable {
     private org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> draft = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterStringInput> priority = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterEventValidationStatusInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<FilterIDListInput> imageIds = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<FilterIDListInput> dataSourceClipIds = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<FilterEventInput> and;
     private java.util.List<FilterEventInput> or;
     private org.springframework.graphql.data.ArgumentValue<FilterEventInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -25,7 +27,7 @@ public class FilterEventInput implements java.io.Serializable {
     public FilterEventInput() {
     }
 
-    public FilterEventInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> eventProducerId, org.springframework.graphql.data.ArgumentValue<FilterStringInput> type, org.springframework.graphql.data.ArgumentValue<FilterStringInput> subType, FilterDateTimeOffsetInput time, org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> draft, org.springframework.graphql.data.ArgumentValue<FilterStringInput> priority, org.springframework.graphql.data.ArgumentValue<FilterEventValidationStatusInput> validation, java.util.List<FilterEventInput> and, java.util.List<FilterEventInput> or, org.springframework.graphql.data.ArgumentValue<FilterEventInput> not) {
+    public FilterEventInput(org.springframework.graphql.data.ArgumentValue<FilterIDInput> eventProducerId, org.springframework.graphql.data.ArgumentValue<FilterStringInput> type, org.springframework.graphql.data.ArgumentValue<FilterStringInput> subType, FilterDateTimeOffsetInput time, org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> draft, org.springframework.graphql.data.ArgumentValue<FilterStringInput> priority, org.springframework.graphql.data.ArgumentValue<FilterEventValidationStatusInput> validation, org.springframework.graphql.data.ArgumentValue<FilterIDListInput> imageIds, org.springframework.graphql.data.ArgumentValue<FilterIDListInput> dataSourceClipIds, java.util.List<FilterEventInput> and, java.util.List<FilterEventInput> or, org.springframework.graphql.data.ArgumentValue<FilterEventInput> not) {
         this.eventProducerId = eventProducerId;
         this.type = type;
         this.subType = subType;
@@ -33,6 +35,8 @@ public class FilterEventInput implements java.io.Serializable {
         this.draft = draft;
         this.priority = priority;
         this.validation = validation;
+        this.imageIds = imageIds;
+        this.dataSourceClipIds = dataSourceClipIds;
         this.and = and;
         this.or = or;
         this.not = not;
@@ -87,6 +91,20 @@ public class FilterEventInput implements java.io.Serializable {
         this.validation = validation;
     }
 
+    public org.springframework.graphql.data.ArgumentValue<FilterIDListInput> getImageIds() {
+        return imageIds;
+    }
+    public void setImageIds(org.springframework.graphql.data.ArgumentValue<FilterIDListInput> imageIds) {
+        this.imageIds = imageIds;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<FilterIDListInput> getDataSourceClipIds() {
+        return dataSourceClipIds;
+    }
+    public void setDataSourceClipIds(org.springframework.graphql.data.ArgumentValue<FilterIDListInput> dataSourceClipIds) {
+        this.dataSourceClipIds = dataSourceClipIds;
+    }
+
     public java.util.List<FilterEventInput> getAnd() {
         return and;
     }
@@ -124,6 +142,8 @@ public class FilterEventInput implements java.io.Serializable {
             && Objects.equals(draft, that.draft)
             && Objects.equals(priority, that.priority)
             && Objects.equals(validation, that.validation)
+            && Objects.equals(imageIds, that.imageIds)
+            && Objects.equals(dataSourceClipIds, that.dataSourceClipIds)
             && Objects.equals(and, that.and)
             && Objects.equals(or, that.or)
             && Objects.equals(not, that.not);
@@ -131,7 +151,7 @@ public class FilterEventInput implements java.io.Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(eventProducerId, type, subType, time, draft, priority, validation, and, or, not);
+        return Objects.hash(eventProducerId, type, subType, time, draft, priority, validation, imageIds, dataSourceClipIds, and, or, not);
     }
 
 
@@ -148,6 +168,8 @@ public class FilterEventInput implements java.io.Serializable {
         private org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> draft = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterStringInput> priority = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterEventValidationStatusInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<FilterIDListInput> imageIds = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<FilterIDListInput> dataSourceClipIds = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<FilterEventInput> and;
         private java.util.List<FilterEventInput> or;
         private org.springframework.graphql.data.ArgumentValue<FilterEventInput> not = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -190,6 +212,16 @@ public class FilterEventInput implements java.io.Serializable {
             return this;
         }
 
+        public Builder setImageIds(org.springframework.graphql.data.ArgumentValue<FilterIDListInput> imageIds) {
+            this.imageIds = imageIds;
+            return this;
+        }
+
+        public Builder setDataSourceClipIds(org.springframework.graphql.data.ArgumentValue<FilterIDListInput> dataSourceClipIds) {
+            this.dataSourceClipIds = dataSourceClipIds;
+            return this;
+        }
+
         public Builder setAnd(java.util.List<FilterEventInput> and) {
             this.and = and;
             return this;
@@ -207,7 +239,7 @@ public class FilterEventInput implements java.io.Serializable {
 
 
         public FilterEventInput build() {
-            return new FilterEventInput(eventProducerId, type, subType, time, draft, priority, validation, and, or, not);
+            return new FilterEventInput(eventProducerId, type, subType, time, draft, priority, validation, imageIds, dataSourceClipIds, and, or, not);
         }
 
     }
