@@ -18,6 +18,8 @@ type Site {
     pointsOfInterest: [PointOfInterest!]!
     """The geofences that are associated with this site"""
     geofences: [Geofence!]!
+    """The facilities that are associated with this site"""
+    facilities: [SiteFacility!]!
 }
 
 """
