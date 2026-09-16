@@ -19,6 +19,13 @@ input FilterTracksSummaryInput {
     If provided, specifies filters that work against the site at which the track was captured.
     """
     pointOfInterest: FilterPointOfInterestInput
+    """
+    If provided, filters to tracks that do or do not have at least one detection with a
+    resolved global position. A track with no detections has no position.
+    This matches the same tracks as the `tracks` query's `position: { attributeExists: (true|false) }`.
+    `attributeExists` is not meaningful here, since hasPosition is always either true or false.
+    """
+    hasPosition: FilterBooleanInput
 }
 
 """

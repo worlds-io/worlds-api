@@ -14,15 +14,17 @@ public class FilterTracksSummaryInput implements java.io.Serializable {
     private org.springframework.graphql.data.ArgumentValue<FilterDataSourceInput> dataSource = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterSiteInput> site = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterPointOfInterestInput> pointOfInterest = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> hasPosition = org.springframework.graphql.data.ArgumentValue.omitted();
 
     public FilterTracksSummaryInput() {
     }
 
-    public FilterTracksSummaryInput(org.springframework.graphql.data.ArgumentValue<FilterTagInput> tag, org.springframework.graphql.data.ArgumentValue<FilterDataSourceInput> dataSource, org.springframework.graphql.data.ArgumentValue<FilterSiteInput> site, org.springframework.graphql.data.ArgumentValue<FilterPointOfInterestInput> pointOfInterest) {
+    public FilterTracksSummaryInput(org.springframework.graphql.data.ArgumentValue<FilterTagInput> tag, org.springframework.graphql.data.ArgumentValue<FilterDataSourceInput> dataSource, org.springframework.graphql.data.ArgumentValue<FilterSiteInput> site, org.springframework.graphql.data.ArgumentValue<FilterPointOfInterestInput> pointOfInterest, org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> hasPosition) {
         this.tag = tag;
         this.dataSource = dataSource;
         this.site = site;
         this.pointOfInterest = pointOfInterest;
+        this.hasPosition = hasPosition;
     }
 
     public org.springframework.graphql.data.ArgumentValue<FilterTagInput> getTag() {
@@ -53,6 +55,13 @@ public class FilterTracksSummaryInput implements java.io.Serializable {
         this.pointOfInterest = pointOfInterest;
     }
 
+    public org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> getHasPosition() {
+        return hasPosition;
+    }
+    public void setHasPosition(org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> hasPosition) {
+        this.hasPosition = hasPosition;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -65,12 +74,13 @@ public class FilterTracksSummaryInput implements java.io.Serializable {
         return Objects.equals(tag, that.tag)
             && Objects.equals(dataSource, that.dataSource)
             && Objects.equals(site, that.site)
-            && Objects.equals(pointOfInterest, that.pointOfInterest);
+            && Objects.equals(pointOfInterest, that.pointOfInterest)
+            && Objects.equals(hasPosition, that.hasPosition);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tag, dataSource, site, pointOfInterest);
+        return Objects.hash(tag, dataSource, site, pointOfInterest, hasPosition);
     }
 
 
@@ -84,6 +94,7 @@ public class FilterTracksSummaryInput implements java.io.Serializable {
         private org.springframework.graphql.data.ArgumentValue<FilterDataSourceInput> dataSource = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterSiteInput> site = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterPointOfInterestInput> pointOfInterest = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> hasPosition = org.springframework.graphql.data.ArgumentValue.omitted();
 
         public Builder() {
         }
@@ -108,9 +119,14 @@ public class FilterTracksSummaryInput implements java.io.Serializable {
             return this;
         }
 
+        public Builder setHasPosition(org.springframework.graphql.data.ArgumentValue<FilterBooleanInput> hasPosition) {
+            this.hasPosition = hasPosition;
+            return this;
+        }
+
 
         public FilterTracksSummaryInput build() {
-            return new FilterTracksSummaryInput(tag, dataSource, site, pointOfInterest);
+            return new FilterTracksSummaryInput(tag, dataSource, site, pointOfInterest, hasPosition);
         }
 
     }
