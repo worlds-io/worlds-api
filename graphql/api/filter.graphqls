@@ -29,8 +29,8 @@ input FilterIDListInput @experimental {
     """
     in: [ID!]
     """
-    If provided and true, the filter will pass only if the filtered object is associated with at least one identifier that
-    the caller is permitted to read. If provided and false, the filter will pass only if it is associated with none.
+    If provided and true, the filter will pass only if the filtered object is associated with at least one identifier.
+    If provided and false, the filter will pass only if it is associated with none.
     """
     attributeExists: Boolean
 }
