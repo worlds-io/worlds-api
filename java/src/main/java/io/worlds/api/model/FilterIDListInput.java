@@ -11,13 +11,15 @@ public class FilterIDListInput implements java.io.Serializable {
 
     private java.util.List<String> eq;
     private java.util.List<String> in;
+    private org.springframework.graphql.data.ArgumentValue<Boolean> attributeExists = org.springframework.graphql.data.ArgumentValue.omitted();
 
     public FilterIDListInput() {
     }
 
-    public FilterIDListInput(java.util.List<String> eq, java.util.List<String> in) {
+    public FilterIDListInput(java.util.List<String> eq, java.util.List<String> in, org.springframework.graphql.data.ArgumentValue<Boolean> attributeExists) {
         this.eq = eq;
         this.in = in;
+        this.attributeExists = attributeExists;
     }
 
     public java.util.List<String> getEq() {
@@ -34,6 +36,13 @@ public class FilterIDListInput implements java.io.Serializable {
         this.in = in;
     }
 
+    public org.springframework.graphql.data.ArgumentValue<Boolean> getAttributeExists() {
+        return attributeExists;
+    }
+    public void setAttributeExists(org.springframework.graphql.data.ArgumentValue<Boolean> attributeExists) {
+        this.attributeExists = attributeExists;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -44,12 +53,13 @@ public class FilterIDListInput implements java.io.Serializable {
         }
         final FilterIDListInput that = (FilterIDListInput) obj;
         return Objects.equals(eq, that.eq)
-            && Objects.equals(in, that.in);
+            && Objects.equals(in, that.in)
+            && Objects.equals(attributeExists, that.attributeExists);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(eq, in);
+        return Objects.hash(eq, in, attributeExists);
     }
 
 
@@ -61,6 +71,7 @@ public class FilterIDListInput implements java.io.Serializable {
 
         private java.util.List<String> eq;
         private java.util.List<String> in;
+        private org.springframework.graphql.data.ArgumentValue<Boolean> attributeExists = org.springframework.graphql.data.ArgumentValue.omitted();
 
         public Builder() {
         }
@@ -75,9 +86,14 @@ public class FilterIDListInput implements java.io.Serializable {
             return this;
         }
 
+        public Builder setAttributeExists(org.springframework.graphql.data.ArgumentValue<Boolean> attributeExists) {
+            this.attributeExists = attributeExists;
+            return this;
+        }
+
 
         public FilterIDListInput build() {
-            return new FilterIDListInput(eq, in);
+            return new FilterIDListInput(eq, in, attributeExists);
         }
 
     }

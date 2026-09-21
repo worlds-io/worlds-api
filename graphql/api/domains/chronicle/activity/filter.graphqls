@@ -78,6 +78,16 @@ input FilterActivityChronicleInput {
     """
     pointOfInterestIds: FilterIDListInput
     """
+    If provided, specifies filters that work against the `images` IDs of the [`ActivityChronicle`]({{Types.ActivityChronicle}}).
+    Combine with `attributeExists` to select only activities that carry retrievable image media.
+    """
+    imageIds: FilterIDListInput
+    """
+    If provided, specifies filters that work against the `dataSourceClips` IDs of the [`ActivityChronicle`]({{Types.ActivityChronicle}}).
+    Combine with `attributeExists` to select only activities that carry retrievable clip media.
+    """
+    dataSourceClipIds: FilterIDListInput
+    """
     If provided, an activity must pass all filters in this list to match the current filter.
     """
     and: [FilterActivityChronicleInput!]

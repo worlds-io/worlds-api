@@ -59,6 +59,16 @@ input FilterEventInput {
     """
     validation: FilterEventValidationStatusInput
     """
+    If provided, specifies filters that work against the [images]({{Types.Image}}) IDs of the [`Event`]({{Types.Event}}).
+    Combine with `attributeExists` to select only events that carry retrievable image media.
+    """
+    imageIds: FilterIDListInput
+    """
+    If provided, specifies filters that work against the [dataSourceClips]({{Types.DataSourceClip}}) IDs of the [`Event`]({{Types.Event}}).
+    Combine with `attributeExists` to select only events that carry retrievable clip media.
+    """
+    dataSourceClipIds: FilterIDListInput
+    """
     If provided, an event must pass all filters in this list to match the current filter.
     """
     and: [FilterEventInput!]
