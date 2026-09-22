@@ -8,4 +8,30 @@ extend type Subscription {
         """
         filter: FilterDeviceMessageInput
     ): DeviceMessage
+
+    """
+    Subscribes to the online status of [`Device`]({{Types.Device}})s selected by the given filter.
+
+    A device is `ONLINE` while its `lastHeartbeat` is within `ttl` of the current time and `OFFLINE`
+    once it is older. On subscribe, one `START` message is emitted per watched device carrying its
+    current status. After that, one `UPDATE` message is emitted per status transition, so a flapping
+    device whose heartbeat gaps stay within `ttl` produces nothing.
+
+    Detection latency is bounded by `ttl` plus the server's evaluation interval.
+    """
+    deviceStatus(
+        """
+        Selects the devices to watch, using the same filter as the `devices` query. If omitted, every
+        device visible to the caller is watched. The watched set follows the filter over time: a device
+        that comes to match it is reported with a `START` message and one that stops matching, is
+        disabled, or is deleted is reported with a final `END` message. Disabled devices are never
+        reported, regardless of the filter.
+        """
+        filter: FilterDeviceInput
+        """
+        How long a device may go without a heartbeat before it is reported `OFFLINE`, as an
+        ISO-8601 duration such as `PT5M`. Values outside the supported range are rejected.
+        """
+        ttl: DateTimeDuration!
+    ): DeviceStatusMessage @experimental(reason: "Introduced for device down notifications; the message shape may change.")
 }
