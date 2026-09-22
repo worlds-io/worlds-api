@@ -22,10 +22,11 @@ extend type Subscription {
     deviceStatus(
         """
         Selects the devices to watch, using the same filter as the `devices` query. If omitted, every
-        device visible to the caller is watched. The watched set follows the filter over time: a device
-        that comes to match it is reported with a `START` message and one that stops matching, is
-        disabled, or is deleted is reported with a final `END` message. Disabled devices are never
-        reported, regardless of the filter.
+        device visible to the caller is watched. Only enabled devices are watched, regardless of the
+        filter: a device that is already disabled is excluded from the baseline and never reported.
+        The watched set follows the filter over time: a device that comes to match it, or is enabled
+        while matching, is reported with a `START` message, and a watched device that stops matching,
+        is disabled, or is deleted is reported with one final `END` message and nothing further.
         """
         filter: FilterDeviceInput
         """

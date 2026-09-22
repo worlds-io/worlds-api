@@ -83,15 +83,17 @@ public class DeviceStatusMessage implements java.io.Serializable {
     }
 
     /**
-     * `START` for the baseline emitted on subscribe, `UPDATE` for a status transition, `END` when the
-device stops matching the filter, is disabled, or is deleted and will not be reported again.
+     * `START` when a device enters the watched set, including the baseline emitted on subscribe.
+`UPDATE` for a status transition. `END` when a watched device leaves the set because it stopped
+matching the filter, was disabled, or was deleted; no further messages follow for that device.
      */
     public MessageState getState() {
         return state;
     }
     /**
-     * `START` for the baseline emitted on subscribe, `UPDATE` for a status transition, `END` when the
-device stops matching the filter, is disabled, or is deleted and will not be reported again.
+     * `START` when a device enters the watched set, including the baseline emitted on subscribe.
+`UPDATE` for a status transition. `END` when a watched device leaves the set because it stopped
+matching the filter, was disabled, or was deleted; no further messages follow for that device.
      */
     public void setState(MessageState state) {
         this.state = state;
@@ -167,8 +169,9 @@ device stops matching the filter, is disabled, or is deleted and will not be rep
         }
 
         /**
-         * `START` for the baseline emitted on subscribe, `UPDATE` for a status transition, `END` when the
-device stops matching the filter, is disabled, or is deleted and will not be reported again.
+         * `START` when a device enters the watched set, including the baseline emitted on subscribe.
+`UPDATE` for a status transition. `END` when a watched device leaves the set because it stopped
+matching the filter, was disabled, or was deleted; no further messages follow for that device.
          */
         public Builder setState(MessageState state) {
             this.state = state;
