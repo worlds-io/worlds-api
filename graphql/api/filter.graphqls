@@ -28,6 +28,11 @@ input FilterIDListInput @experimental {
     If provided, the filtered object must contain each of the IDs provided to match the filter, but can contain additional IDs not provided.
     """
     in: [ID!]
+    """
+    If provided and true, the filter will pass only if the filtered object is associated with at least one identifier.
+    If provided and false, the filter will pass only if it is associated with none.
+    """
+    attributeExists: Boolean
 }
 
 """
