@@ -7,4 +7,14 @@ extend type Mutation {
         """Optional IDs for [activity chronicles]({{Types.ActivityChronicle}}) to associate with the clip."""
         activityChronicleIds: [ID!]
     ): DataSourceClip
+    """
+    Requests that the edge holding this [video]({{Types.Video}})'s footage copy it up to the hub, so that
+    the footage becomes cloud-available.
+
+    Status of the sync can be seen on [`Video.sync`]({{Types.VideoSync}}).
+    """
+    requestVideoSync(
+        """The unique identifier of the video to sync."""
+        id: ID!
+    ): Video
 }

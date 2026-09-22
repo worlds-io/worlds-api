@@ -18,6 +18,8 @@ public class Video implements java.io.Serializable {
     private java.time.OffsetDateTime endTime;
     private boolean cloudAvailable;
     @jakarta.validation.constraints.NotNull
+    private VideoSync sync;
+    @jakarta.validation.constraints.NotNull
     private String url;
     private String thumbnailUrl;
     private String displayName;
@@ -29,12 +31,13 @@ public class Video implements java.io.Serializable {
     public Video() {
     }
 
-    public Video(String id, DataSource dataSource, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, boolean cloudAvailable, String url, String thumbnailUrl, String displayName, String resolutionHeight, String resolutionWidth, Double frameRate, User createdBy) {
+    public Video(String id, DataSource dataSource, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, boolean cloudAvailable, VideoSync sync, String url, String thumbnailUrl, String displayName, String resolutionHeight, String resolutionWidth, Double frameRate, User createdBy) {
         this.id = id;
         this.dataSource = dataSource;
         this.startTime = startTime;
         this.endTime = endTime;
         this.cloudAvailable = cloudAvailable;
+        this.sync = sync;
         this.url = url;
         this.thumbnailUrl = thumbnailUrl;
         this.displayName = displayName;
@@ -107,6 +110,19 @@ public class Video implements java.io.Serializable {
      */
     public void setCloudAvailable(boolean cloudAvailable) {
         this.cloudAvailable = cloudAvailable;
+    }
+
+    /**
+     * The state of syncing this video's footage from its edge to the hub.
+     */
+    public VideoSync getSync() {
+        return sync;
+    }
+    /**
+     * The state of syncing this video's footage from its edge to the hub.
+     */
+    public void setSync(VideoSync sync) {
+        this.sync = sync;
     }
 
     /**
@@ -214,6 +230,7 @@ public class Video implements java.io.Serializable {
             && Objects.equals(startTime, that.startTime)
             && Objects.equals(endTime, that.endTime)
             && Objects.equals(cloudAvailable, that.cloudAvailable)
+            && Objects.equals(sync, that.sync)
             && Objects.equals(url, that.url)
             && Objects.equals(thumbnailUrl, that.thumbnailUrl)
             && Objects.equals(displayName, that.displayName)
@@ -225,7 +242,7 @@ public class Video implements java.io.Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, dataSource, startTime, endTime, cloudAvailable, url, thumbnailUrl, displayName, resolutionHeight, resolutionWidth, frameRate, createdBy);
+        return Objects.hash(id, dataSource, startTime, endTime, cloudAvailable, sync, url, thumbnailUrl, displayName, resolutionHeight, resolutionWidth, frameRate, createdBy);
     }
 
 
@@ -240,6 +257,7 @@ public class Video implements java.io.Serializable {
         private java.time.OffsetDateTime startTime;
         private java.time.OffsetDateTime endTime;
         private boolean cloudAvailable;
+        private VideoSync sync;
         private String url;
         private String thumbnailUrl;
         private String displayName;
@@ -288,6 +306,14 @@ public class Video implements java.io.Serializable {
          */
         public Builder setCloudAvailable(boolean cloudAvailable) {
             this.cloudAvailable = cloudAvailable;
+            return this;
+        }
+
+        /**
+         * The state of syncing this video's footage from its edge to the hub.
+         */
+        public Builder setSync(VideoSync sync) {
+            this.sync = sync;
             return this;
         }
 
@@ -349,7 +375,7 @@ public class Video implements java.io.Serializable {
 
 
         public Video build() {
-            return new Video(id, dataSource, startTime, endTime, cloudAvailable, url, thumbnailUrl, displayName, resolutionHeight, resolutionWidth, frameRate, createdBy);
+            return new Video(id, dataSource, startTime, endTime, cloudAvailable, sync, url, thumbnailUrl, displayName, resolutionHeight, resolutionWidth, frameRate, createdBy);
         }
 
     }

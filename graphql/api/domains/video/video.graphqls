@@ -14,6 +14,8 @@ type Video {
     endTime: DateTimeOffset
     """Whether the video's footage has been synced to the hub. `false` while it is still edge-only."""
     cloudAvailable: Boolean!
+    """The state of syncing this video's footage from its edge to the hub."""
+    sync: VideoSync!
     """The signed URL to be used to stream the video."""
     url: String!
     """The signed URL to be used to retrieve the video thumbnail."""
@@ -28,4 +30,68 @@ type Video {
     frameRate: Float
     """The user the video was created by."""
     createdBy: User
+}
+
+"""
+The state of copying a [video]({{Types.Video}})'s footage from the edge that recorded it up to the hub.
+
+Distinct from [`Video.cloudAvailable`]({{Types.Video}}), which reports whether the footage can be played
+now.
+"""
+type VideoSync {
+    """The state of the most recent sync request for the video."""
+    state: VideoSyncState!
+    """
+    The number of video segments copied so far. Null until the edge reports progress, and on a request
+    that never got that far.
+    """
+    segmentsDone: Int
+    """The number of video segments to be copied. Null until the edge reports progress."""
+    segmentsTotal: Int
+    """The number of times the request has been sent to the edge."""
+    attempts: Int!
+    """
+    The time at which the sync last reported progress. Refreshed by every event, so a stale value on an
+    active state is the caller's staleness signal. Null when no sync has been requested.
+    """
+    lastEventAt: DateTimeOffset
+    """The reason the sync failed, when it did."""
+    error: String
+}
+
+"""
+The state of a [video sync]({{Types.VideoSync}}).
+
+Wider than the lifecycle of a sync request, because most videos have never been requested and the reasons
+for that are not interchangeable to a caller deciding whether to offer a sync.
+"""
+enum VideoSyncState {
+    """
+    There is nothing to copy: the video's device has no site, or its site is not served by an edge.
+    """
+    NOT_SYNCABLE
+    """Still recording and not yet being synced."""
+    RECORDING
+    """Finished recording but not requested for sync."""
+    NOT_REQUESTED
+    """Sync has been requested from the edge."""
+    REQUESTED
+    """The edge has acknowledged the request but has not started copying."""
+    ACCEPTED
+    """The edge is copying the video's footage to the hub."""
+    IN_PROGRESS
+    """
+    Recording with live sync, so the video is already cloud-available.
+    """
+    LIVE
+    """The video's footage has been copied to the hub."""
+    SUCCEEDED
+    """
+    The sync failed. See [`VideoSync.error`]({{Types.VideoSync}}) for the error message.
+    """
+    FAILED
+    """A cancel has been requested."""
+    CANCELLING
+    """The sync was cancelled before it completed."""
+    CANCELLED
 }
