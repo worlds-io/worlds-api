@@ -40,6 +40,32 @@ type DeviceMessage {
     state: DeviceMessageState!
 }
 
+"""The online status of a [`Device`]({{Types.Device}}), as judged from its heartbeats."""
+enum DeviceStatus {
+    """The device has sent a heartbeat within the subscription's `ttl`."""
+    ONLINE
+    """The device's last heartbeat is older than the subscription's `ttl`, or it has never sent one."""
+    OFFLINE
+}
+
+"""A message from a `deviceStatus` subscription describing one device's current status."""
+type DeviceStatusMessage {
+    """The device whose status is reported."""
+    device: Device!
+    """The status of the device at `timestamp`."""
+    status: DeviceStatus!
+    """The most recent heartbeat received from the device, if any."""
+    lastHeartbeat: DateTimeOffset
+    """When the status was evaluated."""
+    timestamp: DateTimeOffset!
+    """
+    `START` when a device enters the watched set, including the baseline emitted on subscribe.
+    `UPDATE` for a status transition. `END` when a watched device leaves the set because it stopped
+    matching the filter, was disabled, or was deleted; no further messages follow for that device.
+    """
+    state: MessageState!
+}
+
 """
 A device calibration determines how objects captured by in a video or image are geo-referenced into the real world.
 """
