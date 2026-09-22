@@ -8,10 +8,9 @@ extend type Mutation {
         activityChronicleIds: [ID!]
     ): DataSourceClip
     """
-    Requests that the edge holding this [video]({{Types.Video}})'s footage copy it up to the hub, so that
-    the footage becomes cloud-available.
+    Requests that the edge holding a [video]({{Types.Video}})'s footage copy it to the hub.
 
-    Status of the sync can be seen on [`Video.sync`]({{Types.VideoSync}}).
+    Track progress on [`Video.sync`]({{Types.Video}}).
     """
     requestVideoSync(
         """The unique identifier of the video to sync."""

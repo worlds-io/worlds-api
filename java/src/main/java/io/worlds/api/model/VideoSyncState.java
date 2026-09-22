@@ -3,13 +3,12 @@ package io.worlds.api.model;
 /**
  * The state of a [video sync]({{Types.VideoSync}}).
 
-Wider than the lifecycle of a sync request, because most videos have never been requested and the reasons
-for that are not interchangeable to a caller deciding whether to offer a sync.
+Also covers videos with no sync request, so a caller can tell whether to offer one.
  */
 public enum VideoSyncState {
 
     /**
-     * There is nothing to copy: the video's device has no site, or its site is not served by an edge.
+     * The video cannot be synced. Its device has no site, or its site has no edge.
      */
     NOT_SYNCABLE("NOT_SYNCABLE"),
     /**
@@ -41,7 +40,7 @@ public enum VideoSyncState {
      */
     SUCCEEDED("SUCCEEDED"),
     /**
-     * The sync failed. See [`VideoSync.error`]({{Types.VideoSync}}) for the error message.
+     * The sync failed. See [`VideoSync.error`]({{Types.VideoSync}}).
      */
     FAILED("FAILED"),
     /**

@@ -3,10 +3,9 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * The state of copying a [video]({{Types.Video}})'s footage from the edge that recorded it up to the hub.
+ * The state of copying a [video]({{Types.Video}})'s footage from its edge to the hub.
 
-Distinct from [`Video.cloudAvailable`]({{Types.Video}}), which reports whether the footage can be played
-now.
+To check whether the footage is on the hub, use [`Video.cloudAvailable`]({{Types.Video}}).
  */
 public class VideoSync implements java.io.Serializable {
 
@@ -33,28 +32,26 @@ public class VideoSync implements java.io.Serializable {
     }
 
     /**
-     * The state of the most recent sync request for the video.
+     * The state of the video's sync.
      */
     public VideoSyncState getState() {
         return state;
     }
     /**
-     * The state of the most recent sync request for the video.
+     * The state of the video's sync.
      */
     public void setState(VideoSyncState state) {
         this.state = state;
     }
 
     /**
-     * The number of video segments copied so far. Null until the edge reports progress, and on a request
-that never got that far.
+     * The number of video segments copied so far. Null until the edge reports progress.
      */
     public Integer getSegmentsDone() {
         return segmentsDone;
     }
     /**
-     * The number of video segments copied so far. Null until the edge reports progress, and on a request
-that never got that far.
+     * The number of video segments copied so far. Null until the edge reports progress.
      */
     public void setSegmentsDone(Integer segmentsDone) {
         this.segmentsDone = segmentsDone;
@@ -87,15 +84,15 @@ that never got that far.
     }
 
     /**
-     * The time at which the sync last reported progress. Refreshed by every event, so a stale value on an
-active state is the caller's staleness signal. Null when no sync has been requested.
+     * The time at which the sync last reported progress. Null when no sync has been requested. An old value
+on an active state means the sync may have stalled.
      */
     public java.time.OffsetDateTime getLastEventAt() {
         return lastEventAt;
     }
     /**
-     * The time at which the sync last reported progress. Refreshed by every event, so a stale value on an
-active state is the caller's staleness signal. Null when no sync has been requested.
+     * The time at which the sync last reported progress. Null when no sync has been requested. An old value
+on an active state means the sync may have stalled.
      */
     public void setLastEventAt(java.time.OffsetDateTime lastEventAt) {
         this.lastEventAt = lastEventAt;
@@ -154,7 +151,7 @@ active state is the caller's staleness signal. Null when no sync has been reques
         }
 
         /**
-         * The state of the most recent sync request for the video.
+         * The state of the video's sync.
          */
         public Builder setState(VideoSyncState state) {
             this.state = state;
@@ -162,8 +159,7 @@ active state is the caller's staleness signal. Null when no sync has been reques
         }
 
         /**
-         * The number of video segments copied so far. Null until the edge reports progress, and on a request
-that never got that far.
+         * The number of video segments copied so far. Null until the edge reports progress.
          */
         public Builder setSegmentsDone(Integer segmentsDone) {
             this.segmentsDone = segmentsDone;
@@ -187,8 +183,8 @@ that never got that far.
         }
 
         /**
-         * The time at which the sync last reported progress. Refreshed by every event, so a stale value on an
-active state is the caller's staleness signal. Null when no sync has been requested.
+         * The time at which the sync last reported progress. Null when no sync has been requested. An old value
+on an active state means the sync may have stalled.
          */
         public Builder setLastEventAt(java.time.OffsetDateTime lastEventAt) {
             this.lastEventAt = lastEventAt;
