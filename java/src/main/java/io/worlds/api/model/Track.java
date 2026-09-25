@@ -2,6 +2,10 @@ package io.worlds.api.model;
 
 import java.util.Objects;
 
+/**
+ * Tracks from a detector with tracking turned off ("untracked") hold a single detection and have a
+half-open period, so their `endTime` is exclusive.
+ */
 public class Track implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -125,13 +129,15 @@ public class Track implements java.io.Serializable {
     }
 
     /**
-     * The time of the last detection of the tracked object, or null if it is still being tracked.
+     * The time of the last detection of the tracked object, or, for an untracked detector's track, the
+exclusive end of its single detection's span. Null if the track is still being tracked.
      */
     public java.time.OffsetDateTime getEndTime() {
         return endTime;
     }
     /**
-     * The time of the last detection of the tracked object, or null if it is still being tracked.
+     * The time of the last detection of the tracked object, or, for an untracked detector's track, the
+exclusive end of its single detection's span. Null if the track is still being tracked.
      */
     public void setEndTime(java.time.OffsetDateTime endTime) {
         this.endTime = endTime;
@@ -334,7 +340,8 @@ public class Track implements java.io.Serializable {
         }
 
         /**
-         * The time of the last detection of the tracked object, or null if it is still being tracked.
+         * The time of the last detection of the tracked object, or, for an untracked detector's track, the
+exclusive end of its single detection's span. Null if the track is still being tracked.
          */
         public Builder setEndTime(java.time.OffsetDateTime endTime) {
             this.endTime = endTime;

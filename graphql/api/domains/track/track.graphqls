@@ -1,3 +1,7 @@
+"""
+Tracks from a detector with tracking turned off ("untracked") hold a single detection and have a
+half-open period, so their `endTime` is exclusive.
+"""
 type Track {
     """The unique identifier for the Track."""
     id: ID!
@@ -12,7 +16,8 @@ type Track {
     """The time of the first detection of the tracked object."""
     startTime: DateTimeOffset!
     """
-    The time of the last detection of the tracked object, or null if it is still being tracked.
+    The time of the last detection of the tracked object, or, for an untracked detector's track, the
+    exclusive end of its single detection's span. Null if the track is still being tracked.
     """
     endTime: DateTimeOffset
     """

@@ -10,8 +10,9 @@ one field must be provided per filter object.
 An object whose period has not ended yet is treated as running until the end of time, which is why
 `endingWithin` and `before` never match one.
 
-Some objects (e.g. instantaneous tracks) have a half-open period `[start, end)` whose end is exclusive
-rather than inclusive; the fields below call this out where it changes matching.
+Some objects (e.g. tracks from an untracked detector; see [`Track`]({{Types.Track}})) have a
+half-open period `[start, end)` whose end is exclusive rather than inclusive; the fields below call
+this out where it changes matching.
  */
 public class FilterTimeRangeInput implements java.io.Serializable {
 

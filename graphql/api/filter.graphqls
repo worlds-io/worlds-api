@@ -204,13 +204,14 @@ one field must be provided per filter object.
 An object whose period has not ended yet is treated as running until the end of time, which is why
 `endingWithin` and `before` never match one.
 
-Some objects (e.g. instantaneous tracks) have a half-open period `[start, end)` whose end is exclusive
-rather than inclusive; the fields below call this out where it changes matching.
+Some objects (e.g. tracks from an untracked detector; see [`Track`]({{Types.Track}})) have a
+half-open period `[start, end)` whose end is exclusive rather than inclusive; the fields below call
+this out where it changes matching.
 """
 input FilterTimeRangeInput @oneOf {
     """
-    If provided, the object's period must fully contain the given period to match the filter. A
-    half-open period's exclusive end is not included, same as for `containingInstant`.
+    If provided, the object's period must fully contain the given period to match the filter. A given
+    period whose `end` equals a half-open period's exclusive end does not match.
     """
     containing: TimeRangeInput
     """
@@ -230,7 +231,9 @@ input FilterTimeRangeInput @oneOf {
     startingWithin: TimeRangeInput
     """
     If provided, the end of the object's period must fall within the given period to match the filter.
-    An object that has not ended never matches.
+    An object that has not ended never matches. For a half-open period, an exclusive end equal to the
+    given period's `start` does not match, since the object had already ended by then; an exclusive
+    end equal to the given period's `end` does match.
     """
     endingWithin: TimeRangeInput
     """
