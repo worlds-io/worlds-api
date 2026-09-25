@@ -203,10 +203,14 @@ one field must be provided per filter object.
 
 An object whose period has not ended yet is treated as running until the end of time, which is why
 `endingWithin` and `before` never match one.
+
+Some objects (e.g. instantaneous tracks) have a half-open period `[start, end)` whose end is exclusive
+rather than inclusive; the fields below call this out where it changes matching.
 """
 input FilterTimeRangeInput @oneOf {
     """
-    If provided, the object's period must fully contain the given period to match the filter.
+    If provided, the object's period must fully contain the given period to match the filter. A
+    half-open period's exclusive end is not included, same as for `containingInstant`.
     """
     containing: TimeRangeInput
     """
@@ -216,7 +220,7 @@ input FilterTimeRangeInput @oneOf {
     containedBy: TimeRangeInput
     """
     If provided, the object's period must overlap the given period to match the filter. Periods that
-    merely touch at an endpoint do overlap.
+    touch at an endpoint overlap, unless the touching point is a half-open period's exclusive end.
     """
     intersecting: TimeRangeInput
     """
@@ -230,13 +234,16 @@ input FilterTimeRangeInput @oneOf {
     """
     endingWithin: TimeRangeInput
     """
-    If provided, the object's period must include the given instant to match the filter. An object whose
-    period starts or ends exactly at the instant does include it.
+    If provided, the object's period must include the given instant to match the filter. An object
+    whose period starts exactly at the instant does include it, as does one whose inclusive end is
+    exactly the instant; a half-open period's exclusive end does not.
     """
     containingInstant: DateTimeOffset
     """
     If provided, the object's period must have ended before the given instant to match the filter.
-    An object that has not ended never matches.
+    An object that has not ended never matches. A half-open period whose exclusive end is exactly the
+    instant does match, since it has already ended by then; a closed period ending exactly at the
+    instant does not.
     """
     before: DateTimeOffset
     """
