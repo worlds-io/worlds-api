@@ -99,13 +99,13 @@ public class SiteFacilityLayer implements java.io.Serializable {
     }
 
     /**
-     * The outline of the area the layer represents. Independent of imageBounds, which positions the layer image.
+     * The outline of the area the layer represents.
      */
     public GeoJSONPolygon getPolygon() {
         return polygon;
     }
     /**
-     * The outline of the area the layer represents. Independent of imageBounds, which positions the layer image.
+     * The outline of the area the layer represents.
      */
     public void setPolygon(GeoJSONPolygon polygon) {
         this.polygon = polygon;
@@ -206,7 +206,7 @@ public class SiteFacilityLayer implements java.io.Serializable {
         }
 
         /**
-         * The outline of the area the layer represents. Independent of imageBounds, which positions the layer image.
+         * The outline of the area the layer represents.
          */
         public Builder setPolygon(GeoJSONPolygon polygon) {
             this.polygon = polygon;
