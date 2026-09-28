@@ -15,15 +15,17 @@ public class CreateSiteFacilityLayerInput implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private String name;
     private org.springframework.graphql.data.ArgumentValue<GeoJSONPolygonInput> imageBounds = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<GeoJSONPolygonInput> geographicBounds = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
 
     public CreateSiteFacilityLayerInput() {
     }
 
-    public CreateSiteFacilityLayerInput(String siteFacilityId, String name, org.springframework.graphql.data.ArgumentValue<GeoJSONPolygonInput> imageBounds, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata) {
+    public CreateSiteFacilityLayerInput(String siteFacilityId, String name, org.springframework.graphql.data.ArgumentValue<GeoJSONPolygonInput> imageBounds, org.springframework.graphql.data.ArgumentValue<GeoJSONPolygonInput> geographicBounds, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata) {
         this.siteFacilityId = siteFacilityId;
         this.name = name;
         this.imageBounds = imageBounds;
+        this.geographicBounds = geographicBounds;
         this.metadata = metadata;
     }
 
@@ -48,6 +50,13 @@ public class CreateSiteFacilityLayerInput implements java.io.Serializable {
         this.imageBounds = imageBounds;
     }
 
+    public org.springframework.graphql.data.ArgumentValue<GeoJSONPolygonInput> getGeographicBounds() {
+        return geographicBounds;
+    }
+    public void setGeographicBounds(org.springframework.graphql.data.ArgumentValue<GeoJSONPolygonInput> geographicBounds) {
+        this.geographicBounds = geographicBounds;
+    }
+
     public org.springframework.graphql.data.ArgumentValue<java.lang.Object> getMetadata() {
         return metadata;
     }
@@ -67,12 +76,13 @@ public class CreateSiteFacilityLayerInput implements java.io.Serializable {
         return Objects.equals(siteFacilityId, that.siteFacilityId)
             && Objects.equals(name, that.name)
             && Objects.equals(imageBounds, that.imageBounds)
+            && Objects.equals(geographicBounds, that.geographicBounds)
             && Objects.equals(metadata, that.metadata);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(siteFacilityId, name, imageBounds, metadata);
+        return Objects.hash(siteFacilityId, name, imageBounds, geographicBounds, metadata);
     }
 
 
@@ -85,6 +95,7 @@ public class CreateSiteFacilityLayerInput implements java.io.Serializable {
         private String siteFacilityId;
         private String name;
         private org.springframework.graphql.data.ArgumentValue<GeoJSONPolygonInput> imageBounds = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<GeoJSONPolygonInput> geographicBounds = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
 
         public Builder() {
@@ -105,6 +116,11 @@ public class CreateSiteFacilityLayerInput implements java.io.Serializable {
             return this;
         }
 
+        public Builder setGeographicBounds(org.springframework.graphql.data.ArgumentValue<GeoJSONPolygonInput> geographicBounds) {
+            this.geographicBounds = geographicBounds;
+            return this;
+        }
+
         public Builder setMetadata(org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata) {
             this.metadata = metadata;
             return this;
@@ -112,7 +128,7 @@ public class CreateSiteFacilityLayerInput implements java.io.Serializable {
 
 
         public CreateSiteFacilityLayerInput build() {
-            return new CreateSiteFacilityLayerInput(siteFacilityId, name, imageBounds, metadata);
+            return new CreateSiteFacilityLayerInput(siteFacilityId, name, imageBounds, geographicBounds, metadata);
         }
 
     }

@@ -30,6 +30,8 @@ type SiteFacilityLayer {
     imageUrl: String
     """The geographic bounds that the layer image is stretched to."""
     imageBounds: GeoJSONPolygon
+    """The outline of the area the layer represents."""
+    geographicBounds: GeoJSONPolygon
     """Additional metadata associated with the layer. This may represent any JSON object structure."""
     metadata: JSON
 }
@@ -70,6 +72,8 @@ input CreateSiteFacilityLayerInput {
     name: String!
     """The geographic bounds that the layer image is stretched to."""
     imageBounds: GeoJSONPolygonInput
+    """The outline of the area the layer represents."""
+    geographicBounds: GeoJSONPolygonInput
     """Additional metadata associated with the layer. This may represent any JSON object structure."""
     metadata: JSON
 }
@@ -84,6 +88,8 @@ input UpdateSiteFacilityLayerInput {
     name: String
     """The geographic bounds that the layer image is stretched to."""
     imageBounds: GeoJSONPolygonInput
+    """The outline of the area the layer represents."""
+    geographicBounds: GeoJSONPolygonInput
     """Additional metadata associated with the layer."""
     metadata: JSON
 }

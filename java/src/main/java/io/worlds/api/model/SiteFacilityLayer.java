@@ -17,17 +17,19 @@ public class SiteFacilityLayer implements java.io.Serializable {
     private SiteFacility facility;
     private String imageUrl;
     private GeoJSONPolygon imageBounds;
+    private GeoJSONPolygon geographicBounds;
     private java.lang.Object metadata;
 
     public SiteFacilityLayer() {
     }
 
-    public SiteFacilityLayer(String id, String name, SiteFacility facility, String imageUrl, GeoJSONPolygon imageBounds, java.lang.Object metadata) {
+    public SiteFacilityLayer(String id, String name, SiteFacility facility, String imageUrl, GeoJSONPolygon imageBounds, GeoJSONPolygon geographicBounds, java.lang.Object metadata) {
         this.id = id;
         this.name = name;
         this.facility = facility;
         this.imageUrl = imageUrl;
         this.imageBounds = imageBounds;
+        this.geographicBounds = geographicBounds;
         this.metadata = metadata;
     }
 
@@ -97,6 +99,19 @@ public class SiteFacilityLayer implements java.io.Serializable {
     }
 
     /**
+     * The outline of the area the layer represents.
+     */
+    public GeoJSONPolygon getGeographicBounds() {
+        return geographicBounds;
+    }
+    /**
+     * The outline of the area the layer represents.
+     */
+    public void setGeographicBounds(GeoJSONPolygon geographicBounds) {
+        this.geographicBounds = geographicBounds;
+    }
+
+    /**
      * Additional metadata associated with the layer. This may represent any JSON object structure.
      */
     public java.lang.Object getMetadata() {
@@ -123,12 +138,13 @@ public class SiteFacilityLayer implements java.io.Serializable {
             && Objects.equals(facility, that.facility)
             && Objects.equals(imageUrl, that.imageUrl)
             && Objects.equals(imageBounds, that.imageBounds)
+            && Objects.equals(geographicBounds, that.geographicBounds)
             && Objects.equals(metadata, that.metadata);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, facility, imageUrl, imageBounds, metadata);
+        return Objects.hash(id, name, facility, imageUrl, imageBounds, geographicBounds, metadata);
     }
 
 
@@ -143,6 +159,7 @@ public class SiteFacilityLayer implements java.io.Serializable {
         private SiteFacility facility;
         private String imageUrl;
         private GeoJSONPolygon imageBounds;
+        private GeoJSONPolygon geographicBounds;
         private java.lang.Object metadata;
 
         public Builder() {
@@ -189,6 +206,14 @@ public class SiteFacilityLayer implements java.io.Serializable {
         }
 
         /**
+         * The outline of the area the layer represents.
+         */
+        public Builder setGeographicBounds(GeoJSONPolygon geographicBounds) {
+            this.geographicBounds = geographicBounds;
+            return this;
+        }
+
+        /**
          * Additional metadata associated with the layer. This may represent any JSON object structure.
          */
         public Builder setMetadata(java.lang.Object metadata) {
@@ -198,7 +223,7 @@ public class SiteFacilityLayer implements java.io.Serializable {
 
 
         public SiteFacilityLayer build() {
-            return new SiteFacilityLayer(id, name, facility, imageUrl, imageBounds, metadata);
+            return new SiteFacilityLayer(id, name, facility, imageUrl, imageBounds, geographicBounds, metadata);
         }
 
     }
