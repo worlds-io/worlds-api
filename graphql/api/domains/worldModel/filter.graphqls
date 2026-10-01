@@ -1,0 +1,14 @@
+"""
+`FilterWorldModelNodeInput` narrows a [worldModelNodes query]({{Queries.worldModelNodes}}).
+All provided fields must match.
+"""
+input FilterWorldModelNodeInput @experimental {
+    """If provided, only nodes of these World Model types, e.g. `["Deviation"]`."""
+    types: [String!]
+    """If provided, only nodes in these planes."""
+    planes: [WorldModelPlane!]
+    """If provided, only nodes whose id starts with this prefix, e.g. `dev:`."""
+    idPrefix: String
+    """If provided, only nodes whose label contains this text, case-insensitively."""
+    labelContains: String
+}
