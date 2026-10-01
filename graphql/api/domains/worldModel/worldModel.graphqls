@@ -1,0 +1,184 @@
+## WORLD MODEL (experimental)
+#
+# A read-only view of the World Model: the process ontology stored in the `live_world_model`
+# schema. Every element here is experimental and may change without the usual deprecation window.
+# The model is a graph of typed nodes in six planes joined by typed edges; node and edge types
+# are data (see the `worldModelTypes` query), so the API exposes them generically rather than as
+# one GraphQL type per World Model type.
+
+"""
+The six planes of the World Model. Every node type belongs to exactly one.
+"""
+enum WorldModelPlane @experimental {
+    """What is supposed to happen: process, step, pattern and equipment definitions."""
+    DEFINITIONAL
+    """Where: sites, buildings, floors, zones, regions, fixtures, paths, sensors."""
+    SPATIAL
+    """What things are: durable assets and the units that flow through a process."""
+    ASSET
+    """What was seen: executions, deviations, associations."""
+    OBSERVATION
+    """Rules in force: thresholds, policies, SLAs, schedules, positions."""
+    CONTEXT
+    """How other systems connect: systems, connectors, capabilities."""
+    INTEGRATION
+}
+
+"""
+Which edges of a [WorldModelNode]({{Types.WorldModelNode}}) to return, relative to the node.
+"""
+enum WorldModelEdgeDirection @experimental {
+    """Edges that start at this node."""
+    OUTGOING
+    """Edges that end at this node."""
+    INCOMING
+    """Edges in either direction."""
+    BOTH
+}
+
+"""
+A node of the World Model: one typed thing, such as a step definition, a dock door, a run, or a
+deviation found on a run. Its type decides its plane and which properties it carries.
+"""
+type WorldModelNode @experimental {
+    """The node's stable identifier, e.g. `pdef:trailer-turn@1`. Safe to hold in client code."""
+    id: ID!
+    """The node's World Model type, e.g. `ProcessExecution`. Described by [worldModelTypes]({{Queries.worldModelTypes}})."""
+    type: String!
+    """The plane the node's type belongs to."""
+    plane: WorldModelPlane!
+    """A human-readable name, when the node has one."""
+    label: String
+    """
+    The node's properties as a JSON object, keyed by property name. Which properties exist is
+    described by the node's type. Properties marked below the trust boundary are never returned.
+    """
+    properties: JSON!
+    """The node's edges, optionally restricted by direction and edge type."""
+    edges(
+        """Which edges to return relative to this node."""
+        direction: WorldModelEdgeDirection! = BOTH
+        """If provided, only edges of these types, e.g. `["contains", "conforms_to"]`."""
+        types: [String!]
+    ): [WorldModelEdge!]!
+}
+
+"""
+A typed, directed relationship between two [WorldModelNodes]({{Types.WorldModelNode}}).
+"""
+type WorldModelEdge @experimental {
+    """The edge's identifier."""
+    id: ID!
+    """The edge type, e.g. `contains`, `precedes`, `works_on`, `derives_from`."""
+    type: String!
+    """The node the edge starts at."""
+    from: WorldModelNode!
+    """The node the edge ends at."""
+    to: WorldModelNode!
+    """For edges that hold over an interval (e.g. `scopes`, `installed_in`): when it starts to hold."""
+    validFrom: DateTimeOffset
+    """For edges that hold over an interval: when it stops holding. Null while it still holds."""
+    validTo: DateTimeOffset
+    """For `scopes` edges: the rule's priority when several apply."""
+    priority: Int
+    """Any further edge properties as a JSON object, e.g. `{"max_gap_s": 600}` on a `precedes` edge."""
+    properties: JSON
+}
+
+"""
+A World Model node type, with the properties its nodes may carry.
+"""
+type WorldModelType @experimental {
+    """The type's name, e.g. `StepDef`."""
+    name: String!
+    """The plane the type belongs to."""
+    plane: WorldModelPlane!
+    """What the type means."""
+    description: String
+    """The properties nodes of this type may carry. Properties below the trust boundary are omitted."""
+    properties: [WorldModelTypeProperty!]!
+}
+
+"""
+One property of a [WorldModelType]({{Types.WorldModelType}}).
+"""
+type WorldModelTypeProperty @experimental {
+    """The property name, as used in a node's `properties` object."""
+    name: String!
+    """The property's data type, e.g. `string`, `timestamp`, `enum`, `node_ref`, `json`."""
+    dataType: String!
+    """Whether every node of the type carries the property."""
+    required: Boolean!
+    """For enum properties: the allowed values."""
+    enumValues: [String!]
+    """What the property means."""
+    description: String
+}
+
+"""
+One step attempt in a run's timeline, as returned by [worldModelRunTimeline]({{Queries.worldModelRunTimeline}}).
+"""
+type WorldModelTimelineEntry @experimental {
+    """When the attempt started."""
+    startTime: DateTimeOffset!
+    """The step's name."""
+    step: String
+    """The attempt number (1 for the first try; higher after rework)."""
+    attempt: Int
+    """The attempt's outcome, if recorded."""
+    outcome: String
+    """How long the attempt took."""
+    duration: DateTimeDuration
+    """The wait between the previous attempt's end and this one's start."""
+    waitBefore: DateTimeDuration
+    """Where the attempt happened."""
+    place: String
+}
+
+"""
+A step attempt that ran out of the order its process definition allows.
+"""
+type WorldModelSequenceViolation @experimental {
+    """The id of the offending step attempt."""
+    attemptId: ID!
+    """The step's name."""
+    step: String
+    """When the attempt started."""
+    startTime: DateTimeOffset
+    """Why it is out of order."""
+    reason: String
+}
+
+"""
+The threshold in force for a step attempt and how the attempt measured against it.
+"""
+type WorldModelThresholdResolution @experimental {
+    """The id of the winning Threshold rule."""
+    ruleId: ID!
+    """The node the rule is attached at (a zone, site, ...); the most specific attachment wins."""
+    attachedAt: ID!
+    """The rule's priority."""
+    priority: Int
+    """The definition's nominal duration, in seconds."""
+    nominalSeconds: Float
+    """The observed duration, in seconds."""
+    observedSeconds: Float
+    """`ok`, `warn` or `alert`."""
+    verdict: String
+}
+
+"""
+A pattern match or analyst link that involves a node, as returned by [worldModelAssociations]({{Queries.worldModelAssociations}}).
+"""
+type WorldModelAssociationSummary @experimental {
+    """The Association node."""
+    association: WorldModelNode!
+    """The kind of association, e.g. `repeated_occurrence`, `dwell`, `co_presence`."""
+    kind: String
+    """`info`, `warn`, `alert` or `critical`."""
+    severity: String
+    """`pattern` (raised by a pattern engine) or `analyst` (drawn by a person in a role)."""
+    origin: String
+    """The id of the PatternDef matched, for pattern-origin associations."""
+    patternId: ID
+}

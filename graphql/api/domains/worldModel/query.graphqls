@@ -1,0 +1,50 @@
+extend type Query {
+    """
+    Look up a single [WorldModelNode]({{Types.WorldModelNode}}) by its identifier.
+    Returns null if the node does not exist or belongs to another organization.
+    """
+    worldModelNode(
+        """The node's identifier."""
+        id: ID!
+    ): WorldModelNode @experimental
+
+    """Find World Model nodes, ordered by id."""
+    worldModelNodes(
+        """Filter nodes by type, plane, id prefix or label."""
+        filter: FilterWorldModelNodeInput
+        """Returns the first _n_ elements from the list."""
+        first: Int! = 20
+        """Returns the elements in the list that come after the specified cursor."""
+        after: String
+    ): WorldModelNodeConnection! @experimental
+
+    """The World Model's node types and their properties."""
+    worldModelTypes(
+        """If provided, only these types."""
+        names: [String!]
+    ): [WorldModelType!]! @experimental
+
+    """The step attempts of a run (a ProcessExecution), in time order."""
+    worldModelRunTimeline(
+        """The ProcessExecution's id."""
+        runId: ID!
+    ): [WorldModelTimelineEntry!]! @experimental
+
+    """Step attempts in a run that happened out of the order its process definition allows."""
+    worldModelSequenceViolations(
+        """The ProcessExecution's id."""
+        runId: ID!
+    ): [WorldModelSequenceViolation!]! @experimental
+
+    """The threshold in force for a step attempt (a StepExecution) and the attempt's verdict against it."""
+    worldModelThreshold(
+        """The StepExecution's id."""
+        stepAttemptId: ID!
+    ): WorldModelThresholdResolution @experimental
+
+    """Associations (pattern matches, analyst links) that involve a node."""
+    worldModelAssociations(
+        """The id of the node involved, e.g. a trailer or a run."""
+        nodeId: ID!
+    ): [WorldModelAssociationSummary!]! @experimental
+}
