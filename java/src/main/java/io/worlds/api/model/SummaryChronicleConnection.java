@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * An `SummaryConnection` is the paginated results of an [`summaries` query]({{Queries.summaryChronicles}}).
+ * An `SummaryConnection` is the paginated results of an `summaries` query.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class SummaryChronicleConnection implements java.io.Serializable {

@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * TracksSort allows for sorting a [`tracks` query]({{Queries.tracks}}) by field and direction.
+ * TracksSort allows for sorting a `tracks` query by field and direction.
  */
 public class TracksSort implements java.io.Serializable {
 

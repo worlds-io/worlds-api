@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * FilterSiteInput filters [sites]({{Types.Site}}) based on criteria described below.
+ * FilterSiteInput filters sites based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
  */
 public class FilterSiteInput implements java.io.Serializable {

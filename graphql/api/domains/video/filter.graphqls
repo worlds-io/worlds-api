@@ -1,10 +1,10 @@
 """
-FilterEventActivityInput filters [events]({{Types.Event}}) based on criteria described below.
+FilterEventActivityInput filters events based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
 """
 input FilterVideoActivityInput {
     """
-    If provided, specifies filters that work against the [`DataSource`](({{Types.DataSource}}))'s unique id of the video that created the event.
+    If provided, specifies filters that work against the `DataSource`'s unique id of the video that created the event.
     """
     dataSourceId: FilterIDInput
     """
@@ -22,29 +22,29 @@ input FilterVideoActivityInput {
 }
 
 """
-FilterVideoInput filters [videos]({{Types.Video}}) based on criteria described below.
+FilterVideoInput filters videos based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
 """
 input FilterVideoInput {
     """
-    If provided, specifies filters that work against the [`Videos`](({{Types.Video}}))'s unique id.
+    If provided, specifies filters that work against the `Videos`'s unique id.
     """
     id: FilterIDInput
     """
-    If provided, specifies filters that work against the unique ID of the [`data source`]({{Types.DataSource}}) that the video belongs to.
+    If provided, specifies filters that work against the unique ID of the `data source` that the video belongs to.
     """
     dataSourceId: FilterIDInput
     """
-    If provided, specifies filters that work against the [`Videos`](({{Types.Video}}))'s start time.
+    If provided, specifies filters that work against the `Videos`'s start time.
     """
     startTime: FilterDateTimeOffsetInput!
     """
-    If provided, specifies filters that work against the [`Videos`](({{Types.Video}}))'s end time.
+    If provided, specifies filters that work against the `Videos`'s end time.
     """
     endTime: FilterDateTimeOffsetInput
     """
     If provided, specifies filters that work against whether the video's footage
-    [has been synced to the hub]({{Types.Video}}).
+    has been synced to the hub.
     """
     cloudAvailable: FilterBooleanInput
     """

@@ -4,7 +4,7 @@ import java.util.Objects;
 
 /**
  * A bucket selected as having the greatest `total` within its group, returned from
-[`DetectionsSummary.highestTotalBuckets`]({{Types.DetectionsSummary}}).
+`DetectionsSummary.highestTotalBuckets`.
  */
 public class DetectionsHighestTotalBucket implements java.io.Serializable {
 

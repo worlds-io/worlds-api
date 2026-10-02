@@ -1,16 +1,16 @@
 package io.worlds.api.model;
 
 /**
- * Indicates the field used for sorting a [`measurements` query]({{Queries.measurements}}).
+ * Indicates the field used for sorting a `measurements` query.
  */
 public enum MeasurementsSortField {
 
     /**
-     * Sort the resulting list by the [`Measurement`](({{Types.Measurement}}))'s unique identifier.
+     * Sort the resulting list by the `Measurement`'s unique identifier.
      */
     ID("ID"),
     /**
-     * Sort the resulting list by the [`Measurement`](({{Types.Measurement}}))'s timestamp.
+     * Sort the resulting list by the `Measurement`'s timestamp.
      */
     TIMESTAMP("TIMESTAMP");
 

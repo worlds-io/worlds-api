@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * This input type is used to create a snapshot [`Image`]({{Types.Image}}) for a frame identified by
+ * This input type is used to create a snapshot `Image` for a frame identified by
 its global frame ID.
  */
 public class CreateSnapshotForFrameInput implements java.io.Serializable {

@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * This input type is used to update an existing [`Track`]({{Types.Track}}).
+ * This input type is used to update an existing `Track`.
  */
 public class UpdateTrackInput implements java.io.Serializable {
 

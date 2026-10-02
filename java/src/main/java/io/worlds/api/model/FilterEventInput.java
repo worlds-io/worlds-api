@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * FilterEventInput filters [events]({{Types.Event}}) based on criteria described below.
+ * FilterEventInput filters events based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
  */
 public class FilterEventInput implements java.io.Serializable {

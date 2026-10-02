@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * An `GeofenceConnection` is the paginated results of a [`geofences` query]({{Queries.geofences}}).
+ * An `GeofenceConnection` is the paginated results of a `geofences` query.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class GeofenceConnection implements java.io.Serializable {

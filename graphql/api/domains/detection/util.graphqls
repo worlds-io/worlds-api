@@ -1,5 +1,5 @@
 """
-A `DetectionConnection` is the paginated results of a [`detections` query]({{Queries.detections}}).
+A `DetectionConnection` is the paginated results of a `detections` query.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type DetectionConnection {
@@ -12,16 +12,16 @@ type DetectionConnection {
 }
 
 """
-A detection edge is the pairing of a [Detection]({{Types.Detection}}) with its query cursor.
+A detection edge is the pairing of a Detection with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type DetectionEdge {
     """
-    Information about a particular [Detection]({{Types.Detection}}).
+    Information about a particular Detection.
     """
     node: Detection
     """
-    The cursor to use with the [`detections` query]({{Queries.detections}}) `after` argument.
+    The cursor to use with the `detections` query `after` argument.
     """
     cursor: String!
 }

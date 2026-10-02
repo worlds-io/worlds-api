@@ -1,5 +1,5 @@
 """
-Indicates the field used for sorting a [Tracks query]({{Queries.tracks}}).
+Indicates the field used for sorting a Tracks query.
 """
 enum TracksSortField {
     """Sort the resulting list in by its unique identifier."""
@@ -9,7 +9,7 @@ enum TracksSortField {
 }
 
 """
-TracksSort allows for sorting a [`tracks` query]({{Queries.tracks}}) by field and direction.
+TracksSort allows for sorting a `tracks` query by field and direction.
 """
 input TracksSort {
     """

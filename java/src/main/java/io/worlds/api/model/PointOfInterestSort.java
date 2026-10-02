@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * PointOfInterestSort allows for sorting a [`pointsOfInterest` query]({{Queries.pointsOfInterest}}) by field and direction.
+ * PointOfInterestSort allows for sorting a `pointsOfInterest` query by field and direction.
  */
 public class PointOfInterestSort implements java.io.Serializable {
 

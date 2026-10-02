@@ -1,5 +1,5 @@
 """
-An `EventProducerConnection` is the paginated results of an [`eventProducers` query]({{Queries.eventProducers}}).
+An `EventProducerConnection` is the paginated results of an `eventProducers` query.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type EventProducerConnection {
@@ -12,22 +12,22 @@ type EventProducerConnection {
 }
 
 """
-An event producer edge is the pairing of an [EventProducer]({{Types.EventProducer}}) with its query cursor.
+An event producer edge is the pairing of an EventProducer with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type EventProducerEdge {
     """
-    Information about a particular [EventProducer]({{Types.EventProducer}}).
+    Information about a particular EventProducer.
     """
     node: EventProducer
     """
-    The cursor to use with the [Query `eventProducers` field]({{Queries.eventProducers}}) `after` argument.
+    The cursor to use with the Query `eventProducers` field `after` argument.
     """
     cursor: String!
 }
 
 """
-An `EventConnection` is the paginated results of an [`events` query]({{Queries.events}}).
+An `EventConnection` is the paginated results of an `events` query.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type EventConnection {
@@ -40,14 +40,14 @@ type EventConnection {
 }
 
 """
-An event edge is the pairing of an [Event]({{Types.Event}}) with its query cursor.
+An event edge is the pairing of an Event with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type EventEdge {
-    """Information about a particular [Event]({{Types.Event}})."""
+    """Information about a particular Event."""
     node: Event
     """
-    The cursor to use with the [Query `events` field]({{Queries.events}}) `after` argument.
+    The cursor to use with the Query `events` field `after` argument.
     """
     cursor: String!
 }

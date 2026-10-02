@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * Fields to update an existing [PointOfInterest]({{Types.PointOfInterest}})
+ * Fields to update an existing PointOfInterest
  */
 public class UpdatePointOfInterestInput implements java.io.Serializable {
 

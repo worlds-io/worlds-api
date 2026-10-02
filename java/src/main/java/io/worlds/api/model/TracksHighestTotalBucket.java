@@ -4,7 +4,7 @@ import java.util.Objects;
 
 /**
  * A bucket selected as having the greatest `total` within its group, returned from
-[`TracksSummary.highestTotalBuckets`]({{Types.TracksSummary}}).
+`TracksSummary.highestTotalBuckets`.
  */
 public class TracksHighestTotalBucket implements java.io.Serializable {
 
@@ -36,13 +36,13 @@ public class TracksHighestTotalBucket implements java.io.Serializable {
     }
 
     /**
-     * The total number of [Tracks]({{Types.Track}}) in the winning bucket.
+     * The total number of Tracks in the winning bucket.
      */
     public int getTotal() {
         return total;
     }
     /**
-     * The total number of [Tracks]({{Types.Track}}) in the winning bucket.
+     * The total number of Tracks in the winning bucket.
      */
     public void setTotal(int total) {
         this.total = total;
@@ -88,7 +88,7 @@ public class TracksHighestTotalBucket implements java.io.Serializable {
         }
 
         /**
-         * The total number of [Tracks]({{Types.Track}}) in the winning bucket.
+         * The total number of Tracks in the winning bucket.
          */
         public Builder setTotal(int total) {
             this.total = total;

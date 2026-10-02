@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * A point of interest edge is the pairing of a [PointOfInterest]({{Types.PointOfInterest}}) with its query cursor.
+ * A point of interest edge is the pairing of a PointOfInterest with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class PointOfInterestEdge implements java.io.Serializable {
@@ -23,26 +23,26 @@ public class PointOfInterestEdge implements java.io.Serializable {
     }
 
     /**
-     * Information about a particular [PointOfInterest]({{Types.PointOfInterest}}).
+     * Information about a particular PointOfInterest.
      */
     public PointOfInterest getNode() {
         return node;
     }
     /**
-     * Information about a particular [PointOfInterest]({{Types.PointOfInterest}}).
+     * Information about a particular PointOfInterest.
      */
     public void setNode(PointOfInterest node) {
         this.node = node;
     }
 
     /**
-     * The cursor to use with the [`pointsOfInterest` query]({{Queries.pointsOfInterest}}) `after` argument.
+     * The cursor to use with the `pointsOfInterest` query `after` argument.
      */
     public String getCursor() {
         return cursor;
     }
     /**
-     * The cursor to use with the [`pointsOfInterest` query]({{Queries.pointsOfInterest}}) `after` argument.
+     * The cursor to use with the `pointsOfInterest` query `after` argument.
      */
     public void setCursor(String cursor) {
         this.cursor = cursor;
@@ -80,7 +80,7 @@ public class PointOfInterestEdge implements java.io.Serializable {
         }
 
         /**
-         * Information about a particular [PointOfInterest]({{Types.PointOfInterest}}).
+         * Information about a particular PointOfInterest.
          */
         public Builder setNode(PointOfInterest node) {
             this.node = node;
@@ -88,7 +88,7 @@ public class PointOfInterestEdge implements java.io.Serializable {
         }
 
         /**
-         * The cursor to use with the [`pointsOfInterest` query]({{Queries.pointsOfInterest}}) `after` argument.
+         * The cursor to use with the `pointsOfInterest` query `after` argument.
          */
         public Builder setCursor(String cursor) {
             this.cursor = cursor;

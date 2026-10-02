@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * This input type is used to create a new [`Device`]({{Types.Device}}).
+ * This input type is used to create a new `Device`.
  */
 public class CreateDeviceInput implements java.io.Serializable {
 

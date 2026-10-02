@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * A data source edge is the pairing of a [Data Source]({{Types.DataSource}}) with its query cursor.
+ * A data source edge is the pairing of a Data Source with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class DataSourceEdge implements java.io.Serializable {
@@ -23,26 +23,26 @@ public class DataSourceEdge implements java.io.Serializable {
     }
 
     /**
-     * Information about a particular [Data Source]({{Types.DataSource}}).
+     * Information about a particular Data Source.
      */
     public DataSource getNode() {
         return node;
     }
     /**
-     * Information about a particular [Data Source]({{Types.DataSource}}).
+     * Information about a particular Data Source.
      */
     public void setNode(DataSource node) {
         this.node = node;
     }
 
     /**
-     * The cursor to use with the [`dataSources` query]({{Queries.dataSources}}) `after` argument.
+     * The cursor to use with the `dataSources` query `after` argument.
      */
     public String getCursor() {
         return cursor;
     }
     /**
-     * The cursor to use with the [`dataSources` query]({{Queries.dataSources}}) `after` argument.
+     * The cursor to use with the `dataSources` query `after` argument.
      */
     public void setCursor(String cursor) {
         this.cursor = cursor;
@@ -80,7 +80,7 @@ public class DataSourceEdge implements java.io.Serializable {
         }
 
         /**
-         * Information about a particular [Data Source]({{Types.DataSource}}).
+         * Information about a particular Data Source.
          */
         public Builder setNode(DataSource node) {
             this.node = node;
@@ -88,7 +88,7 @@ public class DataSourceEdge implements java.io.Serializable {
         }
 
         /**
-         * The cursor to use with the [`dataSources` query]({{Queries.dataSources}}) `after` argument.
+         * The cursor to use with the `dataSources` query `after` argument.
          */
         public Builder setCursor(String cursor) {
             this.cursor = cursor;

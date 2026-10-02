@@ -1,7 +1,7 @@
 package io.worlds.api.model;
 
 /**
- * Indicates the type of a [DataSource]({{Types.DataSource}})
+ * Indicates the type of a DataSource
  */
 public enum DataSourceType {
 
@@ -10,15 +10,15 @@ public enum DataSourceType {
      */
     FOLDER("FOLDER"),
     /**
-     * A data source that corresponds to a [Device]({{Types.Device}}) that is generating video.
+     * A data source that corresponds to a Device that is generating video.
      */
     VIDEO_DEVICE("VIDEO_DEVICE"),
     /**
-     * A data source that corresponds to a [Device]({{Types.Device}}) that is generating images.
+     * A data source that corresponds to a Device that is generating images.
      */
     IMAGE_DEVICE("IMAGE_DEVICE"),
     /**
-     * A data source that directly produces [Tracks]({{Types.Track}}) and [detections]({{Types.Detection}})
+     * A data source that directly produces Tracks and detections
      */
     GEOPOSITION("GEOPOSITION");
 

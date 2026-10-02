@@ -1,5 +1,5 @@
 """
-Indicates the field used for sorting a [Tags query]({{Queries.tags}}).
+Indicates the field used for sorting a Tags query.
 """
 enum TagsSortField {
     """Sort the resulting list in by its unique identifier."""
@@ -9,7 +9,7 @@ enum TagsSortField {
 }
 
 """
-TagsSort allows for sorting a [`tags` query]({{Queries.tags}}) by field and direction.
+TagsSort allows for sorting a `tags` query by field and direction.
 """
 input TagsSort {
     """

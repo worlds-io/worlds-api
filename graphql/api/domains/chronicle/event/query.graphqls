@@ -1,31 +1,31 @@
 """
-Indicates the field used for sorting an [`eventChronicles` query]({{Queries.eventChronicles}}).
+Indicates the field used for sorting an `eventChronicles` query.
 """
 enum EventChronicleSortField {
     """
-    Sort the resulting list by the [`eventChronicle`]({{Types.EventChronicle}})'s unique identifier.
+    Sort the resulting list by the `eventChronicle`'s unique identifier.
     """
     ID
     """
-    Sort the resulting list by the [`eventChronicle`]({{Types.EventChronicle}})'s timestamp.
+    Sort the resulting list by the `eventChronicle`'s timestamp.
     """
     TIMESTAMP
     """
-    Sort the resulting list by the [`eventChronicle`]({{Types.EventChronicle}})'s name.
+    Sort the resulting list by the `eventChronicle`'s name.
     """
     NAME
     """
-    Sort the resulting list by the [`eventChronicle`]({{Types.EventChronicle}})'s priority.
+    Sort the resulting list by the `eventChronicle`'s priority.
     """
     PRIORITY
     """
-    Sort the resulting list by the [`eventChronicle`]({{Types.EventChronicle}})'s status.
+    Sort the resulting list by the `eventChronicle`'s status.
     """
     STATUS
 }
 
 """
-Indicates the field used for sorting an [`eventChronicles` query]({{Queries.eventChronicles}}).
+Indicates the field used for sorting an `eventChronicles` query.
 """
 input EventChronicleSort {
     """

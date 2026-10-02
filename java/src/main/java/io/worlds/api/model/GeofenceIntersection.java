@@ -4,8 +4,8 @@ import java.util.Objects;
 
 /**
  * A geofence intersection is a point-in-time representation of an interaction between a
-[track]({{Types.Track}}) and a
-[geofence]({{Types.Geofence}}).
+track and a
+geofence.
  */
 public class GeofenceIntersection implements java.io.Serializable {
 

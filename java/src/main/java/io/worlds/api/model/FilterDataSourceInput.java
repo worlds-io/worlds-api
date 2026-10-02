@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * FilterDataSourceInput filters [DataSources]({{Types.DataSource}}) based on criteria described below.
+ * FilterDataSourceInput filters DataSources based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
  */
 public class FilterDataSourceInput implements java.io.Serializable {

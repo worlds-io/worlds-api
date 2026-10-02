@@ -1,7 +1,7 @@
 package io.worlds.api.model;
 
 /**
- * Indicates the field used for sorting a [Tracks query]({{Queries.tracks}}).
+ * Indicates the field used for sorting a Tracks query.
  */
 public enum TracksSortField {
 

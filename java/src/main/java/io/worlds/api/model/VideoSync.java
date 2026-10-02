@@ -3,9 +3,9 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * The state of copying a [video]({{Types.Video}})'s footage from its edge to the hub.
+ * The state of copying a video's footage from its edge to the hub.
 
-To check whether the footage is on the hub, use [`Video.cloudAvailable`]({{Types.Video}}).
+To check whether the footage is on the hub, use `Video.cloudAvailable`.
  */
 public class VideoSync implements java.io.Serializable {
 

@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * A `MeasurementConnection` is the paginated results of an [`measurements` query]({{Queries.measurements}}).
+ * A `MeasurementConnection` is the paginated results of an `measurements` query.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class MeasurementConnection implements java.io.Serializable {

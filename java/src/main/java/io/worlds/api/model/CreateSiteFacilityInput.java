@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * Fields to create a new [SiteFacility]({{Types.SiteFacility}}).
+ * Fields to create a new SiteFacility.
  */
 public class CreateSiteFacilityInput implements java.io.Serializable {
 

@@ -5,7 +5,7 @@ extend type Mutation {
         image: UploadImageInput!
     ): Image
     """
-    Creates a snapshot [`Image`]({{Types.Image}}) for the frame identified by the given global
+    Creates a snapshot `Image` for the frame identified by the given global
     frame ID.
     """
     createSnapshotForFrame(

@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * FilterVideoInput filters [videos]({{Types.Video}}) based on criteria described below.
+ * FilterVideoInput filters videos based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
  */
 public class FilterVideoInput implements java.io.Serializable {

@@ -1,16 +1,16 @@
 package io.worlds.api.model;
 
 /**
- * Indicates the field used for sorting an [`events` query]({{Queries.events}}).
+ * Indicates the field used for sorting an `events` query.
  */
 public enum EventsSortField {
 
     /**
-     * Sort the resulting list by the [`Event`](({{Types.Event}}))'s unique identifier.
+     * Sort the resulting list by the `Event`'s unique identifier.
      */
     ID("ID"),
     /**
-     * Sort the resulting list by the [`Event`](({{Types.Event}}))'s start time.
+     * Sort the resulting list by the `Event`'s start time.
      */
     START_TIME("START_TIME");
 

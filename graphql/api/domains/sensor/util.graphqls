@@ -8,20 +8,20 @@ type SensorConnection {
 }
 
 """
-A sensor edge is the pairing of a [Sensor]({{Types.Sensor}}) with its query cursor.
+A sensor edge is the pairing of a Sensor with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type SensorEdge {
-    """Information about a particular [Sensor]({{Types.Sensor}})."""
+    """Information about a particular Sensor."""
     node: Sensor
     """
-    The cursor to use with the [`sensors` query]({{Queries.sensors}}) `after` argument.
+    The cursor to use with the `sensors` query `after` argument.
     """
     cursor: String!
 }
 
 """
-A `MeasurementConnection` is the paginated results of an [`measurements` query]({{Queries.measurements}}).
+A `MeasurementConnection` is the paginated results of an `measurements` query.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type MeasurementConnection {
@@ -34,14 +34,14 @@ type MeasurementConnection {
 }
 
 """
-An measurement edge is the pairing of an [Measurement]({{Types.Measurement}}) with its query cursor.
+An measurement edge is the pairing of an Measurement with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type MeasurementEdge {
     """Information about a particular measurement."""
     node: Measurement
     """
-    The cursor to use with the [`measurements` query]({{Queries.measurements}}) `after` argument.
+    The cursor to use with the `measurements` query `after` argument.
     """
     cursor: String!
 }

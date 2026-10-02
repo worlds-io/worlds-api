@@ -1,5 +1,5 @@
 """
-An `GeofenceConnection` is the paginated results of a [`geofences` query]({{Queries.geofences}}).
+An `GeofenceConnection` is the paginated results of a `geofences` query.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type GeofenceConnection {
@@ -12,16 +12,16 @@ type GeofenceConnection {
 }
 
 """
-An geofence edge is the pairing of a [Geofence]({{Types.Geofence}}) with its query cursor.
+An geofence edge is the pairing of a Geofence with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type GeofenceEdge {
     """
-    Information about a particular [Geofence]({{Types.Geofence}}).
+    Information about a particular Geofence.
     """
     node: Geofence
     """
-    The cursor to use with the [Query `geofences` field]({{Queries.geofences}}) `after` argument.
+    The cursor to use with the Query `geofences` field `after` argument.
     """
     cursor: String!
 }
@@ -37,11 +37,11 @@ type GeofenceIntersectionConnection {
 
 type GeofenceIntersectionEdge {
     """
-    Information about a particular [GeofenceIntersection]({{Types.GeofenceIntersection}}).
+    Information about a particular GeofenceIntersection.
     """
     node: GeofenceIntersection
     """
-    The cursor to use with the [Query `geofenceIntersections` field]({{Queries.geofenceIntersections}}) `after` argument.
+    The cursor to use with the Query `geofenceIntersections` field `after` argument.
     """
     cursor: String!
 }

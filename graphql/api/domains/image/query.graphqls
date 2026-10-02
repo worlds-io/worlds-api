@@ -1,5 +1,5 @@
 """
-Indicates the field used for sorting an [`images` query]({{Queries.images}}).
+Indicates the field used for sorting an `images` query.
 """
 enum ImagesSortField {
     """Sort the resulting list in by its unique identifier."""
@@ -11,7 +11,7 @@ enum ImagesSortField {
 }
 
 """
-ImagesSort allows for sorting an [`images` query]({{Queries.images}}) by field and direction.
+ImagesSort allows for sorting an `images` query by field and direction.
 """
 input ImagesSort {
     """

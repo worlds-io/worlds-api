@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * The pairing of an [ChronicleProducer]({{Types.ChronicleProducer}}) with its query cursor.
+ * The pairing of an ChronicleProducer with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class ChronicleProducerEdge implements java.io.Serializable {
@@ -24,26 +24,26 @@ public class ChronicleProducerEdge implements java.io.Serializable {
     }
 
     /**
-     * Information about a particular [ChronicleProducer]({{Types.ChronicleProducer}}).
+     * Information about a particular ChronicleProducer.
      */
     public ChronicleProducer getNode() {
         return node;
     }
     /**
-     * Information about a particular [ChronicleProducer]({{Types.ChronicleProducer}}).
+     * Information about a particular ChronicleProducer.
      */
     public void setNode(ChronicleProducer node) {
         this.node = node;
     }
 
     /**
-     * The cursor to use with the [Query `chronicleProducers` field]({{Queries.chronicleProducers}}) `after` argument.
+     * The cursor to use with the Query `chronicleProducers` field `after` argument.
      */
     public String getCursor() {
         return cursor;
     }
     /**
-     * The cursor to use with the [Query `chronicleProducers` field]({{Queries.chronicleProducers}}) `after` argument.
+     * The cursor to use with the Query `chronicleProducers` field `after` argument.
      */
     public void setCursor(String cursor) {
         this.cursor = cursor;
@@ -81,7 +81,7 @@ public class ChronicleProducerEdge implements java.io.Serializable {
         }
 
         /**
-         * Information about a particular [ChronicleProducer]({{Types.ChronicleProducer}}).
+         * Information about a particular ChronicleProducer.
          */
         public Builder setNode(ChronicleProducer node) {
             this.node = node;
@@ -89,7 +89,7 @@ public class ChronicleProducerEdge implements java.io.Serializable {
         }
 
         /**
-         * The cursor to use with the [Query `chronicleProducers` field]({{Queries.chronicleProducers}}) `after` argument.
+         * The cursor to use with the Query `chronicleProducers` field `after` argument.
          */
         public Builder setCursor(String cursor) {
             this.cursor = cursor;

@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * `FilterUnifiedSearchEntityTypeInput` allows for filtering the type of on a [UnifiedSearchEntityType]({{Types.UnifiedSearchEntityType}}) parameter. Only one field should be provided per filter object.
+ * `FilterUnifiedSearchEntityTypeInput` allows for filtering the type of on a UnifiedSearchEntityType parameter. Only one field should be provided per filter object.
  */
 public class FilterUnifiedSearchEntityTypeInput implements java.io.Serializable {
 

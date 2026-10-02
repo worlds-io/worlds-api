@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * A device represents a camera: a source of videos and images. These videos and images may then be processed to produce detections and tracks or to train models. For more details on detections, see [About Detections]({{Types.Detection}}).
+ * A device represents a camera: a source of videos and images. These videos and images may then be processed to produce detections and tracks or to train models. For more details on detections, see About Detections.
  */
 public class Device implements java.io.Serializable {
 

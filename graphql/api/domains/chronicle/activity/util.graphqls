@@ -1,5 +1,5 @@
 """
-An `ActivityConnection` is the paginated results of an [`activities` query]({{Queries.activityChronicles}}).
+An `ActivityConnection` is the paginated results of an `activities` query.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type ActivityChronicleConnection {
@@ -12,14 +12,14 @@ type ActivityChronicleConnection {
 }
 
 """
-An activity edge is the pairing of an [Activity]({{Types.Activity}}) with its query cursor.
+An activity edge is the pairing of an Activity with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type ActivityChronicleEdge {
-    """Information about a particular [Activity]({{Types.Activity}})."""
+    """Information about a particular Activity."""
     node: ActivityChronicle!
     """
-    The cursor to use with the [Query `activities` field]({{Queries.activityChronicles}}) `after` argument.
+    The cursor to use with the Query `activities` field `after` argument.
     """
     cursor: String!
 }
