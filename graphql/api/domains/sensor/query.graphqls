@@ -1,19 +1,19 @@
 """
-Indicates the field used for sorting an [`sensors` query]({{Queries.sensors}}).
+Indicates the field used for sorting an `sensors` query.
 """
 enum SensorsSortField {
     """
-    Sort the resulting list by the [`sensor`](({{Types.Sensor}}))'s unique identifier.
+    Sort the resulting list by the `sensor`'s unique identifier.
     """
     ID
     """
-    Sort the resulting list by the [`sensor`](({{Types.Sensor}}))'s name.
+    Sort the resulting list by the `sensor`'s name.
     """
     NAME
 }
 
 """
-SensorsSort allows for sorting a [`sensors` query]({{Queries.sensors}}) by field and direction.
+SensorsSort allows for sorting a `sensors` query by field and direction.
 """
 input SensorsSort {
     """
@@ -26,15 +26,15 @@ input SensorsSort {
 }
 
 """
-Indicates the field used for sorting a [`measurements` query]({{Queries.measurements}}).
+Indicates the field used for sorting a `measurements` query.
 """
 enum MeasurementsSortField {
     """
-    Sort the resulting list by the [`Measurement`](({{Types.Measurement}}))'s unique identifier.
+    Sort the resulting list by the `Measurement`'s unique identifier.
     """
     ID
     """
-    Sort the resulting list by the [`Measurement`](({{Types.Measurement}}))'s timestamp.
+    Sort the resulting list by the `Measurement`'s timestamp.
     """
     TIMESTAMP
 }

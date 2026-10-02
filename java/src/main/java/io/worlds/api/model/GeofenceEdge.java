@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * An geofence edge is the pairing of a [Geofence]({{Types.Geofence}}) with its query cursor.
+ * An geofence edge is the pairing of a Geofence with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class GeofenceEdge implements java.io.Serializable {
@@ -23,26 +23,26 @@ public class GeofenceEdge implements java.io.Serializable {
     }
 
     /**
-     * Information about a particular [Geofence]({{Types.Geofence}}).
+     * Information about a particular Geofence.
      */
     public Geofence getNode() {
         return node;
     }
     /**
-     * Information about a particular [Geofence]({{Types.Geofence}}).
+     * Information about a particular Geofence.
      */
     public void setNode(Geofence node) {
         this.node = node;
     }
 
     /**
-     * The cursor to use with the [Query `geofences` field]({{Queries.geofences}}) `after` argument.
+     * The cursor to use with the Query `geofences` field `after` argument.
      */
     public String getCursor() {
         return cursor;
     }
     /**
-     * The cursor to use with the [Query `geofences` field]({{Queries.geofences}}) `after` argument.
+     * The cursor to use with the Query `geofences` field `after` argument.
      */
     public void setCursor(String cursor) {
         this.cursor = cursor;
@@ -80,7 +80,7 @@ public class GeofenceEdge implements java.io.Serializable {
         }
 
         /**
-         * Information about a particular [Geofence]({{Types.Geofence}}).
+         * Information about a particular Geofence.
          */
         public Builder setNode(Geofence node) {
             this.node = node;
@@ -88,7 +88,7 @@ public class GeofenceEdge implements java.io.Serializable {
         }
 
         /**
-         * The cursor to use with the [Query `geofences` field]({{Queries.geofences}}) `after` argument.
+         * The cursor to use with the Query `geofences` field `after` argument.
          */
         public Builder setCursor(String cursor) {
             this.cursor = cursor;

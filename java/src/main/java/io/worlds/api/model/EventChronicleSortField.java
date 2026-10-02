@@ -1,28 +1,28 @@
 package io.worlds.api.model;
 
 /**
- * Indicates the field used for sorting an [`eventChronicles` query]({{Queries.eventChronicles}}).
+ * Indicates the field used for sorting an `eventChronicles` query.
  */
 public enum EventChronicleSortField {
 
     /**
-     * Sort the resulting list by the [`eventChronicle`]({{Types.EventChronicle}})'s unique identifier.
+     * Sort the resulting list by the `eventChronicle`'s unique identifier.
      */
     ID("ID"),
     /**
-     * Sort the resulting list by the [`eventChronicle`]({{Types.EventChronicle}})'s timestamp.
+     * Sort the resulting list by the `eventChronicle`'s timestamp.
      */
     TIMESTAMP("TIMESTAMP"),
     /**
-     * Sort the resulting list by the [`eventChronicle`]({{Types.EventChronicle}})'s name.
+     * Sort the resulting list by the `eventChronicle`'s name.
      */
     NAME("NAME"),
     /**
-     * Sort the resulting list by the [`eventChronicle`]({{Types.EventChronicle}})'s priority.
+     * Sort the resulting list by the `eventChronicle`'s priority.
      */
     PRIORITY("PRIORITY"),
     /**
-     * Sort the resulting list by the [`eventChronicle`]({{Types.EventChronicle}})'s status.
+     * Sort the resulting list by the `eventChronicle`'s status.
      */
     STATUS("STATUS");
 

@@ -1,17 +1,17 @@
 """
-Indicates the field used for sorting a [Detections query]({{Queries.detections}}).
+Indicates the field used for sorting a Detections query.
 """
 enum DetectionsSortField {
     """
-    Sort the resulting list by [detection time]({{Types.Detection}}).
+    Sort the resulting list by detection time.
     """
     DETECTION_TIME
     """
-    Sort the resulting list by the corresponding Track's [unique identifier.]({{Types.Track}}).
+    Sort the resulting list by the corresponding Track's unique identifier..
     """
     TRACK_ID
     """
-    Sort the resulting list by the corresponding Track's [unique identifier.]({{Types.Detection}}).
+    Sort the resulting list by the corresponding Track's unique identifier..
     """
     GLOBAL_TRACK_ID @deprecated(reason: "`GLOBAL_TRACK_ID` is deprecated. Use `TRACK_ID` instead")
 }

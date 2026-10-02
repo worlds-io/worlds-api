@@ -39,7 +39,7 @@ type SummaryChronicle {
 }
 
 """
-This input type is used to create a new [`SummaryChronicle`]({{Types.SummaryChronicle}}).
+This input type is used to create a new `SummaryChronicle`.
 """
 input CreateSummaryChronicleInput {
     """The name of the summary"""
@@ -73,7 +73,7 @@ input CreateSummaryChronicleInput {
 }
 
 """
-This input type is used to update an existing [`SummaryChronicle`]({{Types.SummaryChronicle}}).
+This input type is used to update an existing `SummaryChronicle`.
 """
 input UpdateSummaryChronicleInput {
     """The unique identifier for the summary."""

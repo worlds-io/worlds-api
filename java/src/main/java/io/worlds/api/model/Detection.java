@@ -145,26 +145,26 @@ public class Detection implements java.io.Serializable {
     }
 
     /**
-     * A list of [Zones]({{Types.Zone}}) with which the detection intersects.
+     * A list of Zones with which the detection intersects.
      */
     public java.util.List<Zone> getZones() {
         return zones;
     }
     /**
-     * A list of [Zones]({{Types.Zone}}) with which the detection intersects.
+     * A list of Zones with which the detection intersects.
      */
     public void setZones(java.util.List<Zone> zones) {
         this.zones = zones;
     }
 
     /**
-     * A list of [Geofences]({{Types.Geofence}}) with which the detection intersects.
+     * A list of Geofences with which the detection intersects.
      */
     public java.util.List<Geofence> getGeofences() {
         return geofences;
     }
     /**
-     * A list of [Geofences]({{Types.Geofence}}) with which the detection intersects.
+     * A list of Geofences with which the detection intersects.
      */
     public void setGeofences(java.util.List<Geofence> geofences) {
         this.geofences = geofences;
@@ -225,7 +225,7 @@ public class Detection implements java.io.Serializable {
     }
 
     /**
-     * A list of [geofence]({{Queries.geofence}}) unique identifiers with which the
+     * A list of geofence unique identifiers with which the
 detection intersects.
      */
     @Deprecated
@@ -233,7 +233,7 @@ detection intersects.
         return geofenceIds;
     }
     /**
-     * A list of [geofence]({{Queries.geofence}}) unique identifiers with which the
+     * A list of geofence unique identifiers with which the
 detection intersects.
      */
     @Deprecated
@@ -242,7 +242,7 @@ detection intersects.
     }
 
     /**
-     * A list of [zone]({{Queries.zone}}) unique identifiers with which the
+     * A list of zone unique identifiers with which the
 detection intersects.
      */
     @Deprecated
@@ -250,7 +250,7 @@ detection intersects.
         return zoneIds;
     }
     /**
-     * A list of [zone]({{Queries.zone}}) unique identifiers with which the
+     * A list of zone unique identifiers with which the
 detection intersects.
      */
     @Deprecated
@@ -413,7 +413,7 @@ detection intersects.
         }
 
         /**
-         * A list of [Zones]({{Types.Zone}}) with which the detection intersects.
+         * A list of Zones with which the detection intersects.
          */
         public Builder setZones(java.util.List<Zone> zones) {
             this.zones = zones;
@@ -421,7 +421,7 @@ detection intersects.
         }
 
         /**
-         * A list of [Geofences]({{Types.Geofence}}) with which the detection intersects.
+         * A list of Geofences with which the detection intersects.
          */
         public Builder setGeofences(java.util.List<Geofence> geofences) {
             this.geofences = geofences;
@@ -462,7 +462,7 @@ detection intersects.
         }
 
         /**
-         * A list of [geofence]({{Queries.geofence}}) unique identifiers with which the
+         * A list of geofence unique identifiers with which the
 detection intersects.
          */
         @Deprecated
@@ -472,7 +472,7 @@ detection intersects.
         }
 
         /**
-         * A list of [zone]({{Queries.zone}}) unique identifiers with which the
+         * A list of zone unique identifiers with which the
 detection intersects.
          */
         @Deprecated

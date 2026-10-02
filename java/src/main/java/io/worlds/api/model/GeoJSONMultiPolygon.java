@@ -58,14 +58,14 @@ For more information, see [MultiPolygons in RFC 7946](https://datatracker.ietf.o
 
     /**
      * The coordinate reference system used for this multipolygon. See
-[`GeoJSONCRS`]({{Types.GeoJSONCRS}}) for more information.
+`GeoJSONCRS` for more information.
      */
     public GeoJSONCRS getCrs() {
         return crs;
     }
     /**
      * The coordinate reference system used for this multipolygon. See
-[`GeoJSONCRS`]({{Types.GeoJSONCRS}}) for more information.
+`GeoJSONCRS` for more information.
      */
     public void setCrs(GeoJSONCRS crs) {
         this.crs = crs;
@@ -125,7 +125,7 @@ For more information, see [MultiPolygons in RFC 7946](https://datatracker.ietf.o
 
         /**
          * The coordinate reference system used for this multipolygon. See
-[`GeoJSONCRS`]({{Types.GeoJSONCRS}}) for more information.
+`GeoJSONCRS` for more information.
          */
         public Builder setCrs(GeoJSONCRS crs) {
             this.crs = crs;

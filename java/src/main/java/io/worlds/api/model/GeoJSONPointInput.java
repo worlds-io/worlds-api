@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * This type represents the input data needed to initialize a [GeoJSON point]({{Types.GeoJSONPoint}}).
+ * This type represents the input data needed to initialize a GeoJSON point.
  */
 public class GeoJSONPointInput implements java.io.Serializable {
 

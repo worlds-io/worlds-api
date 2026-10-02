@@ -2,15 +2,15 @@ extend type Mutation {
     clip(
         """Arguments to create a video clip from a data source."""
         input: CreateClipInput!
-        """Optional IDs for [events]({{Types.Event}}) to associate with the clip."""
+        """Optional IDs for events to associate with the clip."""
         eventIds: [ID!]
-        """Optional IDs for [activity chronicles]({{Types.ActivityChronicle}}) to associate with the clip."""
+        """Optional IDs for activity chronicles to associate with the clip."""
         activityChronicleIds: [ID!]
     ): DataSourceClip
     """
-    Requests that the edge holding a [video]({{Types.Video}})'s footage copy it to the hub.
+    Requests that the edge holding a video's footage copy it to the hub.
 
-    Track progress on [`Video.sync`]({{Types.Video}}).
+    Track progress on `Video.sync`.
     """
     requestVideoSync(
         """The unique identifier of the video to sync."""

@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * A georeferenced image layer belonging to a [SiteFacility]({{Types.SiteFacility}}).
+ * A georeferenced image layer belonging to a SiteFacility.
  */
 public class SiteFacilityLayer implements java.io.Serializable {
 

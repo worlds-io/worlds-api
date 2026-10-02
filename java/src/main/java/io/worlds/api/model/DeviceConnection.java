@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * A `DeviceConnection` is the paginated results of a [`devices` query]({{Queries.devices}}).
+ * A `DeviceConnection` is the paginated results of a `devices` query.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class DeviceConnection implements java.io.Serializable {

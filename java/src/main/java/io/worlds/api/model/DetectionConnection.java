@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * A `DetectionConnection` is the paginated results of a [`detections` query]({{Queries.detections}}).
+ * A `DetectionConnection` is the paginated results of a `detections` query.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class DetectionConnection implements java.io.Serializable {

@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * A video edge is the pairing of a [Video]({{Types.Video}}) with its query cursor.
+ * A video edge is the pairing of a Video with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class VideoEdge implements java.io.Serializable {
@@ -23,26 +23,26 @@ public class VideoEdge implements java.io.Serializable {
     }
 
     /**
-     * Information about a particular [Video]({{Types.Video}}).
+     * Information about a particular Video.
      */
     public Video getNode() {
         return node;
     }
     /**
-     * Information about a particular [Video]({{Types.Video}}).
+     * Information about a particular Video.
      */
     public void setNode(Video node) {
         this.node = node;
     }
 
     /**
-     * The cursor to use with the [Query `videos` field]({{Queries.videos}}) `after` argument.
+     * The cursor to use with the Query `videos` field `after` argument.
      */
     public String getCursor() {
         return cursor;
     }
     /**
-     * The cursor to use with the [Query `videos` field]({{Queries.videos}}) `after` argument.
+     * The cursor to use with the Query `videos` field `after` argument.
      */
     public void setCursor(String cursor) {
         this.cursor = cursor;
@@ -80,7 +80,7 @@ public class VideoEdge implements java.io.Serializable {
         }
 
         /**
-         * Information about a particular [Video]({{Types.Video}}).
+         * Information about a particular Video.
          */
         public Builder setNode(Video node) {
             this.node = node;
@@ -88,7 +88,7 @@ public class VideoEdge implements java.io.Serializable {
         }
 
         /**
-         * The cursor to use with the [Query `videos` field]({{Queries.videos}}) `after` argument.
+         * The cursor to use with the Query `videos` field `after` argument.
          */
         public Builder setCursor(String cursor) {
             this.cursor = cursor;

@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * An event producer edge is the pairing of an [EventProducer]({{Types.EventProducer}}) with its query cursor.
+ * An event producer edge is the pairing of an EventProducer with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class EventProducerEdge implements java.io.Serializable {
@@ -23,26 +23,26 @@ public class EventProducerEdge implements java.io.Serializable {
     }
 
     /**
-     * Information about a particular [EventProducer]({{Types.EventProducer}}).
+     * Information about a particular EventProducer.
      */
     public EventProducer getNode() {
         return node;
     }
     /**
-     * Information about a particular [EventProducer]({{Types.EventProducer}}).
+     * Information about a particular EventProducer.
      */
     public void setNode(EventProducer node) {
         this.node = node;
     }
 
     /**
-     * The cursor to use with the [Query `eventProducers` field]({{Queries.eventProducers}}) `after` argument.
+     * The cursor to use with the Query `eventProducers` field `after` argument.
      */
     public String getCursor() {
         return cursor;
     }
     /**
-     * The cursor to use with the [Query `eventProducers` field]({{Queries.eventProducers}}) `after` argument.
+     * The cursor to use with the Query `eventProducers` field `after` argument.
      */
     public void setCursor(String cursor) {
         this.cursor = cursor;
@@ -80,7 +80,7 @@ public class EventProducerEdge implements java.io.Serializable {
         }
 
         /**
-         * Information about a particular [EventProducer]({{Types.EventProducer}}).
+         * Information about a particular EventProducer.
          */
         public Builder setNode(EventProducer node) {
             this.node = node;
@@ -88,7 +88,7 @@ public class EventProducerEdge implements java.io.Serializable {
         }
 
         /**
-         * The cursor to use with the [Query `eventProducers` field]({{Queries.eventProducers}}) `after` argument.
+         * The cursor to use with the Query `eventProducers` field `after` argument.
          */
         public Builder setCursor(String cursor) {
             this.cursor = cursor;

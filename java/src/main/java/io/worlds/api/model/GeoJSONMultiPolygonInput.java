@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * This type represents the input data needed to initialize a [GeoJSON multipolygon]({{Types.GeoJSONMultiPolygon}}).
+ * This type represents the input data needed to initialize a GeoJSON multipolygon.
  */
 public class GeoJSONMultiPolygonInput implements java.io.Serializable {
 

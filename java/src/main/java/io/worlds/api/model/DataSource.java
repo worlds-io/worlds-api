@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * A data source is responsible for producing the videos, images and other sensor data that may eventually produce detections and tracks. For more details on detections, see [About Detections]({{Types.Detection}})
+ * A data source is responsible for producing the videos, images and other sensor data that may eventually produce detections and tracks. For more details on detections, see About Detections
  */
 public class DataSource implements java.io.Serializable, UnifiedSearchNameResponseEntity {
 

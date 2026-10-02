@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * Fields to update an existing [SiteFacility]({{Types.SiteFacility}}).
+ * Fields to update an existing SiteFacility.
 A facility cannot be moved to another site.
  */
 public class UpdateSiteFacilityInput implements java.io.Serializable {

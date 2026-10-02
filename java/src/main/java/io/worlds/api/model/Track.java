@@ -144,13 +144,13 @@ exclusive end of its single detection's span. Null if the track is still being t
     }
 
     /**
-     * Whether the Track has finished. `true` once the track has an [`endTime`]({{Types.Track}}).
+     * Whether the Track has finished. `true` once the track has an `endTime`.
      */
     public boolean getFinished() {
         return finished;
     }
     /**
-     * Whether the Track has finished. `true` once the track has an [`endTime`]({{Types.Track}}).
+     * Whether the Track has finished. `true` once the track has an `endTime`.
      */
     public void setFinished(boolean finished) {
         this.finished = finished;
@@ -349,7 +349,7 @@ exclusive end of its single detection's span. Null if the track is still being t
         }
 
         /**
-         * Whether the Track has finished. `true` once the track has an [`endTime`]({{Types.Track}}).
+         * Whether the Track has finished. `true` once the track has an `endTime`.
          */
         public Builder setFinished(boolean finished) {
             this.finished = finished;

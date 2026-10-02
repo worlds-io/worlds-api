@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * This input type is used to create new [`Measurement`]({{Types.Measurement}}) for a sensor. See [`Sensor`]({{Types.Sensor}}) for more details.
+ * This input type is used to create new `Measurement` for a sensor. See `Sensor` for more details.
  */
 public class MeasurementInput implements java.io.Serializable {
 

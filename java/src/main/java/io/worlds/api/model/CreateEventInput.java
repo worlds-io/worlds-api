@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * This input type is used to create a new [`Event`]({{Types.Event}}) for a custom event producer. See [`EventProducer`]({{Types.EventProducer}}) for more details.
+ * This input type is used to create a new `Event` for a custom event producer. See `EventProducer` for more details.
  */
 public class CreateEventInput implements java.io.Serializable {
 

@@ -1,16 +1,16 @@
 package io.worlds.api.model;
 
 /**
- * Indicates the field used for sorting an [`sites` query]({{Queries.sites}}).
+ * Indicates the field used for sorting an `sites` query.
  */
 public enum SitesSortField {
 
     /**
-     * Sort the resulting list by the [`sites`](({{Types.Site}}))'s unique identifier.
+     * Sort the resulting list by the `sites`'s unique identifier.
      */
     ID("ID"),
     /**
-     * Sort the resulting list by the [`sites`](({{Types.Site}}))'s name.
+     * Sort the resulting list by the `sites`'s name.
      */
     NAME("NAME");
 

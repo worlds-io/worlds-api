@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * This type is used to create a new [`Detection`]({{Types.Detection}}) when [creating]({{Types.CreateTrackInput}}) or [updating]({{Types.UpdateTrackInput}}) a [`Track`]({{Types.Track}})
+ * This type is used to create a new `Detection` when creating or updating a `Track`
  */
 public class TrackDetectionInput implements java.io.Serializable {
 

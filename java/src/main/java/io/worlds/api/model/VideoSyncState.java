@@ -1,7 +1,7 @@
 package io.worlds.api.model;
 
 /**
- * The state of a [video sync]({{Types.VideoSync}}).
+ * The state of a video sync.
 
 Also covers videos with no sync request, so a caller can tell whether to offer one.
  */
@@ -40,7 +40,7 @@ public enum VideoSyncState {
      */
     SUCCEEDED("SUCCEEDED"),
     /**
-     * The sync failed. See [`VideoSync.error`]({{Types.VideoSync}}).
+     * The sync failed. See `VideoSync.error`.
      */
     FAILED("FAILED"),
     /**

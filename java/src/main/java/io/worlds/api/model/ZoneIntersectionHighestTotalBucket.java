@@ -4,7 +4,7 @@ import java.util.Objects;
 
 /**
  * A bucket selected as having the greatest `total` within its group, returned from
-[`ZoneIntersectionSummary.highestTotalBuckets`]({{Types.ZoneIntersectionSummary}}).
+`ZoneIntersectionSummary.highestTotalBuckets`.
  */
 public class ZoneIntersectionHighestTotalBucket implements java.io.Serializable {
 

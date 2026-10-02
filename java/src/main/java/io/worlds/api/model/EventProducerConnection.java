@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * An `EventProducerConnection` is the paginated results of an [`eventProducers` query]({{Queries.eventProducers}}).
+ * An `EventProducerConnection` is the paginated results of an `eventProducers` query.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class EventProducerConnection implements java.io.Serializable {

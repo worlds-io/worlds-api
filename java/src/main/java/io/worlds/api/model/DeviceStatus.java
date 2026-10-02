@@ -1,7 +1,7 @@
 package io.worlds.api.model;
 
 /**
- * The online status of a [`Device`]({{Types.Device}}), as judged from its heartbeats.
+ * The online status of a `Device`, as judged from its heartbeats.
  */
 public enum DeviceStatus {
 

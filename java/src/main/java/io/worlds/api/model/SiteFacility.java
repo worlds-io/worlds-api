@@ -3,8 +3,8 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * A facility is a structure within a [Site]({{Types.Site}}).
-A facility owns one or more [SiteFacilityLayers]({{Types.SiteFacilityLayer}}), each a georeferenced
+ * A facility is a structure within a Site.
+A facility owns one or more SiteFacilityLayers, each a georeferenced
 image that can be drawn over the site's map.
  */
 public class SiteFacility implements java.io.Serializable {

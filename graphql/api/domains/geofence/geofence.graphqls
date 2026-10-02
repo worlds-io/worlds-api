@@ -1,7 +1,7 @@
 """
 A geofence is a user-defined region in world coordinates. When a
-[track]({{Types.Track}}) crosses the border of a geofence, a [geofence
-intersection]({{Types.GeofenceIntersection}}) is created. Geofence intersections are a key part of creating
+track crosses the border of a geofence, a geofence
+intersection is created. Geofence intersections are a key part of creating
 custom business logic with Worlds.
 """
 type Geofence {
@@ -75,8 +75,8 @@ input GeofenceBoundsInput {
 
 """
 A geofence intersection is a point-in-time representation of an interaction between a
-[track]({{Types.Track}}) and a
-[geofence]({{Types.Geofence}}).
+track and a
+geofence.
 """
 type GeofenceIntersection {
     """The unique identifier of the geofence intersection."""
@@ -95,13 +95,13 @@ type GeofenceIntersectionMessage {
     """The geofence intersection."""
     message: GeofenceIntersection!
     """
-    The state of the intersection message. Within the message, the [`endTime`]({{Types.GeofenceIntersection}}) will only be present on an [`END`]({{Types.MessageState}}) event.
+    The state of the intersection message. Within the message, the `endTime` will only be present on an `END` event.
     """
     state: MessageState!
 }
 
 """
-A `GeofenceBounds` object represents the coordinates and boundaries of a [`Geofence`]({{Types.Geofence}}).
+A `GeofenceBounds` object represents the coordinates and boundaries of a `Geofence`.
 """
 type GeofenceBounds {
     """A GeoJSON polygon that represents the bounds of the geofence."""

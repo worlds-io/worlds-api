@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * `FilterTrackInput` allows for filtering a [`tracks` query]({{Queries.tracks}}) based on criteria described below.
+ * `FilterTrackInput` allows for filtering a `tracks` query based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below
  */
 public class FilterTrackInput implements java.io.Serializable {

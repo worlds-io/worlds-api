@@ -1,5 +1,5 @@
 """
-`FilterGeofenceInput` allows for filtering a [geofence]({{Types.Geofence}}) based on criteria described below.
+`FilterGeofenceInput` allows for filtering a geofence based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below
 """
 input FilterGeofenceInput {
@@ -47,11 +47,11 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterGeofenceIntersectionInput {
     """
-    If provided, specifies filters that work against the [unique id]({{Types.Geofence}}) of a geofence.
+    If provided, specifies filters that work against the unique id of a geofence.
     """
     geofenceId: FilterIDInput
     """
-    Specifies filters that work against the [startTime]({{Types.GeofenceIntersection}}) associated with the geofence intersection.
+    Specifies filters that work against the startTime associated with the geofence intersection.
     """
     time: FilterDateTimeOffsetInput!
     """
@@ -74,19 +74,19 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterGeofenceIntersectionMessageInput {
     """
-    If provided, specifies filters that work against the [unique id]({{Types.GeofenceIntersection}}) of the geofence collided with.
+    If provided, specifies filters that work against the unique id of the geofence collided with.
     """
     geofenceId: FilterIDInput
     """
-    If provided, specifies case-insensitive filters that work against the [tag]({{Types.Track}}) associated with the geofence intersection's [track]({{Types.GeofenceIntersection}}).
+    If provided, specifies case-insensitive filters that work against the tag associated with the geofence intersection's track.
     """
     tag: FilterStringInput
     """
-    Specifies filters that work against the [dataSource]({{Types.Track}}) associated with the geofence intersection's [track]({{Types.GeofenceIntersection}}).
+    Specifies filters that work against the dataSource associated with the geofence intersection's track.
     """
     dataSourceId: FilterIDInput
     """
-    Specifies filters that work against the [state]({{Types.MessageState}}) of the geofence intersection message.
+    Specifies filters that work against the state of the geofence intersection message.
     """
     state: FilterMessageStateInput
     """

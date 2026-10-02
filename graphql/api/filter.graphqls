@@ -204,7 +204,7 @@ one field must be provided per filter object.
 An object whose period has not ended yet is treated as running until the end of time, which is why
 `endingWithin` and `before` never match one.
 
-Some objects (e.g. tracks from an untracked detector; see [`Track`]({{Types.Track}})) have a
+Some objects (e.g. tracks from an untracked detector; see `Track`) have a
 half-open period `[start, end)` whose end is exclusive rather than inclusive; the fields below call
 this out where it changes matching.
 """
@@ -302,7 +302,7 @@ input FilterPointNearInput {
 }
 
 """
-`FilterMessageStateInput` allows for filtering based on a [MessageState]({{Types.MessageState}}) parameter. Only one field should be provided per filter object.
+`FilterMessageStateInput` allows for filtering based on a MessageState parameter. Only one field should be provided per filter object.
 Note that the `UPDATE` state will exclude `START` and `END` messages.
 """
 input FilterMessageStateInput {
@@ -321,7 +321,7 @@ input FilterMessageStateInput {
 }
 
 """
-`FilterDeviceMessageStateInput` allows for filtering based on a [DeviceMessageState]({{Types.DeviceMessageState}}) parameter. Only one field should be provided per filter object.
+`FilterDeviceMessageStateInput` allows for filtering based on a DeviceMessageState parameter. Only one field should be provided per filter object.
 Note that the `UPDATE` state alone will not include `CREATE` and `HEARTBEAT` messages.
 """
 input FilterDeviceMessageStateInput {

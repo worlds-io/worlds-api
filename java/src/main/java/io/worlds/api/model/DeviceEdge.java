@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * A device edge is the pairing of a [Device]({{Types.Device}}) with its query cursor.
+ * A device edge is the pairing of a Device with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class DeviceEdge implements java.io.Serializable {
@@ -23,26 +23,26 @@ public class DeviceEdge implements java.io.Serializable {
     }
 
     /**
-     * Information about a particular [Device]({{Types.Device}}).
+     * Information about a particular Device.
      */
     public Device getNode() {
         return node;
     }
     /**
-     * Information about a particular [Device]({{Types.Device}}).
+     * Information about a particular Device.
      */
     public void setNode(Device node) {
         this.node = node;
     }
 
     /**
-     * The cursor to use with the [Query `devices` field]({{Queries.devices}}) `after` argument.
+     * The cursor to use with the Query `devices` field `after` argument.
      */
     public String getCursor() {
         return cursor;
     }
     /**
-     * The cursor to use with the [Query `devices` field]({{Queries.devices}}) `after` argument.
+     * The cursor to use with the Query `devices` field `after` argument.
      */
     public void setCursor(String cursor) {
         this.cursor = cursor;
@@ -80,7 +80,7 @@ public class DeviceEdge implements java.io.Serializable {
         }
 
         /**
-         * Information about a particular [Device]({{Types.Device}}).
+         * Information about a particular Device.
          */
         public Builder setNode(Device node) {
             this.node = node;
@@ -88,7 +88,7 @@ public class DeviceEdge implements java.io.Serializable {
         }
 
         /**
-         * The cursor to use with the [Query `devices` field]({{Queries.devices}}) `after` argument.
+         * The cursor to use with the Query `devices` field `after` argument.
          */
         public Builder setCursor(String cursor) {
             this.cursor = cursor;

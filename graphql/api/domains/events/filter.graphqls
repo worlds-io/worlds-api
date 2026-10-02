@@ -1,14 +1,14 @@
 """
-FilterEventProducerInput filters [EventProducers]({{Types.EventProducer}}) based on criteria described below.
+FilterEventProducerInput filters EventProducers based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
 """
 input FilterEventProducerInput {
     """
-    If provided, specifies filters that work against the [EventProducer's unique id]({{Types.EventProducer}}).
+    If provided, specifies filters that work against the EventProducer's unique id.
     """
     id: FilterIDInput
     """
-    If provided, specifies filters that work against the [EventProducer's name]({{Types.EventProducer}}).
+    If provided, specifies filters that work against the EventProducer's name.
     """
     name: FilterStringInput
     """
@@ -26,45 +26,45 @@ input FilterEventProducerInput {
 }
 
 """
-FilterEventInput filters [events]({{Types.Event}}) based on criteria described below.
+FilterEventInput filters events based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
 """
 input FilterEventInput {
     """
-    If provided, specifies filters that work against the [EventProducer's unique id]({{Types.EventProducer}}) of the event producer owning the event.
+    If provided, specifies filters that work against the EventProducer's unique id of the event producer owning the event.
     """
     eventProducerId: FilterIDInput
     """
-    If provided, specifies filters that work against the [type]({{Types.Event}}) of the [`Event`]({{Types.Event}}).
+    If provided, specifies filters that work against the type of the `Event`.
     """
     type: FilterStringInput
     """
-    If provided, specifies filters that work against the [subType]({{Types.Event}}) of the [`Event`]({{Types.Event}}).
+    If provided, specifies filters that work against the subType of the `Event`.
     """
     subType: FilterStringInput
     """
-    If provided, specifies filters that work against the [time]({{Types.Event}}) of the [`Event`]({{Types.Event}}).
+    If provided, specifies filters that work against the time of the `Event`.
     """
     time: FilterDateTimeOffsetInput!
     """
-    If provided, specifies filters that work against the [draft status]({{Types.Event}}) of the [`Event`]({{Types.Event}}).
+    If provided, specifies filters that work against the draft status of the `Event`.
     """
     draft: FilterBooleanInput
     """
-    If provided, specifies filters that work against the [priority]({{Types.Event}}) of the [`Event`]({{Types.Event}}).
+    If provided, specifies filters that work against the priority of the `Event`.
     """
     priority: FilterStringInput
     """
-    If provided, specifies filters that work against the [validation status]({{Types.EventValidation}}) of the [`Event`]({{Types.Event}}).
+    If provided, specifies filters that work against the validation status of the `Event`.
     """
     validation: FilterEventValidationStatusInput
     """
-    If provided, specifies filters that work against the [images]({{Types.Image}}) IDs of the [`Event`]({{Types.Event}}).
+    If provided, specifies filters that work against the images IDs of the `Event`.
     Combine with `attributeExists` to select only events that carry retrievable image media.
     """
     imageIds: FilterIDListInput
     """
-    If provided, specifies filters that work against the [dataSourceClips]({{Types.DataSourceClip}}) IDs of the [`Event`]({{Types.Event}}).
+    If provided, specifies filters that work against the dataSourceClips IDs of the `Event`.
     Combine with `attributeExists` to select only events that carry retrievable clip media.
     """
     dataSourceClipIds: FilterIDListInput
@@ -83,28 +83,28 @@ input FilterEventInput {
 }
 
 """
-FilterEventActivityInput filters [events]({{Types.Event}}) based on criteria described below.
+FilterEventActivityInput filters events based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
 """
 input FilterEventActivityInput {
     """
-    If provided, specifies filters that work against the [`EventProducer`](({{Types.EventProducer}}))'s unique id of the event producer owning the event.
+    If provided, specifies filters that work against the `EventProducer`'s unique id of the event producer owning the event.
     """
     eventProducerId: FilterIDInput
     """
-    If provided, specifies filters that work against the [type]({{Types.Event}}) of the [`Event`]({{Types.Event}}).
+    If provided, specifies filters that work against the type of the `Event`.
     """
     type: FilterStringInput
     """
-    If provided, specifies filters that work against the [subType]({{Types.Event}}) of the [`Event`]({{Types.Event}}).
+    If provided, specifies filters that work against the subType of the `Event`.
     """
     subType: FilterStringInput
     """
-    If provided, specifies filters that work against the [draft status]({{Types.Event}}) of the [`Event`]({{Types.Event}}).
+    If provided, specifies filters that work against the draft status of the `Event`.
     """
     draft: FilterBooleanInput
     """
-    If provided, specifies filters that work against the [priority]({{Types.Event}}) of the [`Event`]({{Types.Event}}).
+    If provided, specifies filters that work against the priority of the `Event`.
     """
     priority: FilterStringInput
     """

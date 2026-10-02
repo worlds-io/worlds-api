@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * Event Properties contain additional details and related information for an event. For more details on event producers and events, see [`EventProducer`]({{Types.EventProducer}}).
+ * Event Properties contain additional details and related information for an event. For more details on event producers and events, see `EventProducer`.
  */
 public class EventProperties implements java.io.Serializable {
 

@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * This input type is used to create a new custom [`ChronicleProducer`]({{Types.ChronicleProducer}}).
+ * This input type is used to create a new custom `ChronicleProducer`.
  */
 public class CreateChronicleProducerInput implements java.io.Serializable {
 

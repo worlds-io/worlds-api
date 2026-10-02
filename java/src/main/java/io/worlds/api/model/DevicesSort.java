@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * DevicesSort allows for sorting a [`devices` query]({{Queries.devices}}) by field and direction.
+ * DevicesSort allows for sorting a `devices` query by field and direction.
  */
 public class DevicesSort implements java.io.Serializable {
 

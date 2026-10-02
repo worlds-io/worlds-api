@@ -33,13 +33,13 @@ public class EventsSummary implements java.io.Serializable {
     }
 
     /**
-     * The total number of [Events]({{Types.Event}}) within the time range.
+     * The total number of Events within the time range.
      */
     public int getTotal() {
         return total;
     }
     /**
-     * The total number of [Events]({{Types.Event}}) within the time range.
+     * The total number of Events within the time range.
      */
     public void setTotal(int total) {
         this.total = total;
@@ -85,15 +85,15 @@ public class EventsSummary implements java.io.Serializable {
     }
 
     /**
-     * A detailed summary of each [bucket]({{Types.SummaryBucketSize}}) within the time range.
-Summary buckets are only returned if `eventsBucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventsSummary}}).
+     * A detailed summary of each bucket within the time range.
+Summary buckets are only returned if `eventsBucket` is provided as a query parameter to `eventsSummary`.
      */
     public java.util.List<EventsSummaryBucket> getBuckets() {
         return buckets;
     }
     /**
-     * A detailed summary of each [bucket]({{Types.SummaryBucketSize}}) within the time range.
-Summary buckets are only returned if `eventsBucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventsSummary}}).
+     * A detailed summary of each bucket within the time range.
+Summary buckets are only returned if `eventsBucket` is provided as a query parameter to `eventsSummary`.
      */
     public void setBuckets(java.util.List<EventsSummaryBucket> buckets) {
         this.buckets = buckets;
@@ -171,7 +171,7 @@ Useful for discovering available metadata keys that can be used for metadata buc
         }
 
         /**
-         * The total number of [Events]({{Types.Event}}) within the time range.
+         * The total number of Events within the time range.
          */
         public Builder setTotal(int total) {
             this.total = total;
@@ -203,8 +203,8 @@ Useful for discovering available metadata keys that can be used for metadata buc
         }
 
         /**
-         * A detailed summary of each [bucket]({{Types.SummaryBucketSize}}) within the time range.
-Summary buckets are only returned if `eventsBucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventsSummary}}).
+         * A detailed summary of each bucket within the time range.
+Summary buckets are only returned if `eventsBucket` is provided as a query parameter to `eventsSummary`.
          */
         public Builder setBuckets(java.util.List<EventsSummaryBucket> buckets) {
             this.buckets = buckets;

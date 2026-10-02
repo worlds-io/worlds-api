@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * The paginated results of an [`chronicleProducers` query]({{Queries.chronicleProducers}}).
+ * The paginated results of an `chronicleProducers` query.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class ChronicleProducerConnection implements java.io.Serializable {

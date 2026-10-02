@@ -1,7 +1,7 @@
 package io.worlds.api.model;
 
 /**
- * Indicates the field used for sorting a [Devices query]({{Queries.devices}}).
+ * Indicates the field used for sorting a Devices query.
  */
 public enum DevicesSortField {
 

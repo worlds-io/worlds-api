@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * An measurement edge is the pairing of an [Measurement]({{Types.Measurement}}) with its query cursor.
+ * An measurement edge is the pairing of an Measurement with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class MeasurementEdge implements java.io.Serializable {
@@ -36,13 +36,13 @@ public class MeasurementEdge implements java.io.Serializable {
     }
 
     /**
-     * The cursor to use with the [`measurements` query]({{Queries.measurements}}) `after` argument.
+     * The cursor to use with the `measurements` query `after` argument.
      */
     public String getCursor() {
         return cursor;
     }
     /**
-     * The cursor to use with the [`measurements` query]({{Queries.measurements}}) `after` argument.
+     * The cursor to use with the `measurements` query `after` argument.
      */
     public void setCursor(String cursor) {
         this.cursor = cursor;
@@ -88,7 +88,7 @@ public class MeasurementEdge implements java.io.Serializable {
         }
 
         /**
-         * The cursor to use with the [`measurements` query]({{Queries.measurements}}) `after` argument.
+         * The cursor to use with the `measurements` query `after` argument.
          */
         public Builder setCursor(String cursor) {
             this.cursor = cursor;

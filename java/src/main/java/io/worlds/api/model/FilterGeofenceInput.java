@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * `FilterGeofenceInput` allows for filtering a [geofence]({{Types.Geofence}}) based on criteria described below.
+ * `FilterGeofenceInput` allows for filtering a geofence based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below
  */
 public class FilterGeofenceInput implements java.io.Serializable {

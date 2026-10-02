@@ -11,7 +11,7 @@ type TrackEdge {
     """Information about a particular track."""
     node: Track
     """
-    The cursor to use with the [`tracks` query]({{Queries.tracks}}) `after` argument.
+    The cursor to use with the `tracks` query `after` argument.
     """
     cursor: String!
 }

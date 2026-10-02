@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * This type is used to create a new [`Detection`]({{Types.Detection}})
+ * This type is used to create a new `Detection`
  */
 public class CreateDetectionInput implements java.io.Serializable {
 

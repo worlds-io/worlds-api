@@ -1,32 +1,32 @@
 package io.worlds.api.model;
 
 /**
- * Indicates the field used for sorting an [`summaryChronicles` query]({{Queries.summaryChronicles}}).
+ * Indicates the field used for sorting an `summaryChronicles` query.
  */
 public enum SummaryChronicleSortField {
 
     /**
-     * Sort the resulting list by the [`summaryChronicle`]({{Types.SummaryChronicle}})'s unique identifier.
+     * Sort the resulting list by the `summaryChronicle`'s unique identifier.
      */
     ID("ID"),
     /**
-     * Sort the resulting list by the [`summaryChronicle`]({{Types.SummaryChronicle}})'s start time.
+     * Sort the resulting list by the `summaryChronicle`'s start time.
      */
     START_TIME("START_TIME"),
     /**
-     * Sort the resulting list by the [`summaryChronicle`]({{Types.SummaryChronicle}})'s end time.
+     * Sort the resulting list by the `summaryChronicle`'s end time.
      */
     END_TIME("END_TIME"),
     /**
-     * Sort the resulting list by the [`summaryChronicle`]({{Types.SummaryChronicle}})'s name.
+     * Sort the resulting list by the `summaryChronicle`'s name.
      */
     NAME("NAME"),
     /**
-     * Sort the resulting list by the [`summaryChronicle`]({{Types.SummaryChronicle}})'s priority.
+     * Sort the resulting list by the `summaryChronicle`'s priority.
      */
     PRIORITY("PRIORITY"),
     /**
-     * Sort the resulting list by the [`summaryChronicle`]({{Types.SummaryChronicle}})'s status.
+     * Sort the resulting list by the `summaryChronicle`'s status.
      */
     STATUS("STATUS");
 

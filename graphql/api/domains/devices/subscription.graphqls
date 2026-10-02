@@ -1,6 +1,6 @@
 extend type Subscription {
     """
-    Subscribes to changes in any [`Device`]({{Types.Device}}) based on the given filter.
+    Subscribes to changes in any `Device` based on the given filter.
     """
     devices(
         """
@@ -10,7 +10,7 @@ extend type Subscription {
     ): DeviceMessage
 
     """
-    Subscribes to the online status of [`Device`]({{Types.Device}})s selected by the given filter.
+    Subscribes to the online status of `Device`s selected by the given filter.
 
     A device is `ONLINE` while its `lastHeartbeat` is within `ttl` of the current time and `OFFLINE`
     once it is older. On subscribe, one `START` message is emitted per watched device carrying its

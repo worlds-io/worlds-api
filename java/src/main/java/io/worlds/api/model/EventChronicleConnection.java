@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * An `EventConnection` is the paginated results of an [`events` query]({{Queries.eventChronicles}}).
+ * An `EventConnection` is the paginated results of an `events` query.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class EventChronicleConnection implements java.io.Serializable {

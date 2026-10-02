@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * A point of interest is a designated area within a Site, used to subdivide a location into meaningful sections. Each POI belongs to a single [Site]({{Types.Site}}) and can contain multiple [Devices]({{Types.Device}}).
+ * A point of interest is a designated area within a Site, used to subdivide a location into meaningful sections. Each POI belongs to a single Site and can contain multiple Devices.
  */
 public class PointOfInterest implements java.io.Serializable, UnifiedSearchNameResponseEntity {
 

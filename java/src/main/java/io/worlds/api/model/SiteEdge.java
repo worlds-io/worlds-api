@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * A site edge is the pairing of a [Site]({{Types.Site}}) with its query cursor.
+ * A site edge is the pairing of a Site with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class SiteEdge implements java.io.Serializable {
@@ -23,26 +23,26 @@ public class SiteEdge implements java.io.Serializable {
     }
 
     /**
-     * Information about a particular [Site]({{Types.Site}}).
+     * Information about a particular Site.
      */
     public Site getNode() {
         return node;
     }
     /**
-     * Information about a particular [Site]({{Types.Site}}).
+     * Information about a particular Site.
      */
     public void setNode(Site node) {
         this.node = node;
     }
 
     /**
-     * The cursor to use with the [`sites` query]({{Queries.sites}}) `after` argument.
+     * The cursor to use with the `sites` query `after` argument.
      */
     public String getCursor() {
         return cursor;
     }
     /**
-     * The cursor to use with the [`sites` query]({{Queries.sites}}) `after` argument.
+     * The cursor to use with the `sites` query `after` argument.
      */
     public void setCursor(String cursor) {
         this.cursor = cursor;
@@ -80,7 +80,7 @@ public class SiteEdge implements java.io.Serializable {
         }
 
         /**
-         * Information about a particular [Site]({{Types.Site}}).
+         * Information about a particular Site.
          */
         public Builder setNode(Site node) {
             this.node = node;
@@ -88,7 +88,7 @@ public class SiteEdge implements java.io.Serializable {
         }
 
         /**
-         * The cursor to use with the [`sites` query]({{Queries.sites}}) `after` argument.
+         * The cursor to use with the `sites` query `after` argument.
          */
         public Builder setCursor(String cursor) {
             this.cursor = cursor;

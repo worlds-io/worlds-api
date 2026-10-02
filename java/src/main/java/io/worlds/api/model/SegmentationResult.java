@@ -32,13 +32,13 @@ public class SegmentationResult implements java.io.Serializable {
     }
 
     /**
-     * The index of the region in the provided regions array that contains the segment. Only applicable if `regions` was specified in the [original query]({{Types.SegmentationOptionsInput}}).
+     * The index of the region in the provided regions array that contains the segment. Only applicable if `regions` was specified in the original query.
      */
     public Integer getRegionIndex() {
         return regionIndex;
     }
     /**
-     * The index of the region in the provided regions array that contains the segment. Only applicable if `regions` was specified in the [original query]({{Types.SegmentationOptionsInput}}).
+     * The index of the region in the provided regions array that contains the segment. Only applicable if `regions` was specified in the original query.
      */
     public void setRegionIndex(Integer regionIndex) {
         this.regionIndex = regionIndex;
@@ -84,7 +84,7 @@ public class SegmentationResult implements java.io.Serializable {
         }
 
         /**
-         * The index of the region in the provided regions array that contains the segment. Only applicable if `regions` was specified in the [original query]({{Types.SegmentationOptionsInput}}).
+         * The index of the region in the provided regions array that contains the segment. Only applicable if `regions` was specified in the original query.
          */
         public Builder setRegionIndex(Integer regionIndex) {
             this.regionIndex = regionIndex;

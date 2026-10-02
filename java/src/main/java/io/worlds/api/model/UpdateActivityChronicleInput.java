@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * This input type is used to update an existing [`ActivityChronicle`]({{Types.ActivityChronicle}}).
+ * This input type is used to update an existing `ActivityChronicle`.
  */
 public class UpdateActivityChronicleInput implements java.io.Serializable {
 

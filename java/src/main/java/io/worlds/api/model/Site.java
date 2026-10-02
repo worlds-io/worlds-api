@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * A site represents a business location, such as an office building, a facility or a campus. Sites can be used to logically and geospatially group various objects and events that share a physical space, such as [Devices]({{Types.Devices}}), [Geofences]({{Types.Geofences}}).
+ * A site represents a business location, such as an office building, a facility or a campus. Sites can be used to logically and geospatially group various objects and events that share a physical space, such as Devices, Geofences.
  */
 public class Site implements java.io.Serializable, UnifiedSearchNameResponseEntity {
 

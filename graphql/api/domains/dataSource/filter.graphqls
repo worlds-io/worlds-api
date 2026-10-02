@@ -1,27 +1,27 @@
 """
-FilterDataSourceInput filters [DataSources]({{Types.DataSource}}) based on criteria described below.
+FilterDataSourceInput filters DataSources based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
 """
 input FilterDataSourceInput {
     """
-    If provided, specifies filters that work against the [`dataSource`]({{Types.DataSource}})'s type.
+    If provided, specifies filters that work against the `dataSource`'s type.
     The type of the data source
     """
     type: FilterStringInput
     """
-    If provided, specifies filters that work against the position of the data source's [device]({{Types.DataSource}}).
+    If provided, specifies filters that work against the position of the data source's device.
     """
     position: FilterPointInput
     """
-    If provided, specifies filters that work against the [data source`]({{Types.DataSource}})'s unique id.
+    If provided, specifies filters that work against the data source`'s unique id.
     """
     id: FilterIDInput
     """
-    If provided, specifies filters that work against the [data source`]({{Types.DataSource}})'s name.
+    If provided, specifies filters that work against the data source`'s name.
     """
     name: FilterStringInput
     """
-    If provided, specifies filters that work against the `labels` of the [`DataSource`]({{Types.DataSource}}).
+    If provided, specifies filters that work against the `labels` of the `DataSource`.
     """
     labels: FilterStringListInput
     """

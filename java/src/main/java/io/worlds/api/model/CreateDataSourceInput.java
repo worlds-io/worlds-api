@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * This type is used to create a new [`DataSource`]({{Types.DataSource}})
+ * This type is used to create a new `DataSource`
  */
 public class CreateDataSourceInput implements java.io.Serializable {
 

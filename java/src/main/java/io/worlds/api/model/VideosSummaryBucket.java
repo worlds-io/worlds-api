@@ -42,13 +42,13 @@ public class VideosSummaryBucket implements java.io.Serializable {
     }
 
     /**
-     * The total number of [Videos]({{Types.Video}}) within the bucket.
+     * The total number of Videos within the bucket.
      */
     public int getTotal() {
         return total;
     }
     /**
-     * The total number of [Videos]({{Types.Video}}) within the bucket.
+     * The total number of Videos within the bucket.
      */
     public void setTotal(int total) {
         this.total = total;
@@ -139,7 +139,7 @@ public class VideosSummaryBucket implements java.io.Serializable {
         }
 
         /**
-         * The total number of [Videos]({{Types.Video}}) within the bucket.
+         * The total number of Videos within the bucket.
          */
         public Builder setTotal(int total) {
             this.total = total;

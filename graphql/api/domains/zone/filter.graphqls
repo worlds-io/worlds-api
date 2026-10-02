@@ -4,27 +4,27 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterZoneInput {
     """
-    If provided, specifies filters that work against the [unique id]({{Types.Zone}}) of a zone.
+    If provided, specifies filters that work against the unique id of a zone.
     """
     id: FilterIDInput
     """
-    If provided, specifies filters that work against the [name]({{Types.Zone}}) of a zone.
+    If provided, specifies filters that work against the name of a zone.
     """
     name: FilterStringInput
     """
-    If provided, specifies filters that work against the id of the [data source]({{Types.Zone}}) that owns the zone.
+    If provided, specifies filters that work against the id of the data source that owns the zone.
     """
     dataSourceId: FilterIDInput
     """
-    If provided, specifies filters that work against the [active]({{Types.Zones}}) state of the zone
+    If provided, specifies filters that work against the active state of the zone
     """
     active: FilterBooleanInput
     """
-    If provided, specifies filters that work against the [timestamp the zone was created at]({{Types.Zones}}).
+    If provided, specifies filters that work against the timestamp the zone was created at.
     """
     createdAt: FilterDateTimeOffsetInput
     """
-    If provided, specifies filters that work against the [timestamp the zone was most recently updated]({{Types.Zones}}).
+    If provided, specifies filters that work against the timestamp the zone was most recently updated.
     """
     updatedAt: FilterDateTimeOffsetInput
     """
@@ -47,19 +47,19 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterZoneIntersectionInput {
     """
-    If provided, specifies filters that work against the [unique id]({{Types.ZoneIntersection}}) of a zone intersection.
+    If provided, specifies filters that work against the unique id of a zone intersection.
     """
     zoneId: FilterIDInput
     """
-    Specifies filters that work against the [startTime]({{Types.ZoneIntersection}}) associated with the zone intersection.
+    Specifies filters that work against the startTime associated with the zone intersection.
     """
     time: FilterDateTimeOffsetInput!
     """
-    Specifies filters that work against the [tag]({{Types.Track}}) associated with the zone intersection.
+    Specifies filters that work against the tag associated with the zone intersection.
     """
     tag: FilterStringInput
     """
-    Specifies filters that work against the [dataSource]({{Types.Zone}}) associated with the zone intersection.
+    Specifies filters that work against the dataSource associated with the zone intersection.
     """
     dataSourceId: FilterIDInput
     """
@@ -82,15 +82,15 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterZoneIntersectionMessageInput {
     """
-    If provided, specifies filters that work against the [unique id]({{Types.ZoneIntersection}}) of the zone collided with.
+    If provided, specifies filters that work against the unique id of the zone collided with.
     """
     zoneId: FilterIDInput
     """
-    Specifies filters that work against the [dataSource]({{Types.Track}}) associated with the zone intersection's [track]({{Types.ZoneIntersection}}).
+    Specifies filters that work against the dataSource associated with the zone intersection's track.
     """
     dataSourceId: FilterIDInput
     """
-    Specifies filters that work against the [state]({{Types.MessageState}}) of the zone intersection message.
+    Specifies filters that work against the state of the zone intersection message.
     """
     state: FilterMessageStateInput
     """

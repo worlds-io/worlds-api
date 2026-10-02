@@ -33,9 +33,9 @@ type Video {
 }
 
 """
-The state of copying a [video]({{Types.Video}})'s footage from its edge to the hub.
+The state of copying a video's footage from its edge to the hub.
 
-To check whether the footage is on the hub, use [`Video.cloudAvailable`]({{Types.Video}}).
+To check whether the footage is on the hub, use `Video.cloudAvailable`.
 """
 type VideoSync {
     """The state of the video's sync."""
@@ -56,7 +56,7 @@ type VideoSync {
 }
 
 """
-The state of a [video sync]({{Types.VideoSync}}).
+The state of a video sync.
 
 Also covers videos with no sync request, so a caller can tell whether to offer one.
 """
@@ -77,7 +77,7 @@ enum VideoSyncState {
     LIVE
     """The video's footage has been copied to the hub."""
     SUCCEEDED
-    """The sync failed. See [`VideoSync.error`]({{Types.VideoSync}})."""
+    """The sync failed. See `VideoSync.error`."""
     FAILED
     """A cancel has been requested."""
     CANCELLING
