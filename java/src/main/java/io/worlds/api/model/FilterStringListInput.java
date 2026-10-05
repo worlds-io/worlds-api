@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * `FilterIDListInput` allows for filtering based on a list of identifiers. Only one field should be provided per filter object.
+ * `FilterStringListInput` allows for filtering based on a list of strings. Only one field should be provided per filter object.
  */
 public class FilterStringListInput implements java.io.Serializable {
 
