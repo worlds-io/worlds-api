@@ -19,7 +19,7 @@ input FilterIDInput {
 """
 `FilterIDListInput` allows for filtering based on a list of identifiers. Only one field should be provided per filter object.
 """
-input FilterIDListInput @experimental {
+input FilterIDListInput {
     """
     If provided, the filtered object must contain exactly the IDs provided to match the filter.
     """
@@ -36,9 +36,9 @@ input FilterIDListInput @experimental {
 }
 
 """
-`FilterIDListInput` allows for filtering based on a list of identifiers. Only one field should be provided per filter object.
+`FilterStringListInput` allows for filtering based on a list of strings. Only one field should be provided per filter object.
 """
-input FilterStringListInput @experimental {
+input FilterStringListInput {
     """
     If provided, the filtered object must contain exactly the strings provided to match the filter.
     """
