@@ -99,6 +99,8 @@ type WorldModelType @experimental(reason: "World Model surface; may change witho
     name: String!
     """The plane the type belongs to."""
     plane: WorldModelPlane!
+    """What the type means, when the ontology provides a description."""
+    description: String
     """The properties nodes of this type may carry. Properties below the trust boundary are omitted."""
     properties: [WorldModelTypeProperty!]!
 }
