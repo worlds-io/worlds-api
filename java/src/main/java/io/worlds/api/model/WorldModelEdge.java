@@ -89,26 +89,26 @@ public class WorldModelEdge implements java.io.Serializable {
     }
 
     /**
-     * For edges that hold over an interval (e.g. `scopes`, `installed_in`): when it starts to hold.
+     * For edges that hold over an interval (e.g. `scopes`, `installed_in`): when it starts to hold (inclusive).
      */
     public java.time.OffsetDateTime getValidFrom() {
         return validFrom;
     }
     /**
-     * For edges that hold over an interval (e.g. `scopes`, `installed_in`): when it starts to hold.
+     * For edges that hold over an interval (e.g. `scopes`, `installed_in`): when it starts to hold (inclusive).
      */
     public void setValidFrom(java.time.OffsetDateTime validFrom) {
         this.validFrom = validFrom;
     }
 
     /**
-     * For edges that hold over an interval: when it stops holding. Null while it still holds.
+     * For edges that hold over an interval: when it stops holding (exclusive). Null while it still holds.
      */
     public java.time.OffsetDateTime getValidTo() {
         return validTo;
     }
     /**
-     * For edges that hold over an interval: when it stops holding. Null while it still holds.
+     * For edges that hold over an interval: when it stops holding (exclusive). Null while it still holds.
      */
     public void setValidTo(java.time.OffsetDateTime validTo) {
         this.validTo = validTo;
@@ -128,13 +128,13 @@ public class WorldModelEdge implements java.io.Serializable {
     }
 
     /**
-     * Any further edge properties as a JSON object, e.g. `{"max_gap_s": 600}` on a `precedes` edge.
+     * Any further edge properties as a JSON object.
      */
     public java.lang.Object getProperties() {
         return properties;
     }
     /**
-     * Any further edge properties as a JSON object, e.g. `{"max_gap_s": 600}` on a `precedes` edge.
+     * Any further edge properties as a JSON object.
      */
     public void setProperties(java.lang.Object properties) {
         this.properties = properties;
@@ -216,7 +216,7 @@ public class WorldModelEdge implements java.io.Serializable {
         }
 
         /**
-         * For edges that hold over an interval (e.g. `scopes`, `installed_in`): when it starts to hold.
+         * For edges that hold over an interval (e.g. `scopes`, `installed_in`): when it starts to hold (inclusive).
          */
         public Builder setValidFrom(java.time.OffsetDateTime validFrom) {
             this.validFrom = validFrom;
@@ -224,7 +224,7 @@ public class WorldModelEdge implements java.io.Serializable {
         }
 
         /**
-         * For edges that hold over an interval: when it stops holding. Null while it still holds.
+         * For edges that hold over an interval: when it stops holding (exclusive). Null while it still holds.
          */
         public Builder setValidTo(java.time.OffsetDateTime validTo) {
             this.validTo = validTo;
@@ -240,7 +240,7 @@ public class WorldModelEdge implements java.io.Serializable {
         }
 
         /**
-         * Any further edge properties as a JSON object, e.g. `{"max_gap_s": 600}` on a `precedes` edge.
+         * Any further edge properties as a JSON object.
          */
         public Builder setProperties(java.lang.Object properties) {
             this.properties = properties;

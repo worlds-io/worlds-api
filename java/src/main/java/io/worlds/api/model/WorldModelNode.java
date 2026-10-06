@@ -102,13 +102,17 @@ described by the node's type. Properties marked below the trust boundary are nev
     }
 
     /**
-     * The node's edges, optionally restricted by direction and edge type.
+     * The node's edges, optionally restricted by direction and edge type, ordered by edge type then id.
+Only edges in force are returned: superseded attachments and edges whose other end has been
+retained out are omitted.
      */
     public java.util.List<WorldModelEdge> getEdges() {
         return edges;
     }
     /**
-     * The node's edges, optionally restricted by direction and edge type.
+     * The node's edges, optionally restricted by direction and edge type, ordered by edge type then id.
+Only edges in force are returned: superseded attachments and edges whose other end has been
+retained out are omitted.
      */
     public void setEdges(java.util.List<WorldModelEdge> edges) {
         this.edges = edges;
@@ -195,7 +199,9 @@ described by the node's type. Properties marked below the trust boundary are nev
         }
 
         /**
-         * The node's edges, optionally restricted by direction and edge type.
+         * The node's edges, optionally restricted by direction and edge type, ordered by edge type then id.
+Only edges in force are returned: superseded attachments and edges whose other end has been
+retained out are omitted.
          */
         public Builder setEdges(java.util.List<WorldModelEdge> edges) {
             this.edges = edges;

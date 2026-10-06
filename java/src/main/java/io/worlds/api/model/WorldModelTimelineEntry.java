@@ -97,13 +97,15 @@ public class WorldModelTimelineEntry implements java.io.Serializable {
     }
 
     /**
-     * The wait between the previous attempt's end and this one's start.
+     * The wait between the previous attempt's end and this one's start. Null for the first attempt;
+negative when attempts overlap.
      */
     public java.time.Duration getWaitBefore() {
         return waitBefore;
     }
     /**
-     * The wait between the previous attempt's end and this one's start.
+     * The wait between the previous attempt's end and this one's start. Null for the first attempt;
+negative when attempts overlap.
      */
     public void setWaitBefore(java.time.Duration waitBefore) {
         this.waitBefore = waitBefore;
@@ -204,7 +206,8 @@ public class WorldModelTimelineEntry implements java.io.Serializable {
         }
 
         /**
-         * The wait between the previous attempt's end and this one's start.
+         * The wait between the previous attempt's end and this one's start. Null for the first attempt;
+negative when attempts overlap.
          */
         public Builder setWaitBefore(java.time.Duration waitBefore) {
             this.waitBefore = waitBefore;

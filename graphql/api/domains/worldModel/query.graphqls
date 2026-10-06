@@ -1,12 +1,13 @@
 extend type Query {
     """
     Look up a single [WorldModelNode]({{Types.WorldModelNode}}) by its identifier.
-    Returns null if the node does not exist or belongs to another organization.
+    Returns null if the node does not exist or belongs to another organization. Definitions in the
+    shared `core` tenant are visible to every organization.
     """
     worldModelNode(
         """The node's identifier."""
         id: ID!
-    ): WorldModelNode @experimental
+    ): WorldModelNode @experimental(reason: "World Model surface; may change without the usual deprecation window.")
 
     """Find World Model nodes, ordered by id."""
     worldModelNodes(
@@ -16,35 +17,35 @@ extend type Query {
         first: Int! = 20
         """Returns the elements in the list that come after the specified cursor."""
         after: String
-    ): WorldModelNodeConnection! @experimental
+    ): WorldModelNodeConnection! @experimental(reason: "World Model surface; may change without the usual deprecation window.")
 
     """The World Model's node types and their properties."""
     worldModelTypes(
         """If provided, only these types."""
         names: [String!]
-    ): [WorldModelType!]! @experimental
+    ): [WorldModelType!]! @experimental(reason: "World Model surface; may change without the usual deprecation window.")
 
     """The step attempts of a run (a ProcessExecution), in time order."""
     worldModelRunTimeline(
         """The ProcessExecution's id."""
         runId: ID!
-    ): [WorldModelTimelineEntry!]! @experimental
+    ): [WorldModelTimelineEntry!]! @experimental(reason: "World Model surface; may change without the usual deprecation window.")
 
     """Step attempts in a run that happened out of the order its process definition allows."""
     worldModelSequenceViolations(
         """The ProcessExecution's id."""
         runId: ID!
-    ): [WorldModelSequenceViolation!]! @experimental
+    ): [WorldModelSequenceViolation!]! @experimental(reason: "World Model surface; may change without the usual deprecation window.")
 
     """The threshold in force for a step attempt (a StepExecution) and the attempt's verdict against it."""
     worldModelThreshold(
         """The StepExecution's id."""
         stepAttemptId: ID!
-    ): WorldModelThresholdResolution @experimental
+    ): WorldModelThresholdResolution @experimental(reason: "World Model surface; may change without the usual deprecation window.")
 
     """Associations (pattern matches, analyst links) that involve a node."""
     worldModelAssociations(
         """The id of the node involved, e.g. a trailer or a run."""
         nodeId: ID!
-    ): [WorldModelAssociationSummary!]! @experimental
+    ): [WorldModelAssociationSummary!]! @experimental(reason: "World Model surface; may change without the usual deprecation window.")
 }

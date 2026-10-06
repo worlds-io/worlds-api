@@ -2,7 +2,7 @@
 `FilterWorldModelNodeInput` narrows a [worldModelNodes query]({{Queries.worldModelNodes}}).
 All provided fields must match.
 """
-input FilterWorldModelNodeInput @experimental {
+input FilterWorldModelNodeInput @experimental(reason: "World Model surface; may change without the usual deprecation window.") {
     """If provided, only nodes of these World Model types, e.g. `["Deviation"]`."""
     types: [String!]
     """If provided, only nodes in these planes."""

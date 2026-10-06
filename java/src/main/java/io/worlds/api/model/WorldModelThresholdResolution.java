@@ -44,13 +44,13 @@ public class WorldModelThresholdResolution implements java.io.Serializable {
     }
 
     /**
-     * The node the rule is attached at (a zone, site, ...); the most specific attachment wins.
+     * The node the rule is attached at (a zone, site, ...). The highest-priority rule wins; the nearest attachment breaks ties.
      */
     public String getAttachedAt() {
         return attachedAt;
     }
     /**
-     * The node the rule is attached at (a zone, site, ...); the most specific attachment wins.
+     * The node the rule is attached at (a zone, site, ...). The highest-priority rule wins; the nearest attachment breaks ties.
      */
     public void setAttachedAt(String attachedAt) {
         this.attachedAt = attachedAt;
@@ -96,13 +96,13 @@ public class WorldModelThresholdResolution implements java.io.Serializable {
     }
 
     /**
-     * `ok`, `warn` or `alert`.
+     * `ok`, `warn` or `alert`. Null while the attempt is still in progress or the step has no nominal duration to compare against.
      */
     public String getVerdict() {
         return verdict;
     }
     /**
-     * `ok`, `warn` or `alert`.
+     * `ok`, `warn` or `alert`. Null while the attempt is still in progress or the step has no nominal duration to compare against.
      */
     public void setVerdict(String verdict) {
         this.verdict = verdict;
@@ -156,7 +156,7 @@ public class WorldModelThresholdResolution implements java.io.Serializable {
         }
 
         /**
-         * The node the rule is attached at (a zone, site, ...); the most specific attachment wins.
+         * The node the rule is attached at (a zone, site, ...). The highest-priority rule wins; the nearest attachment breaks ties.
          */
         public Builder setAttachedAt(String attachedAt) {
             this.attachedAt = attachedAt;
@@ -188,7 +188,7 @@ public class WorldModelThresholdResolution implements java.io.Serializable {
         }
 
         /**
-         * `ok`, `warn` or `alert`.
+         * `ok`, `warn` or `alert`. Null while the attempt is still in progress or the step has no nominal duration to compare against.
          */
         public Builder setVerdict(String verdict) {
             this.verdict = verdict;

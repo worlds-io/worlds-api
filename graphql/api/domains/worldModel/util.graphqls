@@ -1,5 +1,5 @@
 """A page of [WorldModelNodes]({{Types.WorldModelNode}})."""
-type WorldModelNodeConnection @experimental {
+type WorldModelNodeConnection @experimental(reason: "World Model surface; may change without the usual deprecation window.") {
     """Pagination information for the resulting edges."""
     pageInfo: PageInfo!
     """The resulting page of nodes. (Pagination edges, not World Model edges.)"""
@@ -9,7 +9,7 @@ type WorldModelNodeConnection @experimental {
 }
 
 """One entry of a [WorldModelNodeConnection]({{Types.WorldModelNodeConnection}})."""
-type WorldModelNodeConnectionEdge @experimental {
+type WorldModelNodeConnectionEdge @experimental(reason: "World Model surface; may change without the usual deprecation window.") {
     """The node."""
     node: WorldModelNode
     """The cursor to use with the [worldModelNodes query]({{Queries.worldModelNodes}}) `after` argument."""

@@ -13,17 +13,15 @@ public class WorldModelType implements java.io.Serializable {
     private String name;
     @jakarta.validation.constraints.NotNull
     private WorldModelPlane plane;
-    private String description;
     @jakarta.validation.constraints.NotNull
     private java.util.List<WorldModelTypeProperty> properties;
 
     public WorldModelType() {
     }
 
-    public WorldModelType(String name, WorldModelPlane plane, String description, java.util.List<WorldModelTypeProperty> properties) {
+    public WorldModelType(String name, WorldModelPlane plane, java.util.List<WorldModelTypeProperty> properties) {
         this.name = name;
         this.plane = plane;
-        this.description = description;
         this.properties = properties;
     }
 
@@ -54,19 +52,6 @@ public class WorldModelType implements java.io.Serializable {
     }
 
     /**
-     * What the type means.
-     */
-    public String getDescription() {
-        return description;
-    }
-    /**
-     * What the type means.
-     */
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
      * The properties nodes of this type may carry. Properties below the trust boundary are omitted.
      */
     public java.util.List<WorldModelTypeProperty> getProperties() {
@@ -90,13 +75,12 @@ public class WorldModelType implements java.io.Serializable {
         final WorldModelType that = (WorldModelType) obj;
         return Objects.equals(name, that.name)
             && Objects.equals(plane, that.plane)
-            && Objects.equals(description, that.description)
             && Objects.equals(properties, that.properties);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, plane, description, properties);
+        return Objects.hash(name, plane, properties);
     }
 
 
@@ -108,7 +92,6 @@ public class WorldModelType implements java.io.Serializable {
 
         private String name;
         private WorldModelPlane plane;
-        private String description;
         private java.util.List<WorldModelTypeProperty> properties;
 
         public Builder() {
@@ -131,14 +114,6 @@ public class WorldModelType implements java.io.Serializable {
         }
 
         /**
-         * What the type means.
-         */
-        public Builder setDescription(String description) {
-            this.description = description;
-            return this;
-        }
-
-        /**
          * The properties nodes of this type may carry. Properties below the trust boundary are omitted.
          */
         public Builder setProperties(java.util.List<WorldModelTypeProperty> properties) {
@@ -148,7 +123,7 @@ public class WorldModelType implements java.io.Serializable {
 
 
         public WorldModelType build() {
-            return new WorldModelType(name, plane, description, properties);
+            return new WorldModelType(name, plane, properties);
         }
 
     }
