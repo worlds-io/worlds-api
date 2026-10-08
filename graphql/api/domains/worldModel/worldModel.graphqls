@@ -25,7 +25,7 @@ enum WorldModelPlane @experimental(reason: "World Model surface; may change with
 }
 
 """
-Which edges of a [WorldModelNode]({{Types.WorldModelNode}}) to return, relative to the node.
+Which edges of a WorldModelNode to return, relative to the node.
 """
 enum WorldModelEdgeDirection @experimental(reason: "World Model surface; may change without the usual deprecation window.") {
     """Edges that start at this node."""
@@ -43,7 +43,7 @@ deviation found on a run. Its type decides its plane and which properties it car
 type WorldModelNode @experimental(reason: "World Model surface; may change without the usual deprecation window.") {
     """The node's stable identifier, e.g. `pdef:trailer-turn@1`. Safe to hold in client code."""
     id: ID!
-    """The node's World Model type, e.g. `ProcessExecution`. Described by [worldModelTypes]({{Queries.worldModelTypes}})."""
+    """The node's World Model type, e.g. `ProcessExecution`. Described by worldModelTypes."""
     type: String!
     """The plane the node's type belongs to."""
     plane: WorldModelPlane!
@@ -70,7 +70,7 @@ type WorldModelNode @experimental(reason: "World Model surface; may change witho
 }
 
 """
-A typed, directed relationship between two [WorldModelNodes]({{Types.WorldModelNode}}).
+A typed, directed relationship between two WorldModelNodes.
 """
 type WorldModelEdge @experimental(reason: "World Model surface; may change without the usual deprecation window.") {
     """The edge's identifier."""
@@ -106,7 +106,7 @@ type WorldModelType @experimental(reason: "World Model surface; may change witho
 }
 
 """
-One property of a [WorldModelType]({{Types.WorldModelType}}).
+One property of a WorldModelType.
 """
 type WorldModelTypeProperty @experimental(reason: "World Model surface; may change without the usual deprecation window.") {
     """The property name, as used in a node's `properties` object."""
@@ -122,7 +122,7 @@ type WorldModelTypeProperty @experimental(reason: "World Model surface; may chan
 }
 
 """
-One step attempt in a run's timeline, as returned by [worldModelRunTimeline]({{Queries.worldModelRunTimeline}}).
+One step attempt in a run's timeline, as returned by worldModelRunTimeline.
 """
 type WorldModelTimelineEntry @experimental(reason: "World Model surface; may change without the usual deprecation window.") {
     """When the attempt started."""
@@ -177,7 +177,7 @@ type WorldModelThresholdResolution @experimental(reason: "World Model surface; m
 }
 
 """
-A pattern match or analyst link that involves a node, as returned by [worldModelAssociations]({{Queries.worldModelAssociations}}).
+A pattern match or analyst link that involves a node, as returned by worldModelAssociations.
 """
 type WorldModelAssociationSummary @experimental(reason: "World Model surface; may change without the usual deprecation window.") {
     """The Association node."""

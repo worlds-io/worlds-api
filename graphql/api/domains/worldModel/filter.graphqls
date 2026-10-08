@@ -1,5 +1,5 @@
 """
-`FilterWorldModelNodeInput` narrows a [worldModelNodes query]({{Queries.worldModelNodes}}).
+`FilterWorldModelNodeInput` narrows a worldModelNodes query.
 All provided fields must match.
 """
 input FilterWorldModelNodeInput @experimental(reason: "World Model surface; may change without the usual deprecation window.") {
