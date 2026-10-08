@@ -1,6 +1,6 @@
 extend type Query {
     """
-    Look up a single [WorldModelNode]({{Types.WorldModelNode}}) by its identifier.
+    Look up a single WorldModelNode by its identifier.
     Returns null if the node does not exist or belongs to another organization. Definitions in the
     shared `core` tenant are visible to every organization.
     """
