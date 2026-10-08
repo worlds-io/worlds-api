@@ -1,16 +1,16 @@
 package io.worlds.api.model;
 
 /**
- * Indicates the field used for sorting an [`chronicleProducers` query]({{Queries.chronicleProducers}}).
+ * Indicates the field used for sorting an `chronicleProducers` query.
  */
 public enum ChronicleProducersSortField {
 
     /**
-     * Sort the resulting list by the [`ChronicleProducer`]({{Types.ChronicleProducer}})'s unique identifier.
+     * Sort the resulting list by the `ChronicleProducer`'s unique identifier.
      */
     ID("ID"),
     /**
-     * Sort the resulting list by the [`ChronicleProducer`]({{Types.ChronicleProducer}})'s name.
+     * Sort the resulting list by the `ChronicleProducer`'s name.
      */
     NAME("NAME");
 

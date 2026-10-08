@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * A `VideoConnection` is the paginated result of a [`videos` query]({{Queries.videos}})
+ * A `VideoConnection` is the paginated result of a `videos` query
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class VideoConnection implements java.io.Serializable {

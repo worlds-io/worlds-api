@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * `FilterMessageStateInput` allows for filtering based on a [MessageState]({{Types.MessageState}}) parameter. Only one field should be provided per filter object.
+ * `FilterMessageStateInput` allows for filtering based on a MessageState parameter. Only one field should be provided per filter object.
 Note that the `UPDATE` state will exclude `START` and `END` messages.
  */
 public class FilterMessageStateInput implements java.io.Serializable {

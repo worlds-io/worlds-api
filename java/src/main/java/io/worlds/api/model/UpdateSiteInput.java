@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * Input type used to update an existing [Site]({{Types.Site}.
+ * Input type used to update an existing Site.
  */
 public class UpdateSiteInput implements java.io.Serializable {
 

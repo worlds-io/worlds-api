@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * An `ActivityConnection` is the paginated results of an [`activities` query]({{Queries.activityChronicles}}).
+ * An `ActivityConnection` is the paginated results of an `activities` query.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class ActivityChronicleConnection implements java.io.Serializable {

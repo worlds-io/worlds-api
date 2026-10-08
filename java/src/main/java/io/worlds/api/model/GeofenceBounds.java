@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * A `GeofenceBounds` object represents the coordinates and boundaries of a [`Geofence`]({{Types.Geofence}}).
+ * A `GeofenceBounds` object represents the coordinates and boundaries of a `Geofence`.
  */
 public class GeofenceBounds implements java.io.Serializable {
 

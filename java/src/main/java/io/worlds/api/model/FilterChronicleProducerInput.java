@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * FilterChronicleProducerInput filters [ChronicleProducer]({{Types.ChronicleProducer}}) based on criteria described below.
+ * FilterChronicleProducerInput filters ChronicleProducer based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
  */
 public class FilterChronicleProducerInput implements java.io.Serializable {

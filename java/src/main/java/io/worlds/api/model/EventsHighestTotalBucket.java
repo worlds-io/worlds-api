@@ -4,7 +4,7 @@ import java.util.Objects;
 
 /**
  * A bucket selected as having the greatest `total` within its group, returned from
-[`EventsSummary.highestTotalBuckets`]({{Types.EventsSummary}}).
+`EventsSummary.highestTotalBuckets`.
  */
 public class EventsHighestTotalBucket implements java.io.Serializable {
 
@@ -36,13 +36,13 @@ public class EventsHighestTotalBucket implements java.io.Serializable {
     }
 
     /**
-     * The total number of [Events]({{Types.Event}}) in the winning bucket.
+     * The total number of Events in the winning bucket.
      */
     public int getTotal() {
         return total;
     }
     /**
-     * The total number of [Events]({{Types.Event}}) in the winning bucket.
+     * The total number of Events in the winning bucket.
      */
     public void setTotal(int total) {
         this.total = total;
@@ -88,7 +88,7 @@ public class EventsHighestTotalBucket implements java.io.Serializable {
         }
 
         /**
-         * The total number of [Events]({{Types.Event}}) in the winning bucket.
+         * The total number of Events in the winning bucket.
          */
         public Builder setTotal(int total) {
             this.total = total;

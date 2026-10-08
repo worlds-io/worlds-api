@@ -1,7 +1,7 @@
 package io.worlds.api.model;
 
 /**
- * Indicates the field used for sorting a [Videos query]({{Queries.videos}}).
+ * Indicates the field used for sorting a Videos query.
  */
 public enum VideosSortField {
 

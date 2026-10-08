@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * This input type is used to create a new [`SummaryChronicle`]({{Types.SummaryChronicle}}).
+ * This input type is used to create a new `SummaryChronicle`.
  */
 public class CreateSummaryChronicleInput implements java.io.Serializable {
 

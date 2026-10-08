@@ -20,11 +20,11 @@ type Detection {
     """
     position: GeoJSONPoint
     """
-    A list of [Zones]({{Types.Zone}}) with which the detection intersects.
+    A list of Zones with which the detection intersects.
     """
     zones: [Zone!]!
     """
-    A list of [Geofences]({{Types.Geofence}}) with which the detection intersects.
+    A list of Geofences with which the detection intersects.
     """
     geofences: [Geofence!]!
     """Arbitrary metadata associated with the detection."""
@@ -41,12 +41,12 @@ type Detection {
     """
     direction: Float
     """
-    A list of [geofence]({{Queries.geofence}}) unique identifiers with which the
+    A list of geofence unique identifiers with which the
     detection intersects.
     """
     geofenceIds: [ID!]! @deprecated(reason: "`geofenceIds` is deprecated. Use `geofences.id` instead")
     """
-    A list of [zone]({{Queries.zone}}) unique identifiers with which the
+    A list of zone unique identifiers with which the
     detection intersects.
     """
     zoneIds: [ID!]! @deprecated(reason: "`zoneIds` is deprecated. Use `zones.id` instead")
@@ -65,7 +65,7 @@ type Detection {
 }
 
 """
-This type is used to create a new [`Detection`]({{Types.Detection}})
+This type is used to create a new `Detection`
 """
 input CreateDetectionInput {
     """The id of the track that governs the detection"""

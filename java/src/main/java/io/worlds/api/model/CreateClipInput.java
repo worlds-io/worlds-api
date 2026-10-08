@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * This input type is used to create a new clip for an event. See [`Event`]({{Types.Event}}) for more details.
+ * This input type is used to create a new clip for an event. See `Event` for more details.
  */
 public class CreateClipInput implements java.io.Serializable {
 

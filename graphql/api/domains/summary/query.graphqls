@@ -10,7 +10,7 @@ extend type Query {
         """If provided, only summarize events matching the filter."""
         filter: FilterTracksSummaryInput
         """
-        If provided, return [summary buckets]({{Types.TracksSummaryBucket}}) of this size.
+        If provided, return summary buckets of this size.
         """
         bucket: SummaryBucketSize @deprecated(reason: "Bucket by `tracksBucket.size` instead.")
         """How to bucket tracks.  Defaults to `ACTIVE`."""
@@ -29,7 +29,7 @@ extend type Query {
         """If provided, only summarize events matching the filter."""
         filter: FilterEventsSummaryInput
         """
-        If provided, return [summary buckets]({{Types.EventsSummaryBucket}}) of this size.
+        If provided, return summary buckets of this size.
         """
         bucket: SummaryBucketSize @deprecated(reason: "Grouping by `buckets` is deprecated in favor of grouping by `eventsBucket`.  Use `eventsBucket.size` to group events by a `SummaryBucketSize`.")
         """How to bucket events.  Defaults to `ACTIVE`."""

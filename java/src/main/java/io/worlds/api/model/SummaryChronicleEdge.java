@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * An summary edge is the pairing of an [Summary]({{Types.Summary}}) with its query cursor.
+ * An summary edge is the pairing of an Summary with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class SummaryChronicleEdge implements java.io.Serializable {
@@ -24,26 +24,26 @@ public class SummaryChronicleEdge implements java.io.Serializable {
     }
 
     /**
-     * Information about a particular [Summary]({{Types.Summary}}).
+     * Information about a particular Summary.
      */
     public SummaryChronicle getNode() {
         return node;
     }
     /**
-     * Information about a particular [Summary]({{Types.Summary}}).
+     * Information about a particular Summary.
      */
     public void setNode(SummaryChronicle node) {
         this.node = node;
     }
 
     /**
-     * The cursor to use with the [Query `summaries` field]({{Queries.summaryChronicles}}) `after` argument.
+     * The cursor to use with the Query `summaries` field `after` argument.
      */
     public String getCursor() {
         return cursor;
     }
     /**
-     * The cursor to use with the [Query `summaries` field]({{Queries.summaryChronicles}}) `after` argument.
+     * The cursor to use with the Query `summaries` field `after` argument.
      */
     public void setCursor(String cursor) {
         this.cursor = cursor;
@@ -81,7 +81,7 @@ public class SummaryChronicleEdge implements java.io.Serializable {
         }
 
         /**
-         * Information about a particular [Summary]({{Types.Summary}}).
+         * Information about a particular Summary.
          */
         public Builder setNode(SummaryChronicle node) {
             this.node = node;
@@ -89,7 +89,7 @@ public class SummaryChronicleEdge implements java.io.Serializable {
         }
 
         /**
-         * The cursor to use with the [Query `summaries` field]({{Queries.summaryChronicles}}) `after` argument.
+         * The cursor to use with the Query `summaries` field `after` argument.
          */
         public Builder setCursor(String cursor) {
             this.cursor = cursor;

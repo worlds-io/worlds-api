@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * A `DataSourceConnection` is the paginated results of a [`data sources` query]({{Queries.dataSources}}).
+ * A `DataSourceConnection` is the paginated results of a `data sources` query.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class DataSourceConnection implements java.io.Serializable {

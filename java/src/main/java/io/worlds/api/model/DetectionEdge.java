@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * A detection edge is the pairing of a [Detection]({{Types.Detection}}) with its query cursor.
+ * A detection edge is the pairing of a Detection with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class DetectionEdge implements java.io.Serializable {
@@ -23,26 +23,26 @@ public class DetectionEdge implements java.io.Serializable {
     }
 
     /**
-     * Information about a particular [Detection]({{Types.Detection}}).
+     * Information about a particular Detection.
      */
     public Detection getNode() {
         return node;
     }
     /**
-     * Information about a particular [Detection]({{Types.Detection}}).
+     * Information about a particular Detection.
      */
     public void setNode(Detection node) {
         this.node = node;
     }
 
     /**
-     * The cursor to use with the [`detections` query]({{Queries.detections}}) `after` argument.
+     * The cursor to use with the `detections` query `after` argument.
      */
     public String getCursor() {
         return cursor;
     }
     /**
-     * The cursor to use with the [`detections` query]({{Queries.detections}}) `after` argument.
+     * The cursor to use with the `detections` query `after` argument.
      */
     public void setCursor(String cursor) {
         this.cursor = cursor;
@@ -80,7 +80,7 @@ public class DetectionEdge implements java.io.Serializable {
         }
 
         /**
-         * Information about a particular [Detection]({{Types.Detection}}).
+         * Information about a particular Detection.
          */
         public Builder setNode(Detection node) {
             this.node = node;
@@ -88,7 +88,7 @@ public class DetectionEdge implements java.io.Serializable {
         }
 
         /**
-         * The cursor to use with the [`detections` query]({{Queries.detections}}) `after` argument.
+         * The cursor to use with the `detections` query `after` argument.
          */
         public Builder setCursor(String cursor) {
             this.cursor = cursor;

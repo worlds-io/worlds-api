@@ -1,16 +1,16 @@
 package io.worlds.api.model;
 
 /**
- * Indicates the field used for sorting a [`geofences` query]({{Queries.geofences}}).
+ * Indicates the field used for sorting a `geofences` query.
  */
 public enum GeofencesSortField {
 
     /**
-     * Sort the resulting list by the [`Geofence`](({{Types.Geofence}}))'s unique identifier.
+     * Sort the resulting list by the `Geofence`'s unique identifier.
      */
     ID("ID"),
     /**
-     * Sort the resulting list by the [`Geofence`](({{Types.Geofence}}))'s name.
+     * Sort the resulting list by the `Geofence`'s name.
      */
     NAME("NAME");
 

@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * This type is used to update an existing [`DataSource`]({{Types.DataSource}})
+ * This type is used to update an existing `DataSource`
  */
 public class UpdateDataSourceInput implements java.io.Serializable {
 

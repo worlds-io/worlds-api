@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * This input type is used to update an existing [`Device`]({{Types.Device}}).
+ * This input type is used to update an existing `Device`.
  */
 public class UpdateDeviceInput implements java.io.Serializable {
 

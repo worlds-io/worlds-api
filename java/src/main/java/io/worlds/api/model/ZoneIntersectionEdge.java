@@ -19,26 +19,26 @@ public class ZoneIntersectionEdge implements java.io.Serializable {
     }
 
     /**
-     * Information about a particular [ZoneIntersection]({{Types.ZoneIntersection}}).
+     * Information about a particular ZoneIntersection.
      */
     public ZoneIntersection getNode() {
         return node;
     }
     /**
-     * Information about a particular [ZoneIntersection]({{Types.ZoneIntersection}}).
+     * Information about a particular ZoneIntersection.
      */
     public void setNode(ZoneIntersection node) {
         this.node = node;
     }
 
     /**
-     * The cursor to use with the [Query `zoneIntersections` field]({{Queries.zoneIntersections}}) `after` argument.
+     * The cursor to use with the Query `zoneIntersections` field `after` argument.
      */
     public String getCursor() {
         return cursor;
     }
     /**
-     * The cursor to use with the [Query `zoneIntersections` field]({{Queries.zoneIntersections}}) `after` argument.
+     * The cursor to use with the Query `zoneIntersections` field `after` argument.
      */
     public void setCursor(String cursor) {
         this.cursor = cursor;
@@ -76,7 +76,7 @@ public class ZoneIntersectionEdge implements java.io.Serializable {
         }
 
         /**
-         * Information about a particular [ZoneIntersection]({{Types.ZoneIntersection}}).
+         * Information about a particular ZoneIntersection.
          */
         public Builder setNode(ZoneIntersection node) {
             this.node = node;
@@ -84,7 +84,7 @@ public class ZoneIntersectionEdge implements java.io.Serializable {
         }
 
         /**
-         * The cursor to use with the [Query `zoneIntersections` field]({{Queries.zoneIntersections}}) `after` argument.
+         * The cursor to use with the Query `zoneIntersections` field `after` argument.
          */
         public Builder setCursor(String cursor) {
             this.cursor = cursor;

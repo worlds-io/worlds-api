@@ -19,26 +19,26 @@ public class GeofenceIntersectionEdge implements java.io.Serializable {
     }
 
     /**
-     * Information about a particular [GeofenceIntersection]({{Types.GeofenceIntersection}}).
+     * Information about a particular GeofenceIntersection.
      */
     public GeofenceIntersection getNode() {
         return node;
     }
     /**
-     * Information about a particular [GeofenceIntersection]({{Types.GeofenceIntersection}}).
+     * Information about a particular GeofenceIntersection.
      */
     public void setNode(GeofenceIntersection node) {
         this.node = node;
     }
 
     /**
-     * The cursor to use with the [Query `geofenceIntersections` field]({{Queries.geofenceIntersections}}) `after` argument.
+     * The cursor to use with the Query `geofenceIntersections` field `after` argument.
      */
     public String getCursor() {
         return cursor;
     }
     /**
-     * The cursor to use with the [Query `geofenceIntersections` field]({{Queries.geofenceIntersections}}) `after` argument.
+     * The cursor to use with the Query `geofenceIntersections` field `after` argument.
      */
     public void setCursor(String cursor) {
         this.cursor = cursor;
@@ -76,7 +76,7 @@ public class GeofenceIntersectionEdge implements java.io.Serializable {
         }
 
         /**
-         * Information about a particular [GeofenceIntersection]({{Types.GeofenceIntersection}}).
+         * Information about a particular GeofenceIntersection.
          */
         public Builder setNode(GeofenceIntersection node) {
             this.node = node;
@@ -84,7 +84,7 @@ public class GeofenceIntersectionEdge implements java.io.Serializable {
         }
 
         /**
-         * The cursor to use with the [Query `geofenceIntersections` field]({{Queries.geofenceIntersections}}) `after` argument.
+         * The cursor to use with the Query `geofenceIntersections` field `after` argument.
          */
         public Builder setCursor(String cursor) {
             this.cursor = cursor;

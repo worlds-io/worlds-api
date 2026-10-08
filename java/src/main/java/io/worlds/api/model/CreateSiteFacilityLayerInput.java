@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * Fields to create a new [SiteFacilityLayer]({{Types.SiteFacilityLayer}}).
+ * Fields to create a new SiteFacilityLayer.
 The layer image is uploaded separately, so a newly created layer has no image.
  */
 public class CreateSiteFacilityLayerInput implements java.io.Serializable {

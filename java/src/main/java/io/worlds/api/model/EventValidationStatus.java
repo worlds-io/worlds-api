@@ -1,7 +1,7 @@
 package io.worlds.api.model;
 
 /**
- * Used in [EventValidationInput]({{Types.EventValidationInput}}) to indicate whether an event is `VALID` or `INVALID`.
+ * Used in EventValidationInput to indicate whether an event is `VALID` or `INVALID`.
  */
 public enum EventValidationStatus {
 

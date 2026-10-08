@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * A `ImageConnection` is the paginated results of a [`images` query]({{Queries.images}}).
+ * A `ImageConnection` is the paginated results of a `images` query.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class ImageConnection implements java.io.Serializable {

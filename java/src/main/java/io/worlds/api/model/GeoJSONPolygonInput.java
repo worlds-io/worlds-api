@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * This type represents the input data needed to initialize a [GeoJSON polygon]({{Types.GeoJSONPolygon}}).
+ * This type represents the input data needed to initialize a GeoJSON polygon.
  */
 public class GeoJSONPolygonInput implements java.io.Serializable {
 

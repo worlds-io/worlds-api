@@ -1,6 +1,6 @@
 type TracksSummary {
     """
-    The total number of [Tracks]({{Types.Track}}) within the time range.
+    The total number of Tracks within the time range.
     """
     total: Int!
     """
@@ -13,12 +13,12 @@ type TracksSummary {
     endedCount: Int!
 
     """
-    The count of [Tracks]({{Types.Track}}) for each [Tag]({{Types.Tag}}) within the time range.
+    The count of Tracks for each Tag within the time range.
     """
     totalsByTag: [TracksCountByTag!]! @deprecated(reason: "To retrieve per-tag counts, group by the `TAG` field, either alone or in combination with a time bucket.  Counts will return as empty if a `tracksBucket` or `filter` is used.")
     """
-    A detailed summary of each [bucket]({{Types.SummaryBucketSize}}) within the time range.
-    Summary buckets are only returned if `tracksBucket` is provided as a query parameter to [`tracksSummary`]({{Queries.tracksSummary}}).
+    A detailed summary of each bucket within the time range.
+    Summary buckets are only returned if `tracksBucket` is provided as a query parameter to `tracksSummary`.
     """
     buckets: [TracksSummaryBucket!]
     """
@@ -38,20 +38,20 @@ type TracksSummary {
 
 """
 A bucket selected as having the greatest `total` within its group, returned from
-[`TracksSummary.highestTotalBuckets`]({{Types.TracksSummary}}).
+`TracksSummary.highestTotalBuckets`.
 """
 type TracksHighestTotalBucket {
     """The key of the winning bucket.  Only fields included in `groupBy` are populated; others are null."""
     key: TracksSummaryBucketKey!
-    """The total number of [Tracks]({{Types.Track}}) in the winning bucket."""
+    """The total number of Tracks in the winning bucket."""
     total: Int!
 }
 
 type TracksCountByTag {
-    """The name of the [tag]({{Types.Tag}})."""
+    """The name of the tag."""
     tag: String!
     """
-    The total count of [Tracks]({{Types.Track}}) within the time range with a matching tag.
+    The total count of Tracks within the time range with a matching tag.
     """
     count: Int!
 }
@@ -75,7 +75,7 @@ type TracksSummaryBucket {
     endedCount: Int!
 
     """
-    The count of [Tracks]({{Types.Track}}) for each [Tag]({{Types.Tag}}) within the bucket.
+    The count of Tracks for each Tag within the bucket.
     """
     counts: [TracksCountByTag!]! @deprecated(reason: "To retrieve per-tag counts, group by the `TAG` field, either alone or in combination with a time bucket.  Counts will return as empty if a tracksBucket is used.")
 }
@@ -85,7 +85,7 @@ Summary information for events across a time range.  Includes total count and co
 """
 type EventsSummary {
     """
-    The total number of [Events]({{Types.Event}}) within the time range.
+    The total number of Events within the time range.
     """
     total: Int!
     """
@@ -102,8 +102,8 @@ type EventsSummary {
     """
     summaryStatistics: EventsSummaryStatistics!
     """
-    A detailed summary of each [bucket]({{Types.SummaryBucketSize}}) within the time range.
-    Summary buckets are only returned if `eventsBucket` is provided as a query parameter to [`eventsSummary`]({{Queries.eventsSummary}}).
+    A detailed summary of each bucket within the time range.
+    Summary buckets are only returned if `eventsBucket` is provided as a query parameter to `eventsSummary`.
     """
     buckets: [EventsSummaryBucket!]
     """
@@ -128,12 +128,12 @@ type EventsSummary {
 
 """
 A bucket selected as having the greatest `total` within its group, returned from
-[`EventsSummary.highestTotalBuckets`]({{Types.EventsSummary}}).
+`EventsSummary.highestTotalBuckets`.
 """
 type EventsHighestTotalBucket {
     """The key of the winning bucket.  Only fields included in `groupBy` are populated; others are null."""
     key: EventsSummaryBucketKey!
-    """The total number of [Events]({{Types.Event}}) in the winning bucket."""
+    """The total number of Events in the winning bucket."""
     total: Int!
 }
 
@@ -146,7 +146,7 @@ type EventsSummaryBucket {
     """The key of the bucket."""
     key: EventsSummaryBucketKey!
     """
-    The total number of [Events]({{Types.Event}}) within the bucket.
+    The total number of Events within the bucket.
     """
     total: Int!
     """
@@ -169,7 +169,7 @@ Summary information for videos across a time range.  Includes total count and co
 """
 type VideosSummary {
     """
-    The total number of [Videos]({{Types.Video}}) within the time range.
+    The total number of Videos within the time range.
     """
     total: Int!
     """
@@ -185,8 +185,8 @@ type VideosSummary {
     """
     summaryStatistics: VideosSummaryStatistics!
     """
-    A detailed summary of each [bucket]({{Types.SummaryBucketSize}}) within the time range.
-    Summary buckets are only returned if `videosBucket` is provided as a query parameter to [`videosSummary`]({{Queries.videosSummary}}).
+    A detailed summary of each bucket within the time range.
+    Summary buckets are only returned if `videosBucket` is provided as a query parameter to `videosSummary`.
     """
     buckets: [VideosSummaryBucket!]
     """
@@ -206,12 +206,12 @@ type VideosSummary {
 
 """
 A bucket selected as having the greatest `total` within its group, returned from
-[`VideosSummary.highestTotalBuckets`]({{Types.VideosSummary}}).
+`VideosSummary.highestTotalBuckets`.
 """
 type VideosHighestTotalBucket {
     """The key of the winning bucket.  Only fields included in `groupBy` are populated; others are null."""
     key: VideosSummaryBucketKey!
-    """The total number of [Videos]({{Types.Video}}) in the winning bucket."""
+    """The total number of Videos in the winning bucket."""
     total: Int!
 }
 
@@ -262,7 +262,7 @@ type ActivityChronicleSummary {
 
 """
 A bucket selected as having the greatest `total` within its group, returned from
-[`ActivityChronicleSummary.highestTotalBuckets`]({{Types.ActivityChronicleSummary}}).
+`ActivityChronicleSummary.highestTotalBuckets`.
 """
 type ActivityChronicleHighestTotalBucket {
     """The key of the winning bucket.  Only fields included in `groupBy` are populated; others are null."""
@@ -340,7 +340,7 @@ type VideosSummaryBucket {
     """The key of the bucket."""
     key: VideosSummaryBucketKey!
     """
-    The total number of [Videos]({{Types.Video}}) within the bucket.
+    The total number of Videos within the bucket.
     """
     total: Int!
     """
@@ -401,7 +401,7 @@ type ZoneIntersectionSummary {
 
 """
 A bucket selected as having the greatest `total` within its group, returned from
-[`ZoneIntersectionSummary.highestTotalBuckets`]({{Types.ZoneIntersectionSummary}}).
+`ZoneIntersectionSummary.highestTotalBuckets`.
 """
 type ZoneIntersectionHighestTotalBucket {
     """The key of the winning bucket.  Only fields included in `groupBy` are populated; others are null."""
@@ -472,7 +472,7 @@ type DetectionsSummary {
 
 """
 A bucket selected as having the greatest `total` within its group, returned from
-[`DetectionsSummary.highestTotalBuckets`]({{Types.DetectionsSummary}}).
+`DetectionsSummary.highestTotalBuckets`.
 """
 type DetectionsHighestTotalBucket {
     """The key of the winning bucket.  Only fields included in `groupBy` are populated; others are null."""
@@ -523,7 +523,7 @@ type DeviceSummary {
 
 """
 A bucket selected as having the greatest `total` within its group, returned from
-[`DeviceSummary.highestTotalBuckets`]({{Types.DeviceSummary}}).
+`DeviceSummary.highestTotalBuckets`.
 """
 type DeviceHighestTotalBucket {
     """The key of the winning bucket.  Only fields included in `groupBy` are populated; others are null."""

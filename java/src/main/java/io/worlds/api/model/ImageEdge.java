@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * A image edge is the pairing of a [Image]({{Types.Image}}) with its query cursor.
+ * A image edge is the pairing of a Image with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class ImageEdge implements java.io.Serializable {
@@ -23,26 +23,26 @@ public class ImageEdge implements java.io.Serializable {
     }
 
     /**
-     * Information about a particular [Image]({{Types.Image}}).
+     * Information about a particular Image.
      */
     public Image getNode() {
         return node;
     }
     /**
-     * Information about a particular [Image]({{Types.Image}}).
+     * Information about a particular Image.
      */
     public void setNode(Image node) {
         this.node = node;
     }
 
     /**
-     * The cursor to use with the [`images` query]({{Queries.images}}) `after` argument.
+     * The cursor to use with the `images` query `after` argument.
      */
     public String getCursor() {
         return cursor;
     }
     /**
-     * The cursor to use with the [`images` query]({{Queries.images}}) `after` argument.
+     * The cursor to use with the `images` query `after` argument.
      */
     public void setCursor(String cursor) {
         this.cursor = cursor;
@@ -80,7 +80,7 @@ public class ImageEdge implements java.io.Serializable {
         }
 
         /**
-         * Information about a particular [Image]({{Types.Image}}).
+         * Information about a particular Image.
          */
         public Builder setNode(Image node) {
             this.node = node;
@@ -88,7 +88,7 @@ public class ImageEdge implements java.io.Serializable {
         }
 
         /**
-         * The cursor to use with the [`images` query]({{Queries.images}}) `after` argument.
+         * The cursor to use with the `images` query `after` argument.
          */
         public Builder setCursor(String cursor) {
             this.cursor = cursor;

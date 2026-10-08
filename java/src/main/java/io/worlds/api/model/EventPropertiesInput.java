@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * This input type contains additional details and related information for an event. For more details on event producers and events, see [`EventProducer`]({{Types.EventProducer}}).
+ * This input type contains additional details and related information for an event. For more details on event producers and events, see `EventProducer`.
  */
 public class EventPropertiesInput implements java.io.Serializable {
 

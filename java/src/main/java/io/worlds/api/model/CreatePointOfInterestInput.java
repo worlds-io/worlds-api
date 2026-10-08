@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * Fields to create a new [PointOfInterest]({{Types.PointOfInterest}})
+ * Fields to create a new PointOfInterest
  */
 public class CreatePointOfInterestInput implements java.io.Serializable {
 

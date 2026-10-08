@@ -1,16 +1,16 @@
 package io.worlds.api.model;
 
 /**
- * Indicates the field used for sorting an [`sensors` query]({{Queries.sensors}}).
+ * Indicates the field used for sorting an `sensors` query.
  */
 public enum SensorsSortField {
 
     /**
-     * Sort the resulting list by the [`sensor`](({{Types.Sensor}}))'s unique identifier.
+     * Sort the resulting list by the `sensor`'s unique identifier.
      */
     ID("ID"),
     /**
-     * Sort the resulting list by the [`sensor`](({{Types.Sensor}}))'s name.
+     * Sort the resulting list by the `sensor`'s name.
      */
     NAME("NAME");
 

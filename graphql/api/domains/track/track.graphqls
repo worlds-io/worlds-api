@@ -21,7 +21,7 @@ type Track {
     """
     endTime: DateTimeOffset
     """
-    Whether the Track has finished. `true` once the track has an [`endTime`]({{Types.Track}}).
+    Whether the Track has finished. `true` once the track has an `endTime`.
     """
     finished: Boolean!
     """A collection of every Detection associated with the Track."""
@@ -64,7 +64,7 @@ type TrackProperty {
 }
 
 """
-This type is used to create a new [`Detection`]({{Types.Detection}}) when [creating]({{Types.CreateTrackInput}}) or [updating]({{Types.UpdateTrackInput}}) a [`Track`]({{Types.Track}})
+This type is used to create a new `Detection` when creating or updating a `Track`
 """
 input TrackDetectionInput {
     """The time at which the detection occurred."""
@@ -102,7 +102,7 @@ input TrackPropertyInput {
 }
 
 """
-This input type is used to create a new [`Track`]({{Types.Track}}).
+This input type is used to create a new `Track`.
 """
 input CreateTrackInput {
     """
@@ -110,7 +110,7 @@ input CreateTrackInput {
     """
     id: ID
     """
-    The unique identifier of the [`data source`]({{Types.DataSource}}) that captured the Track.
+    The unique identifier of the `data source` that captured the Track.
     """
     dataSourceId: ID!
     """The class label of the tracked object, i.e person, car, truck, etc."""
@@ -132,7 +132,7 @@ input CreateTrackInput {
 }
 
 """
-This input type is used to update an existing [`Track`]({{Types.Track}}).
+This input type is used to update an existing `Track`.
 """
 input UpdateTrackInput {
     """The unique identifier of the Track."""

@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * Input type used to create a new [Site]({{Types.Site}.
+ * Input type used to create a new Site.
  */
 public class CreateSiteInput implements java.io.Serializable {
 

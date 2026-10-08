@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * TagsSort allows for sorting a [`tags` query]({{Queries.tags}}) by field and direction.
+ * TagsSort allows for sorting a `tags` query by field and direction.
  */
 public class TagsSort implements java.io.Serializable {
 

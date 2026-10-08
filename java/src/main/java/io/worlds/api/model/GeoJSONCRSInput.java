@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * This type represents the input data needed to initialize a [GeoJSON coordinate reference system]({{Types.GeoJSONCRS}}).
+ * This type represents the input data needed to initialize a GeoJSON coordinate reference system.
  */
 public class GeoJSONCRSInput implements java.io.Serializable {
 

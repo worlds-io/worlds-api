@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * An activity edge is the pairing of an [Activity]({{Types.Activity}}) with its query cursor.
+ * An activity edge is the pairing of an Activity with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class ActivityChronicleEdge implements java.io.Serializable {
@@ -24,26 +24,26 @@ public class ActivityChronicleEdge implements java.io.Serializable {
     }
 
     /**
-     * Information about a particular [Activity]({{Types.Activity}}).
+     * Information about a particular Activity.
      */
     public ActivityChronicle getNode() {
         return node;
     }
     /**
-     * Information about a particular [Activity]({{Types.Activity}}).
+     * Information about a particular Activity.
      */
     public void setNode(ActivityChronicle node) {
         this.node = node;
     }
 
     /**
-     * The cursor to use with the [Query `activities` field]({{Queries.activityChronicles}}) `after` argument.
+     * The cursor to use with the Query `activities` field `after` argument.
      */
     public String getCursor() {
         return cursor;
     }
     /**
-     * The cursor to use with the [Query `activities` field]({{Queries.activityChronicles}}) `after` argument.
+     * The cursor to use with the Query `activities` field `after` argument.
      */
     public void setCursor(String cursor) {
         this.cursor = cursor;
@@ -81,7 +81,7 @@ public class ActivityChronicleEdge implements java.io.Serializable {
         }
 
         /**
-         * Information about a particular [Activity]({{Types.Activity}}).
+         * Information about a particular Activity.
          */
         public Builder setNode(ActivityChronicle node) {
             this.node = node;
@@ -89,7 +89,7 @@ public class ActivityChronicleEdge implements java.io.Serializable {
         }
 
         /**
-         * The cursor to use with the [Query `activities` field]({{Queries.activityChronicles}}) `after` argument.
+         * The cursor to use with the Query `activities` field `after` argument.
          */
         public Builder setCursor(String cursor) {
             this.cursor = cursor;

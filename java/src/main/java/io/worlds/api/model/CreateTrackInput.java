@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * This input type is used to create a new [`Track`]({{Types.Track}}).
+ * This input type is used to create a new `Track`.
  */
 public class CreateTrackInput implements java.io.Serializable {
 

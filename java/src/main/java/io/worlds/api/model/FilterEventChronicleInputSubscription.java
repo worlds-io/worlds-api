@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * FilterEventChronicleInput filters [EventChronicles]({{Types.EventChronicle}}) based on criteria described below.
+ * FilterEventChronicleInput filters EventChronicles based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
  */
 public class FilterEventChronicleInputSubscription implements java.io.Serializable {

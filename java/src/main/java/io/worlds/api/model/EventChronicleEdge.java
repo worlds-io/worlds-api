@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * An event edge is the pairing of an [Event]({{Types.Event}}) with its query cursor.
+ * An event edge is the pairing of an Event with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class EventChronicleEdge implements java.io.Serializable {
@@ -24,26 +24,26 @@ public class EventChronicleEdge implements java.io.Serializable {
     }
 
     /**
-     * Information about a particular [Event]({{Types.Event}}).
+     * Information about a particular Event.
      */
     public EventChronicle getNode() {
         return node;
     }
     /**
-     * Information about a particular [Event]({{Types.Event}}).
+     * Information about a particular Event.
      */
     public void setNode(EventChronicle node) {
         this.node = node;
     }
 
     /**
-     * The cursor to use with the [Query `events` field]({{Queries.eventChronicles}}) `after` argument.
+     * The cursor to use with the Query `events` field `after` argument.
      */
     public String getCursor() {
         return cursor;
     }
     /**
-     * The cursor to use with the [Query `events` field]({{Queries.eventChronicles}}) `after` argument.
+     * The cursor to use with the Query `events` field `after` argument.
      */
     public void setCursor(String cursor) {
         this.cursor = cursor;
@@ -81,7 +81,7 @@ public class EventChronicleEdge implements java.io.Serializable {
         }
 
         /**
-         * Information about a particular [Event]({{Types.Event}}).
+         * Information about a particular Event.
          */
         public Builder setNode(EventChronicle node) {
             this.node = node;
@@ -89,7 +89,7 @@ public class EventChronicleEdge implements java.io.Serializable {
         }
 
         /**
-         * The cursor to use with the [Query `events` field]({{Queries.eventChronicles}}) `after` argument.
+         * The cursor to use with the Query `events` field `after` argument.
          */
         public Builder setCursor(String cursor) {
             this.cursor = cursor;

@@ -32,13 +32,13 @@ public class TrackEdge implements java.io.Serializable {
     }
 
     /**
-     * The cursor to use with the [`tracks` query]({{Queries.tracks}}) `after` argument.
+     * The cursor to use with the `tracks` query `after` argument.
      */
     public String getCursor() {
         return cursor;
     }
     /**
-     * The cursor to use with the [`tracks` query]({{Queries.tracks}}) `after` argument.
+     * The cursor to use with the `tracks` query `after` argument.
      */
     public void setCursor(String cursor) {
         this.cursor = cursor;
@@ -84,7 +84,7 @@ public class TrackEdge implements java.io.Serializable {
         }
 
         /**
-         * The cursor to use with the [`tracks` query]({{Queries.tracks}}) `after` argument.
+         * The cursor to use with the `tracks` query `after` argument.
          */
         public Builder setCursor(String cursor) {
             this.cursor = cursor;

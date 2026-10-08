@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * Indicates the field used for sorting a [`summaryChronicles` query]({{Queries.summaryChronicles}}).
+ * Indicates the field used for sorting a `summaryChronicles` query.
  */
 public class SummaryChronicleSort implements java.io.Serializable {
 

@@ -98,14 +98,14 @@ public class TracksSummaryBucket implements java.io.Serializable {
     }
 
     /**
-     * The count of [Tracks]({{Types.Track}}) for each [Tag]({{Types.Tag}}) within the bucket.
+     * The count of Tracks for each Tag within the bucket.
      */
     @Deprecated
     public java.util.List<TracksCountByTag> getCounts() {
         return counts;
     }
     /**
-     * The count of [Tracks]({{Types.Track}}) for each [Tag]({{Types.Tag}}) within the bucket.
+     * The count of Tracks for each Tag within the bucket.
      */
     @Deprecated
     public void setCounts(java.util.List<TracksCountByTag> counts) {
@@ -193,7 +193,7 @@ public class TracksSummaryBucket implements java.io.Serializable {
         }
 
         /**
-         * The count of [Tracks]({{Types.Track}}) for each [Tag]({{Types.Tag}}) within the bucket.
+         * The count of Tracks for each Tag within the bucket.
          */
         @Deprecated
         public Builder setCounts(java.util.List<TracksCountByTag> counts) {

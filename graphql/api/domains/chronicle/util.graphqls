@@ -1,5 +1,5 @@
 """
-The paginated results of an [`chronicleProducers` query]({{Queries.chronicleProducers}}).
+The paginated results of an `chronicleProducers` query.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type ChronicleProducerConnection {
@@ -12,16 +12,16 @@ type ChronicleProducerConnection {
 }
 
 """
-The pairing of an [ChronicleProducer]({{Types.ChronicleProducer}}) with its query cursor.
+The pairing of an ChronicleProducer with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
 """
 type ChronicleProducerEdge {
     """
-    Information about a particular [ChronicleProducer]({{Types.ChronicleProducer}}).
+    Information about a particular ChronicleProducer.
     """
     node: ChronicleProducer!
     """
-    The cursor to use with the [Query `chronicleProducers` field]({{Queries.chronicleProducers}}) `after` argument.
+    The cursor to use with the Query `chronicleProducers` field `after` argument.
     """
     cursor: String!
 }

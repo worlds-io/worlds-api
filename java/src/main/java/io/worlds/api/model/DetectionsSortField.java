@@ -1,20 +1,20 @@
 package io.worlds.api.model;
 
 /**
- * Indicates the field used for sorting a [Detections query]({{Queries.detections}}).
+ * Indicates the field used for sorting a Detections query.
  */
 public enum DetectionsSortField {
 
     /**
-     * Sort the resulting list by [detection time]({{Types.Detection}}).
+     * Sort the resulting list by detection time.
      */
     DETECTION_TIME("DETECTION_TIME"),
     /**
-     * Sort the resulting list by the corresponding Track's [unique identifier.]({{Types.Track}}).
+     * Sort the resulting list by the corresponding Track's unique identifier..
      */
     TRACK_ID("TRACK_ID"),
     /**
-     * Sort the resulting list by the corresponding Track's [unique identifier.]({{Types.Detection}}).
+     * Sort the resulting list by the corresponding Track's unique identifier..
      */
     @Deprecated
     GLOBAL_TRACK_ID("GLOBAL_TRACK_ID");

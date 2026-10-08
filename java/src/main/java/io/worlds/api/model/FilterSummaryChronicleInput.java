@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * FilterSummaryChronicleInput filters [SummaryChronicles]({{Types.SummaryChronicle}}) based on criteria described below.
+ * FilterSummaryChronicleInput filters SummaryChronicles based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
  */
 public class FilterSummaryChronicleInput implements java.io.Serializable {

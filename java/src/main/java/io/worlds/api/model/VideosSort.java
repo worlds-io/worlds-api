@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * VideosSort allows for sorting a [`videos` query]({{Queries.videos}}) by field and direction.
+ * VideosSort allows for sorting a `videos` query by field and direction.
  */
 public class VideosSort implements java.io.Serializable {
 

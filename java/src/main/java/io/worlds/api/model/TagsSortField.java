@@ -1,7 +1,7 @@
 package io.worlds.api.model;
 
 /**
- * Indicates the field used for sorting a [Tags query]({{Queries.tags}}).
+ * Indicates the field used for sorting a Tags query.
  */
 public enum TagsSortField {
 

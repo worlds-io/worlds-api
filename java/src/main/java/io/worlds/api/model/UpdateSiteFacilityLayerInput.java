@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * Fields to update an existing [SiteFacilityLayer]({{Types.SiteFacilityLayer}}).
+ * Fields to update an existing SiteFacilityLayer.
  */
 public class UpdateSiteFacilityLayerInput implements java.io.Serializable {
 

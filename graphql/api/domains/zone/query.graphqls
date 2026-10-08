@@ -1,5 +1,5 @@
 """
-Indicates the field used for sorting a [zones query]({{Queries.zones}}).
+Indicates the field used for sorting a zones query.
 """
 enum ZonesSortField {
     """Sort the resulting list by the zone's unique identifiers."""
@@ -20,7 +20,7 @@ input ZonesSort {
 }
 
 """
-Indicates the field used for sorting a [zoneIntersections query]({{Queries.zoneIntersections}}).
+Indicates the field used for sorting a zoneIntersections query.
 """
 enum ZoneIntersectionsSortField {
     """Sort the resulting list in by its unique identifier."""

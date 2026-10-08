@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * A tag edge is the pairing of a [Tag]({{Types.Tag}}) with its query cursor.
+ * A tag edge is the pairing of a Tag with its query cursor.
 See [about queries](/guides/types/#queries) for details on how "connection" and "edge" types are used with pagination.
  */
 public class TagEdge implements java.io.Serializable {
@@ -23,26 +23,26 @@ public class TagEdge implements java.io.Serializable {
     }
 
     /**
-     * Information about a particular [Tag]({{Types.Tag}}).
+     * Information about a particular Tag.
      */
     public Tag getNode() {
         return node;
     }
     /**
-     * Information about a particular [Tag]({{Types.Tag}}).
+     * Information about a particular Tag.
      */
     public void setNode(Tag node) {
         this.node = node;
     }
 
     /**
-     * The cursor to use with the [Query `tags` field]({{Queries.tags}}) `after` argument.
+     * The cursor to use with the Query `tags` field `after` argument.
      */
     public String getCursor() {
         return cursor;
     }
     /**
-     * The cursor to use with the [Query `tags` field]({{Queries.tags}}) `after` argument.
+     * The cursor to use with the Query `tags` field `after` argument.
      */
     public void setCursor(String cursor) {
         this.cursor = cursor;
@@ -80,7 +80,7 @@ public class TagEdge implements java.io.Serializable {
         }
 
         /**
-         * Information about a particular [Tag]({{Types.Tag}}).
+         * Information about a particular Tag.
          */
         public Builder setNode(Tag node) {
             this.node = node;
@@ -88,7 +88,7 @@ public class TagEdge implements java.io.Serializable {
         }
 
         /**
-         * The cursor to use with the [Query `tags` field]({{Queries.tags}}) `after` argument.
+         * The cursor to use with the Query `tags` field `after` argument.
          */
         public Builder setCursor(String cursor) {
             this.cursor = cursor;

@@ -51,14 +51,14 @@ public class GeoJSONPoint implements java.io.Serializable, GeoJSONGeometry {
 
     /**
      * The coordinate reference system used for this geographical position. See
-[`GeoJSONCRS`]({{Types.GeoJSONCRS}}) for more information.
+`GeoJSONCRS` for more information.
      */
     public GeoJSONCRS getCrs() {
         return crs;
     }
     /**
      * The coordinate reference system used for this geographical position. See
-[`GeoJSONCRS`]({{Types.GeoJSONCRS}}) for more information.
+`GeoJSONCRS` for more information.
      */
     public void setCrs(GeoJSONCRS crs) {
         this.crs = crs;
@@ -115,7 +115,7 @@ public class GeoJSONPoint implements java.io.Serializable, GeoJSONGeometry {
 
         /**
          * The coordinate reference system used for this geographical position. See
-[`GeoJSONCRS`]({{Types.GeoJSONCRS}}) for more information.
+`GeoJSONCRS` for more information.
          */
         public Builder setCrs(GeoJSONCRS crs) {
             this.crs = crs;

@@ -33,13 +33,13 @@ public class GeofenceIntersectionMessage implements java.io.Serializable {
     }
 
     /**
-     * The state of the intersection message. Within the message, the [`endTime`]({{Types.GeofenceIntersection}}) will only be present on an [`END`]({{Types.MessageState}}) event.
+     * The state of the intersection message. Within the message, the `endTime` will only be present on an `END` event.
      */
     public MessageState getState() {
         return state;
     }
     /**
-     * The state of the intersection message. Within the message, the [`endTime`]({{Types.GeofenceIntersection}}) will only be present on an [`END`]({{Types.MessageState}}) event.
+     * The state of the intersection message. Within the message, the `endTime` will only be present on an `END` event.
      */
     public void setState(MessageState state) {
         this.state = state;
@@ -85,7 +85,7 @@ public class GeofenceIntersectionMessage implements java.io.Serializable {
         }
 
         /**
-         * The state of the intersection message. Within the message, the [`endTime`]({{Types.GeofenceIntersection}}) will only be present on an [`END`]({{Types.MessageState}}) event.
+         * The state of the intersection message. Within the message, the `endTime` will only be present on an `END` event.
          */
         public Builder setState(MessageState state) {
             this.state = state;

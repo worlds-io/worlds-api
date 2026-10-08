@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * An event represents a custom event, including its start time, location, and duration. For more details on event producers and events, see [`EventProducer`]({{Types.EventProducer}}).
+ * An event represents a custom event, including its start time, location, and duration. For more details on event producers and events, see `EventProducer`.
  */
 public class Event implements java.io.Serializable {
 

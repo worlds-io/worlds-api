@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * This input type is used to update an existing [`ChronicleProducer`]({{Types.ChronicleProducer}}).
+ * This input type is used to update an existing `ChronicleProducer`.
  */
 public class UpdateChronicleProducerInput implements java.io.Serializable {
 

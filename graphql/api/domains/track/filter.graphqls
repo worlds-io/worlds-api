@@ -1,5 +1,5 @@
 """
-`FilterTrackInput` allows for filtering a [`tracks` query]({{Queries.tracks}}) based on criteria described below.
+`FilterTrackInput` allows for filtering a `tracks` query based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below
 """
 input FilterTrackInput {
@@ -8,59 +8,59 @@ input FilterTrackInput {
     """
     id: FilterIDInput
     """
-    If provided, specifies filters that work against the [unique id]({{Types.DataSource}}) of the data source that initiated the track.
+    If provided, specifies filters that work against the unique id of the data source that initiated the track.
     """
     dataSourceId: FilterIDInput
     """
     If provided, matches when the given instant or range overlaps the track's period. For an
-    untracked detector's track, the exclusive end does not count as overlap; see [`Track`]({{Types.Track}}).
+    untracked detector's track, the exclusive end does not count as overlap; see `Track`.
     """
     time: FilterDateTimeOffsetInput
     """
     If provided, specifies filters that work against the period a track spans, from its
-    [`startTime`]({{Types.Track}}) to its [`endTime`]({{Types.Track}}). A track that is still being tracked
+    `startTime` to its `endTime`. A track that is still being tracked
     has no end time and is treated as running until the end of time. For an untracked detector's
-    track, the end is exclusive; see [`Track`]({{Types.Track}}).
+    track, the end is exclusive; see `Track`.
     """
     timeRange: FilterTimeRangeInput
     """
-    If provided, specifies filters that work against whether the track [has finished]({{Types.Track}}).
+    If provided, specifies filters that work against whether the track has finished.
     """
     finished: FilterBooleanInput
     """
-    If provided, specifies case-insensitive filters that work against the [tag]({{Types.Track}}) of a track
+    If provided, specifies case-insensitive filters that work against the tag of a track
     """
     tag: FilterStringInput
     """
-    If provided, specifies filters that work against the [positions]({{Types.Detection}}) of the track's detections
+    If provided, specifies filters that work against the positions of the track's detections
     """
     position: FilterPointInput
     """
-    If provided, specifies filters that work against the [identifier]({{Types.TrackProperties}}) of the track
+    If provided, specifies filters that work against the identifier of the track
     """
     identifier: FilterTrackPropertyInput
     """
-    If provided, specifies filters that work against the [attributes]({{Types.TrackProperties}}) of the track
+    If provided, specifies filters that work against the attributes of the track
     """
     attribute: FilterTrackPropertyInput
     """
-    If provided, specifies filters that work against the [unique identifier of the point of interest]({{Types.Site}}) of the track's data source.
+    If provided, specifies filters that work against the unique identifier of the point of interest of the track's data source.
     """
     pointOfInterestId: FilterIDInput
     """
-    If provided, specifies filters that work against the [unique identifier of the site]({{Types.Site}}) that the track's data source belongs to.
+    If provided, specifies filters that work against the unique identifier of the site that the track's data source belongs to.
     """
     siteId: FilterIDInput
     """
-    If provided, specifies filters that work against the [unique identifier of the model]({{Types.Track}}) that produced the track.
+    If provided, specifies filters that work against the unique identifier of the model that produced the track.
     """
     modelId: FilterIDInput
     """
-    If provided, specifies filters that work against the `type` of the track's [`dataSource`]({{Types.DataSource}}).
+    If provided, specifies filters that work against the `type` of the track's `dataSource`.
     """
     dataSourceType: FilterStringInput
     """
-    If provided, specifies filters that work against the `labels` of the track's [`dataSource`]({{Types.DataSource}}).
+    If provided, specifies filters that work against the `labels` of the track's `dataSource`.
     """
     dataSourceLabels: FilterStringListInput
     """
@@ -76,13 +76,13 @@ input FilterTrackInput {
     """
     not: FilterTrackInput
     """
-    If provided, specifies filters that work against the [unique id]({{Types.Detection}}) of the device that initiated the track.
+    If provided, specifies filters that work against the unique id of the device that initiated the track.
     """
     deviceId: FilterIDInput @deprecated(reason: "`deviceId` is deprecated. Use `dataSourceId` instead")
 }
 
 """
-`FilterTrackMessageInput` allows for filtering a [`tracks` subscription]({{Subscriptions.tracks}}) based on criteria described below.
+`FilterTrackMessageInput` allows for filtering a `tracks` subscription based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below
 """
 input FilterTrackMessageInput {
@@ -91,47 +91,47 @@ input FilterTrackMessageInput {
     """
     id: FilterIDInput
     """
-    If provided, specifies filters that work against the [unique id]({{Types.DataSource}}) of the data source that initiated the track.
+    If provided, specifies filters that work against the unique id of the data source that initiated the track.
     """
     dataSourceId: FilterIDInput
     """
-    If provided, specifies case-insensitive filters that work against the [tag]({{Types.Track}}) of a track
+    If provided, specifies case-insensitive filters that work against the tag of a track
     """
     tag: FilterStringInput
     """
-    If provided, specifies filters that work against the [positions]({{Types.Detection}}) of the track's detections
+    If provided, specifies filters that work against the positions of the track's detections
     """
     position: FilterPointInput
     """
-    If provided, specifies filters that work against the [identifier]({{Types.TrackProperties}}) of the track
+    If provided, specifies filters that work against the identifier of the track
     """
     identifier: FilterTrackPropertyInput
     """
-    If provided, specifies filters that work against the [attributes]({{Types.TrackProperties}}) of the track
+    If provided, specifies filters that work against the attributes of the track
     """
     attribute: FilterTrackPropertyInput
     """
-    If provided, specifies filters that work against the [unique identifier of the point of interest]({{Types.Site}}) of the track's data source.
+    If provided, specifies filters that work against the unique identifier of the point of interest of the track's data source.
     """
     pointOfInterestId: FilterIDInput
     """
-    If provided, specifies filters that work against the [unique identifier of the site]({{Types.Site}}) that the track's data source belongs to.
+    If provided, specifies filters that work against the unique identifier of the site that the track's data source belongs to.
     """
     siteId: FilterIDInput
     """
-    If provided, specifies filters that work against the [unique identifier of the model]({{Types.Track}}) that produced the track.
+    If provided, specifies filters that work against the unique identifier of the model that produced the track.
     """
     modelId: FilterIDInput
     """
-    If provided, specifies filters that work against the `type` of the track's [`dataSource`]({{Types.DataSource}}).
+    If provided, specifies filters that work against the `type` of the track's `dataSource`.
     """
     dataSourceType: FilterStringInput
     """
-    If provided, specifies filters that work against the `labels` of the track's [`dataSource`]({{Types.DataSource}}).
+    If provided, specifies filters that work against the `labels` of the track's `dataSource`.
     """
     dataSourceLabels: FilterStringListInput
     """
-    Specifies filters that work against the [state]({{Types.MessageState}}) of the track message.
+    Specifies filters that work against the state of the track message.
     """
     state: FilterMessageStateInput
     """
@@ -155,19 +155,19 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterTrackDetectionInput {
     """
-    If provided, specifies filters that work against the unique id of the zone in which a zone event was triggered by the [detection]({{Types.Detection}}).
+    If provided, specifies filters that work against the unique id of the zone in which a zone event was triggered by the detection.
     """
     zoneId: FilterIDInput
     """
-    If provided, specifies filters that work against the unique id of the geofence in which a geofence event was triggered by the [detection]({{Types.Detection}}).
+    If provided, specifies filters that work against the unique id of the geofence in which a geofence event was triggered by the detection.
     """
     geofenceId: FilterIDInput
     """
-    If provided, specifies filters that work against the timestamp associated with the [detection]({{Types.Detection}}).
+    If provided, specifies filters that work against the timestamp associated with the detection.
     """
     time: FilterDateTimeOffsetInput!
     """
-    If provided, specifies filters that work against the position of the [detection]({{Types.Detection}})
+    If provided, specifies filters that work against the position of the detection
     """
     position: FilterPointInput
     """
@@ -185,7 +185,7 @@ input FilterTrackDetectionInput {
 }
 
 """
-`FilterTrackPropertyInput` allows for filtering a [`tracks` query]({{Queries.tracks}}) based on criteria described below
+`FilterTrackPropertyInput` allows for filtering a `tracks` query based on criteria described below
 """
 input FilterTrackPropertyInput {
     """

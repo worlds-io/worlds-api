@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * This input type is used to create a new [`ActivityChronicle`]({{Types.ActivityChronicle}}).
+ * This input type is used to create a new `ActivityChronicle`.
  */
 public class CreateActivityChronicleInput implements java.io.Serializable {
 

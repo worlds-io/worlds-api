@@ -1,6 +1,6 @@
 """
-A facility is a structure within a [Site]({{Types.Site}}).
-A facility owns one or more [SiteFacilityLayers]({{Types.SiteFacilityLayer}}), each a georeferenced
+A facility is a structure within a Site.
+A facility owns one or more SiteFacilityLayers, each a georeferenced
 image that can be drawn over the site's map.
 """
 type SiteFacility {
@@ -17,7 +17,7 @@ type SiteFacility {
 }
 
 """
-A georeferenced image layer belonging to a [SiteFacility]({{Types.SiteFacility}}).
+A georeferenced image layer belonging to a SiteFacility.
 """
 type SiteFacilityLayer {
     """The unique identifier of the layer."""
@@ -37,7 +37,7 @@ type SiteFacilityLayer {
 }
 
 """
-Fields to create a new [SiteFacility]({{Types.SiteFacility}}).
+Fields to create a new SiteFacility.
 """
 input CreateSiteFacilityInput {
     """The site that the facility belongs to."""
@@ -49,7 +49,7 @@ input CreateSiteFacilityInput {
 }
 
 """
-Fields to update an existing [SiteFacility]({{Types.SiteFacility}}).
+Fields to update an existing SiteFacility.
 A facility cannot be moved to another site.
 """
 input UpdateSiteFacilityInput {
@@ -62,7 +62,7 @@ input UpdateSiteFacilityInput {
 }
 
 """
-Fields to create a new [SiteFacilityLayer]({{Types.SiteFacilityLayer}}).
+Fields to create a new SiteFacilityLayer.
 The layer image is uploaded separately, so a newly created layer has no image.
 """
 input CreateSiteFacilityLayerInput {
@@ -79,7 +79,7 @@ input CreateSiteFacilityLayerInput {
 }
 
 """
-Fields to update an existing [SiteFacilityLayer]({{Types.SiteFacilityLayer}}).
+Fields to update an existing SiteFacilityLayer.
 """
 input UpdateSiteFacilityLayerInput {
     """The unique identifier of the layer."""

@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * FilterEventsSummaryInput filters events summarized by an [eventsSummary]({{Types.EventSummary}}) based on criteria described below.
+ * FilterEventsSummaryInput filters events summarized by an eventsSummary based on criteria described below.
 Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
  */
 public class FilterEventsSummaryInput implements java.io.Serializable {
