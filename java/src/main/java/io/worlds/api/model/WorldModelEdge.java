@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * A typed, directed relationship between two [WorldModelNodes]({{Types.WorldModelNode}}).
+ * A typed, directed relationship between two WorldModelNodes.
  */
 public class WorldModelEdge implements java.io.Serializable {
 

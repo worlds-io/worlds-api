@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * A page of [WorldModelNodes]({{Types.WorldModelNode}}).
+ * A page of WorldModelNodes.
  */
 public class WorldModelNodeConnection implements java.io.Serializable {
 
