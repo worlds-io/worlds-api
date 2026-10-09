@@ -18,9 +18,8 @@ input FilterTrackInput {
     time: FilterDateTimeOffsetInput
     """
     If provided, specifies filters that work against the period a track spans, from its
-    `startTime` to its `endTime`. A track that is still being tracked
-    has no end time and is treated as running until the end of time. For an untracked detector's
-    track, the end is exclusive; see `Track`.
+    `startTime` to its `endTime`. An unfinished track is treated as running until the end of
+    time. For an untracked detector's track, the end is exclusive; see `Track`.
     """
     timeRange: FilterTimeRangeInput
     """

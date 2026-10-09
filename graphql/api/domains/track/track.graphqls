@@ -1,8 +1,9 @@
 """
 Tracks from a detector with tracking turned off ("untracked") hold a single detection and have a
 half-open period, so their `endTime` is exclusive.
-API-created tracks are considered open until explicitly given an end time.
-Tracks lasting over one day will be closed automatically.
+
+A track created through the API stays unfinished until it is given an `endTime`. Tracks unfinished
+one day after their `startTime` are finished automatically.
 """
 type Track {
     """The unique identifier for the Track."""
@@ -19,13 +20,11 @@ type Track {
     startTime: DateTimeOffset!
     """
     The time of the last detection of the tracked object, or, for an untracked detector's track, the
-    exclusive end of its single detection's span.
-    If the track is still being tracked, returns as the current time.
+    exclusive end of its single detection's span. Equal to the current time while the track is
+    unfinished.
     """
     endTime: DateTimeOffset
-    """
-    Whether the Track has finished. `true` once the track has an `endTime`.
-    """
+    """Whether the Track has finished."""
     finished: Boolean!
     """A collection of every Detection associated with the Track."""
     detections(
@@ -121,7 +120,7 @@ input CreateTrackInput {
     """The time of the first detection of the tracked object."""
     startTime: DateTimeOffset!
     """
-    The time of the last detection of the tracked object, or null if it is still being tracked.
+    The time of the last detection of the tracked object. Setting it finishes the track; see `Track`.
     """
     endTime: DateTimeOffset
     """
@@ -145,7 +144,8 @@ input UpdateTrackInput {
     """The time of the first detection of the tracked object."""
     startTime: DateTimeOffset
     """
-    The time of the last detection of the tracked object, or null if it is still being tracked.
+    The time of the last detection of the tracked object. Setting it finishes the track. A finished
+    track's `endTime` can be changed but not cleared.
     """
     endTime: DateTimeOffset
     """
