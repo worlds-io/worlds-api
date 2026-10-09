@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * A pattern match or analyst link that involves a node, as returned by [worldModelAssociations]({{Queries.worldModelAssociations}}).
+ * A pattern match or analyst link that involves a node, as returned by worldModelAssociations.
  */
 public class WorldModelAssociationSummary implements java.io.Serializable {
 

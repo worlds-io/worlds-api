@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * `FilterWorldModelNodeInput` narrows a [worldModelNodes query]({{Queries.worldModelNodes}}).
+ * `FilterWorldModelNodeInput` narrows a worldModelNodes query.
 All provided fields must match.
  */
 public class FilterWorldModelNodeInput implements java.io.Serializable {

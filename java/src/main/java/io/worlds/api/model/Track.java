@@ -5,6 +5,9 @@ import java.util.Objects;
 /**
  * Tracks from a detector with tracking turned off ("untracked") hold a single detection and have a
 half-open period, so their `endTime` is exclusive.
+
+A track created through the API stays unfinished until it is given an `endTime`. Tracks unfinished
+one day after their `startTime` are finished automatically.
  */
 public class Track implements java.io.Serializable {
 
@@ -130,27 +133,29 @@ public class Track implements java.io.Serializable {
 
     /**
      * The time of the last detection of the tracked object, or, for an untracked detector's track, the
-exclusive end of its single detection's span. Null if the track is still being tracked.
+exclusive end of its single detection's span. Equal to the current time while the track is
+unfinished.
      */
     public java.time.OffsetDateTime getEndTime() {
         return endTime;
     }
     /**
      * The time of the last detection of the tracked object, or, for an untracked detector's track, the
-exclusive end of its single detection's span. Null if the track is still being tracked.
+exclusive end of its single detection's span. Equal to the current time while the track is
+unfinished.
      */
     public void setEndTime(java.time.OffsetDateTime endTime) {
         this.endTime = endTime;
     }
 
     /**
-     * Whether the Track has finished. `true` once the track has an `endTime`.
+     * Whether the Track has finished.
      */
     public boolean getFinished() {
         return finished;
     }
     /**
-     * Whether the Track has finished. `true` once the track has an `endTime`.
+     * Whether the Track has finished.
      */
     public void setFinished(boolean finished) {
         this.finished = finished;
@@ -341,7 +346,8 @@ exclusive end of its single detection's span. Null if the track is still being t
 
         /**
          * The time of the last detection of the tracked object, or, for an untracked detector's track, the
-exclusive end of its single detection's span. Null if the track is still being tracked.
+exclusive end of its single detection's span. Equal to the current time while the track is
+unfinished.
          */
         public Builder setEndTime(java.time.OffsetDateTime endTime) {
             this.endTime = endTime;
@@ -349,7 +355,7 @@ exclusive end of its single detection's span. Null if the track is still being t
         }
 
         /**
-         * Whether the Track has finished. `true` once the track has an `endTime`.
+         * Whether the Track has finished.
          */
         public Builder setFinished(boolean finished) {
             this.finished = finished;
