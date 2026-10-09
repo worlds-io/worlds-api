@@ -1,6 +1,8 @@
 """
 Tracks from a detector with tracking turned off ("untracked") hold a single detection and have a
 half-open period, so their `endTime` is exclusive.
+API-created tracks are considered open until explicitly given an end time.
+Tracks lasting over one day will be closed automatically.
 """
 type Track {
     """The unique identifier for the Track."""
@@ -17,7 +19,8 @@ type Track {
     startTime: DateTimeOffset!
     """
     The time of the last detection of the tracked object, or, for an untracked detector's track, the
-    exclusive end of its single detection's span. Null if the track is still being tracked.
+    exclusive end of its single detection's span.
+    If the track is still being tracked, returns as the current time.
     """
     endTime: DateTimeOffset
     """
