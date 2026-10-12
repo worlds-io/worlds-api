@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * One property of a [WorldModelType]({{Types.WorldModelType}}).
+ * One property of a WorldModelType.
  */
 public class WorldModelTypeProperty implements java.io.Serializable {
 

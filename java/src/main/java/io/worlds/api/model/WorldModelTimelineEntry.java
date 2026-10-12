@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * One step attempt in a run's timeline, as returned by [worldModelRunTimeline]({{Queries.worldModelRunTimeline}}).
+ * One step attempt in a run's timeline, as returned by worldModelRunTimeline.
  */
 public class WorldModelTimelineEntry implements java.io.Serializable {
 

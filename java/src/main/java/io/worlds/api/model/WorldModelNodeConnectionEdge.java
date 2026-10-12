@@ -3,7 +3,7 @@ package io.worlds.api.model;
 import java.util.Objects;
 
 /**
- * One entry of a [WorldModelNodeConnection]({{Types.WorldModelNodeConnection}}).
+ * One entry of a WorldModelNodeConnection.
  */
 public class WorldModelNodeConnectionEdge implements java.io.Serializable {
 
@@ -35,13 +35,13 @@ public class WorldModelNodeConnectionEdge implements java.io.Serializable {
     }
 
     /**
-     * The cursor to use with the [worldModelNodes query]({{Queries.worldModelNodes}}) `after` argument.
+     * The cursor to use with the worldModelNodes query `after` argument.
      */
     public String getCursor() {
         return cursor;
     }
     /**
-     * The cursor to use with the [worldModelNodes query]({{Queries.worldModelNodes}}) `after` argument.
+     * The cursor to use with the worldModelNodes query `after` argument.
      */
     public void setCursor(String cursor) {
         this.cursor = cursor;
@@ -87,7 +87,7 @@ public class WorldModelNodeConnectionEdge implements java.io.Serializable {
         }
 
         /**
-         * The cursor to use with the [worldModelNodes query]({{Queries.worldModelNodes}}) `after` argument.
+         * The cursor to use with the worldModelNodes query `after` argument.
          */
         public Builder setCursor(String cursor) {
             this.cursor = cursor;

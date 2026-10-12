@@ -48,13 +48,13 @@ public class WorldModelNode implements java.io.Serializable {
     }
 
     /**
-     * The node's World Model type, e.g. `ProcessExecution`. Described by [worldModelTypes]({{Queries.worldModelTypes}}).
+     * The node's World Model type, e.g. `ProcessExecution`. Described by worldModelTypes.
      */
     public String getType() {
         return type;
     }
     /**
-     * The node's World Model type, e.g. `ProcessExecution`. Described by [worldModelTypes]({{Queries.worldModelTypes}}).
+     * The node's World Model type, e.g. `ProcessExecution`. Described by worldModelTypes.
      */
     public void setType(String type) {
         this.type = type;
@@ -166,7 +166,7 @@ retained out are omitted.
         }
 
         /**
-         * The node's World Model type, e.g. `ProcessExecution`. Described by [worldModelTypes]({{Queries.worldModelTypes}}).
+         * The node's World Model type, e.g. `ProcessExecution`. Described by worldModelTypes.
          */
         public Builder setType(String type) {
             this.type = type;

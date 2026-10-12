@@ -1,7 +1,7 @@
 package io.worlds.api.model;
 
 /**
- * Which edges of a [WorldModelNode]({{Types.WorldModelNode}}) to return, relative to the node.
+ * Which edges of a WorldModelNode to return, relative to the node.
  */
 public enum WorldModelEdgeDirection {
 
