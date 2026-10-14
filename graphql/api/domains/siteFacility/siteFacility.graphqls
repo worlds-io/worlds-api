@@ -58,7 +58,9 @@ input UpdateSiteFacilityInput {
     """The name of the facility. Must be unique within its site, case-insensitively."""
     name: String
     """Additional metadata associated with the facility."""
-    metadata: JSON
+    metadata: JSON @deprecated(reason: "Use `metadataUpdate: { replace }` instead.")
+    """How this update changes `metadata`. `null` resets it to `{}`. Cannot be combined with `metadata`."""
+    metadataUpdate: JSONUpdateInput
 }
 
 """
@@ -91,5 +93,7 @@ input UpdateSiteFacilityLayerInput {
     """The outline of the area the layer represents."""
     geographicBounds: GeoJSONPolygonInput
     """Additional metadata associated with the layer."""
-    metadata: JSON
+    metadata: JSON @deprecated(reason: "Use `metadataUpdate: { replace }` instead.")
+    """How this update changes `metadata`. `null` resets it to `{}`. Cannot be combined with `metadata`."""
+    metadataUpdate: JSONUpdateInput
 }

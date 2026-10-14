@@ -155,7 +155,9 @@ input UpdateTrackInput {
     """The identifying and descriptive attributes of a track."""
     properties: TrackPropertiesInput
     """Arbitrary information about the Track."""
-    metadata: JSON
+    metadata: JSON @deprecated(reason: "Use `metadataUpdate: { replace }` instead.")
+    """How this update changes `metadata`. `null` clears it. Cannot be combined with `metadata`."""
+    metadataUpdate: JSONUpdateInput
 }
 
 type TrackMessage {

@@ -84,7 +84,9 @@ input UpdateChronicleProducerInput {
     """True if the chronicle producer is active, otherwise false."""
     active: Boolean
     """Arbitrary information about the chronicle producer."""
-    metadata: JSON
+    metadata: JSON @deprecated(reason: "Use `metadataUpdate: { replace }` instead.")
+    """How this update changes `metadata`. `null` clears it. Cannot be combined with `metadata`."""
+    metadataUpdate: JSONUpdateInput
     """A list of validation reasons to be used by the chronicle producer."""
     validationReasons: [String!]
 }

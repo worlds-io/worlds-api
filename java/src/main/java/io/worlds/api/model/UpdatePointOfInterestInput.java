@@ -14,17 +14,20 @@ public class UpdatePointOfInterestInput implements java.io.Serializable {
     private org.springframework.graphql.data.ArgumentValue<String> siteId = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<String> name = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position = org.springframework.graphql.data.ArgumentValue.omitted();
+    @Deprecated
     private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> metadataUpdate = org.springframework.graphql.data.ArgumentValue.omitted();
 
     public UpdatePointOfInterestInput() {
     }
 
-    public UpdatePointOfInterestInput(String id, org.springframework.graphql.data.ArgumentValue<String> siteId, org.springframework.graphql.data.ArgumentValue<String> name, org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata) {
+    public UpdatePointOfInterestInput(String id, org.springframework.graphql.data.ArgumentValue<String> siteId, org.springframework.graphql.data.ArgumentValue<String> name, org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> metadataUpdate) {
         this.id = id;
         this.siteId = siteId;
         this.name = name;
         this.position = position;
         this.metadata = metadata;
+        this.metadataUpdate = metadataUpdate;
     }
 
     public String getId() {
@@ -55,11 +58,20 @@ public class UpdatePointOfInterestInput implements java.io.Serializable {
         this.position = position;
     }
 
+    @Deprecated
     public org.springframework.graphql.data.ArgumentValue<java.lang.Object> getMetadata() {
         return metadata;
     }
+    @Deprecated
     public void setMetadata(org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata) {
         this.metadata = metadata;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> getMetadataUpdate() {
+        return metadataUpdate;
+    }
+    public void setMetadataUpdate(org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> metadataUpdate) {
+        this.metadataUpdate = metadataUpdate;
     }
 
     @Override
@@ -75,12 +87,13 @@ public class UpdatePointOfInterestInput implements java.io.Serializable {
             && Objects.equals(siteId, that.siteId)
             && Objects.equals(name, that.name)
             && Objects.equals(position, that.position)
-            && Objects.equals(metadata, that.metadata);
+            && Objects.equals(metadata, that.metadata)
+            && Objects.equals(metadataUpdate, that.metadataUpdate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, siteId, name, position, metadata);
+        return Objects.hash(id, siteId, name, position, metadata, metadataUpdate);
     }
 
 
@@ -95,6 +108,7 @@ public class UpdatePointOfInterestInput implements java.io.Serializable {
         private org.springframework.graphql.data.ArgumentValue<String> name = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> metadataUpdate = org.springframework.graphql.data.ArgumentValue.omitted();
 
         public Builder() {
         }
@@ -119,14 +133,20 @@ public class UpdatePointOfInterestInput implements java.io.Serializable {
             return this;
         }
 
+        @Deprecated
         public Builder setMetadata(org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata) {
             this.metadata = metadata;
             return this;
         }
 
+        public Builder setMetadataUpdate(org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> metadataUpdate) {
+            this.metadataUpdate = metadataUpdate;
+            return this;
+        }
+
 
         public UpdatePointOfInterestInput build() {
-            return new UpdatePointOfInterestInput(id, siteId, name, position, metadata);
+            return new UpdatePointOfInterestInput(id, siteId, name, position, metadata, metadataUpdate);
         }
 
     }

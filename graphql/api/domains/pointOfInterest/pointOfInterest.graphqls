@@ -49,5 +49,7 @@ input UpdatePointOfInterestInput {
     """The geographic position of the PointOfInterest"""
     position: GeoJSONPointInput
     """The metadata associated with the PointOfInterest."""
-    metadata: JSON
+    metadata: JSON @deprecated(reason: "Use `metadataUpdate: { replace }` instead.")
+    """How this update changes `metadata`. `null` clears it. Cannot be combined with `metadata`."""
+    metadataUpdate: JSONUpdateInput
 }

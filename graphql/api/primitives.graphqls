@@ -18,3 +18,20 @@ enum DeviceMessageState {
     HEARTBEAT
 }
 
+"""
+How an update changes a `JSON` field. Give exactly one of `merge` or `replace`. To clear the field,
+pass `null` for the whole input instead.
+"""
+input JSONUpdateInput @oneOf {
+    """
+    Merged into the stored value as a [JSON Merge Patch](https://www.rfc-editor.org/rfc/rfc7396):
+    objects merge key by key, recursively; a key set to `null` is removed; any other value, arrays
+    included, replaces the stored one. A stored value that is not an object is treated as `{}`. A
+    `merge` value that is not an object replaces the stored value. Concurrent merges that touch
+    different keys all persist.
+    """
+    merge: JSON
+    """Replaces the stored value."""
+    replace: JSON
+}
+

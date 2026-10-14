@@ -13,15 +13,18 @@ public class UpdateSiteFacilityInput implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private String id;
     private org.springframework.graphql.data.ArgumentValue<String> name = org.springframework.graphql.data.ArgumentValue.omitted();
+    @Deprecated
     private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> metadataUpdate = org.springframework.graphql.data.ArgumentValue.omitted();
 
     public UpdateSiteFacilityInput() {
     }
 
-    public UpdateSiteFacilityInput(String id, org.springframework.graphql.data.ArgumentValue<String> name, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata) {
+    public UpdateSiteFacilityInput(String id, org.springframework.graphql.data.ArgumentValue<String> name, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> metadataUpdate) {
         this.id = id;
         this.name = name;
         this.metadata = metadata;
+        this.metadataUpdate = metadataUpdate;
     }
 
     public String getId() {
@@ -38,11 +41,20 @@ public class UpdateSiteFacilityInput implements java.io.Serializable {
         this.name = name;
     }
 
+    @Deprecated
     public org.springframework.graphql.data.ArgumentValue<java.lang.Object> getMetadata() {
         return metadata;
     }
+    @Deprecated
     public void setMetadata(org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata) {
         this.metadata = metadata;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> getMetadataUpdate() {
+        return metadataUpdate;
+    }
+    public void setMetadataUpdate(org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> metadataUpdate) {
+        this.metadataUpdate = metadataUpdate;
     }
 
     @Override
@@ -56,12 +68,13 @@ public class UpdateSiteFacilityInput implements java.io.Serializable {
         final UpdateSiteFacilityInput that = (UpdateSiteFacilityInput) obj;
         return Objects.equals(id, that.id)
             && Objects.equals(name, that.name)
-            && Objects.equals(metadata, that.metadata);
+            && Objects.equals(metadata, that.metadata)
+            && Objects.equals(metadataUpdate, that.metadataUpdate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, metadata);
+        return Objects.hash(id, name, metadata, metadataUpdate);
     }
 
 
@@ -74,6 +87,7 @@ public class UpdateSiteFacilityInput implements java.io.Serializable {
         private String id;
         private org.springframework.graphql.data.ArgumentValue<String> name = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> metadataUpdate = org.springframework.graphql.data.ArgumentValue.omitted();
 
         public Builder() {
         }
@@ -88,14 +102,20 @@ public class UpdateSiteFacilityInput implements java.io.Serializable {
             return this;
         }
 
+        @Deprecated
         public Builder setMetadata(org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata) {
             this.metadata = metadata;
             return this;
         }
 
+        public Builder setMetadataUpdate(org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> metadataUpdate) {
+            this.metadataUpdate = metadataUpdate;
+            return this;
+        }
+
 
         public UpdateSiteFacilityInput build() {
-            return new UpdateSiteFacilityInput(id, name, metadata);
+            return new UpdateSiteFacilityInput(id, name, metadata, metadataUpdate);
         }
 
     }
