@@ -79,7 +79,9 @@ input UpdateEventChronicleInput {
     """The timezone for the event, if provided."""
     timezone: String
     """Additional metadata associated with the event. This may represent any JSON object structure."""
-    metadata: JSON
+    metadata: JSON @deprecated(reason: "Use `metadataUpdate: { replace }` instead.")
+    """How this update changes `metadata`. `null` clears it. Cannot be combined with `metadata`."""
+    metadataUpdate: JSONUpdateInput
     """User-defined priority of the event."""
     priority: String
     """User-defined status of the event."""

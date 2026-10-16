@@ -16,12 +16,14 @@ public class UpdateSensorInput implements java.io.Serializable {
     private org.springframework.graphql.data.ArgumentValue<SensorType> type = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<String> address = org.springframework.graphql.data.ArgumentValue.omitted();
+    @Deprecated
     private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> metadataUpdate = org.springframework.graphql.data.ArgumentValue.omitted();
 
     public UpdateSensorInput() {
     }
 
-    public UpdateSensorInput(String id, org.springframework.graphql.data.ArgumentValue<String> name, org.springframework.graphql.data.ArgumentValue<String> description, org.springframework.graphql.data.ArgumentValue<SensorType> type, org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position, org.springframework.graphql.data.ArgumentValue<String> address, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata) {
+    public UpdateSensorInput(String id, org.springframework.graphql.data.ArgumentValue<String> name, org.springframework.graphql.data.ArgumentValue<String> description, org.springframework.graphql.data.ArgumentValue<SensorType> type, org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position, org.springframework.graphql.data.ArgumentValue<String> address, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> metadataUpdate) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -29,6 +31,7 @@ public class UpdateSensorInput implements java.io.Serializable {
         this.position = position;
         this.address = address;
         this.metadata = metadata;
+        this.metadataUpdate = metadataUpdate;
     }
 
     public String getId() {
@@ -73,11 +76,20 @@ public class UpdateSensorInput implements java.io.Serializable {
         this.address = address;
     }
 
+    @Deprecated
     public org.springframework.graphql.data.ArgumentValue<java.lang.Object> getMetadata() {
         return metadata;
     }
+    @Deprecated
     public void setMetadata(org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata) {
         this.metadata = metadata;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> getMetadataUpdate() {
+        return metadataUpdate;
+    }
+    public void setMetadataUpdate(org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> metadataUpdate) {
+        this.metadataUpdate = metadataUpdate;
     }
 
     @Override
@@ -95,12 +107,13 @@ public class UpdateSensorInput implements java.io.Serializable {
             && Objects.equals(type, that.type)
             && Objects.equals(position, that.position)
             && Objects.equals(address, that.address)
-            && Objects.equals(metadata, that.metadata);
+            && Objects.equals(metadata, that.metadata)
+            && Objects.equals(metadataUpdate, that.metadataUpdate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, type, position, address, metadata);
+        return Objects.hash(id, name, description, type, position, address, metadata, metadataUpdate);
     }
 
 
@@ -117,6 +130,7 @@ public class UpdateSensorInput implements java.io.Serializable {
         private org.springframework.graphql.data.ArgumentValue<GeoJSONPointInput> position = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<String> address = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> metadataUpdate = org.springframework.graphql.data.ArgumentValue.omitted();
 
         public Builder() {
         }
@@ -151,14 +165,20 @@ public class UpdateSensorInput implements java.io.Serializable {
             return this;
         }
 
+        @Deprecated
         public Builder setMetadata(org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata) {
             this.metadata = metadata;
             return this;
         }
 
+        public Builder setMetadataUpdate(org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> metadataUpdate) {
+            this.metadataUpdate = metadataUpdate;
+            return this;
+        }
+
 
         public UpdateSensorInput build() {
-            return new UpdateSensorInput(id, name, description, type, position, address, metadata);
+            return new UpdateSensorInput(id, name, description, type, position, address, metadata, metadataUpdate);
         }
 
     }

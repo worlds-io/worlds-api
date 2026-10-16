@@ -78,7 +78,9 @@ input UpdateSensorInput {
     """
     Additional metadata associated with the sensor. This may represent any JSON object structure.
     """
-    metadata: JSON
+    metadata: JSON @deprecated(reason: "Use `metadataUpdate: { replace }` instead.")
+    """How this update changes `metadata`. `null` clears it. Cannot be combined with `metadata`."""
+    metadataUpdate: JSONUpdateInput
 }
 
 """

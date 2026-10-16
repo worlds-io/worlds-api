@@ -15,19 +15,22 @@ public class UpdateChronicleProducerInput implements java.io.Serializable {
     private org.springframework.graphql.data.ArgumentValue<String> description = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<String> timezone = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<Boolean> active = org.springframework.graphql.data.ArgumentValue.omitted();
+    @Deprecated
     private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> metadataUpdate = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<String> validationReasons;
 
     public UpdateChronicleProducerInput() {
     }
 
-    public UpdateChronicleProducerInput(String id, org.springframework.graphql.data.ArgumentValue<String> name, org.springframework.graphql.data.ArgumentValue<String> description, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<Boolean> active, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, java.util.List<String> validationReasons) {
+    public UpdateChronicleProducerInput(String id, org.springframework.graphql.data.ArgumentValue<String> name, org.springframework.graphql.data.ArgumentValue<String> description, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<Boolean> active, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> metadataUpdate, java.util.List<String> validationReasons) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.timezone = timezone;
         this.active = active;
         this.metadata = metadata;
+        this.metadataUpdate = metadataUpdate;
         this.validationReasons = validationReasons;
     }
 
@@ -66,11 +69,20 @@ public class UpdateChronicleProducerInput implements java.io.Serializable {
         this.active = active;
     }
 
+    @Deprecated
     public org.springframework.graphql.data.ArgumentValue<java.lang.Object> getMetadata() {
         return metadata;
     }
+    @Deprecated
     public void setMetadata(org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata) {
         this.metadata = metadata;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> getMetadataUpdate() {
+        return metadataUpdate;
+    }
+    public void setMetadataUpdate(org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> metadataUpdate) {
+        this.metadataUpdate = metadataUpdate;
     }
 
     public java.util.List<String> getValidationReasons() {
@@ -95,12 +107,13 @@ public class UpdateChronicleProducerInput implements java.io.Serializable {
             && Objects.equals(timezone, that.timezone)
             && Objects.equals(active, that.active)
             && Objects.equals(metadata, that.metadata)
+            && Objects.equals(metadataUpdate, that.metadataUpdate)
             && Objects.equals(validationReasons, that.validationReasons);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, timezone, active, metadata, validationReasons);
+        return Objects.hash(id, name, description, timezone, active, metadata, metadataUpdate, validationReasons);
     }
 
 
@@ -116,6 +129,7 @@ public class UpdateChronicleProducerInput implements java.io.Serializable {
         private org.springframework.graphql.data.ArgumentValue<String> timezone = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<Boolean> active = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> metadataUpdate = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<String> validationReasons;
 
         public Builder() {
@@ -146,8 +160,14 @@ public class UpdateChronicleProducerInput implements java.io.Serializable {
             return this;
         }
 
+        @Deprecated
         public Builder setMetadata(org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata) {
             this.metadata = metadata;
+            return this;
+        }
+
+        public Builder setMetadataUpdate(org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> metadataUpdate) {
+            this.metadataUpdate = metadataUpdate;
             return this;
         }
 
@@ -158,7 +178,7 @@ public class UpdateChronicleProducerInput implements java.io.Serializable {
 
 
         public UpdateChronicleProducerInput build() {
-            return new UpdateChronicleProducerInput(id, name, description, timezone, active, metadata, validationReasons);
+            return new UpdateChronicleProducerInput(id, name, description, timezone, active, metadata, metadataUpdate, validationReasons);
         }
 
     }

@@ -16,12 +16,14 @@ public class UpdateTrackInput implements java.io.Serializable {
     private org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<TrackDetectionInput> detections;
     private org.springframework.graphql.data.ArgumentValue<TrackPropertiesInput> properties = org.springframework.graphql.data.ArgumentValue.omitted();
+    @Deprecated
     private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> metadataUpdate = org.springframework.graphql.data.ArgumentValue.omitted();
 
     public UpdateTrackInput() {
     }
 
-    public UpdateTrackInput(String id, org.springframework.graphql.data.ArgumentValue<String> tag, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> startTime, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime, java.util.List<TrackDetectionInput> detections, org.springframework.graphql.data.ArgumentValue<TrackPropertiesInput> properties, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata) {
+    public UpdateTrackInput(String id, org.springframework.graphql.data.ArgumentValue<String> tag, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> startTime, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime, java.util.List<TrackDetectionInput> detections, org.springframework.graphql.data.ArgumentValue<TrackPropertiesInput> properties, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> metadataUpdate) {
         this.id = id;
         this.tag = tag;
         this.startTime = startTime;
@@ -29,6 +31,7 @@ public class UpdateTrackInput implements java.io.Serializable {
         this.detections = detections;
         this.properties = properties;
         this.metadata = metadata;
+        this.metadataUpdate = metadataUpdate;
     }
 
     public String getId() {
@@ -73,11 +76,20 @@ public class UpdateTrackInput implements java.io.Serializable {
         this.properties = properties;
     }
 
+    @Deprecated
     public org.springframework.graphql.data.ArgumentValue<java.lang.Object> getMetadata() {
         return metadata;
     }
+    @Deprecated
     public void setMetadata(org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata) {
         this.metadata = metadata;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> getMetadataUpdate() {
+        return metadataUpdate;
+    }
+    public void setMetadataUpdate(org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> metadataUpdate) {
+        this.metadataUpdate = metadataUpdate;
     }
 
     @Override
@@ -95,12 +107,13 @@ public class UpdateTrackInput implements java.io.Serializable {
             && Objects.equals(endTime, that.endTime)
             && Objects.equals(detections, that.detections)
             && Objects.equals(properties, that.properties)
-            && Objects.equals(metadata, that.metadata);
+            && Objects.equals(metadata, that.metadata)
+            && Objects.equals(metadataUpdate, that.metadataUpdate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, tag, startTime, endTime, detections, properties, metadata);
+        return Objects.hash(id, tag, startTime, endTime, detections, properties, metadata, metadataUpdate);
     }
 
 
@@ -117,6 +130,7 @@ public class UpdateTrackInput implements java.io.Serializable {
         private java.util.List<TrackDetectionInput> detections;
         private org.springframework.graphql.data.ArgumentValue<TrackPropertiesInput> properties = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> metadataUpdate = org.springframework.graphql.data.ArgumentValue.omitted();
 
         public Builder() {
         }
@@ -151,14 +165,20 @@ public class UpdateTrackInput implements java.io.Serializable {
             return this;
         }
 
+        @Deprecated
         public Builder setMetadata(org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata) {
             this.metadata = metadata;
             return this;
         }
 
+        public Builder setMetadataUpdate(org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> metadataUpdate) {
+            this.metadataUpdate = metadataUpdate;
+            return this;
+        }
+
 
         public UpdateTrackInput build() {
-            return new UpdateTrackInput(id, tag, startTime, endTime, detections, properties, metadata);
+            return new UpdateTrackInput(id, tag, startTime, endTime, detections, properties, metadata, metadataUpdate);
         }
 
     }
