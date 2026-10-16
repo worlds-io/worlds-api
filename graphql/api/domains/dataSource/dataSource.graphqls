@@ -57,5 +57,7 @@ input UpdateDataSourceInput {
     """The type of the data source"""
     type: DataSourceType
     """Human-readable labels describing this data source"""
-    labels: [String!]
+    labels: [String!] @deprecated(reason: "Use `labelsUpdate: { replace }` instead.")
+    """How this update changes `labels`. `null` clears it. Cannot be combined with `labels`."""
+    labelsUpdate: StringListUpdateInput
 }

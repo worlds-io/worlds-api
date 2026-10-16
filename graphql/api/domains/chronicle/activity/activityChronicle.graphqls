@@ -123,9 +123,13 @@ input UpdateActivityChronicleInput {
     """A GeoJSON point that represents the location of the activity in the world."""
     position: GeoJSONPointInput
     """Human-readable labels describing the activity."""
-    labels: [String!]
+    labels: [String!] @deprecated(reason: "Use `labelsUpdate: { replace }` instead.")
+    """How this update changes `labels`. `null` clears it. Cannot be combined with `labels`."""
+    labelsUpdate: StringListUpdateInput
     """Human-readable locations describing the activity."""
-    locations: [String!]
+    locations: [String!] @deprecated(reason: "Use `locationsUpdate: { replace }` instead.")
+    """How this update changes `locations`. `null` clears it. Cannot be combined with `locations`."""
+    locationsUpdate: StringListUpdateInput
     """Optional information to validate the accuracy of the activity."""
     validation: ChronicleValidationInput
     """IDs for images to associate with the activity."""

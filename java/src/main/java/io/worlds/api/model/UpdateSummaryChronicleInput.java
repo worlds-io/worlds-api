@@ -21,8 +21,12 @@ public class UpdateSummaryChronicleInput implements java.io.Serializable {
     private org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> metadataUpdate = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<String> priority = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<String> status = org.springframework.graphql.data.ArgumentValue.omitted();
+    @Deprecated
     private java.util.List<String> labels;
+    private org.springframework.graphql.data.ArgumentValue<StringListUpdateInput> labelsUpdate = org.springframework.graphql.data.ArgumentValue.omitted();
+    @Deprecated
     private java.util.List<String> locations;
+    private org.springframework.graphql.data.ArgumentValue<StringListUpdateInput> locationsUpdate = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<ChronicleValidationInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
     @Deprecated
     private java.util.List<String> activityChronicleIds;
@@ -34,7 +38,7 @@ public class UpdateSummaryChronicleInput implements java.io.Serializable {
     public UpdateSummaryChronicleInput() {
     }
 
-    public UpdateSummaryChronicleInput(String id, org.springframework.graphql.data.ArgumentValue<String> name, org.springframework.graphql.data.ArgumentValue<String> description, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> startTime, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> metadataUpdate, org.springframework.graphql.data.ArgumentValue<String> priority, org.springframework.graphql.data.ArgumentValue<String> status, java.util.List<String> labels, java.util.List<String> locations, org.springframework.graphql.data.ArgumentValue<ChronicleValidationInput> validation, java.util.List<String> activityChronicleIds, org.springframework.graphql.data.ArgumentValue<IDListUpdateInput> activityChronicleIdsUpdate, java.util.List<String> eventChronicleIds, org.springframework.graphql.data.ArgumentValue<IDListUpdateInput> eventChronicleIdsUpdate) {
+    public UpdateSummaryChronicleInput(String id, org.springframework.graphql.data.ArgumentValue<String> name, org.springframework.graphql.data.ArgumentValue<String> description, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> startTime, org.springframework.graphql.data.ArgumentValue<java.time.OffsetDateTime> endTime, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, org.springframework.graphql.data.ArgumentValue<JSONUpdateInput> metadataUpdate, org.springframework.graphql.data.ArgumentValue<String> priority, org.springframework.graphql.data.ArgumentValue<String> status, java.util.List<String> labels, org.springframework.graphql.data.ArgumentValue<StringListUpdateInput> labelsUpdate, java.util.List<String> locations, org.springframework.graphql.data.ArgumentValue<StringListUpdateInput> locationsUpdate, org.springframework.graphql.data.ArgumentValue<ChronicleValidationInput> validation, java.util.List<String> activityChronicleIds, org.springframework.graphql.data.ArgumentValue<IDListUpdateInput> activityChronicleIdsUpdate, java.util.List<String> eventChronicleIds, org.springframework.graphql.data.ArgumentValue<IDListUpdateInput> eventChronicleIdsUpdate) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -46,7 +50,9 @@ public class UpdateSummaryChronicleInput implements java.io.Serializable {
         this.priority = priority;
         this.status = status;
         this.labels = labels;
+        this.labelsUpdate = labelsUpdate;
         this.locations = locations;
+        this.locationsUpdate = locationsUpdate;
         this.validation = validation;
         this.activityChronicleIds = activityChronicleIds;
         this.activityChronicleIdsUpdate = activityChronicleIdsUpdate;
@@ -126,18 +132,36 @@ public class UpdateSummaryChronicleInput implements java.io.Serializable {
         this.status = status;
     }
 
+    @Deprecated
     public java.util.List<String> getLabels() {
         return labels;
     }
+    @Deprecated
     public void setLabels(java.util.List<String> labels) {
         this.labels = labels;
     }
 
+    public org.springframework.graphql.data.ArgumentValue<StringListUpdateInput> getLabelsUpdate() {
+        return labelsUpdate;
+    }
+    public void setLabelsUpdate(org.springframework.graphql.data.ArgumentValue<StringListUpdateInput> labelsUpdate) {
+        this.labelsUpdate = labelsUpdate;
+    }
+
+    @Deprecated
     public java.util.List<String> getLocations() {
         return locations;
     }
+    @Deprecated
     public void setLocations(java.util.List<String> locations) {
         this.locations = locations;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<StringListUpdateInput> getLocationsUpdate() {
+        return locationsUpdate;
+    }
+    public void setLocationsUpdate(org.springframework.graphql.data.ArgumentValue<StringListUpdateInput> locationsUpdate) {
+        this.locationsUpdate = locationsUpdate;
     }
 
     public org.springframework.graphql.data.ArgumentValue<ChronicleValidationInput> getValidation() {
@@ -199,7 +223,9 @@ public class UpdateSummaryChronicleInput implements java.io.Serializable {
             && Objects.equals(priority, that.priority)
             && Objects.equals(status, that.status)
             && Objects.equals(labels, that.labels)
+            && Objects.equals(labelsUpdate, that.labelsUpdate)
             && Objects.equals(locations, that.locations)
+            && Objects.equals(locationsUpdate, that.locationsUpdate)
             && Objects.equals(validation, that.validation)
             && Objects.equals(activityChronicleIds, that.activityChronicleIds)
             && Objects.equals(activityChronicleIdsUpdate, that.activityChronicleIdsUpdate)
@@ -209,7 +235,7 @@ public class UpdateSummaryChronicleInput implements java.io.Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, startTime, endTime, timezone, metadata, metadataUpdate, priority, status, labels, locations, validation, activityChronicleIds, activityChronicleIdsUpdate, eventChronicleIds, eventChronicleIdsUpdate);
+        return Objects.hash(id, name, description, startTime, endTime, timezone, metadata, metadataUpdate, priority, status, labels, labelsUpdate, locations, locationsUpdate, validation, activityChronicleIds, activityChronicleIdsUpdate, eventChronicleIds, eventChronicleIdsUpdate);
     }
 
 
@@ -230,7 +256,9 @@ public class UpdateSummaryChronicleInput implements java.io.Serializable {
         private org.springframework.graphql.data.ArgumentValue<String> priority = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<String> status = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<String> labels;
+        private org.springframework.graphql.data.ArgumentValue<StringListUpdateInput> labelsUpdate = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<String> locations;
+        private org.springframework.graphql.data.ArgumentValue<StringListUpdateInput> locationsUpdate = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<ChronicleValidationInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<String> activityChronicleIds;
         private org.springframework.graphql.data.ArgumentValue<IDListUpdateInput> activityChronicleIdsUpdate = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -291,13 +319,25 @@ public class UpdateSummaryChronicleInput implements java.io.Serializable {
             return this;
         }
 
+        @Deprecated
         public Builder setLabels(java.util.List<String> labels) {
             this.labels = labels;
             return this;
         }
 
+        public Builder setLabelsUpdate(org.springframework.graphql.data.ArgumentValue<StringListUpdateInput> labelsUpdate) {
+            this.labelsUpdate = labelsUpdate;
+            return this;
+        }
+
+        @Deprecated
         public Builder setLocations(java.util.List<String> locations) {
             this.locations = locations;
+            return this;
+        }
+
+        public Builder setLocationsUpdate(org.springframework.graphql.data.ArgumentValue<StringListUpdateInput> locationsUpdate) {
+            this.locationsUpdate = locationsUpdate;
             return this;
         }
 
@@ -330,7 +370,7 @@ public class UpdateSummaryChronicleInput implements java.io.Serializable {
 
 
         public UpdateSummaryChronicleInput build() {
-            return new UpdateSummaryChronicleInput(id, name, description, startTime, endTime, timezone, metadata, metadataUpdate, priority, status, labels, locations, validation, activityChronicleIds, activityChronicleIdsUpdate, eventChronicleIds, eventChronicleIdsUpdate);
+            return new UpdateSummaryChronicleInput(id, name, description, startTime, endTime, timezone, metadata, metadataUpdate, priority, status, labels, labelsUpdate, locations, locationsUpdate, validation, activityChronicleIds, activityChronicleIdsUpdate, eventChronicleIds, eventChronicleIdsUpdate);
         }
 
     }
