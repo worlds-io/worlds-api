@@ -35,3 +35,19 @@ input JSONUpdateInput @oneOf {
     replace: JSON
 }
 
+"""
+How an update changes a list of IDs. Give exactly one of `add`, `remove` or `replace`. To remove
+every ID you can read, pass `null` for the whole input instead. IDs you cannot read are never
+removed. Every ID given must exist and be readable by you.
+"""
+input IDListUpdateInput @oneOf {
+    """
+    Added to the list. Adding an ID already in the list does nothing. Concurrent adds all persist.
+    """
+    add: [ID!]
+    """Removed from the list. Removing an ID not in the list does nothing."""
+    remove: [ID!]
+    """Replaces the IDs you can read. IDs you cannot read are kept."""
+    replace: [ID!]
+}
+

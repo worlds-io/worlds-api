@@ -103,7 +103,17 @@ input UpdateSummaryChronicleInput {
     """Optional information to validate the accuracy of the summary."""
     validation: ChronicleValidationInput
     """IDs of activity chronicles associated with the summary."""
-    activityChronicleIds: [ID!]
+    activityChronicleIds: [ID!] @deprecated(reason: "Use `activityChronicleIdsUpdate: { replace }` instead.")
+    """
+    How this update changes the summary's activity chronicles. `null` removes every one you can read.
+    Cannot be combined with `activityChronicleIds`.
+    """
+    activityChronicleIdsUpdate: IDListUpdateInput
     """IDs of event chronicles associated with the summary."""
-    eventChronicleIds: [ID!]
+    eventChronicleIds: [ID!] @deprecated(reason: "Use `eventChronicleIdsUpdate: { replace }` instead.")
+    """
+    How this update changes the summary's event chronicles. `null` removes every one you can read.
+    Cannot be combined with `eventChronicleIds`.
+    """
+    eventChronicleIdsUpdate: IDListUpdateInput
 }
