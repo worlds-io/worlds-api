@@ -54,7 +54,9 @@ input UpdateGeofenceInput {
     """The display name of the geofence."""
     name: String
     """Human-readable labels describing this geofence."""
-    labels: [String!]
+    labels: [String!] @deprecated(reason: "Use `labelsUpdate: { replace }` instead.")
+    """How this update changes `labels`. `null` clears it. Cannot be combined with `labels`."""
+    labelsUpdate: StringListUpdateInput
     """The identifier of the site that the geofence belongs to."""
     siteId: ID
     """The identifier of the point of interest that the geofence belongs to.  If provided, the point of interest must belong to the geofence's site."""

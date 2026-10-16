@@ -13,16 +13,19 @@ public class UpdateDataSourceInput implements java.io.Serializable {
     private String id;
     private org.springframework.graphql.data.ArgumentValue<String> name = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<DataSourceType> type = org.springframework.graphql.data.ArgumentValue.omitted();
+    @Deprecated
     private java.util.List<String> labels;
+    private org.springframework.graphql.data.ArgumentValue<StringListUpdateInput> labelsUpdate = org.springframework.graphql.data.ArgumentValue.omitted();
 
     public UpdateDataSourceInput() {
     }
 
-    public UpdateDataSourceInput(String id, org.springframework.graphql.data.ArgumentValue<String> name, org.springframework.graphql.data.ArgumentValue<DataSourceType> type, java.util.List<String> labels) {
+    public UpdateDataSourceInput(String id, org.springframework.graphql.data.ArgumentValue<String> name, org.springframework.graphql.data.ArgumentValue<DataSourceType> type, java.util.List<String> labels, org.springframework.graphql.data.ArgumentValue<StringListUpdateInput> labelsUpdate) {
         this.id = id;
         this.name = name;
         this.type = type;
         this.labels = labels;
+        this.labelsUpdate = labelsUpdate;
     }
 
     public String getId() {
@@ -46,11 +49,20 @@ public class UpdateDataSourceInput implements java.io.Serializable {
         this.type = type;
     }
 
+    @Deprecated
     public java.util.List<String> getLabels() {
         return labels;
     }
+    @Deprecated
     public void setLabels(java.util.List<String> labels) {
         this.labels = labels;
+    }
+
+    public org.springframework.graphql.data.ArgumentValue<StringListUpdateInput> getLabelsUpdate() {
+        return labelsUpdate;
+    }
+    public void setLabelsUpdate(org.springframework.graphql.data.ArgumentValue<StringListUpdateInput> labelsUpdate) {
+        this.labelsUpdate = labelsUpdate;
     }
 
     @Override
@@ -65,12 +77,13 @@ public class UpdateDataSourceInput implements java.io.Serializable {
         return Objects.equals(id, that.id)
             && Objects.equals(name, that.name)
             && Objects.equals(type, that.type)
-            && Objects.equals(labels, that.labels);
+            && Objects.equals(labels, that.labels)
+            && Objects.equals(labelsUpdate, that.labelsUpdate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, type, labels);
+        return Objects.hash(id, name, type, labels, labelsUpdate);
     }
 
 
@@ -84,6 +97,7 @@ public class UpdateDataSourceInput implements java.io.Serializable {
         private org.springframework.graphql.data.ArgumentValue<String> name = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<DataSourceType> type = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<String> labels;
+        private org.springframework.graphql.data.ArgumentValue<StringListUpdateInput> labelsUpdate = org.springframework.graphql.data.ArgumentValue.omitted();
 
         public Builder() {
         }
@@ -103,14 +117,20 @@ public class UpdateDataSourceInput implements java.io.Serializable {
             return this;
         }
 
+        @Deprecated
         public Builder setLabels(java.util.List<String> labels) {
             this.labels = labels;
             return this;
         }
 
+        public Builder setLabelsUpdate(org.springframework.graphql.data.ArgumentValue<StringListUpdateInput> labelsUpdate) {
+            this.labelsUpdate = labelsUpdate;
+            return this;
+        }
+
 
         public UpdateDataSourceInput build() {
-            return new UpdateDataSourceInput(id, name, type, labels);
+            return new UpdateDataSourceInput(id, name, type, labels, labelsUpdate);
         }
 
     }

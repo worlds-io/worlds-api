@@ -87,9 +87,13 @@ input UpdateEventChronicleInput {
     """User-defined status of the event."""
     status: String
     """Human-readable labels describing the event."""
-    labels: [String!]
+    labels: [String!] @deprecated(reason: "Use `labelsUpdate: { replace }` instead.")
+    """How this update changes `labels`. `null` clears it. Cannot be combined with `labels`."""
+    labelsUpdate: StringListUpdateInput
     """Human-readable locations describing the event."""
-    locations: [String!]
+    locations: [String!] @deprecated(reason: "Use `locationsUpdate: { replace }` instead.")
+    """How this update changes `locations`. `null` clears it. Cannot be combined with `locations`."""
+    locationsUpdate: StringListUpdateInput
     """Optional information to validate the accuracy of the event."""
     validation: ChronicleValidationInput
     """IDs of activity chronicles associated with the event."""
