@@ -32,6 +32,8 @@ public class SummaryChronicle implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private java.util.List<EventChronicle> eventChronicles;
     @jakarta.validation.constraints.NotNull
+    private java.util.List<Site> sites;
+    @jakarta.validation.constraints.NotNull
     private java.time.OffsetDateTime createdAt;
     @jakarta.validation.constraints.NotNull
     private java.time.OffsetDateTime updatedAt;
@@ -39,7 +41,7 @@ public class SummaryChronicle implements java.io.Serializable {
     public SummaryChronicle() {
     }
 
-    public SummaryChronicle(String id, String name, ChronicleProducer chronicleProducer, String description, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, String timezone, java.lang.Object metadata, ChronicleValidation validation, String priority, String status, java.util.List<String> labels, java.util.List<String> locations, java.util.List<ActivityChronicle> activityChronicles, java.util.List<EventChronicle> eventChronicles, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt) {
+    public SummaryChronicle(String id, String name, ChronicleProducer chronicleProducer, String description, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, String timezone, java.lang.Object metadata, ChronicleValidation validation, String priority, String status, java.util.List<String> labels, java.util.List<String> locations, java.util.List<ActivityChronicle> activityChronicles, java.util.List<EventChronicle> eventChronicles, java.util.List<Site> sites, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt) {
         this.id = id;
         this.name = name;
         this.chronicleProducer = chronicleProducer;
@@ -55,6 +57,7 @@ public class SummaryChronicle implements java.io.Serializable {
         this.locations = locations;
         this.activityChronicles = activityChronicles;
         this.eventChronicles = eventChronicles;
+        this.sites = sites;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
@@ -255,6 +258,21 @@ public class SummaryChronicle implements java.io.Serializable {
     }
 
     /**
+     * Sites associated with the summary. A user restricted to sites sees the summary only if they can access one of
+these. A summary with no sites is company-wide and visible only to administrators.
+     */
+    public java.util.List<Site> getSites() {
+        return sites;
+    }
+    /**
+     * Sites associated with the summary. A user restricted to sites sees the summary only if they can access one of
+these. A summary with no sites is company-wide and visible only to administrators.
+     */
+    public void setSites(java.util.List<Site> sites) {
+        this.sites = sites;
+    }
+
+    /**
      * Timestamp that the summary was created.
      */
     public java.time.OffsetDateTime getCreatedAt() {
@@ -304,13 +322,14 @@ public class SummaryChronicle implements java.io.Serializable {
             && Objects.equals(locations, that.locations)
             && Objects.equals(activityChronicles, that.activityChronicles)
             && Objects.equals(eventChronicles, that.eventChronicles)
+            && Objects.equals(sites, that.sites)
             && Objects.equals(createdAt, that.createdAt)
             && Objects.equals(updatedAt, that.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, chronicleProducer, description, startTime, endTime, timezone, metadata, validation, priority, status, labels, locations, activityChronicles, eventChronicles, createdAt, updatedAt);
+        return Objects.hash(id, name, chronicleProducer, description, startTime, endTime, timezone, metadata, validation, priority, status, labels, locations, activityChronicles, eventChronicles, sites, createdAt, updatedAt);
     }
 
 
@@ -335,6 +354,7 @@ public class SummaryChronicle implements java.io.Serializable {
         private java.util.List<String> locations;
         private java.util.List<ActivityChronicle> activityChronicles;
         private java.util.List<EventChronicle> eventChronicles;
+        private java.util.List<Site> sites;
         private java.time.OffsetDateTime createdAt;
         private java.time.OffsetDateTime updatedAt;
 
@@ -462,6 +482,15 @@ public class SummaryChronicle implements java.io.Serializable {
         }
 
         /**
+         * Sites associated with the summary. A user restricted to sites sees the summary only if they can access one of
+these. A summary with no sites is company-wide and visible only to administrators.
+         */
+        public Builder setSites(java.util.List<Site> sites) {
+            this.sites = sites;
+            return this;
+        }
+
+        /**
          * Timestamp that the summary was created.
          */
         public Builder setCreatedAt(java.time.OffsetDateTime createdAt) {
@@ -479,7 +508,7 @@ public class SummaryChronicle implements java.io.Serializable {
 
 
         public SummaryChronicle build() {
-            return new SummaryChronicle(id, name, chronicleProducer, description, startTime, endTime, timezone, metadata, validation, priority, status, labels, locations, activityChronicles, eventChronicles, createdAt, updatedAt);
+            return new SummaryChronicle(id, name, chronicleProducer, description, startTime, endTime, timezone, metadata, validation, priority, status, labels, locations, activityChronicles, eventChronicles, sites, createdAt, updatedAt);
         }
 
     }

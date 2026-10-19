@@ -24,11 +24,12 @@ public class CreateEventChronicleInput implements java.io.Serializable {
     private java.util.List<String> locations;
     private org.springframework.graphql.data.ArgumentValue<ChronicleValidationInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<String> activityChronicleIds;
+    private java.util.List<String> siteIds;
 
     public CreateEventChronicleInput() {
     }
 
-    public CreateEventChronicleInput(String name, String chronicleProducerId, org.springframework.graphql.data.ArgumentValue<String> description, java.time.OffsetDateTime timestamp, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, org.springframework.graphql.data.ArgumentValue<String> priority, org.springframework.graphql.data.ArgumentValue<String> status, java.util.List<String> labels, java.util.List<String> locations, org.springframework.graphql.data.ArgumentValue<ChronicleValidationInput> validation, java.util.List<String> activityChronicleIds) {
+    public CreateEventChronicleInput(String name, String chronicleProducerId, org.springframework.graphql.data.ArgumentValue<String> description, java.time.OffsetDateTime timestamp, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, org.springframework.graphql.data.ArgumentValue<String> priority, org.springframework.graphql.data.ArgumentValue<String> status, java.util.List<String> labels, java.util.List<String> locations, org.springframework.graphql.data.ArgumentValue<ChronicleValidationInput> validation, java.util.List<String> activityChronicleIds, java.util.List<String> siteIds) {
         this.name = name;
         this.chronicleProducerId = chronicleProducerId;
         this.description = description;
@@ -41,6 +42,7 @@ public class CreateEventChronicleInput implements java.io.Serializable {
         this.locations = locations;
         this.validation = validation;
         this.activityChronicleIds = activityChronicleIds;
+        this.siteIds = siteIds;
     }
 
     public String getName() {
@@ -127,6 +129,13 @@ public class CreateEventChronicleInput implements java.io.Serializable {
         this.activityChronicleIds = activityChronicleIds;
     }
 
+    public java.util.List<String> getSiteIds() {
+        return siteIds;
+    }
+    public void setSiteIds(java.util.List<String> siteIds) {
+        this.siteIds = siteIds;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -147,12 +156,13 @@ public class CreateEventChronicleInput implements java.io.Serializable {
             && Objects.equals(labels, that.labels)
             && Objects.equals(locations, that.locations)
             && Objects.equals(validation, that.validation)
-            && Objects.equals(activityChronicleIds, that.activityChronicleIds);
+            && Objects.equals(activityChronicleIds, that.activityChronicleIds)
+            && Objects.equals(siteIds, that.siteIds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, chronicleProducerId, description, timestamp, timezone, metadata, priority, status, labels, locations, validation, activityChronicleIds);
+        return Objects.hash(name, chronicleProducerId, description, timestamp, timezone, metadata, priority, status, labels, locations, validation, activityChronicleIds, siteIds);
     }
 
 
@@ -174,6 +184,7 @@ public class CreateEventChronicleInput implements java.io.Serializable {
         private java.util.List<String> locations;
         private org.springframework.graphql.data.ArgumentValue<ChronicleValidationInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<String> activityChronicleIds;
+        private java.util.List<String> siteIds;
 
         public Builder() {
         }
@@ -238,9 +249,14 @@ public class CreateEventChronicleInput implements java.io.Serializable {
             return this;
         }
 
+        public Builder setSiteIds(java.util.List<String> siteIds) {
+            this.siteIds = siteIds;
+            return this;
+        }
+
 
         public CreateEventChronicleInput build() {
-            return new CreateEventChronicleInput(name, chronicleProducerId, description, timestamp, timezone, metadata, priority, status, labels, locations, validation, activityChronicleIds);
+            return new CreateEventChronicleInput(name, chronicleProducerId, description, timestamp, timezone, metadata, priority, status, labels, locations, validation, activityChronicleIds, siteIds);
         }
 
     }

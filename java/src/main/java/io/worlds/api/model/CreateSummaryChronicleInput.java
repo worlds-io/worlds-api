@@ -27,11 +27,12 @@ public class CreateSummaryChronicleInput implements java.io.Serializable {
     private org.springframework.graphql.data.ArgumentValue<ChronicleValidationInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<String> activityChronicleIds;
     private java.util.List<String> eventChronicleIds;
+    private java.util.List<String> siteIds;
 
     public CreateSummaryChronicleInput() {
     }
 
-    public CreateSummaryChronicleInput(String name, String chronicleProducerId, org.springframework.graphql.data.ArgumentValue<String> description, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, org.springframework.graphql.data.ArgumentValue<String> priority, org.springframework.graphql.data.ArgumentValue<String> status, java.util.List<String> labels, java.util.List<String> locations, org.springframework.graphql.data.ArgumentValue<ChronicleValidationInput> validation, java.util.List<String> activityChronicleIds, java.util.List<String> eventChronicleIds) {
+    public CreateSummaryChronicleInput(String name, String chronicleProducerId, org.springframework.graphql.data.ArgumentValue<String> description, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, org.springframework.graphql.data.ArgumentValue<String> timezone, org.springframework.graphql.data.ArgumentValue<java.lang.Object> metadata, org.springframework.graphql.data.ArgumentValue<String> priority, org.springframework.graphql.data.ArgumentValue<String> status, java.util.List<String> labels, java.util.List<String> locations, org.springframework.graphql.data.ArgumentValue<ChronicleValidationInput> validation, java.util.List<String> activityChronicleIds, java.util.List<String> eventChronicleIds, java.util.List<String> siteIds) {
         this.name = name;
         this.chronicleProducerId = chronicleProducerId;
         this.description = description;
@@ -46,6 +47,7 @@ public class CreateSummaryChronicleInput implements java.io.Serializable {
         this.validation = validation;
         this.activityChronicleIds = activityChronicleIds;
         this.eventChronicleIds = eventChronicleIds;
+        this.siteIds = siteIds;
     }
 
     public String getName() {
@@ -146,6 +148,13 @@ public class CreateSummaryChronicleInput implements java.io.Serializable {
         this.eventChronicleIds = eventChronicleIds;
     }
 
+    public java.util.List<String> getSiteIds() {
+        return siteIds;
+    }
+    public void setSiteIds(java.util.List<String> siteIds) {
+        this.siteIds = siteIds;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -168,12 +177,13 @@ public class CreateSummaryChronicleInput implements java.io.Serializable {
             && Objects.equals(locations, that.locations)
             && Objects.equals(validation, that.validation)
             && Objects.equals(activityChronicleIds, that.activityChronicleIds)
-            && Objects.equals(eventChronicleIds, that.eventChronicleIds);
+            && Objects.equals(eventChronicleIds, that.eventChronicleIds)
+            && Objects.equals(siteIds, that.siteIds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, chronicleProducerId, description, startTime, endTime, timezone, metadata, priority, status, labels, locations, validation, activityChronicleIds, eventChronicleIds);
+        return Objects.hash(name, chronicleProducerId, description, startTime, endTime, timezone, metadata, priority, status, labels, locations, validation, activityChronicleIds, eventChronicleIds, siteIds);
     }
 
 
@@ -197,6 +207,7 @@ public class CreateSummaryChronicleInput implements java.io.Serializable {
         private org.springframework.graphql.data.ArgumentValue<ChronicleValidationInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<String> activityChronicleIds;
         private java.util.List<String> eventChronicleIds;
+        private java.util.List<String> siteIds;
 
         public Builder() {
         }
@@ -271,9 +282,14 @@ public class CreateSummaryChronicleInput implements java.io.Serializable {
             return this;
         }
 
+        public Builder setSiteIds(java.util.List<String> siteIds) {
+            this.siteIds = siteIds;
+            return this;
+        }
+
 
         public CreateSummaryChronicleInput build() {
-            return new CreateSummaryChronicleInput(name, chronicleProducerId, description, startTime, endTime, timezone, metadata, priority, status, labels, locations, validation, activityChronicleIds, eventChronicleIds);
+            return new CreateSummaryChronicleInput(name, chronicleProducerId, description, startTime, endTime, timezone, metadata, priority, status, labels, locations, validation, activityChronicleIds, eventChronicleIds, siteIds);
         }
 
     }

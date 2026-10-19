@@ -28,6 +28,8 @@ public class EventChronicle implements java.io.Serializable {
     @jakarta.validation.constraints.NotNull
     private java.util.List<ActivityChronicle> activityChronicles;
     @jakarta.validation.constraints.NotNull
+    private java.util.List<Site> sites;
+    @jakarta.validation.constraints.NotNull
     private java.time.OffsetDateTime createdAt;
     @jakarta.validation.constraints.NotNull
     private java.time.OffsetDateTime updatedAt;
@@ -35,7 +37,7 @@ public class EventChronicle implements java.io.Serializable {
     public EventChronicle() {
     }
 
-    public EventChronicle(String id, ChronicleProducer chronicleProducer, String name, String description, java.time.OffsetDateTime timestamp, String timezone, java.lang.Object metadata, ChronicleValidation validation, String priority, String status, java.util.List<String> labels, java.util.List<String> locations, java.util.List<ActivityChronicle> activityChronicles, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt) {
+    public EventChronicle(String id, ChronicleProducer chronicleProducer, String name, String description, java.time.OffsetDateTime timestamp, String timezone, java.lang.Object metadata, ChronicleValidation validation, String priority, String status, java.util.List<String> labels, java.util.List<String> locations, java.util.List<ActivityChronicle> activityChronicles, java.util.List<Site> sites, java.time.OffsetDateTime createdAt, java.time.OffsetDateTime updatedAt) {
         this.id = id;
         this.chronicleProducer = chronicleProducer;
         this.name = name;
@@ -49,6 +51,7 @@ public class EventChronicle implements java.io.Serializable {
         this.labels = labels;
         this.locations = locations;
         this.activityChronicles = activityChronicles;
+        this.sites = sites;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
@@ -223,6 +226,21 @@ public class EventChronicle implements java.io.Serializable {
     }
 
     /**
+     * Sites associated with the event. A user restricted to sites sees the event only if they can access one of these.
+An event with no sites is company-wide and visible only to administrators.
+     */
+    public java.util.List<Site> getSites() {
+        return sites;
+    }
+    /**
+     * Sites associated with the event. A user restricted to sites sees the event only if they can access one of these.
+An event with no sites is company-wide and visible only to administrators.
+     */
+    public void setSites(java.util.List<Site> sites) {
+        this.sites = sites;
+    }
+
+    /**
      * Timestamp that the event was created.
      */
     public java.time.OffsetDateTime getCreatedAt() {
@@ -270,13 +288,14 @@ public class EventChronicle implements java.io.Serializable {
             && Objects.equals(labels, that.labels)
             && Objects.equals(locations, that.locations)
             && Objects.equals(activityChronicles, that.activityChronicles)
+            && Objects.equals(sites, that.sites)
             && Objects.equals(createdAt, that.createdAt)
             && Objects.equals(updatedAt, that.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, chronicleProducer, name, description, timestamp, timezone, metadata, validation, priority, status, labels, locations, activityChronicles, createdAt, updatedAt);
+        return Objects.hash(id, chronicleProducer, name, description, timestamp, timezone, metadata, validation, priority, status, labels, locations, activityChronicles, sites, createdAt, updatedAt);
     }
 
 
@@ -299,6 +318,7 @@ public class EventChronicle implements java.io.Serializable {
         private java.util.List<String> labels;
         private java.util.List<String> locations;
         private java.util.List<ActivityChronicle> activityChronicles;
+        private java.util.List<Site> sites;
         private java.time.OffsetDateTime createdAt;
         private java.time.OffsetDateTime updatedAt;
 
@@ -410,6 +430,15 @@ public class EventChronicle implements java.io.Serializable {
         }
 
         /**
+         * Sites associated with the event. A user restricted to sites sees the event only if they can access one of these.
+An event with no sites is company-wide and visible only to administrators.
+         */
+        public Builder setSites(java.util.List<Site> sites) {
+            this.sites = sites;
+            return this;
+        }
+
+        /**
          * Timestamp that the event was created.
          */
         public Builder setCreatedAt(java.time.OffsetDateTime createdAt) {
@@ -427,7 +456,7 @@ public class EventChronicle implements java.io.Serializable {
 
 
         public EventChronicle build() {
-            return new EventChronicle(id, chronicleProducer, name, description, timestamp, timezone, metadata, validation, priority, status, labels, locations, activityChronicles, createdAt, updatedAt);
+            return new EventChronicle(id, chronicleProducer, name, description, timestamp, timezone, metadata, validation, priority, status, labels, locations, activityChronicles, sites, createdAt, updatedAt);
         }
 
     }
