@@ -16,4 +16,9 @@ extend type Mutation {
         """The unique identifier of the summary chronicle to delete."""
         id: ID!
     ): SummaryChronicle
+    """Deletes existing summary chronicles. If any id is not found, none are deleted."""
+    deleteSummaryChronicles(
+        """The unique identifiers of the summary chronicles to delete."""
+        id: [ID]!
+    ): [SummaryChronicle]
 }
