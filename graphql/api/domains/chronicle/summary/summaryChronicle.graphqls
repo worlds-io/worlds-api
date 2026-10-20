@@ -33,8 +33,8 @@ type SummaryChronicle {
     """Event chronicles associated with the summary."""
     eventChronicles: [EventChronicle!]!
     """
-    Sites associated with the summary. A user restricted to sites sees the summary only if they can access one of
-    these. A summary with no sites is company-wide and visible only to administrators.
+    Sites associated with the summary. A user needs access to at least one site to view the summary.
+    A summary with no sites is visible only to administrators.
     """
     sites: [Site!]!
     """Timestamp that the summary was created."""

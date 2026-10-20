@@ -29,8 +29,8 @@ type EventChronicle {
     """Activity chronicles associated with the event."""
     activityChronicles: [ActivityChronicle!]!
     """
-    Sites associated with the event. A user restricted to sites sees the event only if they can access one of these.
-    An event with no sites is company-wide and visible only to administrators.
+    Sites associated with the event. A user needs access to at least one site to view the event.
+    An event with no sites is visible only to administrators.
     """
     sites: [Site!]!
     """Timestamp that the event was created."""
