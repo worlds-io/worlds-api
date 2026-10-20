@@ -16,6 +16,8 @@ type Video {
     cloudAvailable: Boolean!
     """The state of syncing this video's footage from its edge to the hub."""
     sync: VideoSync!
+    """Whether the video's footage is kept past the standard retention window."""
+    retained: Boolean!
     """The signed URL to be used to stream the video."""
     url: String!
     """The signed URL to be used to retrieve the video thumbnail."""
