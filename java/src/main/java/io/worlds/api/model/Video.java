@@ -19,6 +19,7 @@ public class Video implements java.io.Serializable {
     private boolean cloudAvailable;
     @jakarta.validation.constraints.NotNull
     private VideoSync sync;
+    private boolean retained;
     @jakarta.validation.constraints.NotNull
     private String url;
     private String thumbnailUrl;
@@ -31,13 +32,14 @@ public class Video implements java.io.Serializable {
     public Video() {
     }
 
-    public Video(String id, DataSource dataSource, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, boolean cloudAvailable, VideoSync sync, String url, String thumbnailUrl, String displayName, String resolutionHeight, String resolutionWidth, Double frameRate, User createdBy) {
+    public Video(String id, DataSource dataSource, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, boolean cloudAvailable, VideoSync sync, boolean retained, String url, String thumbnailUrl, String displayName, String resolutionHeight, String resolutionWidth, Double frameRate, User createdBy) {
         this.id = id;
         this.dataSource = dataSource;
         this.startTime = startTime;
         this.endTime = endTime;
         this.cloudAvailable = cloudAvailable;
         this.sync = sync;
+        this.retained = retained;
         this.url = url;
         this.thumbnailUrl = thumbnailUrl;
         this.displayName = displayName;
@@ -123,6 +125,19 @@ public class Video implements java.io.Serializable {
      */
     public void setSync(VideoSync sync) {
         this.sync = sync;
+    }
+
+    /**
+     * Whether the video's footage is kept past the standard retention window.
+     */
+    public boolean getRetained() {
+        return retained;
+    }
+    /**
+     * Whether the video's footage is kept past the standard retention window.
+     */
+    public void setRetained(boolean retained) {
+        this.retained = retained;
     }
 
     /**
@@ -231,6 +246,7 @@ public class Video implements java.io.Serializable {
             && Objects.equals(endTime, that.endTime)
             && Objects.equals(cloudAvailable, that.cloudAvailable)
             && Objects.equals(sync, that.sync)
+            && Objects.equals(retained, that.retained)
             && Objects.equals(url, that.url)
             && Objects.equals(thumbnailUrl, that.thumbnailUrl)
             && Objects.equals(displayName, that.displayName)
@@ -242,7 +258,7 @@ public class Video implements java.io.Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, dataSource, startTime, endTime, cloudAvailable, sync, url, thumbnailUrl, displayName, resolutionHeight, resolutionWidth, frameRate, createdBy);
+        return Objects.hash(id, dataSource, startTime, endTime, cloudAvailable, sync, retained, url, thumbnailUrl, displayName, resolutionHeight, resolutionWidth, frameRate, createdBy);
     }
 
 
@@ -258,6 +274,7 @@ public class Video implements java.io.Serializable {
         private java.time.OffsetDateTime endTime;
         private boolean cloudAvailable;
         private VideoSync sync;
+        private boolean retained;
         private String url;
         private String thumbnailUrl;
         private String displayName;
@@ -314,6 +331,14 @@ public class Video implements java.io.Serializable {
          */
         public Builder setSync(VideoSync sync) {
             this.sync = sync;
+            return this;
+        }
+
+        /**
+         * Whether the video's footage is kept past the standard retention window.
+         */
+        public Builder setRetained(boolean retained) {
+            this.retained = retained;
             return this;
         }
 
@@ -375,7 +400,7 @@ public class Video implements java.io.Serializable {
 
 
         public Video build() {
-            return new Video(id, dataSource, startTime, endTime, cloudAvailable, sync, url, thumbnailUrl, displayName, resolutionHeight, resolutionWidth, frameRate, createdBy);
+            return new Video(id, dataSource, startTime, endTime, cloudAvailable, sync, retained, url, thumbnailUrl, displayName, resolutionHeight, resolutionWidth, frameRate, createdBy);
         }
 
     }

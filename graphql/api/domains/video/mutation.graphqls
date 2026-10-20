@@ -16,4 +16,14 @@ extend type Mutation {
         """The unique identifier of the video to sync."""
         id: ID!
     ): Video
+    """
+    Requests that a video's footage be kept past the standard retention window.
+
+    The copy into retained storage runs after the mutation returns; track it on `Video.retained`.
+    Fails for a video that is still recording, and for an edge video (use `requestVideoSync`).
+    """
+    retainVideo(
+        """The unique identifier of the video to retain."""
+        id: ID!
+    ): Video
 }
