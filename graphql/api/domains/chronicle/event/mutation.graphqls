@@ -16,4 +16,9 @@ extend type Mutation {
         """The unique identifier of the event chronicle to delete."""
         id: ID!
     ): EventChronicle
+    """Deletes existing event chronicles. If any id is not found, none are deleted."""
+    deleteEventChronicles(
+        """The unique identifiers of the event chronicles to delete."""
+        id: [ID]!
+    ): [EventChronicle]
 }
