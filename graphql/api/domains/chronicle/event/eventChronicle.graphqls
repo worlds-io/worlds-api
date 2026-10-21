@@ -28,6 +28,11 @@ type EventChronicle {
     locations: [String!]
     """Activity chronicles associated with the event."""
     activityChronicles: [ActivityChronicle!]!
+    """
+    Sites associated with the event. A user needs access to at least one site to view the event.
+    An event with no sites is visible only to administrators.
+    """
+    sites: [Site!]!
     """Timestamp that the event was created."""
     createdAt: DateTimeOffset!
     """Timestamp that the event was most recently updated."""
@@ -62,6 +67,11 @@ input CreateEventChronicleInput {
     validation: ChronicleValidationInput
     """IDs of activity chronicles associated with the event."""
     activityChronicleIds: [ID!]
+    """
+    IDs of sites associated with the event. Required, with at least one site you can access, unless you are an
+    administrator.
+    """
+    siteIds: [ID!]
 }
 
 """
@@ -98,4 +108,9 @@ input UpdateEventChronicleInput {
     validation: ChronicleValidationInput
     """IDs of activity chronicles associated with the event."""
     activityChronicleIds: [ID!]
+    """
+    How this update changes the event's sites. `null` removes every one you can access. Sites you cannot access are
+    kept. Unless you are an administrator, the event must keep at least one site you can access.
+    """
+    siteIdsUpdate: IDListUpdateInput
 }

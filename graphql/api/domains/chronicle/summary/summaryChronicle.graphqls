@@ -32,6 +32,11 @@ type SummaryChronicle {
     activityChronicles: [ActivityChronicle!]!
     """Event chronicles associated with the summary."""
     eventChronicles: [EventChronicle!]!
+    """
+    Sites associated with the summary. A user needs access to at least one site to view the summary.
+    A summary with no sites is visible only to administrators.
+    """
+    sites: [Site!]!
     """Timestamp that the summary was created."""
     createdAt: DateTimeOffset!
     """Timestamp that the summary was most recently updated."""
@@ -70,6 +75,11 @@ input CreateSummaryChronicleInput {
     activityChronicleIds: [ID!]
     """IDs of event chronicles associated with the summary."""
     eventChronicleIds: [ID!]
+    """
+    IDs of sites associated with the summary. Required, with at least one site you can access, unless you are an
+    administrator.
+    """
+    siteIds: [ID!]
 }
 
 """
@@ -120,4 +130,9 @@ input UpdateSummaryChronicleInput {
     Cannot be combined with `eventChronicleIds`.
     """
     eventChronicleIdsUpdate: IDListUpdateInput
+    """
+    How this update changes the summary's sites. `null` removes every one you can access. Sites you cannot access are
+    kept. Unless you are an administrator, the summary must keep at least one site you can access.
+    """
+    siteIdsUpdate: IDListUpdateInput
 }
