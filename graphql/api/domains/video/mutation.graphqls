@@ -20,7 +20,8 @@ extend type Mutation {
     Requests that a video's footage be kept past the standard retention window.
 
     The copy into retained storage runs after the mutation returns; track it on `Video.retained`.
-    Fails for a video that is still recording, and for an edge video (use `requestVideoSync`).
+    Fails for a video that is still recording, for footage that is still only on its edge
+    (`requestVideoSync` brings it to the hub and retains it), and while retention is switched off.
     """
     retainVideo(
         """The unique identifier of the video to retain."""
