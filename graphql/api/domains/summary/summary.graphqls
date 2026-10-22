@@ -334,6 +334,116 @@ type ActivityChronicleSummaryBucketKey {
 }
 
 """
+Summary information for summary chronicles across a time range.  Includes total count and counts by buckets.
+"""
+type SummaryChronicleSummary {
+    """
+    The total number of summary chronicles within the time range.
+    """
+    total: Int!
+    """
+    The number of summary chronicles which started in the time range.
+    """
+    startedCount: Int!
+    """
+    The number of summary chronicles which ended in the time range.
+    """
+    endedCount: Int!
+    """
+    Summary statistics for all summary chronicles within the summary's time range and filters.
+    """
+    summaryStatistics: SummaryChronicleSummaryStatistics!
+    """
+    A detailed summary of each bucket within the time range.
+    Summary buckets are only returned if `summaryChronicleBucket` is provided as a query parameter to `summaryChronicleSummary`.
+    """
+    buckets: [SummaryChronicleSummaryBucket!]
+    """
+    The bucket(s) with the greatest `total` across the parent's buckets.  Empty if no `summaryChronicleBucket`
+    was provided.  All tied buckets are returned per group.
+    """
+    highestTotalBuckets(
+        """
+        Dimensions to keep distinct when finding the max.  Must align with the query's `summaryChronicleBucket`:
+        `groupBy.fields` must be a subset of `summaryChronicleBucket.fields`, and `groupBy.size` must equal
+        `summaryChronicleBucket.size` if set.  If null, returns the single bucket with the greatest total
+        across all buckets (plus any ties).
+        """
+        groupBy: SummaryChronicleSummaryBucketType
+    ): [SummaryChronicleHighestTotalBucket!]!
+    """
+    The distinct top-level keys found in the `metadata` field across all matching summary chronicles.
+    Useful for discovering available metadata keys that can be used for metadata bucketing.
+    """
+    metadataKeys: [String!]
+}
+
+"""
+A bucket selected as having the greatest `total` within its group, returned from
+`SummaryChronicleSummary.highestTotalBuckets`.
+"""
+type SummaryChronicleHighestTotalBucket {
+    """The key of the winning bucket.  Only fields included in `groupBy` are populated; others are null."""
+    key: SummaryChronicleSummaryBucketKey!
+    """The total number of summary chronicles in the winning bucket."""
+    total: Int!
+}
+
+"""
+Summary information for summary chronicles across a time range inside a given `SummaryChronicleSummaryBucketType`.  Includes total count and the bucketed field values.
+"""
+type SummaryChronicleSummaryBucket {
+    """The key of the bucket."""
+    key: SummaryChronicleSummaryBucketKey!
+    """
+    The total number of summary chronicles within the bucket.
+    """
+    total: Int!
+    """
+    The number of summary chronicles which started in the bucket.
+    """
+    startedCount: Int!
+    """
+    The number of summary chronicles which ended in the bucket.
+    """
+    endedCount: Int!
+    """
+    Summary statistics for all summary chronicles within the bucket.
+    """
+    summaryStatistics: SummaryChronicleSummaryStatistics!
+}
+
+"""
+Summary statistics for summary chronicle fields, to be read from a `summaryChronicleSummary` or its buckets.
+"""
+type SummaryChronicleSummaryStatistics {
+    """Summary statistics from the summary chronicles' durations.  Does not include summary chronicles without an end time.  Will be null if none have ended."""
+    duration: DateTimeDurationSummaryStatistics
+}
+
+"""The grouping key for a SummaryChronicleSummaryBucket.  Fields bucketed on will be present.  All other fields will be null."""
+type SummaryChronicleSummaryBucketKey {
+    """The start time of the summary bucket."""
+    time: DateTimeOffset
+    """The name of the summary chronicles in the summary bucket."""
+    name: String
+    """The `priority` of the summary chronicles in the summary bucket."""
+    priority: String
+    """The `status` of the summary chronicles in the summary bucket."""
+    status: String
+    """The ChronicleProducer of the summary chronicles in the summary bucket."""
+    chronicleProducer: ChronicleProducer
+    """The Site of the summary chronicles in the summary bucket."""
+    site: Site
+    """The label of the summary chronicles in the summary bucket."""
+    label: String
+    """The `validationStatus` of the summary chronicles in the summary bucket."""
+    validationStatus: String
+    """The metadata values of the summary chronicles in the summary bucket."""
+    metadata: [JSONFieldBucketKey!]
+}
+
+"""
 Summary information for videos across a time range inside a given `VideosSummaryBucketType`.  Includes total count and the bucketed field values.
 """
 type VideosSummaryBucket {

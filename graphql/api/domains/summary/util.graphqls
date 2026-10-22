@@ -208,6 +208,38 @@ input ActivityChronicleSummaryBucketType {
     metadata: [JSONFieldStringBucket!]
 }
 
+"""Indicates the bucket to group summary chronicles by in a `summaryChronicleSummary` query."""
+enum SummaryChronicleSummaryBucketField {
+    """Bucket by the summary chronicle's name"""
+    NAME
+    """Bucket by the summary chronicle's priority"""
+    PRIORITY
+    """Bucket by the summary chronicle's status"""
+    STATUS
+    """Bucket by the summary chronicle's chronicle producer"""
+    CHRONICLE_PRODUCER
+    """Bucket by the summary chronicle's sites. A summary chronicle can have multiple sites, so one summary chronicle may be counted in multiple buckets."""
+    SITE
+    """Bucket by the summary chronicle's labels. A summary chronicle can have multiple labels, so one summary chronicle may be counted in multiple buckets."""
+    LABEL
+    """Bucket by the summary chronicle's validation status"""
+    VALIDATION_STATUS
+}
+
+"""
+Input to indicate which field(s) to group summary chronicles by in a `summaryChronicleSummary` query.
+Any combination of up to three distinct fields may be provided.
+If multiple fields are provided, the buckets will be sorted by time, then fields.
+"""
+input SummaryChronicleSummaryBucketType {
+    """If provided, group the summary buckets by time buckets of the provided size."""
+    size: SummaryBucketSize
+    """If provided, group the summary buckets by the values of the provided fields."""
+    fields: [SummaryChronicleSummaryBucketField!]
+    """If provided, group the summary buckets by the values of the provided metadata fields."""
+    metadata: [JSONFieldStringBucket!]
+}
+
 """Indicates the bucket to group zone intersections by in a zoneIntersectionSummary query."""
 enum ZoneIntersectionSummaryBucketField {
     """Bucket by the zone's name"""
