@@ -79,10 +79,7 @@ extend type Query {
         """
         metadataKeysPath: [String!]
     ): ActivityChronicleSummary
-    """
-    Summarizes summary chronicles over a time range.
-    Summary chronicles that started more than 48 hours before `startTime` are not counted.
-    """
+    """Summarizes summary chronicles over a time range."""
     summaryChronicleSummary(
         """Start time for the summary."""
         startTime: DateTimeOffset!
