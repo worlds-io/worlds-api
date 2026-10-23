@@ -22,7 +22,7 @@ enum SummaryBucketSize {
 enum BucketingStrategy {
     """Bucket into all buckets where the object was active.  With this strategy, an object may be present in multiple time buckets."""
     ACTIVE
-    """Bucket into the bucket where the object ended. `total` will be equal to `startedCount`. `endedCount` will return as 0."""
+    """Bucket into the bucket where the object started. `total` will be equal to `startedCount`. `endedCount` will return as 0."""
     STARTED
     """Bucket into the bucket where the object ended. `total` will be equal to `endedCount`. `startedCount` will return as 0."""
     ENDED
