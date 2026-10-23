@@ -258,15 +258,15 @@ public class SummaryChronicle implements java.io.Serializable {
     }
 
     /**
-     * Sites associated with the summary. A user restricted to sites sees the summary only if they can access one of
-these. A summary with no sites is company-wide and visible only to administrators.
+     * Sites associated with the summary. A user needs access to at least one site to view the summary.
+A summary with no sites is visible only to administrators.
      */
     public java.util.List<Site> getSites() {
         return sites;
     }
     /**
-     * Sites associated with the summary. A user restricted to sites sees the summary only if they can access one of
-these. A summary with no sites is company-wide and visible only to administrators.
+     * Sites associated with the summary. A user needs access to at least one site to view the summary.
+A summary with no sites is visible only to administrators.
      */
     public void setSites(java.util.List<Site> sites) {
         this.sites = sites;
@@ -482,8 +482,8 @@ these. A summary with no sites is company-wide and visible only to administrator
         }
 
         /**
-         * Sites associated with the summary. A user restricted to sites sees the summary only if they can access one of
-these. A summary with no sites is company-wide and visible only to administrators.
+         * Sites associated with the summary. A user needs access to at least one site to view the summary.
+A summary with no sites is visible only to administrators.
          */
         public Builder setSites(java.util.List<Site> sites) {
             this.sites = sites;
