@@ -33,13 +33,13 @@ public class SummaryChronicleSummary implements java.io.Serializable {
     }
 
     /**
-     * The total number of summary chronicles within the time range.
+     * The total number of summary chronicles active in the time range, as counted by `bucketingStrategy`.
      */
     public int getTotal() {
         return total;
     }
     /**
-     * The total number of summary chronicles within the time range.
+     * The total number of summary chronicles active in the time range, as counted by `bucketingStrategy`.
      */
     public void setTotal(int total) {
         this.total = total;
@@ -171,7 +171,7 @@ Useful for discovering available metadata keys that can be used for metadata buc
         }
 
         /**
-         * The total number of summary chronicles within the time range.
+         * The total number of summary chronicles active in the time range, as counted by `bucketingStrategy`.
          */
         public Builder setTotal(int total) {
             this.total = total;

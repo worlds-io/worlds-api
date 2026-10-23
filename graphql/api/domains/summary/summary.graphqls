@@ -338,7 +338,7 @@ Summary information for summary chronicles across a time range.  Includes total 
 """
 type SummaryChronicleSummary {
     """
-    The total number of summary chronicles within the time range.
+    The total number of summary chronicles active in the time range, as counted by `bucketingStrategy`.
     """
     total: Int!
     """
