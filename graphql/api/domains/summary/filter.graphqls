@@ -193,11 +193,13 @@ input FilterSummaryChronicleSummaryInput {
     """
     metadata: FilterJSONFieldStringInput
     """
-    If provided, specifies filters that work against the IDs of the summary chronicle's activity chronicles.
+    If provided, specifies filters that work against the IDs of the activity chronicles linked to the summary
+    chronicle (`SummaryChronicle.activityChronicles`).
     """
     activityChronicleIds: FilterIDListInput
     """
-    If provided, specifies filters that work against the IDs of the summary chronicle's event chronicles.
+    If provided, specifies filters that work against the IDs of the event chronicles linked to the summary
+    chronicle (`SummaryChronicle.eventChronicles`).
     """
     eventChronicleIds: FilterIDListInput
     """
