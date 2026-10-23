@@ -4,6 +4,8 @@ import java.util.Objects;
 
 /**
  * `FilterIDListInput` allows for filtering based on a list of identifiers. Only one field should be provided per filter object.
+IDs of objects you cannot read are ignored when matching: `eq` and `in` compare against the IDs you can read, and
+`attributeExists: false` matches an object linked only to objects you cannot read.
  */
 public class FilterIDListInput implements java.io.Serializable {
 
