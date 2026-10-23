@@ -153,9 +153,10 @@ Only one field should be provided per Filter object unless using an operator (`a
 """
 input FilterSummaryChronicleSummaryInput {
     """
-    If provided, specifies filters that work against the start time of the summary chronicle.
+    If provided, specifies filters that work against the period the summary chronicle spans, from its `startTime` to
+    its `endTime`.
     """
-    startTime: FilterDateTimeOffsetInput
+    timeRange: FilterTimeRangeInput
     """
     If provided, specifies filters that work against the name of the summary chronicle.
     """
