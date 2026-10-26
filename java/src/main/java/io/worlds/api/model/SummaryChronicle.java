@@ -18,7 +18,6 @@ public class SummaryChronicle implements java.io.Serializable {
     private String description;
     @jakarta.validation.constraints.NotNull
     private java.time.OffsetDateTime startTime;
-    @jakarta.validation.constraints.NotNull
     private java.time.OffsetDateTime endTime;
     private String timezone;
     private java.lang.Object metadata;
@@ -128,13 +127,13 @@ public class SummaryChronicle implements java.io.Serializable {
     }
 
     /**
-     * The end time of the summary.
+     * The end time of the summary. If not provided, the summary is still ongoing.
      */
     public java.time.OffsetDateTime getEndTime() {
         return endTime;
     }
     /**
-     * The end time of the summary.
+     * The end time of the summary. If not provided, the summary is still ongoing.
      */
     public void setEndTime(java.time.OffsetDateTime endTime) {
         this.endTime = endTime;
@@ -402,7 +401,7 @@ A summary with no sites is visible only to administrators.
         }
 
         /**
-         * The end time of the summary.
+         * The end time of the summary. If not provided, the summary is still ongoing.
          */
         public Builder setEndTime(java.time.OffsetDateTime endTime) {
             this.endTime = endTime;

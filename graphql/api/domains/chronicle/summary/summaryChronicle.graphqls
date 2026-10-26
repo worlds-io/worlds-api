@@ -12,8 +12,8 @@ type SummaryChronicle {
     description: String
     """The start time of the summary."""
     startTime: DateTimeOffset!
-    """The end time of the summary."""
-    endTime: DateTimeOffset!
+    """The end time of the summary. If not provided, the summary is still ongoing."""
+    endTime: DateTimeOffset
     """The timezone for the summary, if provided."""
     timezone: String
     """Additional metadata associated with the summary. This may represent any JSON object structure."""
@@ -55,8 +55,8 @@ input CreateSummaryChronicleInput {
     description: String
     """The start time of the summary."""
     startTime: DateTimeOffset!
-    """The end time of the summary."""
-    endTime: DateTimeOffset!
+    """The end time of the summary. If not provided, the summary is still ongoing."""
+    endTime: DateTimeOffset
     """The timezone for the summary, if provided."""
     timezone: String
     """Additional metadata associated with the summary. This may represent any JSON object structure."""
