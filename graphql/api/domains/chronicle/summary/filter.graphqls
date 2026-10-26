@@ -24,6 +24,11 @@ input FilterSummaryChronicleInput {
     """
     endTime: FilterDateTimeOffsetInput
     """
+    If provided, specifies filters that work against the period the `SummaryChronicle` spans, from its `startTime`
+    to its `endTime`.
+    """
+    timeRange: FilterTimeRangeInput
+    """
     If provided, specifies filters that work against the `timezone` of the `SummaryChronicle`.
     """
     timezone: FilterStringInput

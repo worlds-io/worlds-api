@@ -79,6 +79,30 @@ extend type Query {
         """
         metadataKeysPath: [String!]
     ): ActivityChronicleSummary
+    """Summarizes summary chronicles over a time range."""
+    summaryChronicleSummary(
+        """Start time for the summary."""
+        startTime: DateTimeOffset!
+        """End time for the summary."""
+        endTime: DateTimeOffset!
+        """If provided, only summarize summary chronicles matching the filter."""
+        filter: FilterSummaryChronicleSummaryInput
+        """
+        How to bucket summary chronicles.  Defaults to `ACTIVE`, which counts a summary chronicle in every time bucket
+        it overlaps: a day-long summary chronicle in hourly buckets counts in all 24.  Use `STARTED` or `ENDED` to count
+        each summary chronicle in a single time bucket.
+        """
+        bucketingStrategy: BucketingStrategy! = ACTIVE
+        """
+        If provided, group the summary buckets by the provided grouping types.
+        """
+        summaryChronicleBucket: SummaryChronicleSummaryBucketType
+        """
+        If provided, return metadata keys at this JSON path instead of root-level keys.
+        Useful for drilling down into nested metadata objects.
+        """
+        metadataKeysPath: [String!]
+    ): SummaryChronicleSummary
     """Summarizes zone intersections over a time range."""
     zoneIntersectionSummary(
         """Start time for the summary."""

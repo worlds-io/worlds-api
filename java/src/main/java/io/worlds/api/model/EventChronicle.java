@@ -226,15 +226,15 @@ public class EventChronicle implements java.io.Serializable {
     }
 
     /**
-     * Sites associated with the event. A user restricted to sites sees the event only if they can access one of these.
-An event with no sites is company-wide and visible only to administrators.
+     * Sites associated with the event. A user needs access to at least one site to view the event.
+An event with no sites is visible only to administrators.
      */
     public java.util.List<Site> getSites() {
         return sites;
     }
     /**
-     * Sites associated with the event. A user restricted to sites sees the event only if they can access one of these.
-An event with no sites is company-wide and visible only to administrators.
+     * Sites associated with the event. A user needs access to at least one site to view the event.
+An event with no sites is visible only to administrators.
      */
     public void setSites(java.util.List<Site> sites) {
         this.sites = sites;
@@ -430,8 +430,8 @@ An event with no sites is company-wide and visible only to administrators.
         }
 
         /**
-         * Sites associated with the event. A user restricted to sites sees the event only if they can access one of these.
-An event with no sites is company-wide and visible only to administrators.
+         * Sites associated with the event. A user needs access to at least one site to view the event.
+An event with no sites is visible only to administrators.
          */
         public Builder setSites(java.util.List<Site> sites) {
             this.sites = sites;

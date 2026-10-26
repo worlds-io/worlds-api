@@ -83,7 +83,6 @@ Only one field should be provided per Filter object unless using an operator (`a
 input FilterActivityChronicleSummaryInput {
     """
     If provided, specifies filters that work against the start time of the activity chronicle.
-    Useful for avoiding double-counting chronicles that span multiple time buckets.
     """
     startTime: FilterDateTimeOffsetInput
     """
@@ -146,6 +145,76 @@ input FilterActivityChronicleSummaryInput {
     If provided, an activity may not match this filter to match the current filter.
     """
     not: FilterActivityChronicleSummaryInput
+}
+
+"""
+FilterSummaryChronicleSummaryInput filters summary chronicles summarized by a `summaryChronicleSummary` query.
+Only one field should be provided per Filter object unless using an operator (`and` `or` `not`) as specified below.
+"""
+input FilterSummaryChronicleSummaryInput {
+    """
+    If provided, specifies filters that work against the period the summary chronicle spans, from its `startTime` to
+    its `endTime`.
+    """
+    timeRange: FilterTimeRangeInput
+    """
+    If provided, specifies filters that work against the name of the summary chronicle.
+    """
+    name: FilterStringInput
+    """
+    If provided, specifies filters that work against the chronicle producer ID of the summary chronicle.
+    """
+    chronicleProducerId: FilterIDInput
+    """
+    If provided, specifies filters that work against the site IDs associated with the summary chronicle.
+    """
+    siteIds: FilterIDListInput
+    """
+    If provided, specifies filters that work against the labels of the summary chronicle.
+    """
+    labels: FilterStringListInput
+    """
+    If provided, specifies filters that work against the locations of the summary chronicle.
+    """
+    locations: FilterStringListInput
+    """
+    If provided, specifies filters that work against the priority of the summary chronicle.
+    """
+    priority: FilterStringInput
+    """
+    If provided, specifies filters that work against the status of the summary chronicle.
+    """
+    status: FilterStringInput
+    """
+    If provided, specifies filters that work against the validation status of the summary chronicle.
+    """
+    validationStatus: FilterChronicleValidationStatusInput
+    """
+    If provided, specifies filters that work against the user-defined summary chronicle metadata.
+    """
+    metadata: FilterJSONFieldStringInput
+    """
+    If provided, specifies filters that work against the IDs of the activity chronicles linked to the summary
+    chronicle (`SummaryChronicle.activityChronicles`).
+    """
+    activityChronicleIds: FilterIDListInput
+    """
+    If provided, specifies filters that work against the IDs of the event chronicles linked to the summary
+    chronicle (`SummaryChronicle.eventChronicles`).
+    """
+    eventChronicleIds: FilterIDListInput
+    """
+    If provided, a summary chronicle must pass all filters in this list to match the current filter.
+    """
+    and: [FilterSummaryChronicleSummaryInput!]
+    """
+    If provided, a summary chronicle must pass at least one of the filters in this list to match the current filter.
+    """
+    or: [FilterSummaryChronicleSummaryInput!]
+    """
+    If provided, a summary chronicle may not match this filter to match the current filter.
+    """
+    not: FilterSummaryChronicleSummaryInput
 }
 
 """
