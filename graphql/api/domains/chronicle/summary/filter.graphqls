@@ -53,6 +53,10 @@ input FilterSummaryChronicleInput {
     """
     locations: FilterStringListInput
     """
+    If provided, specifies filters that work against the `metadata` of the `SummaryChronicle`.
+    """
+    metadata: FilterJSONFieldInput
+    """
     If provided, specifies filters that work against the `activityChronicles` IDs of the `SummaryChronicle`.
     """
     activityChronicleIds: FilterIDListInput

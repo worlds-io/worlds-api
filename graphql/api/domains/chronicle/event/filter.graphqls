@@ -44,6 +44,10 @@ input FilterEventChronicleInput {
     """
     locations: FilterStringListInput
     """
+    If provided, specifies filters that work against the `metadata` of the `EventChronicle`.
+    """
+    metadata: FilterJSONFieldInput
+    """
     If provided, specifies filters that work against the `activityChronicles` IDs of the `EventChronicle`.
     """
     activityChronicleIds: FilterIDListInput

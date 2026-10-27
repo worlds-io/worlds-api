@@ -48,6 +48,10 @@ input FilterSummaryChronicleInputSubscription {
     """
     locations: FilterStringListInput
     """
+    If provided, specifies filters that work against the `metadata` of the `SummaryChronicle`.
+    """
+    metadata: FilterJSONFieldInput
+    """
     If provided, an summary must pass all filters in this list to match the current filter.
     """
     and: [FilterSummaryChronicleInputSubscription!]
