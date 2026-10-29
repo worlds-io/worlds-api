@@ -18,8 +18,10 @@ input FilterIDInput {
 
 """
 `FilterIDListInput` allows for filtering based on a list of identifiers. Only one field should be provided per filter object.
-IDs of objects you cannot read are ignored when matching: `eq` and `in` compare against the IDs you can read, and
-`attributeExists: false` matches an object with no linked objects you can read.
+Order and duplicates in the provided IDs are ignored.
+IDs of objects you cannot read are ignored when matching: every operator compares against the IDs you can read, so
+`containsNone` with only unreadable IDs matches every object, and `attributeExists: false` matches an object with no
+linked objects you can read.
 """
 input FilterIDListInput {
     """
@@ -29,7 +31,22 @@ input FilterIDListInput {
     """
     If provided, the filtered object must contain each of the IDs provided to match the filter, but can contain additional IDs not provided.
     """
-    in: [ID!]
+    in: [ID!] @deprecated(reason: "Use `containsAll` instead.")
+    """
+    If provided, the filtered object must contain each of the IDs provided to match the filter, but can contain additional IDs not provided.
+    An empty list matches every object.
+    """
+    containsAll: [ID!]
+    """
+    If provided, the filtered object must contain at least one of the IDs provided to match the filter.
+    An empty list matches no object.
+    """
+    containsAny: [ID!]
+    """
+    If provided, the filtered object must contain none of the IDs provided to match the filter. An object with no IDs matches.
+    An empty list matches every object.
+    """
+    containsNone: [ID!]
     """
     If provided and true, the filter will pass only if the filtered object is associated with at least one identifier.
     If provided and false, the filter will pass only if it is associated with none.
@@ -39,6 +56,7 @@ input FilterIDListInput {
 
 """
 `FilterStringListInput` allows for filtering based on a list of strings. Only one field should be provided per filter object.
+Order and duplicates in the provided strings are ignored.
 """
 input FilterStringListInput {
     """
@@ -48,7 +66,22 @@ input FilterStringListInput {
     """
     If provided, the filtered object must contain each of the strings provided to match the filter, but can contain additional strings not provided.
     """
-    in: [String!]
+    in: [String!] @deprecated(reason: "Use `containsAll` instead.")
+    """
+    If provided, the filtered object must contain each of the strings provided to match the filter, but can contain additional strings not provided.
+    An empty list matches every object.
+    """
+    containsAll: [String!]
+    """
+    If provided, the filtered object must contain at least one of the strings provided to match the filter.
+    An empty list matches no object.
+    """
+    containsAny: [String!]
+    """
+    If provided, the filtered object must contain none of the strings provided to match the filter. An object with no strings matches.
+    An empty list matches every object.
+    """
+    containsNone: [String!]
 }
 
 """
