@@ -21,6 +21,7 @@ public class FilterSummaryChronicleInputSubscription implements java.io.Serializ
     private org.springframework.graphql.data.ArgumentValue<FilterStringInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterStringListInput> labels = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterStringListInput> locations = org.springframework.graphql.data.ArgumentValue.omitted();
+    private org.springframework.graphql.data.ArgumentValue<FilterJSONFieldInput> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
     private java.util.List<FilterSummaryChronicleInputSubscription> and;
     private java.util.List<FilterSummaryChronicleInputSubscription> or;
     private org.springframework.graphql.data.ArgumentValue<FilterSummaryChronicleInputSubscription> not = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -28,7 +29,7 @@ public class FilterSummaryChronicleInputSubscription implements java.io.Serializ
     public FilterSummaryChronicleInputSubscription() {
     }
 
-    public FilterSummaryChronicleInputSubscription(org.springframework.graphql.data.ArgumentValue<FilterIDInput> id, org.springframework.graphql.data.ArgumentValue<FilterStringInput> name, org.springframework.graphql.data.ArgumentValue<FilterIDInput> chronicleProducerId, org.springframework.graphql.data.ArgumentValue<FilterDateTimeOffsetInput> startTime, org.springframework.graphql.data.ArgumentValue<FilterDateTimeOffsetInput> endTime, org.springframework.graphql.data.ArgumentValue<FilterStringInput> timezone, org.springframework.graphql.data.ArgumentValue<FilterStringInput> priority, org.springframework.graphql.data.ArgumentValue<FilterStringInput> status, org.springframework.graphql.data.ArgumentValue<FilterStringInput> validation, org.springframework.graphql.data.ArgumentValue<FilterStringListInput> labels, org.springframework.graphql.data.ArgumentValue<FilterStringListInput> locations, java.util.List<FilterSummaryChronicleInputSubscription> and, java.util.List<FilterSummaryChronicleInputSubscription> or, org.springframework.graphql.data.ArgumentValue<FilterSummaryChronicleInputSubscription> not) {
+    public FilterSummaryChronicleInputSubscription(org.springframework.graphql.data.ArgumentValue<FilterIDInput> id, org.springframework.graphql.data.ArgumentValue<FilterStringInput> name, org.springframework.graphql.data.ArgumentValue<FilterIDInput> chronicleProducerId, org.springframework.graphql.data.ArgumentValue<FilterDateTimeOffsetInput> startTime, org.springframework.graphql.data.ArgumentValue<FilterDateTimeOffsetInput> endTime, org.springframework.graphql.data.ArgumentValue<FilterStringInput> timezone, org.springframework.graphql.data.ArgumentValue<FilterStringInput> priority, org.springframework.graphql.data.ArgumentValue<FilterStringInput> status, org.springframework.graphql.data.ArgumentValue<FilterStringInput> validation, org.springframework.graphql.data.ArgumentValue<FilterStringListInput> labels, org.springframework.graphql.data.ArgumentValue<FilterStringListInput> locations, org.springframework.graphql.data.ArgumentValue<FilterJSONFieldInput> metadata, java.util.List<FilterSummaryChronicleInputSubscription> and, java.util.List<FilterSummaryChronicleInputSubscription> or, org.springframework.graphql.data.ArgumentValue<FilterSummaryChronicleInputSubscription> not) {
         this.id = id;
         this.name = name;
         this.chronicleProducerId = chronicleProducerId;
@@ -40,6 +41,7 @@ public class FilterSummaryChronicleInputSubscription implements java.io.Serializ
         this.validation = validation;
         this.labels = labels;
         this.locations = locations;
+        this.metadata = metadata;
         this.and = and;
         this.or = or;
         this.not = not;
@@ -122,6 +124,13 @@ public class FilterSummaryChronicleInputSubscription implements java.io.Serializ
         this.locations = locations;
     }
 
+    public org.springframework.graphql.data.ArgumentValue<FilterJSONFieldInput> getMetadata() {
+        return metadata;
+    }
+    public void setMetadata(org.springframework.graphql.data.ArgumentValue<FilterJSONFieldInput> metadata) {
+        this.metadata = metadata;
+    }
+
     public java.util.List<FilterSummaryChronicleInputSubscription> getAnd() {
         return and;
     }
@@ -163,6 +172,7 @@ public class FilterSummaryChronicleInputSubscription implements java.io.Serializ
             && Objects.equals(validation, that.validation)
             && Objects.equals(labels, that.labels)
             && Objects.equals(locations, that.locations)
+            && Objects.equals(metadata, that.metadata)
             && Objects.equals(and, that.and)
             && Objects.equals(or, that.or)
             && Objects.equals(not, that.not);
@@ -170,7 +180,7 @@ public class FilterSummaryChronicleInputSubscription implements java.io.Serializ
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, chronicleProducerId, startTime, endTime, timezone, priority, status, validation, labels, locations, and, or, not);
+        return Objects.hash(id, name, chronicleProducerId, startTime, endTime, timezone, priority, status, validation, labels, locations, metadata, and, or, not);
     }
 
 
@@ -191,6 +201,7 @@ public class FilterSummaryChronicleInputSubscription implements java.io.Serializ
         private org.springframework.graphql.data.ArgumentValue<FilterStringInput> validation = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterStringListInput> labels = org.springframework.graphql.data.ArgumentValue.omitted();
         private org.springframework.graphql.data.ArgumentValue<FilterStringListInput> locations = org.springframework.graphql.data.ArgumentValue.omitted();
+        private org.springframework.graphql.data.ArgumentValue<FilterJSONFieldInput> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
         private java.util.List<FilterSummaryChronicleInputSubscription> and;
         private java.util.List<FilterSummaryChronicleInputSubscription> or;
         private org.springframework.graphql.data.ArgumentValue<FilterSummaryChronicleInputSubscription> not = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -253,6 +264,11 @@ public class FilterSummaryChronicleInputSubscription implements java.io.Serializ
             return this;
         }
 
+        public Builder setMetadata(org.springframework.graphql.data.ArgumentValue<FilterJSONFieldInput> metadata) {
+            this.metadata = metadata;
+            return this;
+        }
+
         public Builder setAnd(java.util.List<FilterSummaryChronicleInputSubscription> and) {
             this.and = and;
             return this;
@@ -270,7 +286,7 @@ public class FilterSummaryChronicleInputSubscription implements java.io.Serializ
 
 
         public FilterSummaryChronicleInputSubscription build() {
-            return new FilterSummaryChronicleInputSubscription(id, name, chronicleProducerId, startTime, endTime, timezone, priority, status, validation, labels, locations, and, or, not);
+            return new FilterSummaryChronicleInputSubscription(id, name, chronicleProducerId, startTime, endTime, timezone, priority, status, validation, labels, locations, metadata, and, or, not);
         }
 
     }
