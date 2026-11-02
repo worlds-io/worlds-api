@@ -58,6 +58,11 @@ input FilterTrackInput {
     """
     dataSourceType: FilterStringInput
     """
+    If provided, specifies filters that work against the track's `trackerProfile`. A track with a null
+    `trackerProfile` matches `general`.
+    """
+    trackerProfile: FilterStringInput
+    """
     If provided, specifies filters that work against the `labels` of the track's `dataSource`.
     """
     dataSourceLabels: FilterStringListInput
@@ -124,6 +129,11 @@ input FilterTrackMessageInput {
     If provided, specifies filters that work against the `type` of the track's `dataSource`.
     """
     dataSourceType: FilterStringInput
+    """
+    If provided, specifies filters that work against the track's `trackerProfile`. A track with a null
+    `trackerProfile` matches `general`.
+    """
+    trackerProfile: FilterStringInput
     """
     If provided, specifies filters that work against the `labels` of the track's `dataSource`.
     """

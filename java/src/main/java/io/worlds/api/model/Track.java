@@ -24,6 +24,8 @@ public class Track implements java.io.Serializable {
     private java.time.OffsetDateTime startTime;
     private java.time.OffsetDateTime endTime;
     private boolean finished;
+    private String trackerProfile;
+    private Boolean trackerOverridden;
     @jakarta.validation.constraints.NotNull
     private java.util.List<Detection> detections;
     private TrackProperties properties;
@@ -36,7 +38,7 @@ public class Track implements java.io.Serializable {
     public Track() {
     }
 
-    public Track(String id, DataSource dataSource, Video video, String modelId, String tag, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, boolean finished, java.util.List<Detection> detections, TrackProperties properties, java.lang.Object metadata, java.util.List<ZoneIntersection> zoneIntersections, java.util.List<GeofenceIntersection> geofenceIntersections, java.util.List<String> deviceIds) {
+    public Track(String id, DataSource dataSource, Video video, String modelId, String tag, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, boolean finished, String trackerProfile, Boolean trackerOverridden, java.util.List<Detection> detections, TrackProperties properties, java.lang.Object metadata, java.util.List<ZoneIntersection> zoneIntersections, java.util.List<GeofenceIntersection> geofenceIntersections, java.util.List<String> deviceIds) {
         this.id = id;
         this.dataSource = dataSource;
         this.video = video;
@@ -45,6 +47,8 @@ public class Track implements java.io.Serializable {
         this.startTime = startTime;
         this.endTime = endTime;
         this.finished = finished;
+        this.trackerProfile = trackerProfile;
+        this.trackerOverridden = trackerOverridden;
         this.detections = detections;
         this.properties = properties;
         this.metadata = metadata;
@@ -162,6 +166,36 @@ unfinished.
     }
 
     /**
+     * The name of the 2D tracker profile that produced the Track. Null for a Track from an engine
+that predates profiles, which tracked with the `general` profile.
+     */
+    public String getTrackerProfile() {
+        return trackerProfile;
+    }
+    /**
+     * The name of the 2D tracker profile that produced the Track. Null for a Track from an engine
+that predates profiles, which tracked with the `general` profile.
+     */
+    public void setTrackerProfile(String trackerProfile) {
+        this.trackerProfile = trackerProfile;
+    }
+
+    /**
+     * Whether the tracker's parameters were changed from the profile's own for the Track's stream.
+Null when `trackerProfile` is null.
+     */
+    public Boolean getTrackerOverridden() {
+        return trackerOverridden;
+    }
+    /**
+     * Whether the tracker's parameters were changed from the profile's own for the Track's stream.
+Null when `trackerProfile` is null.
+     */
+    public void setTrackerOverridden(Boolean trackerOverridden) {
+        this.trackerOverridden = trackerOverridden;
+    }
+
+    /**
      * A collection of every Detection associated with the Track.
      */
     public java.util.List<Detection> getDetections() {
@@ -258,6 +292,8 @@ unfinished.
             && Objects.equals(startTime, that.startTime)
             && Objects.equals(endTime, that.endTime)
             && Objects.equals(finished, that.finished)
+            && Objects.equals(trackerProfile, that.trackerProfile)
+            && Objects.equals(trackerOverridden, that.trackerOverridden)
             && Objects.equals(detections, that.detections)
             && Objects.equals(properties, that.properties)
             && Objects.equals(metadata, that.metadata)
@@ -268,7 +304,7 @@ unfinished.
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, dataSource, video, modelId, tag, startTime, endTime, finished, detections, properties, metadata, zoneIntersections, geofenceIntersections, deviceIds);
+        return Objects.hash(id, dataSource, video, modelId, tag, startTime, endTime, finished, trackerProfile, trackerOverridden, detections, properties, metadata, zoneIntersections, geofenceIntersections, deviceIds);
     }
 
 
@@ -286,6 +322,8 @@ unfinished.
         private java.time.OffsetDateTime startTime;
         private java.time.OffsetDateTime endTime;
         private boolean finished;
+        private String trackerProfile;
+        private Boolean trackerOverridden;
         private java.util.List<Detection> detections;
         private TrackProperties properties;
         private java.lang.Object metadata;
@@ -363,6 +401,24 @@ unfinished.
         }
 
         /**
+         * The name of the 2D tracker profile that produced the Track. Null for a Track from an engine
+that predates profiles, which tracked with the `general` profile.
+         */
+        public Builder setTrackerProfile(String trackerProfile) {
+            this.trackerProfile = trackerProfile;
+            return this;
+        }
+
+        /**
+         * Whether the tracker's parameters were changed from the profile's own for the Track's stream.
+Null when `trackerProfile` is null.
+         */
+        public Builder setTrackerOverridden(Boolean trackerOverridden) {
+            this.trackerOverridden = trackerOverridden;
+            return this;
+        }
+
+        /**
          * A collection of every Detection associated with the Track.
          */
         public Builder setDetections(java.util.List<Detection> detections) {
@@ -413,7 +469,7 @@ unfinished.
 
 
         public Track build() {
-            return new Track(id, dataSource, video, modelId, tag, startTime, endTime, finished, detections, properties, metadata, zoneIntersections, geofenceIntersections, deviceIds);
+            return new Track(id, dataSource, video, modelId, tag, startTime, endTime, finished, trackerProfile, trackerOverridden, detections, properties, metadata, zoneIntersections, geofenceIntersections, deviceIds);
         }
 
     }
