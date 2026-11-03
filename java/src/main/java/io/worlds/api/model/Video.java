@@ -27,12 +27,14 @@ public class Video implements java.io.Serializable {
     private String resolutionHeight;
     private String resolutionWidth;
     private Double frameRate;
+    private java.lang.Long totalSizeBytes;
+    private Integer segmentCount;
     private User createdBy;
 
     public Video() {
     }
 
-    public Video(String id, DataSource dataSource, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, boolean cloudAvailable, VideoSync sync, boolean retained, String url, String thumbnailUrl, String displayName, String resolutionHeight, String resolutionWidth, Double frameRate, User createdBy) {
+    public Video(String id, DataSource dataSource, java.time.OffsetDateTime startTime, java.time.OffsetDateTime endTime, boolean cloudAvailable, VideoSync sync, boolean retained, String url, String thumbnailUrl, String displayName, String resolutionHeight, String resolutionWidth, Double frameRate, java.lang.Long totalSizeBytes, Integer segmentCount, User createdBy) {
         this.id = id;
         this.dataSource = dataSource;
         this.startTime = startTime;
@@ -46,6 +48,8 @@ public class Video implements java.io.Serializable {
         this.resolutionHeight = resolutionHeight;
         this.resolutionWidth = resolutionWidth;
         this.frameRate = frameRate;
+        this.totalSizeBytes = totalSizeBytes;
+        this.segmentCount = segmentCount;
         this.createdBy = createdBy;
     }
 
@@ -219,6 +223,32 @@ public class Video implements java.io.Serializable {
     }
 
     /**
+     * The total size in bytes of the segment files the video's playlist references. Null when it was not recorded.
+     */
+    public java.lang.Long getTotalSizeBytes() {
+        return totalSizeBytes;
+    }
+    /**
+     * The total size in bytes of the segment files the video's playlist references. Null when it was not recorded.
+     */
+    public void setTotalSizeBytes(java.lang.Long totalSizeBytes) {
+        this.totalSizeBytes = totalSizeBytes;
+    }
+
+    /**
+     * The number of segment files the video's playlist references. Null when it was not recorded.
+     */
+    public Integer getSegmentCount() {
+        return segmentCount;
+    }
+    /**
+     * The number of segment files the video's playlist references. Null when it was not recorded.
+     */
+    public void setSegmentCount(Integer segmentCount) {
+        this.segmentCount = segmentCount;
+    }
+
+    /**
      * The user the video was created by.
      */
     public User getCreatedBy() {
@@ -253,12 +283,14 @@ public class Video implements java.io.Serializable {
             && Objects.equals(resolutionHeight, that.resolutionHeight)
             && Objects.equals(resolutionWidth, that.resolutionWidth)
             && Objects.equals(frameRate, that.frameRate)
+            && Objects.equals(totalSizeBytes, that.totalSizeBytes)
+            && Objects.equals(segmentCount, that.segmentCount)
             && Objects.equals(createdBy, that.createdBy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, dataSource, startTime, endTime, cloudAvailable, sync, retained, url, thumbnailUrl, displayName, resolutionHeight, resolutionWidth, frameRate, createdBy);
+        return Objects.hash(id, dataSource, startTime, endTime, cloudAvailable, sync, retained, url, thumbnailUrl, displayName, resolutionHeight, resolutionWidth, frameRate, totalSizeBytes, segmentCount, createdBy);
     }
 
 
@@ -281,6 +313,8 @@ public class Video implements java.io.Serializable {
         private String resolutionHeight;
         private String resolutionWidth;
         private Double frameRate;
+        private java.lang.Long totalSizeBytes;
+        private Integer segmentCount;
         private User createdBy;
 
         public Builder() {
@@ -391,6 +425,22 @@ public class Video implements java.io.Serializable {
         }
 
         /**
+         * The total size in bytes of the segment files the video's playlist references. Null when it was not recorded.
+         */
+        public Builder setTotalSizeBytes(java.lang.Long totalSizeBytes) {
+            this.totalSizeBytes = totalSizeBytes;
+            return this;
+        }
+
+        /**
+         * The number of segment files the video's playlist references. Null when it was not recorded.
+         */
+        public Builder setSegmentCount(Integer segmentCount) {
+            this.segmentCount = segmentCount;
+            return this;
+        }
+
+        /**
          * The user the video was created by.
          */
         public Builder setCreatedBy(User createdBy) {
@@ -400,7 +450,7 @@ public class Video implements java.io.Serializable {
 
 
         public Video build() {
-            return new Video(id, dataSource, startTime, endTime, cloudAvailable, sync, retained, url, thumbnailUrl, displayName, resolutionHeight, resolutionWidth, frameRate, createdBy);
+            return new Video(id, dataSource, startTime, endTime, cloudAvailable, sync, retained, url, thumbnailUrl, displayName, resolutionHeight, resolutionWidth, frameRate, totalSizeBytes, segmentCount, createdBy);
         }
 
     }

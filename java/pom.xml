@@ -51,6 +51,7 @@
                 <DateTimeOffset>java.time.OffsetDateTime</DateTimeOffset>
                 <DateTimeDuration>java.time.Duration</DateTimeDuration>
                 <JSON>java.lang.Object</JSON>
+                <Long>java.lang.Long</Long>
               </customTypesMapping>
               <generateApis>false</generateApis>
               <modelValidationAnnotation>@jakarta.validation.constraints.NotNull</modelValidationAnnotation>
