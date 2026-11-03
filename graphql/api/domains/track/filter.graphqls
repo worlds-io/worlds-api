@@ -59,7 +59,7 @@ input FilterTrackInput {
     dataSourceType: FilterStringInput
     """
     If provided, specifies filters that work against the track's `trackerProfile`. A track with a null
-    `trackerProfile` matches `general`.
+    `trackerProfile` matches no name; use `attributeExists` to select or exclude such tracks.
     """
     trackerProfile: FilterStringInput
     """
@@ -131,7 +131,7 @@ input FilterTrackMessageInput {
     dataSourceType: FilterStringInput
     """
     If provided, specifies filters that work against the track's `trackerProfile`. A track with a null
-    `trackerProfile` matches `general`.
+    `trackerProfile` matches no name; use `attributeExists` to select or exclude such tracks.
     """
     trackerProfile: FilterStringInput
     """
