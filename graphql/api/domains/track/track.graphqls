@@ -27,8 +27,9 @@ type Track {
     """Whether the Track has finished."""
     finished: Boolean!
     """
-    The name of the 2D tracker profile that produced the Track. Null when no profile is recorded: an
-    untracked detector, a Track created through the API, or an engine that does not send one.
+    The name of the 2D tracker profile that produced the Track. Null when no profile is recorded: no 2D
+    tracker produced the Track (an untracked or a pre-tracked detector), the Track was created through
+    the API, or the engine does not send one.
     """
     trackerProfile: String
     """

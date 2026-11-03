@@ -166,15 +166,17 @@ unfinished.
     }
 
     /**
-     * The name of the 2D tracker profile that produced the Track. Null when no profile is recorded: an
-untracked detector, a Track created through the API, or an engine that does not send one.
+     * The name of the 2D tracker profile that produced the Track. Null when no profile is recorded: no 2D
+tracker produced the Track (an untracked or a pre-tracked detector), the Track was created through
+the API, or the engine does not send one.
      */
     public String getTrackerProfile() {
         return trackerProfile;
     }
     /**
-     * The name of the 2D tracker profile that produced the Track. Null when no profile is recorded: an
-untracked detector, a Track created through the API, or an engine that does not send one.
+     * The name of the 2D tracker profile that produced the Track. Null when no profile is recorded: no 2D
+tracker produced the Track (an untracked or a pre-tracked detector), the Track was created through
+the API, or the engine does not send one.
      */
     public void setTrackerProfile(String trackerProfile) {
         this.trackerProfile = trackerProfile;
@@ -401,8 +403,9 @@ unfinished.
         }
 
         /**
-         * The name of the 2D tracker profile that produced the Track. Null when no profile is recorded: an
-untracked detector, a Track created through the API, or an engine that does not send one.
+         * The name of the 2D tracker profile that produced the Track. Null when no profile is recorded: no 2D
+tracker produced the Track (an untracked or a pre-tracked detector), the Track was created through
+the API, or the engine does not send one.
          */
         public Builder setTrackerProfile(String trackerProfile) {
             this.trackerProfile = trackerProfile;
