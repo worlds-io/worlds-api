@@ -16,3 +16,8 @@ See [JSON](https://www.json.org/json-en.html) and the
 [ECMA-404](https://ecma-international.org/publications-and-standards/standards/ecma-404/) standard.
 """
 scalar JSON
+
+"""
+A 64-bit signed integer, for values that can exceed the range of `Int`.
+"""
+scalar Long
