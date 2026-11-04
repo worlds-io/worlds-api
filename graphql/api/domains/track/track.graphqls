@@ -26,6 +26,17 @@ type Track {
     endTime: DateTimeOffset
     """Whether the Track has finished."""
     finished: Boolean!
+    """
+    The name of the 2D tracker profile that produced the Track. Null when no profile is recorded: no 2D
+    tracker produced the Track (an untracked or a pre-tracked detector), the Track was created through
+    the API, or the engine does not send one.
+    """
+    trackerProfile: String
+    """
+    Whether the tracker's parameters were changed from the profile's own for the Track's stream.
+    Null when `trackerProfile` is null.
+    """
+    trackerOverridden: Boolean
     """A collection of every Detection associated with the Track."""
     detections(
         """Filter detections based on the time period, etc."""
