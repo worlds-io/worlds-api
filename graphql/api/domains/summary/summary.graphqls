@@ -323,6 +323,8 @@ type ActivityChronicleSummaryBucketKey {
     dataSource: DataSource
     """The label of the activity chronicles in the summary bucket."""
     label: String
+    """The Tag of the activity chronicles in the summary bucket."""
+    tag: Tag
     """The `validationStatus` of the activity chronicles in the summary bucket."""
     validationStatus: String
     """The `approvalStatus` of the activity chronicles in the summary bucket."""

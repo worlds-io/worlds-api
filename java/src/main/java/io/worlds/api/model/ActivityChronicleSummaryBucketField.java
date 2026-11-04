@@ -38,6 +38,10 @@ public enum ActivityChronicleSummaryBucketField {
      */
     LABEL("LABEL"),
     /**
+     * Bucket by the activity chronicle's tags. An activity can have multiple tags, so one activity may be counted in multiple buckets.
+     */
+    TAG("TAG"),
+    /**
      * Bucket by the activity chronicle's validation status
      */
     VALIDATION_STATUS("VALIDATION_STATUS"),

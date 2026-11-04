@@ -133,6 +133,8 @@ enum ActivityChronicleSummaryBucketField {
     DATA_SOURCE
     """Bucket by the activity chronicle's labels. An activity can have multiple labels, so one activity may be counted in multiple buckets."""
     LABEL
+    """Bucket by the activity chronicle's tags. An activity can have multiple tags, so one activity may be counted in multiple buckets."""
+    TAG
     """Bucket by the activity chronicle's validation status"""
     VALIDATION_STATUS
     """Bucket by the activity chronicle's approval status"""
