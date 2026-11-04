@@ -30,6 +30,12 @@ type Video {
     resolutionWidth: String
     """The frame rate of the video."""
     frameRate: Float
+    """
+    The total size in bytes of the segment files the video's playlist references. Null when it was not recorded.
+    """
+    totalSizeBytes: Long
+    """The number of segment files the video's playlist references. Null when it was not recorded."""
+    segmentCount: Int
     """The user the video was created by."""
     createdBy: User
 }
