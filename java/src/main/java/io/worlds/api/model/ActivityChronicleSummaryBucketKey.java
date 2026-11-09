@@ -18,6 +18,7 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
     private Site site;
     private DataSource dataSource;
     private String label;
+    private Tag tag;
     private String validationStatus;
     private String approvalStatus;
     private H3Cell position;
@@ -26,7 +27,7 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
     public ActivityChronicleSummaryBucketKey() {
     }
 
-    public ActivityChronicleSummaryBucketKey(java.time.OffsetDateTime time, String name, String description, String priority, String status, ChronicleProducer chronicleProducer, Site site, DataSource dataSource, String label, String validationStatus, String approvalStatus, H3Cell position, java.util.List<JSONFieldBucketKey> metadata) {
+    public ActivityChronicleSummaryBucketKey(java.time.OffsetDateTime time, String name, String description, String priority, String status, ChronicleProducer chronicleProducer, Site site, DataSource dataSource, String label, Tag tag, String validationStatus, String approvalStatus, H3Cell position, java.util.List<JSONFieldBucketKey> metadata) {
         this.time = time;
         this.name = name;
         this.description = description;
@@ -36,6 +37,7 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
         this.site = site;
         this.dataSource = dataSource;
         this.label = label;
+        this.tag = tag;
         this.validationStatus = validationStatus;
         this.approvalStatus = approvalStatus;
         this.position = position;
@@ -160,6 +162,19 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
     }
 
     /**
+     * The Tag of the activity chronicles in the summary bucket.
+     */
+    public Tag getTag() {
+        return tag;
+    }
+    /**
+     * The Tag of the activity chronicles in the summary bucket.
+     */
+    public void setTag(Tag tag) {
+        this.tag = tag;
+    }
+
+    /**
      * The `validationStatus` of the activity chronicles in the summary bucket.
      */
     public String getValidationStatus() {
@@ -229,6 +244,7 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
             && Objects.equals(site, that.site)
             && Objects.equals(dataSource, that.dataSource)
             && Objects.equals(label, that.label)
+            && Objects.equals(tag, that.tag)
             && Objects.equals(validationStatus, that.validationStatus)
             && Objects.equals(approvalStatus, that.approvalStatus)
             && Objects.equals(position, that.position)
@@ -237,7 +253,7 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(time, name, description, priority, status, chronicleProducer, site, dataSource, label, validationStatus, approvalStatus, position, metadata);
+        return Objects.hash(time, name, description, priority, status, chronicleProducer, site, dataSource, label, tag, validationStatus, approvalStatus, position, metadata);
     }
 
 
@@ -256,6 +272,7 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
         private Site site;
         private DataSource dataSource;
         private String label;
+        private Tag tag;
         private String validationStatus;
         private String approvalStatus;
         private H3Cell position;
@@ -337,6 +354,14 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
         }
 
         /**
+         * The Tag of the activity chronicles in the summary bucket.
+         */
+        public Builder setTag(Tag tag) {
+            this.tag = tag;
+            return this;
+        }
+
+        /**
          * The `validationStatus` of the activity chronicles in the summary bucket.
          */
         public Builder setValidationStatus(String validationStatus) {
@@ -370,7 +395,7 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
 
 
         public ActivityChronicleSummaryBucketKey build() {
-            return new ActivityChronicleSummaryBucketKey(time, name, description, priority, status, chronicleProducer, site, dataSource, label, validationStatus, approvalStatus, position, metadata);
+            return new ActivityChronicleSummaryBucketKey(time, name, description, priority, status, chronicleProducer, site, dataSource, label, tag, validationStatus, approvalStatus, position, metadata);
         }
 
     }

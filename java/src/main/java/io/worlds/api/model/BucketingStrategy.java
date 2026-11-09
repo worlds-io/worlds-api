@@ -10,7 +10,7 @@ public enum BucketingStrategy {
      */
     ACTIVE("ACTIVE"),
     /**
-     * Bucket into the bucket where the object ended. `total` will be equal to `startedCount`. `endedCount` will return as 0.
+     * Bucket into the bucket where the object started. `total` will be equal to `startedCount`. `endedCount` will return as 0.
      */
     STARTED("STARTED"),
     /**

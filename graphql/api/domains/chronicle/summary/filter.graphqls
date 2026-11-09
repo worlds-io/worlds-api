@@ -24,6 +24,11 @@ input FilterSummaryChronicleInput {
     """
     endTime: FilterDateTimeOffsetInput
     """
+    If provided, specifies filters that work against the period the `SummaryChronicle` spans, from its `startTime`
+    to its `endTime`.
+    """
+    timeRange: FilterTimeRangeInput
+    """
     If provided, specifies filters that work against the `timezone` of the `SummaryChronicle`.
     """
     timezone: FilterStringInput
@@ -47,6 +52,14 @@ input FilterSummaryChronicleInput {
     If provided, specifies filters that work against the `locations` of the `SummaryChronicle`.
     """
     locations: FilterStringListInput
+    """
+    If provided, specifies filters that work against the `metadata` of the `SummaryChronicle`.
+    """
+    metadata: FilterJSONFieldInput
+    """
+    If provided, specifies filters that work against the `sites` IDs of the `SummaryChronicle`.
+    """
+    siteIds: FilterIDListInput
     """
     If provided, specifies filters that work against the `activityChronicles` IDs of the `SummaryChronicle`.
     """

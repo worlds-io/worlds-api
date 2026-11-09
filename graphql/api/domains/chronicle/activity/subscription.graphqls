@@ -44,6 +44,10 @@ input FilterActivityChronicleInputSubscription {
     """
     locations: FilterStringListInput
     """
+    If provided, specifies filters that work against the `metadata` of the `ActivityChronicle`.
+    """
+    metadata: FilterJSONFieldInput
+    """
     If provided, specifies filters that work against the `chronicleProducer` ID of the `ActivityChronicle`.
     """
     chronicleProducerId: FilterIDInput

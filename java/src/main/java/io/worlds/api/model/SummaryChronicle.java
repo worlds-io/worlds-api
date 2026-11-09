@@ -18,7 +18,6 @@ public class SummaryChronicle implements java.io.Serializable {
     private String description;
     @jakarta.validation.constraints.NotNull
     private java.time.OffsetDateTime startTime;
-    @jakarta.validation.constraints.NotNull
     private java.time.OffsetDateTime endTime;
     private String timezone;
     private java.lang.Object metadata;
@@ -128,13 +127,13 @@ public class SummaryChronicle implements java.io.Serializable {
     }
 
     /**
-     * The end time of the summary.
+     * The end time of the summary. If not provided, the summary is still ongoing.
      */
     public java.time.OffsetDateTime getEndTime() {
         return endTime;
     }
     /**
-     * The end time of the summary.
+     * The end time of the summary. If not provided, the summary is still ongoing.
      */
     public void setEndTime(java.time.OffsetDateTime endTime) {
         this.endTime = endTime;
@@ -258,15 +257,15 @@ public class SummaryChronicle implements java.io.Serializable {
     }
 
     /**
-     * Sites associated with the summary. A user restricted to sites sees the summary only if they can access one of
-these. A summary with no sites is company-wide and visible only to administrators.
+     * Sites associated with the summary. A user needs access to at least one site to view the summary.
+A summary with no sites is visible only to administrators.
      */
     public java.util.List<Site> getSites() {
         return sites;
     }
     /**
-     * Sites associated with the summary. A user restricted to sites sees the summary only if they can access one of
-these. A summary with no sites is company-wide and visible only to administrators.
+     * Sites associated with the summary. A user needs access to at least one site to view the summary.
+A summary with no sites is visible only to administrators.
      */
     public void setSites(java.util.List<Site> sites) {
         this.sites = sites;
@@ -402,7 +401,7 @@ these. A summary with no sites is company-wide and visible only to administrator
         }
 
         /**
-         * The end time of the summary.
+         * The end time of the summary. If not provided, the summary is still ongoing.
          */
         public Builder setEndTime(java.time.OffsetDateTime endTime) {
             this.endTime = endTime;
@@ -482,8 +481,8 @@ these. A summary with no sites is company-wide and visible only to administrator
         }
 
         /**
-         * Sites associated with the summary. A user restricted to sites sees the summary only if they can access one of
-these. A summary with no sites is company-wide and visible only to administrators.
+         * Sites associated with the summary. A user needs access to at least one site to view the summary.
+A summary with no sites is visible only to administrators.
          */
         public Builder setSites(java.util.List<Site> sites) {
             this.sites = sites;
