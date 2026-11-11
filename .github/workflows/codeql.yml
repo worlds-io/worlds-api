@@ -1,3 +1,26 @@
+name: CodeQL
+
+# Advanced setup, replacing CodeQL default setup. Default setup does not analyze pull requests whose
+# commits are all from Dependabot, so those PRs never get a CodeQL result and the pr-checks
+# ruleset's code_scanning rule blocks them until a human pushes a commit. A checked-in
+# pull_request workflow runs on Dependabot PRs too. One job per language that default setup
+# analyzed: the categories (/language:<lang>) match, so alert history and the PR comparison against
+# main carry over, and no configuration goes missing on PRs.
+#
+# Standalone rather than calling worlds-io/github-actions' CodeQL workflow: this repo is public and
+# can't call a private repo's reusable workflow.
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  schedule:
+    - cron: '59 17 * * 5'
+  workflow_dispatch:
+
+permissions: {}
+
 jobs:
   actions:
     name: CodeQL (actions)
