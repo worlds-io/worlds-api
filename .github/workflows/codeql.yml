@@ -1,52 +1,46 @@
-name: CodeQL
-
-# Advanced setup, replacing CodeQL default setup. Default setup does not analyze pull requests whose
-# commits are all from Dependabot, so those PRs never get a CodeQL result and the pr-checks
-# ruleset's code_scanning rule blocks them until a human pushes a commit. A checked-in
-# pull_request workflow runs on Dependabot PRs too. One job per language that default setup
-# analyzed: the categories (/language:<lang>) match, so alert history and the PR comparison against
-# main carry over, and no configuration goes missing on PRs.
-
-on:
-  push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
-  schedule:
-    - cron: '59 17 * * 5'
-  workflow_dispatch:
-
-permissions: {}
-
 jobs:
   actions:
     name: CodeQL (actions)
+    runs-on: ubuntu-latest
     permissions:
-      # required for all workflows
-      security-events: write
-      # required to fetch internal or private CodeQL packs
-      packages: read
-      # only required for workflows in private repositories
-      actions: read
       contents: read
-    uses: worlds-io/github-actions/.github/workflows/codeql.yaml@main
-    with:
-      language: actions
-      build-mode: none
-    secrets: inherit
+      security-events: write  # upload results to code scanning
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@9b3254085494b55a0f7c4c2b3d2d52cc712ce370 # v4.39.1
+        with:
+          languages: actions
+          build-mode: none
+
+      - name: Analyze
+        uses: github/codeql-action/analyze@9b3254085494b55a0f7c4c2b3d2d52cc712ce370 # v4.39.1
+        with:
+          category: /language:actions
 
   java-kotlin:
     name: CodeQL (java-kotlin)
+    runs-on: ubuntu-latest
     permissions:
-      # required for all workflows
-      security-events: write
-      # required to fetch internal or private CodeQL packs
-      packages: read
-      # only required for workflows in private repositories
-      actions: read
       contents: read
-    uses: worlds-io/github-actions/.github/workflows/codeql.yaml@main
-    with:
-      language: java-kotlin
-      build-mode: none
-    secrets: inherit
+      security-events: write  # upload results to code scanning
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@9b3254085494b55a0f7c4c2b3d2d52cc712ce370 # v4.39.1
+        with:
+          languages: java-kotlin
+          build-mode: none
+
+      - name: Analyze
+        uses: github/codeql-action/analyze@9b3254085494b55a0f7c4c2b3d2d52cc712ce370 # v4.39.1
+        with:
+          category: /language:java-kotlin
