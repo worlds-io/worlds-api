@@ -59,7 +59,12 @@ extend type Query {
         """
         videosBucket: VideosSummaryBucketType
     ): VideosSummary
-    """Summarizes activity chronicles over a time range."""
+    """
+    Summarizes activity chronicles over a time range.
+
+    Counts for activity chronicles that started more than a few days ago may not reflect later deletions or edits,
+    including changes to their sites.
+    """
     activityChronicleSummary(
         """Start time for the summary."""
         startTime: DateTimeOffset!
@@ -67,7 +72,13 @@ extend type Query {
         endTime: DateTimeOffset!
         """If provided, only summarize activity chronicles matching the filter."""
         filter: FilterActivityChronicleSummaryInput
-        """How to bucket activity chronicles.  Defaults to `ACTIVE`."""
+        """
+        How to bucket activity chronicles.  Defaults to `ACTIVE`.
+
+        `ACTIVE` and `ENDED` count only activity chronicles up to a maximum duration set by the deployment.  An activity
+        chronicle that runs longer, or stays open longer, may not be counted once `startTime` is more than that long
+        after it started.
+        """
         bucketingStrategy: BucketingStrategy! = ACTIVE
         """
         If provided, group the summary buckets by the provided grouping types.
