@@ -75,9 +75,9 @@ extend type Query {
         """
         How to bucket activity chronicles.  Defaults to `ACTIVE`.
 
-        `ACTIVE` and `ENDED` count only activity chronicles up to a maximum duration set by the deployment.  An activity
-        chronicle that runs longer, or stays open longer, may not be counted once `startTime` is more than that long
-        after it started.
+        For `ACTIVE` and `ENDED`, activity chronicles over a maximum duration (1 day by default, configurable by
+        environment) are shortened for summary purposes: one running longer is counted as ended at that duration past its
+        start time.  Start times remain unchanged.
         """
         bucketingStrategy: BucketingStrategy! = ACTIVE
         """
