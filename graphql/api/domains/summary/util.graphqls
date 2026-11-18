@@ -137,8 +137,8 @@ enum ActivityChronicleSummaryBucketField {
     TAG
     """Bucket by the activity chronicle's validation status"""
     VALIDATION_STATUS
-    """Bucket by the activity chronicle's approval status"""
-    APPROVAL_STATUS
+    """Bucket by the activity chronicle's approval status. Every bucket's approval status is `UNKNOWN`."""
+    APPROVAL_STATUS @deprecated(reason: "Chronicles have no approval status. Always `UNKNOWN`.")
 }
 
 """

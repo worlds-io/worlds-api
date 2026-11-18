@@ -20,6 +20,7 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
     private String label;
     private Tag tag;
     private String validationStatus;
+    @Deprecated
     private String approvalStatus;
     private H3Cell position;
     private java.util.List<JSONFieldBucketKey> metadata;
@@ -188,14 +189,16 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
     }
 
     /**
-     * The `approvalStatus` of the activity chronicles in the summary bucket.
+     * The `approvalStatus` of the activity chronicles in the summary bucket. `UNKNOWN` when bucketed by it.
      */
+    @Deprecated
     public String getApprovalStatus() {
         return approvalStatus;
     }
     /**
-     * The `approvalStatus` of the activity chronicles in the summary bucket.
+     * The `approvalStatus` of the activity chronicles in the summary bucket. `UNKNOWN` when bucketed by it.
      */
+    @Deprecated
     public void setApprovalStatus(String approvalStatus) {
         this.approvalStatus = approvalStatus;
     }
@@ -370,8 +373,9 @@ public class ActivityChronicleSummaryBucketKey implements java.io.Serializable {
         }
 
         /**
-         * The `approvalStatus` of the activity chronicles in the summary bucket.
+         * The `approvalStatus` of the activity chronicles in the summary bucket. `UNKNOWN` when bucketed by it.
          */
+        @Deprecated
         public Builder setApprovalStatus(String approvalStatus) {
             this.approvalStatus = approvalStatus;
             return this;

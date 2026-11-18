@@ -327,8 +327,8 @@ type ActivityChronicleSummaryBucketKey {
     tag: Tag
     """The `validationStatus` of the activity chronicles in the summary bucket."""
     validationStatus: String
-    """The `approvalStatus` of the activity chronicles in the summary bucket."""
-    approvalStatus: String
+    """The `approvalStatus` of the activity chronicles in the summary bucket. `UNKNOWN` when bucketed by it."""
+    approvalStatus: String @deprecated(reason: "Chronicles have no approval status. Always `UNKNOWN`.")
     """The H3 cell for position-bucketed results."""
     position: H3Cell
     """The metadata values of the activity chronicles in the summary bucket."""

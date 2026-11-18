@@ -21,6 +21,7 @@ public class FilterActivityChronicleSummaryInput implements java.io.Serializable
     private org.springframework.graphql.data.ArgumentValue<FilterStringInput> priority = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterStringInput> status = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterChronicleValidationStatusInput> validationStatus = org.springframework.graphql.data.ArgumentValue.omitted();
+    @Deprecated
     private org.springframework.graphql.data.ArgumentValue<FilterStringInput> approvalStatus = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterPointInput> position = org.springframework.graphql.data.ArgumentValue.omitted();
     private org.springframework.graphql.data.ArgumentValue<FilterJSONFieldStringInput> metadata = org.springframework.graphql.data.ArgumentValue.omitted();
@@ -128,9 +129,11 @@ public class FilterActivityChronicleSummaryInput implements java.io.Serializable
         this.validationStatus = validationStatus;
     }
 
+    @Deprecated
     public org.springframework.graphql.data.ArgumentValue<FilterStringInput> getApprovalStatus() {
         return approvalStatus;
     }
+    @Deprecated
     public void setApprovalStatus(org.springframework.graphql.data.ArgumentValue<FilterStringInput> approvalStatus) {
         this.approvalStatus = approvalStatus;
     }
@@ -286,6 +289,7 @@ public class FilterActivityChronicleSummaryInput implements java.io.Serializable
             return this;
         }
 
+        @Deprecated
         public Builder setApprovalStatus(org.springframework.graphql.data.ArgumentValue<FilterStringInput> approvalStatus) {
             this.approvalStatus = approvalStatus;
             return this;

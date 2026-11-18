@@ -46,8 +46,9 @@ public enum ActivityChronicleSummaryBucketField {
      */
     VALIDATION_STATUS("VALIDATION_STATUS"),
     /**
-     * Bucket by the activity chronicle's approval status
+     * Bucket by the activity chronicle's approval status. Every bucket's approval status is `UNKNOWN`.
      */
+    @Deprecated
     APPROVAL_STATUS("APPROVAL_STATUS");
 
     private final String graphqlName;
