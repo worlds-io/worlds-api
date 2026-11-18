@@ -62,8 +62,8 @@ extend type Query {
     """
     Summarizes activity chronicles over a time range.
 
-    Counts for activity chronicles that started more than a few days ago may not reflect later deletions or edits,
-    including changes to their sites.
+    Counts for activity chronicles that started more than a few days ago may not yet reflect recent deletions or
+    edits, including changes to their sites.  These usually show the next day.
     """
     activityChronicleSummary(
         """Start time for the summary."""
@@ -93,8 +93,8 @@ extend type Query {
     """
     Summarizes summary chronicles over a time range.
 
-    Counts for summary chronicles that started more than a few days ago may not reflect later deletions or edits,
-    including changes to their sites.
+    Counts for summary chronicles that started more than a few days ago may not yet reflect recent deletions or
+    edits, including changes to their sites.  These usually show the next day.
     """
     summaryChronicleSummary(
         """Start time for the summary."""
