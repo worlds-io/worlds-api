@@ -62,8 +62,8 @@ extend type Query {
     """
     Summarizes activity chronicles over a time range.
 
-    Counts for activity chronicles that started more than a few days ago may not reflect later deletions or edits,
-    including changes to their sites.
+    Counts for activity chronicles that started more than a few days ago may not yet reflect recent deletions or
+    edits, including changes to their sites.  These usually show the next day.
     """
     activityChronicleSummary(
         """Start time for the summary."""
@@ -90,7 +90,12 @@ extend type Query {
         """
         metadataKeysPath: [String!]
     ): ActivityChronicleSummary
-    """Summarizes summary chronicles over a time range."""
+    """
+    Summarizes summary chronicles over a time range.
+
+    Counts for summary chronicles that started more than a few days ago may not yet reflect recent deletions or
+    edits, including changes to their sites.  These usually show the next day.
+    """
     summaryChronicleSummary(
         """Start time for the summary."""
         startTime: DateTimeOffset!
@@ -102,6 +107,10 @@ extend type Query {
         How to bucket summary chronicles.  Defaults to `ACTIVE`, which counts a summary chronicle in every time bucket
         it overlaps: a day-long summary chronicle in hourly buckets counts in all 24.  Use `STARTED` or `ENDED` to count
         each summary chronicle in a single time bucket.
+
+        For `ACTIVE` and `ENDED`, summary chronicles over a maximum duration (1 day by default, configurable by
+        environment) are shortened for summary purposes: one running longer is counted as ended at that duration past
+        its start time.  Start times remain unchanged.
         """
         bucketingStrategy: BucketingStrategy! = ACTIVE
         """
