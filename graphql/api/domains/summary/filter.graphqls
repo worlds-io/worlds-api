@@ -126,9 +126,10 @@ input FilterActivityChronicleSummaryInput {
     """
     validationStatus: FilterChronicleValidationStatusInput
     """
-    If provided, specifies filters that work against the approval status of the activity.
+    If provided, specifies filters that work against the approval status of the activity. Every activity's approval
+    status is `UNKNOWN`.
     """
-    approvalStatus: FilterStringInput
+    approvalStatus: FilterStringInput @deprecated(reason: "Chronicles have no approval status. Always `UNKNOWN`.")
     """
     If provided, specifies filters that work against the position of the activity.
     """
