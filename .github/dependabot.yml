@@ -4,6 +4,12 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    groups:
+      # Every github/codeql-action step (init, analyze, ...) must run the same version, so
+      # bump them together in one PR. Separate PRs each fail CodeQL on the version mismatch.
+      codeql-action:
+        patterns:
+          - "github/codeql-action*"
   - package-ecosystem: "maven"
     directory: "/"
     schedule:
