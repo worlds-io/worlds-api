@@ -11,6 +11,9 @@ updates:
         patterns:
           - "github/codeql-action*"
   - package-ecosystem: "maven"
-    directory: "/"
+    # No aggregator pom at the repo root: java/ and java-client/ are separate Maven projects.
+    directories:
+      - "/java"
+      - "/java-client"
     schedule:
       interval: "weekly"
